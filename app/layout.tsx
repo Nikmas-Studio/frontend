@@ -5,17 +5,17 @@ import './globals.css';
 const gilroy = localFont({
   src: [
     {
-      path: './fonts/Gilroy-Regular.woff2',
+      path: '../public/fonts/Gilroy-Regular.woff2',
       weight: '400',
       style: 'normal',
     },
     {
-      path: './fonts/Gilroy-Semibold.woff2',
+      path: '../public/fonts/Gilroy-Semibold.woff2',
       weight: '600',
       style: 'normal',
     },
     {
-      path: './fonts/Gilroy-Bold.woff2',
+      path: '../public/fonts/Gilroy-Bold.woff2',
       weight: '700',
       style: 'normal',
     },
