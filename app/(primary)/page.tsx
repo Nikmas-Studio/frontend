@@ -1,3 +1,10 @@
-export default function Home() {
-  return <div className='h-[1500px]'></div>;
+import Intro from '@/components/modules/Intro';
+import { ReactElement } from 'react';
+
+export default function Home(): ReactElement {
+  return (
+    <>
+      <Intro />
+    </>
+  );
 }

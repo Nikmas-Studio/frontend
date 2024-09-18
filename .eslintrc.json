@@ -1,11 +1,14 @@
 {
   "plugins": ["prettier"],
   "extends": [
-    "next/core-web-vitals", 
+    "next/core-web-vitals",
     "next/typescript",
+    "standard",
+    "plugin:tailwindcss/recommended",
     "prettier"
   ],
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "@typescript-eslint/explicit-function-return-type": "error"
   }
 }

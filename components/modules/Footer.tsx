@@ -1,5 +1,7 @@
-function Footer() {
-  return <div>Footer</div>;
+import { ReactElement } from 'react';
+
+function Footer(): ReactElement {
+  return <footer></footer>;
 }
 
 export default Footer;
