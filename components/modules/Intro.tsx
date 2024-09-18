@@ -60,6 +60,7 @@ function Intro(): ReactElement {
       let wrapper: HTMLElement;
       let handleMouseEnter: () => void;
       let handleMouseLeave: () => void;
+      let handleClick: () => void;
 
       const initialTimeline = gsap.timeline({
         onComplete: () => {
@@ -163,13 +164,19 @@ function Intro(): ReactElement {
             }
           });
 
+          handleClick = contextSave!((): void => {
+            if (!charsTimeline.isActive()) {
+              charsTimeline.restart();
+            }
+          });
+
           interactiveSecondElement.classList.remove('hidden');
 
           wrapper = interactiveSecondElement.parentNode! as HTMLElement;
 
           wrapper.addEventListener('mouseenter', handleMouseEnter);
-
           wrapper.addEventListener('mouseleave', handleMouseLeave);
+          wrapper.addEventListener('click', handleClick);
         },
       });
 
@@ -194,15 +201,15 @@ function Intro(): ReactElement {
 
       return () => {
         wrapper?.removeEventListener('mouseenter', handleMouseEnter);
-
         wrapper?.removeEventListener('mouseleave', handleMouseLeave);
+        wrapper?.removeEventListener('click', handleClick);
       };
     },
     { scope: container },
   );
 
   return (
-    <section>
+    <section className='mt-2'>
       <MainContainer
         className='flex  justify-between  overflow-x-hidden'
         ref={container}
@@ -242,7 +249,7 @@ function Intro(): ReactElement {
         </p>
         <div
           data-element='studio-intro-spine'
-          className='hidden  h-[51.5vw]  w-[7vw]  rounded-xl  bg-black  sm:block  
+          className='hidden  h-[51.5vw]  w-[7vw]  rounded-[1.5vw]  xl:rounded-[1vw]  2xl:rounded-[15px]  bg-black  sm:block  
                      xl:h-[40.1vw]  xl:w-[4.3vw]  2xl:h-[615.531px]  2xl:w-[66px]'
         ></div>
       </MainContainer>
