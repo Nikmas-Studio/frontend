@@ -7,6 +7,7 @@ export default function Home(): ReactElement {
     <>
       <Intro />
       <HBA />
+      <div className='h-[1000px]'></div>
     </>
   );
 }

@@ -215,9 +215,9 @@ function Intro(): ReactElement {
         ref={container}
       >
         <p
-          className='-translate-x-px  translate-y-[-3px]  text-[11.5vw]  leading-none  
-                      sm:text-[9vw]  lg:translate-x-[-5px]  xl:text-[7vw]  2xl:text-[107.45px]
-                      select-none'
+          className='-translate-x-px  translate-y-[-3px]  select-none  text-[11.5vw]  
+                      leading-none  sm:text-[9vw]  lg:translate-x-[-5px]  xl:text-[7vw]
+                      2xl:text-[107.45px]'
         >
           <IntroDescrLine text='Next-gen' dataElement='studio-intro-next-gen' />
           <br />
@@ -249,8 +249,8 @@ function Intro(): ReactElement {
         </p>
         <div
           data-element='studio-intro-spine'
-          className='hidden  h-[51.5vw]  w-[7vw]  rounded-[1.5vw]  xl:rounded-[1vw]  2xl:rounded-[15px]  bg-black  sm:block  
-                     xl:h-[40.1vw]  xl:w-[4.3vw]  2xl:h-[615.531px]  2xl:w-[66px]'
+          className='hidden  h-[51.5vw]  w-[7vw]  rounded-[1.5vw]  bg-black  sm:block  xl:h-[40.1vw]  xl:w-[4.3vw]  
+                     xl:rounded-[1vw]  2xl:h-[615.531px]  2xl:w-[66px]  2xl:rounded-[15px]'
         ></div>
       </MainContainer>
     </section>

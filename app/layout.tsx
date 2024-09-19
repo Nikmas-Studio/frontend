@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import { ReactElement, ReactNode } from 'react';
 import './globals.css';
 
 const gilroy = localFont({
@@ -31,10 +32,10 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
-}>) {
+  children: ReactNode;
+}>): ReactElement {
   return (
-    <html lang="en" className={gilroy.className}>
+    <html lang='en' className={gilroy.className}>
       <body>{children}</body>
     </html>
   );

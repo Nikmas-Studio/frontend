@@ -7,7 +7,7 @@ interface LightModeIconProps {
 
 function LightModeIcon({ className }: LightModeIconProps): ReactElement {
   const lightModeIconClasses = classNames(
-    'w-[1.7rem]  h-[1.7rem]  hover:cursor-pointer  hover:rotate-90  transition-transform  translate-y-[-0.5px]  select-none',
+    'w-[1.5rem]  h-[1.5rem]  md:w-[1.7rem]  md:h-[1.7rem]  hover:cursor-pointer  hover:rotate-90  transition-transform  translate-y-[-0.5px]  select-none',
     className,
   );
 
