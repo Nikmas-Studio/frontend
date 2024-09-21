@@ -11,7 +11,11 @@ function Logo({ className }: LogoProps): ReactElement {
     className,
   );
 
-  return <p className={logoClasses}>Nikmas Studio</p>;
+  return (
+    <p id='main-header-logo' className={logoClasses}>
+      Nikmas Studio
+    </p>
+  );
 }
 
 export default Logo;

@@ -7,7 +7,7 @@ import IntroDescrLine from '../elements/IntroDescrLine';
 import MainContainer from '../elements/MainContainer';
 
 function Intro(): ReactElement {
-  const container = useRef<HTMLDivElement>(null);
+  const container = useRef<HTMLDivElement | null>(null);
 
   useGSAP(
     (context, contextSave) => {
@@ -173,6 +173,7 @@ function Intro(): ReactElement {
           interactiveSecondElement.classList.remove('hidden');
 
           wrapper = interactiveSecondElement.parentNode! as HTMLElement;
+          wrapper.classList.add('cursor-pointer');
 
           wrapper.addEventListener('mouseenter', handleMouseEnter);
           wrapper.addEventListener('mouseleave', handleMouseLeave);
@@ -205,7 +206,7 @@ function Intro(): ReactElement {
         wrapper?.removeEventListener('click', handleClick);
       };
     },
-    { scope: container },
+    { scope: container, dependencies: [] },
   );
 
   return (
@@ -214,9 +215,10 @@ function Intro(): ReactElement {
         className='flex  justify-between  overflow-x-hidden'
         ref={container}
       >
-        <p
+        <h1
+          aria-hidden='true'
           className='-translate-x-px  translate-y-[-3px]  select-none  text-[11.5vw]  
-                      leading-none  sm:text-[9vw]  lg:translate-x-[-5px]  xl:text-[7vw]
+                      leading-none  sm:text-[9vw]  md:translate-y-[-5px]  lg:translate-x-[-5px]  xl:translate-y-[-7px]  xl:text-[7vw]
                       2xl:text-[107.45px]'
         >
           <IntroDescrLine text='Next-gen' dataElement='studio-intro-next-gen' />
@@ -246,7 +248,8 @@ function Intro(): ReactElement {
             text='web-books'
             dataElement='studio-intro-web-books'
           />
-        </p>
+        </h1>
+        <h1 className='sr-only'>Nikmas Studio is a next-gen publishing studio that specializes in creating interactive web-books.</h1>
         <div
           data-element='studio-intro-spine'
           className='hidden  h-[51.5vw]  w-[7vw]  rounded-[1.5vw]  bg-black  sm:block  xl:h-[40.1vw]  xl:w-[4.3vw]  

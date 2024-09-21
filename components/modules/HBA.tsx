@@ -11,9 +11,9 @@ import MainContainer from '../elements/MainContainer';
 gsap.registerPlugin(ScrollTrigger);
 
 function HBA(): ReactElement {
-  const circleRef = useRef<SVGSVGElement>(null);
-  const hbaSectionRef = useRef<HTMLElement>(null);
-  const hbaBlock = useRef<HTMLDivElement>(null);
+  const circleRef = useRef<SVGSVGElement | null>(null);
+  const hbaSectionRef = useRef<HTMLElement | null>(null);
+  const hbaBlock = useRef<HTMLDivElement | null>(null);
 
   useGSAP(() => {
     const mm = gsap.matchMedia();
@@ -65,10 +65,10 @@ function HBA(): ReactElement {
           0,
         );
     });
-  });
+  }, []);
 
   return (
-    <section ref={hbaSectionRef} className='mb-24  mt-16  lg:mt-24'>
+    <section ref={hbaSectionRef} className='mb-36  mt-16  lg:mt-24'>
       <MainContainer>
         <div
           ref={hbaBlock}
@@ -81,7 +81,7 @@ function HBA(): ReactElement {
             viewBox='0 0 520 520'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
-            className='stroke-[8px]  lg:stroke-[7px]  stroke-[#4CBB17]  [stroke-linecap:round]  [stroke-dasharray:0.01,20.01]'
+            className='stroke-[#4CBB17]  stroke-[8px]  [stroke-dasharray:0.01,20.01]  [stroke-linecap:round]  lg:stroke-[7px]'
           >
             <circle cx='260' cy='260' r='255' />
           </svg>
