@@ -10,7 +10,7 @@ import MainContainer from '../elements/MainContainer';
 
 gsap.registerPlugin(ScrollTrigger);
 
-function HBA(): ReactElement {
+function HBASection(): ReactElement {
   const circleRef = useRef<SVGSVGElement | null>(null);
   const hbaSectionRef = useRef<HTMLElement | null>(null);
   const hbaBlock = useRef<HTMLDivElement | null>(null);
@@ -68,7 +68,7 @@ function HBA(): ReactElement {
   }, []);
 
   return (
-    <section ref={hbaSectionRef} className='mb-36  mt-16  lg:mt-24'>
+    <section ref={hbaSectionRef} className='mb-40  mt-16  lg:mt-24'>
       <MainContainer>
         <div
           ref={hbaBlock}
@@ -109,4 +109,4 @@ function HBA(): ReactElement {
   );
 }
 
-export default HBA;
+export default HBASection;

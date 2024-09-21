@@ -6,7 +6,7 @@ import { ReactElement, useRef } from 'react';
 import IntroDescrLine from '../elements/IntroDescrLine';
 import MainContainer from '../elements/MainContainer';
 
-function Intro(): ReactElement {
+function IntroSection(): ReactElement {
   const container = useRef<HTMLDivElement | null>(null);
 
   useGSAP(
@@ -249,7 +249,10 @@ function Intro(): ReactElement {
             dataElement='studio-intro-web-books'
           />
         </h1>
-        <h1 className='sr-only'>Nikmas Studio is a next-gen publishing studio that specializes in creating interactive web-books.</h1>
+        <h1 className='sr-only'>
+          Nikmas Studio is a next-gen publishing studio that specializes in
+          creating interactive web-books.
+        </h1>
         <div
           data-element='studio-intro-spine'
           className='hidden  h-[51.5vw]  w-[7vw]  rounded-[1.5vw]  bg-black  sm:block  xl:h-[40.1vw]  xl:w-[4.3vw]  
@@ -260,4 +263,4 @@ function Intro(): ReactElement {
   );
 }
 
-export default Intro;
+export default IntroSection;

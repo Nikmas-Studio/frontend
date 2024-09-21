@@ -12,7 +12,7 @@ function Header(): ReactElement {
   const headerElement = useRef<HTMLHeadElement | null>(null);
 
   function pageLoadedScrolled(): boolean {
-    return window.scrollY > 0;
+    return window ? window.scrollY > 0 : false;
   }
 
   useEffect(() => {

@@ -13,7 +13,7 @@ import MainContainer from '../elements/MainContainer';
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Book(): ReactElement {
+function BookSection(): ReactElement {
   const bookRef = useRef<HTMLImageElement | null>(null);
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const anchorRef = useRef<HTMLAnchorElement | null>(null);
@@ -25,14 +25,14 @@ function Book(): ReactElement {
     function handleResize() {
       scaleRef.current = calcScale();
     }
-    
+
     scaleRef.current = calcScale();
 
     window.addEventListener('resize', handleResize);
-    
+
     return () => {
       window.removeEventListener('resize', handleResize);
-    }
+    };
   }, []);
 
   function calcScale(): number {
@@ -153,7 +153,7 @@ function Book(): ReactElement {
   }, []);
 
   return (
-    <div
+    <section
       ref={sectionRef}
       className='w-screen  pb-32  pt-16  [background:linear-gradient(135deg,#ff5013,#271ad3)]'
     >
@@ -175,8 +175,8 @@ function Book(): ReactElement {
           />
         </Link>
       </MainContainer>
-    </div>
+    </section>
   );
 }
 
-export default Book;
+export default BookSection;

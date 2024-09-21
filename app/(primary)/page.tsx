@@ -1,14 +1,16 @@
-import Book from '@/components/modules/Book';
-import HBA from '@/components/modules/HBA';
-import Intro from '@/components/modules/Intro';
+import BookSection from '@/components/modules/BookSection';
+import ContestSection from '@/components/modules/ContestSection';
+import HBASection from '@/components/modules/HBASection';
+import IntroSection from '@/components/modules/IntroSection';
 import { ReactElement } from 'react';
 
 export default function Home(): ReactElement {
   return (
     <main>
-      <Intro />
-      <HBA />
-      <Book />
+      <IntroSection />
+      <HBASection />
+      <BookSection />
+      <ContestSection />
       <div className='h-[1000px]'></div>
     </main>
   );
