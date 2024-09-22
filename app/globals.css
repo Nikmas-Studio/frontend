@@ -16,3 +16,7 @@ body {
     @apply border-b  border-b-gray-200  pb-[0.08rem]  transition-all  hover:border-b-black;
   }
 }
+
+body:not(.body-visible) {
+  visibility: hidden;
+}

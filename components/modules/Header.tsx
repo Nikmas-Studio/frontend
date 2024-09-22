@@ -5,23 +5,18 @@ import { ReactElement, useEffect, useRef, useState } from 'react';
 import Logo from '../elements/Logo';
 import MainContainer from '../elements/MainContainer';
 import HeaderButtons from './HeaderButtons';
-import { on } from 'events';
 
 function Header(): ReactElement {
-  const [headerIsScrolled, setHeaderIsScrolled] = useState(false);
-  const headerElement = useRef<HTMLHeadElement | null>(null);
-
-  function pageLoadedScrolled(): boolean {
-    return window ? window.scrollY > 0 : false;
+  function pageIsScrolled(): boolean {
+    return window.scrollY > 0;
   }
+
+  const [headerIsScrolled, setHeaderIsScrolled] = useState(pageIsScrolled);
+  const headerElement = useRef<HTMLHeadElement | null>(null);
 
   useEffect(() => {
     const onScroll = (): void => {
-      if (window.scrollY > 0) {
-        setHeaderIsScrolled(true);
-      } else {
-        setHeaderIsScrolled(false);
-      }
+      setHeaderIsScrolled(pageIsScrolled());
     };
 
     window.addEventListener('scroll', onScroll);
@@ -32,7 +27,7 @@ function Header(): ReactElement {
   const headerClasses = classNames(
     'pt-4  pb-6  md:pt-5  md:pb-7  fixed  left-0  right-0  top-0  border-b  transition  bg-white  z-50',
     {
-      'border-b-grey-200': headerIsScrolled || pageLoadedScrolled(),
+      'border-b-grey-200': headerIsScrolled,
       'border-b-white': !headerIsScrolled,
     },
   );

@@ -7,6 +7,9 @@ function ContestSection(): ReactElement {
     <section className='mt-32  lg:mt-36'>
       <MainContainer className='flex  flex-col  items-center  px-[6.3rem]'>
         <div>
+          <p className='mb-10  hidden  text-2xl  !leading-snug  sm:text-3xl  dark:block'>
+            Dark mode
+          </p>
           <p className='text-2xl  !leading-snug  sm:text-3xl'>
             Get <br />
             free <br />

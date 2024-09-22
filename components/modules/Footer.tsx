@@ -10,7 +10,7 @@ import MainContainer from '../elements/MainContainer';
 
 function Footer(): ReactElement {
   return (
-    <footer className='mt-44  border-t  border-gray-200  pb-16  pt-12'>
+    <footer className='mt-44  border-t  border-gray-200  pb-20  pt-12'>
       <MainContainer className='flex  flex-col-reverse items-center  md:flex-row  md:items-start  md:justify-between'>
         <div className='flex  flex-col  items-center  md:items-start'>
           <p className='mb-5  text-lg'>© Nikmas Studio, 2024</p>

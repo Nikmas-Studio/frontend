@@ -3,7 +3,7 @@
 import { useHeaderButtons } from '@/context/header-buttons/Context';
 import { ReactElement } from 'react';
 import GuestAccountIcon from '../elements/GuestAccountIcon';
-import LightModeIcon from '../elements/LightModeIcon';
+import ThemeToggle from '../elements/ThemeToggle';
 
 function HeaderButtons(): ReactElement {
   const {
@@ -13,7 +13,7 @@ function HeaderButtons(): ReactElement {
 
   return (
     <div className='flex  items-center  gap-x-5'>
-      <LightModeIcon className='flex-none' ref={lightModeIconElement} />
+      <ThemeToggle className='flex-none' ref={lightModeIconElement} />
       <GuestAccountIcon className='flex-none' ref={accountIconElement} />
     </div>
   );

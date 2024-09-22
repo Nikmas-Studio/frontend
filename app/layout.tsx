@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import Script from 'next/script';
 import { ReactElement, ReactNode } from 'react';
 import './globals.css';
 
@@ -35,7 +36,20 @@ export default function RootLayout({
   children: ReactNode;
 }>): ReactElement {
   return (
-    <html lang='en' className={gilroy.className}>
+    <html lang='en' className={`${gilroy.className}`}>
+      <head>
+        <Script id='theme-script'>
+          {`
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+              document.documentElement.classList.add('dark');
+            } else {
+              document.documentElement.classList.remove('dark');
+            }
+            
+            document.body.classList.add('body-visible');
+          `}
+        </Script>
+      </head>
       <body>{children}</body>
     </html>
   );
