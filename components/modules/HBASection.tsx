@@ -68,11 +68,11 @@ function HBASection(): ReactElement {
   }, []);
 
   return (
-    <section ref={hbaSectionRef} className='mb-40  mt-16  lg:mt-24'>
+    <section ref={hbaSectionRef} className='mb-32  mt-16  lg:mb-40  lg:mt-24'>
       <MainContainer>
         <div
           ref={hbaBlock}
-          className='relative mx-auto  aspect-square  w-[55vw]  sm:w-[45vw]  xl:w-[32vw]  2xl:w-[540px]'
+          className='relative mx-auto  aspect-square  w-[55vw]  sm:w-[45vw]  xl:w-[30vw]  2xl:w-[460.5px]'
         >
           <svg
             ref={circleRef}
@@ -87,18 +87,16 @@ function HBASection(): ReactElement {
           </svg>
           <div
             className='absolute  left-1/2  top-1/2  z-20  flex
-                       -translate-x-1/2  translate-y-[-85%]  items-end  gap-[1.5vw]  2xl:gap-[22px]'
+                       -translate-x-1/2  translate-y-[-85%]  items-end  gap-[1.5vw]  xl:gap-[1.4vw]  2xl:gap-[21.49px]'
           >
-            <p className='flex  translate-y-[2vw]  items-end  gap-[1.2vw]  font-bold  leading-none  sm:translate-y-[1.6vw]  xl:translate-y-[1.2vw]  2xl:translate-y-[18px]  2xl:gap-[18px]'>
-              <span className='text-[9vw]  [-webkit-text-fill-color:white]  [-webkit-text-stroke-color:rgba(76,187,23,0.3)]  [-webkit-text-stroke-width:1px]  sm:text-[7vw] xl:text-[5.4vw] 2xl:text-[80px]'>
+            <p className='flex  translate-y-[2vw]  items-end gap-[1.2vw] text-[9vw]  font-bold  leading-none  sm:translate-y-[1.6vw]  sm:text-[7vw]  xl:translate-y-[1.02vw]  xl:gap-[1.1vw]  xl:text-[4.5vw]  2xl:translate-y-[15.657px]  2xl:gap-[16.885px]  2xl:text-[69.075px]'>
+              <span className='[-webkit-text-fill-color:white]  [-webkit-text-stroke-color:rgba(76,187,23,0.3)]  [-webkit-text-stroke-width:1px]  '>
                 5
               </span>
-              <span className='text-[9vw]  text-[#4CBB17]  sm:text-[7vw]  xl:text-[5.4vw]  2xl:text-[80px]'>
-                HBA
-              </span>
+              <span className='text-[#4CBB17]'>HBA</span>
             </p>
             <Image
-              className='w-[7vw]  max-w-none  sm:w-[5.5vw]  xl:w-[4vw]  2xl:w-[90px]'
+              className='w-[7vw]  max-w-none  sm:w-[5.5vw]  xl:w-[4vw]  2xl:w-[61.4px]'
               src={cakeHBA}
               alt='Cake HBA'
             />

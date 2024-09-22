@@ -6,6 +6,13 @@
   --root-font-size: 16;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
+}
+
+@layer components {
+  .underlined-link {
+    @apply border-b  border-b-gray-200  pb-[0.08rem]  transition-all  hover:border-b-black;
+  }
 }

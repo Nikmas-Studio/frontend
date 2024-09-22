@@ -22,7 +22,7 @@ function BookSection(): ReactElement {
   const scaleRef = useRef(2);
 
   useEffect(() => {
-    function handleResize() {
+    function handleResize(): void {
       scaleRef.current = calcScale();
     }
 
@@ -157,8 +157,8 @@ function BookSection(): ReactElement {
       ref={sectionRef}
       className='w-screen  pb-32  pt-16  [background:linear-gradient(135deg,#ff5013,#271ad3)]'
     >
-      <MainContainer className='flex  flex-col  items-center  px-12'>
-        <h2 className='text-4xl  font-bold  text-white  mb-8'>
+      <MainContainer className='flex  flex-col  items-center  !px-12'>
+        <h2 className='mb-8  text-3xl  font-bold  text-white  sm:text-4xl'>
           Our first book
         </h2>
         <Link
@@ -170,7 +170,7 @@ function BookSection(): ReactElement {
             ref={bookRef}
             src={bookCoverLight}
             alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
-            className='w-full  max-h-[1000px]  rounded-[3vw]  sm:h-[65vh]  sm:w-auto  sm:rounded-[1.5vh]'
+            className='max-h-[1000px]  w-full  rounded-[3vw]  sm:h-[65vh]  sm:w-auto  sm:rounded-[1.5vh]'
             priority
           />
         </Link>

@@ -11,7 +11,6 @@ export default function Home(): ReactElement {
       <HBASection />
       <BookSection />
       <ContestSection />
-      <div className='h-[1000px]'></div>
     </main>
   );
 }

@@ -1,11 +1,13 @@
+import { ReactElement } from 'react';
+import ExternalLink from '../elements/ExternalLink';
 import MainContainer from '../elements/MainContainer';
 
-function ContestSection() {
+function ContestSection(): ReactElement {
   return (
-    <section className='mt-36'>
+    <section className='mt-32  lg:mt-36'>
       <MainContainer className='flex  flex-col  items-center  px-[6.3rem]'>
         <div>
-          <p className='text-3xl  leading-snug'>
+          <p className='text-2xl  !leading-snug  sm:text-3xl'>
             Get <br />
             free <br />
             lifetime <br />
@@ -18,14 +20,11 @@ function ContestSection() {
             from <br />
             Nikmas&nbsp;Studio
           </p>
-          <p className='text-3xl  leading-snug  mt-7'>
-            <a
-              href='https://www.instagram.com'
-              className='border-b-gray-200  hover:border-b-black  transition-all  pb-[0.08rem]  border-b'
-            >
+          <p className='mt-5  text-2xl  !leading-snug  sm:mt-7  sm:text-3xl'>
+            <ExternalLink href='https://www.instagram.com' defaultTextLink>
               by&nbsp;participating <br />
               in&nbsp;a&nbsp;contest
-            </a>
+            </ExternalLink>
           </p>
         </div>
       </MainContainer>
