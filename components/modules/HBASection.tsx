@@ -89,14 +89,14 @@ function HBASection(): ReactElement {
             className='absolute  left-1/2  top-1/2  z-20  flex
                        -translate-x-1/2  translate-y-[-85%]  items-end  gap-[1.5vw]  xl:gap-[1.4vw]  2xl:gap-[21.49px]'
           >
-            <p className='flex  translate-y-[2vw]  items-end gap-[1.2vw] text-[9vw]  font-bold  leading-none  sm:translate-y-[1.6vw]  sm:text-[7vw]  xl:translate-y-[1.02vw]  xl:gap-[1.1vw]  xl:text-[4.5vw]  2xl:translate-y-[15.657px]  2xl:gap-[16.885px]  2xl:text-[69.075px]'>
+            <p className='flex  translate-y-[2vw]  items-end gap-[1.2vw] text-[9vw]  font-bold  leading-none  sm:translate-y-[1.6vw]  sm:text-[7vw]  lg:text-[6.5vw]  xl:translate-y-[1.02vw]  xl:gap-[1.1vw]  xl:text-[4.5vw]  2xl:translate-y-[15.657px]  2xl:gap-[16.885px]  2xl:text-[69.075px]'>
               <span className='[-webkit-text-fill-color:white]  [-webkit-text-stroke-color:rgba(76,187,23,0.3)]  [-webkit-text-stroke-width:1px]  '>
                 5
               </span>
               <span className='text-[#4CBB17]'>HBA</span>
             </p>
             <Image
-              className='w-[7vw]  max-w-none  sm:w-[5.5vw]  xl:w-[4vw]  2xl:w-[61.4px]'
+              className='w-[8vw]  max-w-none  sm:w-[6vw]  lg:w-[5.5vw]  xl:w-[4vw]  2xl:w-[61.4px]'
               src={cakeHBA}
               alt='Cake HBA'
             />

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import Script from 'next/script';
 import { ReactElement, ReactNode } from 'react';
 import './globals.css';
+import Script from 'next/script';
 
 const gilroy = localFont({
   src: [
@@ -38,9 +38,13 @@ export default function RootLayout({
   return (
     <html lang='en' className={`${gilroy.className}`}>
       <head>
-        <Script id='theme-script'>
+        <Script>
           {`
-            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            if (
+              localStorage.theme === 'dark' ||
+              (!('theme' in localStorage) &&
+                window.matchMedia('(prefers-color-scheme: dark)').matches)
+            ) {
               document.documentElement.classList.add('dark');
             } else {
               document.documentElement.classList.remove('dark');

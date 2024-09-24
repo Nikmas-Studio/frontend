@@ -7,9 +7,6 @@ function ContestSection(): ReactElement {
     <section className='mt-32  lg:mt-36'>
       <MainContainer className='flex  flex-col  items-center  px-[6.3rem]'>
         <div>
-          <p className='mb-10  hidden  text-2xl  !leading-snug  sm:text-3xl  dark:block'>
-            Dark mode
-          </p>
           <p className='text-2xl  !leading-snug  sm:text-3xl'>
             Get <br />
             free <br />
@@ -23,7 +20,7 @@ function ContestSection(): ReactElement {
             from <br />
             Nikmas&nbsp;Studio
           </p>
-          <p className='mt-5  text-2xl  !leading-snug  sm:mt-7  sm:text-3xl'>
+          <p className='mt-5  text-2xl  !leading-snug  sm:text-3xl'>
             <ExternalLink href='https://www.instagram.com' defaultTextLink>
               by&nbsp;participating <br />
               in&nbsp;a&nbsp;contest

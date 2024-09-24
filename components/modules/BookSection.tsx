@@ -1,7 +1,6 @@
 'use client';
 
 import { useBookSectionStateDispatch } from '@/context/book-section/Context';
-import { useHeaderButtons } from '@/context/header-buttons/Context';
 import bookCoverLight from '@/public/images/git-and-github-book-cover-light.jpg';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -17,7 +16,6 @@ function BookSection(): ReactElement {
   const bookRef = useRef<HTMLImageElement | null>(null);
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const anchorRef = useRef<HTMLAnchorElement | null>(null);
-  const { lightModeIconRef, accountIconRef } = useHeaderButtons();
   const { setBookSectionInViewport } = useBookSectionStateDispatch();
   const scaleRef = useRef(2);
 
@@ -50,9 +48,6 @@ function BookSection(): ReactElement {
   useGSAP(() => {
     const headerElement = document.getElementById('main-header');
     const headerHeight = headerElement?.offsetHeight;
-    const headerLogoElement = document.getElementById('main-header-logo');
-
-    const accountIconSpine = accountIconRef.current?.querySelector('div');
 
     const bookTimeline = gsap.timeline({
       scrollTrigger: {
@@ -80,76 +75,24 @@ function BookSection(): ReactElement {
       0,
     );
 
-    const headerTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: `top ${headerHeight}`,
-        end: `bottom ${headerHeight}`,
-        toggleActions: 'play reverse play reverse',
-        onEnter: () => {
-          setBookSectionInViewport(true);
-        },
-        onEnterBack: () => {
-          setBookSectionInViewport(true);
-        },
-        onLeave: () => {
-          setBookSectionInViewport(false);
-        },
-        onLeaveBack: () => {
-          setBookSectionInViewport(false);
-        },
+    ScrollTrigger.create({
+      trigger: sectionRef.current,
+      start: `top ${headerHeight}`,
+      end: `bottom ${headerHeight}`,
+      toggleActions: 'play reverse play reverse',
+      onEnter: () => {
+        setBookSectionInViewport(true);
+      },
+      onEnterBack: () => {
+        setBookSectionInViewport(true);
+      },
+      onLeave: () => {
+        setBookSectionInViewport(false);
+      },
+      onLeaveBack: () => {
+        setBookSectionInViewport(false);
       },
     });
-
-    headerTimeline.to(
-      headerElement,
-      {
-        backgroundImage: 'linear-gradient(135deg,#ff5013,#271ad3)',
-        duration: 0.3,
-        ease: 'linear',
-      },
-      0,
-    );
-
-    headerTimeline.to(
-      headerLogoElement,
-      {
-        color: 'white',
-        duration: 0.3,
-        ease: 'linear',
-      },
-      0,
-    );
-
-    headerTimeline.to(
-      lightModeIconRef.current,
-      {
-        fill: 'white',
-        duration: 0.3,
-        ease: 'linear',
-      },
-      0,
-    );
-
-    headerTimeline.to(
-      accountIconRef.current,
-      {
-        backgroundColor: 'white',
-        duration: 0.3,
-        ease: 'linear',
-      },
-      0,
-    );
-
-    headerTimeline.to(
-      accountIconSpine as HTMLElement,
-      {
-        backgroundColor: 'black',
-        duration: 0.3,
-        ease: 'linear',
-      },
-      0,
-    );
   }, []);
 
   return (
@@ -158,7 +101,7 @@ function BookSection(): ReactElement {
       className='w-screen  pb-32  pt-16  [background:linear-gradient(135deg,#ff5013,#271ad3)]'
     >
       <MainContainer className='flex  flex-col  items-center  !px-12'>
-        <h2 className='mb-8  text-3xl  font-bold  text-white  sm:text-4xl'>
+        <h2 className='mb-8  text-3xl  font-bold  text-white  sm:text-[2.7rem]'>
           Our first book
         </h2>
         <Link

@@ -1,21 +1,23 @@
 import classNames from 'classnames';
-import { ReactElement } from 'react';
+import { forwardRef, ReactElement } from 'react';
 
 interface LogoProps {
   className?: string;
 }
 
-function Logo({ className }: LogoProps): ReactElement {
+const Logo = forwardRef<HTMLParagraphElement, LogoProps>(function Logo({
+  className,
+}: LogoProps, ref): ReactElement {
   const logoClasses = classNames(
-    'font-bold  text-[1.7rem]  md:text-[2rem]  cursor-default  select-none',
+    'font-bold  text-[1.7rem]  md:text-[2rem]  cursor-default  select-none  dark:text-white',
     className,
   );
 
   return (
-    <p id='main-header-logo' className={logoClasses}>
+    <p ref={ref} className={logoClasses}>
       Nikmas Studio
     </p>
   );
-}
+});
 
 export default Logo;

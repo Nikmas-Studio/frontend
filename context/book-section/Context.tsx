@@ -40,24 +40,24 @@ export function BookSectionStateProvider({
   );
 }
 
-export function useBookSectionState() {
+export function useBookSectionState(): BookSectionStateContextProps {
   const context = useContext(BookSectionStateContext);
 
   if (!context) {
     throw new Error(
-      'BookSectionStateContext must be used within a BookSectionStateProvider',
+      'BookSectionStateContext must be used within a BookSectionStateContextProvider',
     );
   }
 
   return context;
 }
 
-export function useBookSectionStateDispatch() {
+export function useBookSectionStateDispatch(): BookSectionStateDispatchContextProps {
   const context = useContext(BookSectionStateDispatchContext);
 
   if (!context) {
     throw new Error(
-      'BookSectionStateDispatchContext must be used within a BookSectionStateProvider',
+      'BookSectionStateDispatchContext must be used within a BookSectionStateContextProvider',
     );
   }
 
