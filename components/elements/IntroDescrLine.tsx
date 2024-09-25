@@ -29,12 +29,15 @@ function IntroDescrLine({
   return (
     <span className={wrapperClasses}>
       <span data-element={dataElement} className='inline-block  align-top'>
-        <SpanSplitter text={text} classNameForSpan='inline-block  align-top' />
+        <SpanSplitter
+          text={text}
+          classNameForSpan='inline-block  align-top  invisible'
+        />
       </span>
       {animated && (
         <span
           data-element={dataElement}
-          className='absolute  bottom-auto  left-0  right-auto  top-0  hidden  align-top'
+          className='absolute  bottom-auto  left-0  right-auto  top-0  hidden  align-top  will-change-transform'
         >
           <SpanSplitter
             text={text}

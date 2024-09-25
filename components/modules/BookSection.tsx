@@ -148,8 +148,8 @@ function BookSection(): ReactElement {
             ref={lightBookCoverRef}
             src={bookCoverLight}
             alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
-            className='max-h-[1000px]  w-full  rounded-[3vw]  sm:h-[65vh]  
-                       sm:w-auto  
+            className='max-h-[1000px]  w-full  rounded-[3vw]  will-change-[transform,opacity]  
+                       sm:h-[65vh]  sm:w-auto
                        sm:rounded-[1.5vh]  dark:hidden'
             priority
           />
@@ -158,8 +158,8 @@ function BookSection(): ReactElement {
             src={bookCoverDark}
             alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
             className='hidden  max-h-[1000px]  w-full  rounded-[3vw]  
-                       sm:h-[65vh]  sm:w-auto  sm:rounded-[1.5vh]  
-                       dark:inline-block'
+                       will-change-[transform,opacity]  sm:h-[65vh]  
+                       sm:w-auto  sm:rounded-[1.5vh]  dark:inline-block'
             priority
           />
         </Link>

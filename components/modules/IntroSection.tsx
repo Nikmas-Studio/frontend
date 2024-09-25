@@ -183,8 +183,8 @@ function IntroSection(): ReactElement {
       });
 
       initialTimelineLines.forEach((element) => {
-        initialTimeline.from(element.querySelectorAll('span'), {
-          visibility: 'hidden',
+        initialTimeline.to(element.querySelectorAll('span'), {
+          visibility: 'visible',
           duration: 0.1,
           ease: 'none',
           stagger: 0.1,
@@ -260,9 +260,9 @@ function IntroSection(): ReactElement {
         <div
           data-element='studio-intro-spine'
           className='hidden  h-[51.5vw]  w-[7vw]  rounded-[1.5vw]  bg-black  
-                     sm:block  xl:h-[39.95vw]  xl:w-[4.3vw]  xl:rounded-[1vw]  
-                     2xl:h-[614.531px]  2xl:w-[66px]  2xl:rounded-[15px]  
-                     dark:bg-white'
+                     will-change-transform  sm:block  xl:h-[39.95vw]  xl:w-[4.3vw]  
+                     xl:rounded-[1vw]  2xl:h-[614.531px]  2xl:w-[66px]  
+                     2xl:rounded-[15px]  dark:bg-white'
         ></div>
       </MainContainer>
     </section>
