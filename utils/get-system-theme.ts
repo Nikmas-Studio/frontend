@@ -2,10 +2,10 @@ import { Theme } from '@/types/theme';
 
 function getSystemTheme(): Theme {
   if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    return Theme.Dark;
+    return Theme.DARK;
   }
 
-  return Theme.Light;
+  return Theme.LIGHT;
 }
 
 export default getSystemTheme;

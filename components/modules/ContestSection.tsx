@@ -7,7 +7,7 @@ function ContestSection(): ReactElement {
     <section className='mt-32  lg:mt-36'>
       <MainContainer className='flex  flex-col  items-center  px-[6.3rem]'>
         <div>
-          <p className='text-2xl  !leading-snug  sm:text-3xl'>
+          <p className='text-2xl  !leading-snug  sm:text-3xl  dark:text-white'>
             Get <br />
             free <br />
             lifetime <br />

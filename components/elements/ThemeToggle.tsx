@@ -8,11 +8,12 @@ import ThemeToggleDropdownItem from './ThemeToggleDropdownItem';
 import { useBookSectionState } from '@/context/book-section/Context';
 import { useTheme, useThemeDispatch } from '@/context/theme/Context';
 import gearIconBlack from '@/public/images/gear-icon-black.png';
+import gearIconWhite from '@/public/images/gear-icon-white.png';
 import moonIconBlack from '@/public/images/moon-icon-black.png';
 import moonIconWhite from '@/public/images/moon-icon-white.png';
 import sunIconBlack from '@/public/images/sun-icon-black.png';
 import sunIconWhite from '@/public/images/sun-icon-white.png';
-import getSystemTheme from '@/utils/getSystemTheme';
+import getSystemTheme from '@/utils/get-system-theme';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
@@ -26,11 +27,32 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
   const { setSelectedTheme } = useThemeDispatch();
   const { bookSectionInViewport } = useBookSectionState();
   const previousTheme = useRef(selectedTheme);
-
   const lightModeBlackToggleIconRef = useRef<HTMLImageElement | null>(null);
   const lightModeWhiteToggleIconRef = useRef<HTMLImageElement | null>(null);
-  const darkModeBlackToggleIconRef = useRef<HTMLImageElement | null>(null);
   const darkModeWhiteToggleIconRef = useRef<HTMLImageElement | null>(null);
+
+  function showLightModeBlackToggleIcon(): boolean {
+    return (
+      (selectedTheme === Theme.LIGHT ||
+        (selectedTheme === Theme.SYSTEM && systemTheme === Theme.LIGHT)) &&
+      !bookSectionInViewport
+    );
+  }
+
+  function showLightModeWhiteToggleIcon(): boolean {
+    return (
+      (selectedTheme === Theme.LIGHT ||
+        (selectedTheme === Theme.SYSTEM && systemTheme === Theme.LIGHT)) &&
+      bookSectionInViewport
+    );
+  }
+
+  function showDarkModeWhiteToggleIcon(): boolean {
+    return (
+      selectedTheme === Theme.DARK ||
+      (selectedTheme === Theme.SYSTEM && systemTheme === Theme.DARK)
+    );
+  }
 
   useGSAP(() => {
     const themeChanged = previousTheme.current !== selectedTheme;
@@ -42,6 +64,7 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
       duration: themeChanged ? 0 : 0.3,
       ease: 'linear',
     });
+
     gsap.to(lightModeWhiteToggleIconRef.current, {
       opacity: showLightModeWhiteToggleIcon() ? 1 : 0,
       pointerEvents: showLightModeWhiteToggleIcon() ? 'auto' : 'none',
@@ -50,13 +73,6 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
       ease: 'linear',
     });
 
-    gsap.to(darkModeBlackToggleIconRef.current, {
-      opacity: showDarkModeBlackToggleIcon() ? 1 : 0,
-      pointerEvents: showDarkModeBlackToggleIcon() ? 'auto' : 'none',
-      zIndex: showDarkModeBlackToggleIcon() ? 50 : 'auto',
-      duration: themeChanged ? 0 : 0.3,
-      ease: 'linear',
-    });
     gsap.to(darkModeWhiteToggleIconRef.current, {
       opacity: showDarkModeWhiteToggleIcon() ? 1 : 0,
       pointerEvents: showDarkModeWhiteToggleIcon() ? 'auto' : 'none',
@@ -83,7 +99,7 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
   }, [selectedTheme]);
 
   function handleThemeChange(newTheme: Theme): void {
-    if (newTheme === Theme.System) {
+    if (newTheme === Theme.SYSTEM) {
       localStorage.removeItem('theme');
       setSystemTheme(getSystemTheme);
     } else {
@@ -102,73 +118,33 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
   });
 
   const dropdownClasses = classNames(
-    'absolute  right-0  top-10  flex  flex-col  rounded-lg  bg-white  pb-9  pt-7  shadow-[0px_10px_30px_rgba(0,0,0,0.03)]  transition-all',
+    `absolute  right-0  top-10  flex  flex-col  rounded-lg  bg-white
+     border  border-[#EBEBEB]  dark:border-[#414141]
+     dark:bg-black  pb-9  pt-7  
+     `,
     {
       'opacity-0  pointer-events-none': !dropdownIsOpened,
       'opacity-100  pointer-events-auto': dropdownIsOpened,
     },
   );
 
-  function showLightModeBlackToggleIcon(): boolean {
-    const res =
-      (selectedTheme === Theme.Light ||
-        (selectedTheme === Theme.System && systemTheme === Theme.Light)) &&
-      !bookSectionInViewport;
-
-    return res;
-  }
-
   const lightModeBlackToggleIconClasses = classNames(
-    `absolute  size-6  translate-y-[-0.5px]  select-none  md:size-[1.7rem]  top-0  hover:rotate-45  transition-transform`,
+    `absolute  size-6  translate-y-[-0.5px]  select-none  md:size-[1.7rem]  
+    top-0  hover:rotate-45  transition-transform`,
     {
       'opacity-0  pointer-events-none': !showLightModeBlackToggleIcon(),
       'opacity-100  pointer-events-auto z-50': showLightModeBlackToggleIcon(),
     },
   );
 
-  function showLightModeWhiteToggleIcon(): boolean {
-    const res =
-      (selectedTheme === Theme.Light ||
-        (selectedTheme === Theme.System && systemTheme === Theme.Light)) &&
-      bookSectionInViewport;
-
-    return res;
-  }
-
   const lightModeWhiteToggleIconClasses = classNames(
-    `absolute  size-6  translate-y-[-0.5px]  select-none md:size-[1.7rem]  top-0  hover:rotate-45  transition-transform`,
+    `absolute  size-6  translate-y-[-0.5px]  select-none md:size-[1.7rem]  top-0
+     hover:rotate-45  transition-transform`,
     {
       'opacity-0  pointer-events-none': !showLightModeWhiteToggleIcon(),
       'opacity-100  pointer-events-auto z-50': showLightModeWhiteToggleIcon(),
     },
   );
-
-  function showDarkModeBlackToggleIcon(): boolean {
-    const res =
-      (selectedTheme === Theme.Dark ||
-        (selectedTheme === Theme.System && systemTheme === Theme.Dark)) &&
-      !bookSectionInViewport;
-
-    return res;
-  }
-
-  const darkModeBlackToggleIconClasses = classNames(
-    `absolute  size-[1.3rem]  translate-x-[0.1rem]  translate-y-[0.12rem]
-   select-none  md:size-[1.45rem]  top-0  hover:-rotate-90  transition-transform`,
-    {
-      'opacity-0  pointer-events-none': !showDarkModeBlackToggleIcon(),
-      'opacity-100  pointer-events-auto  z-50': showDarkModeBlackToggleIcon(),
-    },
-  );
-
-  function showDarkModeWhiteToggleIcon(): boolean {
-    const res =
-      (selectedTheme === Theme.Dark ||
-        (selectedTheme === Theme.System && systemTheme === Theme.Dark)) &&
-      bookSectionInViewport;
-
-    return res;
-  }
 
   const darkModeWhiteToggleIconClasses = classNames(
     `absolute  size-[1.3rem]  translate-x-[0.1rem]  translate-y-[0.12rem]
@@ -208,14 +184,6 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
           className={lightModeWhiteToggleIconClasses}
         />
         <Image
-          ref={darkModeBlackToggleIconRef}
-          src={moonIconBlack}
-          width={27}
-          height={27}
-          alt='Moon icon'
-          className={darkModeBlackToggleIconClasses}
-        />
-        <Image
           ref={darkModeWhiteToggleIconRef}
           src={moonIconWhite}
           width={27}
@@ -227,48 +195,77 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
       <ul ref={dropdownElementRef} className={dropdownClasses}>
         <ThemeToggleDropdownItem
           className='gap-[0.7rem]'
-          itemTheme={Theme.Light}
+          itemTheme={Theme.LIGHT}
           selectedTheme={selectedTheme}
-          onClick={() => handleThemeChange(Theme.Light)}
+          onClick={() => handleThemeChange(Theme.LIGHT)}
         >
           <Image
             src={sunIconBlack}
             width={27}
             height={27}
             alt='Sun icon'
-            className='size-6  translate-y-[-0.031rem]  md:size-[1.7rem]'
+            className='size-6  translate-y-[-0.031rem]  md:size-[1.7rem]  
+                       dark:hidden'
           />
-          <p className='select-none'>Light</p>
+          <Image
+            src={sunIconWhite}
+            width={27}
+            height={27}
+            alt='Sun icon'
+            className='hidden  size-6  translate-y-[-0.031rem]  md:size-[1.7rem]
+                       dark:inline-block'
+          />
+          <p className='select-none  dark:text-white'>Light</p>
         </ThemeToggleDropdownItem>
         <ThemeToggleDropdownItem
           className='gap-[0.95rem]'
-          itemTheme={Theme.Dark}
+          itemTheme={Theme.DARK}
           selectedTheme={selectedTheme}
-          onClick={() => handleThemeChange(Theme.Dark)}
+          onClick={() => handleThemeChange(Theme.DARK)}
         >
           <Image
             src={moonIconBlack}
             width={27}
             height={27}
             alt='Moon icon'
-            className='size-[1.3rem]  translate-x-[0.15rem]  translate-y-[-0.031rem]  md:size-[1.45rem]'
+            className='size-[1.3rem]  translate-x-[0.15rem]
+                       translate-y-[-0.031rem]  md:size-[1.45rem]
+                       dark:hidden'
           />
-          <p className='select-none'>Dark</p>
+          <Image
+            src={moonIconWhite}
+            width={27}
+            height={27}
+            alt='Moon icon'
+            className='hidden  size-[1.3rem]  translate-x-[0.15rem]
+                       translate-y-[-0.031rem]  md:size-[1.45rem]
+                       dark:inline-block'
+          />
+          <p className='select-none  dark:text-white'>Dark</p>
         </ThemeToggleDropdownItem>
         <ThemeToggleDropdownItem
           className='gap-[0.95rem]'
-          itemTheme={Theme.System}
+          itemTheme={Theme.SYSTEM}
           selectedTheme={selectedTheme}
-          onClick={() => handleThemeChange(Theme.System)}
+          onClick={() => handleThemeChange(Theme.SYSTEM)}
         >
           <Image
             src={gearIconBlack}
             width={27}
             height={27}
             alt='Gear icon'
-            className='size-[1.3rem]  translate-x-[0.13rem]  translate-y-[-0.031rem]  md:size-6'
+            className='size-[1.3rem]  translate-x-[0.13rem]
+                       translate-y-[-0.031rem]  md:size-6  dark:hidden'
           />
-          <p className='select-none'>System</p>
+          <Image
+            src={gearIconWhite}
+            width={27}
+            height={27}
+            alt='Gear icon'
+            className='hidden  size-[1.3rem]  translate-x-[0.13rem]
+                       translate-y-[-0.031rem]  md:size-6  dark:inline-block'
+          />
+          <p className='select-none  dark:text-white'>System</p>
         </ThemeToggleDropdownItem>
       </ul>
     </div>

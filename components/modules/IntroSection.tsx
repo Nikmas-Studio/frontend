@@ -217,9 +217,12 @@ function IntroSection(): ReactElement {
       >
         <h1
           aria-hidden='true'
-          className='translate-x-[-1.5px]  sm:translate-x-[-2px]  md:translate-x-[-3px]  translate-y-[-4px]  select-none  text-[11.5vw]  
-                      leading-none  sm:text-[9vw]  md:translate-y-[-5px]  lg:translate-x-[-5px]  lg:translate-y-[-7px]  xl:translate-y-[-7px]  xl:text-[7vw]
-                      2xl:text-[107.45px]'
+          className='translate-x-[-1.5px]  translate-y-[-4px]  select-none  
+                     text-[11.5vw]  leading-none  text-black  
+                     sm:translate-x-[-2px]  sm:text-[9vw]  md:translate-x-[-3px]
+                     md:translate-y-[-5px]  lg:translate-x-[-5px]  
+                     lg:translate-y-[-7px]  xl:translate-y-[-7px]  xl:text-[7vw]
+                     2xl:text-[107.45px]  dark:text-white'
         >
           <IntroDescrLine text='Next-gen' dataElement='studio-intro-next-gen' />
           <br />
@@ -255,8 +258,10 @@ function IntroSection(): ReactElement {
         </h1>
         <div
           data-element='studio-intro-spine'
-          className='hidden  h-[51.5vw]  w-[7vw]  rounded-[1.5vw]  bg-black  sm:block  xl:h-[39.95vw]  xl:w-[4.3vw]  
-                     xl:rounded-[1vw]  2xl:h-[614.531px]  2xl:w-[66px]  2xl:rounded-[15px]'
+          className='hidden  h-[51.5vw]  w-[7vw]  rounded-[1.5vw]  bg-black  
+                     sm:block  xl:h-[39.95vw]  xl:w-[4.3vw]  xl:rounded-[1vw]  
+                     2xl:h-[614.531px]  2xl:w-[66px]  2xl:rounded-[15px]  
+                     dark:bg-white'
         ></div>
       </MainContainer>
     </section>

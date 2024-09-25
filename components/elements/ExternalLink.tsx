@@ -16,7 +16,7 @@ function ExternalLink({
 }: ExternalLinkProps): ReactElement {
   const classes = classNames(
     {
-      'underlined-link': defaultTextLink,
+      'default-underlined-link': defaultTextLink,
     },
     className,
   );

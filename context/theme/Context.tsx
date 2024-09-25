@@ -17,11 +17,11 @@ interface ThemeDispatchContextProps {
   setSelectedTheme: Dispatch<SetStateAction<Theme>>;
 }
 
-const ThemeContext =
-  createContext<ThemeContextProps | null>(null);
+const ThemeContext = createContext<ThemeContextProps | null>(null);
 
-const ThemeDispatchContext =
-  createContext<ThemeDispatchContextProps | null>(null);
+const ThemeDispatchContext = createContext<ThemeDispatchContextProps | null>(
+  null,
+);
 
 export function ThemeProvider({
   children,
@@ -32,39 +32,35 @@ export function ThemeProvider({
     const savedTheme = localStorage.getItem('theme');
 
     switch (savedTheme) {
-      case Theme.Light:
-        return Theme.Light;
-      case Theme.Dark:
-        return Theme.Dark;
+      case Theme.LIGHT:
+        return Theme.LIGHT;
+      case Theme.DARK:
+        return Theme.DARK;
       default:
-        return Theme.System;
+        return Theme.SYSTEM;
     }
   });
 
   return (
     <ThemeContext.Provider value={{ selectedTheme }}>
-      <ThemeDispatchContext.Provider
-        value={{ setSelectedTheme }}
-      >
+      <ThemeDispatchContext.Provider value={{ setSelectedTheme }}>
         {children}
       </ThemeDispatchContext.Provider>
     </ThemeContext.Provider>
   );
 }
 
-export function useTheme() {
+export function useTheme(): ThemeContextProps {
   const context = useContext(ThemeContext);
 
   if (!context) {
-    throw new Error(
-      'ThemeContext must be used within a ThemeContextProvider',
-    );
+    throw new Error('ThemeContext must be used within a ThemeContextProvider');
   }
 
   return context;
 }
 
-export function useThemeDispatch() {
+export function useThemeDispatch(): ThemeDispatchContextProps {
   const context = useContext(ThemeDispatchContext);
 
   if (!context) {

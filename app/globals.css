@@ -12,8 +12,10 @@ body {
 }
 
 @layer components {
-  .underlined-link {
-    @apply border-b  border-b-gray-200  pb-[0.08rem]  transition-all  hover:border-b-black;
+  .default-underlined-link {
+    @apply text-black  dark:text-white  border-b border-b-[#EBEBEB]
+           dark:border-b-[#414141]  pb-[0.08rem]  transition-all  
+           hover:border-b-black  dark:hover:border-b-white;
   }
 }
 

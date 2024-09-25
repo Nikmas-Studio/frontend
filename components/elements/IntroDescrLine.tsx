@@ -13,8 +13,11 @@ function IntroDescrLine({
   dataElement,
   isAnimated: animated = false,
 }: IntroDescrLineProps): ReactElement {
-  const animatedClasses = `before:pointer-events-none  before:absolute  before:inset-0
-      before:z-10  before:shadow-[inset_0_0_5px_rgba(255,255,255,1)]  before:content-['']  `;
+  const animatedClasses = `before:pointer-events-none  before:absolute  
+                           before:inset-0  before:z-10
+                           before:shadow-[inset_0_0_5px_rgba(255,255,255,1)]
+                           dark:before:shadow-[inset_0_0_5px_rgba(0,0,0,1)]
+                           before:content-['']  `;
 
   const wrapperClasses = classNames(
     'relative  inline-block  overflow-hidden  align-top',

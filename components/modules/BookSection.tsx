@@ -1,7 +1,10 @@
 'use client';
 
 import { useBookSectionStateDispatch } from '@/context/book-section/Context';
+import { useTheme } from '@/context/theme/Context';
+import bookCoverDark from '@/public/images/git-and-github-book-cover-dark.jpg';
 import bookCoverLight from '@/public/images/git-and-github-book-cover-light.jpg';
+import { Theme } from '@/types/theme';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
@@ -13,18 +16,33 @@ import MainContainer from '../elements/MainContainer';
 gsap.registerPlugin(ScrollTrigger);
 
 function BookSection(): ReactElement {
-  const bookRef = useRef<HTMLImageElement | null>(null);
+  const lightBookCoverRef = useRef<HTMLImageElement | null>(null);
+  const darkBookCoverRef = useRef<HTMLImageElement | null>(null);
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const anchorRef = useRef<HTMLAnchorElement | null>(null);
   const { setBookSectionInViewport } = useBookSectionStateDispatch();
   const scaleRef = useRef(2);
+  const { selectedTheme } = useTheme();
+  const selectedThemeRef = useRef(selectedTheme);
+
+  useEffect(() => {
+    selectedThemeRef.current = selectedTheme;
+
+    if (selectedThemeRef.current === Theme.LIGHT) {
+      scaleRef.current = calcScale();
+    }
+  }, [selectedTheme]);
 
   useEffect(() => {
     function handleResize(): void {
-      scaleRef.current = calcScale();
+      if (selectedThemeRef.current === Theme.LIGHT) {
+        scaleRef.current = calcScale();
+      }
     }
 
-    scaleRef.current = calcScale();
+    if (selectedThemeRef.current === Theme.LIGHT) {
+      scaleRef.current = calcScale();
+    }
 
     window.addEventListener('resize', handleResize);
 
@@ -34,7 +52,9 @@ function BookSection(): ReactElement {
   }, []);
 
   function calcScale(): number {
-    const imageWidth = bookRef.current?.width;
+    const imageWidth = lightBookCoverRef.current!.width;
+    console.log('imageWidth', imageWidth);
+
     const viewportWidth = window.innerWidth;
     let scale = viewportWidth / imageWidth!;
     scale = scale + scale * 0.1;
@@ -67,9 +87,18 @@ function BookSection(): ReactElement {
     );
 
     bookTimeline.from(
-      bookRef.current,
+      lightBookCoverRef.current,
       {
         scale: scaleRef.current,
+        opacity: 0,
+      },
+      0,
+    );
+
+    bookTimeline.from(
+      darkBookCoverRef.current,
+      {
+        scale: 0,
         opacity: 0,
       },
       0,
@@ -98,10 +127,14 @@ function BookSection(): ReactElement {
   return (
     <section
       ref={sectionRef}
-      className='w-screen  pb-32  pt-16  [background:linear-gradient(135deg,#ff5013,#271ad3)]'
+      className='w-screen  pb-32  pt-16
+                [background:linear-gradient(135deg,#ff5013,#271ad3)]'
     >
       <MainContainer className='flex  flex-col  items-center  !px-12'>
-        <h2 className='mb-8  text-3xl  font-bold  text-white  sm:text-[2.7rem]'>
+        <h2
+          className='mb-8  text-3xl  font-bold  text-white  
+                       sm:text-[2.7rem]  dark:text-black'
+        >
           Our first book
         </h2>
         <Link
@@ -110,10 +143,21 @@ function BookSection(): ReactElement {
           href='/book-master-git-and-github'
         >
           <Image
-            ref={bookRef}
+            ref={lightBookCoverRef}
             src={bookCoverLight}
             alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
-            className='max-h-[1000px]  w-full  rounded-[3vw]  sm:h-[65vh]  sm:w-auto  sm:rounded-[1.5vh]'
+            className='max-h-[1000px]  w-full  rounded-[3vw]  sm:h-[65vh]  
+                       sm:w-auto  
+                       sm:rounded-[1.5vh]  dark:hidden'
+            priority
+          />
+          <Image
+            ref={darkBookCoverRef}
+            src={bookCoverDark}
+            alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
+            className='hidden  max-h-[1000px]  w-full  rounded-[3vw]  
+                       sm:h-[65vh]  sm:w-auto  sm:rounded-[1.5vh]  
+                       dark:inline-block'
             priority
           />
         </Link>

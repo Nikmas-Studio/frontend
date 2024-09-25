@@ -72,7 +72,8 @@ function HBASection(): ReactElement {
       <MainContainer>
         <div
           ref={hbaBlock}
-          className='relative mx-auto  aspect-square  w-[55vw]  sm:w-[45vw]  xl:w-[30vw]  2xl:w-[460.5px]'
+          className='relative mx-auto  aspect-square  w-[55vw]  sm:w-[45vw]  
+                     xl:w-[30vw]  2xl:w-[460.5px]'
         >
           <svg
             ref={circleRef}
@@ -81,16 +82,32 @@ function HBASection(): ReactElement {
             viewBox='0 0 520 520'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
-            className='stroke-[#4CBB17]  stroke-[8px]  [stroke-dasharray:0.01,20.01]  [stroke-linecap:round]  lg:stroke-[7px]'
+            className='stroke-[#4CBB17]  stroke-[8px]  
+                       [stroke-dasharray:0.01,20.01]  [stroke-linecap:round]
+                       lg:stroke-[7px]'
           >
             <circle cx='260' cy='260' r='255' />
           </svg>
           <div
-            className='absolute  left-1/2  top-1/2  z-20  flex
-                       -translate-x-1/2  translate-y-[-85%]  items-end  gap-[1.5vw]  xl:gap-[1.4vw]  2xl:gap-[21.49px]'
+            className='absolute  left-1/2  top-1/2  z-20  flex  -translate-x-1/2
+                       translate-y-[-85%]  items-end  gap-[1.5vw]  
+                       xl:gap-[1.4vw]  2xl:gap-[21.49px]'
           >
-            <p className='flex  translate-y-[2vw]  items-end gap-[1.2vw] text-[9vw]  font-bold  leading-none  sm:translate-y-[1.6vw]  sm:text-[7vw]  lg:text-[6.5vw]  xl:translate-y-[1.02vw]  xl:gap-[1.1vw]  xl:text-[4.5vw]  2xl:translate-y-[15.657px]  2xl:gap-[16.885px]  2xl:text-[69.075px]'>
-              <span className='[-webkit-text-fill-color:white]  [-webkit-text-stroke-color:rgba(76,187,23,0.3)]  [-webkit-text-stroke-width:1px]  '>
+            <p
+              className='flex  translate-y-[2vw]  items-end gap-[1.2vw] 
+                         text-[9vw]  font-bold  leading-none
+                         sm:translate-y-[1.6vw]  sm:text-[7vw]  lg:text-[6.5vw]
+                         xl:translate-y-[1.02vw]  xl:gap-[1.1vw]
+                         xl:text-[4.5vw]  2xl:translate-y-[15.657px]
+                         2xl:gap-[16.885px]  2xl:text-[69.075px]'
+            >
+              <span
+                className='[-webkit-text-fill-color:white]  
+                           [-webkit-text-stroke-color:rgba(76,187,23,0.3)]
+                           [-webkit-text-stroke-width:1px]
+                           dark:[-webkit-text-fill-color:black]
+                           dark:[-webkit-text-stroke-color:rgba(76,187,23,0.5)]'
+              >
                 5
               </span>
               <span className='text-[#4CBB17]'>HBA</span>

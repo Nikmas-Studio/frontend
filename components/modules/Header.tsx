@@ -2,8 +2,7 @@
 
 import { useBookSectionState } from '@/context/book-section/Context';
 import { useTheme } from '@/context/theme/Context';
-import { Theme } from '@/types/theme';
-import getSystemTheme from '@/utils/getSystemTheme';
+import darkThemeIsSelected from '@/utils/dark-theme-is-selected';
 import { useGSAP } from '@gsap/react';
 import classNames from 'classnames';
 import gsap from 'gsap';
@@ -35,10 +34,7 @@ function Header(): ReactElement {
         return 'linear-gradient(135deg,#ff5013,#271ad3)';
       }
 
-      if (
-        selectedTheme === Theme.Dark ||
-        (selectedTheme === Theme.System && getSystemTheme() === Theme.Dark)
-      ) {
+      if (darkThemeIsSelected(selectedTheme)) {
         return 'linear-gradient(135deg,#000000,#000000)';
       } else {
         return 'linear-gradient(135deg,#ffffff,#ffffff)';
@@ -50,10 +46,7 @@ function Header(): ReactElement {
         return 'white';
       }
 
-      if (
-        selectedTheme === Theme.Dark ||
-        (selectedTheme === Theme.System && getSystemTheme() === Theme.Dark)
-      ) {
+      if (darkThemeIsSelected(selectedTheme)) {
         return 'white';
       } else {
         return 'black';
@@ -94,10 +87,15 @@ function Header(): ReactElement {
   }, []);
 
   const headerClasses = classNames(
-    'pt-4  pb-6  md:pt-5  md:pb-7  fixed  left-0  right-0  top-0  border-b  bg-white  z-50  [background-image:linear-gradient(135deg,#ffffff,#ffffff)]  dark:[background-image:linear-gradient(135deg,#000000,#000000)]',
+    `pt-4  pb-6  md:pt-5  md:pb-7  fixed  left-0  right-0  top-0  border-b  
+     z-50  [background-image:linear-gradient(135deg,#ffffff,#ffffff)]
+     dark:[background-image:linear-gradient(135deg,#000000,#000000)]`,
     {
-      'border-b-grey-200': headerIsScrolled,
-      'border-b-white': !headerIsScrolled,
+      'border-b-[#EBEBEB]  dark:border-b-[#414141]':
+        headerIsScrolled && !bookSectionInViewport,
+      'border-b-[#EBEBEB]  dark:border-b-[#EBEBEB]':
+        headerIsScrolled && bookSectionInViewport,
+      'border-b-white  dark:border-b-black': !headerIsScrolled,
     },
   );
 
