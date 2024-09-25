@@ -29,7 +29,10 @@ export function ThemeProvider({
   children: ReactNode;
 }): ReactElement {
   const [selectedTheme, setSelectedTheme] = useState(() => {
-    const savedTheme = localStorage.getItem('theme');
+    let savedTheme: string | null = String(Theme.SYSTEM);
+    if (typeof window !== 'undefined') {
+      savedTheme = localStorage.getItem('theme');
+    }
 
     switch (savedTheme) {
       case Theme.LIGHT:
