@@ -11,7 +11,7 @@ import MainContainer from '../elements/MainContainer';
 gsap.registerPlugin(ScrollTrigger);
 
 function HBASection(): ReactElement {
-  const circleRef = useRef<SVGSVGElement | null>(null);
+  const circleRef = useRef<HTMLDivElement | null>(null);
   const hbaSectionRef = useRef<HTMLElement | null>(null);
   const hbaBlock = useRef<HTMLDivElement | null>(null);
 
@@ -75,7 +75,7 @@ function HBASection(): ReactElement {
           className='relative mx-auto  aspect-square  w-[55vw]  sm:w-[45vw]  
                      xl:w-[30vw]  2xl:w-[460.5px]'
         >
-          <svg
+          {/* <svg
             ref={circleRef}
             width='100%'
             height='100%'
@@ -87,7 +87,11 @@ function HBASection(): ReactElement {
                        lg:stroke-[7px]'
           >
             <circle cx='260' cy='260' r='255' />
-          </svg>
+          </svg> */}
+          <div
+            ref={circleRef}
+            className='size-full  rounded-full  border-8  border-dotted  border-[#4CBB17]  lg:border-[7px]'
+          ></div>
           <div
             className='absolute  left-1/2  top-1/2  z-20  flex  -translate-x-1/2
                        translate-y-[-85%]  items-end  gap-[1.5vw]  
