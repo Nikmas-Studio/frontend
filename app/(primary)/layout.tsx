@@ -36,15 +36,20 @@ function MainLayout({ children }: { children: ReactNode }): ReactElement {
   return (
     <html lang='en' className={`${gilroy.className}`}>
       <head>
-        <Script id='init-theme'>
+        <Script id='init-theme' strategy='beforeInteractive'>
           {`
+            console.log('init theme');
+            console.log('prefered theme', window.matchMedia('(prefers-color-scheme: dark)').matches);
+            console.log('local storage theme', localStorage.theme);
             if (
               localStorage.theme === 'dark' ||
               (!('theme' in localStorage) &&
                 window.matchMedia('(prefers-color-scheme: dark)').matches)
             ) {
+              console.log('documentElement add dark', document.documentElement);
               document.documentElement.classList.add('dark');
             } else {
+              console.log('documentElement remove dark', document.documentElement);
               document.documentElement.classList.remove('dark');
             }
             

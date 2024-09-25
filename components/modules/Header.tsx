@@ -2,7 +2,7 @@
 
 import { useBookSectionState } from '@/context/book-section/Context';
 import { useTheme } from '@/context/theme/Context';
-import darkThemeIsSelected from '@/utils/dark-theme-is-selected';
+import { darkThemeIsSelected } from '@/utils/check-selected-theme';
 import { useGSAP } from '@gsap/react';
 import classNames from 'classnames';
 import gsap from 'gsap';
@@ -13,14 +13,10 @@ import HeaderButtons from './HeaderButtons';
 
 function Header(): ReactElement {
   function pageIsScrolled(): boolean {
-    if (typeof window !== 'undefined') {
-      return window.scrollY > 0;
-    }
-
-    return false;
+    return window.scrollY > 0;
   }
 
-  const [headerIsScrolled, setHeaderIsScrolled] = useState(pageIsScrolled);
+  const [headerIsScrolled, setHeaderIsScrolled] = useState(false);
   const headerElementRef = useRef<HTMLHeadElement | null>(null);
   const headerLogoElementRef = useRef<HTMLParagraphElement | null>(null);
   const { selectedTheme } = useTheme();
@@ -84,6 +80,8 @@ function Header(): ReactElement {
     const onScroll = (): void => {
       setHeaderIsScrolled(pageIsScrolled());
     };
+
+    onScroll();
 
     window.addEventListener('scroll', onScroll);
 

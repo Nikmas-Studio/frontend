@@ -6,6 +6,7 @@ import {
   ReactNode,
   SetStateAction,
   useContext,
+  useEffect,
   useState,
 } from 'react';
 
@@ -28,21 +29,22 @@ export function ThemeProvider({
 }: {
   children: ReactNode;
 }): ReactElement {
-  const [selectedTheme, setSelectedTheme] = useState(() => {
-    let savedTheme: string | null = String(Theme.SYSTEM);
-    if (typeof window !== 'undefined') {
-      savedTheme = localStorage.getItem('theme');
-    }
+  const [selectedTheme, setSelectedTheme] = useState(Theme.SYSTEM);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
 
     switch (savedTheme) {
       case Theme.LIGHT:
-        return Theme.LIGHT;
+        setSelectedTheme(Theme.LIGHT);
+        return;
       case Theme.DARK:
-        return Theme.DARK;
+        setSelectedTheme(Theme.DARK);
+        return;
       default:
-        return Theme.SYSTEM;
+        setSelectedTheme(Theme.SYSTEM);
     }
-  });
+  }, []);
 
   return (
     <ThemeContext.Provider value={{ selectedTheme }}>

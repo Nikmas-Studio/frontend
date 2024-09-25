@@ -1,5 +1,3 @@
-'use client';
-
 import { ReactElement } from 'react';
 import GuestAccountIcon from '../elements/GuestAccountIcon';
 import ThemeToggle from '../elements/ThemeToggle';

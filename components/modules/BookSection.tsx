@@ -4,13 +4,13 @@ import { useBookSectionStateDispatch } from '@/context/book-section/Context';
 import { useTheme } from '@/context/theme/Context';
 import bookCoverDark from '@/public/images/git-and-github-book-cover-dark.jpg';
 import bookCoverLight from '@/public/images/git-and-github-book-cover-light.jpg';
-import { Theme } from '@/types/theme';
+import { lightThemeIsSelected } from '@/utils/check-selected-theme';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ReactElement, useEffect, useRef } from 'react';
+import { ReactElement, useEffect, useRef, useState } from 'react';
 import MainContainer from '../elements/MainContainer';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -21,28 +21,26 @@ function BookSection(): ReactElement {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const anchorRef = useRef<HTMLAnchorElement | null>(null);
   const { setBookSectionInViewport } = useBookSectionStateDispatch();
-  const scaleRef = useRef(2);
+  const [scale, setScale] = useState(3);
   const { selectedTheme } = useTheme();
   const selectedThemeRef = useRef(selectedTheme);
 
   useEffect(() => {
     selectedThemeRef.current = selectedTheme;
 
-    if (selectedThemeRef.current === Theme.LIGHT) {
-      scaleRef.current = calcScale();
+    if (lightThemeIsSelected(selectedThemeRef.current)) {
+      setScale(calcScale());
     }
   }, [selectedTheme]);
 
   useEffect(() => {
     function handleResize(): void {
-      if (selectedThemeRef.current === Theme.LIGHT) {
-        scaleRef.current = calcScale();
+      if (lightThemeIsSelected(selectedThemeRef.current)) {
+        setScale(calcScale());
       }
     }
 
-    if (selectedThemeRef.current === Theme.LIGHT) {
-      scaleRef.current = calcScale();
-    }
+    handleResize();
 
     window.addEventListener('resize', handleResize);
 
@@ -53,7 +51,6 @@ function BookSection(): ReactElement {
 
   function calcScale(): number {
     const imageWidth = lightBookCoverRef.current!.width;
-    console.log('imageWidth', imageWidth);
 
     const viewportWidth = window.innerWidth;
     let scale = viewportWidth / imageWidth!;
@@ -65,64 +62,69 @@ function BookSection(): ReactElement {
     return scale;
   }
 
-  useGSAP(() => {
-    const headerElement = document.getElementById('main-header');
-    const headerHeight = headerElement?.offsetHeight;
+  useGSAP(
+    () => {
+      const headerElement = document.getElementById('main-header');
+      const headerHeight = headerElement?.offsetHeight;
 
-    const bookTimeline = gsap.timeline({
-      scrollTrigger: {
+      console.log('scale in useGSAP', scale);
+
+      const bookTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 400',
+          scrub: true,
+          end: '+=300',
+        },
+      });
+
+      bookTimeline.to(
+        anchorRef.current,
+        {
+          pointerEvents: 'auto',
+        },
+        0,
+      );
+
+      bookTimeline.from(
+        lightBookCoverRef.current,
+        {
+          scale,
+          opacity: 0,
+        },
+        0,
+      );
+
+      bookTimeline.from(
+        darkBookCoverRef.current,
+        {
+          scale: 0,
+          opacity: 0,
+        },
+        0,
+      );
+
+      ScrollTrigger.create({
         trigger: sectionRef.current,
-        start: 'top 400',
-        scrub: true,
-        end: '+=300',
-      },
-    });
-
-    bookTimeline.to(
-      anchorRef.current,
-      {
-        pointerEvents: 'auto',
-      },
-      0,
-    );
-
-    bookTimeline.from(
-      lightBookCoverRef.current,
-      {
-        scale: scaleRef.current,
-        opacity: 0,
-      },
-      0,
-    );
-
-    bookTimeline.from(
-      darkBookCoverRef.current,
-      {
-        scale: 0,
-        opacity: 0,
-      },
-      0,
-    );
-
-    ScrollTrigger.create({
-      trigger: sectionRef.current,
-      start: `top ${headerHeight}`,
-      end: `bottom ${headerHeight}`,
-      toggleActions: 'play reverse play reverse',
-      onEnter: () => {
-        setBookSectionInViewport(true);
-      },
-      onEnterBack: () => {
-        setBookSectionInViewport(true);
-      },
-      onLeave: () => {
-        setBookSectionInViewport(false);
-      },
-      onLeaveBack: () => {
-        setBookSectionInViewport(false);
-      },
-    });
-  }, []);
+        start: `top ${headerHeight}`,
+        end: `bottom ${headerHeight}`,
+        toggleActions: 'play reverse play reverse',
+        onEnter: () => {
+          setBookSectionInViewport(true);
+        },
+        onEnterBack: () => {
+          setBookSectionInViewport(true);
+        },
+        onLeave: () => {
+          setBookSectionInViewport(false);
+        },
+        onLeaveBack: () => {
+          setBookSectionInViewport(false);
+        },
+      });
+    },
+    { dependencies: [scale], revertOnUpdate: true },
+  );
 
   return (
     <section

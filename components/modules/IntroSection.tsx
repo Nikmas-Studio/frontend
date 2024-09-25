@@ -179,6 +179,7 @@ function IntroSection(): ReactElement {
           wrapper.addEventListener('mouseleave', handleMouseLeave);
           wrapper.addEventListener('click', handleClick);
         },
+        delay: 0.5,
       });
 
       initialTimelineLines.forEach((element) => {

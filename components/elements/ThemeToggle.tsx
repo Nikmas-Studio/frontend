@@ -13,7 +13,10 @@ import moonIconBlack from '@/public/images/moon-icon-black.png';
 import moonIconWhite from '@/public/images/moon-icon-white.png';
 import sunIconBlack from '@/public/images/sun-icon-black.png';
 import sunIconWhite from '@/public/images/sun-icon-white.png';
-import getSystemTheme from '@/utils/get-system-theme';
+import {
+  darkThemeIsSelected,
+  lightThemeIsSelected,
+} from '@/utils/check-selected-theme';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
@@ -32,26 +35,15 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
   const darkModeWhiteToggleIconRef = useRef<HTMLImageElement | null>(null);
 
   function showLightModeBlackToggleIcon(): boolean {
-    return (
-      (selectedTheme === Theme.LIGHT ||
-        (selectedTheme === Theme.SYSTEM && systemTheme === Theme.LIGHT)) &&
-      !bookSectionInViewport
-    );
+    return lightThemeIsSelected(selectedTheme) && !bookSectionInViewport;
   }
 
   function showLightModeWhiteToggleIcon(): boolean {
-    return (
-      (selectedTheme === Theme.LIGHT ||
-        (selectedTheme === Theme.SYSTEM && systemTheme === Theme.LIGHT)) &&
-      bookSectionInViewport
-    );
+    return lightThemeIsSelected(selectedTheme) && bookSectionInViewport;
   }
 
   function showDarkModeWhiteToggleIcon(): boolean {
-    return (
-      selectedTheme === Theme.DARK ||
-      (selectedTheme === Theme.SYSTEM && systemTheme === Theme.DARK)
-    );
+    return darkThemeIsSelected(selectedTheme);
   }
 
   useGSAP(() => {
@@ -84,8 +76,6 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
     previousTheme.current = selectedTheme;
   }, [bookSectionInViewport, selectedTheme]);
 
-  const [systemTheme, setSystemTheme] = useState(getSystemTheme);
-
   useEffect(() => {
     if (
       localStorage.theme === 'dark' ||
@@ -101,7 +91,6 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
   function handleThemeChange(newTheme: Theme): void {
     if (newTheme === Theme.SYSTEM) {
       localStorage.removeItem('theme');
-      setSystemTheme(getSystemTheme);
     } else {
       localStorage.setItem('theme', newTheme);
     }

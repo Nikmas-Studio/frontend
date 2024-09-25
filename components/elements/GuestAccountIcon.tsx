@@ -1,7 +1,9 @@
+'use client';
+
 import { useBookSectionState } from '@/context/book-section/Context';
 import { useTheme } from '@/context/theme/Context';
 import { Theme } from '@/types/theme';
-import darkThemeIsSelected from '@/utils/dark-theme-is-selected';
+import { darkThemeIsSelected } from '@/utils/check-selected-theme';
 import getSystemTheme from '@/utils/get-system-theme';
 import { useGSAP } from '@gsap/react';
 import classNames from 'classnames';
