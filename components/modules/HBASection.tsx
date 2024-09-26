@@ -75,14 +75,14 @@ function HBASection(): ReactElement {
       <MainContainer>
         <div
           ref={hbaBlock}
-          className='relative  mx-auto  aspect-square  w-[55vw]
-                     opacity-0  sm:w-[45vw]  xl:w-[30vw]  xl:translate-x-[-500px]  2xl:w-[460.5px]'
+          className='relative  mx-auto  aspect-square  w-[55vw]  opacity-0
+                     will-change-[transform,opacity]  sm:w-[45vw]  xl:w-[30vw]  xl:translate-x-[-500px]  2xl:w-[460.5px]'
         >
           <Image
             ref={circleRef}
             src={circle}
             alt='Dotted elipse'
-            className='size-full'
+            className='size-full  will-change-transform'
           />
           <div
             className='absolute  left-1/2  top-1/2  z-20  flex  -translate-x-1/2
