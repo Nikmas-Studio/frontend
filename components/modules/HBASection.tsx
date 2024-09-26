@@ -1,6 +1,7 @@
 'use client';
 
 import cakeHBA from '@/public/images/cake-hba.png';
+import circle from '@/public/images/dotted-elipse.svg';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
@@ -11,33 +12,68 @@ import MainContainer from '../elements/MainContainer';
 gsap.registerPlugin(ScrollTrigger);
 
 function HBASection(): ReactElement {
-  const circleRef = useRef<SVGSVGElement | null>(null);
+  const circleRef = useRef<HTMLImageElement | null>(null);
   const hbaSectionRef = useRef<HTMLElement | null>(null);
   const hbaBlock = useRef<HTMLDivElement | null>(null);
 
   useGSAP(() => {
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: hbaSectionRef.current,
-        scrub: true,
-        pin: true,
-        start: 'top 200px',
-        end: '+=1000',
-      },
+    const mm = gsap.matchMedia();
+
+    mm.add('(min-width: 1024px)', () => {
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: hbaSectionRef.current,
+          scrub: true,
+          start: 'top 750',
+          end: '+=550',
+        },
+      });
+
+      timeline
+        .to(
+          hbaBlock.current,
+          {
+            x: 0,
+            opacity: 1,
+          },
+          0,
+        )
+        .to(
+          circleRef.current,
+          {
+            rotation: 90,
+          },
+          0,
+        );
     });
 
-    timeline
-      .to(hbaBlock.current, {
-        x: 0,
-        opacity: 1,
-      })
-      .to(
-        circleRef.current,
-        {
-          rotation: 180,
+    mm.add('(max-width: 1023px)', () => {
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: hbaSectionRef.current,
+          scrub: true,
+          start: 'top 390',
+          end: '+=250',
         },
-        0,
-      );
+      });
+
+      timeline
+        .to(
+          hbaBlock.current,
+          {
+            x: 0,
+            opacity: 1,
+          },
+          0,
+        )
+        .to(
+          circleRef.current,
+          {
+            rotation: 90,
+          },
+          0,
+        );
+    });
   }, []);
 
   return (
@@ -45,22 +81,15 @@ function HBASection(): ReactElement {
       <MainContainer>
         <div
           ref={hbaBlock}
-          className='relative  mx-auto  aspect-square w-[55vw]  translate-x-[-300px]  opacity-0
+          className='relative  mx-auto  aspect-square  w-[55vw]  translate-x-[-300px]  opacity-0
                      sm:w-[45vw]  lg:translate-x-[-800px]  xl:w-[30vw]  2xl:w-[460.5px]'
         >
-          <svg
+          <Image
             ref={circleRef}
-            width='100%'
-            height='100%'
-            viewBox='0 0 520 520'
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-            className='stroke-[#4CBB17]  stroke-[8px]  
-                       [stroke-dasharray:0.01,20.01]
-                       [stroke-linecap:round] lg:stroke-[7px]'
-          >
-            <circle cx='260' cy='260' r='255' />
-          </svg>
+            src={circle}
+            alt='Dotted elipse'
+            className='size-full'
+          />
           <div
             className='absolute  left-1/2  top-1/2  z-20  flex  -translate-x-1/2
                        translate-y-[-85%]  items-end  gap-[1.5vw]  

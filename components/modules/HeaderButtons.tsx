@@ -1,11 +1,23 @@
-import { ReactElement } from 'react';
+import { ReactElement, RefObject } from 'react';
 import GuestAccountIcon from '../elements/GuestAccountIcon';
-import ThemeToggle from '../elements/ThemeToggle';
+import ThemeToggle from './ThemeToggle';
 
-function HeaderButtons(): ReactElement {
+interface HeaderButtonsProps {
+  animationElements: {
+    header: RefObject<HTMLElement>;
+    headerLogo: RefObject<HTMLParagraphElement>;
+  };
+}
+
+function HeaderButtons({
+  animationElements,
+}: HeaderButtonsProps): ReactElement {
   return (
     <div className='flex  items-center  gap-x-5'>
-      <ThemeToggle className='flex-none' />
+      <ThemeToggle
+        animationElements={animationElements}
+        className='flex-none'
+      />
       <GuestAccountIcon className='flex-none' />
     </div>
   );

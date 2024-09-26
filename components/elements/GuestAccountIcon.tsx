@@ -45,15 +45,15 @@ function GuestAccountIcon({ className }: GuestAccountIconProps): ReactElement {
     return bookSectionInViewport ? 'black' : 'white';
   }
 
-  useGSAP(() => {
-    gsap.set(accountIconElementRef.current, {
-      backgroundColor: getAccountIconBackgroundColor(),
-    });
+  // useGSAP(() => {
+  //   gsap.set(accountIconElementRef.current, {
+  //     backgroundColor: getAccountIconBackgroundColor(),
+  //   });
 
-    gsap.set(spineElementRef.current, {
-      backgroundColor: getSpineBackgroundColor(),
-    });
-  }, [selectedTheme]);
+  //   gsap.set(spineElementRef.current, {
+  //     backgroundColor: getSpineBackgroundColor(),
+  //   });
+  // }, [selectedTheme]);
 
   useGSAP(
     () => {
@@ -163,8 +163,13 @@ function GuestAccountIcon({ className }: GuestAccountIconProps): ReactElement {
   );
 
   return (
-    <div ref={accountIconElementRef} className={guestAccountIconClasses}>
+    <div
+      id='header-account-icon'
+      ref={accountIconElementRef}
+      className={guestAccountIconClasses}
+    >
       <div
+        id='header-account-icon-spine'
         ref={spineElementRef}
         className='h-[1.1rem]  w-[0.234em]  translate-y-[-0.03rem]
                    rounded-[0.05rem]  bg-white  dark:bg-black'

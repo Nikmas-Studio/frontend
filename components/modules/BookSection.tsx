@@ -90,7 +90,6 @@ function BookSection(): ReactElement {
   //     },
   //   });
   // }, []);
-
   useGSAP(
     () => {
       const headerElement = document.getElementById('main-header');
@@ -99,10 +98,9 @@ function BookSection(): ReactElement {
       const bookTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: `top ${headerHeight}`,
-          pin: true,
+          start: 'top 400',
           scrub: true,
-          end: '+=1000',
+          end: '+=300',
         },
       });
 
@@ -114,43 +112,42 @@ function BookSection(): ReactElement {
         0,
       );
 
-      bookTimeline.from(
+      bookTimeline.fromTo(
         lightBookCoverRef.current,
         {
           scale,
-          opacity: 0,
+        },
+        {
+          scale: 1,
+          opacity: 1,
         },
         0,
       );
 
-      bookTimeline.from(
+      bookTimeline.to(
         darkBookCoverRef.current,
         {
-          scale: 0,
-          opacity: 0,
+          scale: 1,
+          opacity: 1,
         },
         0,
       );
 
       ScrollTrigger.create({
-        trigger: sectionWrapperRef.current,
+        trigger: sectionRef.current,
         start: `top ${headerHeight}`,
         end: `bottom ${headerHeight}`,
         toggleActions: 'play reverse play reverse',
         onEnter: () => {
-          console.log('enter');
           setBookSectionInViewport(true);
         },
         onEnterBack: () => {
-          console.log('enter back');
           setBookSectionInViewport(true);
         },
         onLeave: () => {
-          console.log('leave');
           setBookSectionInViewport(false);
         },
         onLeaveBack: () => {
-          console.log('leave back');
           setBookSectionInViewport(false);
         },
       });
@@ -184,7 +181,7 @@ function BookSection(): ReactElement {
               ref={lightBookCoverRef}
               src={bookCoverLight}
               alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
-              className='max-h-[1000px]  w-full  rounded-[3vw]
+              className='max-h-[1000px]  w-full  rounded-[3vw]  opacity-0
                        sm:h-[65vh]  sm:w-auto
                        sm:rounded-[1.5vh]  dark:hidden'
               priority
@@ -193,7 +190,7 @@ function BookSection(): ReactElement {
               ref={darkBookCoverRef}
               src={bookCoverDark}
               alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
-              className='hidden  max-h-[1000px]  w-full  rounded-[3vw]  
+              className='hidden  max-h-[1000px]  w-full  scale-0  rounded-[3vw]  opacity-0  
                        sm:h-[65vh]  
                        sm:w-auto  sm:rounded-[1.5vh]  dark:inline-block'
               priority

@@ -12,6 +12,7 @@ import {
 
 interface ThemeContextProps {
   selectedTheme: Theme;
+  isManualThemeChange: boolean;
 }
 
 interface ThemeDispatchContextProps {
@@ -30,6 +31,7 @@ export function ThemeProvider({
   children: ReactNode;
 }): ReactElement {
   const [selectedTheme, setSelectedTheme] = useState(Theme.SYSTEM);
+  const [isManualThemeChange, setIsManualThemeChange] = useState(false);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
@@ -44,12 +46,14 @@ export function ThemeProvider({
       default:
         setSelectedTheme(Theme.SYSTEM);
     }
-
-    // document.body.classList.add('body-visible');
   }, []);
+  
+  function handleSetSelectedTheme(theme: Theme): void {
+    
+  }
 
   return (
-    <ThemeContext.Provider value={{ selectedTheme }}>
+    <ThemeContext.Provider value={{ selectedTheme, isManualThemeChange }}>
       <ThemeDispatchContext.Provider value={{ setSelectedTheme }}>
         {children}
       </ThemeDispatchContext.Provider>
