@@ -47,7 +47,6 @@ function MainLayout({ children }: { children: ReactNode }): ReactElement {
                 }
                 console.log(document.body);
                 console.log('add body-visible');
-                document.documentElement.classList.add('body-visible');
               } catch (_) {}
             `,
           }}

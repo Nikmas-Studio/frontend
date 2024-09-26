@@ -13,12 +13,8 @@ body {
 
 @layer components {
   .default-underlined-link {
-    @apply text-black  dark:text-white  border-b border-b-[#EBEBEB]
-           dark:border-b-[#414141]  pb-[0.08rem]  transition-all  
-           hover:border-b-black  dark:hover:border-b-white;
+    @apply text-black  dark:text-white  border-b border-[#EBEBEB]
+           dark:border-[#414141]  pb-[0.08rem]  transition-[border-color]
+           hover:border-black  dark:hover:border-white;
   }
-}
-
-html:not(.body-visible) {
-  visibility: hidden;
 }

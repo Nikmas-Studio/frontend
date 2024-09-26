@@ -17,7 +17,7 @@ function GuestAccountIcon({ className }: GuestAccountIconProps): ReactElement {
   const accountIconElementRef = useRef<HTMLDivElement | null>(null);
   const spineElementRef = useRef<HTMLDivElement | null>(null);
   const bookSectionInViewportStateRef = useRef(bookSectionInViewport);
-  const { selectedTheme } = useTheme();
+  const { selectedTheme, isManualThemeChange } = useTheme();
   const selectedThemeRef = useRef(selectedTheme);
   const bookSectionWasInViewport = useRef(false);
 
@@ -45,15 +45,17 @@ function GuestAccountIcon({ className }: GuestAccountIconProps): ReactElement {
     return bookSectionInViewport ? 'black' : 'white';
   }
 
-  // useGSAP(() => {
-  //   gsap.set(accountIconElementRef.current, {
-  //     backgroundColor: getAccountIconBackgroundColor(),
-  //   });
+  useGSAP(() => {
+    if (isManualThemeChange) {
+      gsap.set(accountIconElementRef.current, {
+        backgroundColor: getAccountIconBackgroundColor(),
+      });
 
-  //   gsap.set(spineElementRef.current, {
-  //     backgroundColor: getSpineBackgroundColor(),
-  //   });
-  // }, [selectedTheme]);
+      gsap.set(spineElementRef.current, {
+        backgroundColor: getSpineBackgroundColor(),
+      });
+    }
+  }, [selectedTheme]);
 
   useGSAP(
     () => {

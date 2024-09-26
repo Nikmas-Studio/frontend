@@ -63,75 +63,52 @@ function BookSection(): ReactElement {
     return scale;
   }
 
-  // useGSAP(() => {
-  //   const headerElement = document.getElementById('main-header');
-  //   const headerHeight = headerElement?.offsetHeight;
-
-  //   ScrollTrigger.create({
-  //     trigger: sectionWrapperRef.current,
-  //     start: `top ${headerHeight}`,
-  //     end: `bottom ${headerHeight}`,
-  //     toggleActions: 'play reverse play reverse',
-  //     onEnter: () => {
-  //       console.log('enter');
-  //       setBookSectionInViewport(true);
-  //     },
-  //     onEnterBack: () => {
-  //       console.log('enter back');
-  //       setBookSectionInViewport(true);
-  //     },
-  //     onLeave: () => {
-  //       console.log('leave');
-  //       setBookSectionInViewport(false);
-  //     },
-  //     onLeaveBack: () => {
-  //       console.log('leave back');
-  //       setBookSectionInViewport(false);
-  //     },
-  //   });
-  // }, []);
   useGSAP(
     () => {
       const headerElement = document.getElementById('main-header');
       const headerHeight = headerElement?.offsetHeight;
 
-      const bookTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 400',
-          scrub: true,
-          end: '+=300',
-        },
+      const mm = gsap.matchMedia();
+
+      mm.add('(min-width: 1280px)', () => {
+        const bookTimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 600',
+            scrub: true,
+            end: '+=520',
+          },
+        });
+
+        bookTimeline.to(
+          anchorRef.current,
+          {
+            pointerEvents: 'auto',
+          },
+          0,
+        );
+
+        bookTimeline.fromTo(
+          lightBookCoverRef.current,
+          {
+            scale,
+          },
+          {
+            scale: 1,
+            opacity: 1,
+          },
+          0,
+        );
+
+        bookTimeline.to(
+          darkBookCoverRef.current,
+          {
+            scale: 1,
+            opacity: 1,
+          },
+          0,
+        );
       });
-
-      bookTimeline.to(
-        anchorRef.current,
-        {
-          pointerEvents: 'auto',
-        },
-        0,
-      );
-
-      bookTimeline.fromTo(
-        lightBookCoverRef.current,
-        {
-          scale,
-        },
-        {
-          scale: 1,
-          opacity: 1,
-        },
-        0,
-      );
-
-      bookTimeline.to(
-        darkBookCoverRef.current,
-        {
-          scale: 1,
-          opacity: 1,
-        },
-        0,
-      );
 
       ScrollTrigger.create({
         trigger: sectionRef.current,
@@ -158,11 +135,68 @@ function BookSection(): ReactElement {
     },
   );
 
+  useGSAP(() => {
+    const mm = gsap.matchMedia();
+
+    mm.add('(max-width: 1279px)', () => {
+      gsap.to(sectionRef.current, {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 320',
+        },
+        opacity: 1,
+        duration: 1.5,
+        ease: 'power2.out',
+      });
+
+      const bookTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 300',
+        },
+      });
+
+      bookTimeline.to(
+        anchorRef.current,
+        {
+          pointerEvents: 'auto',
+          duration: 0,
+        },
+        0,
+      );
+
+      bookTimeline.fromTo(
+        lightBookCoverRef.current,
+        {
+          scale,
+        },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 1.5,
+          ease: 'power2.out',
+        },
+        0,
+      );
+
+      bookTimeline.to(
+        darkBookCoverRef.current,
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 1.5,
+          ease: 'power2.out',
+        },
+        0,
+      );
+    });
+  }, []);
+
   return (
     <div ref={sectionWrapperRef}>
       <section
         ref={sectionRef}
-        className='w-screen  pb-32  pt-16
+        className='opacity-0  xl:opacity-100  w-screen  pb-32  pt-16
                 [background:linear-gradient(135deg,#ff5013,#271ad3)]'
       >
         <MainContainer className='flex  flex-col  items-center  !px-12'>
@@ -181,17 +215,17 @@ function BookSection(): ReactElement {
               ref={lightBookCoverRef}
               src={bookCoverLight}
               alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
-              className='max-h-[1000px]  w-full  rounded-[3vw]  opacity-0
-                       sm:h-[65vh]  sm:w-auto
-                       sm:rounded-[1.5vh]  dark:hidden'
+              className='max-h-[1000px]  w-full  select-none  rounded-[3vw]
+                       opacity-0  will-change-transform sm:h-[65vh]
+                       sm:w-auto  sm:rounded-[1.5vh]  dark:hidden'
               priority
             />
             <Image
               ref={darkBookCoverRef}
               src={bookCoverDark}
               alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
-              className='hidden  max-h-[1000px]  w-full  scale-0  rounded-[3vw]  opacity-0  
-                       sm:h-[65vh]  
+              className='hidden  max-h-[1000px]  w-full  scale-0  select-none  rounded-[3vw]  
+                       opacity-0  will-change-transform  sm:h-[65vh]
                        sm:w-auto  sm:rounded-[1.5vh]  dark:inline-block'
               priority
             />

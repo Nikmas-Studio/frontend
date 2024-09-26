@@ -19,7 +19,7 @@ function HBASection(): ReactElement {
   useGSAP(() => {
     const mm = gsap.matchMedia();
 
-    mm.add('(min-width: 1024px)', () => {
+    mm.add('(min-width: 1280px)', () => {
       const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: hbaSectionRef.current,
@@ -47,13 +47,11 @@ function HBASection(): ReactElement {
         );
     });
 
-    mm.add('(max-width: 1023px)', () => {
+    mm.add('(max-width: 1279px)', () => {
       const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: hbaSectionRef.current,
-          scrub: true,
           start: 'top 390',
-          end: '+=250',
         },
       });
 
@@ -63,6 +61,8 @@ function HBASection(): ReactElement {
           {
             x: 0,
             opacity: 1,
+            duration: 1.5,
+            ease: 'power2.out',
           },
           0,
         )
@@ -70,6 +70,8 @@ function HBASection(): ReactElement {
           circleRef.current,
           {
             rotation: 90,
+            duration: 1.5,
+            ease: 'power2.out',
           },
           0,
         );
@@ -77,12 +79,15 @@ function HBASection(): ReactElement {
   }, []);
 
   return (
-    <section ref={hbaSectionRef} className='mb-32  mt-16  lg:mb-40  lg:mt-24'>
+    <section
+      ref={hbaSectionRef}
+      className='pointer-events-none  mb-32  mt-16  select-none  lg:mb-40  lg:mt-24'
+    >
       <MainContainer>
         <div
           ref={hbaBlock}
-          className='relative  mx-auto  aspect-square  w-[55vw]  translate-x-[-300px]  opacity-0
-                     sm:w-[45vw]  lg:translate-x-[-800px]  xl:w-[30vw]  2xl:w-[460.5px]'
+          className='relative  mx-auto  aspect-square  w-[55vw]  translate-x-[-300px] 
+                     opacity-0  sm:w-[45vw]  xl:w-[30vw]  xl:translate-x-[-500px]  2xl:w-[460.5px]'
         >
           <Image
             ref={circleRef}

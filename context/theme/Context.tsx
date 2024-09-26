@@ -1,10 +1,8 @@
 import { Theme } from '@/types/theme';
 import {
   createContext,
-  Dispatch,
   ReactElement,
   ReactNode,
-  SetStateAction,
   useContext,
   useEffect,
   useState,
@@ -16,7 +14,7 @@ interface ThemeContextProps {
 }
 
 interface ThemeDispatchContextProps {
-  setSelectedTheme: Dispatch<SetStateAction<Theme>>;
+  setSelectedTheme: (newTheme: Theme) => void;
 }
 
 const ThemeContext = createContext<ThemeContextProps | null>(null);
@@ -47,14 +45,23 @@ export function ThemeProvider({
         setSelectedTheme(Theme.SYSTEM);
     }
   }, []);
-  
-  function handleSetSelectedTheme(theme: Theme): void {
-    
+
+  function handleSetSelectedTheme(newTheme: Theme): void {
+    if (newTheme === Theme.SYSTEM) {
+      localStorage.removeItem('theme');
+    } else {
+      localStorage.setItem('theme', newTheme);
+    }
+
+    setSelectedTheme(newTheme);
+    setIsManualThemeChange(true);
   }
 
   return (
     <ThemeContext.Provider value={{ selectedTheme, isManualThemeChange }}>
-      <ThemeDispatchContext.Provider value={{ setSelectedTheme }}>
+      <ThemeDispatchContext.Provider
+        value={{ setSelectedTheme: handleSetSelectedTheme }}
+      >
         {children}
       </ThemeDispatchContext.Provider>
     </ThemeContext.Provider>

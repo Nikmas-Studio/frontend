@@ -2,7 +2,7 @@ import useOutsideClick from '@/hooks/use-outside-click';
 import { Theme } from '@/types/theme';
 import classNames from 'classnames';
 import Image from 'next/image';
-import { ReactElement, RefObject, useEffect, useRef, useState } from 'react';
+import { ReactElement, useEffect, useRef, useState } from 'react';
 import ThemeToggleDropdownItem from '../elements/ThemeToggleDropdownItem';
 
 import { useBookSectionState } from '@/context/book-section/Context';
@@ -13,31 +13,17 @@ import moonIconBlack from '@/public/images/moon-icon-black.png';
 import moonIconWhite from '@/public/images/moon-icon-white.png';
 import sunIconBlack from '@/public/images/sun-icon-black.png';
 import sunIconWhite from '@/public/images/sun-icon-white.png';
-import {
-  darkThemeIsSelected,
-  lightThemeIsSelected,
-} from '@/utils/check-selected-theme';
-import {
-  getBackgroundImage,
-  getHeaderLogoColor,
-} from '@/utils/get-header-properties';
+import { lightThemeIsSelected } from '@/utils/check-selected-theme';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
 interface ThemeToggleProps {
   className?: string;
-  animationElements: {
-    header: RefObject<HTMLElement>;
-    headerLogo: RefObject<HTMLParagraphElement>;
-  };
 }
 
-function ThemeToggle({
-  className,
-  animationElements,
-}: ThemeToggleProps): ReactElement {
+function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
   const [dropdownIsOpened, setDropdownIsOpened] = useState(false);
-  const { selectedTheme } = useTheme();
+  const { selectedTheme, isManualThemeChange } = useTheme();
   const { setSelectedTheme } = useThemeDispatch();
   const { bookSectionInViewport } = useBookSectionState();
   const lightModeBlackToggleIconRef = useRef<HTMLImageElement | null>(null);
@@ -45,12 +31,12 @@ function ThemeToggle({
   const darkModeWhiteToggleIconRef = useRef<HTMLImageElement | null>(null);
   const bookSectionWasInViewport = useRef(false);
 
-  function showLightModeBlackToggleIcon(theme: Theme): boolean {
-    return lightThemeIsSelected(theme) && !bookSectionInViewport;
+  function showLightModeBlackToggleIcon(): boolean {
+    return lightThemeIsSelected(selectedTheme) && !bookSectionInViewport;
   }
 
-  function showLightModeWhiteToggleIcon(theme: Theme): boolean {
-    return lightThemeIsSelected(theme) && bookSectionInViewport;
+  function showLightModeWhiteToggleIcon(): boolean {
+    return lightThemeIsSelected(selectedTheme) && bookSectionInViewport;
   }
 
   useGSAP(
@@ -60,7 +46,7 @@ function ThemeToggle({
       }
 
       if (bookSectionWasInViewport.current) {
-        if (showLightModeBlackToggleIcon(selectedTheme)) {
+        if (showLightModeBlackToggleIcon()) {
           gsap.to(lightModeBlackToggleIconRef.current, {
             opacity: 1,
             pointerEvents: 'auto',
@@ -78,7 +64,7 @@ function ThemeToggle({
           });
         }
 
-        if (showLightModeWhiteToggleIcon(selectedTheme)) {
+        if (showLightModeWhiteToggleIcon()) {
           gsap.to(lightModeWhiteToggleIconRef.current, {
             opacity: 1,
             pointerEvents: 'auto',
@@ -114,86 +100,39 @@ function ThemeToggle({
     }
   }, [selectedTheme]);
 
-  function getAccountIconBackgroundColor(theme: Theme): string {
-    if (darkThemeIsSelected(theme)) {
-      return 'white';
+  useGSAP(() => {
+    if (isManualThemeChange) {
+      if (showLightModeBlackToggleIcon()) {
+        gsap.set(lightModeBlackToggleIconRef.current, {
+          opacity: 1,
+          pointerEvents: 'auto',
+          zIndex: 50,
+        });
+      } else {
+        gsap.set(lightModeBlackToggleIconRef.current, {
+          opacity: 0,
+          pointerEvents: 'none',
+          zIndex: 'auto',
+        });
+      }
+
+      if (showLightModeWhiteToggleIcon()) {
+        gsap.set(lightModeWhiteToggleIconRef.current, {
+          opacity: 1,
+          pointerEvents: 'auto',
+          zIndex: 50,
+        });
+      } else {
+        gsap.set(lightModeWhiteToggleIconRef.current, {
+          opacity: 0,
+          pointerEvents: 'none',
+          zIndex: 'auto',
+        });
+      }
     }
-
-    return bookSectionInViewport ? 'white' : 'black';
-  }
-
-  function getSpineBackgroundColor(theme: Theme): string {
-    if (darkThemeIsSelected(theme)) {
-      return 'black';
-    }
-
-    return bookSectionInViewport ? 'black' : 'white';
-  }
+  }, [selectedTheme]);
 
   function handleThemeChange(newTheme: Theme): void {
-    if (newTheme === Theme.SYSTEM) {
-      localStorage.removeItem('theme');
-    } else {
-      localStorage.setItem('theme', newTheme);
-    }
-
-    const accountIconElement = document.getElementById('header-account-icon');
-    const accountIconSpineElement = document.getElementById(
-      'header-account-icon-spine',
-    );
-
-    accountIconElement?.style.setProperty(
-      'background-color',
-      getAccountIconBackgroundColor(newTheme),
-    );
-
-    accountIconSpineElement?.style.setProperty(
-      'background-color',
-      getSpineBackgroundColor(newTheme),
-    );
-
-    animationElements.header.current?.style.setProperty(
-      'background-image',
-      getBackgroundImage(bookSectionInViewport, newTheme),
-    );
-
-    animationElements.headerLogo.current?.style.setProperty(
-      'color',
-      getHeaderLogoColor(bookSectionInViewport, newTheme),
-    );
-
-    if (showLightModeBlackToggleIcon(newTheme)) {
-      lightModeBlackToggleIconRef.current?.style.setProperty('opacity', '1');
-      lightModeBlackToggleIconRef.current?.style.setProperty(
-        'pointer-events',
-        'auto',
-      );
-      lightModeBlackToggleIconRef.current?.style.setProperty('z-index', '50');
-    } else {
-      lightModeBlackToggleIconRef.current?.style.setProperty('opacity', '0');
-      lightModeBlackToggleIconRef.current?.style.setProperty(
-        'pointer-events',
-        'none',
-      );
-      lightModeBlackToggleIconRef.current?.style.setProperty('z-index', 'auto');
-    }
-
-    if (showLightModeWhiteToggleIcon(newTheme)) {
-      lightModeWhiteToggleIconRef.current?.style.setProperty('opacity', '1');
-      lightModeWhiteToggleIconRef.current?.style.setProperty(
-        'pointer-events',
-        'auto',
-      );
-      lightModeWhiteToggleIconRef.current?.style.setProperty('z-index', '50');
-    } else {
-      lightModeWhiteToggleIconRef.current?.style.setProperty('opacity', '0');
-      lightModeWhiteToggleIconRef.current?.style.setProperty(
-        'pointer-events',
-        'none',
-      );
-      lightModeWhiteToggleIconRef.current?.style.setProperty('z-index', 'auto');
-    }
-
     setSelectedTheme(newTheme);
     setDropdownIsOpened(false);
   }
@@ -220,10 +159,8 @@ function ThemeToggle({
     `absolute  size-6  translate-y-[-0.5px]  select-none  md:size-[1.7rem]  
     top-0  hover:rotate-45  transition-transform  opacity-100  pointer-events-auto`,
     {
-      'opacity-0  pointer-events-none':
-        !showLightModeBlackToggleIcon(selectedTheme),
-      'opacity-100  pointer-events-auto  z-50':
-        showLightModeBlackToggleIcon(selectedTheme),
+      'opacity-0  pointer-events-none': !showLightModeBlackToggleIcon(),
+      'opacity-100  pointer-events-auto  z-50': showLightModeBlackToggleIcon(),
     },
   );
 
@@ -231,10 +168,8 @@ function ThemeToggle({
     `absolute  size-6  translate-y-[-0.5px]  select-none md:size-[1.7rem]  top-0
      hover:rotate-45  transition-transform  opacity-0  pointer-events-none`,
     {
-      'opacity-0  pointer-events-none':
-        !showLightModeWhiteToggleIcon(selectedTheme),
-      'opacity-100  pointer-events-auto z-50':
-        showLightModeWhiteToggleIcon(selectedTheme),
+      'opacity-0  pointer-events-none': !showLightModeWhiteToggleIcon(),
+      'opacity-100  pointer-events-auto z-50': showLightModeWhiteToggleIcon(),
     },
   );
 

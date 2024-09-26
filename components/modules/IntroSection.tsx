@@ -179,7 +179,7 @@ function IntroSection(): ReactElement {
           wrapper.addEventListener('mouseleave', handleMouseLeave);
           wrapper.addEventListener('click', handleClick);
         },
-        delay: 0.5,
+        delay: 0.2,
       });
 
       initialTimelineLines.forEach((element) => {
