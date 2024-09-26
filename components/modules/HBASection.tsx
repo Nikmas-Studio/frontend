@@ -123,6 +123,7 @@ function HBASection(): ReactElement {
               className='w-[8vw]  max-w-none  sm:w-[6vw]  lg:w-[5.5vw]  xl:w-[4vw]  2xl:w-[61.4px]'
               src={cakeHBA}
               alt='Cake HBA'
+              priority
             />
           </div>
         </div>
