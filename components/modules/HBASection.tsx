@@ -59,7 +59,7 @@ function HBASection(): ReactElement {
         hbaBlock.current,
         {
           opacity: 1,
-          duration: 1.5,
+          duration: 1,
           ease: 'power2.out',
         },
         0,
