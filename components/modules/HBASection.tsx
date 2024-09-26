@@ -16,55 +16,28 @@ function HBASection(): ReactElement {
   const hbaBlock = useRef<HTMLDivElement | null>(null);
 
   useGSAP(() => {
-    const mm = gsap.matchMedia();
-
-    mm.add('(min-width: 1024px)', () => {
-      const timeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: hbaSectionRef.current,
-          scrub: true,
-          start: 'top 750',
-          end: '+=550',
-        },
-      });
-
-      timeline
-        .from(hbaBlock.current, {
-          x: '-800',
-          opacity: 0,
-        })
-        .to(
-          circleRef.current,
-          {
-            rotation: 90,
-          },
-          0,
-        );
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: hbaSectionRef.current,
+        scrub: true,
+        pin: true,
+        start: 'top 200px',
+        end: '+=1000',
+      },
     });
 
-    mm.add('(max-width: 1023px)', () => {
-      const timeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: hbaSectionRef.current,
-          scrub: true,
-          start: 'top 390',
-          end: '+=250',
+    timeline
+      .to(hbaBlock.current, {
+        x: 0,
+        opacity: 1,
+      })
+      .to(
+        circleRef.current,
+        {
+          rotation: 180,
         },
-      });
-
-      timeline
-        .from(hbaBlock.current, {
-          x: '-300',
-          opacity: 0,
-        })
-        .to(
-          circleRef.current,
-          {
-            rotation: 90,
-          },
-          0,
-        );
-    });
+        0,
+      );
   }, []);
 
   return (
@@ -72,8 +45,8 @@ function HBASection(): ReactElement {
       <MainContainer>
         <div
           ref={hbaBlock}
-          className='relative mx-auto  aspect-square  w-[55vw]
-                     sm:w-[45vw]  xl:w-[30vw]  2xl:w-[460.5px]'
+          className='relative  mx-auto  aspect-square w-[55vw]  translate-x-[-300px]  opacity-0
+                     sm:w-[45vw]  lg:translate-x-[-800px]  xl:w-[30vw]  2xl:w-[460.5px]'
         >
           <svg
             ref={circleRef}

@@ -20,6 +20,7 @@ function BookSection(): ReactElement {
   const darkBookCoverRef = useRef<HTMLImageElement | null>(null);
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const anchorRef = useRef<HTMLAnchorElement | null>(null);
+  const sectionWrapperRef = useRef<HTMLDivElement | null>(null);
   const { setBookSectionInViewport } = useBookSectionStateDispatch();
   const [scale, setScale] = useState(3);
   const { selectedTheme } = useTheme();
@@ -62,6 +63,34 @@ function BookSection(): ReactElement {
     return scale;
   }
 
+  // useGSAP(() => {
+  //   const headerElement = document.getElementById('main-header');
+  //   const headerHeight = headerElement?.offsetHeight;
+
+  //   ScrollTrigger.create({
+  //     trigger: sectionWrapperRef.current,
+  //     start: `top ${headerHeight}`,
+  //     end: `bottom ${headerHeight}`,
+  //     toggleActions: 'play reverse play reverse',
+  //     onEnter: () => {
+  //       console.log('enter');
+  //       setBookSectionInViewport(true);
+  //     },
+  //     onEnterBack: () => {
+  //       console.log('enter back');
+  //       setBookSectionInViewport(true);
+  //     },
+  //     onLeave: () => {
+  //       console.log('leave');
+  //       setBookSectionInViewport(false);
+  //     },
+  //     onLeaveBack: () => {
+  //       console.log('leave back');
+  //       setBookSectionInViewport(false);
+  //     },
+  //   });
+  // }, []);
+
   useGSAP(
     () => {
       const headerElement = document.getElementById('main-header');
@@ -70,9 +99,10 @@ function BookSection(): ReactElement {
       const bookTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 400',
+          start: `top ${headerHeight}`,
+          pin: true,
           scrub: true,
-          end: '+=300',
+          end: '+=1000',
         },
       });
 
@@ -103,20 +133,24 @@ function BookSection(): ReactElement {
       );
 
       ScrollTrigger.create({
-        trigger: sectionRef.current,
+        trigger: sectionWrapperRef.current,
         start: `top ${headerHeight}`,
         end: `bottom ${headerHeight}`,
         toggleActions: 'play reverse play reverse',
         onEnter: () => {
+          console.log('enter');
           setBookSectionInViewport(true);
         },
         onEnterBack: () => {
+          console.log('enter back');
           setBookSectionInViewport(true);
         },
         onLeave: () => {
+          console.log('leave');
           setBookSectionInViewport(false);
         },
         onLeaveBack: () => {
+          console.log('leave back');
           setBookSectionInViewport(false);
         },
       });
@@ -128,44 +162,46 @@ function BookSection(): ReactElement {
   );
 
   return (
-    <section
-      ref={sectionRef}
-      className='w-screen  pb-32  pt-16
+    <div ref={sectionWrapperRef}>
+      <section
+        ref={sectionRef}
+        className='w-screen  pb-32  pt-16
                 [background:linear-gradient(135deg,#ff5013,#271ad3)]'
-    >
-      <MainContainer className='flex  flex-col  items-center  !px-12'>
-        <h2
-          className='mb-8  text-3xl  font-bold  text-white  
+      >
+        <MainContainer className='flex  flex-col  items-center  !px-12'>
+          <h2
+            className='mb-8  text-3xl  font-bold  text-white  
                        sm:text-[2.7rem]  dark:text-black'
-        >
-          Our first book
-        </h2>
-        <Link
-          ref={anchorRef}
-          className='pointer-events-none'
-          href='/book-master-git-and-github'
-        >
-          <Image
-            ref={lightBookCoverRef}
-            src={bookCoverLight}
-            alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
-            className='max-h-[1000px]  w-full  rounded-[3vw]
+          >
+            Our first book
+          </h2>
+          <Link
+            ref={anchorRef}
+            className='pointer-events-none'
+            href='/book-master-git-and-github'
+          >
+            <Image
+              ref={lightBookCoverRef}
+              src={bookCoverLight}
+              alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
+              className='max-h-[1000px]  w-full  rounded-[3vw]
                        sm:h-[65vh]  sm:w-auto
                        sm:rounded-[1.5vh]  dark:hidden'
-            priority
-          />
-          <Image
-            ref={darkBookCoverRef}
-            src={bookCoverDark}
-            alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
-            className='hidden  max-h-[1000px]  w-full  rounded-[3vw]  
+              priority
+            />
+            <Image
+              ref={darkBookCoverRef}
+              src={bookCoverDark}
+              alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
+              className='hidden  max-h-[1000px]  w-full  rounded-[3vw]  
                        sm:h-[65vh]  
                        sm:w-auto  sm:rounded-[1.5vh]  dark:inline-block'
-            priority
-          />
-        </Link>
-      </MainContainer>
-    </section>
+              priority
+            />
+          </Link>
+        </MainContainer>
+      </section>
+    </div>
   );
 }
 
