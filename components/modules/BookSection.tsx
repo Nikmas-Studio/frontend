@@ -139,20 +139,10 @@ function BookSection(): ReactElement {
     const mm = gsap.matchMedia();
 
     mm.add('(max-width: 1279px)', () => {
-      gsap.to(sectionRef.current, {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 320',
-        },
-        opacity: 1,
-        duration: 1,
-        ease: 'power2.out',
-      });
-
       const bookTimeline = gsap.timeline({
         scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 300',
+          trigger: sectionWrapperRef.current,
+          start: 'top 320',
         },
       });
 
@@ -166,17 +156,7 @@ function BookSection(): ReactElement {
       );
 
       bookTimeline.to(
-        lightBookCoverRef.current,
-        {
-          opacity: 1,
-          duration: 1,
-          ease: 'power2.out',
-        },
-        0,
-      );
-
-      bookTimeline.to(
-        darkBookCoverRef.current,
+        sectionRef.current,
         {
           opacity: 1,
           duration: 1,
@@ -191,8 +171,8 @@ function BookSection(): ReactElement {
     <div ref={sectionWrapperRef}>
       <section
         ref={sectionRef}
-        className='w-screen  pb-32  pt-16  opacity-0  [background:linear-gradient(135deg,#ff5013,#271ad3)]
-                xl:opacity-100'
+        className='w-screen  pb-32  pt-16  opacity-0  will-change-[opacity]  [background:linear-gradient(135deg,#ff5013,#271ad3)]  
+                  xl:opacity-100  xl:will-change-auto'
       >
         <MainContainer className='flex  flex-col  items-center  !px-12'>
           <h2
@@ -211,8 +191,8 @@ function BookSection(): ReactElement {
               src={bookCoverLight}
               alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
               className='max-h-[1000px]  w-full  select-none  rounded-[3vw]  opacity-0
-                       will-change-[transform,opacity]  sm:h-[65vh]  sm:w-auto
-                       sm:rounded-[1.5vh]  dark:hidden'
+                       sm:h-[65vh]  sm:w-auto  sm:rounded-[1.5vh]
+                       xl:will-change-[transform,opacity]  dark:hidden'
               priority
             />
             <Image
@@ -220,8 +200,8 @@ function BookSection(): ReactElement {
               src={bookCoverDark}
               alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
               className='hidden  max-h-[1000px]  w-full  select-none  
-                       rounded-[3vw]  opacity-0 will-change-[transform,opacity]  sm:h-[65vh]
-                       sm:w-auto  sm:rounded-[1.5vh]  xl:scale-0  dark:inline-block'
+                       rounded-[3vw]  opacity-0  sm:h-[65vh]  sm:w-auto
+                       sm:rounded-[1.5vh]  xl:scale-0  xl:will-change-[transform,opacity]  dark:inline-block'
               priority
             />
           </Link>
