@@ -1,9 +1,11 @@
+'use client';
+
 import Footer from '@/components/modules/Footer';
 import Header from '@/components/modules/Header';
 import Providers from '@/components/modules/Providers';
-import { Metadata } from 'next';
 import localFont from 'next/font/local';
-import { ReactElement, ReactNode } from 'react';
+import { usePathname } from 'next/navigation';
+import { ReactElement, ReactNode, useEffect } from 'react';
 
 const gilroy = localFont({
   src: [
@@ -25,13 +27,14 @@ const gilroy = localFont({
   ],
 });
 
-export const metadata: Metadata = {
-  title: 'Nikmas Studio',
-  description:
-    'Next-gen publishing studio that specializes in creating interactive web books.',
-};
 
 function MainLayout({ children }: { children: ReactNode }): ReactElement {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <html lang='en' className={`${gilroy.className}`}>
       <head>

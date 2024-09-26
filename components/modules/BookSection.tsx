@@ -165,11 +165,8 @@ function BookSection(): ReactElement {
         0,
       );
 
-      bookTimeline.fromTo(
+      bookTimeline.to(
         lightBookCoverRef.current,
-        {
-          scale,
-        },
         {
           scale: 1,
           opacity: 1,
@@ -215,7 +212,7 @@ function BookSection(): ReactElement {
               ref={lightBookCoverRef}
               src={bookCoverLight}
               alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
-              className='max-h-[1000px]  w-full  select-none  rounded-[3vw]
+              className='scale-0  xl:scale-100  max-h-[1000px]  w-full  select-none  rounded-[3vw]
                        opacity-0  sm:h-[65vh]  will-change-transform
                        sm:w-auto  sm:rounded-[1.5vh]  dark:hidden'
               priority
