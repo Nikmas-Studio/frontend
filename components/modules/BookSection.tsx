@@ -193,8 +193,8 @@ function BookSection(): ReactElement {
     <div ref={sectionWrapperRef}>
       <section
         ref={sectionRef}
-        className='opacity-0  xl:opacity-100  w-screen  pb-32  pt-16
-                [background:linear-gradient(135deg,#ff5013,#271ad3)]'
+        className='w-screen  pb-32  pt-16  opacity-0  [background:linear-gradient(135deg,#ff5013,#271ad3)]
+                xl:opacity-100'
       >
         <MainContainer className='flex  flex-col  items-center  !px-12'>
           <h2
@@ -212,9 +212,9 @@ function BookSection(): ReactElement {
               ref={lightBookCoverRef}
               src={bookCoverLight}
               alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
-              className='scale-0  xl:scale-100  max-h-[1000px]  w-full  select-none  rounded-[3vw]
-                       opacity-0  sm:h-[65vh]  will-change-transform
-                       sm:w-auto  sm:rounded-[1.5vh]  dark:hidden'
+              className='max-h-[1000px]  w-full  scale-0  select-none  rounded-[3vw]  opacity-0
+                       will-change-transform  sm:h-[65vh]  sm:w-auto
+                       sm:rounded-[1.5vh]  xl:scale-100  dark:hidden'
               priority
             />
             <Image
@@ -222,7 +222,7 @@ function BookSection(): ReactElement {
               src={bookCoverDark}
               alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
               className='hidden  max-h-[1000px]  w-full  scale-0  select-none  rounded-[3vw]  
-                       opacity-0  sm:h-[65vh]  will-change-transform
+                       opacity-0  will-change-transform  sm:h-[65vh]
                        sm:w-auto  sm:rounded-[1.5vh]  dark:inline-block'
               priority
             />

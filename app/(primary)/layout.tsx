@@ -27,7 +27,6 @@ const gilroy = localFont({
   ],
 });
 
-
 function MainLayout({ children }: { children: ReactNode }): ReactElement {
   const pathname = usePathname();
 

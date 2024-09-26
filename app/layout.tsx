@@ -1,6 +1,6 @@
+import { Metadata } from 'next';
 import { ReactElement, ReactNode } from 'react';
 import './globals.css';
-import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Nikmas Studio',
