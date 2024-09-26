@@ -145,7 +145,7 @@ function BookSection(): ReactElement {
           start: 'top 320',
         },
         opacity: 1,
-        duration: 1.5,
+        duration: 1,
         ease: 'power2.out',
       });
 
@@ -169,7 +169,7 @@ function BookSection(): ReactElement {
         lightBookCoverRef.current,
         {
           opacity: 1,
-          duration: 1.5,
+          duration: 1,
           ease: 'power2.out',
         },
         0,
@@ -179,7 +179,7 @@ function BookSection(): ReactElement {
         darkBookCoverRef.current,
         {
           opacity: 1,
-          duration: 1.5,
+          duration: 1,
           ease: 'power2.out',
         },
         0,
