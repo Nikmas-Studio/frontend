@@ -55,26 +55,15 @@ function HBASection(): ReactElement {
         },
       });
 
-      timeline
-        .to(
-          hbaBlock.current,
-          {
-            x: 0,
-            opacity: 1,
-            duration: 1.5,
-            ease: 'power2.out',
-          },
-          0,
-        )
-        .to(
-          circleRef.current,
-          {
-            rotation: 90,
-            duration: 1.5,
-            ease: 'power2.out',
-          },
-          0,
-        );
+      timeline.to(
+        hbaBlock.current,
+        {
+          opacity: 1,
+          duration: 1.5,
+          ease: 'power2.out',
+        },
+        0,
+      );
     });
   }, []);
 
@@ -86,7 +75,7 @@ function HBASection(): ReactElement {
       <MainContainer>
         <div
           ref={hbaBlock}
-          className='relative  mx-auto  aspect-square  w-[55vw]  translate-x-[-300px] 
+          className='relative  mx-auto  aspect-square  w-[55vw]
                      opacity-0  sm:w-[45vw]  xl:w-[30vw]  xl:translate-x-[-500px]  2xl:w-[460.5px]'
         >
           <Image
