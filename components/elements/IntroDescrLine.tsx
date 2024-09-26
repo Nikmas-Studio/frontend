@@ -37,7 +37,7 @@ function IntroDescrLine({
       {animated && (
         <span
           data-element={dataElement}
-          className='absolute  bottom-auto  left-0  right-auto  top-0  hidden  align-top  will-change-transform'
+          className='absolute  bottom-auto  left-0  right-auto  top-0  hidden  align-top'
         >
           <SpanSplitter
             text={text}

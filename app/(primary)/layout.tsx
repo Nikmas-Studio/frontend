@@ -3,7 +3,6 @@ import Header from '@/components/modules/Header';
 import Providers from '@/components/modules/Providers';
 import { Metadata } from 'next';
 import localFont from 'next/font/local';
-import Script from 'next/script';
 import { ReactElement, ReactNode } from 'react';
 
 const gilroy = localFont({
@@ -36,26 +35,23 @@ function MainLayout({ children }: { children: ReactNode }): ReactElement {
   return (
     <html lang='en' className={`${gilroy.className}`}>
       <head>
-        <Script id='init-theme' strategy='beforeInteractive'>
-          {`
-            console.log('init theme');
-            console.log('prefered theme', window.matchMedia('(prefers-color-scheme: dark)').matches);
-            console.log('local storage theme', localStorage.theme);
-            if (
-              localStorage.theme === 'dark' ||
-              (!('theme' in localStorage) &&
-                window.matchMedia('(prefers-color-scheme: dark)').matches)
-            ) {
-              console.log('documentElement add dark', document.documentElement);
-              document.documentElement.classList.add('dark');
-            } else {
-              console.log('documentElement remove dark', document.documentElement);
-              document.documentElement.classList.remove('dark');
-            }
-            
-            document.body.classList.add('body-visible');
-          `}
-        </Script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                console.log('init theme');
+                if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                  document.documentElement.classList.add('dark')
+                } else {
+                  document.documentElement.classList.remove('dark')
+                }
+                console.log(document.body);
+                console.log('add body-visible');
+                document.documentElement.classList.add('body-visible');
+              } catch (_) {}
+            `,
+          }}
+        />
       </head>
       <body className='dark:bg-black'>
         <Providers>

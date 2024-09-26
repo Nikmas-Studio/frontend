@@ -72,7 +72,7 @@ function HBASection(): ReactElement {
       <MainContainer>
         <div
           ref={hbaBlock}
-          className='relative mx-auto  aspect-square  w-[55vw]  will-change-[transform,opacity]  
+          className='relative mx-auto  aspect-square  w-[55vw]
                      sm:w-[45vw]  xl:w-[30vw]  2xl:w-[460.5px]'
         >
           <svg
@@ -83,7 +83,7 @@ function HBASection(): ReactElement {
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
             className='stroke-[#4CBB17]  stroke-[8px]  
-                       will-change-transform  [stroke-dasharray:0.01,20.01]
+                       [stroke-dasharray:0.01,20.01]
                        [stroke-linecap:round] lg:stroke-[7px]'
           >
             <circle cx='260' cy='260' r='255' />

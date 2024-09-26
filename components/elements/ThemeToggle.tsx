@@ -13,10 +13,7 @@ import moonIconBlack from '@/public/images/moon-icon-black.png';
 import moonIconWhite from '@/public/images/moon-icon-white.png';
 import sunIconBlack from '@/public/images/sun-icon-black.png';
 import sunIconWhite from '@/public/images/sun-icon-white.png';
-import {
-  darkThemeIsSelected,
-  lightThemeIsSelected,
-} from '@/utils/check-selected-theme';
+import { lightThemeIsSelected } from '@/utils/check-selected-theme';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
@@ -29,10 +26,10 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
   const { selectedTheme } = useTheme();
   const { setSelectedTheme } = useThemeDispatch();
   const { bookSectionInViewport } = useBookSectionState();
-  const previousTheme = useRef(selectedTheme);
   const lightModeBlackToggleIconRef = useRef<HTMLImageElement | null>(null);
   const lightModeWhiteToggleIconRef = useRef<HTMLImageElement | null>(null);
   const darkModeWhiteToggleIconRef = useRef<HTMLImageElement | null>(null);
+  const bookSectionWasInViewport = useRef(false);
 
   function showLightModeBlackToggleIcon(): boolean {
     return lightThemeIsSelected(selectedTheme) && !bookSectionInViewport;
@@ -42,39 +39,84 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
     return lightThemeIsSelected(selectedTheme) && bookSectionInViewport;
   }
 
-  function showDarkModeWhiteToggleIcon(): boolean {
-    return darkThemeIsSelected(selectedTheme);
-  }
-
   useGSAP(() => {
-    const themeChanged = previousTheme.current !== selectedTheme;
+    if (showLightModeBlackToggleIcon()) {
+      gsap.set(lightModeBlackToggleIconRef.current, {
+        opacity: 1,
+        pointerEvents: 'auto',
+        zIndex: 50,
+      });
+    } else {
+      gsap.set(lightModeBlackToggleIconRef.current, {
+        opacity: 0,
+        pointerEvents: 'none',
+        zIndex: 'auto',
+      });
+    }
 
-    gsap.to(lightModeBlackToggleIconRef.current, {
-      opacity: showLightModeBlackToggleIcon() ? 1 : 0,
-      pointerEvents: showLightModeBlackToggleIcon() ? 'auto' : 'none',
-      zIndex: showLightModeBlackToggleIcon() ? 50 : 'auto',
-      duration: themeChanged ? 0 : 0.3,
-      ease: 'linear',
-    });
+    if (showLightModeWhiteToggleIcon()) {
+      gsap.set(lightModeWhiteToggleIconRef.current, {
+        opacity: 1,
+        pointerEvents: 'auto',
+        zIndex: 50,
+      });
+    } else {
+      gsap.set(lightModeWhiteToggleIconRef.current, {
+        opacity: 0,
+        pointerEvents: 'none',
+        zIndex: 'auto',
+      });
+    }
+  }, [selectedTheme]);
 
-    gsap.to(lightModeWhiteToggleIconRef.current, {
-      opacity: showLightModeWhiteToggleIcon() ? 1 : 0,
-      pointerEvents: showLightModeWhiteToggleIcon() ? 'auto' : 'none',
-      zIndex: showLightModeWhiteToggleIcon() ? 50 : 'auto',
-      duration: themeChanged ? 0 : 0.3,
-      ease: 'linear',
-    });
+  useGSAP(
+    () => {
+      if (bookSectionInViewport) {
+        bookSectionWasInViewport.current = true;
+      }
 
-    gsap.to(darkModeWhiteToggleIconRef.current, {
-      opacity: showDarkModeWhiteToggleIcon() ? 1 : 0,
-      pointerEvents: showDarkModeWhiteToggleIcon() ? 'auto' : 'none',
-      zIndex: showDarkModeWhiteToggleIcon() ? 50 : 'auto',
-      duration: themeChanged ? 0 : 0.3,
-      ease: 'linear',
-    });
+      if (bookSectionWasInViewport.current) {
+        if (showLightModeBlackToggleIcon()) {
+          gsap.to(lightModeBlackToggleIconRef.current, {
+            opacity: 1,
+            pointerEvents: 'auto',
+            zIndex: 50,
+            duration: 0.3,
+            ease: 'linear',
+          });
+        } else {
+          gsap.to(lightModeBlackToggleIconRef.current, {
+            opacity: 0,
+            pointerEvents: 'none',
+            zIndex: 'auto',
+            duration: 0.3,
+            ease: 'linear',
+          });
+        }
 
-    previousTheme.current = selectedTheme;
-  }, [bookSectionInViewport, selectedTheme]);
+        if (showLightModeWhiteToggleIcon()) {
+          gsap.to(lightModeWhiteToggleIconRef.current, {
+            opacity: 1,
+            pointerEvents: 'auto',
+            zIndex: 50,
+            duration: 0.3,
+            ease: 'linear',
+          });
+        } else {
+          gsap.to(lightModeWhiteToggleIconRef.current, {
+            opacity: 0,
+            pointerEvents: 'none',
+            zIndex: 'auto',
+            duration: 0.3,
+            ease: 'linear',
+          });
+        }
+      }
+    },
+    {
+      dependencies: [bookSectionInViewport],
+    },
+  );
 
   useEffect(() => {
     if (
@@ -119,16 +161,16 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
 
   const lightModeBlackToggleIconClasses = classNames(
     `absolute  size-6  translate-y-[-0.5px]  select-none  md:size-[1.7rem]  
-    top-0  hover:rotate-45  transition-transform`,
+    top-0  hover:rotate-45  transition-transform  opacity-100  pointer-events-auto`,
     {
       'opacity-0  pointer-events-none': !showLightModeBlackToggleIcon(),
-      'opacity-100  pointer-events-auto z-50': showLightModeBlackToggleIcon(),
+      'opacity-100  pointer-events-auto  z-50': showLightModeBlackToggleIcon(),
     },
   );
 
   const lightModeWhiteToggleIconClasses = classNames(
     `absolute  size-6  translate-y-[-0.5px]  select-none md:size-[1.7rem]  top-0
-     hover:rotate-45  transition-transform`,
+     hover:rotate-45  transition-transform  opacity-0  pointer-events-none`,
     {
       'opacity-0  pointer-events-none': !showLightModeWhiteToggleIcon(),
       'opacity-100  pointer-events-auto z-50': showLightModeWhiteToggleIcon(),
@@ -137,11 +179,8 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
 
   const darkModeWhiteToggleIconClasses = classNames(
     `absolute  size-[1.3rem]  translate-x-[0.1rem]  translate-y-[0.12rem]
-   select-none  md:size-[1.45rem]  top-0  hover:-rotate-90  transition-transform`,
-    {
-      'opacity-0  pointer-events-none': !showDarkModeWhiteToggleIcon(),
-      'opacity-100  pointer-events-auto  z-50': showDarkModeWhiteToggleIcon(),
-    },
+   select-none  md:size-[1.45rem]  top-0  hover:-rotate-45  opacity-0  transition-transform
+   dark:opacity-100 dark:pointer-events-auto  dark:z-50`,
   );
 
   const themeToggleWrapperClasses = classNames(

@@ -22,59 +22,71 @@ function Header(): ReactElement {
   const { selectedTheme } = useTheme();
 
   const { bookSectionInViewport } = useBookSectionState();
-  const previousTheme = useRef(selectedTheme);
+  const bookSectionWasInViewport = useRef(false);
 
-  useGSAP(() => {
-    const themeChanged = previousTheme.current !== selectedTheme;
-
-    const timeline = gsap.timeline();
-
-    function getBackgroundImage(): string {
-      if (bookSectionInViewport) {
-        return 'linear-gradient(135deg,#ff5013,#271ad3)';
-      }
-
-      if (darkThemeIsSelected(selectedTheme)) {
-        return 'linear-gradient(135deg,#000000,#000000)';
-      } else {
-        return 'linear-gradient(135deg,#ffffff,#ffffff)';
-      }
+  function getBackgroundImage(): string {
+    if (bookSectionInViewport) {
+      return 'linear-gradient(135deg,#ff5013,#271ad3)';
     }
 
-    function getHeaderLogoColor(): string {
-      if (bookSectionInViewport) {
-        return 'white';
-      }
+    if (darkThemeIsSelected(selectedTheme)) {
+      return 'linear-gradient(135deg,#000000,#000000)';
+    } else {
+      return 'linear-gradient(135deg,#ffffff,#ffffff)';
+    }
+  }
 
-      if (darkThemeIsSelected(selectedTheme)) {
-        return 'white';
-      } else {
-        return 'black';
-      }
+  function getHeaderLogoColor(): string {
+    if (bookSectionInViewport) {
+      return 'white';
     }
 
-    timeline.to(
-      headerElementRef.current,
-      {
-        backgroundImage: getBackgroundImage(),
-        duration: themeChanged ? 0 : 0.3,
-        ease: 'linear',
-      },
-      0,
-    );
+    if (darkThemeIsSelected(selectedTheme)) {
+      return 'white';
+    } else {
+      return 'black';
+    }
+  }
 
-    timeline.to(
-      headerLogoElementRef.current,
-      {
-        color: getHeaderLogoColor(),
-        duration: themeChanged ? 0 : 0.3,
-        ease: 'linear',
-      },
-      0,
-    );
+  useGSAP(
+    () => {
+      gsap.set(headerElementRef.current, {
+        backgroundImage: getBackgroundImage,
+      });
 
-    previousTheme.current = selectedTheme;
-  }, [bookSectionInViewport, selectedTheme]);
+      gsap.set(headerLogoElementRef.current, {
+        color: getHeaderLogoColor,
+      });
+    },
+    {
+      dependencies: [selectedTheme],
+    },
+  );
+
+  useGSAP(
+    () => {
+      if (bookSectionInViewport) {
+        bookSectionWasInViewport.current = true;
+      }
+
+      if (bookSectionWasInViewport.current) {
+        gsap.to(headerElementRef.current, {
+          backgroundImage: getBackgroundImage,
+          duration: 0.3,
+          ease: 'linear',
+        });
+
+        gsap.to(headerLogoElementRef.current, {
+          color: getHeaderLogoColor,
+          duration: 0.3,
+          ease: 'linear',
+        });
+      }
+    },
+    {
+      dependencies: [bookSectionInViewport],
+    },
+  );
 
   useEffect(() => {
     const onScroll = (): void => {
@@ -90,13 +102,13 @@ function Header(): ReactElement {
 
   const headerClasses = classNames(
     `pt-4  pb-6  md:pt-5  md:pb-7  fixed  left-0  right-0  top-0  border-b  
+     [transition:background-image_0.3s_ease]
      z-50  [background-image:linear-gradient(135deg,#ffffff,#ffffff)]
      dark:[background-image:linear-gradient(135deg,#000000,#000000)]`,
     {
       'border-b-[#EBEBEB]  dark:border-b-[#414141]':
         headerIsScrolled && !bookSectionInViewport,
-      'border-b-[#EBEBEB]  dark:border-b-[#EBEBEB]':
-        headerIsScrolled && bookSectionInViewport,
+      'border-b-[#EBEBEB]  dark:border-b-[#EBEBEB]': bookSectionInViewport,
       'border-b-white  dark:border-b-black': !headerIsScrolled,
     },
   );

@@ -19,6 +19,6 @@ body {
   }
 }
 
-body:not(.body-visible) {
+html:not(.body-visible) {
   visibility: hidden;
 }

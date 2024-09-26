@@ -2,9 +2,7 @@
 
 import { useBookSectionState } from '@/context/book-section/Context';
 import { useTheme } from '@/context/theme/Context';
-import { Theme } from '@/types/theme';
 import { darkThemeIsSelected } from '@/utils/check-selected-theme';
-import getSystemTheme from '@/utils/get-system-theme';
 import { useGSAP } from '@gsap/react';
 import classNames from 'classnames';
 import gsap from 'gsap';
@@ -21,7 +19,7 @@ function GuestAccountIcon({ className }: GuestAccountIconProps): ReactElement {
   const bookSectionInViewportStateRef = useRef(bookSectionInViewport);
   const { selectedTheme } = useTheme();
   const selectedThemeRef = useRef(selectedTheme);
-  const previousThemeRef = useRef(selectedTheme);
+  const bookSectionWasInViewport = useRef(false);
 
   useEffect(() => {
     selectedThemeRef.current = selectedTheme;
@@ -31,55 +29,66 @@ function GuestAccountIcon({ className }: GuestAccountIconProps): ReactElement {
     bookSectionInViewportStateRef.current = bookSectionInViewport;
   }, [bookSectionInViewport]);
 
+  function getAccountIconBackgroundColor(): string {
+    if (darkThemeIsSelected(selectedTheme)) {
+      return 'white';
+    }
+
+    return bookSectionInViewport ? 'white' : 'black';
+  }
+
+  function getSpineBackgroundColor(): string {
+    if (darkThemeIsSelected(selectedTheme)) {
+      return 'black';
+    }
+
+    return bookSectionInViewport ? 'black' : 'white';
+  }
+
   useGSAP(() => {
-    const themeChanged = previousThemeRef.current !== selectedTheme;
+    gsap.set(accountIconElementRef.current, {
+      backgroundColor: getAccountIconBackgroundColor(),
+    });
 
-    const timeline = gsap.timeline();
+    gsap.set(spineElementRef.current, {
+      backgroundColor: getSpineBackgroundColor(),
+    });
+  }, [selectedTheme]);
 
-    function getAccountIconBackgroundColor(): string {
-      if (
-        selectedTheme === Theme.DARK ||
-        (selectedTheme === Theme.SYSTEM && getSystemTheme() === Theme.DARK)
-      ) {
-        return 'white';
+  useGSAP(
+    () => {
+      if (bookSectionInViewport) {
+        bookSectionWasInViewport.current = true;
       }
 
-      return bookSectionInViewport ? 'white' : 'black';
-    }
+      if (bookSectionWasInViewport.current) {
+        const timeline = gsap.timeline();
 
-    function getSpineBackgroundColor(): string {
-      if (
-        selectedTheme === Theme.DARK ||
-        (selectedTheme === Theme.SYSTEM && getSystemTheme() === Theme.DARK)
-      ) {
-        return 'black';
+        timeline.to(
+          accountIconElementRef.current,
+          {
+            backgroundColor: getAccountIconBackgroundColor(),
+            duration: 0.3,
+            ease: 'linear',
+          },
+          0,
+        );
+
+        timeline.to(
+          spineElementRef.current,
+          {
+            backgroundColor: getSpineBackgroundColor(),
+            duration: 0.3,
+            ease: 'linear',
+          },
+          0,
+        );
       }
-
-      return bookSectionInViewport ? 'black' : 'white';
-    }
-
-    timeline.to(
-      accountIconElementRef.current,
-      {
-        backgroundColor: getAccountIconBackgroundColor(),
-        duration: themeChanged ? 0 : 0.3,
-        ease: 'linear',
-      },
-      0,
-    );
-
-    timeline.to(
-      spineElementRef.current,
-      {
-        backgroundColor: getSpineBackgroundColor(),
-        duration: themeChanged ? 0 : 0.3,
-        ease: 'linear',
-      },
-      0,
-    );
-
-    previousThemeRef.current = selectedTheme;
-  }, [bookSectionInViewport, selectedTheme]);
+    },
+    {
+      dependencies: [bookSectionInViewport],
+    },
+  );
 
   useGSAP((_, contextSafe) => {
     const accountIconElement = accountIconElementRef.current;

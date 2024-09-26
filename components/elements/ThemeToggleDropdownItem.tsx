@@ -17,9 +17,6 @@ function ThemeToggleDropdownItem({
   children,
   onClick,
 }: ThemeToggleDropdownItemProps): ReactElement {
-  console.log('ThemeToggleDropdownItem: itemTheme', itemTheme);
-  console.log('ThemeToggleDropdownItem: selectedTheme', selectedTheme);
-
   const classes = classNames(
     `flex  cursor-pointer  items-center  py-2  pl-6  pr-[4.8rem]  text-lg  transition-all  hover:bg-[#F8F8F8]
      dark:hover:bg-[#171717]  relative after:content-[""]  after:absolute  after:w-[0.45rem]  after:h-[0.45rem]  after:bg-black

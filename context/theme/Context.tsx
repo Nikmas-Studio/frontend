@@ -37,13 +37,15 @@ export function ThemeProvider({
     switch (savedTheme) {
       case Theme.LIGHT:
         setSelectedTheme(Theme.LIGHT);
-        return;
+        break;
       case Theme.DARK:
         setSelectedTheme(Theme.DARK);
-        return;
+        break;
       default:
         setSelectedTheme(Theme.SYSTEM);
     }
+
+    // document.body.classList.add('body-visible');
   }, []);
 
   return (
