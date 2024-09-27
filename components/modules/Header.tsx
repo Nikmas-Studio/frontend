@@ -60,10 +60,8 @@ function Header(): ReactElement {
           const currentTransform = headerElementRef.current!.style.transform;
 
           if (currentTransform !== 'translateY(-100%)') {
-            gsap.to(headerElementRef.current, {
+            gsap.set(headerElementRef.current, {
               y: '-100%',
-              duration: 0.15,
-              ease: 'linear',
             });
           }
         } else {
@@ -73,10 +71,8 @@ function Header(): ReactElement {
             currentTransform !== 'translateY(0%)' &&
             currentTransform !== ''
           ) {
-            gsap.to(headerElementRef.current, {
+            gsap.set(headerElementRef.current, {
               y: '0%',
-              duration: 0.15,
-              ease: 'linear',
             });
           }
         }
@@ -84,10 +80,8 @@ function Header(): ReactElement {
         const currentTransform = headerElementRef.current!.style.transform;
 
         if (currentTransform !== 'translateY(0%)' && currentTransform !== '') {
-          gsap.to(headerElementRef.current, {
+          gsap.set(headerElementRef.current, {
             y: '0%',
-            duration: 0.15,
-            ease: 'linear',
           });
         }
       }
