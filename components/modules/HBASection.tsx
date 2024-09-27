@@ -77,7 +77,7 @@ function HBASection(): ReactElement {
         <div
           ref={hbaBlock}
           className='relative  mx-auto  aspect-square  w-[55vw]  translate-x-[-300px]  opacity-0
-                     will-change-[opacity]  [transition:transform_1s_ease-out]  sm:w-[45vw]  xl:w-[30vw]  
+                     will-change-[opacity]  [transition:transform_1s_ease-out,opacity_1s_ease-out]  sm:w-[45vw]  xl:w-[30vw]  
                      xl:translate-x-[-500px]  xl:transition-none  xl:will-change-[transform,opacity]  2xl:w-[460.5px]'
         >
           <Image
