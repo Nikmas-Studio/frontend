@@ -139,31 +139,19 @@ function BookSection(): ReactElement {
     const mm = gsap.matchMedia();
 
     mm.add('(max-width: 1279px)', () => {
-      const bookTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionWrapperRef.current,
-          start: 'top 320',
+      ScrollTrigger.create({
+        trigger: sectionWrapperRef.current,
+        start: 'top 320',
+        onEnter: () => {
+          gsap.set(anchorRef.current, {
+            pointerEvents: 'auto',
+          });
+
+          gsap.set(sectionRef.current, {
+            opacity: 1,
+          });
         },
       });
-
-      bookTimeline.to(
-        anchorRef.current,
-        {
-          pointerEvents: 'auto',
-          duration: 0,
-        },
-        0,
-      );
-
-      bookTimeline.to(
-        sectionRef.current,
-        {
-          opacity: 1,
-          duration: 1,
-          ease: 'power2.out',
-        },
-        0,
-      );
     });
   }, []);
 
@@ -171,8 +159,11 @@ function BookSection(): ReactElement {
     <div ref={sectionWrapperRef}>
       <section
         ref={sectionRef}
-        className='w-screen  pb-32  pt-16  opacity-0  will-change-[opacity]  [background:linear-gradient(135deg,#ff5013,#271ad3)]  
-                  xl:opacity-100  xl:will-change-auto'
+        className='w-screen  pb-32  pt-16  opacity-0 
+                  [background:linear-gradient(135deg,#ff5013,#271ad3)]  
+                  [transition:opacity_1s_ease-in-out]  
+                  xl:opacity-100
+                  xl:transition-none'
       >
         <MainContainer className='flex  flex-col  items-center  !px-12'>
           <h2

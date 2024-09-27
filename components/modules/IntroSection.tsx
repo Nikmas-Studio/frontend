@@ -269,7 +269,7 @@ function IntroSection(): ReactElement {
         </h1>
         <h1 className='sr-only'>
           Nikmas Studio is a next-gen publishing studio that specializes in
-          creating interactive web-books.
+          creating interactive e-books.
         </h1>
         <div
           data-element='studio-intro-spine'
