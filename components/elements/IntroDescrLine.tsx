@@ -24,7 +24,7 @@ function IntroDescrLine({
   });
 
   const firstSpanSplitterClasses = classNames(
-    `align-top  inline-block  invisible`,
+    `align-top  invisible`,
     {
       'inline-block': animated,
     },
