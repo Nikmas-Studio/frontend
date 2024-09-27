@@ -62,7 +62,7 @@ function Header(): ReactElement {
           if (currentTransform !== 'translateY(-100%)') {
             gsap.to(headerElementRef.current, {
               y: '-100%',
-              duration: 0.15,
+              duration: 0.05,
               ease: 'linear',
             });
           }
@@ -75,7 +75,7 @@ function Header(): ReactElement {
           ) {
             gsap.to(headerElementRef.current, {
               y: '0%',
-              duration: 0.15,
+              duration: 0.05,
               ease: 'linear',
             });
           }
@@ -86,7 +86,7 @@ function Header(): ReactElement {
         if (currentTransform !== 'translateY(0%)' && currentTransform !== '') {
           gsap.to(headerElementRef.current, {
             y: '0%',
-            duration: 0.15,
+            duration: 0.05,
             ease: 'linear',
           });
         }
