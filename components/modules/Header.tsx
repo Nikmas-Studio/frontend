@@ -53,7 +53,7 @@ function Header(): ReactElement {
       const scrollPosition = window.scrollY;
       const pageHeight = document.body.offsetHeight;
       const windowHeight = window.innerHeight;
-      const bottomOffset = 200;
+      const bottomOffset = 250;
 
       if (window.innerWidth < 1280) {
         if (scrollPosition + windowHeight >= pageHeight - bottomOffset) {
@@ -62,7 +62,7 @@ function Header(): ReactElement {
           if (currentTransform !== 'translateY(-100%)') {
             gsap.to(headerElementRef.current, {
               y: '-100%',
-              duration: 0.15,
+              duration: 0.1,
               ease: 'linear',
             });
           }
@@ -75,7 +75,7 @@ function Header(): ReactElement {
           ) {
             gsap.to(headerElementRef.current, {
               y: '0%',
-              duration: 0.15,
+              duration: 0.1,
               ease: 'linear',
             });
           }
@@ -86,7 +86,7 @@ function Header(): ReactElement {
         if (currentTransform !== 'translateY(0%)' && currentTransform !== '') {
           gsap.to(headerElementRef.current, {
             y: '0%',
-            duration: 0.15,
+            duration: 0.1,
             ease: 'linear',
           });
         }
