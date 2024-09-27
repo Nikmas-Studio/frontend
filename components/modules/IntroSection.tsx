@@ -230,7 +230,7 @@ function IntroSection(): ReactElement {
   return (
     <section className='mt-2'>
       <MainContainer
-        className='flex  justify-between  overflow-x-hidden'
+        className='flex  justify-between  overflow-hidden'
         ref={container}
       >
         <h1
