@@ -1,5 +1,6 @@
 'use client';
 
+import { useTouchDevice } from '@/context/touch-device/Context';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ReactElement, useEffect, useRef } from 'react';
@@ -8,19 +9,12 @@ import MainContainer from '../elements/MainContainer';
 
 function IntroSection(): ReactElement {
   const container = useRef<HTMLDivElement | null>(null);
-  const isTouchDevice = useRef(false);
+  const { isTouchDevice } = useTouchDevice();
+  const isTouchDeviceRef = useRef(false);
 
   useEffect(() => {
-    const handleTouchStart = (): void => {
-      isTouchDevice.current = true;
-    };
-
-    window.addEventListener('touchstart', handleTouchStart);
-
-    return () => {
-      window.removeEventListener('touchstart', handleTouchStart);
-    };
-  }, []);
+    isTouchDeviceRef.current = isTouchDevice;
+  }, [isTouchDevice]);
 
   useGSAP(
     (context, contextSave) => {
@@ -166,7 +160,7 @@ function IntroSection(): ReactElement {
             );
 
           handleMouseEnter = contextSave!((): void => {
-            if (!isTouchDevice.current) {
+            if (!isTouchDeviceRef.current) {
               if (!charsTimeline.isActive()) {
                 charsTimeline.restart();
               }
@@ -174,7 +168,7 @@ function IntroSection(): ReactElement {
           });
 
           handleMouseLeave = contextSave!((): void => {
-            if (!isTouchDevice.current) {
+            if (!isTouchDeviceRef.current) {
               if (!charsTimeline.isActive()) {
                 charsTimeline.reverse();
               }

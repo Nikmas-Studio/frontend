@@ -14,22 +14,26 @@ function IntroDescrLine({
   isAnimated: animated = false,
 }: IntroDescrLineProps): ReactElement {
   const animatedClasses = `before:pointer-events-none  before:absolute  
-                           before:inset-0  before:z-10  overflow-hidden
+                           before:inset-0  before:z-10  inline-block  overflow-hidden
                            before:shadow-[inset_0_0_5px_rgba(255,255,255,1)]
                            dark:before:shadow-[inset_0_0_5px_rgba(0,0,0,1)]
                            before:content-['']  `;
 
-  const wrapperClasses = classNames('relative  inline-block  align-top', {
+  const wrapperClasses = classNames('relative  align-top', {
     [animatedClasses]: animated,
   });
 
+  const firstSpanSplitterClasses = classNames(
+    `align-top  inline-block  invisible`,
+    {
+      'inline-block': animated,
+    },
+  );
+
   return (
     <span className={wrapperClasses}>
-      <span data-element={dataElement} className='inline-block  align-top'>
-        <SpanSplitter
-          text={text}
-          classNameForSpan='inline-block  align-top  invisible'
-        />
+      <span data-element={dataElement} className='align-top'>
+        <SpanSplitter text={text} classNameForSpan={firstSpanSplitterClasses} />
       </span>
       {animated && (
         <span

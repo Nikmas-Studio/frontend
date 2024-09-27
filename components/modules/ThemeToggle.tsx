@@ -7,6 +7,7 @@ import ThemeToggleDropdownItem from '../elements/ThemeToggleDropdownItem';
 
 import { useBookSectionState } from '@/context/book-section/Context';
 import { useTheme, useThemeDispatch } from '@/context/theme/Context';
+import { useTouchDevice } from '@/context/touch-device/Context';
 import gearIconBlack from '@/public/images/gear-icon-black.png';
 import gearIconWhite from '@/public/images/gear-icon-white.png';
 import moonIconBlack from '@/public/images/moon-icon-black.png';
@@ -30,6 +31,12 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
   const lightModeWhiteToggleIconRef = useRef<HTMLImageElement | null>(null);
   const darkModeWhiteToggleIconRef = useRef<HTMLImageElement | null>(null);
   const bookSectionWasInViewport = useRef(false);
+  const { isTouchDevice } = useTouchDevice();
+  const isTouchDeviceRef = useRef(isTouchDevice);
+
+  useEffect(() => {
+    isTouchDeviceRef.current = isTouchDevice;
+  }, [isTouchDevice]);
 
   function showLightModeBlackToggleIcon(): boolean {
     return lightThemeIsSelected(selectedTheme) && !bookSectionInViewport;
@@ -144,6 +151,54 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
     setDropdownIsOpened(false);
   });
 
+  useGSAP((_, contextSafe) => {
+    const handleMouseEnter = contextSafe!(() => {
+      if (isTouchDeviceRef.current) {
+        return;
+      }
+
+      gsap.to(darkModeWhiteToggleIconRef.current, {
+        rotate: -45,
+        duration: 0.15,
+        ease: 'cubic-bezier(0.4,0,0.2,1)',
+      });
+    });
+
+    const handleMouseLeave = contextSafe!(() => {
+      if (isTouchDeviceRef.current) {
+        return;
+      }
+
+      gsap.to(darkModeWhiteToggleIconRef.current, {
+        rotate: 0,
+        duration: 0.15,
+        ease: 'cubic-bezier(0.4,0,0.2,1)',
+      });
+    });
+
+    darkModeWhiteToggleIconRef.current?.addEventListener(
+      'mouseenter',
+      handleMouseEnter,
+    );
+
+    darkModeWhiteToggleIconRef.current?.addEventListener(
+      'mouseleave',
+      handleMouseLeave,
+    );
+
+    return () => {
+      darkModeWhiteToggleIconRef.current?.removeEventListener(
+        'mouseenter',
+        handleMouseEnter,
+      );
+
+      darkModeWhiteToggleIconRef.current?.removeEventListener(
+        'mouseleave',
+        handleMouseLeave,
+      );
+    };
+  });
+
   const dropdownClasses = classNames(
     `absolute  right-0  top-10  flex  flex-col  rounded-lg  bg-white
      border  border-[#EBEBEB]  dark:border-[#414141]
@@ -157,7 +212,8 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
 
   const lightModeBlackToggleIconClasses = classNames(
     `absolute  size-6  translate-y-[-0.5px]  select-none  md:size-[1.7rem]  
-    top-0  hover:rotate-45  transition-transform  opacity-100  pointer-events-auto`,
+    top-0  hover:[transform:rotate(45deg)]  [transition:transform_0.15s_cubic-bezier(0.4,0,0.2,1)]
+    opacity-100  pointer-events-auto`,
     {
       'opacity-0  pointer-events-none': !showLightModeBlackToggleIcon(),
       'opacity-100  pointer-events-auto  z-50': showLightModeBlackToggleIcon(),
@@ -166,7 +222,7 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
 
   const lightModeWhiteToggleIconClasses = classNames(
     `absolute  size-6  translate-y-[-0.5px]  select-none md:size-[1.7rem]  top-0
-     hover:rotate-45  transition-transform  opacity-0  pointer-events-none`,
+     hover:[transform:rotate(45deg)]  [transition:transform_0.15s_cubic-bezier(0.4,0,0.2,1)]  opacity-0  pointer-events-none`,
     {
       'opacity-0  pointer-events-none': !showLightModeWhiteToggleIcon(),
       'opacity-100  pointer-events-auto z-50': showLightModeWhiteToggleIcon(),
@@ -175,7 +231,7 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
 
   const darkModeWhiteToggleIconClasses = classNames(
     `absolute  size-[1.3rem]  translate-x-[0.1rem]  translate-y-[0.12rem]
-   select-none  md:size-[1.45rem]  top-0  hover:-rotate-45  opacity-0  transition-transform
+   select-none  md:size-[1.45rem]  top-0  opacity-0
    dark:opacity-100 dark:pointer-events-auto  dark:z-50`,
   );
 
@@ -188,7 +244,7 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
     <div className={themeToggleWrapperClasses}>
       <button
         ref={toggleButtonRef}
-        className='relative  size-6  md:size-[1.7rem]'
+        className='relative  size-6  cursor-pointer  md:size-[1.7rem]'
         onClick={() => setDropdownIsOpened((prev) => !prev)}
       >
         <Image
