@@ -230,7 +230,7 @@ function IntroSection(): ReactElement {
         <h1
           aria-hidden='true'
           className='translate-x-[-1.5px]  translate-y-[-4px]  select-none  
-                     text-[11.5vw]  leading-none  text-black  
+                     text-[11.5vw]  leading-none  text-black
                      sm:translate-x-[-2px]  sm:text-[9vw]  md:translate-x-[-3px]
                      md:translate-y-[-5px]  lg:translate-x-[-5px]  
                      lg:translate-y-[-7px]  xl:translate-y-[-7px]  xl:text-[7vw]
@@ -251,6 +251,7 @@ function IntroSection(): ReactElement {
           <IntroDescrLine
             text='in creating'
             dataElement='studio-intro-in-creating'
+            className='z-10'
           />
           <br />
           <IntroDescrLine

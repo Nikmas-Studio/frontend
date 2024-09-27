@@ -6,11 +6,13 @@ interface IntroDescrLineProps {
   text: string;
   dataElement: string;
   isAnimated?: boolean;
+  className?: string;
 }
 
 function IntroDescrLine({
   text,
   dataElement,
+  className,
   isAnimated: animated = false,
 }: IntroDescrLineProps): ReactElement {
   const animatedClasses = `before:pointer-events-none  before:absolute  
@@ -19,9 +21,13 @@ function IntroDescrLine({
                            dark:before:shadow-[inset_0_0_5px_rgba(0,0,0,1)]
                            before:content-['']  `;
 
-  const wrapperClasses = classNames('relative  align-top', {
-    [animatedClasses]: animated,
-  });
+  const wrapperClasses = classNames(
+    'relative  align-top',
+    {
+      [animatedClasses]: animated,
+    },
+    className,
+  );
 
   const firstSpanSplitterClasses = classNames(`align-top  invisible`, {
     'inline-block': animated,
