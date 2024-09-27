@@ -23,12 +23,9 @@ function IntroDescrLine({
     [animatedClasses]: animated,
   });
 
-  const firstSpanSplitterClasses = classNames(
-    `align-top  invisible`,
-    {
-      'inline-block': animated,
-    },
-  );
+  const firstSpanSplitterClasses = classNames(`align-top  invisible`, {
+    'inline-block': animated,
+  });
 
   return (
     <span className={wrapperClasses}>
