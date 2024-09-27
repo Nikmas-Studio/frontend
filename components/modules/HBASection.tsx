@@ -52,17 +52,14 @@ function HBASection(): ReactElement {
         trigger: hbaSectionRef.current,
         start: 'top 390',
         onEnter: () => {
-          hbaBlock.current!.style.transform = 'translateX(0)';
-          hbaBlock.current!.style.opacity = '1';
-          circleRef.current!.style.transform = 'rotate(90deg)';
-          // gsap.set(hbaBlock.current, {
-          //   x: 0,
-          //   opacity: 1,
-          // });
+          gsap.set(hbaBlock.current, {
+            x: 0,
+            opacity: 1,
+          });
 
-          // gsap.set(circleRef.current, {
-          //   rotate: 90,
-          // });
+          gsap.set(circleRef.current, {
+            rotate: 90,
+          });
         },
       });
     });
