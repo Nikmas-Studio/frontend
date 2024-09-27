@@ -56,7 +56,7 @@ function IntroSection(): ReactElement {
       const interactiveSecondElement = interactiveElements![1];
 
       const webBooksElements = container.current?.querySelectorAll(
-        '[data-element="studio-intro-web-books"]',
+        '[data-element="studio-intro-e-books"]',
       );
 
       const webBooksFirstElement = webBooksElements![0];
@@ -265,10 +265,7 @@ function IntroSection(): ReactElement {
             isAnimated
           />
           <br />
-          <IntroDescrLine
-            text='web-books'
-            dataElement='studio-intro-web-books'
-          />
+          <IntroDescrLine text='e-books' dataElement='studio-intro-e-books' />
         </h1>
         <h1 className='sr-only'>
           Nikmas Studio is a next-gen publishing studio that specializes in
@@ -278,8 +275,8 @@ function IntroSection(): ReactElement {
           data-element='studio-intro-spine'
           className='hidden  h-[51.5vw]  w-[7vw]  translate-x-[300px]  rounded-[1.5vw]  
                      bg-black  sm:block  xl:h-[39.95vw]  
-                     xl:w-[4.3vw]  xl:rounded-[1vw]  2xl:h-[614.531px]  
-                     2xl:w-[66px]  2xl:rounded-[15px]  dark:bg-white'
+                     xl:w-[4.8vw]  xl:rounded-[1vw]  2xl:h-[614.531px]  
+                     2xl:w-[73.68px]  2xl:rounded-[15px]  dark:bg-white'
         ></div>
       </MainContainer>
     </section>

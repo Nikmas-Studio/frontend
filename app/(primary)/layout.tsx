@@ -1,11 +1,10 @@
-'use client';
-
 import Footer from '@/components/modules/Footer';
+import GlobalEffects from '@/components/modules/GlobalEffects';
 import Header from '@/components/modules/Header';
 import Providers from '@/components/modules/Providers';
+import { Metadata } from 'next';
 import localFont from 'next/font/local';
-import { usePathname } from 'next/navigation';
-import { ReactElement, ReactNode, useEffect } from 'react';
+import { ReactElement, ReactNode } from 'react';
 
 const gilroy = localFont({
   src: [
@@ -27,19 +26,13 @@ const gilroy = localFont({
   ],
 });
 
+export const metadata: Metadata = {
+  title: 'Nikmas Studio',
+  description:
+    'Next-gen publishing studio that specializes in creating interactive e-books.',
+};
+
 function MainLayout({ children }: { children: ReactNode }): ReactElement {
-  const pathname = usePathname();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  useEffect(() => {
-    if ('scrollRestoration' in window.history) {
-      window.history.scrollRestoration = 'manual';
-    }
-  }, []);
-
   return (
     <html lang='en' className={`${gilroy.className}`}>
       <head>
@@ -61,13 +54,15 @@ function MainLayout({ children }: { children: ReactNode }): ReactElement {
         />
       </head>
       <body className='dark:bg-black'>
-        <Providers>
-          <div className='pt-[5.118rem]  md:pt-[6.0625rem]'>
-            <Header />
-            {children}
-            <Footer />
-          </div>
-        </Providers>
+        <GlobalEffects>
+          <Providers>
+            <div className='pt-[5.118rem]  md:pt-[6.0625rem]'>
+              <Header />
+              {children}
+              <Footer />
+            </div>
+          </Providers>
+        </GlobalEffects>
       </body>
     </html>
   );

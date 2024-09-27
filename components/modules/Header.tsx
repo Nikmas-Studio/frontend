@@ -48,6 +48,60 @@ function Header(): ReactElement {
     }
   }
 
+  useGSAP((_, contextSafe) => {
+    const handleScrollAndResize = contextSafe!(() => {
+      const scrollPosition = window.scrollY;
+      const pageHeight = document.body.offsetHeight;
+      const windowHeight = window.innerHeight;
+      const bottomOffset = 200;
+
+      if (window.innerWidth < 1280) {
+        if (scrollPosition + windowHeight >= pageHeight - bottomOffset) {
+          const currentTransform = headerElementRef.current!.style.transform;
+
+          if (currentTransform !== 'translateY(-100%)') {
+            gsap.to(headerElementRef.current, {
+              y: '-100%',
+              duration: 0.3,
+              ease: 'linear',
+            });
+          }
+        } else {
+          const currentTransform = headerElementRef.current!.style.transform;
+
+          if (
+            currentTransform !== 'translateY(0%)' &&
+            currentTransform !== ''
+          ) {
+            gsap.to(headerElementRef.current, {
+              y: '0%',
+              duration: 0.3,
+              ease: 'linear',
+            });
+          }
+        }
+      } else {
+        const currentTransform = headerElementRef.current!.style.transform;
+
+        if (currentTransform !== 'translateY(0%)' && currentTransform !== '') {
+          gsap.to(headerElementRef.current, {
+            y: '0%',
+            duration: 0.3,
+            ease: 'linear',
+          });
+        }
+      }
+    });
+
+    window.addEventListener('scroll', handleScrollAndResize);
+    window.addEventListener('resize', handleScrollAndResize);
+
+    return () => {
+      window.removeEventListener('scroll', handleScrollAndResize);
+      window.removeEventListener('resize', handleScrollAndResize);
+    };
+  }, []);
+
   useGSAP(() => {
     if (isManualThemeChange) {
       gsap.set(headerElementRef.current, {

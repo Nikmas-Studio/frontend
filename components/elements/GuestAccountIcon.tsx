@@ -173,8 +173,8 @@ function GuestAccountIcon({ className }: GuestAccountIconProps): ReactElement {
       <div
         id='header-account-icon-spine'
         ref={spineElementRef}
-        className='h-[1.1rem]  w-[0.234em]  translate-y-[-0.03rem]
-                   rounded-[0.05rem]  bg-white  dark:bg-black'
+        className='h-[1.05rem]  w-[0.234rem]  translate-y-[-0.03rem]  rounded-[0.06rem]
+                   bg-white  md:h-[1.1rem]  md:w-[0.2447rem]  dark:bg-black'
       ></div>
     </div>
   );

@@ -91,11 +91,12 @@ function HBASection(): ReactElement {
                        xl:gap-[1.4vw]  2xl:gap-[21.49px]'
           >
             <p
-              className='flex  translate-y-[2vw]  items-end gap-[1.2vw] 
+              className='flex  translate-y-[2.14vw]  items-end gap-[1.2vw] 
                          text-[9vw]  font-bold  leading-none
-                         sm:translate-y-[1.6vw]  sm:text-[7vw]  lg:text-[6.5vw]
-                         xl:translate-y-[1.02vw]  xl:gap-[1.1vw]
-                         xl:text-[4.5vw]  2xl:translate-y-[15.657px]
+                         sm:translate-y-[1.67vw]  sm:text-[7vw]  lg:translate-y-[1.5vw]
+                         lg:text-[6.5vw]
+                         xl:translate-y-[1vw]  xl:gap-[1.1vw]
+                         xl:text-[4.5vw]  2xl:translate-y-[15.6px]
                          2xl:gap-[16.885px]  2xl:text-[69.075px]'
             >
               <span
