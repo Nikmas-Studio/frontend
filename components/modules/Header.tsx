@@ -53,18 +53,14 @@ function Header(): ReactElement {
       const scrollPosition = window.scrollY;
       const pageHeight = document.body.offsetHeight;
       const windowHeight = window.innerHeight;
-      const bottomOffset = 300;
+      const bottomOffset = 200;
 
       if (window.innerWidth < 1280) {
         if (scrollPosition + windowHeight >= pageHeight - bottomOffset) {
           const currentTransform = headerElementRef.current!.style.transform;
 
           if (currentTransform !== 'translateY(-100%)') {
-            gsap.to(headerElementRef.current, {
-              y: '-100%',
-              duration: 0.1,
-              ease: 'linear',
-            });
+            headerElementRef.current!.style.transform = 'translateY(-100%)';
           }
         } else {
           const currentTransform = headerElementRef.current!.style.transform;
@@ -73,22 +69,14 @@ function Header(): ReactElement {
             currentTransform !== 'translateY(0%)' &&
             currentTransform !== ''
           ) {
-            gsap.to(headerElementRef.current, {
-              y: '0%',
-              duration: 0.1,
-              ease: 'linear',
-            });
+            headerElementRef.current!.style.transform = 'translateY(0%)';
           }
         }
       } else {
         const currentTransform = headerElementRef.current!.style.transform;
 
         if (currentTransform !== 'translateY(0%)' && currentTransform !== '') {
-          gsap.to(headerElementRef.current, {
-            y: '0%',
-            duration: 0.1,
-            ease: 'linear',
-          });
+          headerElementRef.current!.style.transform = 'translateY(0%)';
         }
       }
     });
@@ -152,8 +140,7 @@ function Header(): ReactElement {
   }, []);
 
   const headerClasses = classNames(
-    `pt-4  pb-6  md:pt-5  md:pb-7  fixed  left-0  right-0  top-0  border-b  
-     [transition:background-image_0.3s_ease]  will-change-transform  xl:will-change-auto
+    `pt-4  pb-6  md:pt-5  md:pb-7  fixed  left-0  right-0  top-0  border-b  ![transition-duration:0.3s]  transition-transform  
      z-50  [background-image:linear-gradient(135deg,#ffffff,#ffffff)]
      dark:[background-image:linear-gradient(135deg,#000000,#000000)]`,
     {
