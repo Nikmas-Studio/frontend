@@ -251,7 +251,7 @@ function IntroSection(): ReactElement {
           <IntroDescrLine
             text='in creating'
             dataElement='studio-intro-in-creating'
-            className='z-10'
+            className='z-50'
           />
           <br />
           <IntroDescrLine
