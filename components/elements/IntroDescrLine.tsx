@@ -41,7 +41,7 @@ function IntroDescrLine({
         >
           <SpanSplitter
             text={text}
-            classNameForSpan='inline-block  align-top'
+            classNameForSpan='inline-block  align-top  will-change-transform'
           />
         </span>
       )}
