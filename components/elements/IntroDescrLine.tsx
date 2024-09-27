@@ -14,17 +14,14 @@ function IntroDescrLine({
   isAnimated: animated = false,
 }: IntroDescrLineProps): ReactElement {
   const animatedClasses = `before:pointer-events-none  before:absolute  
-                           before:inset-0  before:z-10
+                           before:inset-0  before:z-10  overflow-hidden
                            before:shadow-[inset_0_0_5px_rgba(255,255,255,1)]
                            dark:before:shadow-[inset_0_0_5px_rgba(0,0,0,1)]
                            before:content-['']  `;
 
-  const wrapperClasses = classNames(
-    'relative  inline-block  overflow-hidden  align-top',
-    {
-      [animatedClasses]: animated,
-    },
-  );
+  const wrapperClasses = classNames('relative  inline-block  align-top', {
+    [animatedClasses]: animated,
+  });
 
   return (
     <span className={wrapperClasses}>
