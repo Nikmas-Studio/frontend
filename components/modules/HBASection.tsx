@@ -48,22 +48,23 @@ function HBASection(): ReactElement {
     });
 
     mm.add('(max-width: 1279px)', () => {
-      const timeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: hbaSectionRef.current,
-          start: 'top 390',
+      ScrollTrigger.create({
+        trigger: hbaSectionRef.current,
+        start: 'top 390',
+        onEnter: () => {
+          hbaBlock.current!.style.transform = 'translateX(0)';
+          hbaBlock.current!.style.opacity = '1';
+          circleRef.current!.style.transform = 'rotate(90deg)';
+          // gsap.set(hbaBlock.current, {
+          //   x: 0,
+          //   opacity: 1,
+          // });
+
+          // gsap.set(circleRef.current, {
+          //   rotate: 90,
+          // });
         },
       });
-
-      timeline.to(
-        hbaBlock.current,
-        {
-          opacity: 1,
-          duration: 1,
-          ease: 'power2.out',
-        },
-        0,
-      );
     });
   }, []);
 
@@ -75,15 +76,15 @@ function HBASection(): ReactElement {
       <MainContainer>
         <div
           ref={hbaBlock}
-          className='relative  mx-auto  aspect-square  w-[55vw]  opacity-0
-                     will-change-[opacity]  sm:w-[45vw]  
-                     xl:w-[30vw]  xl:translate-x-[-500px]  xl:will-change-[transform,opacity]  2xl:w-[460.5px]'
+          className='relative  mx-auto  aspect-square  w-[55vw]  translate-x-[-300px]  opacity-0
+                     will-change-[opacity]  [transition:transform_1s_ease-out]  sm:w-[45vw]  xl:w-[30vw]  
+                     xl:translate-x-[-500px]  xl:transition-none  xl:will-change-[transform,opacity]  2xl:w-[460.5px]'
         >
           <Image
             ref={circleRef}
             src={circle}
             alt='Dotted elipse'
-            className='size-full  xl:will-change-transform'
+            className='size-full  [transition:transform_1s_ease-out]  xl:transition-none  xl:will-change-transform'
           />
           <div
             className='absolute  left-1/2  top-1/2  z-20  flex  -translate-x-1/2
