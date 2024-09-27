@@ -275,8 +275,8 @@ function IntroSection(): ReactElement {
           data-element='studio-intro-spine'
           className='hidden  h-[51.5vw]  w-[7vw]  translate-x-[300px]  rounded-[1.5vw]  
                      bg-black  sm:block  xl:h-[39.95vw]  
-                     xl:w-[4.8vw]  xl:rounded-[1vw]  2xl:h-[614.531px]  
-                     2xl:w-[73.68px]  2xl:rounded-[15px]  dark:bg-white'
+                     xl:w-[4.3vw]  xl:rounded-[1vw]  2xl:h-[614.531px]  
+                     2xl:w-[66px]  2xl:rounded-[15px]  dark:bg-white'
         ></div>
       </MainContainer>
     </section>
