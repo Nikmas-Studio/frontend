@@ -14,7 +14,10 @@ import moonIconBlack from '@/public/images/moon-icon-black.png';
 import moonIconWhite from '@/public/images/moon-icon-white.png';
 import sunIconBlack from '@/public/images/sun-icon-black.png';
 import sunIconWhite from '@/public/images/sun-icon-white.png';
-import { lightThemeIsSelected } from '@/utils/check-selected-theme';
+import {
+  darkThemeIsSelected,
+  lightThemeIsSelected,
+} from '@/utils/check-selected-theme';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
@@ -87,6 +90,32 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
             duration: 0.3,
             ease: 'linear',
           });
+        }
+
+        if (darkThemeIsSelected(selectedTheme)) {
+          if (bookSectionInViewport) {
+            gsap.to(dropdownElementRef.current, {
+              borderColor: '#EBEBEB',
+              duration: 0.15,
+              ease: 'cubic-bezier(0.4, 0, 0.2, 1)',
+            });
+          } else {
+            gsap.to(dropdownElementRef.current, {
+              borderColor: '#414141',
+              duration: 0.15,
+              ease: 'cubic-bezier(0.4, 0, 0.2, 1)',
+            });
+          }
+        } else {
+          if (
+            dropdownElementRef.current?.style.borderBottomColor != '#EBEBEB'
+          ) {
+            gsap.to(dropdownElementRef.current, {
+              borderColor: '#EBEBEB',
+              duration: 0.15,
+              ease: 'cubic-bezier(0.4, 0, 0.2, 1)',
+            });
+          }
         }
       }
     },
@@ -214,19 +243,12 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
     `absolute  size-6  translate-y-[-0.5px]  select-none  md:size-[1.7rem]  
     top-0  hover:[transform:rotate(45deg)]  [transition:transform_0.15s_cubic-bezier(0.4,0,0.2,1)]
     opacity-100  pointer-events-auto`,
-    {
-      'opacity-0  pointer-events-none': !showLightModeBlackToggleIcon(),
-      'opacity-100  pointer-events-auto  z-50': showLightModeBlackToggleIcon(),
-    },
   );
 
   const lightModeWhiteToggleIconClasses = classNames(
     `absolute  size-6  translate-y-[-0.5px]  select-none md:size-[1.7rem]  top-0
-     hover:[transform:rotate(45deg)]  [transition:transform_0.15s_cubic-bezier(0.4,0,0.2,1)]  opacity-0  pointer-events-none`,
-    {
-      'opacity-0  pointer-events-none': !showLightModeWhiteToggleIcon(),
-      'opacity-100  pointer-events-auto z-50': showLightModeWhiteToggleIcon(),
-    },
+     hover:[transform:rotate(45deg)]  [transition:transform_0.15s_cubic-bezier(0.4,0,0.2,1)]
+     opacity-0  pointer-events-none`,
   );
 
   const darkModeWhiteToggleIconClasses = classNames(
