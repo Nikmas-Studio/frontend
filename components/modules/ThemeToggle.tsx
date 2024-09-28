@@ -108,7 +108,7 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
           }
         } else {
           if (
-            dropdownElementRef.current?.style.borderBottomColor != '#EBEBEB'
+            dropdownElementRef.current?.style.borderBottomColor !== '#EBEBEB'
           ) {
             gsap.to(dropdownElementRef.current, {
               borderColor: '#EBEBEB',
