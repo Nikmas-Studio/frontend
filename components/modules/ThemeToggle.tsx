@@ -91,38 +91,44 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
             ease: 'linear',
           });
         }
-
-        if (darkThemeIsSelected(selectedTheme)) {
-          if (bookSectionInViewport) {
-            gsap.to(dropdownElementRef.current, {
-              borderColor: '#EBEBEB',
-              duration: 0.15,
-              ease: 'cubic-bezier(0.4, 0, 0.2, 1)',
-            });
-          } else {
-            gsap.to(dropdownElementRef.current, {
-              borderColor: '#414141',
-              duration: 0.15,
-              ease: 'cubic-bezier(0.4, 0, 0.2, 1)',
-            });
-          }
-        } else {
-          if (
-            dropdownElementRef.current?.style.borderBottomColor !== '#EBEBEB'
-          ) {
-            gsap.to(dropdownElementRef.current, {
-              borderColor: '#EBEBEB',
-              duration: 0.15,
-              ease: 'cubic-bezier(0.4, 0, 0.2, 1)',
-            });
-          }
-        }
       }
     },
     {
       dependencies: [bookSectionInViewport],
     },
   );
+
+  useGSAP(() => {
+    if (bookSectionInViewport) {
+      bookSectionWasInViewport.current = true;
+    }
+
+    if (bookSectionWasInViewport.current) {
+      if (darkThemeIsSelected(selectedTheme)) {
+        if (bookSectionInViewport) {
+          gsap.to(dropdownElementRef.current, {
+            borderColor: '#EBEBEB',
+            duration: 0.15,
+            ease: 'cubic-bezier(0.4, 0, 0.2, 1)',
+          });
+        } else {
+          gsap.to(dropdownElementRef.current, {
+            borderColor: '#414141',
+            duration: 0.15,
+            ease: 'cubic-bezier(0.4, 0, 0.2, 1)',
+          });
+        }
+      } else {
+        if (dropdownElementRef.current?.style.borderBottomColor !== '#EBEBEB') {
+          gsap.to(dropdownElementRef.current, {
+            borderColor: '#EBEBEB',
+            duration: 0.15,
+            ease: 'cubic-bezier(0.4, 0, 0.2, 1)',
+          });
+        }
+      }
+    }
+  }, [bookSectionInViewport, selectedTheme]);
 
   useEffect(() => {
     if (
@@ -240,9 +246,9 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
   );
 
   const lightModeBlackToggleIconClasses = classNames(
-    `absolute  size-6  translate-y-[-0.5px]  select-none  md:size-[1.7rem]  
+    `absolute  size-6  translate-y-[-0.5px]  select-none   md:size-[1.7rem]  
     top-0  hover:[transform:rotate(45deg)]  [transition:transform_0.15s_cubic-bezier(0.4,0,0.2,1)]
-    opacity-100  pointer-events-auto`,
+    opacity-100  pointer-events-auto z-40`,
   );
 
   const lightModeWhiteToggleIconClasses = classNames(
