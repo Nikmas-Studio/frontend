@@ -8,7 +8,10 @@ import IntroDescrLine from '../elements/IntroDescrLine';
 import MainContainer from '../elements/MainContainer';
 
 function IntroSection(): ReactElement {
-  const container = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const spineRef = useRef<HTMLDivElement | null>(null);
+  const lastSpanRef = useRef<HTMLSpanElement | null>(null);
+  const h1Ref = useRef<HTMLHeadingElement | null>(null);
   const { isTouchDevice } = useTouchDevice();
   const isTouchDeviceRef = useRef(false);
 
@@ -18,38 +21,38 @@ function IntroSection(): ReactElement {
 
   useGSAP(
     (context, contextSave) => {
-      const nextGenElements = container.current?.querySelectorAll(
+      const nextGenElements = containerRef.current?.querySelectorAll(
         '[data-element="studio-intro-next-gen"]',
       );
 
       const nextGenFirstElement = nextGenElements![0];
 
-      const publishingStudioElements = container.current?.querySelectorAll(
+      const publishingStudioElements = containerRef.current?.querySelectorAll(
         '[data-element="studio-intro-publishing-studio"]',
       );
 
       const publishingStudioFirstElement = publishingStudioElements![0];
 
-      const thatSpecializesElements = container.current?.querySelectorAll(
+      const thatSpecializesElements = containerRef.current?.querySelectorAll(
         '[data-element="studio-intro-that-specializes"]',
       );
 
       const thatSpecializesFirstElement = thatSpecializesElements![0];
 
-      const inCreatingElements = container.current?.querySelectorAll(
+      const inCreatingElements = containerRef.current?.querySelectorAll(
         '[data-element="studio-intro-in-creating"]',
       );
 
       const inCreatingFirstElement = inCreatingElements![0];
 
-      const interactiveElements = container.current?.querySelectorAll(
+      const interactiveElements = containerRef.current?.querySelectorAll(
         '[data-element="studio-intro-interactive"]',
       );
 
       const interactiveFirstElement = interactiveElements![0];
       const interactiveSecondElement = interactiveElements![1];
 
-      const webBooksElements = container.current?.querySelectorAll(
+      const webBooksElements = containerRef.current?.querySelectorAll(
         '[data-element="studio-intro-e-books"]',
       );
 
@@ -218,23 +221,101 @@ function IntroSection(): ReactElement {
         wrapper?.removeEventListener('click', handleClick);
       };
     },
-    { scope: container, dependencies: [] },
+    { scope: containerRef, dependencies: [] },
   );
+
+  // from 640px viewport
+
+  // 75% of viewport height (priority)
+  // 75% of container width
+
+  // 92.16px — 713.31px
+  // 0.13 — font size / h1 container width ratio
+
+  // 92.16px — 552.94px
+  // 0.17 — font size / h1 container height ratio
+
+  // 1. get viewport height
+  // 2. h1 container height = viewport height * 0.75
+  // 3. h1 font size = h1 container height * 0.17
+  // 4. h1 container width = h1 font size / 0.13
+  // 5. get intro container width without paddings
+  // 6. h1 percentage of intro container width = h1 container width / intro container width * 100
+  // 7. if h1 percentage of intro container width > 75 {
+  //      h1 container width = intro container width * 0.75
+  //      h1 font size = h1 container width * 0.13
+  //      h1 container height = h1 font size / 0.17
+  //      spine height = h1 container height
+  //    } else {
+  //      h1 container height = h1 font size / 0.17
+  //      spine height = h1 container height
+  //    }
+  useEffect(() => {
+    function setSizes(): void {
+      if (window.innerWidth >= 640) {
+        let h1ContainerHeight = window.innerHeight * 0.72;
+        let h1FontSize = h1ContainerHeight * 0.17;
+        let h1ContainerWidth = h1FontSize / 0.13;
+        const introContainerPaddings =
+          parseFloat(
+            window.getComputedStyle(containerRef.current!).paddingLeft,
+          ) * 2;
+        const introContainerWidth =
+          containerRef.current!.clientWidth - introContainerPaddings;
+        const h1PercentageOfIntroContainerWidth =
+          (h1ContainerWidth / introContainerWidth) * 100;
+
+        if (h1PercentageOfIntroContainerWidth > 75) {
+          h1ContainerWidth = introContainerWidth * 0.75;
+          h1FontSize = h1ContainerWidth * 0.13;
+          h1ContainerHeight = h1FontSize / 0.17;
+        } else {
+          h1ContainerHeight = h1FontSize / 0.17;
+        }
+
+        const lastSpanHeight =
+          lastSpanRef.current!.getBoundingClientRect().height;
+        console.log('lastSpanHeight', lastSpanHeight);
+        const spanMargin = lastSpanHeight * 0.17;
+        const spineHeight = h1ContainerHeight - spanMargin;
+        const spineTranslate = lastSpanHeight * 0.065;
+
+        h1Ref.current!.style.fontSize = `${h1FontSize}px`;
+        spineRef.current!.style.height = `${spineHeight}px`;
+        const spineWidth = h1ContainerHeight / 9.29;
+        spineRef.current!.style.width = `${spineWidth}px`;
+        spineRef.current!.style.borderRadius = `${spineWidth * 0.2}px`;
+        const spineExistingTransformX =
+          parseFloat(
+            window.getComputedStyle(spineRef.current!).transform.split(',')[4],
+          ) || 0;
+
+        console.log('spineExistingTransform', spineExistingTransformX);
+        spineRef.current!.style.transform = `translateX(${spineExistingTransformX}px) translateY(${spineTranslate}px)`;
+      }
+    }
+
+    setSizes();
+
+    window.addEventListener('resize', setSizes);
+
+    return () => {
+      window.removeEventListener('resize', setSizes);
+    };
+  }, []);
 
   return (
     <section className='mt-2'>
       <MainContainer
         className='flex  justify-between  overflow-hidden'
-        ref={container}
+        ref={containerRef}
       >
         <h1
+          ref={h1Ref}
           aria-hidden='true'
-          className='translate-x-[-1.5px]  translate-y-[-4px]  select-none  
+          className='translate-x-[-1.5px]  select-none  
                      text-[11.5vw]  leading-none  text-black
-                     sm:translate-x-[-2px]  sm:text-[9vw]  md:translate-x-[-3px]
-                     md:translate-y-[-5px]  lg:translate-x-[-5px]  
-                     lg:translate-y-[-7px]  xl:translate-y-[-7px]  xl:text-[7vw]
-                     2xl:text-[107.45px]  dark:text-white'
+                       dark:text-white'
         >
           <IntroDescrLine text='Next-gen' dataElement='studio-intro-next-gen' />
           <br />
@@ -260,18 +341,21 @@ function IntroSection(): ReactElement {
             isAnimated
           />
           <br />
-          <IntroDescrLine text='e-books' dataElement='studio-intro-e-books' />
+          <IntroDescrLine
+            ref={lastSpanRef}
+            text='e-books'
+            dataElement='studio-intro-e-books'
+          />
         </h1>
         <h1 className='sr-only'>
           Nikmas Studio is a next-gen publishing studio that specializes in
           creating interactive e-books.
         </h1>
         <div
+          ref={spineRef}
           data-element='studio-intro-spine'
-          className='hidden  h-[51.5vw]  w-[7vw]  translate-x-[300px]  rounded-[1.5vw]  
-                     bg-black  sm:block  xl:h-[39.95vw]  
-                     xl:w-[4.3vw]  xl:rounded-[1vw]  2xl:h-[614.531px]  
-                     2xl:w-[66px]  2xl:rounded-[15px]  dark:bg-white'
+          className='hidden  h-[51.5vw]  w-[7vw]  translate-x-[300px]
+                     bg-black  sm:block  dark:bg-white'
         ></div>
       </MainContainer>
     </section>
