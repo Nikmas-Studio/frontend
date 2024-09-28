@@ -10,6 +10,7 @@ import MainContainer from '../elements/MainContainer';
 function IntroSection(): ReactElement {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const spineRef = useRef<HTMLDivElement | null>(null);
+  const lineSpanRef = useRef<HTMLSpanElement | null>(null);
   const h1Ref = useRef<HTMLHeadingElement | null>(null);
   const { isTouchDevice } = useTouchDevice();
   const isTouchDeviceRef = useRef(false);
@@ -272,8 +273,13 @@ function IntroSection(): ReactElement {
           h1ContainerHeight = h1FontSize / 0.17;
         }
 
+        const charSpan = lineSpanRef.current!.querySelector('span');
+        const charSpanRect = charSpan!.getBoundingClientRect();
+        const charSpanRatio = charSpanRect.width / charSpanRect.height;
+        const spineTranslateRatio = charSpanRatio < 0.4 ? 0.024 : 0.012;
+
         const spineHeight = h1ContainerHeight - h1ContainerHeight * 0.029;
-        const spineTranslate = h1ContainerHeight * 0.012;
+        const spineTranslate = h1ContainerHeight * spineTranslateRatio;
 
         h1Ref.current!.style.fontSize = `${h1FontSize}px`;
         spineRef.current!.style.height = `${spineHeight}px`;
@@ -336,7 +342,11 @@ function IntroSection(): ReactElement {
             isAnimated
           />
           <br />
-          <IntroDescrLine text='e-books' dataElement='studio-intro-e-books' />
+          <IntroDescrLine
+            ref={lineSpanRef}
+            text='e-books'
+            dataElement='studio-intro-e-books'
+          />
         </h1>
         <h1 className='sr-only'>
           Nikmas Studio is a next-gen publishing studio that specializes in
