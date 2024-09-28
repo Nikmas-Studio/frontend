@@ -226,62 +226,62 @@ function IntroSection(): ReactElement {
 
   useEffect(() => {
     function setSizes(): void {
-      setTimeout(() => {
-        console.log('orientationchange');
-        if (window.innerWidth >= 640) {
-          let h1ContainerHeight = window.innerHeight * 0.72;
-          let h1FontSize = h1ContainerHeight * 0.17;
-          let h1ContainerWidth = h1FontSize / 0.13;
-          const introContainerPaddings =
-            parseFloat(
-              window.getComputedStyle(containerRef.current!).paddingLeft,
-            ) * 2;
-          const introContainerWidth =
-            containerRef.current!.clientWidth - introContainerPaddings;
-          const h1PercentageOfIntroContainerWidth =
-            (h1ContainerWidth / introContainerWidth) * 100;
+      console.log('orientation change');
+      if (window.innerWidth >= 640) {
+        let h1ContainerHeight = window.innerHeight * 0.72;
+        let h1FontSize = h1ContainerHeight * 0.17;
+        let h1ContainerWidth = h1FontSize / 0.13;
+        const introContainerPaddings =
+          parseFloat(
+            window.getComputedStyle(containerRef.current!).paddingLeft,
+          ) * 2;
+        const introContainerWidth =
+          containerRef.current!.clientWidth - introContainerPaddings;
+        const h1PercentageOfIntroContainerWidth =
+          (h1ContainerWidth / introContainerWidth) * 100;
 
-          if (h1PercentageOfIntroContainerWidth > 75) {
-            h1ContainerWidth = introContainerWidth * 0.75;
-            h1FontSize = h1ContainerWidth * 0.13;
-            h1ContainerHeight = h1FontSize / 0.17;
-          } else {
-            h1ContainerHeight = h1FontSize / 0.17;
-          }
-
-          const charSpan = lineSpanRef.current!.querySelector(
-            'span span span',
-          ) as HTMLElement;
-          const charSpanRect = charSpan!.getBoundingClientRect();
-          const charSpanRatio = charSpanRect.width / charSpanRect.height;
-          const spineTranslateRatio = charSpanRatio < 0.53 ? 0.024 : 0.012;
-
-          const spineHeight = h1ContainerHeight - h1ContainerHeight * 0.029;
-          const spineTranslate = h1ContainerHeight * spineTranslateRatio;
-
-          h1Ref.current!.style.fontSize = `${h1FontSize}px`;
-          spineRef.current!.style.height = `${spineHeight}px`;
-          const spineWidth = h1ContainerHeight / 9.29;
-          spineRef.current!.style.width = `${spineWidth}px`;
-          spineRef.current!.style.borderRadius = `${spineWidth * 0.2}px`;
-          const spineExistingTransformX =
-            parseFloat(
-              window
-                .getComputedStyle(spineRef.current!)
-                .transform.split(',')[4],
-            ) || 0;
-
-          spineRef.current!.style.transform = `translateX(${spineExistingTransformX}px) translateY(${spineTranslate}px)`;
+        if (h1PercentageOfIntroContainerWidth > 75) {
+          h1ContainerWidth = introContainerWidth * 0.75;
+          h1FontSize = h1ContainerWidth * 0.13;
+          h1ContainerHeight = h1FontSize / 0.17;
+        } else {
+          h1ContainerHeight = h1FontSize / 0.17;
         }
-      }, 5);
+
+        const charSpan = lineSpanRef.current!.querySelector(
+          'span span span',
+        ) as HTMLElement;
+        const charSpanRect = charSpan!.getBoundingClientRect();
+        const charSpanRatio = charSpanRect.width / charSpanRect.height;
+        const spineTranslateRatio = charSpanRatio < 0.53 ? 0.024 : 0.012;
+
+        const spineHeight = h1ContainerHeight - h1ContainerHeight * 0.029;
+        const spineTranslate = h1ContainerHeight * spineTranslateRatio;
+
+        h1Ref.current!.style.fontSize = `${h1FontSize}px`;
+        spineRef.current!.style.height = `${spineHeight}px`;
+        const spineWidth = h1ContainerHeight / 9.29;
+        spineRef.current!.style.width = `${spineWidth}px`;
+        spineRef.current!.style.borderRadius = `${spineWidth * 0.2}px`;
+        const spineExistingTransformX =
+          parseFloat(
+            window.getComputedStyle(spineRef.current!).transform.split(',')[4],
+          ) || 0;
+
+        spineRef.current!.style.transform = `translateX(${spineExistingTransformX}px) translateY(${spineTranslate}px)`;
+      }
     }
 
     setSizes();
 
-    window.addEventListener('orientationchange', setSizes);
+    screen.orientation?.addEventListener('change', () =>
+      setTimeout(setSizes, 10),
+    );
 
     return () => {
-      window.removeEventListener('orientationchange', setSizes);
+      screen.orientation?.removeEventListener('change', () =>
+        setTimeout(setSizes, 10),
+      );
     };
   }, []);
 
