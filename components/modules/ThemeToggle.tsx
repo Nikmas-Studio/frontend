@@ -187,7 +187,7 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
   });
 
   useGSAP((_, contextSafe) => {
-    const handleMouseEnter = contextSafe!(() => {
+    const handleDarkModeIconMouseEnter = contextSafe!(() => {
       if (isTouchDeviceRef.current) {
         return;
       }
@@ -199,7 +199,7 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
       });
     });
 
-    const handleMouseLeave = contextSafe!(() => {
+    const handleDarkModeIconMouseLeave = contextSafe!(() => {
       if (isTouchDeviceRef.current) {
         return;
       }
@@ -211,28 +211,116 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
       });
     });
 
+    const handleLightModeBlackIconMouseEnter = contextSafe!(() => {
+      if (isTouchDeviceRef.current) {
+        return;
+      }
+
+      gsap.to(lightModeBlackToggleIconRef.current, {
+        rotate: 45,
+        duration: 0.15,
+        ease: 'cubic-bezier(0.4,0,0.2,1)',
+      });
+    });
+
+    const handleLightModeBlackIconMouseLeave = contextSafe!(() => {
+      if (isTouchDeviceRef.current) {
+        return;
+      }
+
+      gsap.to(lightModeBlackToggleIconRef.current, {
+        rotate: 0,
+        duration: 0.15,
+        ease: 'cubic-bezier(0.4,0,0.2,1)',
+      });
+    });
+
+    const handleLightModeWhiteIconMouseEnter = contextSafe!(() => {
+      if (isTouchDeviceRef.current) {
+        return;
+      }
+
+      gsap.to(lightModeWhiteToggleIconRef.current, {
+        rotate: 45,
+        duration: 0.15,
+        ease: 'cubic-bezier(0.4,0,0.2,1)',
+      });
+    });
+
+    const handleLightModeWhiteIconMouseLeave = contextSafe!(() => {
+      if (isTouchDeviceRef.current) {
+        return;
+      }
+
+      gsap.to(lightModeWhiteToggleIconRef.current, {
+        rotate: 0,
+        duration: 0.15,
+        ease: 'cubic-bezier(0.4,0,0.2,1)',
+      });
+    });
+
     darkModeWhiteToggleIconRef.current?.addEventListener(
       'mouseenter',
-      handleMouseEnter,
+      handleDarkModeIconMouseEnter,
     );
 
     darkModeWhiteToggleIconRef.current?.addEventListener(
       'mouseleave',
-      handleMouseLeave,
+      handleDarkModeIconMouseLeave,
+    );
+
+    lightModeBlackToggleIconRef.current?.addEventListener(
+      'mouseenter',
+      handleLightModeBlackIconMouseEnter,
+    );
+
+    lightModeBlackToggleIconRef.current?.addEventListener(
+      'mouseleave',
+      handleLightModeBlackIconMouseLeave,
+    );
+
+    lightModeWhiteToggleIconRef.current?.addEventListener(
+      'mouseenter',
+      handleLightModeWhiteIconMouseEnter,
+    );
+
+    lightModeWhiteToggleIconRef.current?.addEventListener(
+      'mouseleave',
+      handleLightModeWhiteIconMouseLeave,
     );
 
     return () => {
       darkModeWhiteToggleIconRef.current?.removeEventListener(
         'mouseenter',
-        handleMouseEnter,
+        handleDarkModeIconMouseEnter,
       );
 
       darkModeWhiteToggleIconRef.current?.removeEventListener(
         'mouseleave',
-        handleMouseLeave,
+        handleDarkModeIconMouseLeave,
+      );
+
+      lightModeBlackToggleIconRef.current?.removeEventListener(
+        'mouseenter',
+        handleLightModeBlackIconMouseEnter,
+      );
+
+      lightModeBlackToggleIconRef.current?.removeEventListener(
+        'mouseleave',
+        handleLightModeBlackIconMouseLeave,
+      );
+
+      lightModeWhiteToggleIconRef.current?.removeEventListener(
+        'mouseenter',
+        handleLightModeWhiteIconMouseEnter,
+      );
+
+      lightModeWhiteToggleIconRef.current?.removeEventListener(
+        'mouseleave',
+        handleLightModeWhiteIconMouseLeave,
       );
     };
-  });
+  }, []);
 
   const dropdownClasses = classNames(
     `absolute  right-0  top-10  flex  flex-col  rounded-lg  bg-white
@@ -247,13 +335,12 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
 
   const lightModeBlackToggleIconClasses = classNames(
     `absolute  size-6  translate-y-[-0.5px]  select-none   md:size-[1.7rem]  
-    top-0  hover:[transform:rotate(45deg)]  [transition:transform_0.15s_cubic-bezier(0.4,0,0.2,1)]
+    top-0 
     opacity-100  pointer-events-auto z-40`,
   );
 
   const lightModeWhiteToggleIconClasses = classNames(
     `absolute  size-6  translate-y-[-0.5px]  select-none md:size-[1.7rem]  top-0
-     hover:[transform:rotate(45deg)]  [transition:transform_0.15s_cubic-bezier(0.4,0,0.2,1)]
      opacity-0  pointer-events-none`,
   );
 
