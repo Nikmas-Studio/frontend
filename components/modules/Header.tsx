@@ -141,7 +141,7 @@ function Header(): ReactElement {
 
   const headerClasses = classNames(
     `pt-4  pb-6  md:pt-5  md:pb-7  fixed  left-0  right-0  top-0  border-b
-    [transition:transform_0.6s_cubic-bezier(0.4,0,0.2,1)]
+    [transition:transform_0.7s_cubic-bezier(0.4,0,0.2,1)]
     [transition:border-bottom-color_0.15s_cubic-bezier(0.4,0,0.2,1)]
      z-50  [background-image:linear-gradient(135deg,#ffffff,#ffffff)]
      dark:[background-image:linear-gradient(135deg,#000000,#000000)]`,
