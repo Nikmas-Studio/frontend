@@ -273,12 +273,13 @@ function IntroSection(): ReactElement {
           h1ContainerHeight = h1FontSize / 0.17;
         }
 
-        const charSpan = lineSpanRef.current!.querySelector('span span span');
-        console.log('charSpan', charSpan);
+        const charSpan = lineSpanRef.current!.querySelector(
+          'span span span',
+        ) as HTMLElement;
         const charSpanRect = charSpan!.getBoundingClientRect();
         console.log('charSpanRect', charSpanRect);
         const charSpanRatio = charSpanRect.width / charSpanRect.height;
-        const spineTranslateRatio = charSpanRatio < 0.4 ? 0.024 : 0.012;
+        const spineTranslateRatio = charSpanRatio < 0.53 ? 0.024 : 0.012;
 
         const spineHeight = h1ContainerHeight - h1ContainerHeight * 0.029;
         const spineTranslate = h1ContainerHeight * spineTranslateRatio;
