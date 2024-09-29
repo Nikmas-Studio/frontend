@@ -18,3 +18,38 @@ body {
            hover:border-black  dark:hover:border-white;
   }
 }
+
+@layer utilities {
+  @property --headerLightModeBgFirstColor {
+    syntax: '<color>';
+    initial-value: #ffffff;
+    inherits: false;
+  }
+
+  @property --headerLightModeBgSecondColor {
+    syntax: '<color>';
+    initial-value: #ffffff;
+    inherits: false;
+  }
+
+  @property --headerDarkModeBgFirstColor {
+    syntax: '<color>';
+    initial-value: #000000;
+    inherits: false;
+  }
+
+  @property --headerDarkModeBgSecondColor {
+    syntax: '<color>';
+    initial-value: #000000;
+    inherits: false;
+  }
+
+  .header-transition {
+    transition:
+      --headerLightModeBgFirstColor 0.3s linear,
+      --headerLightModeBgSecondColor 0.3s linear,
+      --headerDarkModeBgFirstColor 0.3s linear,
+      --headerDarkModeBgSecondColor 0.3s linear,
+      transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}

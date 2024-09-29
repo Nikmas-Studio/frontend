@@ -36,6 +36,9 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
   const bookSectionWasInViewport = useRef(false);
   const { isTouchDevice } = useTouchDevice();
   const isTouchDeviceRef = useRef(isTouchDevice);
+  const isAnimating = useRef(false);
+  const mouseLeavedToggle = useRef(false);
+  const animateLeave = useRef(false);
 
   useEffect(() => {
     isTouchDeviceRef.current = isTouchDevice;
@@ -106,24 +109,18 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
     if (bookSectionWasInViewport.current) {
       if (darkThemeIsSelected(selectedTheme)) {
         if (bookSectionInViewport) {
-          gsap.to(dropdownElementRef.current, {
+          gsap.set(dropdownElementRef.current, {
             borderColor: '#EBEBEB',
-            duration: 0.15,
-            ease: 'cubic-bezier(0.4, 0, 0.2, 1)',
           });
         } else {
-          gsap.to(dropdownElementRef.current, {
+          gsap.set(dropdownElementRef.current, {
             borderColor: '#414141',
-            duration: 0.15,
-            ease: 'cubic-bezier(0.4, 0, 0.2, 1)',
           });
         }
       } else {
         if (dropdownElementRef.current?.style.borderBottomColor !== '#EBEBEB') {
-          gsap.to(dropdownElementRef.current, {
+          gsap.set(dropdownElementRef.current, {
             borderColor: '#EBEBEB',
-            duration: 0.15,
-            ease: 'cubic-bezier(0.4, 0, 0.2, 1)',
           });
         }
       }
@@ -171,6 +168,30 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
           zIndex: 'auto',
         });
       }
+    } else {
+      if (showLightModeBlackToggleIcon()) {
+        gsap.set(lightModeBlackToggleIconRef.current, {
+          pointerEvents: 'auto',
+          zIndex: 50,
+        });
+      } else {
+        gsap.set(lightModeBlackToggleIconRef.current, {
+          pointerEvents: 'none',
+          zIndex: 'auto',
+        });
+      }
+
+      if (showLightModeWhiteToggleIcon()) {
+        gsap.set(lightModeWhiteToggleIconRef.current, {
+          pointerEvents: 'auto',
+          zIndex: 50,
+        });
+      } else {
+        gsap.set(lightModeWhiteToggleIconRef.current, {
+          pointerEvents: 'none',
+          zIndex: 'auto',
+        });
+      }
     }
   }, [selectedTheme]);
 
@@ -192,11 +213,34 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
         return;
       }
 
-      gsap.to(darkModeWhiteToggleIconRef.current, {
-        rotate: -45,
-        duration: 0.15,
-        ease: 'cubic-bezier(0.4,0,0.2,1)',
-      });
+      if (!isAnimating.current) {
+        isAnimating.current = true;
+        mouseLeavedToggle.current = false;
+
+        gsap.to(darkModeWhiteToggleIconRef.current, {
+          rotate: -45,
+          duration: 0.15,
+          ease: 'cubic-bezier(0.4,0,0.2,1)',
+        });
+
+        setTimeout(() => {
+
+          if (mouseLeavedToggle.current) {
+            gsap.to(darkModeWhiteToggleIconRef.current, {
+              rotate: 0,
+              duration: 0.15,
+              ease: 'cubic-bezier(0.4,0,0.2,1)',
+            });
+
+            setTimeout(() => {
+              isAnimating.current = false;
+            }, 150);
+          } else {
+            isAnimating.current = false;
+            animateLeave.current = true;
+          }
+        }, 150);
+      }
     });
 
     const handleDarkModeIconMouseLeave = contextSafe!(() => {
@@ -204,11 +248,24 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
         return;
       }
 
-      gsap.to(darkModeWhiteToggleIconRef.current, {
-        rotate: 0,
-        duration: 0.15,
-        ease: 'cubic-bezier(0.4,0,0.2,1)',
-      });
+      if (!mouseLeavedToggle.current) {
+        mouseLeavedToggle.current = true;
+        
+        if (animateLeave.current) {
+          animateLeave.current = false;
+          isAnimating.current = true;
+
+          gsap.to(darkModeWhiteToggleIconRef.current, {
+            rotate: 0,
+            duration: 0.15,
+            ease: 'cubic-bezier(0.4,0,0.2,1)',
+          });
+
+          setTimeout(() => {
+            isAnimating.current = false;
+          }, 150);
+        }
+      }
     });
 
     const handleLightModeBlackIconMouseEnter = contextSafe!(() => {
@@ -216,11 +273,33 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
         return;
       }
 
-      gsap.to(lightModeBlackToggleIconRef.current, {
-        rotate: 45,
-        duration: 0.15,
-        ease: 'cubic-bezier(0.4,0,0.2,1)',
-      });
+      if (!isAnimating.current) {
+        isAnimating.current = true;
+        mouseLeavedToggle.current = false;
+
+        gsap.to(lightModeBlackToggleIconRef.current, {
+          rotate: 45,
+          duration: 0.15,
+          ease: 'cubic-bezier(0.4,0,0.2,1)',
+        });
+
+        setTimeout(() => {
+          if (mouseLeavedToggle.current) {
+            gsap.to(lightModeBlackToggleIconRef.current, {
+              rotate: 0,
+              duration: 0.15,
+              ease: 'cubic-bezier(0.4,0,0.2,1)',
+            });
+
+            setTimeout(() => {
+              isAnimating.current = false;
+            }, 150);
+          } else {
+            isAnimating.current = false;
+            animateLeave.current = true;
+          }
+        }, 150);
+      }
     });
 
     const handleLightModeBlackIconMouseLeave = contextSafe!(() => {
@@ -228,11 +307,24 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
         return;
       }
 
-      gsap.to(lightModeBlackToggleIconRef.current, {
-        rotate: 0,
-        duration: 0.15,
-        ease: 'cubic-bezier(0.4,0,0.2,1)',
-      });
+      if (!mouseLeavedToggle.current) {
+        mouseLeavedToggle.current = true;
+
+        if (animateLeave.current) {
+          animateLeave.current = false;
+          isAnimating.current = true;
+
+          gsap.to(lightModeBlackToggleIconRef.current, {
+            rotate: 0,
+            duration: 0.15,
+            ease: 'cubic-bezier(0.4,0,0.2,1)',
+          });
+
+          setTimeout(() => {
+            isAnimating.current = false;
+          }, 150);
+        }
+      }
     });
 
     const handleLightModeWhiteIconMouseEnter = contextSafe!(() => {
@@ -240,11 +332,33 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
         return;
       }
 
-      gsap.to(lightModeWhiteToggleIconRef.current, {
-        rotate: 45,
-        duration: 0.15,
-        ease: 'cubic-bezier(0.4,0,0.2,1)',
-      });
+      if (!isAnimating.current) {
+        isAnimating.current = true;
+        mouseLeavedToggle.current = false;
+
+        gsap.to(lightModeWhiteToggleIconRef.current, {
+          rotate: 45,
+          duration: 0.15,
+          ease: 'cubic-bezier(0.4,0,0.2,1)',
+        });
+
+        setTimeout(() => {
+          if (mouseLeavedToggle.current) {
+            gsap.to(lightModeWhiteToggleIconRef.current, {
+              rotate: 0,
+              duration: 0.15,
+              ease: 'cubic-bezier(0.4,0,0.2,1)',
+            });
+
+            setTimeout(() => {
+              isAnimating.current = false;
+            }, 150);
+          } else {
+            isAnimating.current = false;
+            animateLeave.current = true;
+          }
+        }, 150);
+      }
     });
 
     const handleLightModeWhiteIconMouseLeave = contextSafe!(() => {
@@ -252,11 +366,24 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
         return;
       }
 
-      gsap.to(lightModeWhiteToggleIconRef.current, {
-        rotate: 0,
-        duration: 0.15,
-        ease: 'cubic-bezier(0.4,0,0.2,1)',
-      });
+      if (!mouseLeavedToggle.current) {
+        mouseLeavedToggle.current = true;
+        
+        if (animateLeave.current) {
+          animateLeave.current = false;
+          isAnimating.current = true;
+
+          gsap.to(lightModeWhiteToggleIconRef.current, {
+            rotate: 0,
+            duration: 0.15,
+            ease: 'cubic-bezier(0.4,0,0.2,1)',
+          });
+
+          setTimeout(() => {
+            isAnimating.current = false;
+          }, 150);
+        }
+      }
     });
 
     darkModeWhiteToggleIconRef.current?.addEventListener(
@@ -336,7 +463,7 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
   const lightModeBlackToggleIconClasses = classNames(
     `absolute  size-6  translate-y-[-0.5px]  select-none   md:size-[1.7rem]  
     top-0 
-    opacity-100  pointer-events-auto z-40`,
+    opacity-100  z-40`,
   );
 
   const lightModeWhiteToggleIconClasses = classNames(

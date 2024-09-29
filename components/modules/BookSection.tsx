@@ -19,6 +19,7 @@ function BookSection(): ReactElement {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const anchorRef = useRef<HTMLAnchorElement | null>(null);
   const sectionWrapperRef = useRef<HTMLDivElement | null>(null);
+  const imageWrapperRef = useRef<HTMLDivElement | null>(null);
   const { setBookSectionInViewport } = useBookSectionStateDispatch();
 
   useGSAP(() => {
@@ -27,7 +28,7 @@ function BookSection(): ReactElement {
 
     const mm = gsap.matchMedia();
 
-    mm.add('(min-width: 1280px)', () => {
+    mm.add('(min-width: 640px)', () => {
       ScrollTrigger.create({
         trigger: sectionWrapperRef.current,
         start: 'top 700',
@@ -38,43 +39,19 @@ function BookSection(): ReactElement {
         },
       });
 
-      const bookTimeline = gsap.timeline({
+      gsap.to(imageWrapperRef.current, {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top 600',
           scrub: true,
           end: '+=520',
         },
+        scale: 1,
+        opacity: 1,
       });
-
-      bookTimeline.to(
-        anchorRef.current,
-        {
-          scale: 1,
-        },
-        0,
-      );
-
-      bookTimeline.to(
-        lightBookCoverRef.current,
-        {
-          scale: 1,
-          opacity: 1,
-        },
-        0,
-      );
-
-      bookTimeline.to(
-        darkBookCoverRef.current,
-        {
-          scale: 1,
-          opacity: 1,
-        },
-        0,
-      );
     });
 
-    mm.add('(max-width: 1279px)', () => {
+    mm.add('(max-width: 639px)', () => {
       ScrollTrigger.create({
         trigger: sectionWrapperRef.current,
         start: 'top 320',
@@ -122,30 +99,30 @@ function BookSection(): ReactElement {
           >
             Our first book
           </h2>
-          <Link
-            ref={anchorRef}
-            className='xl:scale-0'
-            href='/book-master-git-and-github'
+          <div
+            ref={imageWrapperRef}
+            className='sm:scale-0  sm:opacity-0  sm:will-change-[transform,opacity]'
           >
-            <Image
-              ref={lightBookCoverRef}
-              src={bookCoverLight}
-              alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
-              className='max-h-[570px]  w-full  select-none  rounded-[3vw]  sm:h-[65vh]
-                       sm:w-auto  sm:rounded-[1.5vh]  xl:scale-0  xl:opacity-0
-                       xl:will-change-[transform,opacity]  dark:hidden'
-              priority
-            />
-            <Image
-              ref={darkBookCoverRef}
-              src={bookCoverDark}
-              alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
-              className='hidden  max-h-[570px]  w-full  select-none  
-                       rounded-[3vw]  sm:h-[65vh]  sm:w-auto  sm:rounded-[1.5vh]
-                       xl:scale-0  xl:opacity-0  xl:will-change-[transform,opacity]  dark:inline-block'
-              priority
-            />
-          </Link>
+            <Link ref={anchorRef} href='/book-master-git-and-github'>
+              <Image
+                ref={lightBookCoverRef}
+                src={bookCoverLight}
+                alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
+                className='max-h-[570px]  w-full  select-none  rounded-[3vw]  sm:h-[65vh]
+                         sm:w-auto  sm:rounded-[1.5vh]  dark:hidden'
+                priority
+              />
+              <Image
+                ref={darkBookCoverRef}
+                src={bookCoverDark}
+                alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
+                className='hidden  max-h-[570px]  w-full  select-none  
+                         rounded-[3vw]  sm:h-[65vh]  sm:w-auto  
+                         sm:rounded-[1.5vh]  dark:inline-block'
+                priority
+              />
+            </Link>
+          </div>
         </MainContainer>
       </section>
     </div>
