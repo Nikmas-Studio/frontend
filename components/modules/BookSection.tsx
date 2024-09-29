@@ -32,10 +32,8 @@ function BookSection(): ReactElement {
         trigger: sectionWrapperRef.current,
         start: 'top 700',
         onEnter: () => {
-          gsap.to(sectionRef.current, {
+          gsap.set(sectionRef.current, {
             opacity: 1,
-            duration: 1,
-            ease: 'power2.out',
           });
         },
       });
@@ -83,8 +81,6 @@ function BookSection(): ReactElement {
         onEnter: () => {
           gsap.set(sectionRef.current, {
             opacity: 1,
-            // duration: 1,
-            // ease: 'power2.out',
           });
         },
       });
@@ -116,7 +112,7 @@ function BookSection(): ReactElement {
         ref={sectionRef}
         className='w-screen  pb-32  pt-16  opacity-0 
                   [background:linear-gradient(135deg,#ff5013,#271ad3)]
-                  [transition:opacity_1s_ease-in-out]  xl:transition-none
+                  [transition:opacity_1s_ease-out]
                   '
       >
         <MainContainer className='flex  flex-col  items-center  !px-12'>

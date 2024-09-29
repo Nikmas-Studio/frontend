@@ -23,10 +23,10 @@ const IntroDescrLine = forwardRef<HTMLSpanElement, IntroDescrLineProps>(
                            before:inset-0  before:z-10  inline-block  overflow-hidden
                            before:shadow-[inset_0_0_5px_rgba(255,255,255,1)]
                            dark:before:shadow-[inset_0_0_5px_rgba(0,0,0,1)]
-                           before:content-['']  `;
+                           before:content-['']`;
 
     const wrapperClasses = classNames(
-      'relative  align-top',
+      'relative  align-top  group',
       {
         [animatedClasses]: animated,
       },

@@ -24,10 +24,8 @@ function HBASection(): ReactElement {
         trigger: hbaSectionRef.current,
         start: 'top 750',
         onEnter: () => {
-          gsap.to(hbaBlock.current, {
+          gsap.set(hbaBlock.current, {
             opacity: 1,
-            duration: 1,
-            ease: 'power2.out',
           });
         },
       });
@@ -62,7 +60,7 @@ function HBASection(): ReactElement {
           className='relative  mx-auto  aspect-square  w-[55vw]  translate-x-[-300px]
                      opacity-0  [transition:transform_1s_ease-out,opacity_1s_ease-out]  sm:w-[45vw]
                      xl:w-[30vw]
-                     xl:translate-x-0  xl:transition-none  
+                     xl:translate-x-0
                      2xl:w-[460.5px]'
         >
           <Image
