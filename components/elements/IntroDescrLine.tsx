@@ -34,7 +34,7 @@ const IntroDescrLine = forwardRef<HTMLSpanElement, IntroDescrLineProps>(
     );
 
     const firstSpanSplitterClasses = classNames(`align-top  invisible`, {
-      'inline-block': animated,
+      'inline-block  will-change-transform': animated,
     });
 
     return (

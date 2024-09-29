@@ -115,7 +115,7 @@ function IntroSection(): ReactElement {
             interactiveFirstElement.style.color = '#4CBB17';
             interactiveSecondElement.style.color = '#4CBB17';
 
-            wrapper.classList.toggle('active');
+            // wrapper.classList.toggle('active');
           }, 0);
 
           handleMouseEnter = contextSave!((): void => {
