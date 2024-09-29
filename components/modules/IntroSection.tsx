@@ -134,7 +134,7 @@ function IntroSection(): ReactElement {
               { yPercent: 0 },
               0,
             );
-            
+
           if (window.innerWidth >= 640) {
             charsTimeline.restart();
           }
