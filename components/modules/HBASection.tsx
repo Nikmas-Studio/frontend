@@ -20,31 +20,17 @@ function HBASection(): ReactElement {
     const mm = gsap.matchMedia();
 
     mm.add('(min-width: 1280px)', () => {
-      const timeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: hbaSectionRef.current,
-          scrub: true,
-          start: 'top 750',
-          end: '+=550',
+      ScrollTrigger.create({
+        trigger: hbaSectionRef.current,
+        start: 'top 750',
+        onEnter: () => {
+          gsap.to(hbaBlock.current, {
+            opacity: 1,
+            duration: 1,
+            ease: 'power2.out',
+          });
         },
       });
-
-      timeline
-        .to(
-          hbaBlock.current,
-          {
-            x: 0,
-            opacity: 1,
-          },
-          0,
-        )
-        .to(
-          circleRef.current,
-          {
-            rotation: 90,
-          },
-          0,
-        );
     });
 
     mm.add('(max-width: 1279px)', () => {
@@ -52,13 +38,10 @@ function HBASection(): ReactElement {
         trigger: hbaSectionRef.current,
         start: 'top 390',
         onEnter: () => {
-          gsap.set(hbaBlock.current, {
-            x: 0,
+          gsap.to(hbaBlock.current, {
             opacity: 1,
-          });
-
-          gsap.set(circleRef.current, {
-            rotate: 90,
+            duration: 1,
+            ease: 'power2.out',
           });
         },
       });
@@ -68,20 +51,20 @@ function HBASection(): ReactElement {
   return (
     <section
       ref={hbaSectionRef}
-      className='pointer-events-none  mb-32  mt-16  select-none  lg:mb-40  lg:mt-24'
+      className='pointer-events-none  mb-32  mt-16  select-none  lg:mb-40  lg:mt-32'
     >
       <MainContainer>
         <div
           ref={hbaBlock}
-          className='relative  mx-auto  aspect-square  w-[55vw]  translate-x-[-300px]  opacity-0
-                     [transition:transform_1s_ease-out,opacity_1s_ease-out]  sm:w-[45vw]  xl:w-[30vw]  
-                     xl:translate-x-[-500px]  xl:transition-none  xl:will-change-[transform,opacity]  2xl:w-[460.5px]'
+          className='relative  mx-auto  aspect-square  w-[55vw]  opacity-0
+                     sm:w-[45vw]  xl:w-[30vw]  
+                     2xl:w-[460.5px]'
         >
           <Image
             ref={circleRef}
             src={circle}
             alt='Dotted elipse'
-            className='size-full  [transition:transform_1s_ease-out]  xl:transition-none  xl:will-change-transform'
+            className='size-full'
           />
           <div
             className='absolute  left-1/2  top-1/2  z-20  flex  -translate-x-1/2

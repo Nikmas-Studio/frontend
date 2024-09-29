@@ -1,16 +1,14 @@
 'use client';
 
 import { useBookSectionStateDispatch } from '@/context/book-section/Context';
-import { useTheme } from '@/context/theme/Context';
 import bookCoverDark from '@/public/images/git-and-github-book-cover-dark.jpg';
 import bookCoverLight from '@/public/images/git-and-github-book-cover-light.jpg';
-import { lightThemeIsSelected } from '@/utils/check-selected-theme';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ReactElement, useEffect, useRef, useState } from 'react';
+import { ReactElement, useRef } from 'react';
 import MainContainer from '../elements/MainContainer';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -22,136 +20,128 @@ function BookSection(): ReactElement {
   const anchorRef = useRef<HTMLAnchorElement | null>(null);
   const sectionWrapperRef = useRef<HTMLDivElement | null>(null);
   const { setBookSectionInViewport } = useBookSectionStateDispatch();
-  const [scale, setScale] = useState(3);
-  const { selectedTheme } = useTheme();
-  const selectedThemeRef = useRef(selectedTheme);
-
-  useEffect(() => {
-    selectedThemeRef.current = selectedTheme;
-
-    if (lightThemeIsSelected(selectedThemeRef.current)) {
-      setScale(calcScale());
-    }
-  }, [selectedTheme]);
-
-  useEffect(() => {
-    function handleResize(): void {
-      if (lightThemeIsSelected(selectedThemeRef.current)) {
-        setScale(calcScale());
-      }
-    }
-
-    handleResize();
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  function calcScale(): number {
-    const imageWidth = lightBookCoverRef.current!.width;
-
-    const viewportWidth = window.innerWidth;
-    let scale = viewportWidth / imageWidth!;
-    scale = scale + scale * 0.1;
-    if (viewportWidth < 640) {
-      scale = scale * 3;
-    }
-
-    return scale;
-  }
-
-  useGSAP(
-    () => {
-      const headerElement = document.getElementById('main-header');
-      const headerHeight = headerElement?.offsetHeight;
-
-      const mm = gsap.matchMedia();
-
-      mm.add('(min-width: 1280px)', () => {
-        const bookTimeline = gsap.timeline({
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 600',
-            scrub: true,
-            end: '+=520',
-          },
-        });
-
-        bookTimeline.to(
-          anchorRef.current,
-          {
-            pointerEvents: 'auto',
-          },
-          0,
-        );
-
-        bookTimeline.fromTo(
-          lightBookCoverRef.current,
-          {
-            scale,
-          },
-          {
-            scale: 1,
-            opacity: 1,
-          },
-          0,
-        );
-
-        bookTimeline.to(
-          darkBookCoverRef.current,
-          {
-            scale: 1,
-            opacity: 1,
-          },
-          0,
-        );
-      });
-
-      ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: `top ${headerHeight}`,
-        end: `bottom ${headerHeight}`,
-        toggleActions: 'play reverse play reverse',
-        onEnter: () => {
-          setBookSectionInViewport(true);
-        },
-        onEnterBack: () => {
-          setBookSectionInViewport(true);
-        },
-        onLeave: () => {
-          setBookSectionInViewport(false);
-        },
-        onLeaveBack: () => {
-          setBookSectionInViewport(false);
-        },
-      });
-    },
-    {
-      dependencies: [scale],
-      revertOnUpdate: true,
-    },
-  );
 
   useGSAP(() => {
+    const headerElement = document.getElementById('main-header');
+    const headerHeight = headerElement?.offsetHeight;
+
     const mm = gsap.matchMedia();
+
+    mm.add('(min-width: 1280px)', () => {
+      ScrollTrigger.create({
+        trigger: sectionWrapperRef.current,
+        start: 'top 700',
+        onEnter: () => {
+          gsap.to(sectionRef.current, {
+            opacity: 1,
+            duration: 1,
+            ease: 'power2.out',
+          });
+        },
+      });
+
+      const bookTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 600',
+          scrub: true,
+          end: '+=520',
+        },
+      });
+
+      bookTimeline.to(
+        anchorRef.current,
+        {
+          scale: 1,
+        },
+        0,
+      );
+
+      bookTimeline.to(
+        lightBookCoverRef.current,
+        {
+          scale: 1,
+          opacity: 1,
+        },
+        0,
+      );
+
+      bookTimeline.to(
+        darkBookCoverRef.current,
+        {
+          scale: 1,
+          opacity: 1,
+        },
+        0,
+      );
+    });
 
     mm.add('(max-width: 1279px)', () => {
       ScrollTrigger.create({
         trigger: sectionWrapperRef.current,
         start: 'top 320',
         onEnter: () => {
-          gsap.set(anchorRef.current, {
-            pointerEvents: 'auto',
-          });
-
-          gsap.set(sectionRef.current, {
+          gsap.to(sectionRef.current, {
             opacity: 1,
+            duration: 1,
+            ease: 'power2.out',
           });
         },
       });
+
+      const bookTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 520',
+          scrub: true,
+          end: '+=500',
+        },
+      });
+
+      bookTimeline.to(
+        anchorRef.current,
+        {
+          scale: 1,
+        },
+        0,
+      );
+
+      bookTimeline.to(
+        lightBookCoverRef.current,
+        {
+          scale: 1,
+          opacity: 1,
+        },
+        0,
+      );
+
+      bookTimeline.to(
+        darkBookCoverRef.current,
+        {
+          scale: 1,
+          opacity: 1,
+        },
+        0,
+      );
+    });
+
+    ScrollTrigger.create({
+      trigger: sectionRef.current,
+      start: `top ${headerHeight}`,
+      end: `bottom ${headerHeight}`,
+      toggleActions: 'play reverse play reverse',
+      onEnter: () => {
+        setBookSectionInViewport(true);
+      },
+      onEnterBack: () => {
+        setBookSectionInViewport(true);
+      },
+      onLeave: () => {
+        setBookSectionInViewport(false);
+      },
+      onLeaveBack: () => {
+        setBookSectionInViewport(false);
+      },
     });
   }, []);
 
@@ -160,10 +150,7 @@ function BookSection(): ReactElement {
       <section
         ref={sectionRef}
         className='w-screen  pb-32  pt-16  opacity-0 
-                  [background:linear-gradient(135deg,#ff5013,#271ad3)]  
-                  [transition:opacity_1s_ease-in-out]  
-                  xl:opacity-100
-                  xl:transition-none'
+                  [background:linear-gradient(135deg,#ff5013,#271ad3)]'
       >
         <MainContainer className='flex  flex-col  items-center  !px-12'>
           <h2
@@ -174,15 +161,15 @@ function BookSection(): ReactElement {
           </h2>
           <Link
             ref={anchorRef}
-            className='pointer-events-none'
+            className='scale-0'
             href='/book-master-git-and-github'
           >
             <Image
               ref={lightBookCoverRef}
               src={bookCoverLight}
               alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
-              className='max-h-[1000px]  w-full  select-none  rounded-[3vw]  sm:h-[65vh]
-                       sm:w-auto  sm:rounded-[1.5vh]  xl:opacity-0
+              className='max-h-[570px]  w-full  select-none  rounded-[3vw]  sm:h-[65vh]
+                       sm:w-auto  sm:rounded-[1.5vh]  xl:scale-0  xl:opacity-0
                        xl:will-change-[transform,opacity]  dark:hidden'
               priority
             />
@@ -190,7 +177,7 @@ function BookSection(): ReactElement {
               ref={darkBookCoverRef}
               src={bookCoverDark}
               alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
-              className='hidden  max-h-[1000px]  w-full  select-none  
+              className='hidden  max-h-[570px]  w-full  select-none  
                        rounded-[3vw]  sm:h-[65vh]  sm:w-auto  sm:rounded-[1.5vh]
                        xl:scale-0  xl:opacity-0  xl:will-change-[transform,opacity]  dark:inline-block'
               priority

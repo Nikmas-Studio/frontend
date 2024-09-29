@@ -224,67 +224,6 @@ function IntroSection(): ReactElement {
     { scope: containerRef, dependencies: [] },
   );
 
-  useEffect(() => {
-    function setSizes(): void {
-      console.log('orientation change');
-      if (window.innerWidth >= 640) {
-        let h1ContainerHeight = window.innerHeight * 0.72;
-        let h1FontSize = h1ContainerHeight * 0.17;
-        let h1ContainerWidth = h1FontSize / 0.13;
-        const introContainerPaddings =
-          parseFloat(
-            window.getComputedStyle(containerRef.current!).paddingLeft,
-          ) * 2;
-        const introContainerWidth =
-          containerRef.current!.clientWidth - introContainerPaddings;
-        const h1PercentageOfIntroContainerWidth =
-          (h1ContainerWidth / introContainerWidth) * 100;
-
-        if (h1PercentageOfIntroContainerWidth > 75) {
-          h1ContainerWidth = introContainerWidth * 0.75;
-          h1FontSize = h1ContainerWidth * 0.13;
-          h1ContainerHeight = h1FontSize / 0.17;
-        } else {
-          h1ContainerHeight = h1FontSize / 0.17;
-        }
-
-        const charSpan = lineSpanRef.current!.querySelector(
-          'span span span',
-        ) as HTMLElement;
-        const charSpanRect = charSpan!.getBoundingClientRect();
-        const charSpanRatio = charSpanRect.width / charSpanRect.height;
-        const spineTranslateRatio = charSpanRatio < 0.53 ? 0.024 : 0.012;
-
-        const spineHeight = h1ContainerHeight - h1ContainerHeight * 0.029;
-        const spineTranslate = h1ContainerHeight * spineTranslateRatio;
-
-        h1Ref.current!.style.fontSize = `${h1FontSize}px`;
-        spineRef.current!.style.height = `${spineHeight}px`;
-        const spineWidth = h1ContainerHeight / 9.29;
-        spineRef.current!.style.width = `${spineWidth}px`;
-        spineRef.current!.style.borderRadius = `${spineWidth * 0.2}px`;
-        const spineExistingTransformX =
-          parseFloat(
-            window.getComputedStyle(spineRef.current!).transform.split(',')[4],
-          ) || 0;
-
-        spineRef.current!.style.transform = `translateX(${spineExistingTransformX}px) translateY(${spineTranslate}px)`;
-      }
-    }
-
-    setSizes();
-
-    screen.orientation?.addEventListener('change', () =>
-      setTimeout(setSizes, 10),
-    );
-
-    return () => {
-      screen.orientation?.removeEventListener('change', () =>
-        setTimeout(setSizes, 10),
-      );
-    };
-  }, []);
-
   return (
     <section className='mt-2'>
       <MainContainer
@@ -294,9 +233,10 @@ function IntroSection(): ReactElement {
         <h1
           ref={h1Ref}
           aria-hidden='true'
-          className='translate-x-[-1.5px]  select-none  
-                     text-[11.5vw]  leading-none  text-black
-                       dark:text-white'
+          className='translate-x-[-1.5px]  translate-y-[-4px]  select-none  
+                     text-[11.5vw] leading-none 
+                     text-black sm:text-[clamp(1px,12vh,min(122px,9vw))]  
+                   dark:text-white'
         >
           <IntroDescrLine text='Next-gen' dataElement='studio-intro-next-gen' />
           <br />
@@ -335,8 +275,12 @@ function IntroSection(): ReactElement {
         <div
           ref={spineRef}
           data-element='studio-intro-spine'
-          className='hidden  h-[51.5vw]  w-[7vw]  translate-x-[300px]
-                     bg-black  sm:block  dark:bg-white'
+          className='hidden  h-[clamp(1px,69vh,min(700px,51.7vw))]  w-[clamp(1px,7.7vh,min(66px,6vw))]  
+                     translate-x-[300px]
+                     rounded-[1.3vw]  bg-black  sm:block
+                     xl:rounded-[1vw]  2xl:rounded-[15px]
+                     dark:bg-white
+                     '
         ></div>
       </MainContainer>
     </section>
