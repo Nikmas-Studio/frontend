@@ -135,9 +135,9 @@ function IntroSection(): ReactElement {
               0,
             );
 
-          if (window.innerWidth >= 640) {
-            charsTimeline.restart();
-          }
+          // if (window.innerWidth >= 640) {
+          charsTimeline.restart();
+          // }
 
           handleMouseEnter = contextSave!((): void => {
             if (!isTouchDeviceRef.current) {
