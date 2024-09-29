@@ -88,41 +88,6 @@ function BookSection(): ReactElement {
           });
         },
       });
-
-      const bookTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 520',
-          scrub: true,
-          end: '+=500',
-        },
-      });
-
-      bookTimeline.to(
-        anchorRef.current,
-        {
-          scale: 1,
-        },
-        0,
-      );
-
-      bookTimeline.to(
-        lightBookCoverRef.current,
-        {
-          scale: 1,
-          opacity: 1,
-        },
-        0,
-      );
-
-      bookTimeline.to(
-        darkBookCoverRef.current,
-        {
-          scale: 1,
-          opacity: 1,
-        },
-        0,
-      );
     });
 
     ScrollTrigger.create({
@@ -161,7 +126,7 @@ function BookSection(): ReactElement {
           </h2>
           <Link
             ref={anchorRef}
-            className='scale-0'
+            className='xl:scale-0'
             href='/book-master-git-and-github'
           >
             <Image

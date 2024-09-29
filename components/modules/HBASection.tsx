@@ -38,10 +38,13 @@ function HBASection(): ReactElement {
         trigger: hbaSectionRef.current,
         start: 'top 390',
         onEnter: () => {
-          gsap.to(hbaBlock.current, {
+          gsap.set(hbaBlock.current, {
+            x: 0,
             opacity: 1,
-            duration: 1,
-            ease: 'power2.out',
+          });
+
+          gsap.set(circleRef.current, {
+            rotate: 90,
           });
         },
       });
@@ -56,15 +59,17 @@ function HBASection(): ReactElement {
       <MainContainer>
         <div
           ref={hbaBlock}
-          className='relative  mx-auto  aspect-square  w-[55vw]  opacity-0
-                     sm:w-[45vw]  xl:w-[30vw]  
+          className='relative  mx-auto  aspect-square  w-[55vw]  translate-x-[-300px]
+                     opacity-0  [transition:transform_1s_ease-out,opacity_1s_ease-out]  sm:w-[45vw]
+                     xl:w-[30vw]
+                     xl:translate-x-0  xl:transition-none  
                      2xl:w-[460.5px]'
         >
           <Image
             ref={circleRef}
             src={circle}
             alt='Dotted elipse'
-            className='size-full'
+            className='size-full  [transition:transform_1s_ease-out]  xl:transition-none'
           />
           <div
             className='absolute  left-1/2  top-1/2  z-20  flex  -translate-x-1/2
