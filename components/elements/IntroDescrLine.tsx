@@ -26,7 +26,7 @@ const IntroDescrLine = forwardRef<HTMLSpanElement, IntroDescrLineProps>(
                            before:content-['']`;
 
     const wrapperClasses = classNames(
-      'relative  align-top  group',
+      'relative  align-top',
       {
         [animatedClasses]: animated,
       },

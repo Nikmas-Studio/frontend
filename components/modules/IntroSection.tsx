@@ -14,7 +14,6 @@ function IntroSection(): ReactElement {
   const h1Ref = useRef<HTMLHeadingElement | null>(null);
   const { isTouchDevice } = useTouchDevice();
   const isTouchDeviceRef = useRef(false);
-  const isAnimating = useRef(false);
 
   useEffect(() => {
     isTouchDeviceRef.current = isTouchDevice;
@@ -50,8 +49,8 @@ function IntroSection(): ReactElement {
         '[data-element="studio-intro-interactive"]',
       );
 
-      const interactiveFirstElement = interactiveElements![0] as HTMLElement;
-      const interactiveSecondElement = interactiveElements![1] as HTMLElement;
+      const interactiveFirstElement = interactiveElements![0];
+      const interactiveSecondElement = interactiveElements![1];
 
       const webBooksElements = containerRef.current?.querySelectorAll(
         '[data-element="studio-intro-e-books"]',
@@ -75,87 +74,97 @@ function IntroSection(): ReactElement {
 
       const initialTimeline = gsap.timeline({
         onComplete: () => {
-          wrapper = interactiveSecondElement.parentNode! as HTMLElement;
-          wrapper.classList.add('cursor-pointer');
-
-          interactiveSecondElement.classList.remove('hidden');
-
-          const interactiveFirstElementSpans =
-            interactiveFirstElement.querySelectorAll('span');
-          const interactiveSecondElementSpans =
-            interactiveSecondElement.querySelectorAll('span');
-
-          interactiveFirstElementSpans.forEach((char) => {
-            char.classList.add('odd:translate-y-full');
-            char.classList.add('even:translate-y-0');
-            char.classList.add('group-[.active]:odd:translate-y-0');
-            char.classList.add('group-[.active]:even:translate-y-full');
+          const colorsTimeline = gsap.timeline({
+            defaults: {
+              duration: 0.5,
+              ease: 'power1.inOut',
+            },
           });
 
-          interactiveSecondElementSpans.forEach((char) => {
-            char.classList.add('odd:translate-y-0');
-            char.classList.add('even:-translate-y-full');
-            char.classList.add('group-[.active]:odd:-translate-y-full');
-            char.classList.add('group-[.active]:even:translate-y-0');
+          colorsTimeline
+            .to(
+              interactiveFirstElement,
+              {
+                color: '#4CBB17',
+              },
+              0,
+            )
+            .to(
+              interactiveSecondElement,
+              {
+                color: '#4CBB17',
+              },
+              0,
+            );
+
+          const charsTimeline = gsap.timeline({
+            defaults: {
+              duration: 0.5,
+              ease: 'power1.inOut',
+            },
+            paused: true,
           });
 
-          setTimeout(() => {
-            interactiveFirstElementSpans.forEach((char) => {
-              char.classList.add(
-                '[transition:all_0.5s_cubic-bezier(0.455,0.03,0.515,0.955)]',
-              );
-            });
-
-            interactiveSecondElementSpans.forEach((char) => {
-              char.classList.add(
-                '[transition:all_0.5s_cubic-bezier(0.455,0.03,0.515,0.955)]',
-              );
-            });
-
-            interactiveFirstElement.style.color = '#4CBB17';
-            interactiveSecondElement.style.color = '#4CBB17';
-
-            // wrapper.classList.toggle('active');
-          }, 0);
+          charsTimeline
+            .fromTo(
+              interactiveFirstElement.querySelectorAll('span:nth-child(odd)'),
+              { yPercent: 100 },
+              { yPercent: 0 },
+              0,
+            )
+            .fromTo(
+              interactiveSecondElement.querySelectorAll('span:nth-child(odd)'),
+              {
+                yPercent: 0,
+              },
+              { yPercent: -100 },
+              0,
+            )
+            .fromTo(
+              interactiveFirstElement.querySelectorAll('span:nth-child(even)'),
+              { yPercent: 0 },
+              { yPercent: 100 },
+              0,
+            )
+            .fromTo(
+              interactiveSecondElement.querySelectorAll('span:nth-child(even)'),
+              {
+                yPercent: -100,
+              },
+              { yPercent: 0 },
+              0,
+            );
+            
+          if (window.innerWidth >= 640) {
+            charsTimeline.restart();
+          }
 
           handleMouseEnter = contextSave!((): void => {
             if (!isTouchDeviceRef.current) {
-              if (!isAnimating.current) {
-                isAnimating.current = true;
-                wrapper.classList.toggle('active');
-
-                setTimeout(() => {
-                  isAnimating.current = false;
-                }, 500);
+              if (!charsTimeline.isActive()) {
+                charsTimeline.restart();
               }
             }
           });
 
           handleMouseLeave = contextSave!((): void => {
             if (!isTouchDeviceRef.current) {
-              if (!isAnimating.current) {
-                isAnimating.current = true;
-                wrapper.classList.toggle('active');
-
-                setTimeout(() => {
-                  isAnimating.current = false;
-                }, 500);
+              if (!charsTimeline.isActive()) {
+                charsTimeline.reverse();
               }
             }
           });
 
           handleClick = contextSave!((): void => {
-            if (!isAnimating.current) {
-              isAnimating.current = true;
-              wrapper.classList.toggle('active');
-
-              setTimeout(() => {
-                isAnimating.current = false;
-              }, 500);
+            if (!charsTimeline.isActive()) {
+              charsTimeline.restart();
             }
           });
 
-          handleClick();
+          interactiveSecondElement.classList.remove('hidden');
+
+          wrapper = interactiveSecondElement.parentNode! as HTMLElement;
+          wrapper.classList.add('cursor-pointer');
 
           wrapper.addEventListener('mouseenter', handleMouseEnter);
           wrapper.addEventListener('mouseleave', handleMouseLeave);
