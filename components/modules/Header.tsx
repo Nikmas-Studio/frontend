@@ -78,7 +78,7 @@ function Header(): ReactElement {
       const scrollPosition = window.scrollY;
       const pageHeight = document.body.offsetHeight;
       const windowHeight = window.innerHeight;
-      const bottomOffset = 420;
+      const bottomOffset = 600;
 
       if (window.innerWidth < 1280) {
         if (scrollPosition + windowHeight >= pageHeight - bottomOffset) {
