@@ -14,10 +14,11 @@ import HeaderButtons from './HeaderButtons';
 
 function Header(): ReactElement {
   function pageIsScrolled(): boolean {
-    return window.scrollY > 5;
+    return window.scrollY > 3;
   }
 
   const [headerIsScrolled, setHeaderIsScrolled] = useState(false);
+  const headerWasScrolled = useRef(false);
   const headerElementRef = useRef<HTMLElement | null>(null);
   const headerLogoElementRef = useRef<HTMLParagraphElement | null>(null);
   const { selectedTheme, isManualThemeChange } = useTheme();
@@ -147,42 +148,52 @@ function Header(): ReactElement {
   );
 
   useEffect(() => {
-    if (bookSectionInViewport) {
-      gsap.set(headerElementRef.current, {
-        borderBottomColor: '#EBEBEB',
-      });
-
-      return;
-    }
-
-    const theme = darkThemeIsSelected(selectedTheme) ? Theme.DARK : Theme.LIGHT;
-
-    if (headerIsScrolled) {
-      if (theme === Theme.DARK) {
-        gsap.set(headerElementRef.current, {
-          borderBottomColor: '#414141',
-        });
-      } else {
+    if (headerWasScrolled.current) {
+      if (bookSectionInViewport) {
         gsap.set(headerElementRef.current, {
           borderBottomColor: '#EBEBEB',
         });
+
+        return;
       }
-    } else {
-      if (theme === Theme.DARK) {
-        gsap.set(headerElementRef.current, {
-          borderBottomColor: '#000000',
-        });
+
+      const theme = darkThemeIsSelected(selectedTheme)
+        ? Theme.DARK
+        : Theme.LIGHT;
+
+      if (headerIsScrolled) {
+        if (theme === Theme.DARK) {
+          gsap.set(headerElementRef.current, {
+            borderBottomColor: '#414141',
+          });
+        } else {
+          gsap.set(headerElementRef.current, {
+            borderBottomColor: '#EBEBEB',
+          });
+        }
       } else {
-        gsap.set(headerElementRef.current, {
-          borderBottomColor: '#ffffff',
-        });
+        if (theme === Theme.DARK) {
+          gsap.set(headerElementRef.current, {
+            borderBottomColor: '#000000',
+          });
+        } else {
+          gsap.set(headerElementRef.current, {
+            borderBottomColor: '#ffffff',
+          });
+        }
       }
     }
   }, [headerIsScrolled, bookSectionInViewport, selectedTheme]);
 
   useEffect(() => {
     const onScroll = (): void => {
-      setHeaderIsScrolled(pageIsScrolled());
+      const isScrolled = pageIsScrolled();
+
+      if (isScrolled) {
+        headerWasScrolled.current = true;
+      }
+
+      setHeaderIsScrolled(isScrolled);
     };
 
     onScroll();
@@ -194,14 +205,14 @@ function Header(): ReactElement {
 
   const headerClasses = classNames(
     `pt-4  pb-6  md:pt-5  md:pb-7  fixed  left-0  right-0  top-0  border-b
-    header-transition  border-b-white  dark:border-b-black
+    header-transition 
      z-50  [background-image:linear-gradient(135deg,var(--headerLightModeBgFirstColor),var(--headerLightModeBgSecondColor))]
      dark:[background-image:linear-gradient(135deg,var(--headerDarkModeBgFirstColor),var(--headerDarkModeBgSecondColor))]`,
     {
       'border-b-[#EBEBEB]  dark:border-b-[#414141]':
         headerIsScrolled && !bookSectionInViewport,
       'border-b-[#EBEBEB]  dark:border-b-[#EBEBEB]': bookSectionInViewport,
-      'border-b-white  dark:border-b-black': !headerIsScrolled,
+      'border-b-white  dark:border-b-black': !headerWasScrolled.current,
     },
   );
 
