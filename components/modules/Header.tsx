@@ -85,7 +85,7 @@ function Header(): ReactElement {
           const currentTransform = headerElementRef.current!.style.transform;
 
           if (currentTransform !== 'translateY(-150%)') {
-            headerElementRef.current!.style.transform = 'translateY(-100%)';
+            headerElementRef.current!.style.transform = 'translateY(-150%)';
           }
         } else {
           const currentTransform = headerElementRef.current!.style.transform;
