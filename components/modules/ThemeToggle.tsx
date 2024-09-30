@@ -224,7 +224,6 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
         });
 
         setTimeout(() => {
-
           if (mouseLeavedToggle.current) {
             gsap.to(darkModeWhiteToggleIconRef.current, {
               rotate: 0,
@@ -250,7 +249,7 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
 
       if (!mouseLeavedToggle.current) {
         mouseLeavedToggle.current = true;
-        
+
         if (animateLeave.current) {
           animateLeave.current = false;
           isAnimating.current = true;
@@ -368,7 +367,7 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
 
       if (!mouseLeavedToggle.current) {
         mouseLeavedToggle.current = true;
-        
+
         if (animateLeave.current) {
           animateLeave.current = false;
           isAnimating.current = true;

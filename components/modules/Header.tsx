@@ -61,18 +61,6 @@ function Header(): ReactElement {
     }
   }
 
-  function getBackgroundImage(): string {
-    if (bookSectionInViewport) {
-      return 'linear-gradient(135deg,#ff5013,#271ad3)';
-    }
-
-    if (darkThemeIsSelected(selectedTheme)) {
-      return 'linear-gradient(135deg,#000000,#000000)';
-    } else {
-      return 'linear-gradient(135deg,#ffffff,#ffffff)';
-    }
-  }
-
   function getHeaderLogoColor(): string {
     if (bookSectionInViewport) {
       return 'white';
