@@ -458,23 +458,46 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
       'opacity-100  pointer-events-auto': dropdownIsOpened,
     },
   );
-
   const lightModeBlackToggleIconClasses = classNames(
-    `absolute  size-6  translate-y-[-0.5px]  select-none   md:size-[1.7rem]  
-    top-0 
-    opacity-100  z-40`,
+    `absolute  size-6  translate-y-[-0.5px]  select-none  md:size-[1.7rem]  
+    top-0  opacity-100  pointer-events-auto`,
+    {
+      'opacity-0  pointer-events-none': !showLightModeBlackToggleIcon(),
+      'opacity-100  pointer-events-auto  z-50': showLightModeBlackToggleIcon(),
+    },
   );
 
   const lightModeWhiteToggleIconClasses = classNames(
     `absolute  size-6  translate-y-[-0.5px]  select-none md:size-[1.7rem]  top-0
      opacity-0  pointer-events-none`,
+    {
+      'opacity-0  pointer-events-none': !showLightModeWhiteToggleIcon(),
+      'opacity-100  pointer-events-auto z-50': showLightModeWhiteToggleIcon(),
+    },
   );
 
   const darkModeWhiteToggleIconClasses = classNames(
     `absolute  size-[1.3rem]  translate-x-[0.1rem]  translate-y-[0.12rem]
-   select-none  md:size-[1.45rem]  top-0  opacity-0
+   select-none  md:size-[1.45rem]  top-0  opacity-0 
    dark:opacity-100 dark:pointer-events-auto  dark:z-50`,
   );
+
+  // const lightModeBlackToggleIconClasses = classNames(
+  //   `absolute  size-6  translate-y-[-0.5px]  select-none   md:size-[1.7rem]
+  //   top-0
+  //   opacity-100  z-40`,
+  // );
+
+  // const lightModeWhiteToggleIconClasses = classNames(
+  //   `absolute  size-6  translate-y-[-0.5px]  select-none md:size-[1.7rem]  top-0
+  //    opacity-0  pointer-events-none`,
+  // );
+
+  // const darkModeWhiteToggleIconClasses = classNames(
+  //   `absolute  size-[1.3rem]  translate-x-[0.1rem]  translate-y-[0.12rem]
+  //  select-none  md:size-[1.45rem]  top-0  opacity-0
+  //  dark:opacity-100 dark:pointer-events-auto  dark:z-50`,
+  // );
 
   const themeToggleWrapperClasses = classNames(
     'relative  flex  flex-col  justify-center',
