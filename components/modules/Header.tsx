@@ -14,7 +14,7 @@ import HeaderButtons from './HeaderButtons';
 
 function Header(): ReactElement {
   function pageIsScrolled(): boolean {
-    return window.scrollY > 3;
+    return window.scrollY > 0;
   }
 
   const [headerIsScrolled, setHeaderIsScrolled] = useState(false);
