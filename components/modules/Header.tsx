@@ -146,39 +146,39 @@ function Header(): ReactElement {
     },
   );
 
-  useEffect(() => {
-    if (bookSectionInViewport) {
-      gsap.set(headerElementRef.current, {
-        borderBottomColor: '#EBEBEB',
-      });
+  // useEffect(() => {
+  //   if (bookSectionInViewport) {
+  //     gsap.set(headerElementRef.current, {
+  //       borderBottomColor: '#EBEBEB',
+  //     });
 
-      return;
-    }
+  //     return;
+  //   }
 
-    const theme = darkThemeIsSelected(selectedTheme) ? Theme.DARK : Theme.LIGHT;
+  //   const theme = darkThemeIsSelected(selectedTheme) ? Theme.DARK : Theme.LIGHT;
 
-    if (headerIsScrolled) {
-      if (theme === Theme.DARK) {
-        gsap.set(headerElementRef.current, {
-          borderBottomColor: '#414141',
-        });
-      } else {
-        gsap.set(headerElementRef.current, {
-          borderBottomColor: '#EBEBEB',
-        });
-      }
-    } else {
-      if (theme === Theme.DARK) {
-        gsap.set(headerElementRef.current, {
-          borderBottomColor: '#000000',
-        });
-      } else {
-        gsap.set(headerElementRef.current, {
-          borderBottomColor: '#ffffff',
-        });
-      }
-    }
-  }, [headerIsScrolled, bookSectionInViewport, selectedTheme]);
+  //   if (headerIsScrolled) {
+  //     if (theme === Theme.DARK) {
+  //       gsap.set(headerElementRef.current, {
+  //         borderBottomColor: '#414141',
+  //       });
+  //     } else {
+  //       gsap.set(headerElementRef.current, {
+  //         borderBottomColor: '#EBEBEB',
+  //       });
+  //     }
+  //   } else {
+  //     if (theme === Theme.DARK) {
+  //       gsap.set(headerElementRef.current, {
+  //         borderBottomColor: '#000000',
+  //       });
+  //     } else {
+  //       gsap.set(headerElementRef.current, {
+  //         borderBottomColor: '#ffffff',
+  //       });
+  //     }
+  //   }
+  // }, [headerIsScrolled, bookSectionInViewport, selectedTheme]);
 
   useEffect(() => {
     const onScroll = (): void => {
@@ -197,6 +197,12 @@ function Header(): ReactElement {
     header-transition  border-b-white  dark:border-b-black
      z-50  [background-image:linear-gradient(135deg,var(--headerLightModeBgFirstColor),var(--headerLightModeBgSecondColor))]
      dark:[background-image:linear-gradient(135deg,var(--headerDarkModeBgFirstColor),var(--headerDarkModeBgSecondColor))]`,
+    {
+      'border-b-[#EBEBEB]  dark:border-b-[#414141]':
+        headerIsScrolled && !bookSectionInViewport,
+      'border-b-[#EBEBEB]  dark:border-b-[#EBEBEB]': bookSectionInViewport,
+      'border-b-white  dark:border-b-black': !headerIsScrolled,
+    },
   );
 
   return (
