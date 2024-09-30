@@ -78,13 +78,13 @@ function Header(): ReactElement {
       const scrollPosition = window.scrollY;
       const pageHeight = document.body.offsetHeight;
       const windowHeight = window.innerHeight;
-      const bottomOffset = 600;
+      const bottomOffset = 200;
 
       if (window.innerWidth < 1280) {
         if (scrollPosition + windowHeight >= pageHeight - bottomOffset) {
           const currentTransform = headerElementRef.current!.style.transform;
 
-          if (currentTransform !== 'translateY(-100%)') {
+          if (currentTransform !== 'translateY(-150%)') {
             headerElementRef.current!.style.transform = 'translateY(-100%)';
           }
         } else {
