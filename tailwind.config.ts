@@ -13,6 +13,7 @@ const config: Config = {
     extend: {
       screens: {
         '2sm': '352px',
+        'h-sm': { raw: '(max-height: 400px)' },
       },
     },
   },
