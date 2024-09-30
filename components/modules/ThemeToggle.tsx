@@ -172,24 +172,24 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
       if (showLightModeBlackToggleIcon()) {
         gsap.set(lightModeBlackToggleIconRef.current, {
           pointerEvents: 'auto',
-          // zIndex: 50,
+          zIndex: 50,
         });
       } else {
         gsap.set(lightModeBlackToggleIconRef.current, {
           pointerEvents: 'none',
-          // zIndex: 'auto',
+          zIndex: 'auto',
         });
       }
 
       if (showLightModeWhiteToggleIcon()) {
         gsap.set(lightModeWhiteToggleIconRef.current, {
           pointerEvents: 'auto',
-          // zIndex: 50,
+          zIndex: 50,
         });
       } else {
         gsap.set(lightModeWhiteToggleIconRef.current, {
           pointerEvents: 'none',
-          // zIndex: 'auto',
+          zIndex: 'auto',
         });
       }
     }
@@ -489,6 +489,7 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
         onClick={() => setDropdownIsOpened((prev) => !prev)}
       >
         <Image
+          priority
           ref={lightModeBlackToggleIconRef}
           src={sunIconBlack}
           width={27}
@@ -497,6 +498,7 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
           className={lightModeBlackToggleIconClasses}
         />
         <Image
+          priority
           ref={lightModeWhiteToggleIconRef}
           src={sunIconWhite}
           width={27}
@@ -505,6 +507,7 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
           className={lightModeWhiteToggleIconClasses}
         />
         <Image
+          priority
           ref={darkModeWhiteToggleIconRef}
           src={moonIconWhite}
           width={27}
