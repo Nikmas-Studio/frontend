@@ -40,14 +40,12 @@ function MainLayout({ children }: { children: ReactNode }): ReactElement {
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                console.log('init theme');
                 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                   document.documentElement.classList.add('dark')
                 } else {
                   document.documentElement.classList.remove('dark')
                 }
-                console.log(document.body);
-                console.log('add body-visible');
+                document.documentElement.classList.add('body-visible');
               } catch (_) {}
             `,
           }}
