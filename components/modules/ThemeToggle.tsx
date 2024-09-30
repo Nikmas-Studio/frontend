@@ -172,24 +172,20 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
       if (showLightModeBlackToggleIcon()) {
         gsap.set(lightModeBlackToggleIconRef.current, {
           pointerEvents: 'auto',
-          zIndex: 50,
         });
       } else {
         gsap.set(lightModeBlackToggleIconRef.current, {
           pointerEvents: 'none',
-          zIndex: 'auto',
         });
       }
 
       if (showLightModeWhiteToggleIcon()) {
         gsap.set(lightModeWhiteToggleIconRef.current, {
           pointerEvents: 'auto',
-          zIndex: 50,
         });
       } else {
         gsap.set(lightModeWhiteToggleIconRef.current, {
           pointerEvents: 'none',
-          zIndex: 'auto',
         });
       }
     }
