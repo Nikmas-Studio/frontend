@@ -2,7 +2,6 @@
 
 import { useBookSectionState } from '@/context/book-section/Context';
 import { useTheme } from '@/context/theme/Context';
-import { Theme } from '@/types/theme';
 import { darkThemeIsSelected } from '@/utils/check-selected-theme';
 import { useGSAP } from '@gsap/react';
 import classNames from 'classnames';
@@ -145,40 +144,6 @@ function Header(): ReactElement {
       dependencies: [bookSectionInViewport],
     },
   );
-
-  // useEffect(() => {
-  //   if (bookSectionInViewport) {
-  //     gsap.set(headerElementRef.current, {
-  //       borderBottomColor: '#EBEBEB',
-  //     });
-
-  //     return;
-  //   }
-
-  //   const theme = darkThemeIsSelected(selectedTheme) ? Theme.DARK : Theme.LIGHT;
-
-  //   if (headerIsScrolled) {
-  //     if (theme === Theme.DARK) {
-  //       gsap.set(headerElementRef.current, {
-  //         borderBottomColor: '#414141',
-  //       });
-  //     } else {
-  //       gsap.set(headerElementRef.current, {
-  //         borderBottomColor: '#EBEBEB',
-  //       });
-  //     }
-  //   } else {
-  //     if (theme === Theme.DARK) {
-  //       gsap.set(headerElementRef.current, {
-  //         borderBottomColor: '#000000',
-  //       });
-  //     } else {
-  //       gsap.set(headerElementRef.current, {
-  //         borderBottomColor: '#ffffff',
-  //       });
-  //     }
-  //   }
-  // }, [headerIsScrolled, bookSectionInViewport, selectedTheme]);
 
   useEffect(() => {
     const onScroll = (): void => {
