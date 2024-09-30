@@ -19,11 +19,6 @@ body {
   }
 }
 
-html:not(.body-visible) {
-  visibility: hidden;
-}
-
-
 @layer utilities {
   @property --headerLightModeBgFirstColor {
     syntax: '<color>';

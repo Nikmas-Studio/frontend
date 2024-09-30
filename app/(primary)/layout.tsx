@@ -45,7 +45,6 @@ function MainLayout({ children }: { children: ReactNode }): ReactElement {
                 } else {
                   document.documentElement.classList.remove('dark')
                 }
-                document.documentElement.classList.add('body-visible');
               } catch (_) {}
             `,
           }}
