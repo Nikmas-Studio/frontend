@@ -20,7 +20,8 @@ const IntroDescrLine = forwardRef<HTMLSpanElement, IntroDescrLineProps>(
     ref,
   ): ReactElement {
     const animatedClasses = `before:pointer-events-none  before:absolute  
-                           before:inset-0  before:z-10  inline-block  overflow-hidden
+                           before:inset-0  before:z-10  inline-block
+                           overflow-hidden
                            before:shadow-[inset_0_0_5px_rgba(255,255,255,1)]
                            dark:before:shadow-[inset_0_0_5px_rgba(0,0,0,1)]
                            before:content-['']`;
@@ -48,7 +49,8 @@ const IntroDescrLine = forwardRef<HTMLSpanElement, IntroDescrLineProps>(
         {animated && (
           <span
             data-element={dataElement}
-            className='absolute  bottom-auto  left-0  right-auto  top-0  hidden  align-top'
+            className='absolute  bottom-auto  left-0  right-auto  
+                       top-0  hidden  align-top'
           >
             <SpanSplitter
               text={text}

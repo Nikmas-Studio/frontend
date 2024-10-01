@@ -101,15 +101,17 @@ function BookSection(): ReactElement {
           </h2>
           <div
             ref={imageWrapperRef}
-            className='sm:scale-0  sm:opacity-0  sm:will-change-[transform,opacity]'
+            className='sm:scale-0  sm:opacity-0  
+                       sm:will-change-[transform,opacity]'
           >
             <Link ref={anchorRef} href='/book-master-git-and-github'>
               <Image
                 ref={lightBookCoverRef}
                 src={bookCoverLight}
                 alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
-                className='max-h-[570px]  w-full  select-none  rounded-[3vw]  sm:h-[65vh]
-                         sm:w-auto  sm:rounded-[1.5vh]  dark:hidden'
+                className='max-h-[570px]  w-full  select-none  rounded-[3vw]  
+                           sm:h-[65vh]  sm:w-auto  sm:rounded-[1.5vh]  
+                           dark:hidden'
                 priority
               />
               <Image

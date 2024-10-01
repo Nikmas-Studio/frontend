@@ -52,11 +52,9 @@ function HBASection(): ReactElement {
       <MainContainer>
         <div
           ref={hbaBlock}
-          className='relative  mx-auto  aspect-square  w-[55vw]
-                     opacity-0  [transition:transform_1s_ease-out,opacity_1s_ease-out]  sm:w-[45vw]
-                     xl:w-[30vw]
-                     xl:translate-x-0
-                     2xl:w-[460.5px]'
+          className='relative  mx-auto  aspect-square  w-[55vw]  opacity-0  
+                     [transition:transform_1s_ease-out,opacity_1s_ease-out]  
+                     sm:w-[45vw]  xl:w-[30vw]  xl:translate-x-0  2xl:w-[460.5px]'
         >
           <Image
             ref={circleRef}
@@ -91,7 +89,8 @@ function HBASection(): ReactElement {
               <span className='text-[#4CBB17]'>HBA</span>
             </p>
             <Image
-              className='w-[8vw]  max-w-none  sm:w-[6vw]  lg:w-[5.5vw]  xl:w-[4vw]  2xl:w-[61.4px]'
+              className='w-[8vw]  max-w-none  sm:w-[6vw]  lg:w-[5.5vw]  
+                         xl:w-[4vw]  2xl:w-[61.4px]'
               src={cakeHBA}
               alt='Cake HBA'
               priority

@@ -14,7 +14,10 @@ function Footer(): ReactElement {
       className='mt-44  border-t  border-[#EBEBEB]  
                      pb-20  pt-12  dark:border-[#414141]'
     >
-      <MainContainer className='flex  flex-col-reverse items-center  md:flex-row  md:items-start  md:justify-between'>
+      <MainContainer
+        className='flex  flex-col-reverse items-center  md:flex-row
+                                md:items-start  md:justify-between'
+      >
         <div className='flex  flex-col  items-center  md:items-start'>
           <p className='mb-5  text-lg  dark:text-white'>
             © Nikmas Studio, 2024
