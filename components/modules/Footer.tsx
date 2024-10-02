@@ -43,7 +43,7 @@ function Footer(): ReactElement {
             </li>
           </ul>
         </div>
-        <ul className='mb-12  flex  gap-5  sm:mb-0  sm:grid  sm:grid-cols-2  2md:grid-flow-col'>
+        <ul className='mb-12  flex  gap-5  sm:mb-0  sm:grid  sm:grid-cols-2  md:grid-flow-col'>
           <li>
             <ExternalLink href='https://t.me/nikmas_studio'>
               <Image
