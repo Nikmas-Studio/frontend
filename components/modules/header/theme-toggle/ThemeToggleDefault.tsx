@@ -3,9 +3,8 @@ import { Theme } from '@/types/theme';
 import classNames from 'classnames';
 import Image from 'next/image';
 import { ReactElement, useEffect, useRef, useState } from 'react';
-import ThemeToggleDropdownItem from '../elements/ThemeToggleDropdownItem';
 
-import { useBookSectionState } from '@/context/book-section/Context';
+import ThemeToggleDropdownItem from '@/components/elements/ThemeToggleDropdownItem';
 import { useTheme, useThemeDispatch } from '@/context/theme/Context';
 import { useTouchDevice } from '@/context/touch-device/Context';
 import gearIconBlack from '@/public/images/gear-icon-black.png';
@@ -14,10 +13,6 @@ import moonIconBlack from '@/public/images/moon-icon-black.png';
 import moonIconWhite from '@/public/images/moon-icon-white.png';
 import sunIconBlack from '@/public/images/sun-icon-black.png';
 import sunIconWhite from '@/public/images/sun-icon-white.png';
-import {
-  darkThemeIsSelected,
-  lightThemeIsSelected,
-} from '@/utils/check-selected-theme';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
@@ -25,15 +20,17 @@ interface ThemeToggleProps {
   className?: string;
 }
 
-function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
+function ThemeToggleDefault({ className }: ThemeToggleProps): ReactElement {
   const [dropdownIsOpened, setDropdownIsOpened] = useState(false);
-  const { selectedTheme, isManualThemeChange } = useTheme();
+  const { selectedTheme } = useTheme();
   const { setSelectedTheme } = useThemeDispatch();
-  const { bookSectionInViewport } = useBookSectionState();
+
   const lightModeBlackToggleIconRef = useRef<HTMLImageElement | null>(null);
   const lightModeWhiteToggleIconRef = useRef<HTMLImageElement | null>(null);
   const darkModeWhiteToggleIconRef = useRef<HTMLImageElement | null>(null);
-  const bookSectionWasInViewport = useRef(false);
+  const dropdownElementRef = useRef<HTMLUListElement | null>(null);
+  const toggleButtonRef = useRef<HTMLButtonElement | null>(null);
+
   const { isTouchDevice } = useTouchDevice();
   const isTouchDeviceRef = useRef(isTouchDevice);
   const isAnimating = useRef(false);
@@ -43,89 +40,6 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
   useEffect(() => {
     isTouchDeviceRef.current = isTouchDevice;
   }, [isTouchDevice]);
-
-  function showLightModeBlackToggleIcon(): boolean {
-    return lightThemeIsSelected(selectedTheme) && !bookSectionInViewport;
-  }
-
-  function showLightModeWhiteToggleIcon(): boolean {
-    return lightThemeIsSelected(selectedTheme) && bookSectionInViewport;
-  }
-
-  useGSAP(
-    () => {
-      if (bookSectionInViewport) {
-        bookSectionWasInViewport.current = true;
-      }
-
-      if (bookSectionWasInViewport.current) {
-        if (showLightModeBlackToggleIcon()) {
-          gsap.to(lightModeBlackToggleIconRef.current, {
-            opacity: 1,
-            pointerEvents: 'auto',
-            zIndex: 50,
-            duration: 0.3,
-            ease: 'linear',
-          });
-        } else {
-          gsap.to(lightModeBlackToggleIconRef.current, {
-            opacity: 0,
-            pointerEvents: 'none',
-            zIndex: 'auto',
-            duration: 0.3,
-            ease: 'linear',
-          });
-        }
-
-        if (showLightModeWhiteToggleIcon()) {
-          gsap.to(lightModeWhiteToggleIconRef.current, {
-            opacity: 1,
-            pointerEvents: 'auto',
-            zIndex: 50,
-            duration: 0.3,
-            ease: 'linear',
-          });
-        } else {
-          gsap.to(lightModeWhiteToggleIconRef.current, {
-            opacity: 0,
-            pointerEvents: 'none',
-            zIndex: 'auto',
-            duration: 0.3,
-            ease: 'linear',
-          });
-        }
-      }
-    },
-    {
-      dependencies: [bookSectionInViewport],
-    },
-  );
-
-  useGSAP(() => {
-    if (bookSectionInViewport) {
-      bookSectionWasInViewport.current = true;
-    }
-
-    if (bookSectionWasInViewport.current) {
-      if (darkThemeIsSelected(selectedTheme)) {
-        if (bookSectionInViewport) {
-          gsap.set(dropdownElementRef.current, {
-            borderColor: '#EBEBEB',
-          });
-        } else {
-          gsap.set(dropdownElementRef.current, {
-            borderColor: '#414141',
-          });
-        }
-      } else {
-        if (dropdownElementRef.current?.style.borderBottomColor !== '#EBEBEB') {
-          gsap.set(dropdownElementRef.current, {
-            borderColor: '#EBEBEB',
-          });
-        }
-      }
-    }
-  }, [bookSectionInViewport, selectedTheme]);
 
   useEffect(() => {
     if (
@@ -139,69 +53,10 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
     }
   }, [selectedTheme]);
 
-  useGSAP(() => {
-    if (isManualThemeChange) {
-      if (showLightModeBlackToggleIcon()) {
-        gsap.set(lightModeBlackToggleIconRef.current, {
-          opacity: 1,
-          pointerEvents: 'auto',
-          zIndex: 50,
-        });
-      } else {
-        gsap.set(lightModeBlackToggleIconRef.current, {
-          opacity: 0,
-          pointerEvents: 'none',
-          zIndex: 'auto',
-        });
-      }
-
-      if (showLightModeWhiteToggleIcon()) {
-        gsap.set(lightModeWhiteToggleIconRef.current, {
-          opacity: 1,
-          pointerEvents: 'auto',
-          zIndex: 50,
-        });
-      } else {
-        gsap.set(lightModeWhiteToggleIconRef.current, {
-          opacity: 0,
-          pointerEvents: 'none',
-          zIndex: 'auto',
-        });
-      }
-    } else {
-      if (showLightModeBlackToggleIcon()) {
-        gsap.set(lightModeBlackToggleIconRef.current, {
-          pointerEvents: 'auto',
-          zIndex: 50,
-        });
-      } else {
-        gsap.set(lightModeBlackToggleIconRef.current, {
-          pointerEvents: 'none',
-          zIndex: 'auto',
-        });
-      }
-
-      if (showLightModeWhiteToggleIcon()) {
-        gsap.set(lightModeWhiteToggleIconRef.current, {
-          pointerEvents: 'auto',
-          zIndex: 50,
-        });
-      } else {
-        gsap.set(lightModeWhiteToggleIconRef.current, {
-          pointerEvents: 'none',
-          zIndex: 'auto',
-        });
-      }
-    }
-  }, [selectedTheme]);
-
   function handleThemeChange(newTheme: Theme): void {
     setSelectedTheme(newTheme);
     setDropdownIsOpened(false);
   }
-
-  const dropdownElementRef = useRef<HTMLUListElement | null>(null);
-  const toggleButtonRef = useRef<HTMLButtonElement | null>(null);
 
   useOutsideClick([toggleButtonRef, dropdownElementRef], () => {
     setDropdownIsOpened(false);
@@ -460,20 +315,19 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
   );
 
   const lightModeBlackToggleIconClasses = classNames(
-    `absolute  size-6  translate-y-[-0.5px]  select-none   md:size-[1.7rem]  
-    top-0 
-    opacity-100  z-40`,
+    `absolute  size-6  translate-y-[-0.5px]  select-none  md:size-[1.7rem]  
+     top-0  opacity-100  dark:opacity-0  z-40  dark:pointer-events-none`,
   );
 
   const lightModeWhiteToggleIconClasses = classNames(
     `absolute  size-6  translate-y-[-0.5px]  select-none md:size-[1.7rem]  top-0
-     opacity-0  pointer-events-none`,
+     opacity-0  dark:opacity-0  pointer-events-none  dark:pointer-events-none`,
   );
 
   const darkModeWhiteToggleIconClasses = classNames(
     `absolute  size-[1.3rem]  translate-x-[0.1rem]  translate-y-[0.12rem]
-   select-none  md:size-[1.45rem]  top-0  opacity-0
-   dark:opacity-100 dark:pointer-events-auto  dark:z-50`,
+     select-none  md:size-[1.45rem]  top-0  opacity-0  pointer-events-none
+     dark:opacity-100  dark:pointer-events-auto  dark:z-50`,
   );
 
   const themeToggleWrapperClasses = classNames(
@@ -596,4 +450,4 @@ function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
   );
 }
 
-export default ThemeToggle;
+export default ThemeToggleDefault;

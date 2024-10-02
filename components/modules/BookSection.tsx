@@ -28,17 +28,7 @@ function BookSection(): ReactElement {
 
     const mm = gsap.matchMedia();
 
-    mm.add('(min-width: 640px)', () => {
-      ScrollTrigger.create({
-        trigger: sectionWrapperRef.current,
-        start: 'top 700',
-        onEnter: () => {
-          gsap.set(sectionRef.current, {
-            opacity: 1,
-          });
-        },
-      });
-
+    mm.add('(min-width: 1280px)', () => {
       gsap.to(imageWrapperRef.current, {
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -48,6 +38,18 @@ function BookSection(): ReactElement {
         },
         scale: 1,
         opacity: 1,
+      });
+    });
+
+    mm.add('(min-width: 640px)', () => {
+      ScrollTrigger.create({
+        trigger: sectionWrapperRef.current,
+        start: 'top 700',
+        onEnter: () => {
+          gsap.set(sectionRef.current, {
+            opacity: 1,
+          });
+        },
       });
     });
 
@@ -89,8 +91,7 @@ function BookSection(): ReactElement {
         ref={sectionRef}
         className='w-screen  pb-32  pt-16  opacity-0 
                   [background:linear-gradient(135deg,#ff5013,#271ad3)]
-                  [transition:opacity_1s_ease-out]
-                  '
+                  [transition:opacity_1s_ease-out]'
       >
         <MainContainer className='flex  flex-col  items-center  !px-12'>
           <h2
@@ -101,8 +102,8 @@ function BookSection(): ReactElement {
           </h2>
           <div
             ref={imageWrapperRef}
-            className='sm:scale-0  sm:opacity-0  
-                       sm:will-change-[transform,opacity]'
+            className='xl:scale-0  xl:opacity-0  
+                       xl:will-change-[transform,opacity]'
           >
             <Link ref={anchorRef} href='/book-master-git-and-github'>
               <Image

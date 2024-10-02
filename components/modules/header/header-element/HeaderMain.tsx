@@ -7,11 +7,11 @@ import { useGSAP } from '@gsap/react';
 import classNames from 'classnames';
 import gsap from 'gsap';
 import { ReactElement, useEffect, useRef, useState } from 'react';
-import Logo from '../elements/Logo';
-import MainContainer from '../elements/MainContainer';
-import HeaderButtons from './HeaderButtons';
+import Logo from '../../../elements/Logo';
+import MainContainer from '../../../elements/MainContainer';
+import HeaderButtonsMain from '../header-buttons/HeaderButtonsMain';
 
-function Header(): ReactElement {
+function HeaderMain(): ReactElement {
   function pageIsScrolled(): boolean {
     return window.scrollY > 0;
   }
@@ -184,10 +184,10 @@ function Header(): ReactElement {
           ref={headerLogoElementRef}
           className='flex-none  translate-y-[0.187rem]'
         />
-        <HeaderButtons />
+        <HeaderButtonsMain />
       </MainContainer>
     </header>
   );
 }
 
-export default Header;
+export default HeaderMain;

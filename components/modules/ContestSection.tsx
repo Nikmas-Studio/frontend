@@ -16,7 +16,7 @@ function ContestSection(): ReactElement {
             current <br />
             and&nbsp;future <br />
             interactive <br />
-            web-books <br />
+            e-books <br />
             from <br />
             Nikmas&nbsp;Studio
           </p>

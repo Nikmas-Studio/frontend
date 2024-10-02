@@ -12,8 +12,8 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-        '2sm': '352px',
         'h-sm': { raw: '(max-height: 400px)' },
+        '2md': '825px',
       },
     },
   },

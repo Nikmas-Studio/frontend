@@ -15,14 +15,14 @@ function Footer(): ReactElement {
                      pb-20  pt-12  dark:border-[#414141]'
     >
       <MainContainer
-        className='flex  flex-col-reverse items-center  md:flex-row
-                                md:items-start  md:justify-between'
+        className='flex  flex-col-reverse  items-center  sm:flex-row
+                   sm:items-start  sm:justify-between'
       >
-        <div className='flex  flex-col  items-center  md:items-start'>
+        <div className='flex  flex-col  items-center  sm:items-start'>
           <p className='mb-5  text-lg  dark:text-white'>
             © Nikmas Studio, 2024
           </p>
-          <ul className='flex  flex-col  items-center  gap-2  text-sm  md:items-start'>
+          <ul className='flex  flex-col  items-center  gap-2  text-sm  sm:items-start'>
             <li>
               <Link
                 className='default-underlined-link'
@@ -43,7 +43,7 @@ function Footer(): ReactElement {
             </li>
           </ul>
         </div>
-        <ul className='mb-12  flex  gap-5  md:mb-0'>
+        <ul className='mb-12  flex  gap-5  sm:mb-0  sm:grid  sm:grid-cols-2  2md:grid-flow-col'>
           <li>
             <ExternalLink href='https://t.me/nikmas_studio'>
               <Image
@@ -89,7 +89,7 @@ function Footer(): ReactElement {
             </ExternalLink>
           </li>
         </ul>
-        <div className='mb-9  flex  flex-col  md:mb-0'>
+        <div className='mb-9  flex  flex-col  sm:mb-0'>
           <p className='mb-1  text-lg  leading-snug  dark:text-white'>
             For&nbsp;questions <br /> and&nbsp;suggestions:
           </p>

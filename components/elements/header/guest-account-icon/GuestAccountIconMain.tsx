@@ -12,7 +12,9 @@ interface GuestAccountIconProps {
   className?: string;
 }
 
-function GuestAccountIcon({ className }: GuestAccountIconProps): ReactElement {
+function GuestAccountIconMain({
+  className,
+}: GuestAccountIconProps): ReactElement {
   const { bookSectionInViewport } = useBookSectionState();
   const accountIconElementRef = useRef<HTMLDivElement | null>(null);
   const spineElementRef = useRef<HTMLDivElement | null>(null);
@@ -182,4 +184,4 @@ function GuestAccountIcon({ className }: GuestAccountIconProps): ReactElement {
   );
 }
 
-export default GuestAccountIcon;
+export default GuestAccountIconMain;
