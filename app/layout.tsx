@@ -1,3 +1,4 @@
+import ProvidersDefault from '@/components/modules/ProvidersDefault';
 import { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { ReactElement, ReactNode } from 'react';
@@ -52,7 +53,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      {children}
+      <ProvidersDefault>{children}</ProvidersDefault>
     </html>
   );
 }

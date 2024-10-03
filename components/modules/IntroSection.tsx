@@ -211,7 +211,7 @@ function IntroSection(): ReactElement {
           ref={h1Ref}
           aria-hidden='true'
           className='translate-x-[-1.5px]  translate-y-[-4px]  select-none  
-                     text-[11.5vw] leading-none  text-black 
+                     text-[11.5vw]  leading-none  text-black 
                      sm:text-[clamp(1px,11vh,min(122px,9vw))]
                      xl:text-[clamp(1px,12.7vh,min(122px,9vw))]
                      h-sm:text-[10vh]  dark:text-white'

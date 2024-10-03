@@ -18,9 +18,13 @@ import gsap from 'gsap';
 
 interface ThemeToggleProps {
   className?: string;
+  toggleIconAlwaysWhite?: boolean;
 }
 
-function ThemeToggleDefault({ className }: ThemeToggleProps): ReactElement {
+function ThemeToggleDefault({
+  className,
+  toggleIconAlwaysWhite = false,
+}: ThemeToggleProps): ReactElement {
   const [dropdownIsOpened, setDropdownIsOpened] = useState(false);
   const { selectedTheme } = useTheme();
   const { setSelectedTheme } = useThemeDispatch();
@@ -321,7 +325,11 @@ function ThemeToggleDefault({ className }: ThemeToggleProps): ReactElement {
 
   const lightModeWhiteToggleIconClasses = classNames(
     `absolute  size-6  translate-y-[-0.5px]  select-none md:size-[1.7rem]  top-0
-     opacity-0  dark:opacity-0  pointer-events-none  dark:pointer-events-none`,
+     dark:opacity-0  dark:pointer-events-none`,
+    {
+      'opacity-100  pointer-events-auto': toggleIconAlwaysWhite,
+      'opacity-0 pointer-events-none': !toggleIconAlwaysWhite,
+    },
   );
 
   const darkModeWhiteToggleIconClasses = classNames(
@@ -342,15 +350,17 @@ function ThemeToggleDefault({ className }: ThemeToggleProps): ReactElement {
         className='relative  size-6  cursor-pointer  md:size-[1.7rem]'
         onClick={() => setDropdownIsOpened((prev) => !prev)}
       >
-        <Image
-          priority
-          ref={lightModeBlackToggleIconRef}
-          src={sunIconBlack}
-          width={27}
-          height={27}
-          alt='Sun icon'
-          className={lightModeBlackToggleIconClasses}
-        />
+        {!toggleIconAlwaysWhite && (
+          <Image
+            priority
+            ref={lightModeBlackToggleIconRef}
+            src={sunIconBlack}
+            width={27}
+            height={27}
+            alt='Sun icon'
+            className={lightModeBlackToggleIconClasses}
+          />
+        )}
         <Image
           priority
           ref={lightModeWhiteToggleIconRef}
