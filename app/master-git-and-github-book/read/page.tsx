@@ -1,4 +1,3 @@
-import PageSplitter from '@/components/elements/PageSplitter';
 import MasterGitAndGithubBookReadLayout from '@/components/layouts/MasterGitAndGithubBookReadLayout';
 import CoverPage from '@/components/modules/git-and-github-book/pages/CoverPage';
 import Page1 from '@/components/modules/git-and-github-book/pages/Page1';
@@ -10,9 +9,11 @@ function MasterGitAndGithubBookRead(): ReactElement {
     <MasterGitAndGithubBookReadLayout>
       <body className='dark:bg-[#00040a]'>
         <CoverPage />
-        <Page1 />
-        <PageSplitter />
-        <Page2 />
+        <div className='relative  z-20  overflow-hidden'>
+          <div className='fixed  inset-0  z-20  bg-parallax  bg-cover'></div>
+          <Page1 />
+          <Page2 />
+        </div>
       </body>
     </MasterGitAndGithubBookReadLayout>
   );

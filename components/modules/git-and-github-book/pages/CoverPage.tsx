@@ -53,7 +53,7 @@ function CoverPage(): ReactElement {
   return (
     <section
       ref={sectionRef}
-      className='grid  h-lvh  w-lvw  place-content-center  overflow-hidden 
+      className='relative  z-50  grid  h-lvh  w-lvw  place-content-center  overflow-hidden 
                       [background:linear-gradient(135deg,#ff5013,#271ad3)]'
     >
       <div
@@ -76,6 +76,7 @@ function CoverPage(): ReactElement {
             alt='Git and Github book cover'
             className='h-full max-h-[70svh]  w-auto
                        rounded-[1.61svh]  dark:hidden'
+            placeholder='blur'
             priority
           />
           <Image
@@ -83,6 +84,7 @@ function CoverPage(): ReactElement {
             alt='Git and Github book cover'
             className='hidden  h-full  max-h-[70svh]  w-auto
                        rounded-[1.61svh]  dark:inline-block'
+            placeholder='blur'
             priority
           />
           <div
