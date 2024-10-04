@@ -1,3 +1,4 @@
+import DefaultLayout from '@/components/layouts/DefaultLayout';
 import BookSection from '@/components/modules/BookSection';
 import ContestSection from '@/components/modules/ContestSection';
 import Footer from '@/components/modules/Footer';
@@ -9,19 +10,21 @@ import { ReactElement } from 'react';
 
 export default function Home(): ReactElement {
   return (
-    <ProvidersMain>
-      <body className='dark:bg-black'>
-        <div className='pt-[5.118rem]  md:pt-[6.0625rem]'>
-          <HeaderMain />
-          <main>
-            <IntroSection />
-            <HBASection />
-            <BookSection />
-            <ContestSection />
-          </main>
-          <Footer />
-        </div>
-      </body>
-    </ProvidersMain>
+    <DefaultLayout>
+      <ProvidersMain>
+        <body className='dark:bg-black'>
+          <div className='pt-[5.118rem]  md:pt-[6.0625rem]'>
+            <HeaderMain />
+            <main>
+              <IntroSection />
+              <HBASection />
+              <BookSection />
+              <ContestSection />
+            </main>
+            <Footer />
+          </div>
+        </body>
+      </ProvidersMain>
+    </DefaultLayout>
   );
 }

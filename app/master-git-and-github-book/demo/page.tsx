@@ -1,10 +1,13 @@
+import MasterGitAndGithubBookReadLayout from '@/components/layouts/MasterGitAndGithubBookReadLayout';
 import { ReactElement } from 'react';
 
 function MasterGitAndGithubBookDemo(): ReactElement {
   return (
-    <body>
-      <div className='text-5xl'>Master Git & Github Book Demo</div>;
-    </body>
+    <MasterGitAndGithubBookReadLayout>
+      <body>
+        <div className='text-5xl'>Master Git & Github Book Demo</div>;
+      </body>
+    </MasterGitAndGithubBookReadLayout>
   );
 }
 
