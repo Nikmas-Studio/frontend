@@ -20,6 +20,9 @@ const config: Config = {
         'max-2sm': { max: '460px' },
         'h-sm': { raw: '(max-height: 400px)' },
       },
+      backgroundImage: {
+        parallax: 'url("../public/images/bg-parallax.jpg")',
+      },
       keyframes: {
         'scroll-hint-arrows': {
           '0%': {

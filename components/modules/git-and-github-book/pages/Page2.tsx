@@ -1,19 +1,19 @@
 import { ReactElement } from 'react';
 
-function Page1(): ReactElement {
+function Page2(): ReactElement {
   return (
     <section className='relative  h-[700px]  w-full  bg-white  dark:bg-[#00040a]'>
       <div>
-        <p className='absolute  bottom-6  right-[3.5vw]'>1</p>
+        <p className='absolute  bottom-6  right-[3.5vw]'>2</p>
       </div>
       <h1
         className='mt-5  text-center  text-5xl  text-[#00040a]  
                    dark:text-white'
       >
-        Introduction to Version Control
+        Page 2
       </h1>
     </section>
   );
 }
 
-export default Page1;
+export default Page2;
