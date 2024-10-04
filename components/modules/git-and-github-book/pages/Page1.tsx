@@ -4,7 +4,7 @@ function Page1(): ReactElement {
   return (
     <div className='h-[1000px]  w-full  bg-white  dark:bg-[#00040a]'>
       <h1
-        className='text-center  mt-5  text-5xl  text-[#00040a]  
+        className='mt-5  text-center  text-5xl  text-[#00040a]  
                    dark:text-white'
       >
         Introduction to Version Control

@@ -1,8 +1,8 @@
 'use client';
 
 import ScrollHintMouse from '@/components/elements/ScrollHintMouse';
-import bookCoverDark from '@/public/images/git-and-github-book-cover-dark.jpg';
-import bookCoverLight from '@/public/images/git-and-github-book-cover-light.jpg';
+import bookCoverDark from '@/public/images/git-and-github-book-cover-dark-no-spine.jpg';
+import bookCoverLight from '@/public/images/git-and-github-book-cover-light-no-spine.jpg';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
@@ -57,15 +57,18 @@ function CoverPage(): ReactElement {
                       [background:linear-gradient(135deg,#ff5013,#271ad3)]'
     >
       <div
-        className='relative  translate-x-[-0.11vw]
-        px-[10vw]  max-xl:translate-y-[-40px]  max-sm:translate-y-[-60px]
-        '
+        className='relative
+        px-[10vw]  max-xl:translate-y-[-40px]  max-sm:translate-y-[-30px]
+        h-sm:translate-y-0'
       >
         <div
           className='relative   h-[70svh]  w-auto
                        max-sm:h-auto  max-sm:w-full'
         >
-          <div className='absolute  right-[6.7%]  top-9  z-30  max-sm:right-[5vw]'>
+          <div
+            className='absolute  right-[6.7%]  top-[6%]  z-30  
+                       max-sm:right-[5vw]  h-sm:right-[3%]  h-sm:top-[4%]'
+          >
             <ThemeToggleDefault />
           </div>
           <Image
@@ -79,15 +82,16 @@ function CoverPage(): ReactElement {
             src={bookCoverDark}
             alt='Git and Github book cover'
             className='hidden  h-full  max-h-[70svh]  w-auto
-                     rounded-[1.61svh]  dark:inline-block'
+                       rounded-[1.61svh]  dark:inline-block'
             priority
           />
           <div
             ref={spineRef}
-            className='absolute left-1/2  max-sm:left-[49.71%]  top-[45.1%]  z-50
-                       h-[29.5%]  w-[9%]  max-sm:w-[9.4%]  origin-center  -translate-x-1/2  
-                       rounded-[0.8svh] bg-white  max-sm:rounded-[1.3vw]
-                        dark:bg-[#00040a]  will-change-transform'
+            className='absolute  left-1/2  top-[45.1%]  z-50  h-[29.5%]  w-[9%]
+                       origin-center  translate-x-[calc(-50%-1px)] 
+                       rounded-[0.8svh]  bg-white 
+                       max-sm:translate-x-[calc(-50%-0.5svw)]  
+                       max-sm:rounded-[1.3vw]  dark:bg-[#00040a]'
           ></div>
         </div>
         <ScrollHintMouse
