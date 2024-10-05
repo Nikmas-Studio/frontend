@@ -5,25 +5,23 @@ import Footer from '@/components/modules/Footer';
 import HBASection from '@/components/modules/HBASection';
 import HeaderMain from '@/components/modules/header/header-element/HeaderMain';
 import IntroSection from '@/components/modules/IntroSection';
-import ProvidersMain from '@/components/modules/ProvidersMain';
+import ProvidersMain from '@/components/modules/providers/ProvidersMain';
 import { ReactElement } from 'react';
 
 export default function Home(): ReactElement {
   return (
     <DefaultLayout>
       <ProvidersMain>
-        <body className='dark:bg-black'>
-          <div className='pt-[5.118rem]  md:pt-[6.0625rem]'>
-            <HeaderMain />
-            <main>
-              <IntroSection />
-              <HBASection />
-              <BookSection />
-              <ContestSection />
-            </main>
-            <Footer />
-          </div>
-        </body>
+        <div className='pt-[5.118rem]  md:pt-[6.0625rem]'>
+          <HeaderMain />
+          <main>
+            <IntroSection />
+            <HBASection />
+            <BookSection />
+            <ContestSection />
+          </main>
+          <Footer />
+        </div>
       </ProvidersMain>
     </DefaultLayout>
   );

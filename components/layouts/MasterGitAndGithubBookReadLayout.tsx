@@ -3,7 +3,9 @@
 
 import localFont from 'next/font/local';
 import { ReactElement, ReactNode, useEffect } from 'react';
-import ProvidersDefault from '../modules/ProvidersDefault';
+import Background from '../elements/master-git-and-github-book/Background';
+import ProvidersDefault from '../modules/providers/ProvidersDefault';
+import ProvidersGitAndGithubBook from '../modules/providers/ProvidersGitAndGithubBook';
 
 const gilroy = localFont({
   src: [
@@ -35,25 +37,21 @@ function MasterGitAndGithubBookReadLayout({
   }, []);
 
   return (
-    <html lang='en' className={`${gilroy.className}  overflow-hidden`}>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                if (localStorage.theme === 'dark' || (!('theme' in localStorage) &&
-                   window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                  document.documentElement.classList.add('dark')
-                } else {
-                  document.documentElement.classList.remove('dark')
-                }
-              } catch (_) {}
-            `,
-          }}
-        />
-      </head>
-      <ProvidersDefault>{children}</ProvidersDefault>
-    </html>
+    <ProvidersDefault>
+      <ProvidersGitAndGithubBook>
+        <div className={`${gilroy.className}`}>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                document.documentElement.classList.add('overflow-hidden');
+              `,
+            }}
+          />
+          <Background />
+          {children}
+        </div>
+      </ProvidersGitAndGithubBook>
+    </ProvidersDefault>
   );
 }
 

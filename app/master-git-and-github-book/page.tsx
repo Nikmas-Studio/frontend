@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 function MasterGitAndGithubBookPromo(): ReactElement {
   return (
     <DefaultLayout>
-      <body className='dark:bg-black'>
+      <div className='dark:bg-black'>
         <div className='pt-[5.118rem]  md:pt-[6.0625rem]'>
           <HeaderDefault />
           <MainContainer className='mb-[800px]'>
@@ -26,7 +26,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
               <Link
                 href='/master-git-and-github-book/demo'
                 className='inline-block  rounded-md  bg-black  px-4  py-2  
-                       font-semibold  text-white  hover:bg-[#271ad3]  
+                       font-semibold  text-white  hover:bg-git-blue  
                        hover:transition-colors dark:bg-white  
                        dark:text-black  dark:hover:text-white'
               >
@@ -37,7 +37,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
               <Link
                 href='/master-git-and-github-book/read'
                 className='inline-block  rounded-md  bg-black  px-4  py-2  
-                       font-semibold  text-white  hover:bg-[#271ad3]  
+                       font-semibold  text-white  hover:bg-git-blue  
                        hover:transition-colors dark:bg-white  
                        dark:text-black  dark:hover:text-white'
               >
@@ -47,7 +47,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
           </MainContainer>
           <Footer />
         </div>
-      </body>
+      </div>
     </DefaultLayout>
   );
 }

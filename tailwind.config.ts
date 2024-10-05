@@ -20,8 +20,13 @@ const config: Config = {
         'max-2sm': { max: '460px' },
         'h-sm': { raw: '(max-height: 400px)' },
       },
+      colors: {
+        'git-black': '#00040A',
+        'git-orange': '#ff5013',
+        'git-blue': '#271ad3',
+      },
       backgroundImage: {
-        parallax: 'url("../public/images/bg-parallax.jpg")',
+        'git-part-1': 'url("../public/images/bg-parallax-2.jpg")',
       },
       keyframes: {
         'scroll-hint-arrows': {

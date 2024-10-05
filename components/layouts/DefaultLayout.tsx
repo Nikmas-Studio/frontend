@@ -2,7 +2,8 @@
 
 import localFont from 'next/font/local';
 import { ReactElement, ReactNode } from 'react';
-import ProvidersDefault from '../modules/ProvidersDefault';
+import DefaultBackground from '../elements/DefaultBackground';
+import ProvidersDefault from '../modules/providers/ProvidersDefault';
 
 const gilroy = localFont({
   src: [
@@ -26,25 +27,12 @@ const gilroy = localFont({
 
 function DefaultLayout({ children }: { children: ReactNode }): ReactElement {
   return (
-    <html lang='en' className={`${gilroy.className}`}>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                if (localStorage.theme === 'dark' || (!('theme' in localStorage) &&
-                   window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                  document.documentElement.classList.add('dark')
-                } else {
-                  document.documentElement.classList.remove('dark')
-                }
-              } catch (_) {}
-            `,
-          }}
-        />
-      </head>
-      <ProvidersDefault>{children}</ProvidersDefault>
-    </html>
+    <ProvidersDefault>
+      <div className={`${gilroy.className}`}>
+        <DefaultBackground />
+        {children}
+      </div>
+    </ProvidersDefault>
   );
 }
 

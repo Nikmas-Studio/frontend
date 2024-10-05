@@ -7,7 +7,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Image from 'next/image';
-import { ReactElement, useEffect, useRef, useState } from 'react';
+import { ReactElement, useRef } from 'react';
 import ThemeToggleDefault from '../../header/theme-toggle/ThemeToggleDefault';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -15,45 +15,48 @@ gsap.registerPlugin(ScrollTrigger);
 function CoverPage(): ReactElement {
   const sectionRef = useRef<HTMLElement | null>(null);
   const spineRef = useRef<HTMLDivElement | null>(null);
-  const [scale, setScale] = useState(1);
 
-  useEffect(() => {
-    function handleScale(): void {
-      const scale = Number(
+  useGSAP(() => {
+    function getScale(): number {
+      return Number(
         (window.innerWidth / spineRef.current!.offsetWidth + 1).toFixed(1),
       );
-      setScale(scale);
     }
 
-    handleScale();
+    gsap.fromTo(
+      spineRef.current,
+      {
+        xPercent: () => {
+          return -50;
+        },
+        x: () => {
+          const viewportWidth = window.innerWidth;
 
-    window.addEventListener('resize', handleScale);
+          if (viewportWidth < 640) {
+            return -(viewportWidth * 0.005);
+          }
 
-    return () => {
-      window.removeEventListener('resize', handleScale);
-    };
-  }, []);
-
-  useGSAP(
-    () => {
-      gsap.to(spineRef.current, {
+          return -1;
+        },
+      },
+      {
         scrollTrigger: {
           trigger: sectionRef.current,
           pin: true,
           scrub: true,
           end: '+=800',
+          invalidateOnRefresh: true,
         },
-        scale,
+        scale: getScale,
         ease: 'power1.inOut',
-      });
-    },
-    { revertOnUpdate: true, dependencies: [scale] },
-  );
+      },
+    );
+  });
 
   return (
     <section
       ref={sectionRef}
-      className='relative  z-50  grid  h-lvh  w-lvw  place-content-center  overflow-hidden 
+      className='relative  z-30  grid  h-lvh  w-lvw  place-content-center  overflow-hidden 
                       [background:linear-gradient(135deg,#ff5013,#271ad3)]'
     >
       <div
@@ -92,7 +95,7 @@ function CoverPage(): ReactElement {
             className='absolute  left-1/2  top-[45.1%]  z-50  h-[29.5%]  w-[9%]
                        origin-center  translate-x-[calc(-50%-1px)] 
                        rounded-[0.8svh]  bg-white 
-                       max-sm:translate-x-[calc(-50%-0.5svw)]  
+                       max-sm:translate-x-[calc(-50%-0.5vw)]  
                        max-sm:rounded-[1.3vw]  dark:bg-[#00040a]'
           ></div>
         </div>
