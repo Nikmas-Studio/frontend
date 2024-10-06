@@ -8,7 +8,7 @@ export default function RootLayout({
   children: ReactNode;
 }): ReactElement {
   return (
-    <html lang='en'>
+    <html lang='en' className='bg-white  dark:bg-black'>
       <head>
         <script
           dangerouslySetInnerHTML={{

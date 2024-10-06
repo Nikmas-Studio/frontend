@@ -2,7 +2,6 @@
 
 import localFont from 'next/font/local';
 import { ReactElement, ReactNode } from 'react';
-import DefaultBackground from '../elements/DefaultBackground';
 import ProvidersDefault from '../modules/providers/ProvidersDefault';
 
 const gilroy = localFont({
@@ -28,10 +27,7 @@ const gilroy = localFont({
 function DefaultLayout({ children }: { children: ReactNode }): ReactElement {
   return (
     <ProvidersDefault>
-      <div className={`${gilroy.className}`}>
-        <DefaultBackground />
-        {children}
-      </div>
+      <div className={`${gilroy.className}`}>{children}</div>
     </ProvidersDefault>
   );
 }

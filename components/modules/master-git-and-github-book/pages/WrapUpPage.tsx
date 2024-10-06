@@ -147,6 +147,7 @@ function WrapUpPage(): ReactElement {
           ></div>
         </div>
       </div>
+      <p className='absolute'></p>
     </section>
   );
 }
