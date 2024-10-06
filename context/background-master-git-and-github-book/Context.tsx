@@ -1,4 +1,4 @@
-import { ActiveBackground } from '@/types/git-and-github-book/active-background';
+import { ActiveBackground } from '@/types/master-git-and-github-book/active-background';
 import {
   createContext,
   Dispatch,

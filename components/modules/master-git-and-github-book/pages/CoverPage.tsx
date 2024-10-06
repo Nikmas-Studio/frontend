@@ -1,6 +1,7 @@
 'use client';
 
 import ScrollHintMouse from '@/components/elements/ScrollHintMouse';
+import useGsapResizeUpdate from '@/hooks/use-gsap-resize-update';
 import bookCoverDark from '@/public/images/git-and-github-book-cover-dark-no-spine.jpg';
 import bookCoverLight from '@/public/images/git-and-github-book-cover-light-no-spine.jpg';
 import { useGSAP } from '@gsap/react';
@@ -14,44 +15,41 @@ gsap.registerPlugin(ScrollTrigger);
 
 function CoverPage(): ReactElement {
   const sectionRef = useRef<HTMLElement | null>(null);
+  const innerContentRef = useRef<HTMLDivElement | null>(null);
   const spineRef = useRef<HTMLDivElement | null>(null);
+  const { gsapShouldUpdate } = useGsapResizeUpdate();
 
   useGSAP(() => {
-    function getScale(): number {
-      return Number(
-        (window.innerWidth / spineRef.current!.offsetWidth + 1).toFixed(1),
-      );
-    }
+    gsap.delayedCall(0.7, () => {
+      gsap.set(innerContentRef.current, {
+        opacity: 1,
+      });
+    });
+  }, []);
 
-    gsap.fromTo(
-      spineRef.current,
-      {
-        xPercent: () => {
-          return -50;
-        },
-        x: () => {
-          const viewportWidth = window.innerWidth;
+  useGSAP(
+    () => {
+      function getScale(): number {
+        return Number(
+          (window.innerWidth / spineRef.current!.offsetWidth + 2).toFixed(1),
+        );
+      }
 
-          if (viewportWidth < 640) {
-            return -(viewportWidth * 0.005);
-          }
-
-          return -1;
-        },
-      },
-      {
+      gsap.to(spineRef.current, {
         scrollTrigger: {
           trigger: sectionRef.current,
           pin: true,
           scrub: true,
           end: '+=800',
-          invalidateOnRefresh: true,
         },
         scale: getScale,
         ease: 'power1.inOut',
-      },
-    );
-  });
+      });
+
+      document.documentElement.classList.remove('overflow-hidden');
+    },
+    { dependencies: [gsapShouldUpdate], revertOnUpdate: true },
+  );
 
   return (
     <section
@@ -60,8 +58,9 @@ function CoverPage(): ReactElement {
                       [background:linear-gradient(135deg,#ff5013,#271ad3)]'
     >
       <div
-        className='relative
-        px-[10vw]  max-xl:translate-y-[-40px]  max-sm:translate-y-[-30px]
+        ref={innerContentRef}
+        className='relative  px-[10vw]  opacity-0
+        [transition:opacity_1s_ease-out]  max-xl:translate-y-[-40px]  max-sm:translate-y-[-30px]
         h-sm:translate-y-0'
       >
         <div

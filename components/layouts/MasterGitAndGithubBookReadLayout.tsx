@@ -2,10 +2,10 @@
 'use client';
 
 import localFont from 'next/font/local';
-import { ReactElement, ReactNode, useEffect } from 'react';
+import { ReactElement, ReactNode } from 'react';
 import Background from '../elements/master-git-and-github-book/Background';
 import ProvidersDefault from '../modules/providers/ProvidersDefault';
-import ProvidersGitAndGithubBook from '../modules/providers/ProvidersGitAndGithubBook';
+import ProvidersMasterGitAndGithubBook from '../modules/providers/ProvidersMasterGitAndGithubBook';
 
 const gilroy = localFont({
   src: [
@@ -32,13 +32,9 @@ function MasterGitAndGithubBookReadLayout({
 }: {
   children: ReactNode;
 }): ReactElement {
-  useEffect(() => {
-    document.documentElement.classList.remove('overflow-hidden');
-  }, []);
-
   return (
     <ProvidersDefault>
-      <ProvidersGitAndGithubBook>
+      <ProvidersMasterGitAndGithubBook>
         <div className={`${gilroy.className}`}>
           <script
             dangerouslySetInnerHTML={{
@@ -50,7 +46,7 @@ function MasterGitAndGithubBookReadLayout({
           <Background />
           {children}
         </div>
-      </ProvidersGitAndGithubBook>
+      </ProvidersMasterGitAndGithubBook>
     </ProvidersDefault>
   );
 }

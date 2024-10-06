@@ -1,9 +1,9 @@
 'use client';
 
-import { ActiveBackgroundProvider } from '@/context/background-git-and-github-book/Context';
+import { ActiveBackgroundProvider } from '@/context/background-master-git-and-github-book/Context';
 import { ReactElement, ReactNode } from 'react';
 
-function ProvidersGitAndGithubBook({
+function ProvidersMasterGitAndGithubBook({
   children,
 }: {
   children: ReactNode;
@@ -11,4 +11,4 @@ function ProvidersGitAndGithubBook({
   return <ActiveBackgroundProvider>{children}</ActiveBackgroundProvider>;
 }
 
-export default ProvidersGitAndGithubBook;
+export default ProvidersMasterGitAndGithubBook;

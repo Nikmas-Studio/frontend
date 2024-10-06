@@ -26,7 +26,10 @@ const config: Config = {
         'git-blue': '#271ad3',
       },
       backgroundImage: {
-        'git-part-1': 'url("../public/images/bg-parallax-2.jpg")',
+        'git-part-1-dark':
+          'url("../public/images/git-and-github-book-part-1-bg-pattern-dark.jpg")',
+        'git-part-1-light':
+          'url("../public/images/git-and-github-book-part-1-bg-pattern-light.jpg")',
       },
       keyframes: {
         'scroll-hint-arrows': {
