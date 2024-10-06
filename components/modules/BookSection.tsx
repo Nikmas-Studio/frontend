@@ -105,7 +105,7 @@ function BookSection(): ReactElement {
             className='xl:scale-0  xl:opacity-0  
                        xl:will-change-[transform,opacity]'
           >
-            <Link ref={anchorRef} href='/master-git-and-github-book'>
+            <Link ref={anchorRef} href='/book-master-git-and-github'>
               <Image
                 ref={lightBookCoverRef}
                 src={bookCoverLight}

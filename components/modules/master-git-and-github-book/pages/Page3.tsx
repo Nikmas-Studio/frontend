@@ -1,13 +1,25 @@
+'use client';
+
+import { useActiveBackground } from '@/context/background-master-git-and-github-book/Context';
+import { ActiveBackground } from '@/types/master-git-and-github-book/active-background';
+import classNames from 'classnames';
 import { ReactElement } from 'react';
 import Controls from './Controls';
 
 function Page3(): ReactElement {
-  return (
-    <section
-      className='relative  z-30  my-5  h-[820px]  w-full 
+  const { activeBackground } = useActiveBackground();
+
+  const pageClasses = classNames(
+    `relative  z-30  my-5  h-[820px]  w-full 
                             bg-white  pt-36
-                          dark:bg-[#00040a]'
-    >
+                          dark:bg-[#00040a]`,
+    {
+      'border-b  border-[#EBEBEB]  dark:border-[#414141]':
+        activeBackground === ActiveBackground.DEFAULT,
+    },
+  );
+  return (
+    <section className={pageClasses}>
       <Controls pageNumber={3} />
       <h1
         className='text-center  text-5xl  text-[#00040a]  

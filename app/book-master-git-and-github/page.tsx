@@ -24,7 +24,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
             </h1>
             <div className='mb-5'>
               <Link
-                href='/master-git-and-github-book/demo'
+                href='/book-master-git-and-github/demo'
                 className='inline-block  rounded-md  bg-black  px-4  py-2  
                        font-semibold  text-white  hover:bg-git-blue  
                        hover:transition-colors dark:bg-white  
@@ -35,7 +35,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
             </div>
             <div>
               <Link
-                href='/master-git-and-github-book/read'
+                href='/book-master-git-and-github/read'
                 className='inline-block  rounded-md  bg-black  px-4  py-2  
                        font-semibold  text-white  hover:bg-git-blue  
                        hover:transition-colors dark:bg-white  

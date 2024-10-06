@@ -13,13 +13,13 @@ function Controls({ pageNumber, reversedColors }: ControlsProps): ReactElement {
     <div>
       {pageNumber && (
         <p
-          className='absolute  bottom-7  right-[3vw]  text-git-black
+          className='absolute  bottom-7  right-[3vw]  text-git-black  max-sm:right-[6vw]
                  dark:text-white'
         >
           {pageNumber}
         </p>
       )}
-      <div className='absolute  right-[3vw]  top-6'>
+      <div className='absolute  right-[3vw]  top-7  max-sm:right-[5vw]'>
         <ThemeToggleDefault reversedColors={reversedColors} />
       </div>
     </div>

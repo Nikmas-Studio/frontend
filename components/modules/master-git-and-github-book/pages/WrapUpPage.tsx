@@ -1,20 +1,15 @@
 'use client';
 
-import {
-  useActiveBackground,
-  useActiveBackgroundDispatch,
-} from '@/context/background-master-git-and-github-book/Context';
+import { useActiveBackgroundDispatch } from '@/context/background-master-git-and-github-book/Context';
 import useGsapResizeUpdate from '@/hooks/use-gsap-resize-update';
 import bookCoverDark from '@/public/images/git-and-github-book-cover-dark-no-spine.jpg';
 import bookCoverLight from '@/public/images/git-and-github-book-cover-light-no-spine.jpg';
 import { ActiveBackground } from '@/types/master-git-and-github-book/active-background';
 import { useGSAP } from '@gsap/react';
-import classNames from 'classnames';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Image from 'next/image';
-import { ReactElement, useRef, useState } from 'react';
-import ThemeToggleDefault from '../../header/theme-toggle/ThemeToggleDefault';
+import { ReactElement, useRef } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,8 +19,7 @@ function WrapUpPage(): ReactElement {
   const spineRef = useRef<HTMLDivElement | null>(null);
   const { gsapShouldUpdate } = useGsapResizeUpdate();
   const { setActiveBackground } = useActiveBackgroundDispatch();
-  const { activeBackground } = useActiveBackground();
-  const [hideBorder, setHideBorder] = useState(false);
+  const afterwordRef = useRef<HTMLDivElement | null>(null);
 
   useGSAP(
     () => {
@@ -46,45 +40,41 @@ function WrapUpPage(): ReactElement {
 
   useGSAP(
     () => {
-      ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: 'top top',
-        end: '+=0',
-        onEnter: () => {
-          setHideBorder(true);
-        },
-        onEnterBack: () => {
-          setHideBorder(false);
-        },
-      });
-    },
-    { dependencies: [gsapShouldUpdate], revertOnUpdate: true },
-  );
-
-  useGSAP(
-    () => {
       function getScale(): number {
         return Number(
           (window.innerWidth / spineRef.current!.offsetWidth + 2).toFixed(1),
         );
       }
 
-      gsap.fromTo(
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          pin: true,
+          scrub: true,
+          start: 'top top',
+          end: '+=800',
+        },
+      });
+
+      timeline.fromTo(
         spineRef.current,
         {
           scale: getScale,
         },
         {
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            pin: true,
-            scrub: true,
-            start: 'top top',
-            end: '+=800',
-          },
           scale: 1,
           ease: 'power1.inOut',
         },
+        0,
+      );
+
+      timeline.to(
+        afterwordRef.current,
+        {
+          opacity: 1,
+          pointerEvents: 'auto',
+        },
+        '-=0.3',
       );
 
       document.documentElement.classList.remove('overflow-hidden');
@@ -92,35 +82,24 @@ function WrapUpPage(): ReactElement {
     { dependencies: [gsapShouldUpdate], revertOnUpdate: true },
   );
 
-  const sectionClasses = classNames(
-    `relative  z-30  grid  h-lvh  
-     w-lvw  place-content-center  overflow-hidden 
-     [background:linear-gradient(135deg,#ff5013,#271ad3)] 
-     `,
-    {
-      'border-t  border-[#EBEBEB]  dark:border-[#414141]':
-        activeBackground === ActiveBackground.DEFAULT && !hideBorder,
-    },
-  );
-
   return (
-    <section ref={sectionRef} className={sectionClasses}>
+    <section
+      ref={sectionRef}
+      className='relative  z-30  grid  h-lvh  
+     w-lvw  place-content-center  overflow-hidden 
+     [background:linear-gradient(135deg,#ff5013,#271ad3)]'
+    >
       <div
         ref={innerContentRef}
-        className='relative  px-[10vw]
-        [transition:opacity_1s_ease-out]  max-xl:translate-y-[-40px]  max-sm:translate-y-[-30px]
+        className='relative 
+        translate-y-[-20px]  px-[10vw]  [transition:opacity_1s_ease-out]  
+        max-xl:translate-y-[-40px]  max-sm:translate-y-[-30px]
         h-sm:translate-y-0'
       >
         <div
           className='relative   h-[70svh]  w-auto
                        max-sm:h-auto  max-sm:w-full'
         >
-          <div
-            className='absolute  right-[6.7%]  top-[6%]  z-30  
-                       max-sm:right-[5vw]  h-sm:right-[3%]  h-sm:top-[4%]'
-          >
-            <ThemeToggleDefault />
-          </div>
           <Image
             src={bookCoverLight}
             alt='Git and Github book cover'
@@ -147,7 +126,19 @@ function WrapUpPage(): ReactElement {
           ></div>
         </div>
       </div>
-      <p className='absolute'></p>
+      <div
+        ref={afterwordRef}
+        className='pointer-events-none  absolute  h-screen  w-screen opacity-0
+                    [background-color:rgba(0,0,0,0.8)]'
+      >
+        <p
+          className='absolute  left-1/2  top-[43%]  -translate-x-1/2  -translate-y-1/2
+                    text-center  text-[8vw]  font-bold  leading-tight  
+                    text-white  max-sm:text-[12vw]'
+        >
+          To Be Continued...
+        </p>
+      </div>
     </section>
   );
 }
