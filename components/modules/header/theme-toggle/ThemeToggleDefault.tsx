@@ -18,12 +18,12 @@ import gsap from 'gsap';
 
 interface ThemeToggleProps {
   className?: string;
-  toggleIconAlwaysWhite?: boolean;
+  reversedColors?: boolean;
 }
 
 function ThemeToggleDefault({
   className,
-  toggleIconAlwaysWhite = false,
+  reversedColors = false,
 }: ThemeToggleProps): ReactElement {
   const [dropdownIsOpened, setDropdownIsOpened] = useState(false);
   const { selectedTheme } = useTheme();
@@ -32,6 +32,7 @@ function ThemeToggleDefault({
   const lightModeBlackToggleIconRef = useRef<HTMLImageElement | null>(null);
   const lightModeWhiteToggleIconRef = useRef<HTMLImageElement | null>(null);
   const darkModeWhiteToggleIconRef = useRef<HTMLImageElement | null>(null);
+  const darkModeBlackToggleIconRef = useRef<HTMLImageElement | null>(null);
   const dropdownElementRef = useRef<HTMLUListElement | null>(null);
   const toggleButtonRef = useRef<HTMLButtonElement | null>(null);
 
@@ -67,7 +68,7 @@ function ThemeToggleDefault({
   });
 
   useGSAP((_, contextSafe) => {
-    const handleDarkModeIconMouseEnter = contextSafe!(() => {
+    const handleDarkModeWhiteIconMouseEnter = contextSafe!(() => {
       if (isTouchDeviceRef.current) {
         return;
       }
@@ -101,7 +102,7 @@ function ThemeToggleDefault({
       }
     });
 
-    const handleDarkModeIconMouseLeave = contextSafe!(() => {
+    const handleDarkModeWhiteIconMouseLeave = contextSafe!(() => {
       if (isTouchDeviceRef.current) {
         return;
       }
@@ -114,6 +115,65 @@ function ThemeToggleDefault({
           isAnimating.current = true;
 
           gsap.to(darkModeWhiteToggleIconRef.current, {
+            rotate: 0,
+            duration: 0.15,
+            ease: 'cubic-bezier(0.4,0,0.2,1)',
+          });
+
+          setTimeout(() => {
+            isAnimating.current = false;
+          }, 150);
+        }
+      }
+    });
+
+    const handleDarkModeBlackIconMouseEnter = contextSafe!(() => {
+      if (isTouchDeviceRef.current) {
+        return;
+      }
+
+      if (!isAnimating.current) {
+        isAnimating.current = true;
+        mouseLeavedToggle.current = false;
+
+        gsap.to(darkModeBlackToggleIconRef.current, {
+          rotate: -45,
+          duration: 0.15,
+          ease: 'cubic-bezier(0.4,0,0.2,1)',
+        });
+
+        setTimeout(() => {
+          if (mouseLeavedToggle.current) {
+            gsap.to(darkModeBlackToggleIconRef.current, {
+              rotate: 0,
+              duration: 0.15,
+              ease: 'cubic-bezier(0.4,0,0.2,1)',
+            });
+
+            setTimeout(() => {
+              isAnimating.current = false;
+            }, 150);
+          } else {
+            isAnimating.current = false;
+            animateLeave.current = true;
+          }
+        }, 150);
+      }
+    });
+
+    const handleDarkModeBlackIconMouseLeave = contextSafe!(() => {
+      if (isTouchDeviceRef.current) {
+        return;
+      }
+
+      if (!mouseLeavedToggle.current) {
+        mouseLeavedToggle.current = true;
+
+        if (animateLeave.current) {
+          animateLeave.current = false;
+          isAnimating.current = true;
+
+          gsap.to(darkModeBlackToggleIconRef.current, {
             rotate: 0,
             duration: 0.15,
             ease: 'cubic-bezier(0.4,0,0.2,1)',
@@ -246,12 +306,22 @@ function ThemeToggleDefault({
 
     darkModeWhiteToggleIconRef.current?.addEventListener(
       'mouseenter',
-      handleDarkModeIconMouseEnter,
+      handleDarkModeWhiteIconMouseEnter,
     );
 
     darkModeWhiteToggleIconRef.current?.addEventListener(
       'mouseleave',
-      handleDarkModeIconMouseLeave,
+      handleDarkModeWhiteIconMouseLeave,
+    );
+
+    darkModeBlackToggleIconRef.current?.addEventListener(
+      'mouseenter',
+      handleDarkModeBlackIconMouseEnter,
+    );
+
+    darkModeBlackToggleIconRef.current?.addEventListener(
+      'mouseleave',
+      handleDarkModeBlackIconMouseLeave,
     );
 
     lightModeBlackToggleIconRef.current?.addEventListener(
@@ -277,12 +347,22 @@ function ThemeToggleDefault({
     return () => {
       darkModeWhiteToggleIconRef.current?.removeEventListener(
         'mouseenter',
-        handleDarkModeIconMouseEnter,
+        handleDarkModeWhiteIconMouseEnter,
       );
 
       darkModeWhiteToggleIconRef.current?.removeEventListener(
         'mouseleave',
-        handleDarkModeIconMouseLeave,
+        handleDarkModeWhiteIconMouseLeave,
+      );
+
+      darkModeBlackToggleIconRef.current?.removeEventListener(
+        'mouseenter',
+        handleDarkModeBlackIconMouseEnter,
+      );
+
+      darkModeBlackToggleIconRef.current?.removeEventListener(
+        'mouseleave',
+        handleDarkModeBlackIconMouseLeave,
       );
 
       lightModeBlackToggleIconRef.current?.removeEventListener(
@@ -319,23 +399,42 @@ function ThemeToggleDefault({
   );
 
   const lightModeBlackToggleIconClasses = classNames(
-    `absolute  size-6  translate-y-[-0.5px]  select-none  md:size-[1.7rem]  
-     top-0  opacity-100  dark:opacity-0  z-40  dark:pointer-events-none`,
+    `absolute  size-6  translate-y-[-0.5px]  select-none    
+     top-0`,
+    {
+      'opacity-100  z-50  dark:opacity-0  dark:pointer-events-none  dark:z-auto':
+        !reversedColors,
+      'opacity-0  pointer-events-none': reversedColors,
+    },
   );
 
   const lightModeWhiteToggleIconClasses = classNames(
-    `absolute  size-6  translate-y-[-0.5px]  select-none md:size-[1.7rem]  top-0
-     dark:opacity-0  dark:pointer-events-none`,
+    `absolute  size-6  translate-y-[-0.5px]  select-none  top-0`,
     {
-      'opacity-100  pointer-events-auto': toggleIconAlwaysWhite,
-      'opacity-0 pointer-events-none': !toggleIconAlwaysWhite,
+      'opacity-0  pointer-events-none': !reversedColors,
+      'opacity-100  z-50  dark:opacity-0  dark:pointer-events-none  dark:z-auto':
+        reversedColors,
     },
   );
 
   const darkModeWhiteToggleIconClasses = classNames(
     `absolute  size-[1.3rem]  translate-x-[0.1rem]  translate-y-[0.12rem]
-     select-none  md:size-[1.45rem]  top-0  opacity-0  pointer-events-none
-     dark:opacity-100  dark:pointer-events-auto  dark:z-50`,
+     select-none  top-0`,
+    {
+      'opacity-0  pointer-events-none  dark:opacity-100  dark:pointer-events-auto  dark:z-50':
+        !reversedColors,
+      'opacity-0  pointer-events-none': reversedColors,
+    },
+  );
+
+  const darkModeBlackToggleIconClasses = classNames(
+    `absolute  size-[1.3rem]  translate-x-[0.1rem]  translate-y-[0.12rem]
+     select-none  top-0`,
+    {
+      'opacity-0  pointer-events-none': !reversedColors,
+      'opacity-0  pointer-events-none  dark:opacity-100  dark:pointer-events-auto  dark:z-50':
+        reversedColors,
+    },
   );
 
   const themeToggleWrapperClasses = classNames(
@@ -347,20 +446,18 @@ function ThemeToggleDefault({
     <div className={themeToggleWrapperClasses}>
       <button
         ref={toggleButtonRef}
-        className='relative  size-6  cursor-pointer  md:size-[1.7rem]'
+        className='relative  size-6  cursor-pointer'
         onClick={() => setDropdownIsOpened((prev) => !prev)}
       >
-        {!toggleIconAlwaysWhite && (
-          <Image
-            priority
-            ref={lightModeBlackToggleIconRef}
-            src={sunIconBlack}
-            width={27}
-            height={27}
-            alt='Sun icon'
-            className={lightModeBlackToggleIconClasses}
-          />
-        )}
+        <Image
+          priority
+          ref={lightModeBlackToggleIconRef}
+          src={sunIconBlack}
+          width={27}
+          height={27}
+          alt='Sun icon'
+          className={lightModeBlackToggleIconClasses}
+        />
         <Image
           priority
           ref={lightModeWhiteToggleIconRef}
@@ -379,6 +476,15 @@ function ThemeToggleDefault({
           alt='Moon icon'
           className={darkModeWhiteToggleIconClasses}
         />
+        <Image
+          priority
+          ref={darkModeBlackToggleIconRef}
+          src={moonIconBlack}
+          width={27}
+          height={27}
+          alt='Moon icon'
+          className={darkModeBlackToggleIconClasses}
+        />
       </button>
       <ul ref={dropdownElementRef} className={dropdownClasses}>
         <ThemeToggleDropdownItem
@@ -392,7 +498,7 @@ function ThemeToggleDefault({
             width={27}
             height={27}
             alt='Sun icon'
-            className='size-6  translate-y-[-0.031rem]  md:size-[1.7rem]  
+            className='size-6  translate-y-[-0.031rem]
                        dark:hidden'
           />
           <Image
@@ -400,7 +506,7 @@ function ThemeToggleDefault({
             width={27}
             height={27}
             alt='Sun icon'
-            className='hidden  size-6  translate-y-[-0.031rem]  md:size-[1.7rem]
+            className='hidden  size-6  translate-y-[-0.031rem]
                        dark:inline-block'
           />
           <p className='select-none  dark:text-white'>Light</p>
@@ -417,7 +523,7 @@ function ThemeToggleDefault({
             height={27}
             alt='Moon icon'
             className='size-[1.3rem]  translate-x-[0.15rem]
-                       translate-y-[-0.031rem]  md:size-[1.45rem]
+                       translate-y-[-0.031rem]
                        dark:hidden'
           />
           <Image
@@ -426,7 +532,7 @@ function ThemeToggleDefault({
             height={27}
             alt='Moon icon'
             className='hidden  size-[1.3rem]  translate-x-[0.15rem]
-                       translate-y-[-0.031rem]  md:size-[1.45rem]
+                       translate-y-[-0.031rem]
                        dark:inline-block'
           />
           <p className='select-none  dark:text-white'>Dark</p>
@@ -443,7 +549,7 @@ function ThemeToggleDefault({
             height={27}
             alt='Gear icon'
             className='size-[1.3rem]  translate-x-[0.13rem]
-                       translate-y-[-0.031rem]  md:size-6  dark:hidden'
+                       translate-y-[-0.031rem]  dark:hidden'
           />
           <Image
             src={gearIconWhite}
@@ -451,7 +557,7 @@ function ThemeToggleDefault({
             height={27}
             alt='Gear icon'
             className='hidden  size-[1.3rem]  translate-x-[0.13rem]
-                       translate-y-[-0.031rem]  md:size-6  dark:inline-block'
+                       translate-y-[-0.031rem]  dark:inline-block'
           />
           <p className='select-none  dark:text-white'>System</p>
         </ThemeToggleDropdownItem>

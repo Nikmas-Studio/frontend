@@ -1,46 +1,60 @@
 'use client';
 
-import ScrollHintMouse from '@/components/elements/ScrollHintMouse';
-import { useActiveBackgroundDispatch } from '@/context/background-master-git-and-github-book/Context';
+import {
+  useActiveBackground,
+  useActiveBackgroundDispatch,
+} from '@/context/background-master-git-and-github-book/Context';
 import useGsapResizeUpdate from '@/hooks/use-gsap-resize-update';
 import bookCoverDark from '@/public/images/git-and-github-book-cover-dark-no-spine.jpg';
 import bookCoverLight from '@/public/images/git-and-github-book-cover-light-no-spine.jpg';
 import { ActiveBackground } from '@/types/master-git-and-github-book/active-background';
 import { useGSAP } from '@gsap/react';
+import classNames from 'classnames';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Image from 'next/image';
-import { ReactElement, useRef } from 'react';
+import { ReactElement, useRef, useState } from 'react';
 import ThemeToggleDefault from '../../header/theme-toggle/ThemeToggleDefault';
 
 gsap.registerPlugin(ScrollTrigger);
 
-function CoverPage(): ReactElement {
+function WrapUpPage(): ReactElement {
   const sectionRef = useRef<HTMLElement | null>(null);
   const innerContentRef = useRef<HTMLDivElement | null>(null);
   const spineRef = useRef<HTMLDivElement | null>(null);
-  const { setActiveBackground } = useActiveBackgroundDispatch();
   const { gsapShouldUpdate } = useGsapResizeUpdate();
-
-  useGSAP(() => {
-    gsap.delayedCall(0.7, () => {
-      gsap.set(innerContentRef.current, {
-        opacity: 1,
-      });
-    });
-  }, []);
+  const { setActiveBackground } = useActiveBackgroundDispatch();
+  const { activeBackground } = useActiveBackground();
+  const [hideBorder, setHideBorder] = useState(false);
 
   useGSAP(
     () => {
       ScrollTrigger.create({
         trigger: sectionRef.current,
-        start: '170% top',
+        start: '-50% top',
         end: '+=0',
         onEnter: () => {
-          setActiveBackground(ActiveBackground.PART1);
+          setActiveBackground(ActiveBackground.DEFAULT);
         },
         onEnterBack: () => {
-          setActiveBackground(ActiveBackground.DEFAULT);
+          setActiveBackground(ActiveBackground.PART1);
+        },
+      });
+    },
+    { dependencies: [gsapShouldUpdate], revertOnUpdate: true },
+  );
+
+  useGSAP(
+    () => {
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: 'top top',
+        end: '+=0',
+        onEnter: () => {
+          setHideBorder(true);
+        },
+        onEnterBack: () => {
+          setHideBorder(false);
         },
       });
     },
@@ -55,31 +69,45 @@ function CoverPage(): ReactElement {
         );
       }
 
-      gsap.to(spineRef.current, {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          pin: true,
-          scrub: true,
-          end: '+=800',
+      gsap.fromTo(
+        spineRef.current,
+        {
+          scale: getScale,
         },
-        scale: getScale,
-        ease: 'power1.inOut',
-      });
+        {
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            pin: true,
+            scrub: true,
+            start: 'top top',
+            end: '+=800',
+          },
+          scale: 1,
+          ease: 'power1.inOut',
+        },
+      );
 
       document.documentElement.classList.remove('overflow-hidden');
     },
     { dependencies: [gsapShouldUpdate], revertOnUpdate: true },
   );
 
+  const sectionClasses = classNames(
+    `relative  z-30  grid  h-lvh  
+     w-lvw  place-content-center  overflow-hidden 
+     [background:linear-gradient(135deg,#ff5013,#271ad3)] 
+     `,
+    {
+      'border-t  border-[#EBEBEB]  dark:border-[#414141]':
+        activeBackground === ActiveBackground.DEFAULT && !hideBorder,
+    },
+  );
+
   return (
-    <section
-      ref={sectionRef}
-      className='relative  z-30  grid  h-lvh  w-lvw  place-content-center  overflow-hidden 
-                      [background:linear-gradient(135deg,#ff5013,#271ad3)]'
-    >
+    <section ref={sectionRef} className={sectionClasses}>
       <div
         ref={innerContentRef}
-        className='relative  px-[10vw]  opacity-0
+        className='relative  px-[10vw]
         [transition:opacity_1s_ease-out]  max-xl:translate-y-[-40px]  max-sm:translate-y-[-30px]
         h-sm:translate-y-0'
       >
@@ -118,14 +146,9 @@ function CoverPage(): ReactElement {
                        max-sm:rounded-[1.3vw]  dark:bg-git-black'
           ></div>
         </div>
-        <ScrollHintMouse
-          wrapperClassName='mt-10  border-white  
-                                           dark:border-git-black'
-          wheelClassName='bg-white  dark:bg-git-black'
-        />
       </div>
     </section>
   );
 }
 
-export default CoverPage;
+export default WrapUpPage;

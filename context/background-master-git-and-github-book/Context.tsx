@@ -41,7 +41,7 @@ export function ActiveBackgroundProvider({
   );
 }
 
-export function useAciveBackground(): ActiveBackgroundContextProps {
+export function useActiveBackground(): ActiveBackgroundContextProps {
   const context = useContext(ActiveBackgroundContext);
 
   if (!context) {
