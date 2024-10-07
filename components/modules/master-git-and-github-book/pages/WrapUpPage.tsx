@@ -1,10 +1,8 @@
 'use client';
 
-import { useActiveBackgroundDispatch } from '@/context/background-master-git-and-github-book/Context';
 import useGsapResizeUpdate from '@/hooks/use-gsap-resize-update';
 import bookCoverDark from '@/public/images/git-and-github-book-cover-dark-no-spine.jpg';
 import bookCoverLight from '@/public/images/git-and-github-book-cover-light-no-spine.jpg';
-import { ActiveBackground } from '@/types/master-git-and-github-book/active-background';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
@@ -18,25 +16,7 @@ function WrapUpPage(): ReactElement {
   const innerContentRef = useRef<HTMLDivElement | null>(null);
   const spineRef = useRef<HTMLDivElement | null>(null);
   const { gsapShouldUpdate } = useGsapResizeUpdate();
-  const { setActiveBackground } = useActiveBackgroundDispatch();
   const afterwordRef = useRef<HTMLDivElement | null>(null);
-
-  useGSAP(
-    () => {
-      ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: '-50% top',
-        end: '+=0',
-        onEnter: () => {
-          setActiveBackground(ActiveBackground.DEFAULT);
-        },
-        onEnterBack: () => {
-          setActiveBackground(ActiveBackground.PART1);
-        },
-      });
-    },
-    { dependencies: [gsapShouldUpdate], revertOnUpdate: true },
-  );
 
   useGSAP(
     () => {

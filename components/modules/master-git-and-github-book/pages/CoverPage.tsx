@@ -1,11 +1,9 @@
 'use client';
 
 import ScrollHintMouse from '@/components/elements/ScrollHintMouse';
-import { useActiveBackgroundDispatch } from '@/context/background-master-git-and-github-book/Context';
 import useGsapResizeUpdate from '@/hooks/use-gsap-resize-update';
 import bookCoverDark from '@/public/images/git-and-github-book-cover-dark-no-spine.jpg';
 import bookCoverLight from '@/public/images/git-and-github-book-cover-light-no-spine.jpg';
-import { ActiveBackground } from '@/types/master-git-and-github-book/active-background';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
@@ -19,7 +17,6 @@ function CoverPage(): ReactElement {
   const sectionRef = useRef<HTMLElement | null>(null);
   const innerContentRef = useRef<HTMLDivElement | null>(null);
   const spineRef = useRef<HTMLDivElement | null>(null);
-  const { setActiveBackground } = useActiveBackgroundDispatch();
   const { gsapShouldUpdate } = useGsapResizeUpdate();
 
   useGSAP(() => {
@@ -29,23 +26,6 @@ function CoverPage(): ReactElement {
       });
     });
   }, []);
-
-  useGSAP(
-    () => {
-      ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: '170% top',
-        end: '+=0',
-        onEnter: () => {
-          setActiveBackground(ActiveBackground.PART1);
-        },
-        onEnterBack: () => {
-          setActiveBackground(ActiveBackground.DEFAULT);
-        },
-      });
-    },
-    { dependencies: [gsapShouldUpdate], revertOnUpdate: true },
-  );
 
   useGSAP(
     () => {

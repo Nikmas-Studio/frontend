@@ -1,13 +1,42 @@
 'use client';
 
-import { useActiveBackground } from '@/context/background-master-git-and-github-book/Context';
+import {
+  useActiveBackground,
+  useActiveBackgroundDispatch,
+} from '@/context/background-master-git-and-github-book/Context';
+import useGsapResizeUpdate from '@/hooks/use-gsap-resize-update';
 import { ActiveBackground } from '@/types/master-git-and-github-book/active-background';
+import { useGSAP } from '@gsap/react';
 import classNames from 'classnames';
-import { ReactElement } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+import { ReactElement, useRef } from 'react';
 import Controls from './Controls';
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Page3(): ReactElement {
   const { activeBackground } = useActiveBackground();
+  const { setActiveBackground } = useActiveBackgroundDispatch();
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const { gsapShouldUpdate } = useGsapResizeUpdate();
+
+  useGSAP(
+    () => {
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: 'bottom 200px',
+        end: '+=0',
+        onEnter: () => {
+          setActiveBackground(ActiveBackground.DEFAULT);
+        },
+        onEnterBack: () => {
+          setActiveBackground(ActiveBackground.PART1);
+        },
+      });
+    },
+    { dependencies: [gsapShouldUpdate], revertOnUpdate: true },
+  );
 
   const pageClasses = classNames(
     `relative  z-30  my-5  h-[820px]  w-full 
@@ -19,7 +48,7 @@ function Page3(): ReactElement {
     },
   );
   return (
-    <section className={pageClasses}>
+    <section ref={sectionRef} className={pageClasses}>
       <Controls pageNumber={3} />
       <h1
         className='text-center  text-5xl  text-[#00040a]  
