@@ -27,7 +27,7 @@ function Page3(): ReactElement {
     () => {
       ScrollTrigger.create({
         trigger: sectionRef.current,
-        start: 'bottom 200px',
+        start: 'bottom 300px',
         end: '+=0',
         onEnter: () => {
           setActiveBackground(ActiveBackground.DEFAULT);
