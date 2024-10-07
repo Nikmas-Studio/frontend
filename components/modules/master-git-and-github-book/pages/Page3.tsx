@@ -1,10 +1,12 @@
 'use client';
 
+import { BASE_PATH_READ } from '@/constants/master-git-and-github-book';
 import {
   useActiveBackground,
   useActiveBackgroundDispatch,
 } from '@/context/background-master-git-and-github-book/Context';
 import useGsapResizeUpdate from '@/hooks/use-gsap-resize-update';
+import { usePageUpdate } from '@/hooks/use-page-update';
 import { ActiveBackground } from '@/types/master-git-and-github-book/active-background';
 import { useGSAP } from '@gsap/react';
 import classNames from 'classnames';
@@ -38,6 +40,12 @@ function Page3(): ReactElement {
     { dependencies: [gsapShouldUpdate], revertOnUpdate: true },
   );
 
+  usePageUpdate({
+    pageRef: sectionRef,
+    currentPage: 3,
+    basePath: BASE_PATH_READ,
+  });
+
   const pageClasses = classNames(
     `relative  z-30  my-5  h-[820px]  w-full 
                             bg-white  pt-36
@@ -48,7 +56,7 @@ function Page3(): ReactElement {
     },
   );
   return (
-    <section ref={sectionRef} className={pageClasses}>
+    <section id='page-3' ref={sectionRef} className={pageClasses}>
       <Controls pageNumber={3} />
       <h1
         className='text-center  text-5xl  text-[#00040a]  

@@ -1,6 +1,8 @@
 'use client';
 
+import { BASE_PATH_READ } from '@/constants/master-git-and-github-book';
 import useGsapResizeUpdate from '@/hooks/use-gsap-resize-update';
+import { usePageUpdate } from '@/hooks/use-page-update';
 import bookCoverDark from '@/public/images/git-and-github-book-cover-dark-no-spine.jpg';
 import bookCoverLight from '@/public/images/git-and-github-book-cover-light-no-spine.jpg';
 import { useGSAP } from '@gsap/react';
@@ -11,7 +13,7 @@ import { ReactElement, useRef } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-function WrapUpPage(): ReactElement {
+function EndPage(): ReactElement {
   const sectionRef = useRef<HTMLElement | null>(null);
   const innerContentRef = useRef<HTMLDivElement | null>(null);
   const spineRef = useRef<HTMLDivElement | null>(null);
@@ -62,8 +64,17 @@ function WrapUpPage(): ReactElement {
     { dependencies: [gsapShouldUpdate], revertOnUpdate: true },
   );
 
+  usePageUpdate({
+    pageRef: sectionRef,
+    basePath: BASE_PATH_READ,
+    end: {
+      previousPage: 3,
+    },
+  });
+
   return (
     <section
+      id='page-end'
       ref={sectionRef}
       className='relative  z-30  grid  h-lvh  
      w-lvw  place-content-center  overflow-hidden 
@@ -123,4 +134,4 @@ function WrapUpPage(): ReactElement {
   );
 }
 
-export default WrapUpPage;
+export default EndPage;
