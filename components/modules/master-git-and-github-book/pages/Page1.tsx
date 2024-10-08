@@ -3,7 +3,7 @@
 import { BASE_PATH_READ } from '@/constants/master-git-and-github-book';
 import { useActiveBackgroundDispatch } from '@/context/background-master-git-and-github-book/Context';
 import useGsapResizeUpdate from '@/hooks/use-gsap-resize-update';
-import { usePageUpdate } from '@/hooks/use-page-update';
+import { useUrlUpdate } from '@/hooks/use-url-update';
 import { ActiveBackground } from '@/types/master-git-and-github-book/active-background';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -35,7 +35,7 @@ function Page1(): ReactElement {
     { dependencies: [gsapShouldUpdate], revertOnUpdate: true },
   );
 
-  usePageUpdate({
+  useUrlUpdate({
     pageRef: sectionRef,
     currentPage: 1,
     basePath: BASE_PATH_READ,

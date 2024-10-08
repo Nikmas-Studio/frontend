@@ -2,7 +2,7 @@
 
 import { BASE_PATH_READ } from '@/constants/master-git-and-github-book';
 import useGsapResizeUpdate from '@/hooks/use-gsap-resize-update';
-import { usePageUpdate } from '@/hooks/use-page-update';
+import { useUrlUpdate } from '@/hooks/use-url-update';
 import bookCoverDark from '@/public/images/git-and-github-book-cover-dark-no-spine.jpg';
 import bookCoverLight from '@/public/images/git-and-github-book-cover-light-no-spine.jpg';
 import { useGSAP } from '@gsap/react';
@@ -64,7 +64,7 @@ function EndPage(): ReactElement {
     { dependencies: [gsapShouldUpdate], revertOnUpdate: true },
   );
 
-  usePageUpdate({
+  useUrlUpdate({
     pageRef: sectionRef,
     basePath: BASE_PATH_READ,
     end: {

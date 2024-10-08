@@ -1,14 +1,14 @@
 'use client';
 
 import { BASE_PATH_READ } from '@/constants/master-git-and-github-book';
-import { usePageUpdate } from '@/hooks/use-page-update';
+import { useUrlUpdate } from '@/hooks/use-url-update';
 import { ReactElement, useRef } from 'react';
 import Controls from './Controls';
 
 function Page2(): ReactElement {
   const sectionRef = useRef<HTMLElement | null>(null);
 
-  usePageUpdate({
+  useUrlUpdate({
     pageRef: sectionRef,
     currentPage: 2,
     basePath: BASE_PATH_READ,
