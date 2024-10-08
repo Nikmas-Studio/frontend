@@ -1,5 +1,6 @@
 'use client';
 
+import BookMainContainer from '@/components/elements/master-git-and-github-book/BookMainContainer';
 import { BASE_PATH_READ } from '@/constants/master-git-and-github-book';
 import { useActiveBackgroundDispatch } from '@/context/background-master-git-and-github-book/Context';
 import useGsapResizeUpdate from '@/hooks/use-gsap-resize-update';
@@ -9,6 +10,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { ReactElement, useRef } from 'react';
+import Page from '../Page';
 import Controls from './Controls';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -42,20 +44,21 @@ function Page1(): ReactElement {
   });
 
   return (
-    <section
+    <Page
       id='page-1'
       ref={sectionRef}
-      className='relative  z-30  flex  h-[calc(100vh+10px)]  w-full
-                 flex-col  items-center  justify-center  bg-git-orange'
+      className='flex  h-[calc(100vh+10px)]  bg-git-orange'
     >
       <Controls reversedColors />
-      <h1
-        className='translate-y-[-10vh]  text-7xl  font-bold  text-white  
-                   max-lg:text-5xl  max-sm:text-4xl  dark:text-git-black'
-      >
-        Part 1. Everyday Tasks
-      </h1>
-    </section>
+      <BookMainContainer>
+        <h1
+          className='mt-[25vh]  text-7xl  font-bold  text-white  max-lg:text-6xl  
+                     max-sm:text-4xl  dark:text-git-black'
+        >
+          Part 1. Everyday Tasks
+        </h1>
+      </BookMainContainer>
+    </Page>
   );
 }
 

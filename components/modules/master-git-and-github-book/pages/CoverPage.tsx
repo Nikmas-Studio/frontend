@@ -10,6 +10,7 @@ import { ScrollTrigger } from 'gsap/all';
 import Image from 'next/image';
 import { ReactElement, useRef } from 'react';
 import ThemeToggleDefault from '../../header/theme-toggle/ThemeToggleDefault';
+import Page from '../Page';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,11 +53,15 @@ function CoverPage(): ReactElement {
   );
 
   return (
-    <section
+    <Page
+      id='cover-page'
       ref={sectionRef}
-      className='relative  z-30  grid  h-lvh  w-lvw  place-content-center  overflow-hidden 
+      className='grid  h-lvh  place-content-center  overflow-hidden 
                       [background:linear-gradient(135deg,#ff5013,#271ad3)]'
     >
+      <h1 className='sr-only'>
+        Master Git & GitHub: From Everyday Tasks to Deep Waters
+      </h1>
       <div
         ref={innerContentRef}
         className='relative  px-[10vw]  opacity-0
@@ -104,7 +109,7 @@ function CoverPage(): ReactElement {
           wheelClassName='bg-white  dark:bg-git-black'
         />
       </div>
-    </section>
+    </Page>
   );
 }
 

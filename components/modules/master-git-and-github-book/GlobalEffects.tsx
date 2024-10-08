@@ -14,6 +14,7 @@ function GlobalEffects({
   children,
 }: GlobalEffectsProps): ReactElement {
   useEffect(() => {
+    console.log('initialPageId:', initialPageId);
     if (initialPageId === undefined) {
       return;
     }
@@ -29,6 +30,7 @@ function GlobalEffects({
       }
 
       const page = document.getElementById(`page-${initialPageId}`);
+      console.log('page:', page);
       page?.scrollIntoView({ behavior: 'instant' });
     }
 
