@@ -22,6 +22,7 @@ const config: Config = {
       },
       colors: {
         'git-black': '#00040A',
+        'git-white': '#e3e3e3',
         'git-orange': '#ff5013',
         'git-blue': '#271ad3',
       },

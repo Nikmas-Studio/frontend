@@ -1,7 +1,7 @@
 import useOutsideClick from '@/hooks/use-outside-click';
 import { Theme } from '@/types/theme';
 import classNames from 'classnames';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { ReactElement, useEffect, useRef, useState } from 'react';
 
 import ThemeToggleDropdownItem from '@/components/elements/ThemeToggleDropdownItem';
@@ -19,11 +19,39 @@ import gsap from 'gsap';
 interface ThemeToggleProps {
   className?: string;
   reversedColors?: boolean;
+  textLightModeClass?: string;
+  textDarkModeClass?: string;
+  bgLightModeClass?: string;
+  bgDarkModeClass?: string;
+  afterBgDarkModeClass?: string;
+  afterBgLightModeClass?: string;
+  iconsSources?: {
+    lightModeBlackIcon: StaticImageData;
+    lightModeWhiteIcon: StaticImageData;
+    darkModeWhiteIcon: StaticImageData;
+    darkModeBlackIcon: StaticImageData;
+    systemModeBlackIcon: StaticImageData;
+    systemModeWhiteIcon: StaticImageData;
+  };
 }
 
 function ThemeToggleDefault({
   className,
   reversedColors = false,
+  bgLightModeClass = 'bg-white',
+  bgDarkModeClass = 'dark:bg-black',
+  textLightModeClass = 'text-black',
+  textDarkModeClass = 'dark:text-white',
+  afterBgDarkModeClass = 'after:dark:bg-white',
+  afterBgLightModeClass = 'after:bg-black',
+  iconsSources = {
+    lightModeBlackIcon: sunIconBlack,
+    lightModeWhiteIcon: sunIconWhite,
+    darkModeWhiteIcon: moonIconWhite,
+    darkModeBlackIcon: moonIconBlack,
+    systemModeBlackIcon: gearIconBlack,
+    systemModeWhiteIcon: gearIconWhite,
+  },
 }: ThemeToggleProps): ReactElement {
   const [dropdownIsOpened, setDropdownIsOpened] = useState(false);
   const { selectedTheme } = useTheme();
@@ -388,10 +416,12 @@ function ThemeToggleDefault({
   }, []);
 
   const dropdownClasses = classNames(
-    `absolute  right-0  top-10  flex  flex-col  rounded-lg  bg-white
+    `absolute  right-0  top-10  flex  flex-col  rounded-lg
      border  border-[#EBEBEB]  dark:border-[#414141]
-     dark:bg-black  pb-9  pt-7  
+     pb-9  pt-7  
      `,
+    bgLightModeClass,
+    bgDarkModeClass,
     {
       'opacity-0  pointer-events-none': !dropdownIsOpened,
       'opacity-100  pointer-events-auto': dropdownIsOpened,
@@ -442,6 +472,12 @@ function ThemeToggleDefault({
     className,
   );
 
+  const textClasses = classNames(
+    `select-none`,
+    textLightModeClass,
+    textDarkModeClass,
+  );
+
   return (
     <div className={themeToggleWrapperClasses}>
       <button
@@ -452,7 +488,7 @@ function ThemeToggleDefault({
         <Image
           priority
           ref={lightModeBlackToggleIconRef}
-          src={sunIconBlack}
+          src={iconsSources.lightModeBlackIcon}
           width={27}
           height={27}
           alt='Sun icon'
@@ -461,7 +497,7 @@ function ThemeToggleDefault({
         <Image
           priority
           ref={lightModeWhiteToggleIconRef}
-          src={sunIconWhite}
+          src={iconsSources.lightModeWhiteIcon}
           width={27}
           height={27}
           alt='Sun icon'
@@ -470,7 +506,7 @@ function ThemeToggleDefault({
         <Image
           priority
           ref={darkModeWhiteToggleIconRef}
-          src={moonIconWhite}
+          src={iconsSources.darkModeWhiteIcon}
           width={27}
           height={27}
           alt='Moon icon'
@@ -479,7 +515,7 @@ function ThemeToggleDefault({
         <Image
           priority
           ref={darkModeBlackToggleIconRef}
-          src={moonIconBlack}
+          src={iconsSources.darkModeBlackIcon}
           width={27}
           height={27}
           alt='Moon icon'
@@ -491,10 +527,12 @@ function ThemeToggleDefault({
           className='gap-[0.7rem]'
           itemTheme={Theme.LIGHT}
           selectedTheme={selectedTheme}
+          afterBgDarkModeClass={afterBgDarkModeClass}
+          afterBgLightModeClass={afterBgLightModeClass}
           onClick={() => handleThemeChange(Theme.LIGHT)}
         >
           <Image
-            src={sunIconBlack}
+            src={iconsSources.lightModeBlackIcon}
             width={27}
             height={27}
             alt='Sun icon'
@@ -502,23 +540,25 @@ function ThemeToggleDefault({
                        dark:hidden'
           />
           <Image
-            src={sunIconWhite}
+            src={iconsSources.lightModeWhiteIcon}
             width={27}
             height={27}
             alt='Sun icon'
             className='hidden  size-6  translate-y-[-0.031rem]
                        dark:inline-block'
           />
-          <p className='select-none  dark:text-white'>Light</p>
+          <p className={textClasses}>Light</p>
         </ThemeToggleDropdownItem>
         <ThemeToggleDropdownItem
           className='gap-[0.95rem]'
           itemTheme={Theme.DARK}
           selectedTheme={selectedTheme}
+          afterBgDarkModeClass={afterBgDarkModeClass}
+          afterBgLightModeClass={afterBgLightModeClass}
           onClick={() => handleThemeChange(Theme.DARK)}
         >
           <Image
-            src={moonIconBlack}
+            src={iconsSources.darkModeBlackIcon}
             width={27}
             height={27}
             alt='Moon icon'
@@ -527,7 +567,7 @@ function ThemeToggleDefault({
                        dark:hidden'
           />
           <Image
-            src={moonIconWhite}
+            src={iconsSources.darkModeWhiteIcon}
             width={27}
             height={27}
             alt='Moon icon'
@@ -535,16 +575,18 @@ function ThemeToggleDefault({
                        translate-y-[-0.031rem]
                        dark:inline-block'
           />
-          <p className='select-none  dark:text-white'>Dark</p>
+          <p className={textClasses}>Dark</p>
         </ThemeToggleDropdownItem>
         <ThemeToggleDropdownItem
           className='gap-[0.95rem]'
           itemTheme={Theme.SYSTEM}
           selectedTheme={selectedTheme}
+          afterBgDarkModeClass={afterBgDarkModeClass}
+          afterBgLightModeClass={afterBgLightModeClass}
           onClick={() => handleThemeChange(Theme.SYSTEM)}
         >
           <Image
-            src={gearIconBlack}
+            src={iconsSources.systemModeBlackIcon}
             width={27}
             height={27}
             alt='Gear icon'
@@ -552,14 +594,14 @@ function ThemeToggleDefault({
                        translate-y-[-0.031rem]  dark:hidden'
           />
           <Image
-            src={gearIconWhite}
+            src={iconsSources.systemModeWhiteIcon}
             width={27}
             height={27}
             alt='Gear icon'
             className='hidden  size-[1.3rem]  translate-x-[0.13rem]
                        translate-y-[-0.031rem]  dark:inline-block'
           />
-          <p className='select-none  dark:text-white'>System</p>
+          <p className={textClasses}>System</p>
         </ThemeToggleDropdownItem>
       </ul>
     </div>

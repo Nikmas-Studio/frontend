@@ -7,7 +7,7 @@ interface TextNodeProps {
 }
 
 function BasicTextNode({ className, children }: TextNodeProps): ReactElement {
-  const classes = classNames('text-git-black  dark:text-white', className);
+  const classes = classNames('text-git-black  dark:text-git-white', className);
 
   return <p className={classes}>{children}</p>;
 }
