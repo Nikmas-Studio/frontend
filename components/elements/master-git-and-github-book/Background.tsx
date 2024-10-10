@@ -50,6 +50,14 @@ function Background(): ReactElement {
             ease: 'cubic-bezier(0.4, 0, 0.2, 1)',
           });
           break;
+        case ActiveBackground.DARK:
+          gsap.to(backgroundElementRef.current, {
+            duration: 0.15,
+            backgroundColor: '#00040A',
+            backgroundImage: 'none',
+            ease: 'cubic-bezier(0.4, 0, 0.2, 1)',
+          });
+          break;
       }
     },
     { dependencies: [activeBackground, selectedTheme] },

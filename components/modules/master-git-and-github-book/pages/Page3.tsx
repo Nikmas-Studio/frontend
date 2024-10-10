@@ -31,9 +31,19 @@ function Page3(): ReactElement {
         end: '+=0',
         onEnter: () => {
           setActiveBackground(ActiveBackground.DEFAULT);
+          gsap.to(sectionRef.current, {
+            duration: 0.15,
+            marginBottom: 0,
+            ease: 'cubic-bezier(0.4, 0, 0.2, 1)',
+          });
         },
         onEnterBack: () => {
           setActiveBackground(ActiveBackground.PART1);
+          gsap.to(sectionRef.current, {
+            duration: 0.15,
+            marginBottom: '1.25rem',
+            ease: 'cubic-bezier(0.4, 0, 0.2, 1)',
+          });
         },
       });
     },

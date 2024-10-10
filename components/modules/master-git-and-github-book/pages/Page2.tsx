@@ -38,7 +38,7 @@ function Page2(): ReactElement {
             className='flex  w-1/2  flex-col  justify-between  gap-10
                        max-2md:w-full'
           >
-            <ul className='mt-[3.3rem]  flex  flex-col  gap-5  max-2md:mb-12  max-2md:mt-0  max-sm:mb-10  max-sm:gap-4'>
+            <ul className='mt-[3.6rem]  flex  flex-col  gap-5  max-2md:mb-12  max-2md:mt-0  max-sm:mb-10  max-sm:gap-4'>
               <div className='flex  items-center  gap-3'>
                 <FolderIcon className='fill-git-black  max-3sm:size-[6.8vw]  dark:fill-git-white' />
                 <BasicTextNode className='text-2xl  max-3sm:text-[5.6vw]'>
@@ -92,7 +92,14 @@ function Page2(): ReactElement {
             className='flex  w-1/2  flex-col  justify-start
                        max-2md:w-full  max-2md:pl-0'
           >
-            <H3 className='mb-4'>You know what I&apos;m sayin&apos;?</H3>
+            <H3>You know what I&apos;m sayin&apos;?</H3>
+            <TextNode>
+              Copying files and&nbsp;directories and&nbsp;renaming them is
+              a&nbsp;go-to version control method for&nbsp;many people.
+              It&apos;s so&nbsp;simple, and&nbsp;that makes it
+              so&nbsp;appealing. But this&nbsp;simplicity comes with&nbsp;its
+              drawbacks:
+            </TextNode>
             <TextNode>
               Copying files and&nbsp;directories and&nbsp;renaming them is
               a&nbsp;go-to version control method for&nbsp;many people.

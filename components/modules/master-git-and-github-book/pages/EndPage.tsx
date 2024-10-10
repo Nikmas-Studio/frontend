@@ -1,10 +1,12 @@
 'use client';
 
 import { BASE_PATH_READ } from '@/constants/master-git-and-github-book';
+import { useActiveBackgroundDispatch } from '@/context/background-master-git-and-github-book/Context';
 import useGsapResizeUpdate from '@/hooks/use-gsap-resize-update';
 import { useUrlUpdate } from '@/hooks/use-url-update';
 import bookCoverDark from '@/public/images/git-and-github-book-cover-dark-no-spine.jpg';
 import bookCoverLight from '@/public/images/git-and-github-book-cover-light-no-spine.jpg';
+import { ActiveBackground } from '@/types/master-git-and-github-book/active-background';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
@@ -19,6 +21,7 @@ function EndPage(): ReactElement {
   const spineRef = useRef<HTMLDivElement | null>(null);
   const { gsapShouldUpdate } = useGsapResizeUpdate();
   const afterwordRef = useRef<HTMLDivElement | null>(null);
+  const { setActiveBackground } = useActiveBackgroundDispatch();
 
   useGSAP(
     () => {
@@ -60,6 +63,27 @@ function EndPage(): ReactElement {
       );
 
       document.documentElement.classList.remove('overflow-hidden');
+    },
+    { dependencies: [gsapShouldUpdate], revertOnUpdate: true },
+  );
+
+  useGSAP(
+    () => {
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: 'top top',
+        end: '+=0',
+        onLeave: () => {
+          console.log('onLeave');
+          setActiveBackground(ActiveBackground.DARK);
+          document.documentElement.classList.add('!bg-black');
+        },
+        onEnterBack: () => {
+          console.log('onEnterBack');
+          setActiveBackground(ActiveBackground.DEFAULT);
+          document.documentElement.classList.remove('!bg-black');
+        },
+      });
     },
     { dependencies: [gsapShouldUpdate], revertOnUpdate: true },
   );
@@ -119,7 +143,7 @@ function EndPage(): ReactElement {
       </div>
       <div
         ref={afterwordRef}
-        className='pointer-events-none  absolute  h-screen  w-screen opacity-0
+        className='pointer-events-none  absolute  h-lvh  w-screen opacity-0
                     [background-color:rgba(0,0,0,0.8)]'
       >
         <p

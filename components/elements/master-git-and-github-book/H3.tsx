@@ -9,7 +9,7 @@ interface H3Props {
 function H3({ className, children }: H3Props): ReactElement {
   const classes = classNames(
     `text-3xl  font-semibold  max-lg:text-2xl  leading-tight
-     text-git-black  dark:text-git-white`,
+     text-git-black  dark:text-git-white  mb-5`,
     className,
   );
 
