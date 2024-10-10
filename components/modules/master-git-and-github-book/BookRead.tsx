@@ -1,4 +1,5 @@
 import MasterGitAndGithubBookReadLayout from '@/components/layouts/MasterGitAndGithubBookReadLayout';
+import { BASE_PATH_READ } from '@/constants/master-git-and-github-book';
 import { ReactElement } from 'react';
 import GlobalEffects from './GlobalEffects';
 import CoverPage from './pages/CoverPage';
@@ -14,7 +15,7 @@ interface BookReadProps {
 function BookRead({ initialPageId }: BookReadProps): ReactElement {
   return (
     <MasterGitAndGithubBookReadLayout>
-      <GlobalEffects initialPageId={initialPageId}>
+      <GlobalEffects initialPageId={initialPageId} basePath={BASE_PATH_READ}>
         <CoverPage />
         <Page1 />
         <Page2 />

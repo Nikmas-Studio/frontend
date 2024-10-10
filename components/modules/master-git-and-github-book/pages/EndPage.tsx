@@ -72,7 +72,7 @@ function EndPage(): ReactElement {
       ScrollTrigger.create({
         trigger: sectionRef.current,
         start: 'top top',
-        end: '+=0',
+        end: '+=120',
         onLeave: () => {
           console.log('onLeave');
           setActiveBackground(ActiveBackground.DARK);

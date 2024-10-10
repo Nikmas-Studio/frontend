@@ -15,11 +15,22 @@ function MasterGitAndGithubBookReadLayout({
   return (
     <ProvidersDefault>
       <ProvidersMasterGitAndGithubBook>
-        <div className={`${gilroy.className}`}>
+        <div id='main-book-wrapper' className={`${gilroy.className}`}>
           <script
             dangerouslySetInnerHTML={{
               __html: `
                 document.documentElement.classList.add('overflow-hidden');
+                
+                const path = window.location.pathname;
+                
+                if (
+                  !path.endsWith('read') &&
+                  !path.endsWith('read/') &&
+                  !path.endsWith('demo') &&
+                  !path.endsWith('demo/')
+                ) {
+                  document.body.classList.add('invisible');     
+                }
               `,
             }}
           />

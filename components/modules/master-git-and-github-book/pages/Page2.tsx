@@ -100,13 +100,6 @@ function Page2(): ReactElement {
               so&nbsp;appealing. But this&nbsp;simplicity comes with&nbsp;its
               drawbacks:
             </TextNode>
-            <TextNode>
-              Copying files and&nbsp;directories and&nbsp;renaming them is
-              a&nbsp;go-to version control method for&nbsp;many people.
-              It&apos;s so&nbsp;simple, and&nbsp;that makes it
-              so&nbsp;appealing. But this&nbsp;simplicity comes with&nbsp;its
-              drawbacks:
-            </TextNode>
             <TextUl>
               <TextLi>
                 It&apos;s easy to&nbsp;forget which&nbsp;directory
