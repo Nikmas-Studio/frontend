@@ -10,7 +10,7 @@ interface TextNodeProps {
 
 function TextNode({ className, children }: TextNodeProps): ReactElement {
   const classes = classNames(
-    `text-lg  mb-5  [-webkit-font-smoothing:subpixel-antialiased]`,
+    `lining-nums  text-lg  mb-5  [-webkit-font-smoothing:subpixel-antialiased]`,
     merriweather.className,
     className,
   );

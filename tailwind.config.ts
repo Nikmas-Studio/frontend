@@ -15,9 +15,11 @@ const config: Config = {
         'max-2xl': { max: '1536px' },
         'max-xl': { max: '1280px' },
         'max-lg': { max: '1024px' },
+        'max-2md': { max: '960px' },
         'max-md': { max: '768px' },
         'max-sm': { max: '640px' },
         'max-2sm': { max: '460px' },
+        'max-3sm': { max: '420px' },
         'h-sm': { raw: '(max-height: 400px)' },
       },
       colors: {

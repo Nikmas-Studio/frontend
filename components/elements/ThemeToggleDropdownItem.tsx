@@ -5,8 +5,7 @@ import { ReactElement, ReactNode } from 'react';
 interface ThemeToggleDropdownItemProps {
   itemTheme: Theme;
   selectedTheme: Theme;
-  afterBgLightModeClass?: string;
-  afterBgDarkModeClass?: string;
+  activeItemDotClass?: string;
   className?: string;
   children: ReactNode;
   onClick?: () => void;
@@ -15,8 +14,7 @@ interface ThemeToggleDropdownItemProps {
 function ThemeToggleDropdownItem({
   itemTheme,
   selectedTheme,
-  afterBgLightModeClass,
-  afterBgDarkModeClass,
+  activeItemDotClass = 'after:bg-black  after:dark:bg-white',
   className,
   children,
   onClick,
@@ -27,8 +25,7 @@ function ThemeToggleDropdownItem({
      after:content-[""]  after:absolute  after:w-[0.45rem]  after:h-[0.45rem]
      after:right-[1.6rem]  after:top-1/2
      after:translate-y-[-60%]  after:rounded-full`,
-    afterBgLightModeClass,
-    afterBgDarkModeClass,
+    activeItemDotClass,
     className,
     {
       'after:opacity-100': itemTheme === selectedTheme,

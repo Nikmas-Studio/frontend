@@ -28,9 +28,8 @@ function Controls({ pageNumber, reversedColors }: ControlsProps): ReactElement {
       <div className='absolute  right-[3vw]  top-7  max-md:right-[4.2vw]'>
         <ThemeToggleDefault
           reversedColors={reversedColors}
-          bgDarkModeClass='dark:bg-git-black'
-          afterBgDarkModeClass='after:dark:bg-git-white'
-          afterBgLightModeClass='after:bg-git-black'
+          bgClass='bg-white  dark:bg-git-black'
+          activeItemDotClass='after:bg-git-black  after:dark:bg-git-white'
           iconsSources={{
             lightModeBlackIcon: sunIconBlack,
             lightModeWhiteIcon: sunIconWhite,

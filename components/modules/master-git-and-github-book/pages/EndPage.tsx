@@ -111,7 +111,7 @@ function EndPage(): ReactElement {
             ref={spineRef}
             className='absolute  left-1/2  top-[45.1%]  z-50  h-[29.5%]  w-[9%]
                        origin-center  translate-x-[calc(-50%-1px)] 
-                       rounded-[0.8svh]  bg-white 
+                       rounded-[0.8svh]  bg-white [-webkit-font-smoothing:subpixel-antialiased]
                        max-sm:translate-x-[calc(-50%-0.5vw)]  
                        max-sm:rounded-[1.3vw]  dark:bg-git-black'
           ></div>

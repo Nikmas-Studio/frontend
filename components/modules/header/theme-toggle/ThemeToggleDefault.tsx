@@ -19,12 +19,9 @@ import gsap from 'gsap';
 interface ThemeToggleProps {
   className?: string;
   reversedColors?: boolean;
-  textLightModeClass?: string;
-  textDarkModeClass?: string;
-  bgLightModeClass?: string;
-  bgDarkModeClass?: string;
-  afterBgDarkModeClass?: string;
-  afterBgLightModeClass?: string;
+  textClass?: string;
+  bgClass?: string;
+  activeItemDotClass?: string;
   iconsSources?: {
     lightModeBlackIcon: StaticImageData;
     lightModeWhiteIcon: StaticImageData;
@@ -38,12 +35,9 @@ interface ThemeToggleProps {
 function ThemeToggleDefault({
   className,
   reversedColors = false,
-  bgLightModeClass = 'bg-white',
-  bgDarkModeClass = 'dark:bg-black',
-  textLightModeClass = 'text-black',
-  textDarkModeClass = 'dark:text-white',
-  afterBgDarkModeClass = 'after:dark:bg-white',
-  afterBgLightModeClass = 'after:bg-black',
+  bgClass = 'bg-white  dark:bg-black',
+  activeItemDotClass = 'after:bg-black  after:dark:bg-white',
+  textClass = 'text-black  dark:text-white',
   iconsSources = {
     lightModeBlackIcon: sunIconBlack,
     lightModeWhiteIcon: sunIconWhite,
@@ -420,8 +414,7 @@ function ThemeToggleDefault({
      border  border-[#EBEBEB]  dark:border-[#414141]
      pb-9  pt-7  
      `,
-    bgLightModeClass,
-    bgDarkModeClass,
+    bgClass,
     {
       'opacity-0  pointer-events-none': !dropdownIsOpened,
       'opacity-100  pointer-events-auto': dropdownIsOpened,
@@ -472,11 +465,7 @@ function ThemeToggleDefault({
     className,
   );
 
-  const textClasses = classNames(
-    `select-none`,
-    textLightModeClass,
-    textDarkModeClass,
-  );
+  const textClasses = classNames(`select-none`, textClass);
 
   return (
     <div className={themeToggleWrapperClasses}>
@@ -527,8 +516,7 @@ function ThemeToggleDefault({
           className='gap-[0.7rem]'
           itemTheme={Theme.LIGHT}
           selectedTheme={selectedTheme}
-          afterBgDarkModeClass={afterBgDarkModeClass}
-          afterBgLightModeClass={afterBgLightModeClass}
+          activeItemDotClass={activeItemDotClass}
           onClick={() => handleThemeChange(Theme.LIGHT)}
         >
           <Image
@@ -553,8 +541,7 @@ function ThemeToggleDefault({
           className='gap-[0.95rem]'
           itemTheme={Theme.DARK}
           selectedTheme={selectedTheme}
-          afterBgDarkModeClass={afterBgDarkModeClass}
-          afterBgLightModeClass={afterBgLightModeClass}
+          activeItemDotClass={activeItemDotClass}
           onClick={() => handleThemeChange(Theme.DARK)}
         >
           <Image
@@ -581,8 +568,7 @@ function ThemeToggleDefault({
           className='gap-[0.95rem]'
           itemTheme={Theme.SYSTEM}
           selectedTheme={selectedTheme}
-          afterBgDarkModeClass={afterBgDarkModeClass}
-          afterBgLightModeClass={afterBgLightModeClass}
+          activeItemDotClass={activeItemDotClass}
           onClick={() => handleThemeChange(Theme.SYSTEM)}
         >
           <Image
