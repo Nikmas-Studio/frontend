@@ -30,7 +30,7 @@ function Page2(): ReactElement {
     <Page id='page-2' ref={sectionRef} className='bg-white  dark:bg-git-black'>
       <Controls pageNumber={2} />
       <BookMainContainer>
-        <H2 className='mb-16  max-sm:mb-14'>
+        <H2 className='mb-16  max-2md:mb-12  max-sm:mb-10'>
           Introduction to&nbsp;Version&nbsp;Control
         </H2>
         <div className='flex  flex-row  max-2md:flex-col'>
@@ -38,7 +38,7 @@ function Page2(): ReactElement {
             className='flex  w-1/2  flex-col  justify-between  gap-10
                        max-2md:w-full'
           >
-            <ul className='mt-[3.3rem]  flex  flex-col  gap-5  max-2md:mb-14  max-2md:mt-0  max-sm:mb-12'>
+            <ul className='mt-[3.3rem]  flex  flex-col  gap-5  max-2md:mb-12  max-2md:mt-0  max-sm:mb-10  max-sm:gap-4'>
               <div className='flex  items-center  gap-3'>
                 <FolderIcon className='fill-git-black  max-3sm:size-[6.8vw]  dark:fill-git-white' />
                 <BasicTextNode className='text-2xl  max-3sm:text-[5.6vw]'>
@@ -126,8 +126,8 @@ function Page2(): ReactElement {
               is&nbsp;Git.
             </TextNode>
             <TextFactoid
-              className='!mb-0  mt-14  hidden  max-w-[27.5rem]
-                                    max-2md:block  max-sm:mt-12'
+              className='!mb-0  mt-12  hidden  max-w-[27.5rem]
+                                    max-2md:block  max-sm:mt-10'
             >
               The&nbsp;Stack Overflow Survey abandoned asking
               about&nbsp;preferred VCS after&nbsp;2018, as&nbsp;Git&apos;s

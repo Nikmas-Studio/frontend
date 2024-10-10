@@ -6,7 +6,7 @@ function BookMainContainer({
   children?: ReactNode;
 }): ReactElement {
   return (
-    <div className='px-[8.4vw]  pb-40  pt-20  max-md:px-[4.2vw]'>
+    <div className='px-[8.4vw]  pb-40  pt-20  max-md:px-[4.2vw]  max-md:pb-20  max-md:pt-12'>
       {children}
     </div>
   );
