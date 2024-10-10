@@ -13,6 +13,8 @@ import TextNode from '@/components/elements/master-git-and-github-book/TextNode'
 import TextUl from '@/components/elements/master-git-and-github-book/TextUl';
 import { BASE_PATH_READ } from '@/constants/master-git-and-github-book';
 import { useUrlUpdate } from '@/hooks/use-url-update';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 import { ReactElement, useRef } from 'react';
 import Page from '../Page';
 import Controls from './Controls';
@@ -20,11 +22,46 @@ import Controls from './Controls';
 function Page2(): ReactElement {
   const sectionRef = useRef<HTMLElement | null>(null);
 
+  const dir1Ref = useRef<HTMLDivElement | null>(null);
+  const dir2Ref = useRef<HTMLDivElement | null>(null);
+  const dir3Ref = useRef<HTMLDivElement | null>(null);
+  const dir4Ref = useRef<HTMLDivElement | null>(null);
+  const dir5Ref = useRef<HTMLDivElement | null>(null);
+  const dir6Ref = useRef<HTMLDivElement | null>(null);
+  const dir7Ref = useRef<HTMLDivElement | null>(null);
+
+  const factoidRef = useRef<HTMLParagraphElement | null>(null);
+
+  const bookRightPartContainerRef = useRef<HTMLDivElement | null>(null);
+
   useUrlUpdate({
     pageRef: sectionRef,
     currentPage: 2,
     basePath: BASE_PATH_READ,
   });
+
+  useGSAP(() => {
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top top',
+        end: '+=700',
+        scrub: true,
+        pin: true,
+      },
+    });
+
+    timeline.set(dir1Ref.current, { opacity: 1 }, '1');
+    timeline.set(dir2Ref.current, { opacity: 1 }, '2');
+    timeline.set(dir3Ref.current, { opacity: 1 }, '3');
+    timeline.set(dir4Ref.current, { opacity: 1 }, '4');
+    timeline.set(dir5Ref.current, { opacity: 1 }, '5');
+    timeline.set(dir6Ref.current, { opacity: 1 }, '6');
+    timeline.set(dir7Ref.current, { opacity: 1 }, '7');
+
+    timeline.set(factoidRef.current, { opacity: 1 }, '8');
+    timeline.set(bookRightPartContainerRef.current, { opacity: 1 }, '8');
+  }, []);
 
   return (
     <Page id='page-2' ref={sectionRef} className='bg-white  dark:bg-git-black'>
@@ -39,58 +76,83 @@ function Page2(): ReactElement {
                        max-2md:w-full'
           >
             <ul className='mt-[3.6rem]  flex  flex-col  gap-5  max-2md:mb-12  max-2md:mt-0  max-sm:mb-10  max-sm:gap-4'>
-              <div className='flex  items-center  gap-3'>
+              <div
+                ref={dir1Ref}
+                className='flex  items-center  gap-3  opacity-0  transition-opacity'
+              >
                 <FolderIcon className='fill-git-black  max-3sm:size-[6.8vw]  dark:fill-git-white' />
                 <BasicTextNode className='text-2xl  max-3sm:text-[5.6vw]'>
                   project_v1
                 </BasicTextNode>
               </div>
-              <div className='flex  items-center  gap-3'>
+              <div
+                ref={dir2Ref}
+                className='flex  items-center  gap-3  opacity-0  transition-opacity'
+              >
                 <FolderIcon className='fill-git-black  max-3sm:size-[6.8vw]  dark:fill-git-white' />
                 <BasicTextNode className='text-2xl  max-3sm:text-[5.6vw]'>
                   project_v2
                 </BasicTextNode>
               </div>
-              <div className='flex  items-center  gap-3'>
+              <div
+                ref={dir3Ref}
+                className='flex  items-center  gap-3  opacity-0  transition-opacity'
+              >
                 <FolderIcon className='fill-git-black  max-3sm:size-[6.8vw]  dark:fill-git-white' />
                 <BasicTextNode className='text-2xl  max-3sm:text-[5.6vw]'>
                   project_final
                 </BasicTextNode>
               </div>
-              <div className='flex  items-center  gap-3'>
+              <div
+                ref={dir4Ref}
+                className='flex  items-center  gap-3  opacity-0  transition-opacity'
+              >
                 <FolderIcon className='fill-git-black  max-3sm:size-[6.8vw]  dark:fill-git-white' />
                 <BasicTextNode className='text-2xl  max-3sm:text-[5.6vw]'>
                   project_final_final
                 </BasicTextNode>
               </div>
-              <div className='flex  items-center  gap-3'>
+              <div
+                ref={dir5Ref}
+                className='flex  items-center  gap-3  opacity-0  transition-opacity'
+              >
                 <FolderIcon className='fill-git-black  max-3sm:size-[6.8vw]  dark:fill-git-white' />
                 <BasicTextNode className='text-2xl  max-3sm:text-[5.6vw]'>
                   project_final_final_2
                 </BasicTextNode>
               </div>
-              <div className='flex  items-center  gap-3'>
+              <div
+                ref={dir6Ref}
+                className='flex  items-center  gap-3  opacity-0  transition-opacity'
+              >
                 <FolderIcon className='fill-git-black  max-3sm:size-[6.8vw]  dark:fill-git-white' />
                 <BasicTextNode className='text-2xl  max-3sm:text-[5.6vw]'>
                   project_final_final_last
                 </BasicTextNode>
               </div>
-              <div className='flex  items-center  gap-3'>
+              <div
+                ref={dir7Ref}
+                className='flex  items-center  gap-3  opacity-0  transition-opacity'
+              >
                 <FolderIcon className='fill-git-black  max-3sm:size-[6.8vw]  dark:fill-git-white' />
                 <BasicTextNode className='text-2xl  max-3sm:text-[5.6vw]'>
                   project_final_final_last_of_us
                 </BasicTextNode>
               </div>
             </ul>
-            <TextFactoid className='!mb-0  max-w-[27.5rem]  max-2md:hidden'>
+            <TextFactoid
+              ref={factoidRef}
+              className='!mb-0  max-w-[27.5rem]  opacity-0  transition-opacity  max-2md:hidden'
+            >
               The&nbsp;Stack Overflow Survey abandoned asking
               about&nbsp;preferred VCS after&nbsp;2018, as&nbsp;Git&apos;s
               dominance had&nbsp;become indisputable.
             </TextFactoid>
           </BookLeftPartContainer>
           <BookRightPartContainer
-            className='flex  w-1/2  flex-col  justify-start
-                       max-2md:w-full  max-2md:pl-0'
+            ref={bookRightPartContainerRef}
+            className='flex  w-1/2  flex-col  justify-start opacity-0
+                       transition-opacity  max-2md:w-full  max-2md:pl-0'
           >
             <H3>You know what I&apos;m sayin&apos;?</H3>
             <TextNode>

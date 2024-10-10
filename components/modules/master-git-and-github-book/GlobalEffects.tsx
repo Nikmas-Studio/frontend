@@ -42,8 +42,8 @@ function GlobalEffects({
           document.documentElement.classList.add('!bg-black');
           setTimeout(() => {
             showBook();
-          }, 30);
-        }, 10);
+          }, 20);
+        }, 20);
 
         return;
       }
@@ -52,9 +52,8 @@ function GlobalEffects({
       page?.scrollIntoView({ behavior: 'instant' });
       setTimeout(() => {
         updateUrl({ page: Number(initialPageId), basePath });
-      }, 10);
-
-      showBook();
+        showBook();
+      }, 20);
     }
 
     scrollToPage(initialPageId);

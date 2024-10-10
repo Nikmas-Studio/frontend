@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { ReactElement } from 'react';
+import { forwardRef, ReactElement } from 'react';
 import TextNode from './TextNode';
 
 interface TextFactoidProps {
@@ -7,10 +7,19 @@ interface TextFactoidProps {
   children?: string;
 }
 
-function TextFactoid({ className, children }: TextFactoidProps): ReactElement {
-  const classes = classNames('text-sm', className);
+const TextFactoid = forwardRef<HTMLParagraphElement, TextFactoidProps>(
+  function TextFactoid(
+    { className, children }: TextFactoidProps,
+    ref,
+  ): ReactElement {
+    const classes = classNames('text-sm', className);
 
-  return <TextNode className={classes}>{children}</TextNode>;
-}
+    return (
+      <TextNode ref={ref} className={classes}>
+        {children}
+      </TextNode>
+    );
+  },
+);
 
 export default TextFactoid;
