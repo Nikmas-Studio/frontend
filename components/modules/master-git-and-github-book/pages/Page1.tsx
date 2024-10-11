@@ -26,6 +26,7 @@ function Page1(): ReactElement {
         trigger: sectionRef.current,
         start: 'top top',
         end: '+=0',
+        pinnedContainer: document.getElementById('book-content-wrapper'),
         onEnter: () => {
           setActiveBackground(ActiveBackground.PART1);
         },

@@ -40,6 +40,8 @@ function CoverPage(): ReactElement {
         scrollTrigger: {
           trigger: sectionRef.current,
           pin: true,
+          // pin: document.getElementById('book-content-wrapper'),
+          // pinnedContainer: document.getElementById('book-content-wrapper'),
           scrub: true,
           end: '+=800',
         },

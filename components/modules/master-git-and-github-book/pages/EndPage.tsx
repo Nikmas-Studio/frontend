@@ -35,6 +35,8 @@ function EndPage(): ReactElement {
         scrollTrigger: {
           trigger: sectionRef.current,
           pin: true,
+          // pin: document.getElementById('book-content-wrapper'),
+          // pinnedContainer: document.getElementById('book-content-wrapper'),
           scrub: true,
           start: 'top top',
           end: '+=800',
@@ -74,12 +76,10 @@ function EndPage(): ReactElement {
         start: 'top top',
         end: '+=120',
         onLeave: () => {
-          console.log('onLeave');
           setActiveBackground(ActiveBackground.DARK);
           document.documentElement.classList.add('!bg-black');
         },
         onEnterBack: () => {
-          console.log('onEnterBack');
           setActiveBackground(ActiveBackground.DEFAULT);
           document.documentElement.classList.remove('!bg-black');
         },
@@ -94,67 +94,70 @@ function EndPage(): ReactElement {
     end: {
       previousPage: 3,
     },
+    withPinnedContainer: false,
   });
 
   return (
-    <section
-      id='page-end'
-      ref={sectionRef}
-      className='relative  z-30  grid  h-lvh  
+    <div className='!mt-5'>
+      <section
+        id='page-end'
+        ref={sectionRef}
+        className='relative  z-30  grid  h-lvh  
      w-lvw  place-content-center  overflow-hidden 
      [background:linear-gradient(135deg,#ff5013,#271ad3)]'
-    >
-      <div
-        ref={innerContentRef}
-        className='relative 
+      >
+        <div
+          ref={innerContentRef}
+          className='relative 
         translate-y-[-20px]  px-[10vw]  [transition:opacity_1s_ease-out]  
         max-xl:translate-y-[-40px]  max-sm:translate-y-[-30px]
         h-sm:translate-y-0'
-      >
-        <div
-          className='relative   h-[70svh]  w-auto
-                       max-sm:h-auto  max-sm:w-full'
         >
-          <Image
-            src={bookCoverLight}
-            alt='Git and Github book cover'
-            className='h-full max-h-[70svh]  w-auto
-                       rounded-[1.61svh]  dark:hidden'
-            placeholder='blur'
-            priority
-          />
-          <Image
-            src={bookCoverDark}
-            alt='Git and Github book cover'
-            className='hidden  h-full  max-h-[70svh]  w-auto
-                       rounded-[1.61svh]  dark:inline-block'
-            placeholder='blur'
-            priority
-          />
           <div
-            ref={spineRef}
-            className='absolute  left-1/2  top-[45.1%]  z-50  h-[29.5%]  w-[9%]
+            className='relative   h-[70svh]  w-auto
+                       max-sm:h-auto  max-sm:w-full'
+          >
+            <Image
+              src={bookCoverLight}
+              alt='Git and Github book cover'
+              className='h-full max-h-[70svh]  w-auto
+                       rounded-[1.61svh]  dark:hidden'
+              placeholder='blur'
+              priority
+            />
+            <Image
+              src={bookCoverDark}
+              alt='Git and Github book cover'
+              className='hidden  h-full  max-h-[70svh]  w-auto
+                       rounded-[1.61svh]  dark:inline-block'
+              placeholder='blur'
+              priority
+            />
+            <div
+              ref={spineRef}
+              className='absolute  left-1/2  top-[45.1%]  z-50  h-[29.5%]  w-[9%]
                        origin-center  translate-x-[calc(-50%-1px)] 
                        rounded-[0.8svh]  bg-white [-webkit-font-smoothing:subpixel-antialiased]
                        max-sm:translate-x-[calc(-50%-0.5vw)]  
                        max-sm:rounded-[1.3vw]  dark:bg-git-black'
-          ></div>
+            ></div>
+          </div>
         </div>
-      </div>
-      <div
-        ref={afterwordRef}
-        className='pointer-events-none  absolute  h-lvh  w-screen opacity-0
+        <div
+          ref={afterwordRef}
+          className='pointer-events-none  absolute  h-lvh  w-screen opacity-0
                     [background-color:rgba(0,0,0,0.8)]'
-      >
-        <p
-          className='absolute  left-1/2  top-[43%]  -translate-x-1/2  -translate-y-1/2
+        >
+          <p
+            className='absolute  left-1/2  top-[43%]  -translate-x-1/2  -translate-y-1/2
                     text-center  text-[8vw]  font-bold  leading-tight  
                     text-white  max-sm:text-[12vw]'
-        >
-          To Be Continued...
-        </p>
-      </div>
-    </section>
+          >
+            To Be Continued...
+          </p>
+        </div>
+      </section>
+    </div>
   );
 }
 

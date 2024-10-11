@@ -260,8 +260,8 @@ function IntroSection(): ReactElement {
                      rounded-[1vw]
                      bg-black
                      sm:block  xl:h-[clamp(1px,72.8vh,min(700px,51.7vw))]  
-                     xl:w-[clamp(1px,7.7vh,min(66px,6vw))]  h-sm:h-[56.8vh]
-                     dark:bg-white'
+                     xl:w-[clamp(1px,7.7vh,min(66px,6vw))]  2xl:rounded-[14px]
+                     h-sm:h-[56.8vh]  dark:bg-white'
         ></div>
       </MainContainer>
     </section>

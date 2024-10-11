@@ -12,6 +12,7 @@ import TextLi from '@/components/elements/master-git-and-github-book/TextLi';
 import TextNode from '@/components/elements/master-git-and-github-book/TextNode';
 import TextUl from '@/components/elements/master-git-and-github-book/TextUl';
 import { BASE_PATH_READ } from '@/constants/master-git-and-github-book';
+import useGsapResizeUpdate from '@/hooks/use-gsap-resize-update';
 import { useUrlUpdate } from '@/hooks/use-url-update';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -34,34 +35,41 @@ function Page2(): ReactElement {
 
   const bookRightPartContainerRef = useRef<HTMLDivElement | null>(null);
 
+  const { gsapShouldUpdate } = useGsapResizeUpdate();
+
   useUrlUpdate({
     pageRef: sectionRef,
     currentPage: 2,
     basePath: BASE_PATH_READ,
   });
 
-  useGSAP(() => {
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: 'top top',
-        end: '+=700',
-        scrub: true,
-        pin: true,
-      },
-    });
+  useGSAP(
+    () => {
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top top',
+          end: '+=700',
+          scrub: true,
+          pin: document.getElementById('book-content-wrapper'),
+          pinnedContainer: document.getElementById('book-content-wrapper'),
+          anticipatePin: 1,
+        },
+      });
 
-    timeline.set(dir1Ref.current, { opacity: 1 }, '1');
-    timeline.set(dir2Ref.current, { opacity: 1 }, '2');
-    timeline.set(dir3Ref.current, { opacity: 1 }, '3');
-    timeline.set(dir4Ref.current, { opacity: 1 }, '4');
-    timeline.set(dir5Ref.current, { opacity: 1 }, '5');
-    timeline.set(dir6Ref.current, { opacity: 1 }, '6');
-    timeline.set(dir7Ref.current, { opacity: 1 }, '7');
+      timeline.set(dir1Ref.current, { opacity: 1 }, '1');
+      timeline.set(dir2Ref.current, { opacity: 1 }, '2');
+      timeline.set(dir3Ref.current, { opacity: 1 }, '3');
+      timeline.set(dir4Ref.current, { opacity: 1 }, '4');
+      timeline.set(dir5Ref.current, { opacity: 1 }, '5');
+      timeline.set(dir6Ref.current, { opacity: 1 }, '6');
+      timeline.set(dir7Ref.current, { opacity: 1 }, '7');
 
-    timeline.set(factoidRef.current, { opacity: 1 }, '8');
-    timeline.set(bookRightPartContainerRef.current, { opacity: 1 }, '8');
-  }, []);
+      timeline.set(factoidRef.current, { opacity: 1 }, '8');
+      timeline.set(bookRightPartContainerRef.current, { opacity: 1 }, '8');
+    },
+    { dependencies: [gsapShouldUpdate], revertOnUpdate: true },
+  );
 
   return (
     <Page id='page-2' ref={sectionRef} className='bg-white  dark:bg-git-black'>

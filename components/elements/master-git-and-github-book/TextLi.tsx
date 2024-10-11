@@ -12,7 +12,12 @@ const TextLi = forwardRef<HTMLLIElement, TextListItemProps>(function TextLi(
   ref,
 ): ReactElement {
   const classes = classNames(
-    '[-webkit-font-smoothing:subpixel-antialiased]',
+    `[-webkit-font-smoothing:subpixel-antialiased]
+    relative pl-4
+    before:content-['']  before:absolute  before:left-0  before:size-[0.38rem]
+    before:rounded-full  before:bg-git-black  before:dark:bg-git-white
+    before:translate-y-[0.65rem]
+    `,
     className,
   );
 
