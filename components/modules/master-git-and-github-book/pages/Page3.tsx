@@ -57,7 +57,7 @@ function Page3(): ReactElement {
   });
 
   const pageClasses = classNames(
-    `relative  z-30  my-5  h-[820px]  w-full 
+    `relative  z-30  my-5  h-[820px]  w-screen  min-h-screen
                             bg-white  pt-36
                           dark:bg-[#00040a]`,
     {

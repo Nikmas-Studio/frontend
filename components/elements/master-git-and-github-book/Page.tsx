@@ -11,7 +11,10 @@ const Page = forwardRef<HTMLElement, PageProps>(function Page(
   { id, className, children }: PageProps,
   ref,
 ): ReactElement {
-  const classes = classNames('relative  z-30  w-full', className);
+  const classes = classNames(
+    'relative  z-30  w-screen  min-h-screen',
+    className,
+  );
 
   return (
     <section id={id} ref={ref} className={classes}>

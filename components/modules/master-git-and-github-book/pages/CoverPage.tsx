@@ -40,6 +40,7 @@ function CoverPage(): ReactElement {
         scrollTrigger: {
           trigger: sectionRef.current,
           pin: true,
+          anticipatePin: 1,
           scrub: true,
           end: '+=800',
         },

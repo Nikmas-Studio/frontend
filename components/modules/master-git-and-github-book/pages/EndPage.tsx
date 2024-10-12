@@ -35,6 +35,7 @@ function EndPage(): ReactElement {
         scrollTrigger: {
           trigger: sectionRef.current,
           pin: true,
+          anticipatePin: 1,
           scrub: true,
           start: 'top top',
           end: '+=800',

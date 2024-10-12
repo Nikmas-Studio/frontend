@@ -24,7 +24,7 @@ function ThemeToggleDropdownItem({
      transition-all  hover:bg-[#F8F8F8]  dark:hover:bg-[#171717]  relative
      after:content-[""]  after:absolute  after:w-[0.45rem]  after:h-[0.45rem]
      after:right-[1.6rem]  after:top-1/2
-     after:translate-y-[-60%]  after:rounded-full`,
+     after:translate-y-[-70%]  after:rounded-full`,
     activeItemDotClass,
     className,
     {
