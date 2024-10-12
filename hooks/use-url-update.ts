@@ -16,7 +16,6 @@ interface OptionsWithCurrentPage {
   pageRef: RefObject<HTMLElement>;
   currentPage: number;
   basePath: string;
-  withPinnedContainer?: boolean;
   offset?: string;
   end?: undefined;
 }
@@ -24,7 +23,6 @@ interface OptionsWithCurrentPage {
 interface OptionsWithEnd {
   pageRef: RefObject<HTMLElement>;
   currentPage?: undefined;
-  withPinnedContainer?: boolean;
   basePath: string;
   offset?: string;
   end: EndOption;
@@ -38,7 +36,6 @@ export function useUrlUpdate({
   basePath,
   offset,
   end,
-  withPinnedContainer = true,
 }: Options): void {
   const { gsapShouldUpdate } = useGsapResizeUpdate();
   const { setPendingUrlUpdates } = usePendingUrlUpdatedDispatch();
@@ -53,9 +50,6 @@ export function useUrlUpdate({
         trigger: pageRef.current,
         start: `top ${offset ?? '280px'}`,
         end: '+=0',
-        pinnedContainer: withPinnedContainer
-          ? document.getElementById('book-content-wrapper')
-          : undefined,
         onEnter: () => {
           if (isMobileOrTablet()) {
             if (end) {

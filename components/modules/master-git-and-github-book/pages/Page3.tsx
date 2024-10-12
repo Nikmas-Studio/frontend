@@ -18,11 +18,10 @@ import Controls from './Controls';
 gsap.registerPlugin(ScrollTrigger);
 
 function Page3(): ReactElement {
-  const sectionRef = useRef<HTMLElement | null>(null);
-
-  const { gsapShouldUpdate } = useGsapResizeUpdate();
-  const { setActiveBackground } = useActiveBackgroundDispatch();
   const { activeBackground } = useActiveBackground();
+  const { setActiveBackground } = useActiveBackgroundDispatch();
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const { gsapShouldUpdate } = useGsapResizeUpdate();
 
   useGSAP(
     () => {
@@ -30,12 +29,21 @@ function Page3(): ReactElement {
         trigger: sectionRef.current,
         start: 'bottom 280px',
         end: '+=0',
-        pinnedContainer: document.getElementById('book-content-wrapper'),
         onEnter: () => {
           setActiveBackground(ActiveBackground.DEFAULT);
+          gsap.to(sectionRef.current, {
+            duration: 0.15,
+            marginBottom: 0,
+            ease: 'cubic-bezier(0.4, 0, 0.2, 1)',
+          });
         },
         onEnterBack: () => {
           setActiveBackground(ActiveBackground.PART1);
+          gsap.to(sectionRef.current, {
+            duration: 0.15,
+            marginBottom: '1.25rem',
+            ease: 'cubic-bezier(0.4, 0, 0.2, 1)',
+          });
         },
       });
     },
@@ -49,7 +57,7 @@ function Page3(): ReactElement {
   });
 
   const pageClasses = classNames(
-    `relative  z-30  mt-5  h-[820px]  w-full 
+    `relative  z-30  my-5  h-[820px]  w-full 
                             bg-white  pt-36
                           dark:bg-[#00040a]`,
     {
@@ -57,7 +65,6 @@ function Page3(): ReactElement {
         activeBackground === ActiveBackground.DEFAULT,
     },
   );
-
   return (
     <section id='page-3' ref={sectionRef} className={pageClasses}>
       <Controls pageNumber={3} />

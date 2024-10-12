@@ -17,11 +17,9 @@ function BookRead({ initialPageId }: BookReadProps): ReactElement {
     <MasterGitAndGithubBookReadLayout>
       <GlobalEffects initialPageId={initialPageId} basePath={BASE_PATH_READ}>
         <CoverPage />
-        <div id='book-content-wrapper'>
-          <Page1 />
-          <Page2 />
-          <Page3 />
-        </div>
+        <Page1 />
+        <Page2 />
+        <Page3 />
         <EndPage />
       </GlobalEffects>
     </MasterGitAndGithubBookReadLayout>

@@ -15,7 +15,7 @@ function MasterGitAndGithubBookReadLayout({
   return (
     <ProvidersDefault>
       <ProvidersMasterGitAndGithubBook>
-        <div className={`${gilroy.className}`}>
+        <div id='main-book-wrapper' className={`${gilroy.className}`}>
           <script
             dangerouslySetInnerHTML={{
               __html: `
