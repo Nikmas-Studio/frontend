@@ -12,7 +12,7 @@ const TextLi = forwardRef<HTMLLIElement, TextListItemProps>(function TextLi(
   ref,
 ): ReactElement {
   const classes = classNames(
-    `[-webkit-font-smoothing:subpixel-antialiased]
+    `mb-3  last:mb-0 [-webkit-font-smoothing:subpixel-antialiased]
     relative pl-4
     before:content-['']  before:absolute  before:left-0  before:size-[0.38rem]
     before:rounded-full  before:bg-git-black  before:dark:bg-git-white
@@ -24,7 +24,7 @@ const TextLi = forwardRef<HTMLLIElement, TextListItemProps>(function TextLi(
 
   return (
     <li ref={ref} className={classes}>
-      <TextNode className='!mb-3'>{children}</TextNode>
+      <TextNode className='!mb-0'>{children}</TextNode>
     </li>
   );
 });

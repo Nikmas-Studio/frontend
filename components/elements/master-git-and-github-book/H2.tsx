@@ -3,7 +3,7 @@ import { forwardRef, ReactElement, ReactNode } from 'react';
 
 interface H2Props {
   className?: string;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 const H2 = forwardRef<HTMLHeadingElement, H2Props>(function H2(

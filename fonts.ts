@@ -22,7 +22,7 @@ export const gilroy = localFont({
 });
 
 export const merriweather = Merriweather({
-  weight: ['400'],
+  weight: ['400', '900'],
   style: 'normal',
   subsets: ['latin'],
   variable: '--font-merriweather',

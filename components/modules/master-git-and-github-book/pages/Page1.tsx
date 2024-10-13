@@ -1,6 +1,7 @@
 'use client';
 
 import BookMainContainer from '@/components/elements/master-git-and-github-book/BookMainContainer';
+import H1 from '@/components/elements/master-git-and-github-book/H1';
 import { BASE_PATH_READ } from '@/constants/master-git-and-github-book';
 import { useActiveBackgroundDispatch } from '@/context/background-master-git-and-github-book/Context';
 import useGsapResizeUpdate from '@/hooks/use-gsap-resize-update';
@@ -10,7 +11,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { ReactElement, useRef } from 'react';
-import Page from '../Page';
+import Page from '../../../elements/master-git-and-github-book/Page';
 import Controls from './Controls';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -51,12 +52,7 @@ function Page1(): ReactElement {
     >
       <Controls reversedColors />
       <BookMainContainer>
-        <h1
-          className='mt-[25vh]  text-7xl  font-bold  text-white  max-lg:text-6xl  
-                     max-sm:text-4xl  dark:text-git-black'
-        >
-          Part 1. Everyday Tasks
-        </h1>
+        <H1 className='mt-[25vh]'>Part 1. Everyday Tasks</H1>
       </BookMainContainer>
     </Page>
   );

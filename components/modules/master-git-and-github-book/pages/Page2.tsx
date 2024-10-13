@@ -17,7 +17,7 @@ import { useUrlUpdate } from '@/hooks/use-url-update';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ReactElement, useRef } from 'react';
-import Page from '../Page';
+import Page from '../../../elements/master-git-and-github-book/Page';
 import Controls from './Controls';
 
 function Page2(): ReactElement {
@@ -163,11 +163,10 @@ function Page2(): ReactElement {
           >
             <H3>You know what I&apos;m sayin&apos;?</H3>
             <TextNode>
-              Copying files and&nbsp;directories and&nbsp;renaming them is
-              a&nbsp;go-to version control method for&nbsp;many people.
-              It&apos;s so&nbsp;simple, and&nbsp;that makes it
-              so&nbsp;appealing. But this&nbsp;simplicity comes with&nbsp;its
-              drawbacks:
+              Copying directories and&nbsp;renaming them is a&nbsp;go-to version
+              control method for&nbsp;many people. It&apos;s so&nbsp;simple,
+              and&nbsp;that makes it so&nbsp;appealing. But this&nbsp;simplicity
+              comes with&nbsp;its drawbacks:
             </TextNode>
             <TextUl>
               <TextLi>
@@ -176,17 +175,13 @@ function Page2(): ReactElement {
                 to&nbsp;the&nbsp;wrong file.
               </TextLi>
               <TextLi>
-                Tracking changes between&nbsp;versions becomes difficult
-                and&nbsp;time-consuming.
-              </TextLi>
-              <TextLi>
                 Multiple copies can quickly eat&nbsp;up disk space, especially
                 with&nbsp;large files or&nbsp;complex projects.
               </TextLi>
               <TextLi>
                 Collaborating becomes a&nbsp;hassle. If&nbsp;team members work
-                on&nbsp;their&nbsp;own copies, manually merging changes often
-                results in&nbsp;conflicting versions and&nbsp;confusion.
+                on&nbsp;their&nbsp;own copies, manually merging changes can be
+                both cumbersome and&nbsp;error prone.
               </TextLi>
             </TextUl>
             <TextNode className='!mb-0'>

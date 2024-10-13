@@ -147,13 +147,18 @@ function EndPage(): ReactElement {
         className='pointer-events-none  absolute  h-lvh  w-screen opacity-0
                     [background-color:rgba(0,0,0,0.8)]'
       >
-        <p
-          className='absolute  left-1/2  top-[43%]  -translate-x-1/2  -translate-y-1/2
+        <div className='absolute  left-1/2  top-[43%]  -translate-x-1/2  -translate-y-1/2'>
+          <p
+            className='
                     text-center  text-[8vw]  font-bold  leading-tight  
                     text-white  max-sm:text-[12vw]'
-        >
-          To Be Continued...
-        </p>
+          >
+            To Be Continued...{' '}
+          </p>
+          <p className='text-center  text-[2vw]  text-white'>
+            (watch our social media for updates)
+          </p>
+        </div>
       </div>
     </section>
   );

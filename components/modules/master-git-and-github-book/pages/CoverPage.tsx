@@ -9,8 +9,8 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Image from 'next/image';
 import { ReactElement, useRef } from 'react';
+import Page from '../../../elements/master-git-and-github-book/Page';
 import ThemeToggleDefault from '../../header/theme-toggle/ThemeToggleDefault';
-import Page from '../Page';
 
 gsap.registerPlugin(ScrollTrigger);
 

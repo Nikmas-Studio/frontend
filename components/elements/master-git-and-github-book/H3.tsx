@@ -3,7 +3,7 @@ import { forwardRef, ReactElement, ReactNode } from 'react';
 
 interface H3Props {
   className?: string;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 const H3 = forwardRef<HTMLHeadingElement, H3Props>(function H3(

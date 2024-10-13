@@ -17,6 +17,10 @@ body {
            dark:border-[#414141]  pb-[0.08rem]  transition-[border-color]
            hover:border-black  dark:hover:border-white;
   }
+  
+  .git-book-main-container {
+    @apply px-[8.4vw]  max-md:px-[4.2vw];
+  }
 }
 
 @layer utilities {
