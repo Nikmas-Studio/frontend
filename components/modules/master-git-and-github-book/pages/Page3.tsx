@@ -100,89 +100,161 @@ function Page3(): ReactElement {
           </TextNode>
         </BookLeftPartContainer>
       </BookMainContainer>
-      <BookMainContainer>
-        <div className='origin-top-left  rotate-[30deg]'>
-          <ul className='relative  flex  flex-row  gap-[7vw]'>
-            <li className='relative  size-[5vw]  rounded-full  bg-git-blue'>
-              <p
-                className='absolute  origin-top-left  -translate-y-6  rotate-[-30deg]
-                            text-nowrap  text-xl  text-git-blue'
-              >
-                Initialize project
-              </p>
-            </li>
-            <li className='relative  size-[5vw]  rounded-full  bg-git-blue'>
-              <p
-                className='absolute  origin-top-left  -translate-y-6  rotate-[-30deg]
-                            text-nowrap  text-xl  text-git-blue'
-              >
-                Add header
-              </p>
-            </li>
-            <li className='relative  size-[5vw]  rounded-full  bg-git-blue'>
-              <p
-                className='absolute  origin-top-left  -translate-y-6  rotate-[-30deg]
-                            text-nowrap  text-xl  text-git-blue'
-              >
-                Add intro section
-              </p>
-            </li>
-            <li className='relative  size-[5vw]  rounded-full  bg-git-blue'>
-              <p
-                className='absolute  origin-top-left  -translate-y-6  rotate-[-30deg]
-                            text-nowrap  text-xl  text-git-blue'
-              >
-                Add products section
-              </p>
-            </li>
-            <li className='relative  size-[5vw]  rounded-full  bg-git-blue'>
-              <p
-                className='absolute  origin-top-left  -translate-y-6  rotate-[-30deg]
-                            text-nowrap  text-xl  text-git-blue'
-              >
-                Add footer
-              </p>
-            </li>
-            <li className='relative  size-[5vw]  rounded-full  bg-git-orange'>
-              <p
-                className='absolute  origin-top-left  -translate-y-6  rotate-[-30deg]
-                            text-nowrap  text-xl  text-git-blue'
-              >
-                Merge
-              </p>
-            </li>
-            <div
-              className='absolute  left-[2.5vw]  top-1/2  z-[-1]  h-1  
-                       w-[60vw]  -translate-y-1/2  bg-[#CECECE]'
-            ></div>
-          </ul>
-          <ul
-            className='relative  ml-[24vw]  mt-[-5vw]  flex  origin-[2.5vw_2.5vw]  -rotate-45
-                         flex-col  gap-[7vw]'
+      <BookMainContainer className='flex  flex-row  justify-between'>
+        <div className='flex  flex-col  justify-between'>
+          <div
+            className='h-[35.4vw]  origin-top-left  translate-x-[1.2rem]  translate-y-6  
+                        rotate-[25deg]'
           >
-            <li className='relative  size-[5vw]  rounded-full  bg-git-blue'></li>
-            <li className='relative  size-[5vw]  rounded-full  bg-[#4CBB17]'>
-              <p
-                className='absolute  origin-top-left  translate-x-[-7.2rem]  translate-y-[-1.3rem]
-                            rotate-[15deg]  text-nowrap  text-xl
+            <ul className='relative  flex  flex-row  gap-[5vw]'>
+              <li className='relative  size-[5vw]  rounded-full  bg-git-blue'>
+                <p
+                  className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left   rotate-[-25deg]
+                              text-xl  text-git-blue'
+                >
+                  Initialize&nbsp;project
+                </p>
+              </li>
+              <li className='relative  size-[5vw]  rounded-full  bg-git-blue'>
+                <p
+                  className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
+                              text-xl  text-git-blue'
+                >
+                  Add&nbsp;header
+                </p>
+                <div
+                  className='absolute  right-[2.5vw]  top-1/2  z-[-1]  h-1  
+                            w-[10vw]  -translate-y-1/2  bg-[#CECECE]'
+                ></div>
+              </li>
+              <li className='relative  size-[5vw]  rounded-full  bg-git-blue'>
+                <p
+                  className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
+                              text-xl  text-git-blue'
+                >
+                  Add&nbsp;intro&nbsp;section
+                </p>
+                <div
+                  className='absolute  right-[2.5vw]  top-1/2  z-[-1]  h-1  
+                            w-[10vw]  -translate-y-1/2  bg-[#CECECE]'
+                ></div>
+              </li>
+              <li className='relative  size-[5vw]  rounded-full  bg-git-blue'>
+                <p
+                  className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
+                              text-xl  text-git-blue'
+                >
+                  Add&nbsp;products&nbsp;section
+                </p>
+                <div
+                  className='absolute  right-[2.5vw]  top-1/2  z-[-1]  h-1  
+                            w-[10vw]  -translate-y-1/2  bg-[#CECECE]'
+                ></div>
+              </li>
+              <li className='relative  size-[5vw]  rounded-full  bg-git-blue'>
+                <p
+                  className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
+                              text-xl  text-git-blue'
+                >
+                  Add&nbsp;footer
+                </p>
+                <div
+                  className='absolute  right-[2.5vw]  top-1/2  z-[-1]  h-1  
+                            w-[10vw]  -translate-y-1/2  bg-[#CECECE]'
+                ></div>
+              </li>
+              <li className='relative  size-[5vw]  rounded-full  bg-git-orange'>
+                <p
+                  className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
+                              text-xl  text-git-blue'
+                >
+                  Merge
+                </p>
+                <div
+                  className='absolute  right-[2.5vw]  top-1/2  z-[-1]  h-1  
+                            w-[10vw]  -translate-y-1/2  bg-[#CECECE]'
+                ></div>
+              </li>
+            </ul>
+            <ul
+              className='relative  ml-[20vw]  mt-[-5vw]  flex  origin-[2.5vw_2.5vw] 
+                         rotate-[-40deg]  flex-col  gap-[5vw]'
+            >
+              <li className='relative  size-[5vw]  rounded-full  bg-git-blue'></li>
+              <li className='relative  size-[5vw]  rounded-full  bg-[#4CBB17]'>
+                <p
+                  className='absolute bottom-[2.7vw] right-[5.7vw] 
+                           origin-top-right  rotate-[15deg]  text-xl
+                         text-[#4CBB17]'
+                >
+                  Animate&nbsp;letters
+                </p>
+                <div
+                  className='absolute  bottom-[2.5vw]  left-1/2  z-[-1]  h-[10vw]  
+                           w-1  -translate-x-1/2  bg-[#CECECE]'
+                ></div>
+              </li>
+              <li className='relative  size-[5vw]  rounded-full  bg-[#4CBB17]'>
+                <p
+                  className='absolute  bottom-[2.7vw] right-[5.7vw] 
+                            origin-top-right  rotate-[15deg]  text-xl
                             text-[#4CBB17]'
-              >
-                Add header
-              </p>
-            </li>
-            <li className='relative  size-[5vw]  rounded-full  bg-[#4CBB17]'>
-              <p
-                className='absolute  origin-top-left  -translate-x-40  -translate-y-8
-                            rotate-[15deg]  text-nowrap  text-xl
-                            text-[#4CBB17]'
-              >
-                Add intro section
-              </p>
-            </li>
+                >
+                  Animate&nbsp;logo
+                </p>
+                <div
+                  className='absolute  bottom-[2.5vw]  left-1/2  z-[-1]  h-[10vw]  
+                           w-1  -translate-x-1/2  bg-[#CECECE]'
+                ></div>
+              </li>
+            </ul>
+          </div>
+          <TextNode className='!mb-0  mt-5  text-sm'>Explanation text</TextNode>
+        </div>
+        <div className='flex  flex-col  justify-between'>
+          <div
+            className='h-[28rem]  w-[21rem]  overflow-hidden  rounded-3xl  
+                        border  border-[#CECECE]'
+          >
             <div
-              className='absolute  left-[2.5vw]  top-[2.5vw]  z-[-1]  h-[24vw]  
-                         w-1  -translate-x-1/2  bg-[#CECECE]'
-            ></div>
+              className='flex  h-14  w-full  flex-row  items-center  
+                            bg-[#F4F4F4]  px-[10%]'
+            >
+              <div className='flex  flex-row  gap-3'>
+                <div
+                  className='relative  h-[2px]  w-[15px]  bg-[#BABABA]  
+                           before:absolute  before:top-1/2  
+                          before:size-[10px]  before:origin-top-left
+                           before:-translate-x-px 
+                           before:-rotate-45  before:border-l-2
+                           before:border-t-2  before:border-[#BABABA]
+                           before:content-[""]
+                           '
+                ></div>
+                <div
+                  className='relative  h-[2px]  w-[15px]  rotate-180  bg-[#BABABA]  
+                           before:absolute  before:top-1/2  
+                          before:size-[10px]  before:origin-top-left
+                           before:-translate-x-px 
+                           before:-rotate-45  before:border-l-2
+                           before:border-t-2  before:border-[#BABABA]
+                           before:content-[""]
+                           '
+                ></div>
+              </div>
+            </div>
+          </div>
+          <ul className='flex  flex-col  gap-3'>
+            <li className='flex  flex-row  items-center  gap-2'>
+              <div className='size-6  rounded-full  bg-git-blue'></div>
+              <p className='text-xl  text-git-blue'>Main branch</p>
+            </li>
+            <li className='flex  flex-row  items-center  gap-2'>
+              <div className='size-6  rounded-full  bg-[#4CBB17]'></div>
+              <p className='text-xl  text-[#4CBB17]'>
+                Animation feature branch
+              </p>
+            </li>
           </ul>
         </div>
       </BookMainContainer>

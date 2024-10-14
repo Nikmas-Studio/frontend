@@ -7,7 +7,6 @@ import BookRightPartContainer from '@/components/elements/master-git-and-github-
 import FolderIcon from '@/components/elements/master-git-and-github-book/FolderIcon';
 import H2 from '@/components/elements/master-git-and-github-book/H2';
 import H3 from '@/components/elements/master-git-and-github-book/H3';
-import TextFactoid from '@/components/elements/master-git-and-github-book/TextFactoid';
 import TextLi from '@/components/elements/master-git-and-github-book/TextLi';
 import TextNode from '@/components/elements/master-git-and-github-book/TextNode';
 import TextUl from '@/components/elements/master-git-and-github-book/TextUl';
@@ -147,14 +146,14 @@ function Page2(): ReactElement {
                 </BasicTextNode>
               </div>
             </ul>
-            <TextFactoid
+            <TextNode
               ref={factoidRef}
-              className='!mb-0  max-w-[27.5rem]  opacity-0  transition-opacity  max-2md:hidden'
+              className='!mb-0  max-w-[27.5rem]  text-sm  opacity-0  transition-opacity  max-2md:hidden'
             >
               The&nbsp;Stack Overflow Survey abandoned asking
               about&nbsp;preferred VCS after&nbsp;2018, as&nbsp;Git&apos;s
               dominance had&nbsp;become indisputable.
-            </TextFactoid>
+            </TextNode>
           </BookLeftPartContainer>
           <BookRightPartContainer
             ref={bookRightPartContainerRef}
@@ -189,14 +188,14 @@ function Page2(): ReactElement {
               version control systems (VCSs). And&nbsp;the&nbsp;most popular VCS
               is&nbsp;Git.
             </TextNode>
-            <TextFactoid
-              className='!mb-0  mt-12  hidden  max-w-[27.5rem]
+            <TextNode
+              className='!mb-0  mt-12  hidden  max-w-[27.5rem]  text-sm
                                     max-2md:block  max-sm:mt-10'
             >
               The&nbsp;Stack Overflow Survey abandoned asking
               about&nbsp;preferred VCS after&nbsp;2018, as&nbsp;Git&apos;s
               dominance had&nbsp;become indisputable.
-            </TextFactoid>
+            </TextNode>
           </BookRightPartContainer>
         </div>
       </BookMainContainer>
