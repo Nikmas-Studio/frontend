@@ -20,7 +20,7 @@ const config: Config = {
         'max-sm': { max: '640px' },
         'max-2sm': { max: '460px' },
         'max-3sm': { max: '420px' },
-        'h-sm': { raw: '(max-height: 400px)' },
+        'h-sm': { raw: '(max-height: 450px)' },
       },
       colors: {
         'git-black': '#00040A',

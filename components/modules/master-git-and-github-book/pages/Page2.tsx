@@ -73,7 +73,7 @@ function Page2(): ReactElement {
     <Page id='page-2' ref={sectionRef} className='bg-white  dark:bg-git-black'>
       <Controls pageNumber={2} />
       <BookMainContainer>
-        <H2 className='mb-16  max-2md:mb-12  max-sm:mb-10'>
+        <H2 className='mb-16  max-2md:mb-12  max-sm:mb-10  h-sm:mb-7'>
           Introduction to&nbsp;Version&nbsp;Control
         </H2>
         <div className='flex  flex-row  max-2md:flex-col'>
@@ -81,67 +81,120 @@ function Page2(): ReactElement {
             className='flex  w-1/2  flex-col  justify-between  gap-10
                        max-2md:w-full'
           >
-            <ul className='mt-[3.6rem]  flex  flex-col  gap-5  max-2md:mb-12  max-2md:mt-0  max-sm:mb-10  max-sm:gap-4'>
+            <ul
+              className='mt-[3.6rem]  flex  flex-col  gap-5  max-2md:mb-12  
+                           max-2md:mt-0  max-sm:mb-10  max-sm:gap-4
+                           h-sm:gap-[2vh]'
+            >
               <div
                 ref={dir1Ref}
-                className='flex  items-center  gap-3  opacity-0  transition-opacity'
+                className='flex  items-center  gap-3  opacity-0  
+                           transition-opacity  h-sm:gap-[2.5vh]'
               >
-                <FolderIcon className='fill-git-black  max-3sm:size-[6.8vw]  dark:fill-git-white' />
-                <BasicTextNode className='text-2xl  max-3sm:text-[5.6vw]'>
+                <FolderIcon
+                  className='fill-git-black  max-3sm:size-[6.8vw]  h-sm:size-[6vh]
+                                        dark:fill-git-white'
+                />
+                <BasicTextNode
+                  className='text-2xl  max-3sm:text-[5.6vw]  h-sm:text-[5vh]
+                                          h-sm:leading-none'
+                >
                   project_v1
                 </BasicTextNode>
               </div>
               <div
                 ref={dir2Ref}
-                className='flex  items-center  gap-3  opacity-0  transition-opacity'
+                className='flex  items-center  gap-3  opacity-0  transition-opacity
+                           h-sm:gap-[2.5vh]'
               >
-                <FolderIcon className='fill-git-black  max-3sm:size-[6.8vw]  dark:fill-git-white' />
-                <BasicTextNode className='text-2xl  max-3sm:text-[5.6vw]'>
+                <FolderIcon
+                  className='fill-git-black  max-3sm:size-[6.8vw]  h-sm:size-[6vh]
+                                         dark:fill-git-white'
+                />
+                <BasicTextNode
+                  className='text-2xl  max-3sm:text-[5.6vw]  h-sm:text-[5vh]
+                                          h-sm:leading-none'
+                >
                   project_v2
                 </BasicTextNode>
               </div>
               <div
                 ref={dir3Ref}
-                className='flex  items-center  gap-3  opacity-0  transition-opacity'
+                className='flex  items-center  gap-3  opacity-0  transition-opacity
+                           h-sm:gap-[2.5vh]'
               >
-                <FolderIcon className='fill-git-black  max-3sm:size-[6.8vw]  dark:fill-git-white' />
-                <BasicTextNode className='text-2xl  max-3sm:text-[5.6vw]'>
+                <FolderIcon
+                  className='fill-git-black  max-3sm:size-[6.8vw]  h-sm:size-[6vh]
+                                          dark:fill-git-white'
+                />
+                <BasicTextNode
+                  className='text-2xl  max-3sm:text-[5.6vw]  h-sm:text-[5vh]
+                                          h-sm:leading-none'
+                >
                   project_final
                 </BasicTextNode>
               </div>
               <div
                 ref={dir4Ref}
-                className='flex  items-center  gap-3  opacity-0  transition-opacity'
+                className='flex  items-center  gap-3  opacity-0  transition-opacity
+                           h-sm:gap-[2.5vh]'
               >
-                <FolderIcon className='fill-git-black  max-3sm:size-[6.8vw]  dark:fill-git-white' />
-                <BasicTextNode className='text-2xl  max-3sm:text-[5.6vw]'>
+                <FolderIcon
+                  className='fill-git-black  max-3sm:size-[6.8vw]  h-sm:size-[6vh]
+                                        dark:fill-git-white'
+                />
+                <BasicTextNode
+                  className='text-2xl  max-3sm:text-[5.6vw]  h-sm:text-[5vh]
+                                          h-sm:leading-none'
+                >
                   project_final_final
                 </BasicTextNode>
               </div>
               <div
                 ref={dir5Ref}
-                className='flex  items-center  gap-3  opacity-0  transition-opacity'
+                className='flex  items-center  gap-3  opacity-0  transition-opacity
+                          h-sm:gap-[2.5vh]'
               >
-                <FolderIcon className='fill-git-black  max-3sm:size-[6.8vw]  dark:fill-git-white' />
-                <BasicTextNode className='text-2xl  max-3sm:text-[5.6vw]'>
+                <FolderIcon
+                  className='fill-git-black  max-3sm:size-[6.8vw]  h-sm:size-[6vh]
+                                        dark:fill-git-white'
+                />
+                <BasicTextNode
+                  className='text-2xl  max-3sm:text-[5.6vw]  h-sm:text-[5vh]
+                                          h-sm:leading-none'
+                >
                   project_final_final_2
                 </BasicTextNode>
               </div>
               <div
                 ref={dir6Ref}
-                className='flex  items-center  gap-3  opacity-0  transition-opacity'
+                className='flex  items-center  gap-3  opacity-0  transition-opacity
+                          h-sm:gap-[2.5vh]'
               >
-                <FolderIcon className='fill-git-black  max-3sm:size-[6.8vw]  dark:fill-git-white' />
-                <BasicTextNode className='text-2xl  max-3sm:text-[5.6vw]'>
+                <FolderIcon
+                  className='fill-git-black  max-3sm:size-[6.8vw]  h-sm:size-[6vh]
+                                      dark:fill-git-white'
+                />
+                <BasicTextNode
+                  className='text-2xl  max-3sm:text-[5.6vw]  h-sm:text-[5vh]
+                                       h-sm:leading-none'
+                >
                   project_final_final_last
                 </BasicTextNode>
               </div>
               <div
                 ref={dir7Ref}
-                className='flex  items-center  gap-3  opacity-0  transition-opacity'
+                className='flex  items-center  gap-3  opacity-0  transition-opacity
+                           h-sm:gap-[2.5vh]'
               >
-                <FolderIcon className='fill-git-black  max-3sm:size-[6.8vw]  dark:fill-git-white' />
-                <BasicTextNode className='text-2xl  max-3sm:text-[5.6vw]'>
+                <FolderIcon
+                  className='fill-git-black  max-3sm:size-[6.8vw]  h-sm:size-[6vh]
+                                       dark:fill-git-white'
+                />
+                <BasicTextNode
+                  className='text-2xl  max-3sm:text-[5.6vw]  h-sm:text-[5vh]
+                                          h-sm:leading-none'
+                >
                   project_final_final_last_of_us
                 </BasicTextNode>
               </div>
