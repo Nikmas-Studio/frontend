@@ -101,19 +101,19 @@ function Page3(): ReactElement {
         </BookLeftPartContainer>
       </BookMainContainer>
       <BookMainContainer className='flex  flex-row  justify-between  max-2md:flex-col'>
-        <div className='flex  flex-col  justify-between'>
+        <div className='flex  flex-col  justify-between  max-2md:translate-x-[-0.7rem]'>
           <div
             className='h-[35.4vw]  origin-top-left  translate-x-[1.2rem]  translate-y-6  
                         rotate-[25deg]  max-2md:rotate-[15deg]'
           >
             <ul
               className='relative  flex  flex-row  gap-[5vw]  max-xl:gap-[4vw]
-                           max-2md:gap-[11vw]'
+                           max-2md:gap-[10vw]  max-md:gap-[11vw]'
             >
               <li className='relative  size-[5vw]  rounded-full  bg-git-blue'>
                 <p
                   className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left   rotate-[-25deg]
-                              text-xl  text-git-blue'
+                              text-xl  leading-normal  text-git-blue  max-md:text-[3vw]'
                 >
                   Initialize&nbsp;project
                 </p>
@@ -121,110 +121,119 @@ function Page3(): ReactElement {
               <li className='relative  size-[5vw]  rounded-full  bg-git-blue'>
                 <p
                   className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
-                              text-xl  text-git-blue'
+                              text-xl  leading-normal  text-git-blue  max-md:text-[3vw]'
                 >
                   Add&nbsp;header
                 </p>
                 <div
                   className='absolute  right-[2.5vw]  top-1/2  z-[-1]  h-[4px]   
-                            w-[10vw]  -translate-y-1/2  bg-[#CECECE] 
-                          max-xl:w-[9vw]  max-2md:h-[3px]  max-2md:w-[15vw]'
+                             w-[10vw]  -translate-y-1/2  bg-[#CECECE] 
+                             max-xl:w-[9vw]  max-2md:h-[3px]  max-2md:w-[15vw]
+                             max-sm:h-[2px]'
                 ></div>
               </li>
               <li className='relative  size-[5vw]  rounded-full  bg-git-blue'>
                 <p
                   className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
-                              text-xl  text-git-blue'
+                              text-xl  leading-normal  text-git-blue  max-md:text-[3vw]'
                 >
                   Add&nbsp;intro&nbsp;section
                 </p>
                 <div
                   className='absolute  right-[2.5vw]  top-1/2  z-[-1]  h-[4px]  
                             w-[10vw]  -translate-y-1/2  bg-[#CECECE]  
-                            max-xl:w-[9vw]  max-2md:h-[3px]  max-2md:w-[15vw]'
+                            max-xl:w-[9vw]  max-2md:h-[3px]  max-2md:w-[15vw]
+                            max-sm:h-[2px]'
                 ></div>
               </li>
               <li className='relative  size-[5vw]  rounded-full  bg-git-blue'>
                 <p
                   className='absolute  bottom-[5.2vw]  left-[0.5vw]  
-                             origin-top-left  rotate-[-25deg]
-                             text-xl  text-git-blue'
+                             origin-top-left  rotate-[-25deg]  text-xl
+                             leading-normal  text-git-blue  max-md:text-[3vw]'
                 >
                   Add&nbsp;products&nbsp;section
                 </p>
                 <div
                   className='absolute  right-[2.5vw]  top-1/2  z-[-1]  h-[4px]  
                             w-[10vw]  -translate-y-1/2  bg-[#CECECE]
-                          max-xl:w-[9vw]  max-2md:h-[3px]  max-2md:w-[15vw]'
+                          max-xl:w-[9vw]  max-2md:h-[3px]  max-2md:w-[15vw]
+                          max-sm:h-[2px]'
                 ></div>
               </li>
               <li className='relative  size-[5vw]  rounded-full  bg-git-blue'>
                 <p
                   className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
-                              text-xl  text-git-blue'
+                              text-xl  leading-normal  text-git-blue  max-md:text-[3vw]'
                 >
                   Add&nbsp;footer
                 </p>
                 <div
                   className='absolute  right-[2.5vw]  top-1/2  z-[-1]  h-[4px]  
                             w-[10vw]  -translate-y-1/2  bg-[#CECECE]
-                          max-xl:w-[9vw]  max-2md:h-[3px]  max-2md:w-[15vw]'
+                            max-xl:w-[9vw]  max-2md:h-[3px]  max-2md:w-[15vw]
+                            max-sm:h-[2px]'
                 ></div>
               </li>
               <li className='relative  size-[5vw]  rounded-full  bg-git-orange'>
                 <p
                   className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
-                              text-xl  text-git-blue'
+                              text-xl  leading-normal  text-git-blue  max-md:text-[3vw]'
                 >
                   Merge
                 </p>
                 <div
                   className='absolute  right-[2.5vw]  top-1/2  z-[-1]  h-[4px]  
                             w-[10vw]  -translate-y-1/2  bg-[#CECECE]
-                          max-xl:w-[9vw]  max-2md:h-[3px]  max-2md:w-[15vw]'
+                          max-xl:w-[9vw]  max-2md:h-[3px]  max-2md:w-[15vw]
+                          max-sm:h-[2px]'
                 ></div>
                 <div
                   className='absolute  right-[2.5vw]  top-1/2  z-[-1]  h-[4px]  
                              w-[25vw]  origin-top-right  -translate-y-1/2  rotate-[-41deg]  
                              bg-[#CECECE]  max-xl:w-[20vw]  max-2md:h-[3px]
-                             max-2md:w-[25vw]  max-2md:rotate-[-38.5deg]'
+                             max-2md:w-[25vw]  max-2md:rotate-[-38.5deg]
+                             max-sm:h-[2px]'
                 ></div>
               </li>
             </ul>
             <ul
-              className='relative  ml-[20vw]  mt-[-5vw]  flex  origin-[2.5vw_2.5vw]  rotate-[-40deg] 
-                         flex-col  gap-[5vw]  max-xl:ml-[18vw]  max-xl:gap-[4vw]
-                         max-2md:ml-[32vw]  max-2md:rotate-[-60deg]  max-2md:gap-[11vw]'
+              className='relative  mt-[-5vw]  flex  origin-[2.5vw_2.5vw]  translate-x-[20vw]  rotate-[-40deg] 
+                         flex-col  gap-[5vw]  max-xl:translate-x-[18vw]  max-xl:gap-[4vw]
+                         max-2md:translate-x-[30vw]  max-2md:rotate-[-60deg]  max-2md:gap-[10vw]
+                         max-md:translate-x-[32vw]  max-md:gap-[11vw]'
             >
               <li className='relative  size-[5vw]  rounded-full  bg-git-blue'></li>
               <li className='relative  size-[5vw]  rounded-full  bg-[#4CBB17]'>
                 <p
                   className='absolute bottom-[2.7vw] right-[5.7vw] 
                              origin-top-right  rotate-[15deg]  text-xl
-                           text-[#4CBB17]  max-2md:bottom-[3.2vw]
-                           max-2md:right-[3.9vw]  max-2md:rotate-45'
+                           leading-normal  text-[#4CBB17]
+                           max-2md:bottom-[3.2vw]  max-2md:right-[3.9vw]
+                           max-2md:rotate-45  max-md:text-[3vw]'
                 >
                   Animate&nbsp;letters
                 </p>
                 <div
                   className='absolute  bottom-[2.5vw]  left-1/2  z-[-1]  h-[10vw]  
                              w-[4px]  -translate-x-1/2  bg-[#CECECE]  max-xl:h-[9vw]
-                             max-2md:h-[15vw]  max-2md:w-[3px]'
+                             max-2md:h-[15vw]  max-2md:w-[3px]  max-sm:w-[2px]'
                 ></div>
               </li>
               <li className='relative  size-[5vw]  rounded-full  bg-[#4CBB17]'>
                 <p
                   className='absolute  bottom-[2.7vw] right-[5.7vw] 
                             origin-top-right  rotate-[15deg]  text-xl
-                            text-[#4CBB17]  max-2md:bottom-[3.2vw]
-                            max-2md:right-[3.9vw]  max-2md:rotate-45'
+                            leading-normal  text-[#4CBB17]
+                            max-2md:bottom-[3.2vw]  max-2md:right-[3.9vw]
+                            max-2md:rotate-45  max-md:text-[3vw]'
                 >
                   Animate&nbsp;logo
                 </p>
                 <div
                   className='absolute  bottom-[2.5vw]  left-1/2  z-[-1]  h-[10vw]  
                              w-[4px]  -translate-x-1/2  bg-[#CECECE]  max-xl:h-[9vw]
-                             max-2md:h-[15vw]  max-2md:w-[3px]'
+                             max-2md:h-[15vw]  max-2md:w-[3px]  max-sm:w-[2px]'
                 ></div>
               </li>
             </ul>
@@ -233,14 +242,15 @@ function Page3(): ReactElement {
             Explanation text
           </TextNode>
         </div>
-        <div className='flex  flex-col  justify-between  max-2md:mt-20'>
+        <div className='flex  flex-col  justify-between  max-2md:mt-20  max-md:mt-[9vh]'>
           <div
-            className='pointer-events-none  h-[29.8rem]  w-[21rem]  select-none  
-                      overflow-hidden  rounded-3xl  
-                        border  border-git-blue  max-xl:w-[28vw]  max-2md:w-full'
+            className='w-[22vw]  select-none  overflow-hidden  rounded-3xl  
+                       border  border-git-blue  
+                       text-[1vw]  max-2xl:w-[21rem]  max-2xl:text-[14.95px] 
+                       max-xl:w-[28vw]   max-2md:w-full  max-2md:text-[1.22vh]'
           >
             <div
-              className='flex  h-14  w-full  flex-row  items-center  
+              className='flex  h-12  w-full  flex-row  items-center  
                             justify-between  bg-[#F4F4F4]  px-[10%] pb-[3px]'
             >
               <div className='flex  flex-row  items-center  gap-5'>
@@ -289,18 +299,20 @@ function Page3(): ReactElement {
               </div>
             </div>
             <div
-              className='mt-2  flex  flex-row  items-center
+              className='mt-[0.55em]  flex  flex-row  items-center
                          justify-between  px-[10%]'
             >
-              <p className='text-xs  font-bold  text-git-blue'>Nikmas Studio</p>
-              <div className='flex  flex-row  items-center  gap-1'>
+              <p className='text-[0.8em]  font-bold  text-git-blue'>
+                Nikmas Studio
+              </p>
+              <div className='flex  flex-row  items-center  gap-[0.25em]'>
                 <svg
-                  className='translate-y-[-0.031rem]  fill-git-blue'
+                  className='translate-y-[-0.031em]  fill-git-blue'
                   version='1.1'
                   id='Capa_1'
                   xmlns='http://www.w3.org/2000/svg'
-                  width='0.5rem'
-                  height='0.5rem'
+                  width='0.5em'
+                  height='0.5em'
                   viewBox='0 0 612 612'
                 >
                   <g>
@@ -343,16 +355,16 @@ function Page3(): ReactElement {
                   <g></g>
                   <g></g>
                 </svg>
-                <div className='grid  size-2.5  place-content-center  rounded-full  bg-git-blue'>
+                <div className='grid  size-[0.625em]  place-content-center  rounded-full  bg-git-blue'>
                   <div
-                    className='h-[0.3125rem]  w-px  translate-y-[-0.1px]  rounded-[1px]
+                    className='h-[0.3125em]  w-px  translate-y-[-0.006em]  rounded-[0.0625em]
                                   bg-white'
                   ></div>
                 </div>
               </div>
             </div>
-            <div className='mt-3  flex  flex-row  justify-between  px-[10%]'>
-              <p className='text-base  leading-[1.1]  text-[#4CBB17]'>
+            <div className='mt-[0.9em]  flex  flex-row  justify-between  px-[10%]'>
+              <p className='text-[1.05em]  leading-[1.1]  text-[#4CBB17]'>
                 Next-gen
                 <br />
                 publishing studio
@@ -365,20 +377,20 @@ function Page3(): ReactElement {
                 <br />
                 e-books
               </p>
-              <div className='h-[6.3rem]  w-[0.6rem]  rounded-[0.18rem]  bg-[#4CBB17]'></div>
+              <div className='h-[6.7em]  w-[0.65em]  rounded-[0.18em]  bg-[#4CBB17]'></div>
             </div>
             <div
-              className='mt-5  flex  w-full  flex-col  items-center  bg-[#E9E8FA]
-                            pb-6  pt-4'
+              className='mt-[1.5em]  flex  w-full  flex-col  items-center  bg-[#E9E8FA]
+                            pb-[1.7em]  pt-[1em]'
             >
-              <p className='mb-2  text-xs  font-bold  text-git-blue'>
+              <p className='mb-[0.5em]  text-[0.8em]  font-bold  text-git-blue'>
                 Our first book
               </p>
               <div
-                className='h-[7.2rem]  w-20  rounded-[0.3rem]  bg-git-blue
-                              px-[0.4rem]  pt-[0.65rem]'
+                className='h-[7.8em]  w-[5.4em]  rounded-[0.4em]  bg-git-blue
+                              px-[0.5em]  pt-[0.67em]'
               >
-                <p className='text-[0.4rem]  text-white'>
+                <p className='text-[0.42em]  text-white'>
                   Master Git & GitHub:
                   <br />
                   From Everyday Tasks
@@ -387,78 +399,88 @@ function Page3(): ReactElement {
                 </p>
                 <div className='relative'>
                   <div
-                    className='mx-auto  mt-4  aspect-square  w-1/2  
-                             rotate-45  rounded-sm  bg-white'
+                    className='mx-auto  mt-[1em]  aspect-square  w-1/2  
+                               rotate-45  rounded-sm  bg-white'
                   ></div>
                   <div
                     className='absolute  left-1/2  top-[47%]  h-3/4  w-[7%]  
                                -translate-x-1/2  -translate-y-1/2  
-                              rounded-[0.07rem]  bg-git-blue'
+                              rounded-[0.08em]  bg-git-blue'
                   ></div>
                 </div>
               </div>
             </div>
-            <div className='mt-7  flex  flex-row  justify-between  px-[10%]'>
+            <div
+              className='mb-[0.75em]  mt-[2.1em]  flex  flex-row  
+                            justify-between  px-[10%]'
+            >
               <div>
-                <p className='mb-1  text-[0.4rem]  text-git-blue'>
+                <p className='mb-[0.6em]  text-[0.42em]  text-git-blue'>
                   © Nikmas Studio, 2024
                 </p>
-                <ul className='flex  flex-col  gap-[0.05rem]  text-git-blue'>
-                  <li className='text-[0.3rem]'>Terms and conditions</li>
-                  <li className='text-[0.3rem]'>Privacy policy</li>
-                  <li className='text-[0.3rem]'>Cookies policy</li>
+                <ul className='flex  flex-col  gap-[0.05em]  text-git-blue'>
+                  <li className='text-[0.3em]'>Terms and conditions</li>
+                  <li className='text-[0.3em]'>Privacy policy</li>
+                  <li className='text-[0.3em]'>Cookies policy</li>
                 </ul>
               </div>
-              <div className='flex  flex-row  gap-1'>
+              <div className='flex  flex-row  gap-[0.3em]'>
                 <div
-                  className='grid  size-3  place-content-center  
-                              rounded-full  bg-git-blue  pt-[0.07rem]
-                                text-[0.4rem]  text-white'
+                  className='grid  size-[1.9em]  place-content-center  
+                              rounded-full  bg-git-blue  pt-[0.15em]
+                                text-[0.42em]  text-white'
                 >
                   T
                 </div>
                 <div
-                  className='grid  size-3  place-content-center 
-                              rounded-full  bg-git-blue  pt-[0.07rem]
-                                text-[0.4rem]  text-white'
+                  className='grid  size-[1.9em]  place-content-center 
+                              rounded-full  bg-git-blue  pt-[0.15em]
+                                text-[0.42em]  text-white'
                 >
                   I
                 </div>
                 <div
-                  className='grid  size-3  place-content-center
-                              rounded-full  bg-git-blue  pt-[0.07rem]
-                                text-[0.4rem]  text-white'
+                  className='grid  size-[1.9em]  place-content-center
+                              rounded-full  bg-git-blue  pt-[0.15em]
+                                text-[0.42em]  text-white'
                 >
                   F
                 </div>
                 <div
-                  className='grid  size-3  place-content-center
-                              rounded-full  bg-git-blue  pt-[0.07rem]
-                                text-[0.4rem]  text-white'
+                  className='grid  size-[1.9em]  place-content-center
+                              rounded-full  bg-git-blue  pt-[0.15em]
+                                text-[0.42em]  text-white'
                 >
                   L
                 </div>
               </div>
-              <div className='text-[0.4rem]  text-git-blue'>
+              <div className='text-[0.42em]  text-git-blue'>
                 <p className='leading-tight'>
                   For questions <br /> and suggestions:
                 </p>
-                <p className='mt-[0.1rem]  font-semibold'>team@nikmas.studio</p>
+                <p className='mt-[0.3em]  font-semibold'>team@nikmas.studio</p>
               </div>
             </div>
           </div>
-          <ul className='mt-10  flex  flex-col  gap-3'>
-            <li className='flex  flex-row  items-center  gap-2'>
-              <div className='size-6  rounded-full  bg-git-blue'></div>
-              <p className='text-xl  text-git-blue'>Main branch</p>
-            </li>
-            <li className='flex  flex-row  items-center  gap-2'>
-              <div className='size-6  rounded-full  bg-[#4CBB17]'></div>
-              <p className='text-xl  text-[#4CBB17]'>
-                Animation feature branch
-              </p>
-            </li>
-          </ul>
+          <div className='mt-14  flex  flex-row  justify-between  max-md:mt-[6vh]'>
+            <TextNode className='hidden  leading-tight  max-2md:block  max-md:text-[2.5vw]'>
+              Explanation text
+            </TextNode>
+            <ul className='flex  flex-col  gap-3  max-md:gap-[2vw]'>
+              <li className='flex  flex-row  items-center  gap-2  max-md:gap-[1.4vw]'>
+                <div className='size-6  rounded-full  bg-git-blue  max-md:size-[4vw]'></div>
+                <p className='text-xl  leading-tight  text-git-blue  max-md:text-[3vw]'>
+                  Main branch
+                </p>
+              </li>
+              <li className='flex  flex-row  items-center  gap-2  max-md:gap-[1.4vw]'>
+                <div className='size-6  rounded-full  bg-[#4CBB17]  max-md:size-[4vw]'></div>
+                <p className='text-xl  leading-tight  text-[#4CBB17]  max-md:text-[3vw]'>
+                  Animation feature branch
+                </p>
+              </li>
+            </ul>
+          </div>
         </div>
       </BookMainContainer>
     </Page>
