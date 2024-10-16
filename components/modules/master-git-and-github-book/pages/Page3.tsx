@@ -462,7 +462,7 @@ function Page3(): ReactElement {
               </div>
             </div>
           </div>
-          <div className='mt-14  flex  flex-row  justify-between  max-md:mt-[6vh]'>
+          <div className='mt-14  flex  flex-row  justify-between  max-md:mt-[6.5vh]'>
             <TextNode className='hidden  leading-tight  max-2md:block  max-md:text-[2.5vw]'>
               Explanation text
             </TextNode>
