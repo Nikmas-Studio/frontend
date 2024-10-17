@@ -10,6 +10,7 @@ export default function RootLayout({
   return (
     <html lang='en' className='bg-white  dark:bg-black'>
       <head>
+        <meta name='format-detection' content='email=no' />
         <script
           dangerouslySetInnerHTML={{
             __html: `
