@@ -242,10 +242,10 @@ function Page3(): ReactElement {
             Explanation text
           </TextNode>
         </div>
-        <div className='flex  flex-col  justify-between  max-2md:mt-20  max-md:mt-[9vh]'>
+        <div className='flex  flex-col  justify-between  max-2md:mt-20  max-md:mt-[7.5vh]'>
           <div
-            className='w-[22vw]  select-none  overflow-hidden  rounded-3xl  
-                       border  border-git-blue  
+            className='pointer-events-none  w-[22vw]  select-none  overflow-hidden  
+                       rounded-3xl  border  border-git-blue
                        text-[1vw]  max-2xl:w-[21rem]  max-2xl:text-[14.95px] 
                        max-xl:w-[28vw]   max-2md:w-full  max-2md:text-[1.22vh]'
           >
@@ -458,11 +458,13 @@ function Page3(): ReactElement {
                 <p className='leading-tight'>
                   For questions <br /> and suggestions:
                 </p>
-                <p className='mt-[0.3em]  font-semibold'>team@nikmas.studio</p>
+                <p className='mt-[0.3em]  font-semibold  no-underline'>
+                  team@nikmas.studio
+                </p>
               </div>
             </div>
           </div>
-          <div className='mt-14  flex  flex-row  justify-between  max-md:mt-[6.5vh]'>
+          <div className='mt-14  flex  flex-row  justify-between  max-md:mt-[4.9vh]'>
             <TextNode className='hidden  leading-tight  max-2md:block  max-md:text-[2.5vw]'>
               Explanation text
             </TextNode>
