@@ -231,7 +231,7 @@ function Page3(): ReactElement {
         ref={visualizationContainerRef}
         className='absolute  inset-x-0  top-0  z-10  flex    
                    flex-row  justify-between  opacity-0
-                   transition-opacity  max-lg:bottom-0  max-lg:top-auto
+                   transition-opacity  max-lg:bottom-[5vh]  max-lg:top-auto
                    max-2md:flex-col  h-sm:flex-row'
       >
         <div
