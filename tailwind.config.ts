@@ -21,6 +21,7 @@ const config: Config = {
         'max-2sm': { max: '460px' },
         'max-3sm': { max: '420px' },
         'h-sm': { raw: '(max-height: 450px)' },
+        'h-md': { raw: '(max-height: 700px)' },
       },
       colors: {
         'git-black': '#00040A',

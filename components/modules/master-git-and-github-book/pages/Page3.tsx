@@ -30,11 +30,32 @@ function Page3(): ReactElement {
   const sectionRef = useRef<HTMLElement | null>(null);
   const { gsapShouldUpdate } = useGsapResizeUpdate();
 
+  const introContainerRef = useRef<HTMLDivElement | null>(null);
+  const visualizationContainerRef = useRef<HTMLDivElement | null>(null);
+
+  const initializeProjectCommitRef = useRef<HTMLLIElement | null>(null);
+  const addHeaderCommitRef = useRef<HTMLLIElement | null>(null);
+  const addIntroSectionCommitRef = useRef<HTMLLIElement | null>(null);
+  const addProductsSectionCommitRef = useRef<HTMLLIElement | null>(null);
+  const addFooterCommitRef = useRef<HTMLLIElement | null>(null);
+
+  const animateLettersCommitRef = useRef<HTMLLIElement | null>(null);
+  const animateLogoCommitRef = useRef<HTMLLIElement | null>(null);
+
+  const mergeCommitRef = useRef<HTMLLIElement | null>(null);
+
+  const headerSectionRef = useRef<HTMLDivElement | null>(null);
+  const introSectionRef = useRef<HTMLDivElement | null>(null);
+  const productsSectionRef = useRef<HTMLDivElement | null>(null);
+  const footerSectionRef = useRef<HTMLDivElement | null>(null);
+
+  const themeToggleRef = useRef<HTMLDivElement | null>(null);
+
   useGSAP(
     () => {
       ScrollTrigger.create({
         trigger: sectionRef.current,
-        start: 'bottom 280px',
+        start: '68.5%+=800px top',
         end: '+=0',
         onEnter: () => {
           setActiveBackground(ActiveBackground.DEFAULT);
@@ -57,6 +78,112 @@ function Page3(): ReactElement {
     { dependencies: [gsapShouldUpdate], revertOnUpdate: true },
   );
 
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
+
+      mm.add('(max-width: 640px)', () => {
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'bottom bottom',
+            end: '+=800',
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+          },
+        });
+
+        timeline.set(
+          themeToggleRef.current,
+          { opacity: 0, pointerEvents: 'none' },
+          '1',
+        );
+
+        timeline.set(introContainerRef.current, { opacity: 0 }, '1');
+        timeline.set(visualizationContainerRef.current, { opacity: 1 }, '1');
+
+        timeline.set(addHeaderCommitRef.current, { opacity: 1 }, '2');
+        timeline.set(headerSectionRef.current, { opacity: 1 }, '2');
+
+        timeline.set(addIntroSectionCommitRef.current, { opacity: 1 }, '3');
+        timeline.set(introSectionRef.current, { opacity: 1 }, '3');
+
+        timeline.set(animateLettersCommitRef.current, { opacity: 1 }, '4');
+
+        timeline.set(addProductsSectionCommitRef.current, { opacity: 1 }, '5');
+        timeline.set(addFooterCommitRef.current, { opacity: 1 }, '6');
+
+        timeline.set(animateLogoCommitRef.current, { opacity: 1 }, '7');
+
+        timeline.set(mergeCommitRef.current, { opacity: 1 }, '8');
+      });
+
+      mm.add('(min-width: 641px) and (max-width: 1024px)', () => {
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'bottom bottom',
+            end: '+=800',
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+          },
+        });
+
+        timeline.set(introContainerRef.current, { opacity: 0 }, '1');
+        timeline.set(visualizationContainerRef.current, { opacity: 1 }, '1');
+
+        timeline.set(addHeaderCommitRef.current, { opacity: 1 }, '2');
+        timeline.set(headerSectionRef.current, { opacity: 1 }, '2');
+
+        timeline.set(addIntroSectionCommitRef.current, { opacity: 1 }, '3');
+        timeline.set(introSectionRef.current, { opacity: 1 }, '3');
+
+        timeline.set(animateLettersCommitRef.current, { opacity: 1 }, '4');
+
+        timeline.set(addProductsSectionCommitRef.current, { opacity: 1 }, '5');
+        timeline.set(addFooterCommitRef.current, { opacity: 1 }, '6');
+
+        timeline.set(animateLogoCommitRef.current, { opacity: 1 }, '7');
+
+        timeline.set(mergeCommitRef.current, { opacity: 1 }, '8');
+      });
+
+      mm.add('(min-width: 1025px)', () => {
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top top',
+            end: '+=800',
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+          },
+        });
+
+        timeline.set(introContainerRef.current, { opacity: 0 }, '1');
+        timeline.set(visualizationContainerRef.current, { opacity: 1 }, '1');
+
+        timeline.set(addHeaderCommitRef.current, { opacity: 1 }, '2');
+        timeline.set(headerSectionRef.current, { opacity: 1 }, '2');
+
+        timeline.set(addIntroSectionCommitRef.current, { opacity: 1 }, '3');
+        timeline.set(introSectionRef.current, { opacity: 1 }, '3');
+
+        timeline.set(animateLettersCommitRef.current, { opacity: 1 }, '4');
+
+        timeline.set(addProductsSectionCommitRef.current, { opacity: 1 }, '5');
+        timeline.set(addFooterCommitRef.current, { opacity: 1 }, '6');
+
+        timeline.set(animateLogoCommitRef.current, { opacity: 1 }, '7');
+
+        timeline.set(mergeCommitRef.current, { opacity: 1 }, '8');
+      });
+    },
+    { dependencies: [gsapShouldUpdate], revertOnUpdate: true },
+  );
+
   useUrlUpdate({
     pageRef: sectionRef,
     currentPage: 3,
@@ -70,8 +197,8 @@ function Page3(): ReactElement {
 
   return (
     <Page id='page-3' ref={sectionRef} className={pageClasses}>
-      <Controls pageNumber={3} />
-      <BookMainContainer className='pointer-events-none  absolute  left-0  top-0  z-10  opacity-0'>
+      <Controls themeToggleRef={themeToggleRef} pageNumber={3} />
+      <BookMainContainer ref={introContainerRef} className='transition-opacity'>
         <H3>Visualizing Git</H3>
         <BookLeftPartContainer className='w-1/2  max-2md:w-full'>
           <TextNode>
@@ -101,8 +228,11 @@ function Page3(): ReactElement {
         </BookLeftPartContainer>
       </BookMainContainer>
       <BookMainContainer
-        className='flex  flex-row  justify-between  max-2md:flex-col
-                                    h-sm:flex-row'
+        ref={visualizationContainerRef}
+        className='absolute  inset-x-0  top-0  z-10  flex    
+                   flex-row  justify-between  opacity-0
+                   transition-opacity  max-lg:bottom-0  max-lg:top-auto
+                   max-2md:flex-col  h-sm:flex-row'
       >
         <div
           className='flex  flex-col  justify-between  max-2md:translate-x-[-0.7rem]
@@ -112,147 +242,200 @@ function Page3(): ReactElement {
             className='h-[35.4vw]  origin-top-left  translate-x-[1.2rem]  translate-y-6  
                         rotate-[25deg]  max-2md:rotate-[15deg]'
           >
-            <ul
-              className='relative  flex  flex-row  gap-[5vw]  max-xl:gap-[4vw]
+            <div className='float-left'>
+              <ul
+                className='flex  flex-row  gap-[5vw]  max-xl:gap-[4vw]
                            max-2md:gap-[10vw]  max-md:gap-[11vw]  h-sm:gap-[4vw]'
-            >
-              <li className='relative  size-[5vw]  rounded-full  bg-git-blue'>
-                <p
-                  className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left   rotate-[-25deg]
-                              text-xl  leading-normal  text-git-blue  max-md:text-[3vw]
-                              h-sm:text-[3vh]'
+              >
+                <li
+                  ref={initializeProjectCommitRef}
+                  className='relative  z-[70]  size-[5vw]  rounded-full  bg-git-blue  
+                             [box-shadow:0_0_0_0.4vw_rgba(39,26,211,0.5)]'
                 >
-                  Initialize&nbsp;project
-                </p>
-              </li>
-              <li className='relative  size-[5vw]  rounded-full  bg-git-blue'>
-                <p
-                  className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
-                              text-xl  leading-normal  text-git-blue  max-md:text-[3vw]
-                              h-sm:text-[3vh]'
+                  <p
+                    className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left   rotate-[-25deg]
+                              text-xl  leading-normal  text-git-blue  max-md:text-[3vw]  h-sm:text-[3vh]
+                              dark:text-[#3D32D1]'
+                  >
+                    Initialize&nbsp;project
+                  </p>
+                </li>
+                <li
+                  ref={addHeaderCommitRef}
+                  className='relative  z-[60]  size-[5vw]
+                           opacity-0  transition-opacity'
                 >
-                  Add&nbsp;header
-                </p>
-                <div
-                  className='absolute  right-[2.5vw]  top-1/2  z-[-1]  h-[4px]   
+                  <div className='absolute  inset-0  z-30  rounded-full  bg-git-blue'>
+                    <p
+                      className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
+                                text-xl  leading-normal  text-git-blue  max-md:text-[3vw]
+                                h-sm:text-[3vh]  dark:text-[#3D32D1]'
+                    >
+                      Add&nbsp;header
+                    </p>
+                  </div>
+                  <div
+                    className='absolute  right-[2.5vw]  top-1/2  z-20  h-[4px]   
                              w-[10vw]  -translate-y-1/2  bg-[#CECECE] 
                              max-xl:w-[9vw]  max-2md:h-[3px]  max-2md:w-[15vw]
-                             max-sm:h-[2px]  h-sm:w-[9vw]'
-                ></div>
-              </li>
-              <li className='relative  size-[5vw]  rounded-full  bg-git-blue'>
-                <p
-                  className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
-                              text-xl  leading-normal  text-git-blue  max-md:text-[3vw]
-                              h-sm:text-[3vh]'
+                             max-sm:h-[2px]  h-sm:w-[9vw]  dark:bg-[#252525]'
+                  ></div>
+                </li>
+                <li
+                  ref={addIntroSectionCommitRef}
+                  className='relative  z-50  size-[5vw]  opacity-0  transition-opacity'
                 >
-                  Add&nbsp;intro&nbsp;section
-                </p>
-                <div
-                  className='absolute  right-[2.5vw]  top-1/2  z-[-1]  h-[4px]  
+                  <div className='absolute  inset-0  z-30  rounded-full  bg-git-blue'>
+                    <p
+                      className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
+                              text-xl  leading-normal  text-git-blue  max-md:text-[3vw]
+                              h-sm:text-[3vh]  dark:text-[#3D32D1]'
+                    >
+                      Add&nbsp;intro&nbsp;section
+                    </p>
+                  </div>
+                  <div
+                    className='absolute  right-[2.5vw]  top-1/2  z-20  h-[4px]  
                             w-[10vw]  -translate-y-1/2  bg-[#CECECE]  
                             max-xl:w-[9vw]  max-2md:h-[3px]  max-2md:w-[15vw]
-                            max-sm:h-[2px]  h-sm:w-[9vw]'
-                ></div>
-              </li>
-              <li className='relative  size-[5vw]  rounded-full  bg-git-blue'>
-                <p
-                  className='absolute  bottom-[5.2vw]  left-[0.5vw]  
-                             origin-top-left  rotate-[-25deg]  text-xl
-                             leading-normal  text-git-blue  max-md:text-[3vw]
-                             h-sm:text-[3vh]'
+                            max-sm:h-[2px]  h-sm:w-[9vw]  dark:bg-[#252525]'
+                  ></div>
+                </li>
+              </ul>
+            </div>
+            <div
+              className='float-left  ml-[5vw]  max-xl:ml-[4vw]
+                           max-2md:ml-[10vw]  max-md:ml-[11vw]  h-sm:ml-[4vw]'
+            >
+              <ul
+                className='relative  z-20  flex  flex-row  gap-[5vw]  max-xl:gap-[4vw]
+                           max-2md:gap-[10vw]  max-md:gap-[11vw]  h-sm:gap-[4vw]'
+              >
+                <li
+                  ref={addProductsSectionCommitRef}
+                  className='relative  z-40  size-[5vw]  opacity-0  transition-opacity'
                 >
-                  Add&nbsp;products&nbsp;section
-                </p>
-                <div
-                  className='absolute  right-[2.5vw]  top-1/2  z-[-1]  h-[4px]  
+                  <div className='absolute  inset-0  z-30  rounded-full  bg-git-blue'>
+                    <p
+                      className='absolute  bottom-[5.2vw]  left-[0.5vw]  
+                               origin-top-left  rotate-[-25deg]  text-xl
+                               leading-normal  text-git-blue  max-md:text-[3vw]
+                               h-sm:text-[3vh]  dark:text-[#3D32D1]'
+                    >
+                      Add&nbsp;products&nbsp;section
+                    </p>
+                  </div>
+                  <div
+                    className='absolute  right-[2.5vw]  top-1/2  z-20  h-[4px]  
+                             w-[10vw]  -translate-y-1/2  bg-[#CECECE]
+                             max-xl:w-[9vw]  max-2md:h-[3px]  max-2md:w-[15vw]
+                             max-sm:h-[2px]  h-sm:w-[9vw]  dark:bg-[#252525]'
+                  ></div>
+                </li>
+                <li
+                  ref={addFooterCommitRef}
+                  className='relative  z-30  size-[5vw]  opacity-0  transition-opacity'
+                >
+                  <div className='absolute  inset-0  z-30  rounded-full  bg-git-blue'>
+                    <p
+                      className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
+                               text-xl  leading-normal  text-git-blue  max-md:text-[3vw]
+                               h-sm:text-[3vh]  dark:text-[#3D32D1]'
+                    >
+                      Add&nbsp;footer
+                    </p>
+                  </div>
+                  <div
+                    className='absolute  right-[2.5vw]  top-1/2  z-20  h-[4px]  
+                             w-[10vw]  -translate-y-1/2  bg-[#CECECE]
+                             max-xl:w-[9vw]  max-2md:h-[3px]  max-2md:w-[15vw]
+                             max-sm:h-[2px]  h-sm:w-[9vw]  dark:bg-[#252525]'
+                  ></div>
+                </li>
+                <li
+                  ref={mergeCommitRef}
+                  className='relative  z-20  size-[5vw]  opacity-0  transition-opacity'
+                >
+                  <div className='absolute  z-40  size-[5vw]  rounded-full  bg-git-orange'>
+                    <p
+                      className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
+                              text-xl  leading-normal  text-git-blue  max-md:text-[3vw]
+                              h-sm:text-[3vh]  dark:text-[#3D32D1]'
+                    >
+                      Merge
+                    </p>
+                  </div>
+                  <div
+                    className='absolute  right-[2.5vw]  top-1/2  z-30  h-[4px]  
                             w-[10vw]  -translate-y-1/2  bg-[#CECECE]
                           max-xl:w-[9vw]  max-2md:h-[3px]  max-2md:w-[15vw]
-                          max-sm:h-[2px]  h-sm:w-[9vw]'
-                ></div>
-              </li>
-              <li className='relative  size-[5vw]  rounded-full  bg-git-blue'>
-                <p
-                  className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
-                              text-xl  leading-normal  text-git-blue  max-md:text-[3vw]
-                              h-sm:text-[3vh]'
-                >
-                  Add&nbsp;footer
-                </p>
-                <div
-                  className='absolute  right-[2.5vw]  top-1/2  z-[-1]  h-[4px]  
-                            w-[10vw]  -translate-y-1/2  bg-[#CECECE]
-                            max-xl:w-[9vw]  max-2md:h-[3px]  max-2md:w-[15vw]
-                            max-sm:h-[2px]  h-sm:w-[9vw]'
-                ></div>
-              </li>
-              <li className='relative  size-[5vw]  rounded-full  bg-git-orange'>
-                <p
-                  className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
-                              text-xl  leading-normal  text-git-blue  max-md:text-[3vw]
-                              h-sm:text-[3vh]'
-                >
-                  Merge
-                </p>
-                <div
-                  className='absolute  right-[2.5vw]  top-1/2  z-[-1]  h-[4px]  
-                            w-[10vw]  -translate-y-1/2  bg-[#CECECE]
-                          max-xl:w-[9vw]  max-2md:h-[3px]  max-2md:w-[15vw]
-                          max-sm:h-[2px]  h-sm:w-[9vw]'
-                ></div>
-                <div
-                  className='absolute  right-[2.5vw]  top-1/2  z-[-1]  h-[4px]  
-                             w-[25vw]  origin-top-right  -translate-y-1/2  rotate-[-41deg]  
+                          max-sm:h-[2px]  h-sm:w-[9vw]  dark:bg-[#252525]'
+                  ></div>
+                  <div
+                    className='absolute  right-[2.5vw]  top-1/2  z-20  h-[4px]  
+                             w-[25vw]  origin-top-right  -translate-y-1/2  rotate-[-41.5deg]  
                              bg-[#CECECE]  max-xl:w-[20vw]  max-2md:h-[3px]
                              max-2md:w-[25vw]  max-2md:rotate-[-38.5deg]
-                             max-sm:h-[2px]  h-sm:w-[20vw]  h-sm:rotate-[-41deg]'
-                ></div>
-              </li>
-            </ul>
+                             max-sm:h-[2px]  h-sm:w-[20vw]  h-sm:rotate-[-41deg]
+                             dark:bg-[#252525]'
+                  ></div>
+                </li>
+              </ul>
+            </div>
             <ul
-              className='relative  mt-[-5vw]  flex  origin-[2.5vw_2.5vw]  translate-x-[20vw]  rotate-[-40deg] 
+              className='relative  z-30  clear-both  flex  origin-[2.5vw_2.5vw]  translate-x-[20vw]  translate-y-[-5vw]  rotate-[-40deg] 
                          flex-col  gap-[5vw]  max-xl:translate-x-[18vw]  max-xl:gap-[4vw]
                          max-2md:translate-x-[30vw]  max-2md:rotate-[-60deg]  max-2md:gap-[10vw]
                          max-md:translate-x-[32vw]  max-md:gap-[11vw]  h-sm:translate-x-[18vw]
                          h-sm:rotate-[-40deg]  h-sm:gap-[4vw]'
             >
-              <li className='relative  size-[5vw]  rounded-full  bg-git-blue'></li>
-              <li className='relative  size-[5vw]  rounded-full  bg-[#4CBB17]'>
-                <p
-                  className='absolute  bottom-[2.7vw]  right-[5.7vw] 
-                             origin-top-right  rotate-[15deg]  text-xl
-                             leading-normal  text-[#4CBB17]
-                             max-2md:bottom-[3.2vw]  max-2md:right-[3.9vw]
-                             max-2md:rotate-45  max-md:text-[3vw]
-                             h-sm:bottom-[3.2vw]  h-sm:right-[5.2vw]  
-                             h-sm:rotate-[25deg]  h-sm:text-[3vh]'
-                >
-                  Animate&nbsp;letters
-                </p>
+              <li className='relative  size-[5vw]  rounded-full  bg-git-blue  opacity-0'></li>
+              <li
+                ref={animateLettersCommitRef}
+                className='relative  z-40  size-[5vw]  opacity-0  transition-opacity'
+              >
+                <div className='absolute  inset-0  z-30  rounded-full  bg-[#4CBB17]'>
+                  <p
+                    className='absolute  bottom-[2.7vw]  right-[5.7vw] 
+                               origin-top-right  rotate-[15deg]  text-xl
+                               leading-normal  text-[#4CBB17]
+                               max-2md:bottom-[3.2vw]  max-2md:right-[3.9vw]
+                               max-2md:rotate-45  max-md:text-[3vw]
+                               h-sm:bottom-[3.2vw]  h-sm:right-[5.2vw]  
+                               h-sm:rotate-[25deg]  h-sm:text-[3vh]'
+                  >
+                    Animate&nbsp;letters
+                  </p>
+                </div>
                 <div
-                  className='absolute  bottom-[2.5vw]  left-1/2  z-[-1]  h-[10vw]  
+                  className='absolute  bottom-[2.5vw]  left-1/2  z-20  h-[10vw]  
                              w-[4px]  -translate-x-1/2  bg-[#CECECE]  max-xl:h-[9vw]
                              max-2md:h-[15vw]  max-2md:w-[3px]  max-sm:w-[2px]
-                             h-sm:h-[9vw]'
+                             h-sm:h-[9vw]  dark:bg-[#252525]'
                 ></div>
               </li>
-              <li className='relative  size-[5vw]  rounded-full  bg-[#4CBB17]'>
-                <p
-                  className='absolute  bottom-[2.7vw] right-[5.7vw] 
+              <li
+                ref={animateLogoCommitRef}
+                className='relative  z-30  size-[5vw]  opacity-0  transition-opacity'
+              >
+                <div className='absolute  inset-0  z-30  rounded-full  bg-[#4CBB17]'>
+                  <p
+                    className='absolute  bottom-[2.7vw] right-[5.7vw] 
                             origin-top-right  rotate-[15deg]  text-xl
                             leading-normal  text-[#4CBB17]
                             max-2md:bottom-[3.2vw]  max-2md:right-[3.9vw]
                             max-2md:rotate-45  max-md:text-[3vw]
                             h-sm:bottom-[3.2vw]  h-sm:right-[5.2vw]
                             h-sm:rotate-[25deg]  h-sm:text-[3vh]'
-                >
-                  Animate&nbsp;logo
-                </p>
+                  >
+                    Animate&nbsp;logo
+                  </p>
+                </div>
                 <div
-                  className='absolute  bottom-[2.5vw]  left-1/2  z-[-1]  h-[10vw]  
-                             w-[4px]  -translate-x-1/2  bg-[#CECECE]  max-xl:h-[9vw]
-                             max-2md:h-[15vw]  max-2md:w-[3px]  max-sm:w-[2px]
-                             h-sm:h-[9vw]'
+                  className='absolute  bottom-[2.5vw]  left-1/2  z-20  h-[10vw]  
+                           w-[4px]  -translate-x-1/2  bg-[#CECECE]  max-xl:h-[9vw]
+                           max-2md:h-[15vw]  max-2md:w-[3px]  max-sm:w-[2px]
+                           h-sm:h-[9vw]  dark:bg-[#252525]'
                 ></div>
               </li>
             </ul>
@@ -273,67 +456,74 @@ function Page3(): ReactElement {
                        rounded-3xl  border  border-git-blue
                        text-[1vw]  max-2xl:w-[21rem]  max-2xl:text-[14.95px] 
                        max-xl:w-[28vw]  max-xl:text-[1.7vh]   max-2md:w-full  
-                       max-2md:text-[1.22vh]  h-sm:w-[30vw]'
+                       max-2md:text-[1vh]  h-sm:w-[30vw]'
           >
             <div
               className='flex  h-12  w-full  flex-row  items-center  
-                            justify-between  bg-[#F4F4F4]  px-[10%] pb-[3px]'
+                        justify-between  bg-[#F4F4F4]  px-[10%]  
+                        pb-[3px] dark:bg-[#0F1114]'
             >
               <div className='flex  flex-row  items-center  gap-5'>
                 <div className='flex  flex-row  gap-3'>
                   <div
                     className='relative  h-[2px]  w-[15px]  bg-[#BABABA]  
-                           before:absolute  before:top-1/2  
-                          before:size-[10px]  before:origin-top-left
-                           before:-translate-x-px 
-                           before:-rotate-45  before:border-l-2
-                           before:border-t-2  before:border-[#BABABA]
-                           before:content-[""]
+                           before:absolute
+                           before:top-1/2  before:size-[10px]  
+                           before:origin-top-left  before:-translate-x-px
+                           before:-rotate-45 
+                           before:border-l-2  before:border-t-2
+                           before:border-[#BABABA]  before:content-[""] 
+                           dark:bg-[#4A4A4A] dark:before:border-[#4A4A4A]
                            '
                   ></div>
                   <div
                     className='relative  h-[2px]  w-[15px]  rotate-180
-                           bg-[#BABABA]  
-                             before:absolute  before:top-1/2  
-                             before:size-[10px]  before:origin-top-left
-                             before:-translate-x-px 
-                             before:-rotate-45  before:border-l-2
-                             before:border-t-2  before:border-[#BABABA]
-                             before:content-[""]
+                           bg-[#BABABA]  before:absolute
+                             before:top-1/2  before:size-[10px]  
+                             before:origin-top-left  before:-translate-x-px
+                             before:-rotate-45 
+                             before:border-l-2  before:border-t-2
+                             before:border-[#BABABA]  before:content-[""]
+                             dark:bg-[#4A4A4A]  dark:before:border-[#4A4A4A]
                              '
                   ></div>
                 </div>
                 <div
                   className='relative  size-[14px]  rounded-full  
-                           border-2  border-[#BABABA]'
+                           border-2  border-[#BABABA]  dark:border-[#4A4A4A]'
                 >
-                  <div className='absolute  right-[-2px]  top-[-2.2px]  z-20  size-[6px]  border-b-2  border-r-2  border-[#BABABA]'></div>
+                  <div
+                    className='absolute  right-[-2px]  top-[-2.2px]  z-20  
+                                  size-[6px]  border-b-2  border-r-2
+                                border-[#BABABA]  dark:border-[#4A4A4A]'
+                  ></div>
                   <div
                     className='absolute  right-[-2px]  top-[4px]  z-10  h-[2px] w-[3px]
-                                bg-[#F4F4F4]'
+                                bg-[#F4F4F4]  dark:bg-[#0F1114]'
                   ></div>
                 </div>
               </div>
               <div
                 className='h-[17px]  w-1/2  rounded-full  border
-                              border-[#BABABA]'
+                              border-[#BABABA]  dark:border-[#4A4A4A]'
               ></div>
               <div className='flex  h-[14px]  flex-col  justify-between'>
-                <div className='size-[3px]  rounded-full  bg-[#BABABA]'></div>
-                <div className='size-[3px]  rounded-full  bg-[#BABABA]'></div>
-                <div className='size-[3px]  rounded-full  bg-[#BABABA]'></div>
+                <div className='size-[3px]  rounded-full  bg-[#BABABA]  dark:bg-[#4A4A4A]'></div>
+                <div className='size-[3px]  rounded-full  bg-[#BABABA]  dark:bg-[#4A4A4A]'></div>
+                <div className='size-[3px]  rounded-full  bg-[#BABABA]  dark:bg-[#4A4A4A]'></div>
               </div>
             </div>
             <div
+              ref={headerSectionRef}
               className='mt-[0.55em]  flex  flex-row  items-center
-                         justify-between  px-[10%]'
+                         justify-between  px-[10%]  opacity-100  transition-opacity'
             >
-              <p className='text-[0.8em]  font-bold  text-git-blue'>
+              <p className='text-[0.8em]  font-bold  text-git-blue  dark:text-[#3D32D1]'>
                 Nikmas Studio
               </p>
               <div className='flex  flex-row  items-center  gap-[0.25em]'>
                 <svg
-                  className='translate-y-[-0.031em]  fill-git-blue'
+                  className='translate-y-[-0.031em]  fill-git-blue  dark:fill-[#3D32D1]'
                   version='1.1'
                   id='Capa_1'
                   xmlns='http://www.w3.org/2000/svg'
@@ -389,7 +579,11 @@ function Page3(): ReactElement {
                 </div>
               </div>
             </div>
-            <div className='mt-[0.9em]  flex  flex-row  justify-between  px-[10%]'>
+            <div
+              ref={introSectionRef}
+              className='mt-[0.9em]  flex  flex-row  justify-between  px-[10%]
+                            opacity-100  transition-opacity'
+            >
               <p className='text-[1.05em]  leading-[1.1]  text-[#4CBB17]'>
                 Next-gen
                 <br />
@@ -406,10 +600,15 @@ function Page3(): ReactElement {
               <div className='h-[6.7em]  w-[0.65em]  rounded-[0.18em]  bg-[#4CBB17]'></div>
             </div>
             <div
+              ref={productsSectionRef}
               className='mt-[1.5em]  flex  w-full  flex-col  items-center  bg-[#E9E8FA]
-                            pb-[1.7em]  pt-[1em]'
+                            pb-[1.7em]  pt-[1em]  opacity-100  transition-opacity
+                            dark:bg-[#04061E]'
             >
-              <p className='mb-[0.5em]  text-[0.8em]  font-bold  text-git-blue'>
+              <p
+                className='mb-[0.5em]  text-[0.8em]  font-bold  text-git-blue
+                            dark:text-[#3D32D1]'
+              >
                 Our first book
               </p>
               <div
@@ -426,25 +625,33 @@ function Page3(): ReactElement {
                 <div className='relative'>
                   <div
                     className='mx-auto  mt-[1em]  aspect-square  w-1/2  
-                               rotate-45  rounded-sm  bg-white'
+                               rotate-45  rounded-sm  bg-white  dark:bg-[#04061E]'
                   ></div>
                   <div
                     className='absolute  left-1/2  top-[47%]  h-3/4  w-[7%]  
                                -translate-x-1/2  -translate-y-1/2  
-                              rounded-[0.08em]  bg-git-blue'
+                              rounded-[0.08em]  bg-git-blue  dark:bg-white'
                   ></div>
                 </div>
               </div>
             </div>
             <div
+              ref={footerSectionRef}
               className='mb-[0.75em]  mt-[2.1em]  flex  flex-row  
-                            justify-between  px-[10%]'
+                         justify-between  px-[10%]  opacity-100
+                         transition-opacity'
             >
               <div>
-                <p className='mb-[0.6em]  text-[0.42em]  text-git-blue'>
+                <p
+                  className='mb-[0.6em]  text-[0.42em]  text-git-blue  
+                            dark:text-[#3D32D1]'
+                >
                   © Nikmas Studio, 2024
                 </p>
-                <ul className='flex  flex-col  gap-[0.05em]  text-git-blue'>
+                <ul
+                  className='flex  flex-col  gap-[0.05em]  text-git-blue  
+                             dark:text-[#3D32D1]'
+                >
                   <li className='text-[0.3em]'>Terms and conditions</li>
                   <li className='text-[0.3em]'>Privacy policy</li>
                   <li className='text-[0.3em]'>Cookies policy</li>
@@ -453,8 +660,8 @@ function Page3(): ReactElement {
               <div className='flex  flex-row  gap-[0.3em]'>
                 <div
                   className='grid  size-[1.9em]  place-content-center  
-                              rounded-full  bg-git-blue  pt-[0.15em]
-                                text-[0.42em]  text-white'
+                             rounded-full  bg-git-blue  pt-[0.15em]
+                             text-[0.42em]  text-white  '
                 >
                   T
                 </div>
@@ -480,7 +687,7 @@ function Page3(): ReactElement {
                   L
                 </div>
               </div>
-              <div className='text-[0.42em]  text-git-blue'>
+              <div className='text-[0.42em]  text-git-blue  dark:text-[#3D32D1]'>
                 <p className='leading-tight'>
                   For questions <br /> and suggestions:
                 </p>
@@ -514,14 +721,14 @@ function Page3(): ReactElement {
                 ></div>
                 <p
                   className='text-xl  leading-tight  text-git-blue  max-md:text-[3vw]
-                              h-sm:text-[3vh]'
+                              h-sm:text-[3vh]  dark:text-[#3D32D1]'
                 >
                   Main branch
                 </p>
               </li>
               <li
-                className='flex  flex-row  items-center  gap-2  max-md:gap-[1.4vw]
-                             h-sm:gap-[1.4vh]'
+                className='flex  flex-row  items-center  gap-2  opacity-100
+                             transition-opacity  max-md:gap-[1.4vw]  h-sm:gap-[1.4vh]'
               >
                 <div
                   className='size-6  rounded-full  bg-[#4CBB17]  max-md:size-[4vw]

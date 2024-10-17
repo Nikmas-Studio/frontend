@@ -2,7 +2,7 @@ import useOutsideClick from '@/hooks/use-outside-click';
 import { Theme } from '@/types/theme';
 import classNames from 'classnames';
 import Image, { StaticImageData } from 'next/image';
-import { ReactElement, useEffect, useRef, useState } from 'react';
+import { forwardRef, ReactElement, useEffect, useRef, useState } from 'react';
 
 import ThemeToggleDropdownItem from '@/components/elements/ThemeToggleDropdownItem';
 import { useTheme, useThemeDispatch } from '@/context/theme/Context';
@@ -32,81 +32,114 @@ interface ThemeToggleProps {
   };
 }
 
-function ThemeToggleDefault({
-  className,
-  reversedColors = false,
-  bgClass = 'bg-white  dark:bg-black',
-  activeItemDotClass = 'after:bg-black  after:dark:bg-white',
-  textClass = 'text-black  dark:text-white',
-  iconsSources = {
-    lightModeBlackIcon: sunIconBlack,
-    lightModeWhiteIcon: sunIconWhite,
-    darkModeWhiteIcon: moonIconWhite,
-    darkModeBlackIcon: moonIconBlack,
-    systemModeBlackIcon: gearIconBlack,
-    systemModeWhiteIcon: gearIconWhite,
-  },
-}: ThemeToggleProps): ReactElement {
-  const [dropdownIsOpened, setDropdownIsOpened] = useState(false);
-  const { selectedTheme } = useTheme();
-  const { setSelectedTheme } = useThemeDispatch();
+const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
+  function ThemeToggleDefault(
+    {
+      className,
+      reversedColors = false,
+      bgClass = 'bg-white  dark:bg-black',
+      activeItemDotClass = 'after:bg-black  after:dark:bg-white',
+      textClass = 'text-black  dark:text-white',
+      iconsSources = {
+        lightModeBlackIcon: sunIconBlack,
+        lightModeWhiteIcon: sunIconWhite,
+        darkModeWhiteIcon: moonIconWhite,
+        darkModeBlackIcon: moonIconBlack,
+        systemModeBlackIcon: gearIconBlack,
+        systemModeWhiteIcon: gearIconWhite,
+      },
+    }: ThemeToggleProps,
+    ref,
+  ): ReactElement {
+    const [dropdownIsOpened, setDropdownIsOpened] = useState(false);
+    const { selectedTheme } = useTheme();
+    const { setSelectedTheme } = useThemeDispatch();
 
-  const lightModeBlackToggleIconRef = useRef<HTMLImageElement | null>(null);
-  const lightModeWhiteToggleIconRef = useRef<HTMLImageElement | null>(null);
-  const darkModeWhiteToggleIconRef = useRef<HTMLImageElement | null>(null);
-  const darkModeBlackToggleIconRef = useRef<HTMLImageElement | null>(null);
-  const dropdownElementRef = useRef<HTMLUListElement | null>(null);
-  const toggleButtonRef = useRef<HTMLButtonElement | null>(null);
+    const lightModeBlackToggleIconRef = useRef<HTMLImageElement | null>(null);
+    const lightModeWhiteToggleIconRef = useRef<HTMLImageElement | null>(null);
+    const darkModeWhiteToggleIconRef = useRef<HTMLImageElement | null>(null);
+    const darkModeBlackToggleIconRef = useRef<HTMLImageElement | null>(null);
+    const dropdownElementRef = useRef<HTMLUListElement | null>(null);
+    const toggleButtonRef = useRef<HTMLButtonElement | null>(null);
 
-  const { isTouchDevice } = useTouchDevice();
-  const isTouchDeviceRef = useRef(isTouchDevice);
-  const isAnimating = useRef(false);
-  const mouseLeavedToggle = useRef(false);
-  const animateLeave = useRef(false);
+    const { isTouchDevice } = useTouchDevice();
+    const isTouchDeviceRef = useRef(isTouchDevice);
+    const isAnimating = useRef(false);
+    const mouseLeavedToggle = useRef(false);
+    const animateLeave = useRef(false);
 
-  useEffect(() => {
-    isTouchDeviceRef.current = isTouchDevice;
-  }, [isTouchDevice]);
+    useEffect(() => {
+      isTouchDeviceRef.current = isTouchDevice;
+    }, [isTouchDevice]);
 
-  useEffect(() => {
-    if (
-      localStorage.theme === 'dark' ||
-      (!('theme' in localStorage) &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
-    ) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [selectedTheme]);
-
-  function handleThemeChange(newTheme: Theme): void {
-    setSelectedTheme(newTheme);
-    setDropdownIsOpened(false);
-  }
-
-  useOutsideClick([toggleButtonRef, dropdownElementRef], () => {
-    setDropdownIsOpened(false);
-  });
-
-  useGSAP((_, contextSafe) => {
-    const handleDarkModeWhiteIconMouseEnter = contextSafe!(() => {
-      if (isTouchDeviceRef.current) {
-        return;
+    useEffect(() => {
+      if (
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
       }
+    }, [selectedTheme]);
 
-      if (!isAnimating.current) {
-        isAnimating.current = true;
-        mouseLeavedToggle.current = false;
+    function handleThemeChange(newTheme: Theme): void {
+      setSelectedTheme(newTheme);
+      setDropdownIsOpened(false);
+    }
 
-        gsap.to(darkModeWhiteToggleIconRef.current, {
-          rotate: -45,
-          duration: 0.15,
-          ease: 'cubic-bezier(0.4,0,0.2,1)',
-        });
+    useOutsideClick([toggleButtonRef, dropdownElementRef], () => {
+      setDropdownIsOpened(false);
+    });
 
-        setTimeout(() => {
-          if (mouseLeavedToggle.current) {
+    useGSAP((_, contextSafe) => {
+      const handleDarkModeWhiteIconMouseEnter = contextSafe!(() => {
+        if (isTouchDeviceRef.current) {
+          return;
+        }
+
+        if (!isAnimating.current) {
+          isAnimating.current = true;
+          mouseLeavedToggle.current = false;
+
+          gsap.to(darkModeWhiteToggleIconRef.current, {
+            rotate: -45,
+            duration: 0.15,
+            ease: 'cubic-bezier(0.4,0,0.2,1)',
+          });
+
+          setTimeout(() => {
+            if (mouseLeavedToggle.current) {
+              gsap.to(darkModeWhiteToggleIconRef.current, {
+                rotate: 0,
+                duration: 0.15,
+                ease: 'cubic-bezier(0.4,0,0.2,1)',
+              });
+
+              setTimeout(() => {
+                isAnimating.current = false;
+              }, 150);
+            } else {
+              isAnimating.current = false;
+              animateLeave.current = true;
+            }
+          }, 150);
+        }
+      });
+
+      const handleDarkModeWhiteIconMouseLeave = contextSafe!(() => {
+        if (isTouchDeviceRef.current) {
+          return;
+        }
+
+        if (!mouseLeavedToggle.current) {
+          mouseLeavedToggle.current = true;
+
+          if (animateLeave.current) {
+            animateLeave.current = false;
+            isAnimating.current = true;
+
             gsap.to(darkModeWhiteToggleIconRef.current, {
               rotate: 0,
               duration: 0.15,
@@ -116,56 +149,56 @@ function ThemeToggleDefault({
             setTimeout(() => {
               isAnimating.current = false;
             }, 150);
-          } else {
-            isAnimating.current = false;
-            animateLeave.current = true;
           }
-        }, 150);
-      }
-    });
+        }
+      });
 
-    const handleDarkModeWhiteIconMouseLeave = contextSafe!(() => {
-      if (isTouchDeviceRef.current) {
-        return;
-      }
+      const handleDarkModeBlackIconMouseEnter = contextSafe!(() => {
+        if (isTouchDeviceRef.current) {
+          return;
+        }
 
-      if (!mouseLeavedToggle.current) {
-        mouseLeavedToggle.current = true;
-
-        if (animateLeave.current) {
-          animateLeave.current = false;
+        if (!isAnimating.current) {
           isAnimating.current = true;
+          mouseLeavedToggle.current = false;
 
-          gsap.to(darkModeWhiteToggleIconRef.current, {
-            rotate: 0,
+          gsap.to(darkModeBlackToggleIconRef.current, {
+            rotate: -45,
             duration: 0.15,
             ease: 'cubic-bezier(0.4,0,0.2,1)',
           });
 
           setTimeout(() => {
-            isAnimating.current = false;
+            if (mouseLeavedToggle.current) {
+              gsap.to(darkModeBlackToggleIconRef.current, {
+                rotate: 0,
+                duration: 0.15,
+                ease: 'cubic-bezier(0.4,0,0.2,1)',
+              });
+
+              setTimeout(() => {
+                isAnimating.current = false;
+              }, 150);
+            } else {
+              isAnimating.current = false;
+              animateLeave.current = true;
+            }
           }, 150);
         }
-      }
-    });
+      });
 
-    const handleDarkModeBlackIconMouseEnter = contextSafe!(() => {
-      if (isTouchDeviceRef.current) {
-        return;
-      }
+      const handleDarkModeBlackIconMouseLeave = contextSafe!(() => {
+        if (isTouchDeviceRef.current) {
+          return;
+        }
 
-      if (!isAnimating.current) {
-        isAnimating.current = true;
-        mouseLeavedToggle.current = false;
+        if (!mouseLeavedToggle.current) {
+          mouseLeavedToggle.current = true;
 
-        gsap.to(darkModeBlackToggleIconRef.current, {
-          rotate: -45,
-          duration: 0.15,
-          ease: 'cubic-bezier(0.4,0,0.2,1)',
-        });
+          if (animateLeave.current) {
+            animateLeave.current = false;
+            isAnimating.current = true;
 
-        setTimeout(() => {
-          if (mouseLeavedToggle.current) {
             gsap.to(darkModeBlackToggleIconRef.current, {
               rotate: 0,
               duration: 0.15,
@@ -175,56 +208,56 @@ function ThemeToggleDefault({
             setTimeout(() => {
               isAnimating.current = false;
             }, 150);
-          } else {
-            isAnimating.current = false;
-            animateLeave.current = true;
           }
-        }, 150);
-      }
-    });
+        }
+      });
 
-    const handleDarkModeBlackIconMouseLeave = contextSafe!(() => {
-      if (isTouchDeviceRef.current) {
-        return;
-      }
+      const handleLightModeBlackIconMouseEnter = contextSafe!(() => {
+        if (isTouchDeviceRef.current) {
+          return;
+        }
 
-      if (!mouseLeavedToggle.current) {
-        mouseLeavedToggle.current = true;
-
-        if (animateLeave.current) {
-          animateLeave.current = false;
+        if (!isAnimating.current) {
           isAnimating.current = true;
+          mouseLeavedToggle.current = false;
 
-          gsap.to(darkModeBlackToggleIconRef.current, {
-            rotate: 0,
+          gsap.to(lightModeBlackToggleIconRef.current, {
+            rotate: 45,
             duration: 0.15,
             ease: 'cubic-bezier(0.4,0,0.2,1)',
           });
 
           setTimeout(() => {
-            isAnimating.current = false;
+            if (mouseLeavedToggle.current) {
+              gsap.to(lightModeBlackToggleIconRef.current, {
+                rotate: 0,
+                duration: 0.15,
+                ease: 'cubic-bezier(0.4,0,0.2,1)',
+              });
+
+              setTimeout(() => {
+                isAnimating.current = false;
+              }, 150);
+            } else {
+              isAnimating.current = false;
+              animateLeave.current = true;
+            }
           }, 150);
         }
-      }
-    });
+      });
 
-    const handleLightModeBlackIconMouseEnter = contextSafe!(() => {
-      if (isTouchDeviceRef.current) {
-        return;
-      }
+      const handleLightModeBlackIconMouseLeave = contextSafe!(() => {
+        if (isTouchDeviceRef.current) {
+          return;
+        }
 
-      if (!isAnimating.current) {
-        isAnimating.current = true;
-        mouseLeavedToggle.current = false;
+        if (!mouseLeavedToggle.current) {
+          mouseLeavedToggle.current = true;
 
-        gsap.to(lightModeBlackToggleIconRef.current, {
-          rotate: 45,
-          duration: 0.15,
-          ease: 'cubic-bezier(0.4,0,0.2,1)',
-        });
+          if (animateLeave.current) {
+            animateLeave.current = false;
+            isAnimating.current = true;
 
-        setTimeout(() => {
-          if (mouseLeavedToggle.current) {
             gsap.to(lightModeBlackToggleIconRef.current, {
               rotate: 0,
               duration: 0.15,
@@ -234,56 +267,56 @@ function ThemeToggleDefault({
             setTimeout(() => {
               isAnimating.current = false;
             }, 150);
-          } else {
-            isAnimating.current = false;
-            animateLeave.current = true;
           }
-        }, 150);
-      }
-    });
+        }
+      });
 
-    const handleLightModeBlackIconMouseLeave = contextSafe!(() => {
-      if (isTouchDeviceRef.current) {
-        return;
-      }
+      const handleLightModeWhiteIconMouseEnter = contextSafe!(() => {
+        if (isTouchDeviceRef.current) {
+          return;
+        }
 
-      if (!mouseLeavedToggle.current) {
-        mouseLeavedToggle.current = true;
-
-        if (animateLeave.current) {
-          animateLeave.current = false;
+        if (!isAnimating.current) {
           isAnimating.current = true;
+          mouseLeavedToggle.current = false;
 
-          gsap.to(lightModeBlackToggleIconRef.current, {
-            rotate: 0,
+          gsap.to(lightModeWhiteToggleIconRef.current, {
+            rotate: 45,
             duration: 0.15,
             ease: 'cubic-bezier(0.4,0,0.2,1)',
           });
 
           setTimeout(() => {
-            isAnimating.current = false;
+            if (mouseLeavedToggle.current) {
+              gsap.to(lightModeWhiteToggleIconRef.current, {
+                rotate: 0,
+                duration: 0.15,
+                ease: 'cubic-bezier(0.4,0,0.2,1)',
+              });
+
+              setTimeout(() => {
+                isAnimating.current = false;
+              }, 150);
+            } else {
+              isAnimating.current = false;
+              animateLeave.current = true;
+            }
           }, 150);
         }
-      }
-    });
+      });
 
-    const handleLightModeWhiteIconMouseEnter = contextSafe!(() => {
-      if (isTouchDeviceRef.current) {
-        return;
-      }
+      const handleLightModeWhiteIconMouseLeave = contextSafe!(() => {
+        if (isTouchDeviceRef.current) {
+          return;
+        }
 
-      if (!isAnimating.current) {
-        isAnimating.current = true;
-        mouseLeavedToggle.current = false;
+        if (!mouseLeavedToggle.current) {
+          mouseLeavedToggle.current = true;
 
-        gsap.to(lightModeWhiteToggleIconRef.current, {
-          rotate: 45,
-          duration: 0.15,
-          ease: 'cubic-bezier(0.4,0,0.2,1)',
-        });
+          if (animateLeave.current) {
+            animateLeave.current = false;
+            isAnimating.current = true;
 
-        setTimeout(() => {
-          if (mouseLeavedToggle.current) {
             gsap.to(lightModeWhiteToggleIconRef.current, {
               rotate: 0,
               duration: 0.15,
@@ -293,305 +326,277 @@ function ThemeToggleDefault({
             setTimeout(() => {
               isAnimating.current = false;
             }, 150);
-          } else {
-            isAnimating.current = false;
-            animateLeave.current = true;
           }
-        }, 150);
-      }
-    });
-
-    const handleLightModeWhiteIconMouseLeave = contextSafe!(() => {
-      if (isTouchDeviceRef.current) {
-        return;
-      }
-
-      if (!mouseLeavedToggle.current) {
-        mouseLeavedToggle.current = true;
-
-        if (animateLeave.current) {
-          animateLeave.current = false;
-          isAnimating.current = true;
-
-          gsap.to(lightModeWhiteToggleIconRef.current, {
-            rotate: 0,
-            duration: 0.15,
-            ease: 'cubic-bezier(0.4,0,0.2,1)',
-          });
-
-          setTimeout(() => {
-            isAnimating.current = false;
-          }, 150);
         }
-      }
-    });
+      });
 
-    darkModeWhiteToggleIconRef.current?.addEventListener(
-      'mouseenter',
-      handleDarkModeWhiteIconMouseEnter,
-    );
-
-    darkModeWhiteToggleIconRef.current?.addEventListener(
-      'mouseleave',
-      handleDarkModeWhiteIconMouseLeave,
-    );
-
-    darkModeBlackToggleIconRef.current?.addEventListener(
-      'mouseenter',
-      handleDarkModeBlackIconMouseEnter,
-    );
-
-    darkModeBlackToggleIconRef.current?.addEventListener(
-      'mouseleave',
-      handleDarkModeBlackIconMouseLeave,
-    );
-
-    lightModeBlackToggleIconRef.current?.addEventListener(
-      'mouseenter',
-      handleLightModeBlackIconMouseEnter,
-    );
-
-    lightModeBlackToggleIconRef.current?.addEventListener(
-      'mouseleave',
-      handleLightModeBlackIconMouseLeave,
-    );
-
-    lightModeWhiteToggleIconRef.current?.addEventListener(
-      'mouseenter',
-      handleLightModeWhiteIconMouseEnter,
-    );
-
-    lightModeWhiteToggleIconRef.current?.addEventListener(
-      'mouseleave',
-      handleLightModeWhiteIconMouseLeave,
-    );
-
-    return () => {
-      darkModeWhiteToggleIconRef.current?.removeEventListener(
+      darkModeWhiteToggleIconRef.current?.addEventListener(
         'mouseenter',
         handleDarkModeWhiteIconMouseEnter,
       );
 
-      darkModeWhiteToggleIconRef.current?.removeEventListener(
+      darkModeWhiteToggleIconRef.current?.addEventListener(
         'mouseleave',
         handleDarkModeWhiteIconMouseLeave,
       );
 
-      darkModeBlackToggleIconRef.current?.removeEventListener(
+      darkModeBlackToggleIconRef.current?.addEventListener(
         'mouseenter',
         handleDarkModeBlackIconMouseEnter,
       );
 
-      darkModeBlackToggleIconRef.current?.removeEventListener(
+      darkModeBlackToggleIconRef.current?.addEventListener(
         'mouseleave',
         handleDarkModeBlackIconMouseLeave,
       );
 
-      lightModeBlackToggleIconRef.current?.removeEventListener(
+      lightModeBlackToggleIconRef.current?.addEventListener(
         'mouseenter',
         handleLightModeBlackIconMouseEnter,
       );
 
-      lightModeBlackToggleIconRef.current?.removeEventListener(
+      lightModeBlackToggleIconRef.current?.addEventListener(
         'mouseleave',
         handleLightModeBlackIconMouseLeave,
       );
 
-      lightModeWhiteToggleIconRef.current?.removeEventListener(
+      lightModeWhiteToggleIconRef.current?.addEventListener(
         'mouseenter',
         handleLightModeWhiteIconMouseEnter,
       );
 
-      lightModeWhiteToggleIconRef.current?.removeEventListener(
+      lightModeWhiteToggleIconRef.current?.addEventListener(
         'mouseleave',
         handleLightModeWhiteIconMouseLeave,
       );
-    };
-  }, []);
 
-  const dropdownClasses = classNames(
-    `absolute  right-0  top-10  flex  flex-col  rounded-lg
+      return () => {
+        darkModeWhiteToggleIconRef.current?.removeEventListener(
+          'mouseenter',
+          handleDarkModeWhiteIconMouseEnter,
+        );
+
+        darkModeWhiteToggleIconRef.current?.removeEventListener(
+          'mouseleave',
+          handleDarkModeWhiteIconMouseLeave,
+        );
+
+        darkModeBlackToggleIconRef.current?.removeEventListener(
+          'mouseenter',
+          handleDarkModeBlackIconMouseEnter,
+        );
+
+        darkModeBlackToggleIconRef.current?.removeEventListener(
+          'mouseleave',
+          handleDarkModeBlackIconMouseLeave,
+        );
+
+        lightModeBlackToggleIconRef.current?.removeEventListener(
+          'mouseenter',
+          handleLightModeBlackIconMouseEnter,
+        );
+
+        lightModeBlackToggleIconRef.current?.removeEventListener(
+          'mouseleave',
+          handleLightModeBlackIconMouseLeave,
+        );
+
+        lightModeWhiteToggleIconRef.current?.removeEventListener(
+          'mouseenter',
+          handleLightModeWhiteIconMouseEnter,
+        );
+
+        lightModeWhiteToggleIconRef.current?.removeEventListener(
+          'mouseleave',
+          handleLightModeWhiteIconMouseLeave,
+        );
+      };
+    }, []);
+
+    const dropdownClasses = classNames(
+      `absolute  right-0  top-10  flex  flex-col  rounded-lg
      border  border-[#EBEBEB]  dark:border-[#414141]
      pb-9  pt-7  
      `,
-    bgClass,
-    {
-      'opacity-0  pointer-events-none': !dropdownIsOpened,
-      'opacity-100  pointer-events-auto': dropdownIsOpened,
-    },
-  );
+      bgClass,
+      {
+        'opacity-0  pointer-events-none': !dropdownIsOpened,
+        'opacity-100  pointer-events-auto': dropdownIsOpened,
+      },
+    );
 
-  const lightModeBlackToggleIconClasses = classNames(
-    `absolute  size-6  translate-y-[-0.5px]  select-none    
+    const lightModeBlackToggleIconClasses = classNames(
+      `absolute  size-6  translate-y-[-0.5px]  select-none    
      top-0`,
-    {
-      'opacity-100  z-50  dark:opacity-0  dark:pointer-events-none  dark:z-auto':
-        !reversedColors,
-      'opacity-0  pointer-events-none': reversedColors,
-    },
-  );
+      {
+        'opacity-100  z-50  dark:opacity-0  dark:pointer-events-none  dark:z-auto':
+          !reversedColors,
+        'opacity-0  pointer-events-none': reversedColors,
+      },
+    );
 
-  const lightModeWhiteToggleIconClasses = classNames(
-    `absolute  size-6  translate-y-[-0.5px]  select-none  top-0`,
-    {
-      'opacity-0  pointer-events-none': !reversedColors,
-      'opacity-100  z-50  dark:opacity-0  dark:pointer-events-none  dark:z-auto':
-        reversedColors,
-    },
-  );
+    const lightModeWhiteToggleIconClasses = classNames(
+      `absolute  size-6  translate-y-[-0.5px]  select-none  top-0`,
+      {
+        'opacity-0  pointer-events-none': !reversedColors,
+        'opacity-100  z-50  dark:opacity-0  dark:pointer-events-none  dark:z-auto':
+          reversedColors,
+      },
+    );
 
-  const darkModeWhiteToggleIconClasses = classNames(
-    `absolute  size-[1.3rem]  translate-x-[0.1rem]  translate-y-[0.12rem]
+    const darkModeWhiteToggleIconClasses = classNames(
+      `absolute  size-[1.3rem]  translate-x-[0.1rem]  translate-y-[0.12rem]
      select-none  top-0`,
-    {
-      'opacity-0  pointer-events-none  dark:opacity-100  dark:pointer-events-auto  dark:z-50':
-        !reversedColors,
-      'opacity-0  pointer-events-none': reversedColors,
-    },
-  );
+      {
+        'opacity-0  pointer-events-none  dark:opacity-100  dark:pointer-events-auto  dark:z-50':
+          !reversedColors,
+        'opacity-0  pointer-events-none': reversedColors,
+      },
+    );
 
-  const darkModeBlackToggleIconClasses = classNames(
-    `absolute  size-[1.3rem]  translate-x-[0.1rem]  translate-y-[0.12rem]
+    const darkModeBlackToggleIconClasses = classNames(
+      `absolute  size-[1.3rem]  translate-x-[0.1rem]  translate-y-[0.12rem]
      select-none  top-0`,
-    {
-      'opacity-0  pointer-events-none': !reversedColors,
-      'opacity-0  pointer-events-none  dark:opacity-100  dark:pointer-events-auto  dark:z-50':
-        reversedColors,
-    },
-  );
+      {
+        'opacity-0  pointer-events-none': !reversedColors,
+        'opacity-0  pointer-events-none  dark:opacity-100  dark:pointer-events-auto  dark:z-50':
+          reversedColors,
+      },
+    );
 
-  const themeToggleWrapperClasses = classNames(
-    'relative  flex  flex-col  justify-center',
-    className,
-  );
+    const themeToggleWrapperClasses = classNames(
+      'relative  flex  flex-col  justify-center  transition-opacity',
+      className,
+    );
 
-  const textClasses = classNames(`select-none`, textClass);
+    const textClasses = classNames(`select-none`, textClass);
 
-  return (
-    <div className={themeToggleWrapperClasses}>
-      <button
-        ref={toggleButtonRef}
-        className='relative  size-6  cursor-pointer'
-        onClick={() => setDropdownIsOpened((prev) => !prev)}
-      >
-        <Image
-          priority
-          ref={lightModeBlackToggleIconRef}
-          src={iconsSources.lightModeBlackIcon}
-          width={27}
-          height={27}
-          alt='Sun icon'
-          className={lightModeBlackToggleIconClasses}
-        />
-        <Image
-          priority
-          ref={lightModeWhiteToggleIconRef}
-          src={iconsSources.lightModeWhiteIcon}
-          width={27}
-          height={27}
-          alt='Sun icon'
-          className={lightModeWhiteToggleIconClasses}
-        />
-        <Image
-          priority
-          ref={darkModeWhiteToggleIconRef}
-          src={iconsSources.darkModeWhiteIcon}
-          width={27}
-          height={27}
-          alt='Moon icon'
-          className={darkModeWhiteToggleIconClasses}
-        />
-        <Image
-          priority
-          ref={darkModeBlackToggleIconRef}
-          src={iconsSources.darkModeBlackIcon}
-          width={27}
-          height={27}
-          alt='Moon icon'
-          className={darkModeBlackToggleIconClasses}
-        />
-      </button>
-      <ul ref={dropdownElementRef} className={dropdownClasses}>
-        <ThemeToggleDropdownItem
-          className='gap-[0.7rem]'
-          itemTheme={Theme.LIGHT}
-          selectedTheme={selectedTheme}
-          activeItemDotClass={activeItemDotClass}
-          onClick={() => handleThemeChange(Theme.LIGHT)}
+    return (
+      <div ref={ref} className={themeToggleWrapperClasses}>
+        <button
+          ref={toggleButtonRef}
+          className='relative  size-6  cursor-pointer'
+          onClick={() => setDropdownIsOpened((prev) => !prev)}
         >
           <Image
+            priority
+            ref={lightModeBlackToggleIconRef}
             src={iconsSources.lightModeBlackIcon}
             width={27}
             height={27}
             alt='Sun icon'
-            className='size-6  translate-y-[-0.031rem]
-                       dark:hidden'
+            className={lightModeBlackToggleIconClasses}
           />
           <Image
+            priority
+            ref={lightModeWhiteToggleIconRef}
             src={iconsSources.lightModeWhiteIcon}
             width={27}
             height={27}
             alt='Sun icon'
-            className='hidden  size-6  translate-y-[-0.031rem]
-                       dark:inline-block'
-          />
-          <p className={textClasses}>Light</p>
-        </ThemeToggleDropdownItem>
-        <ThemeToggleDropdownItem
-          className='gap-[0.95rem]'
-          itemTheme={Theme.DARK}
-          selectedTheme={selectedTheme}
-          activeItemDotClass={activeItemDotClass}
-          onClick={() => handleThemeChange(Theme.DARK)}
-        >
-          <Image
-            src={iconsSources.darkModeBlackIcon}
-            width={27}
-            height={27}
-            alt='Moon icon'
-            className='size-[1.3rem]  translate-x-[0.15rem]
-                       translate-y-[-0.031rem]
-                       dark:hidden'
+            className={lightModeWhiteToggleIconClasses}
           />
           <Image
+            priority
+            ref={darkModeWhiteToggleIconRef}
             src={iconsSources.darkModeWhiteIcon}
             width={27}
             height={27}
             alt='Moon icon'
-            className='hidden  size-[1.3rem]  translate-x-[0.15rem]
+            className={darkModeWhiteToggleIconClasses}
+          />
+          <Image
+            priority
+            ref={darkModeBlackToggleIconRef}
+            src={iconsSources.darkModeBlackIcon}
+            width={27}
+            height={27}
+            alt='Moon icon'
+            className={darkModeBlackToggleIconClasses}
+          />
+        </button>
+        <ul ref={dropdownElementRef} className={dropdownClasses}>
+          <ThemeToggleDropdownItem
+            className='gap-[0.7rem]'
+            itemTheme={Theme.LIGHT}
+            selectedTheme={selectedTheme}
+            activeItemDotClass={activeItemDotClass}
+            onClick={() => handleThemeChange(Theme.LIGHT)}
+          >
+            <Image
+              src={iconsSources.lightModeBlackIcon}
+              width={27}
+              height={27}
+              alt='Sun icon'
+              className='size-6  translate-y-[-0.031rem]
+                       dark:hidden'
+            />
+            <Image
+              src={iconsSources.lightModeWhiteIcon}
+              width={27}
+              height={27}
+              alt='Sun icon'
+              className='hidden  size-6  translate-y-[-0.031rem]
+                       dark:inline-block'
+            />
+            <p className={textClasses}>Light</p>
+          </ThemeToggleDropdownItem>
+          <ThemeToggleDropdownItem
+            className='gap-[0.95rem]'
+            itemTheme={Theme.DARK}
+            selectedTheme={selectedTheme}
+            activeItemDotClass={activeItemDotClass}
+            onClick={() => handleThemeChange(Theme.DARK)}
+          >
+            <Image
+              src={iconsSources.darkModeBlackIcon}
+              width={27}
+              height={27}
+              alt='Moon icon'
+              className='size-[1.3rem]  translate-x-[0.15rem]
+                       translate-y-[-0.031rem]
+                       dark:hidden'
+            />
+            <Image
+              src={iconsSources.darkModeWhiteIcon}
+              width={27}
+              height={27}
+              alt='Moon icon'
+              className='hidden  size-[1.3rem]  translate-x-[0.15rem]
                        translate-y-[-0.031rem]
                        dark:inline-block'
-          />
-          <p className={textClasses}>Dark</p>
-        </ThemeToggleDropdownItem>
-        <ThemeToggleDropdownItem
-          className='gap-[0.95rem]'
-          itemTheme={Theme.SYSTEM}
-          selectedTheme={selectedTheme}
-          activeItemDotClass={activeItemDotClass}
-          onClick={() => handleThemeChange(Theme.SYSTEM)}
-        >
-          <Image
-            src={iconsSources.systemModeBlackIcon}
-            width={27}
-            height={27}
-            alt='Gear icon'
-            className='size-[1.3rem]  translate-x-[0.13rem]
+            />
+            <p className={textClasses}>Dark</p>
+          </ThemeToggleDropdownItem>
+          <ThemeToggleDropdownItem
+            className='gap-[0.95rem]'
+            itemTheme={Theme.SYSTEM}
+            selectedTheme={selectedTheme}
+            activeItemDotClass={activeItemDotClass}
+            onClick={() => handleThemeChange(Theme.SYSTEM)}
+          >
+            <Image
+              src={iconsSources.systemModeBlackIcon}
+              width={27}
+              height={27}
+              alt='Gear icon'
+              className='size-[1.3rem]  translate-x-[0.13rem]
                        translate-y-[-0.031rem]  dark:hidden'
-          />
-          <Image
-            src={iconsSources.systemModeWhiteIcon}
-            width={27}
-            height={27}
-            alt='Gear icon'
-            className='hidden  size-[1.3rem]  translate-x-[0.13rem]
+            />
+            <Image
+              src={iconsSources.systemModeWhiteIcon}
+              width={27}
+              height={27}
+              alt='Gear icon'
+              className='hidden  size-[1.3rem]  translate-x-[0.13rem]
                        translate-y-[-0.031rem]  dark:inline-block'
-          />
-          <p className={textClasses}>System</p>
-        </ThemeToggleDropdownItem>
-      </ul>
-    </div>
-  );
-}
+            />
+            <p className={textClasses}>System</p>
+          </ThemeToggleDropdownItem>
+        </ul>
+      </div>
+    );
+  },
+);
 
 export default ThemeToggleDefault;

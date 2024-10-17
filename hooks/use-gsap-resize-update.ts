@@ -7,7 +7,7 @@ function useGsapResizeUpdate(): { gsapShouldUpdate: boolean } {
     let initialHeight = window.innerHeight;
     let initialWidth = window.innerWidth;
 
-    const RESIZE_THRESHOLD = 180;
+    const RESIZE_THRESHOLD = 179;
 
     function handleResize(): void {
       const currentHeight = window.innerHeight;

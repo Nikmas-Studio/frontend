@@ -6,15 +6,20 @@ import moonIconBlack from '@/public/images/moon-icon-git-black.png';
 import moonIconWhite from '@/public/images/moon-icon-git-white.png';
 import sunIconBlack from '@/public/images/sun-icon-git-black.png';
 import sunIconWhite from '@/public/images/sun-icon-git-white.png';
-import { ReactElement } from 'react';
+import { ReactElement, RefObject } from 'react';
 import ThemeToggleDefault from '../../header/theme-toggle/ThemeToggleDefault';
 
 interface ControlsProps {
   pageNumber?: number;
   reversedColors?: boolean;
+  themeToggleRef?: RefObject<HTMLDivElement>;
 }
 
-function Controls({ pageNumber, reversedColors }: ControlsProps): ReactElement {
+function Controls({
+  pageNumber,
+  reversedColors,
+  themeToggleRef,
+}: ControlsProps): ReactElement {
   return (
     <div>
       {pageNumber && (
@@ -27,6 +32,7 @@ function Controls({ pageNumber, reversedColors }: ControlsProps): ReactElement {
       )}
       <div className='absolute  right-[3vw]  top-7  z-50  max-md:right-[4.2vw]  max-md:top-4'>
         <ThemeToggleDefault
+          ref={themeToggleRef}
           reversedColors={reversedColors}
           bgClass='bg-white  dark:bg-git-black'
           activeItemDotClass='after:bg-git-black  after:dark:bg-git-white'
