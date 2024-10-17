@@ -484,7 +484,7 @@ function Page3(): ReactElement {
                 <p className='leading-tight'>
                   For questions <br /> and suggestions:
                 </p>
-                <p className='mt-[0.3em]  font-semibold  no-underline'>
+                <p className='mt-[0.3em]  font-semibold  !no-underline'>
                   team@nikmas.studio
                 </p>
               </div>
