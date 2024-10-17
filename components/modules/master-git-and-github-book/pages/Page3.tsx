@@ -485,12 +485,10 @@ function Page3(): ReactElement {
                   For questions <br /> and suggestions:
                 </p>
                 <p
-                  className='!pointer-events-none  mt-[0.3em]  !select-none  
-                              font-semibold  !no-underline'
+                  className='pointer-events-none  mt-[0.3em]  select-none  
+                              font-semibold  no-underline'
                 >
-                  <span>team</span>
-                  <span>@</span>
-                  <span>nikmas.studio</span>
+                  team@nikmas.studio
                 </p>
               </div>
             </div>
