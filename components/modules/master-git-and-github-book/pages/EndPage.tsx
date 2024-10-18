@@ -110,7 +110,7 @@ function EndPage(): ReactElement {
         className='relative 
         translate-y-[-20px]  px-[10vw]  [transition:opacity_1s_ease-out]  
         max-xl:translate-y-[-40px]  max-sm:translate-y-[-30px]
-        h-sm:translate-y-0  h-md:translate-y-[-20px]'
+        h-2md:translate-y-[-20px]  h-sm:translate-y-0'
       >
         <div
           className='relative   h-[70svh]  w-auto

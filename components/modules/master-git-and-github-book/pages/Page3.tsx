@@ -231,31 +231,35 @@ function Page3(): ReactElement {
         ref={visualizationContainerRef}
         className='absolute  inset-x-0  top-0  z-10  flex    
                    flex-row  justify-between  opacity-0
-                   transition-opacity  max-lg:bottom-[5vh]  max-lg:top-auto
-                   max-2md:flex-col  h-sm:flex-row'
+                   transition-opacity  max-lg:bottom-0  max-lg:top-auto  
+                   max-2md:flex-col  max-md:!bottom-0  max-md:!top-auto  max-sm:!bottom-[10vh]
+                   h-2md:!bottom-0  h-md:!bottom-[14vh]  h-md:flex-row  h-sm:!bottom-[10vh]
+                   max-lg:portrait:bottom-auto  max-lg:portrait:top-0'
       >
         <div
           className='flex  flex-col  justify-between  max-2md:translate-x-[-0.7rem]
-                        h-sm:h-[70vh]'
+                        h-md:translate-x-0'
         >
           <div
-            className='h-[35.4vw]  origin-top-left  translate-x-[1.2rem]  translate-y-6  
-                        rotate-[25deg]  max-2md:rotate-[15deg]'
+            className='origin-top-left  translate-x-[1.2rem]  translate-y-6  
+                        rotate-[25deg]  max-2md:rotate-[15deg]  h-md:translate-x-[0.3rem]'
           >
             <div className='float-left'>
               <ul
                 className='flex  flex-row  gap-[5vw]  max-xl:gap-[4vw]
-                           max-2md:gap-[10vw]  max-md:gap-[11vw]  h-sm:gap-[4vw]'
+                           max-2md:gap-[10vw]  max-md:gap-[11vw] 
+                           h-md:gap-[5vh]'
               >
                 <li
                   ref={initializeProjectCommitRef}
-                  className='relative  z-[70]  size-[5vw]  rounded-full  bg-git-blue  
-                             [box-shadow:0_0_0_0.4vw_rgba(39,26,211,0.5)]'
+                  className='relative  z-[70]  size-[5vw]  rounded-full
+                           bg-git-blue  [box-shadow:0_0_0_0.4vw_rgba(39,26,211,0.5)]  
+                             h-md:size-[5vh]'
                 >
                   <p
                     className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left   rotate-[-25deg]
-                              text-xl  leading-normal  text-git-blue  max-md:text-[3vw]  h-sm:text-[3vh]
-                              dark:text-[#3D32D1]'
+                              text-xl  leading-normal  text-git-blue  max-md:text-[3vw]  h-md:bottom-[4.5vh]
+                              h-md:left-[0.5vh]  h-md:text-[3vh]  dark:text-[#3D32D1]'
                   >
                     Initialize&nbsp;project
                   </p>
@@ -263,13 +267,13 @@ function Page3(): ReactElement {
                 <li
                   ref={addHeaderCommitRef}
                   className='relative  z-[60]  size-[5vw]
-                           opacity-0  transition-opacity'
+                           opacity-0  transition-opacity  h-md:size-[5vh]'
                 >
                   <div className='absolute  inset-0  z-30  rounded-full  bg-git-blue'>
                     <p
                       className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
                                 text-xl  leading-normal  text-git-blue  max-md:text-[3vw]
-                                h-sm:text-[3vh]  dark:text-[#3D32D1]'
+                                h-md:bottom-[4.5vh]  h-md:left-[0.5vh]  h-md:text-[3vh]  dark:text-[#3D32D1]'
                     >
                       Add&nbsp;header
                     </p>
@@ -278,49 +282,57 @@ function Page3(): ReactElement {
                     className='absolute  right-[2.5vw]  top-1/2  z-20  h-[4px]   
                              w-[10vw]  -translate-y-1/2  bg-[#CECECE] 
                              max-xl:w-[9vw]  max-2md:h-[3px]  max-2md:w-[15vw]
-                             max-sm:h-[2px]  h-sm:w-[9vw]  dark:bg-[#252525]'
+                             max-sm:h-[2px]  h-md:right-[2.5vh]  h-md:w-[10vh]
+                             h-sm:h-[2px]  dark:bg-[#252525]'
                   ></div>
                 </li>
                 <li
                   ref={addIntroSectionCommitRef}
-                  className='relative  z-50  size-[5vw]  opacity-0  transition-opacity'
+                  className='relative  z-50  size-[5vw]  opacity-0  transition-opacity
+                             h-md:size-[5vh]'
                 >
                   <div className='absolute  inset-0  z-30  rounded-full  bg-git-blue'>
                     <p
                       className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
-                              text-xl  leading-normal  text-git-blue  max-md:text-[3vw]
-                              h-sm:text-[3vh]  dark:text-[#3D32D1]'
+                                text-xl  leading-normal  text-git-blue  max-md:text-[3vw]
+                                h-md:bottom-[4.5vh]  h-md:left-[0.5vh]  
+                                h-md:text-[3vh]  dark:text-[#3D32D1]'
                     >
                       Add&nbsp;intro&nbsp;section
                     </p>
                   </div>
                   <div
                     className='absolute  right-[2.5vw]  top-1/2  z-20  h-[4px]  
-                            w-[10vw]  -translate-y-1/2  bg-[#CECECE]  
-                            max-xl:w-[9vw]  max-2md:h-[3px]  max-2md:w-[15vw]
-                            max-sm:h-[2px]  h-sm:w-[9vw]  dark:bg-[#252525]'
+                              w-[10vw]  -translate-y-1/2  bg-[#CECECE]  
+                              max-xl:w-[9vw]  max-2md:h-[3px]  max-2md:w-[15vw]
+                              max-sm:h-[2px]  h-md:right-[2.5vh]  h-md:w-[10vh]
+                              h-sm:h-[2px]  dark:bg-[#252525]'
                   ></div>
                 </li>
               </ul>
             </div>
             <div
               className='float-left  ml-[5vw]  max-xl:ml-[4vw]
-                           max-2md:ml-[10vw]  max-md:ml-[11vw]  h-sm:ml-[4vw]'
+                           max-2md:ml-[10vw]  max-md:ml-[11vw] 
+                           h-md:ml-[5vh]  h-md:h-[5vh]'
             >
               <ul
                 className='relative  z-20  flex  flex-row  gap-[5vw]  max-xl:gap-[4vw]
-                           max-2md:gap-[10vw]  max-md:gap-[11vw]  h-sm:gap-[4vw]'
+                           max-2md:gap-[10vw]  max-md:gap-[11vw] 
+                           h-md:gap-[5vh]'
               >
                 <li
                   ref={addProductsSectionCommitRef}
-                  className='relative  z-40  size-[5vw]  opacity-0  transition-opacity'
+                  className='relative  z-40  size-[5vw]  opacity-0  transition-opacity
+                             h-md:size-[5vh]'
                 >
                   <div className='absolute  inset-0  z-30  rounded-full  bg-git-blue'>
                     <p
                       className='absolute  bottom-[5.2vw]  left-[0.5vw]  
                                origin-top-left  rotate-[-25deg]  text-xl
                                leading-normal  text-git-blue  max-md:text-[3vw]
-                               h-sm:text-[3vh]  dark:text-[#3D32D1]'
+                               h-md:bottom-[4.5vh]  h-md:left-[0.5vh]
+                               h-md:text-[3vh]  dark:text-[#3D32D1]'
                     >
                       Add&nbsp;products&nbsp;section
                     </p>
@@ -329,18 +341,21 @@ function Page3(): ReactElement {
                     className='absolute  right-[2.5vw]  top-1/2  z-20  h-[4px]  
                              w-[10vw]  -translate-y-1/2  bg-[#CECECE]
                              max-xl:w-[9vw]  max-2md:h-[3px]  max-2md:w-[15vw]
-                             max-sm:h-[2px]  h-sm:w-[9vw]  dark:bg-[#252525]'
+                             max-sm:h-[2px]  h-md:right-[2.5vh]  h-md:w-[10vh]
+                             h-sm:h-[2px]  dark:bg-[#252525]'
                   ></div>
                 </li>
                 <li
                   ref={addFooterCommitRef}
-                  className='relative  z-30  size-[5vw]  opacity-0  transition-opacity'
+                  className='relative  z-30  size-[5vw]  opacity-0  transition-opacity
+                             h-md:size-[5vh]'
                 >
                   <div className='absolute  inset-0  z-30  rounded-full  bg-git-blue'>
                     <p
                       className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
                                text-xl  leading-normal  text-git-blue  max-md:text-[3vw]
-                               h-sm:text-[3vh]  dark:text-[#3D32D1]'
+                               h-md:bottom-[4.5vh]  h-md:left-[0.5vh]
+                               h-md:text-[3vh]  dark:text-[#3D32D1]'
                     >
                       Add&nbsp;footer
                     </p>
@@ -349,34 +364,40 @@ function Page3(): ReactElement {
                     className='absolute  right-[2.5vw]  top-1/2  z-20  h-[4px]  
                              w-[10vw]  -translate-y-1/2  bg-[#CECECE]
                              max-xl:w-[9vw]  max-2md:h-[3px]  max-2md:w-[15vw]
-                             max-sm:h-[2px]  h-sm:w-[9vw]  dark:bg-[#252525]'
+                             max-sm:h-[2px]  h-md:right-[2.5vh]  h-md:w-[10vh]
+                             h-sm:h-[2px]  dark:bg-[#252525]'
                   ></div>
                 </li>
                 <li
                   ref={mergeCommitRef}
-                  className='relative  z-20  size-[5vw]  opacity-0  transition-opacity'
+                  className='relative  z-20  size-[5vw]  opacity-0  transition-opacity
+                             h-md:size-[5vh]'
                 >
-                  <div className='absolute  z-40  size-[5vw]  rounded-full  bg-git-orange'>
+                  <div className='absolute  inset-0  z-40  rounded-full  bg-git-orange'>
                     <p
                       className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
                               text-xl  leading-normal  text-git-blue  max-md:text-[3vw]
-                              h-sm:text-[3vh]  dark:text-[#3D32D1]'
+                              h-md:bottom-[4.5vh]  h-md:left-[0.5vh]
+                              h-md:text-[3vh]  dark:text-[#3D32D1]'
                     >
                       Merge
                     </p>
                   </div>
                   <div
                     className='absolute  right-[2.5vw]  top-1/2  z-30  h-[4px]  
-                            w-[10vw]  -translate-y-1/2  bg-[#CECECE]
-                          max-xl:w-[9vw]  max-2md:h-[3px]  max-2md:w-[15vw]
-                          max-sm:h-[2px]  h-sm:w-[9vw]  dark:bg-[#252525]'
+                                w-[10vw]  -translate-y-1/2  bg-[#CECECE]
+                              max-xl:w-[9vw]  max-2md:h-[3px]  max-2md:w-[15vw]
+                              max-sm:h-[2px]  h-md:right-[2.5vh]
+                              h-md:w-[10vh]  h-sm:h-[2px]
+                              dark:bg-[#252525]'
                   ></div>
                   <div
                     className='absolute  right-[2.5vw]  top-1/2  z-20  h-[4px]  
                              w-[25vw]  origin-top-right  -translate-y-1/2  rotate-[-41.5deg]  
                              bg-[#CECECE]  max-xl:w-[20vw]  max-2md:h-[3px]
                              max-2md:w-[25vw]  max-2md:rotate-[-38.5deg]
-                             max-sm:h-[2px]  h-sm:w-[20vw]  h-sm:rotate-[-41deg]
+                             max-sm:h-[2px]  h-md:right-[2.5vh]  h-md:w-[22vh]
+                             h-md:rotate-[-41.5deg]  h-sm:h-[2px]
                              dark:bg-[#252525]'
                   ></div>
                 </li>
@@ -386,13 +407,18 @@ function Page3(): ReactElement {
               className='relative  z-30  clear-both  flex  origin-[2.5vw_2.5vw]  translate-x-[20vw]  translate-y-[-5vw]  rotate-[-40deg] 
                          flex-col  gap-[5vw]  max-xl:translate-x-[18vw]  max-xl:gap-[4vw]
                          max-2md:translate-x-[30vw]  max-2md:rotate-[-60deg]  max-2md:gap-[10vw]
-                         max-md:translate-x-[32vw]  max-md:gap-[11vw]  h-sm:translate-x-[18vw]
-                         h-sm:rotate-[-40deg]  h-sm:gap-[4vw]'
+                         max-md:translate-x-[32vw]  max-md:gap-[11vw] 
+                         h-md:origin-[2.5vh_2.5vh]  h-md:translate-x-[20vh]
+                         h-md:translate-y-[-5vh]  h-md:rotate-[-40deg]  h-md:gap-[5vh]'
             >
-              <li className='relative  size-[5vw]  rounded-full  bg-git-blue  opacity-0'></li>
+              <li
+                className='relative  size-[5vw]  rounded-full  bg-git-blue  opacity-0
+                             h-md:size-[5vh]'
+              ></li>
               <li
                 ref={animateLettersCommitRef}
-                className='relative  z-40  size-[5vw]  opacity-0  transition-opacity'
+                className='relative  z-40  size-[5vw]  opacity-0  transition-opacity
+                           h-md:size-[5vh]'
               >
                 <div className='absolute  inset-0  z-30  rounded-full  bg-[#4CBB17]'>
                   <p
@@ -401,8 +427,8 @@ function Page3(): ReactElement {
                                leading-normal  text-[#4CBB17]
                                max-2md:bottom-[3.2vw]  max-2md:right-[3.9vw]
                                max-2md:rotate-45  max-md:text-[3vw]
-                               h-sm:bottom-[3.2vw]  h-sm:right-[5.2vw]  
-                               h-sm:rotate-[25deg]  h-sm:text-[3vh]'
+                               h-md:bottom-[1.7vh]  h-md:right-[5vh]  
+                               h-md:rotate-[25deg]  h-md:text-[3vh]'
                   >
                     Animate&nbsp;letters
                   </p>
@@ -411,12 +437,14 @@ function Page3(): ReactElement {
                   className='absolute  bottom-[2.5vw]  left-1/2  z-20  h-[10vw]  
                              w-[4px]  -translate-x-1/2  bg-[#CECECE]  max-xl:h-[9vw]
                              max-2md:h-[15vw]  max-2md:w-[3px]  max-sm:w-[2px]
-                             h-sm:h-[9vw]  dark:bg-[#252525]'
+                             h-md:bottom-[2.5vh]  h-md:h-[10vh]
+                             h-sm:w-[2px]  dark:bg-[#252525]'
                 ></div>
               </li>
               <li
                 ref={animateLogoCommitRef}
-                className='relative  z-30  size-[5vw]  opacity-0  transition-opacity'
+                className='relative  z-30  size-[5vw]  opacity-0  transition-opacity
+                           h-md:size-[5vh]'
               >
                 <div className='absolute  inset-0  z-30  rounded-full  bg-[#4CBB17]'>
                   <p
@@ -425,8 +453,8 @@ function Page3(): ReactElement {
                             leading-normal  text-[#4CBB17]
                             max-2md:bottom-[3.2vw]  max-2md:right-[3.9vw]
                             max-2md:rotate-45  max-md:text-[3vw]
-                            h-sm:bottom-[3.2vw]  h-sm:right-[5.2vw]
-                            h-sm:rotate-[25deg]  h-sm:text-[3vh]'
+                            h-md:bottom-[1.7vh]  h-md:right-[5vh]
+                            h-md:rotate-[25deg]  h-md:text-[3vh]'
                   >
                     Animate&nbsp;logo
                   </p>
@@ -435,28 +463,29 @@ function Page3(): ReactElement {
                   className='absolute  bottom-[2.5vw]  left-1/2  z-20  h-[10vw]  
                            w-[4px]  -translate-x-1/2  bg-[#CECECE]  max-xl:h-[9vw]
                            max-2md:h-[15vw]  max-2md:w-[3px]  max-sm:w-[2px]
-                           h-sm:h-[9vw]  dark:bg-[#252525]'
+                           h-md:bottom-[2.5vh]  h-md:h-[10vh]
+                           h-sm:w-[2px]  dark:bg-[#252525]'
                 ></div>
               </li>
             </ul>
           </div>
           <TextNode
-            className='!mb-0  mt-5  text-sm  max-2md:hidden  h-sm:block
-                               h-sm:text-[3vh]'
+            className='!mb-0  mt-5  text-sm  max-2md:hidden  h-md:block
+                               h-md:text-[2.5vh]'
           >
             Explanation text
           </TextNode>
         </div>
         <div
           className='flex  flex-col  justify-between  max-2md:mt-20  
-                        max-md:mt-[7.5vh]  h-sm:mt-0'
+                        max-md:mt-[7.5vh]  h-md:mt-0'
         >
           <div
             className='pointer-events-none  w-[22vw]  select-none  overflow-hidden  
                        rounded-3xl  border  border-git-blue
                        text-[1vw]  max-2xl:w-[21rem]  max-2xl:text-[14.95px] 
-                       max-xl:w-[28vw]  max-xl:text-[1.7vh]   max-2md:w-full  
-                       max-2md:text-[1vh]  h-sm:w-[30vw]'
+                       max-xl:w-[28vw]  max-xl:text-[1.7vh]  max-2md:w-full  
+                       max-2md:text-[1vh]  h-md:w-[40vw]  max-lg:portrait:text-[1vh]'
           >
             <div
               className='flex  h-12  w-full  flex-row  items-center  
@@ -505,7 +534,8 @@ function Page3(): ReactElement {
               </div>
               <div
                 className='h-[17px]  w-1/2  rounded-full  border
-                              border-[#BABABA]  dark:border-[#4A4A4A]'
+                              border-[#BABABA]  h-md:w-[45%]
+                              dark:border-[#4A4A4A]'
               ></div>
               <div className='flex  h-[14px]  flex-col  justify-between'>
                 <div className='size-[3px]  rounded-full  bg-[#BABABA]  dark:bg-[#4A4A4A]'></div>
@@ -702,41 +732,41 @@ function Page3(): ReactElement {
           </div>
           <div
             className='mt-14  flex  flex-row  justify-between  max-md:mt-[4.9vh]
-                          h-sm:mt-[4.9vh]'
+                          h-md:mt-[4.9vh]'
           >
             <TextNode
               className='hidden  leading-tight  max-2md:block  max-md:text-[2.5vw]
-                                 h-sm:hidden'
+                                 h-md:hidden'
             >
               Explanation text
             </TextNode>
-            <ul className='flex  flex-col  gap-3  max-md:gap-[2vw]  h-sm:gap-[2vh]'>
+            <ul className='flex  flex-col  gap-3  max-md:gap-[2vw]  h-md:gap-[2vh]'>
               <li
                 className='flex  flex-row  items-center  gap-2  max-md:gap-[1.4vw]
-                             h-sm:gap-[1.4vh]'
+                             h-md:gap-[1.4vh]'
               >
                 <div
                   className='size-6  rounded-full  bg-git-blue  max-md:size-[4vw]
-                                h-sm:size-[4vh]'
+                                h-md:size-[4vh]'
                 ></div>
                 <p
                   className='text-xl  leading-tight  text-git-blue  max-md:text-[3vw]
-                              h-sm:text-[3vh]  dark:text-[#3D32D1]'
+                              h-md:text-[3vh]  dark:text-[#3D32D1]'
                 >
                   Main branch
                 </p>
               </li>
               <li
                 className='flex  flex-row  items-center  gap-2  opacity-100
-                             transition-opacity  max-md:gap-[1.4vw]  h-sm:gap-[1.4vh]'
+                             transition-opacity  max-md:gap-[1.4vw]  h-md:gap-[1.4vh]'
               >
                 <div
                   className='size-6  rounded-full  bg-[#4CBB17]  max-md:size-[4vw]
-                                h-sm:size-[4vh]'
+                                h-md:size-[4vh]'
                 ></div>
                 <p
                   className='text-xl  leading-tight  text-[#4CBB17]  max-md:text-[3vw]
-                              h-sm:text-[3vh]'
+                              h-md:text-[3vh]'
                 >
                   Animation feature branch
                 </p>

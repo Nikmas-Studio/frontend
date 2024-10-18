@@ -67,8 +67,8 @@ function CoverPage(): ReactElement {
         ref={innerContentRef}
         className='relative  px-[10vw]  opacity-0
         [transition:opacity_1s_ease-out]  max-xl:translate-y-[-40px]  max-sm:translate-y-[-30px]
-        h-sm:translate-y-0
-        h-md:translate-y-0'
+        h-2md:translate-y-0
+        h-sm:translate-y-0'
       >
         <div
           className='relative   h-[70svh]  w-auto
