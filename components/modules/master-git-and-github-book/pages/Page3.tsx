@@ -34,20 +34,34 @@ function Page3(): ReactElement {
   const visualizationContainerRef = useRef<HTMLDivElement | null>(null);
 
   const initializeProjectCommitRef = useRef<HTMLLIElement | null>(null);
+
   const addHeaderCommitRef = useRef<HTMLLIElement | null>(null);
+  const addHeaderCommitCircleRef = useRef<HTMLDivElement | null>(null);
+
   const addIntroSectionCommitRef = useRef<HTMLLIElement | null>(null);
+  const addIntroSectionCommitCircleRef = useRef<HTMLDivElement | null>(null);
+
   const addProductsSectionCommitRef = useRef<HTMLLIElement | null>(null);
+  const addProductsSectionCommitCircleRef = useRef<HTMLDivElement | null>(null);
+
   const addFooterCommitRef = useRef<HTMLLIElement | null>(null);
+  const addFooterCommitCircleRef = useRef<HTMLDivElement | null>(null);
 
   const animateLettersCommitRef = useRef<HTMLLIElement | null>(null);
+  const animateLettersCommitCircleRef = useRef<HTMLDivElement | null>(null);
+
   const animateLogoCommitRef = useRef<HTMLLIElement | null>(null);
+  const animateLogoCommitCircleRef = useRef<HTMLDivElement | null>(null);
 
   const mergeCommitRef = useRef<HTMLLIElement | null>(null);
+  const mergeCommitCircleRef = useRef<HTMLDivElement | null>(null);
 
   const headerSectionRef = useRef<HTMLDivElement | null>(null);
   const introSectionRef = useRef<HTMLDivElement | null>(null);
   const productsSectionRef = useRef<HTMLDivElement | null>(null);
   const footerSectionRef = useRef<HTMLDivElement | null>(null);
+
+  const animationFeatureBranchRef = useRef<HTMLLIElement | null>(null);
 
   const themeToggleRef = useRef<HTMLDivElement | null>(null);
 
@@ -80,6 +94,62 @@ function Page3(): ReactElement {
 
   useGSAP(
     () => {
+      function setUpCommonTimeline(timeline: gsap.core.Timeline): void {
+        timeline.set(introContainerRef.current, { opacity: 0 }, '1');
+        timeline.set(visualizationContainerRef.current, { opacity: 1 }, '1');
+
+        timeline.set(
+          addHeaderCommitRef.current,
+          {
+            opacity: 1,
+          },
+          '2',
+        );
+        timeline.set(headerSectionRef.current, { opacity: 1 }, '2');
+        timeline.set(
+          addHeaderCommitCircleRef.current,
+          { boxShadow: '0 0 0 0.4vw rgba(39, 26, 211, 0.5)' },
+          '2',
+        );
+        timeline.set(
+          initializeProjectCommitRef.current,
+          { boxShadow: 'none' },
+          '2',
+        );
+
+        timeline.set(
+          addIntroSectionCommitRef.current,
+          {
+            opacity: 1,
+          },
+          '3',
+        );
+        timeline.set(introSectionRef.current, { opacity: 1 }, '3');
+        timeline.set(
+          addIntroSectionCommitCircleRef.current,
+          { boxShadow: '0 0 0 0.4vw rgba(39, 26, 211, 0.5)' },
+          '3',
+        );
+        timeline.set(
+          addHeaderCommitCircleRef.current,
+          { boxShadow: 'none' },
+          '3',
+        );
+
+        timeline.set(animateLettersCommitRef.current, { opacity: 1 }, '4');
+        timeline.set(animationFeatureBranchRef.current, { opacity: 1 }, '4');
+
+        timeline.set(addProductsSectionCommitRef.current, { opacity: 1 }, '5');
+        timeline.set(productsSectionRef.current, { opacity: 1 }, '5');
+
+        timeline.set(addFooterCommitRef.current, { opacity: 1 }, '6');
+        timeline.set(footerSectionRef.current, { opacity: 1 }, '6');
+
+        timeline.set(animateLogoCommitRef.current, { opacity: 1 }, '7');
+
+        timeline.set(mergeCommitRef.current, { opacity: 1 }, '8');
+      }
+
       const mm = gsap.matchMedia();
 
       mm.add('(max-width: 640px)', () => {
@@ -100,23 +170,7 @@ function Page3(): ReactElement {
           '1',
         );
 
-        timeline.set(introContainerRef.current, { opacity: 0 }, '1');
-        timeline.set(visualizationContainerRef.current, { opacity: 1 }, '1');
-
-        timeline.set(addHeaderCommitRef.current, { opacity: 1 }, '2');
-        timeline.set(headerSectionRef.current, { opacity: 1 }, '2');
-
-        timeline.set(addIntroSectionCommitRef.current, { opacity: 1 }, '3');
-        timeline.set(introSectionRef.current, { opacity: 1 }, '3');
-
-        timeline.set(animateLettersCommitRef.current, { opacity: 1 }, '4');
-
-        timeline.set(addProductsSectionCommitRef.current, { opacity: 1 }, '5');
-        timeline.set(addFooterCommitRef.current, { opacity: 1 }, '6');
-
-        timeline.set(animateLogoCommitRef.current, { opacity: 1 }, '7');
-
-        timeline.set(mergeCommitRef.current, { opacity: 1 }, '8');
+        setUpCommonTimeline(timeline);
       });
 
       mm.add('(min-width: 641px) and (max-width: 1024px)', () => {
@@ -131,23 +185,7 @@ function Page3(): ReactElement {
           },
         });
 
-        timeline.set(introContainerRef.current, { opacity: 0 }, '1');
-        timeline.set(visualizationContainerRef.current, { opacity: 1 }, '1');
-
-        timeline.set(addHeaderCommitRef.current, { opacity: 1 }, '2');
-        timeline.set(headerSectionRef.current, { opacity: 1 }, '2');
-
-        timeline.set(addIntroSectionCommitRef.current, { opacity: 1 }, '3');
-        timeline.set(introSectionRef.current, { opacity: 1 }, '3');
-
-        timeline.set(animateLettersCommitRef.current, { opacity: 1 }, '4');
-
-        timeline.set(addProductsSectionCommitRef.current, { opacity: 1 }, '5');
-        timeline.set(addFooterCommitRef.current, { opacity: 1 }, '6');
-
-        timeline.set(animateLogoCommitRef.current, { opacity: 1 }, '7');
-
-        timeline.set(mergeCommitRef.current, { opacity: 1 }, '8');
+        setUpCommonTimeline(timeline);
       });
 
       mm.add('(min-width: 1025px)', () => {
@@ -162,23 +200,7 @@ function Page3(): ReactElement {
           },
         });
 
-        timeline.set(introContainerRef.current, { opacity: 0 }, '1');
-        timeline.set(visualizationContainerRef.current, { opacity: 1 }, '1');
-
-        timeline.set(addHeaderCommitRef.current, { opacity: 1 }, '2');
-        timeline.set(headerSectionRef.current, { opacity: 1 }, '2');
-
-        timeline.set(addIntroSectionCommitRef.current, { opacity: 1 }, '3');
-        timeline.set(introSectionRef.current, { opacity: 1 }, '3');
-
-        timeline.set(animateLettersCommitRef.current, { opacity: 1 }, '4');
-
-        timeline.set(addProductsSectionCommitRef.current, { opacity: 1 }, '5');
-        timeline.set(addFooterCommitRef.current, { opacity: 1 }, '6');
-
-        timeline.set(animateLogoCommitRef.current, { opacity: 1 }, '7');
-
-        timeline.set(mergeCommitRef.current, { opacity: 1 }, '8');
+        setUpCommonTimeline(timeline);
       });
     },
     { dependencies: [gsapShouldUpdate], revertOnUpdate: true },
@@ -266,10 +288,14 @@ function Page3(): ReactElement {
                 </li>
                 <li
                   ref={addHeaderCommitRef}
-                  className='relative  z-[60]  size-[5vw]
+                  className='relative  z-[60]  size-[5vw]  rounded-full
                            opacity-0  transition-opacity  h-md:size-[5vh]'
                 >
-                  <div className='absolute  inset-0  z-30  rounded-full  bg-git-blue'>
+                  <div
+                    ref={addHeaderCommitCircleRef}
+                    className='absolute  inset-0  z-30  rounded-full  bg-git-blue
+                               transition-shadow'
+                  >
                     <p
                       className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
                                 text-xl  leading-normal  text-git-blue  max-md:text-[3vw]
@@ -288,10 +314,14 @@ function Page3(): ReactElement {
                 </li>
                 <li
                   ref={addIntroSectionCommitRef}
-                  className='relative  z-50  size-[5vw]  opacity-0  transition-opacity
-                             h-md:size-[5vh]'
+                  className='relative  z-50  size-[5vw]  rounded-full  opacity-0
+                             transition-opacity  h-md:size-[5vh]'
                 >
-                  <div className='absolute  inset-0  z-30  rounded-full  bg-git-blue'>
+                  <div
+                    ref={addIntroSectionCommitCircleRef}
+                    className='absolute  inset-0  z-30  rounded-full  bg-git-blue
+                               transition-shadow'
+                  >
                     <p
                       className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
                                 text-xl  leading-normal  text-git-blue  max-md:text-[3vw]
@@ -323,10 +353,14 @@ function Page3(): ReactElement {
               >
                 <li
                   ref={addProductsSectionCommitRef}
-                  className='relative  z-40  size-[5vw]  opacity-0  transition-opacity
-                             h-md:size-[5vh]'
+                  className='relative  z-40  size-[5vw]  rounded-full  opacity-0
+                             transition-opacity  h-md:size-[5vh]'
                 >
-                  <div className='absolute  inset-0  z-30  rounded-full  bg-git-blue'>
+                  <div
+                    ref={addProductsSectionCommitCircleRef}
+                    className='absolute  inset-0  z-30  rounded-full  bg-git-blue
+                               transition-shadow'
+                  >
                     <p
                       className='absolute  bottom-[5.2vw]  left-[0.5vw]  
                                origin-top-left  rotate-[-25deg]  text-xl
@@ -347,10 +381,14 @@ function Page3(): ReactElement {
                 </li>
                 <li
                   ref={addFooterCommitRef}
-                  className='relative  z-30  size-[5vw]  opacity-0  transition-opacity
-                             h-md:size-[5vh]'
+                  className='relative  z-30  size-[5vw]  rounded-full  opacity-0
+                             transition-opacity  h-md:size-[5vh]'
                 >
-                  <div className='absolute  inset-0  z-30  rounded-full  bg-git-blue'>
+                  <div
+                    ref={addFooterCommitCircleRef}
+                    className='absolute  inset-0  z-30  rounded-full  bg-git-blue
+                               transition-shadow'
+                  >
                     <p
                       className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
                                text-xl  leading-normal  text-git-blue  max-md:text-[3vw]
@@ -370,10 +408,14 @@ function Page3(): ReactElement {
                 </li>
                 <li
                   ref={mergeCommitRef}
-                  className='relative  z-20  size-[5vw]  opacity-0  transition-opacity
-                             h-md:size-[5vh]'
+                  className='relative  z-20  size-[5vw]  rounded-full  opacity-0
+                             transition-opacity  h-md:size-[5vh]'
                 >
-                  <div className='absolute  inset-0  z-40  rounded-full  bg-git-orange'>
+                  <div
+                    ref={mergeCommitCircleRef}
+                    className='absolute  inset-0  z-40  rounded-full  bg-git-orange
+                               transition-shadow'
+                  >
                     <p
                       className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
                               text-xl  leading-normal  text-git-blue  max-md:text-[3vw]
@@ -417,10 +459,14 @@ function Page3(): ReactElement {
               ></li>
               <li
                 ref={animateLettersCommitRef}
-                className='relative  z-40  size-[5vw]  opacity-0  transition-opacity
-                           h-md:size-[5vh]'
+                className='relative  z-40  size-[5vw]  rounded-full  opacity-0
+                           transition-opacity  h-md:size-[5vh]'
               >
-                <div className='absolute  inset-0  z-30  rounded-full  bg-[#4CBB17]'>
+                <div
+                  ref={animateLettersCommitCircleRef}
+                  className='absolute  inset-0  z-30  rounded-full  bg-[#4CBB17]
+                             transition-shadow'
+                >
                   <p
                     className='absolute  bottom-[2.7vw]  right-[5.7vw] 
                                origin-top-right  rotate-[15deg]  text-xl
@@ -443,10 +489,14 @@ function Page3(): ReactElement {
               </li>
               <li
                 ref={animateLogoCommitRef}
-                className='relative  z-30  size-[5vw]  opacity-0  transition-opacity
-                           h-md:size-[5vh]'
+                className='relative  z-30  size-[5vw]  rounded-full  opacity-0
+                           transition-opacity  h-md:size-[5vh]'
               >
-                <div className='absolute  inset-0  z-30  rounded-full  bg-[#4CBB17]'>
+                <div
+                  ref={animateLogoCommitCircleRef}
+                  className='absolute  inset-0  z-30  rounded-full  bg-[#4CBB17]
+                             transition-shadow'
+                >
                   <p
                     className='absolute  bottom-[2.7vw] right-[5.7vw] 
                             origin-top-right  rotate-[15deg]  text-xl
@@ -546,7 +596,7 @@ function Page3(): ReactElement {
             <div
               ref={headerSectionRef}
               className='mt-[0.55em]  flex  flex-row  items-center
-                         justify-between  px-[10%]  opacity-100  transition-opacity'
+                         justify-between  px-[10%]  opacity-0  transition-opacity'
             >
               <p className='text-[0.8em]  font-bold  text-git-blue  dark:text-[#3D32D1]'>
                 Nikmas Studio
@@ -612,7 +662,7 @@ function Page3(): ReactElement {
             <div
               ref={introSectionRef}
               className='mt-[0.9em]  flex  flex-row  justify-between  px-[10%]
-                            opacity-100  transition-opacity'
+                            opacity-0  transition-opacity'
             >
               <p className='text-[1.05em]  leading-[1.1]  text-[#4CBB17]'>
                 Next-gen
@@ -632,7 +682,7 @@ function Page3(): ReactElement {
             <div
               ref={productsSectionRef}
               className='mt-[1.5em]  flex  w-full  flex-col  items-center  bg-[#E9E8FA]
-                            pb-[1.7em]  pt-[1em]  opacity-100  transition-opacity
+                            pb-[1.7em]  pt-[1em]  opacity-0  transition-opacity
                             dark:bg-[#04061E]'
             >
               <p
@@ -668,7 +718,7 @@ function Page3(): ReactElement {
             <div
               ref={footerSectionRef}
               className='mb-[0.75em]  mt-[2.1em]  flex  flex-row  
-                         justify-between  px-[10%]  opacity-100
+                         justify-between  px-[10%]  opacity-0
                          transition-opacity'
             >
               <div>
@@ -757,7 +807,8 @@ function Page3(): ReactElement {
                 </p>
               </li>
               <li
-                className='flex  flex-row  items-center  gap-2  opacity-100
+                ref={animationFeatureBranchRef}
+                className='flex  flex-row  items-center  gap-2  opacity-0
                              transition-opacity  max-md:gap-[1.4vw]  h-md:gap-[1.4vh]'
               >
                 <div

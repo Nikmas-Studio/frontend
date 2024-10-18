@@ -30,7 +30,7 @@ function Controls({
           {pageNumber}
         </p>
       )}
-      <div className='absolute  right-[3vw]  top-7  z-50  max-md:right-[4.2vw]  max-md:top-4'>
+      <div className='absolute  right-[3vw]  top-5  z-50  max-md:right-[4.2vw]  max-md:top-4'>
         <ThemeToggleDefault
           ref={themeToggleRef}
           reversedColors={reversedColors}
