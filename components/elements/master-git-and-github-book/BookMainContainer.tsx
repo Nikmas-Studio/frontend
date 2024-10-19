@@ -12,7 +12,7 @@ const BookMainContainer = forwardRef<HTMLDivElement, BookMainContainerProps>(
     ref,
   ): ReactElement {
     const classes = classNames(
-      `px-[8.4vw]  pb-40  pt-20  max-md:px-[4.2vw]  max-md:pb-24  max-md:pt-14
+      `px-[8.4vw]  pb-28  pt-16  max-md:px-[4.2vw]  max-md:pb-24  max-md:pt-14
        h-2md:pt-9  h-2md:pb-16`,
       className,
     );
