@@ -6,6 +6,7 @@ import H3 from '@/components/elements/master-git-and-github-book/H3';
 import TextLi from '@/components/elements/master-git-and-github-book/TextLi';
 import TextNode from '@/components/elements/master-git-and-github-book/TextNode';
 import TextUl from '@/components/elements/master-git-and-github-book/TextUl';
+import SpanSplitter from '@/components/elements/SpanSplitter';
 import { BASE_PATH_READ } from '@/constants/master-git-and-github-book';
 import {
   useActiveBackground,
@@ -66,20 +67,44 @@ function Page3(): ReactElement {
   const animationFeatureBranchRef = useRef<HTMLLIElement | null>(null);
 
   const introSectionTextRef = useRef<HTMLParagraphElement | null>(null);
-  const introSectionLogoRef = useRef<HTMLDivElement | null>(null);
+  const introSectionSpineRef = useRef<HTMLDivElement | null>(null);
   const browserWrapperRef = useRef<HTMLDivElement | null>(null);
 
   const step1TextNodeRef = useRef<HTMLParagraphElement | null>(null);
+  const step1TextNodeSmallRef = useRef<HTMLParagraphElement | null>(null);
+
   const step2TextNodeRef = useRef<HTMLParagraphElement | null>(null);
+  const step2TextNodeSmallRef = useRef<HTMLParagraphElement | null>(null);
+
   const step3TextNodeRef = useRef<HTMLParagraphElement | null>(null);
+  const step3TextNodeSmallRef = useRef<HTMLParagraphElement | null>(null);
+
   const step4TextNodeRef = useRef<HTMLParagraphElement | null>(null);
+  const step4TextNodeSmallRef = useRef<HTMLParagraphElement | null>(null);
+
   const step5TextNodeRef = useRef<HTMLParagraphElement | null>(null);
+  const step5TextNodeSmallRef = useRef<HTMLParagraphElement | null>(null);
+
   const step6TextNodeRef = useRef<HTMLParagraphElement | null>(null);
+  const step6TextNodeSmallRef = useRef<HTMLParagraphElement | null>(null);
+
   const step7TextNodeRef = useRef<HTMLParagraphElement | null>(null);
+  const step7TextNodeSmallRef = useRef<HTMLParagraphElement | null>(null);
+
   const step8TextNodeRef = useRef<HTMLParagraphElement | null>(null);
+  const step8TextNodeSmallRef = useRef<HTMLParagraphElement | null>(null);
+
   const step9TextNodeRef = useRef<HTMLParagraphElement | null>(null);
+  const step9TextNodeSmallRef = useRef<HTMLParagraphElement | null>(null);
+
   const step10TextNodeRef = useRef<HTMLParagraphElement | null>(null);
+  const step10TextNodeSmallRef = useRef<HTMLParagraphElement | null>(null);
+
   const step11TextNodeRef = useRef<HTMLParagraphElement | null>(null);
+  const step11TextNodeSmallRef = useRef<HTMLParagraphElement | null>(null);
+
+  const lettersAnimationTweenRef = useRef<gsap.core.Tween | null>(null);
+  const spineAnimationTweenRef = useRef<gsap.core.Tween | null>(null);
 
   const themeToggleRef = useRef<HTMLDivElement | null>(null);
 
@@ -112,16 +137,66 @@ function Page3(): ReactElement {
 
   useGSAP(
     () => {
-      function setUpCommonTimeline(timeline: gsap.core.Timeline): void {
-        const blueBoxShadow =
-          window.innerWidth > 1024
-            ? '0 0 0 0.5vw rgba(39, 26, 211, 0.5)'
-            : '0 0 0 0.7vw rgba(39, 26, 211, 0.5)';
+      function toggleLettersAnimation(finalAnimation: boolean = false): void {
+        console.log('toggleLettersAnimation at ', new Date().getTime());
+        if (lettersAnimationTweenRef.current === null) {
+          lettersAnimationTweenRef.current = gsap.fromTo(
+            introSectionTextRef.current!.querySelectorAll('span'),
+            {
+              visibility: 'hidden',
+            },
+            {
+              visibility: 'visible',
+              duration: 0.1,
+              ease: 'none',
+              stagger: 0.1,
+              yoyo: true,
+              repeat: finalAnimation ? 0 : -1,
+            },
+          );
+        } else {
+          lettersAnimationTweenRef.current.revert();
+          lettersAnimationTweenRef.current = null;
+        }
+      }
 
-        const greenBoxShadow =
-          window.innerWidth > 1024
-            ? '0 0 0 0.5vw rgba(76, 187, 23, 0.5)'
-            : '0 0 0 0.7vw rgba(76, 187, 23, 0.5)';
+      function toggleSpineAnimation(finalAnimation: boolean = false): void {
+        console.log('toggleSpineAnimation at ', new Date().getTime());
+        if (spineAnimationTweenRef.current === null) {
+          spineAnimationTweenRef.current = gsap.fromTo(
+            introSectionSpineRef.current,
+            {
+              opacity: 1,
+            },
+            {
+              opacity: 0,
+              duration: 0.9,
+              ease: 'power2.out',
+              yoyo: true,
+              repeat: finalAnimation ? 7 : -1,
+            },
+          );
+        } else {
+          spineAnimationTweenRef.current.revert();
+          spineAnimationTweenRef.current = null;
+        }
+      }
+
+      function setUpCommonTimeline(timeline: gsap.core.Timeline): void {
+        let shadowSize;
+
+        if (window.innerWidth > 1024) {
+          shadowSize = '0.5vw';
+        } else {
+          shadowSize = '0.7vw';
+        }
+
+        if (window.innerHeight < 560) {
+          shadowSize = '0.7vh';
+        }
+
+        const blueBoxShadow = `0 0 0 ${shadowSize} rgba(39, 26, 211, 0.5)`;
+        const greenBoxShadow = `0 0 0 ${shadowSize} rgba(76, 187, 23, 0.5)`;
 
         timeline.set(
           initializeProjectCommitRef.current,
@@ -153,7 +228,17 @@ function Page3(): ReactElement {
         );
         timeline.set(step2TextNodeRef.current, { opacity: 1, zIndex: 50 }, '2');
         timeline.set(
+          step2TextNodeSmallRef.current,
+          { opacity: 1, zIndex: 50 },
+          '2',
+        );
+        timeline.set(
           step1TextNodeRef.current,
+          { opacity: 0, zIndex: 'auto' },
+          '2',
+        );
+        timeline.set(
+          step1TextNodeSmallRef.current,
           { opacity: 0, zIndex: 'auto' },
           '2',
         );
@@ -178,13 +263,24 @@ function Page3(): ReactElement {
         );
         timeline.set(step3TextNodeRef.current, { opacity: 1, zIndex: 50 }, '3');
         timeline.set(
+          step3TextNodeSmallRef.current,
+          { opacity: 1, zIndex: 50 },
+          '3',
+        );
+        timeline.set(
           step2TextNodeRef.current,
+          { opacity: 0, zIndex: 'auto' },
+          '3',
+        );
+        timeline.set(
+          step2TextNodeSmallRef.current,
           { opacity: 0, zIndex: 'auto' },
           '3',
         );
 
         timeline.set(animateLettersCommitRef.current, { opacity: 1 }, '4');
         timeline.set(introSectionTextRef.current, { color: '#4CBB17' }, '4');
+        timeline.add(toggleLettersAnimation, '4');
         timeline.set(
           animateLettersCommitCircleRef.current,
           {
@@ -202,7 +298,17 @@ function Page3(): ReactElement {
         timeline.set(animationFeatureBranchRef.current, { opacity: 1 }, '4');
         timeline.set(step4TextNodeRef.current, { opacity: 1, zIndex: 50 }, '4');
         timeline.set(
+          step4TextNodeSmallRef.current,
+          { opacity: 1, zIndex: 50 },
+          '4',
+        );
+        timeline.set(
           step3TextNodeRef.current,
+          { opacity: 0, zIndex: 'auto' },
+          '4',
+        );
+        timeline.set(
+          step3TextNodeSmallRef.current,
           { opacity: 0, zIndex: 'auto' },
           '4',
         );
@@ -212,6 +318,7 @@ function Page3(): ReactElement {
           { boxShadow: blueBoxShadow },
           '5',
         );
+        timeline.add(toggleLettersAnimation, '5');
         timeline.set(introSectionTextRef.current, { color: '#271AD3' }, '5');
         timeline.set(
           animateLettersCommitCircleRef.current,
@@ -221,7 +328,17 @@ function Page3(): ReactElement {
         timeline.set(animateLettersCommitRef.current, { opacity: 0.3 }, '5');
         timeline.set(step5TextNodeRef.current, { opacity: 1, zIndex: 50 }, '5');
         timeline.set(
+          step5TextNodeSmallRef.current,
+          { opacity: 1, zIndex: 50 },
+          '5',
+        );
+        timeline.set(
           step4TextNodeRef.current,
+          { opacity: 0, zIndex: 'auto' },
+          '5',
+        );
+        timeline.set(
+          step4TextNodeSmallRef.current,
           { opacity: 0, zIndex: 'auto' },
           '5',
         );
@@ -242,7 +359,17 @@ function Page3(): ReactElement {
         );
         timeline.set(step6TextNodeRef.current, { opacity: 1, zIndex: 50 }, '6');
         timeline.set(
+          step6TextNodeSmallRef.current,
+          { opacity: 1, zIndex: 50 },
+          '6',
+        );
+        timeline.set(
           step5TextNodeRef.current,
+          { opacity: 0, zIndex: 'auto' },
+          '6',
+        );
+        timeline.set(
+          step5TextNodeSmallRef.current,
           { opacity: 0, zIndex: 'auto' },
           '6',
         );
@@ -265,7 +392,17 @@ function Page3(): ReactElement {
         );
         timeline.set(step7TextNodeRef.current, { opacity: 1, zIndex: 50 }, '7');
         timeline.set(
+          step7TextNodeSmallRef.current,
+          { opacity: 1, zIndex: 50 },
+          '7',
+        );
+        timeline.set(
           step6TextNodeRef.current,
+          { opacity: 0, zIndex: 'auto' },
+          '7',
+        );
+        timeline.set(
+          step6TextNodeSmallRef.current,
           { opacity: 0, zIndex: 'auto' },
           '7',
         );
@@ -276,6 +413,7 @@ function Page3(): ReactElement {
           { boxShadow: greenBoxShadow },
           '8',
         );
+        timeline.add(toggleLettersAnimation, '8');
         timeline.set(introSectionTextRef.current, { color: '#4CBB17' }, '8');
         timeline.set(
           addFooterCommitCircleRef.current,
@@ -290,17 +428,28 @@ function Page3(): ReactElement {
         );
         timeline.set(step8TextNodeRef.current, { opacity: 1, zIndex: 50 }, '8');
         timeline.set(
+          step8TextNodeSmallRef.current,
+          { opacity: 1, zIndex: 50 },
+          '8',
+        );
+        timeline.set(
           step7TextNodeRef.current,
+          { opacity: 0, zIndex: 'auto' },
+          '8',
+        );
+        timeline.set(
+          step7TextNodeSmallRef.current,
           { opacity: 0, zIndex: 'auto' },
           '8',
         );
 
         timeline.set(animateLogoCommitRef.current, { opacity: 1 }, '9');
         timeline.set(
-          introSectionLogoRef.current,
+          introSectionSpineRef.current,
           { backgroundColor: '#4CBB17' },
           '9',
         );
+        timeline.add(toggleSpineAnimation, '9');
         timeline.set(
           animateLogoCommitCircleRef.current,
           {
@@ -315,7 +464,17 @@ function Page3(): ReactElement {
         );
         timeline.set(step9TextNodeRef.current, { opacity: 1, zIndex: 50 }, '9');
         timeline.set(
+          step9TextNodeSmallRef.current,
+          { opacity: 1, zIndex: 50 },
+          '9',
+        );
+        timeline.set(
           step8TextNodeRef.current,
+          { opacity: 0, zIndex: 'auto' },
+          '9',
+        );
+        timeline.set(
+          step8TextNodeSmallRef.current,
           { opacity: 0, zIndex: 'auto' },
           '9',
         );
@@ -326,9 +485,11 @@ function Page3(): ReactElement {
           '10',
         );
         timeline.set(addFooterCommitRef.current, { opacity: 1 }, '10');
+        timeline.add(toggleLettersAnimation, '10');
+        timeline.add(toggleSpineAnimation, '10');
         timeline.set(introSectionTextRef.current, { color: '#271AD3' }, '10');
         timeline.set(
-          introSectionLogoRef.current,
+          introSectionSpineRef.current,
           { backgroundColor: '#271AD3' },
           '10',
         );
@@ -346,7 +507,17 @@ function Page3(): ReactElement {
           '10',
         );
         timeline.set(
+          step10TextNodeSmallRef.current,
+          { opacity: 1, zIndex: 50 },
+          '10',
+        );
+        timeline.set(
           step9TextNodeRef.current,
+          { opacity: 0, zIndex: 'auto' },
+          '10',
+        );
+        timeline.set(
+          step9TextNodeSmallRef.current,
           { opacity: 0, zIndex: 'auto' },
           '10',
         );
@@ -366,7 +537,7 @@ function Page3(): ReactElement {
         timeline.set(animateLogoCommitRef.current, { opacity: 1 }, '11');
         timeline.set(introSectionTextRef.current, { color: '#4CBB17' }, '11');
         timeline.set(
-          introSectionLogoRef.current,
+          introSectionSpineRef.current,
           { backgroundColor: '#4CBB17' },
           '11',
         );
@@ -383,10 +554,22 @@ function Page3(): ReactElement {
           '11',
         );
         timeline.set(
+          step11TextNodeSmallRef.current,
+          { opacity: 1, zIndex: 50 },
+          '11',
+        );
+        timeline.set(
           step10TextNodeRef.current,
           { opacity: 0, zIndex: 'auto' },
           '11',
         );
+        timeline.set(
+          step10TextNodeSmallRef.current,
+          { opacity: 0, zIndex: 'auto' },
+          '11',
+        );
+        timeline.add(() => toggleLettersAnimation(true), '11');
+        timeline.add(() => toggleSpineAnimation(true), '11');
       }
 
       const mm = gsap.matchMedia();
@@ -400,6 +583,10 @@ function Page3(): ReactElement {
             scrub: true,
             pin: true,
             anticipatePin: 1,
+            onEnterBack: () => {
+              toggleLettersAnimation();
+              toggleSpineAnimation();
+            },
           },
         });
 
@@ -421,6 +608,10 @@ function Page3(): ReactElement {
             scrub: true,
             pin: true,
             anticipatePin: 1,
+            onEnterBack: () => {
+              toggleLettersAnimation();
+              toggleSpineAnimation();
+            },
           },
         });
 
@@ -436,6 +627,10 @@ function Page3(): ReactElement {
             scrub: true,
             pin: true,
             anticipatePin: 1,
+            onEnterBack: () => {
+              toggleLettersAnimation();
+              toggleSpineAnimation();
+            },
           },
         });
 
@@ -498,11 +693,11 @@ function Page3(): ReactElement {
         <BookMainContainer
           ref={visualizationContainerRef}
           className='absolute  inset-x-0  top-0  z-10  flex    
-                   flex-row  justify-between  opacity-0
-                   transition-opacity  max-lg:bottom-0  max-lg:top-auto  
-                   max-2md:flex-col  max-md:!bottom-0  max-md:!top-auto  max-sm:!bottom-[10vh]
-                   h-2md:!bottom-0  h-md:!bottom-[14vh]  h-md:flex-row  h-sm:!bottom-[10vh]
-                   max-lg:portrait:bottom-auto  max-lg:portrait:top-0'
+                     flex-row  justify-between  opacity-0
+                     transition-opacity  max-lg:bottom-0  max-lg:top-auto  
+                     max-2md:flex-col  max-md:!bottom-[4vh]  max-md:!top-auto  max-sm:!bottom-[15vh]
+                     h-2md:!bottom-[3.5vh]  h-md:!bottom-[14vh]  h-md:flex-row  h-sm:!bottom-[10vh]
+                     wh-sm:!bottom-[10vh]  max-lg:portrait:bottom-auto  max-lg:portrait:top-0'
         >
           <div
             className='flex  flex-col  justify-between  max-2md:translate-x-[-0.7rem]
@@ -767,12 +962,12 @@ function Page3(): ReactElement {
             </div>
             <div
               className='relative  mt-5  w-[22rem]  translate-y-[0.31rem]
-                         max-2md:hidden  h-md:block  h-md:text-[2.5vh]'
+                         max-2md:hidden  h-md:block  h-md:w-[35vh]  h-md:translate-y-[0.7vh]'
             >
               <TextNode
                 ref={step1TextNodeRef}
                 className='absolute  inset-x-0  bottom-0  z-50  !mb-0  text-sm
-                           transition-opacity'
+                           transition-opacity  h-md:text-[1.5vh]  h-md:leading-snug'
               >
                 We&apos;ll be&nbsp;working on&nbsp;the&nbsp;studio website.
                 First, let&apos;s initialize our&nbsp;project and&nbsp;make
@@ -781,46 +976,46 @@ function Page3(): ReactElement {
               <TextNode
                 ref={step2TextNodeRef}
                 className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  opacity-0
-                           transition-opacity'
+                           transition-opacity  h-md:text-[1.5vh]  h-md:leading-snug'
               >
                 Then, add the&nbsp;header and&nbsp;make a&nbsp;commit
               </TextNode>
               <TextNode
                 ref={step3TextNodeRef}
                 className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  opacity-0
-                           transition-opacity'
+                           transition-opacity  h-md:text-[1.5vh]  h-md:leading-snug'
               >
                 Next, add the&nbsp;intro section and&nbsp;commit changes
               </TextNode>
               <TextNode
                 ref={step4TextNodeRef}
                 className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  opacity-0
-                           transition-opacity'
+                           transition-opacity  h-md:text-[1.5vh]  h-md:leading-snug'
               >
                 Now, we got the&nbsp;idea to&nbsp;animate the&nbsp;elements
                 in&nbsp;the&nbsp;intro section. But&nbsp;we see this rather
                 as&nbsp;an&nbsp;extra feature we&apos;d like to&nbsp;experiment
                 with, so&nbsp;instead&nbsp;of&nbsp;working on&nbsp;it
-                on&nbsp;the&nbsp;main branch, we create a&nbsp;separate branch.
-                After&nbsp;switching to&nbsp;the&nbsp;new branch, we start
-                by&nbsp;animating the&nbsp;letters and&nbsp;make the&nbsp;first
-                commit on&nbsp;our animation feature branch
+                on&nbsp;the&nbsp;main branch, we&nbsp;create a&nbsp;separate
+                branch. After&nbsp;switching to&nbsp;the&nbsp;new branch, we
+                start by&nbsp;animating the&nbsp;letters and&nbsp;make
+                the&nbsp;first commit on&nbsp;our animation feature branch
               </TextNode>
               <TextNode
                 ref={step5TextNodeRef}
                 className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  opacity-0
-                           transition-opacity'
+                           transition-opacity  h-md:text-[1.5vh]  h-md:leading-snug'
               >
                 After&nbsp;spending a&nbsp;day playing
                 with&nbsp;the&nbsp;animation, we realized that it would be great
                 to&nbsp;finish the&nbsp;main part of&nbsp;the&nbsp;project
-                first, as&nbsp;the&nbsp;deadline is tomorrow. So&nbsp;now we
-                return to&nbsp;the&nbsp;main branch
+                first, as&nbsp;the&nbsp;deadline is&nbsp;tomorrow. So&nbsp;now
+                we return to&nbsp;the&nbsp;main branch
               </TextNode>
               <TextNode
                 ref={step6TextNodeRef}
                 className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  opacity-0
-                           transition-opacity'
+                           transition-opacity  h-md:text-[1.5vh]  h-md:leading-snug'
               >
                 Then,&nbsp;we add the&nbsp;products section and&nbsp;make
                 a&nbsp;commit
@@ -828,52 +1023,53 @@ function Page3(): ReactElement {
               <TextNode
                 ref={step7TextNodeRef}
                 className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  opacity-0
-                           transition-opacity'
+                           transition-opacity  h-md:text-[1.5vh]  h-md:leading-snug'
               >
-                To&nbsp;finilize the&nbsp;main part of&nbsp;the&nbsp;project, we
-                implement the&nbsp;footer and&nbsp;commit changes
+                To&nbsp;finilize the&nbsp;main part of&nbsp;the&nbsp;project,
+                we&nbsp;implement the&nbsp;footer and&nbsp;commit changes
               </TextNode>
               <TextNode
                 ref={step8TextNodeRef}
                 className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  opacity-0
-                           transition-opacity'
+                           transition-opacity  h-md:text-[1.5vh]  h-md:leading-snug'
               >
                 With&nbsp;a&nbsp;couple of&nbsp;hours left before
-                the&nbsp;deadline, we cherish the&nbsp;hope to&nbsp;complete
-                the&nbsp;animation feature we started earlier.
-                Therefore,&nbsp;we&nbsp;switch to&nbsp;the&nbsp;animation
-                feature branch
+                the&nbsp;deadline, we&nbsp;cherish the&nbsp;hope
+                to&nbsp;complete the&nbsp;animation feature we&nbsp;started
+                earlier. Therefore,&nbsp;we&nbsp;switch
+                to&nbsp;the&nbsp;animation feature branch
               </TextNode>
               <TextNode
                 ref={step9TextNodeRef}
                 className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  opacity-0
-                           transition-opacity'
+                           transition-opacity  h-md:text-[1.5vh]  h-md:leading-snug'
               >
                 Now, we speed run the&nbsp;animation of&nbsp;the&nbsp;spine
                 and&nbsp;commit it. All that&apos;s left is to&nbsp;merge
                 the&nbsp;animation feature into the&nbsp;main branch
-                to&nbsp;have the&nbsp;final combined version of&nbsp;the project
+                to&nbsp;have the&nbsp;final combined version
+                of&nbsp;the&nbsp;project
               </TextNode>
               <TextNode
                 ref={step10TextNodeRef}
                 className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  opacity-0
-                           transition-opacity'
+                           transition-opacity  h-md:text-[1.5vh]  h-md:leading-snug'
               >
-                So, we switch to&nbsp;the latest commit on&nbsp;the&nbsp;main
-                branch
+                So, we switch to&nbsp;the latest commit
+                on&nbsp;the&nbsp;main&nbsp;branch
               </TextNode>
               <TextNode
                 ref={step11TextNodeRef}
                 className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  opacity-0
-                           transition-opacity'
+                           transition-opacity  h-md:text-[1.5vh]  h-md:leading-snug'
               >
                 And&nbsp;do a&nbsp;merge
               </TextNode>
             </div>
           </div>
           <div
-            className='flex  flex-col  justify-between  max-2md:mt-20  
-                        max-md:mt-[7.5vh]  h-md:mt-0'
+            className='flex  flex-col  justify-between  max-2md:mt-[4vh] 
+                        h-md:mt-0'
           >
             <div
               ref={browserWrapperRef}
@@ -1015,20 +1211,20 @@ function Page3(): ReactElement {
                   className='text-[1.05em]  leading-[1.1]  text-[#3D32D1]
                            transition-colors'
                 >
-                  Next-gen
+                  <SpanSplitter text='Next-gen' />
                   <br />
-                  publishing studio
+                  <SpanSplitter text='publishing studio' />
                   <br />
-                  that specializes
+                  <SpanSplitter text='that specializes' />
                   <br />
-                  in creating
+                  <SpanSplitter text='in creating' />
                   <br />
-                  interactive
+                  <SpanSplitter text='interactive' />
                   <br />
-                  e-books
+                  <SpanSplitter text='e-books' />
                 </p>
                 <div
-                  ref={introSectionLogoRef}
+                  ref={introSectionSpineRef}
                   className='h-[6.7em]  w-[0.65em]  rounded-[0.18em]  bg-[#3D32D1]
                            transition-colors'
                 ></div>
@@ -1135,15 +1331,128 @@ function Page3(): ReactElement {
               </div>
             </div>
             <div
-              className='mt-14  flex  flex-row  justify-between  max-md:mt-[4.9vh]
-                          h-md:mt-[4.9vh]'
+              className='mt-14  flex  flex-row  justify-between  max-md:mt-[4vh]
+                          h-md:mt-[6vh]'
             >
-              <TextNode
-                className='hidden  leading-tight  max-2md:block  max-md:text-[2.5vw]
-                                 h-md:hidden'
+              <div
+                className='relative  hidden  w-[22rem]  max-2md:block
+                           max-md:w-1/2  h-md:hidden'
               >
-                Explanation text
-              </TextNode>
+                <TextNode
+                  ref={step1TextNodeSmallRef}
+                  className='absolute  inset-x-0  top-0  z-50  !mb-0  text-sm
+                             transition-opacity  max-md:text-[1.9vw]
+                             max-md:leading-snug'
+                >
+                  We&apos;ll be&nbsp;working on&nbsp;the&nbsp;studio website.
+                  First, let&apos;s initialize our&nbsp;project and&nbsp;make
+                  the&nbsp;corresponding commit
+                </TextNode>
+                <TextNode
+                  ref={step2TextNodeSmallRef}
+                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  opacity-0
+                             transition-opacity  max-md:text-[1.9vw]
+                             max-md:leading-snug'
+                >
+                  Then, add the&nbsp;header and&nbsp;make a&nbsp;commit
+                </TextNode>
+                <TextNode
+                  ref={step3TextNodeSmallRef}
+                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  opacity-0
+                             transition-opacity  max-md:text-[1.9vw]
+                             max-md:leading-snug'
+                >
+                  Next, add the&nbsp;intro section and&nbsp;commit changes
+                </TextNode>
+                <TextNode
+                  ref={step4TextNodeSmallRef}
+                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  opacity-0
+                             transition-opacity  max-md:text-[1.9vw]
+                             max-md:leading-snug'
+                >
+                  Now, we got the&nbsp;idea to&nbsp;animate the&nbsp;elements
+                  in&nbsp;the&nbsp;intro section. But&nbsp;we see this rather
+                  as&nbsp;an&nbsp;extra feature we&apos;d like
+                  to&nbsp;experiment with, so&nbsp;instead&nbsp;of&nbsp;working
+                  on&nbsp;it on&nbsp;the&nbsp;main branch, we&nbsp;create
+                  a&nbsp;separate branch. After&nbsp;switching
+                  to&nbsp;the&nbsp;new branch, we start by&nbsp;animating
+                  the&nbsp;letters and&nbsp;make the&nbsp;first commit
+                  on&nbsp;our animation feature branch
+                </TextNode>
+                <TextNode
+                  ref={step5TextNodeSmallRef}
+                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  opacity-0
+                             transition-opacity  max-md:text-[1.9vw]
+                             max-md:leading-snug'
+                >
+                  After&nbsp;spending a&nbsp;day playing
+                  with&nbsp;the&nbsp;animation, we realized that it would be
+                  great to&nbsp;finish the&nbsp;main part
+                  of&nbsp;the&nbsp;project first, as&nbsp;the&nbsp;deadline
+                  is&nbsp;tomorrow. So&nbsp;now we return to&nbsp;the&nbsp;main
+                  branch
+                </TextNode>
+                <TextNode
+                  ref={step6TextNodeRef}
+                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  opacity-0
+                             transition-opacity  max-md:text-[1.9vw]
+                             max-md:leading-snug'
+                >
+                  Then,&nbsp;we add the&nbsp;products section and&nbsp;make
+                  a&nbsp;commit
+                </TextNode>
+                <TextNode
+                  ref={step7TextNodeSmallRef}
+                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  opacity-0
+                             transition-opacity  max-md:text-[1.9vw]
+                             max-md:leading-snug'
+                >
+                  To&nbsp;finilize the&nbsp;main part of&nbsp;the&nbsp;project,
+                  we&nbsp;implement the&nbsp;footer and&nbsp;commit changes
+                </TextNode>
+                <TextNode
+                  ref={step8TextNodeSmallRef}
+                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  opacity-0
+                             transition-opacity  max-md:text-[1.9vw]
+                             max-md:leading-snug'
+                >
+                  With&nbsp;a&nbsp;couple of&nbsp;hours left before
+                  the&nbsp;deadline, we&nbsp;cherish the&nbsp;hope
+                  to&nbsp;complete the&nbsp;animation feature we&nbsp;started
+                  earlier. Therefore,&nbsp;we&nbsp;switch
+                  to&nbsp;the&nbsp;animation feature branch
+                </TextNode>
+                <TextNode
+                  ref={step9TextNodeSmallRef}
+                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  opacity-0
+                             transition-opacity  max-md:text-[1.9vw]
+                             max-md:leading-snug'
+                >
+                  Now, we speed run the&nbsp;animation of&nbsp;the&nbsp;spine
+                  and&nbsp;commit it. All that&apos;s left is to&nbsp;merge
+                  the&nbsp;animation feature into the&nbsp;main branch
+                  to&nbsp;have the&nbsp;final combined version of&nbsp;the
+                  project
+                </TextNode>
+                <TextNode
+                  ref={step10TextNodeSmallRef}
+                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  opacity-0
+                             transition-opacity  max-md:text-[1.9vw]
+                             max-md:leading-snug'
+                >
+                  So, we switch to&nbsp;the latest commit
+                  on&nbsp;the&nbsp;main&nbsp;branch
+                </TextNode>
+                <TextNode
+                  ref={step11TextNodeSmallRef}
+                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  opacity-0
+                             transition-opacity  max-md:text-[1.9vw]
+                             max-md:leading-snug'
+                >
+                  And&nbsp;do a&nbsp;merge
+                </TextNode>
+              </div>
               <ul className='flex  flex-col  gap-3  max-md:gap-[2vw]  h-md:gap-[2vh]'>
                 <li
                   className='flex  flex-row  items-center  gap-2  max-md:gap-[1.4vw]

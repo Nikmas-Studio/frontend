@@ -23,6 +23,7 @@ const config: Config = {
         'h-2md': { raw: '(max-height: 730px)' },
         'h-md': { raw: '(max-height: 560px)' },
         'h-sm': { raw: '(max-height: 450px)' },
+        'wh-sm': { raw: '(max-width: 380px) and (max-height: 680px)' },
       },
       colors: {
         'git-black': '#00040A',
