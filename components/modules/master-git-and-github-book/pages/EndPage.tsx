@@ -1,11 +1,16 @@
 'use client';
 
+import ExternalLink from '@/components/elements/ExternalLink';
 import { BASE_PATH_READ } from '@/constants/master-git-and-github-book';
 import { useActiveBackgroundDispatch } from '@/context/background-master-git-and-github-book/Context';
 import useGsapResizeUpdate from '@/hooks/use-gsap-resize-update';
 import { useUrlUpdate } from '@/hooks/use-url-update';
+import facebookLogo from '@/public/images/facebook-logo.svg';
 import bookCoverDark from '@/public/images/git-and-github-book-cover-dark-no-spine.jpg';
 import bookCoverLight from '@/public/images/git-and-github-book-cover-light-no-spine.jpg';
+import instagramLogo from '@/public/images/instagram-logo.png';
+import linkedinLogo from '@/public/images/linkedin-logo.png';
+import telegramLogo from '@/public/images/telegram-logo.png';
 import { ActiveBackground } from '@/types/master-git-and-github-book/active-background';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -155,9 +160,55 @@ function EndPage(): ReactElement {
           >
             To Be Continued...{' '}
           </p>
-          <p className='text-center  text-[2vw]  text-white'>
-            (watch our social media for updates)
+          <p className='text-center  text-[2vw]  text-white  max-lg:text-[2.5vw]  max-md:text-[4vw]'>
+            Follow our social media for updates:
           </p>
+          <ul className='mt-4  flex  justify-center  gap-5'>
+            <li>
+              <ExternalLink href='https://t.me/nikmas_studio'>
+                <Image
+                  src={telegramLogo}
+                  alt='Telegram logo'
+                  width={50}
+                  height={50}
+                  className='transition-all  hover:scale-[1.2]'
+                />
+              </ExternalLink>
+            </li>
+            <li>
+              <ExternalLink href='https://www.instagram.com/nikmas.studio/'>
+                <Image
+                  src={instagramLogo}
+                  alt='Instagram logo'
+                  width={50}
+                  height={50}
+                  className='transition-all  hover:scale-[1.2]'
+                />
+              </ExternalLink>
+            </li>
+            <li>
+              <ExternalLink href='https://www.facebook.com/nikmas.studio'>
+                <Image
+                  src={facebookLogo}
+                  alt='Facebook logo'
+                  width={50}
+                  height={50}
+                  className='transition-all  hover:scale-[1.2]'
+                />
+              </ExternalLink>
+            </li>
+            <li>
+              <ExternalLink href='https://www.linkedin.com/company/nikmas-studio'>
+                <Image
+                  src={linkedinLogo}
+                  alt='LinkedIn logo'
+                  width={50}
+                  height={50}
+                  className='transition-all  hover:scale-[1.2]'
+                />
+              </ExternalLink>
+            </li>
+          </ul>
         </div>
       </div>
     </section>

@@ -696,8 +696,8 @@ function Page3(): ReactElement {
                      flex-row  justify-between  opacity-0
                      transition-opacity  max-lg:bottom-0  max-lg:top-auto  
                      max-2md:flex-col  max-md:!bottom-[4vh]  max-md:!top-auto  max-sm:!bottom-[15vh]
-                     h-2md:!bottom-[3.5vh]  h-md:!bottom-[14vh]  h-md:flex-row  h-sm:!bottom-[10vh]
-                     wh-sm:!bottom-[10vh]  max-lg:portrait:bottom-auto  max-lg:portrait:top-0'
+                     h-md:!bottom-[14vh]  h-md:flex-row  h-sm:!bottom-[10vh]  wh-sm:!bottom-[10vh]
+                     max-lg:portrait:bottom-auto  max-lg:portrait:top-0  h-2md:portrait:!bottom-[3.5vh]'
         >
           <div
             className='flex  flex-col  justify-between  max-2md:translate-x-[-0.7rem]
