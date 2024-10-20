@@ -152,7 +152,10 @@ function EndPage(): ReactElement {
         className='pointer-events-none  absolute  h-lvh  w-screen opacity-0
                     [background-color:rgba(0,0,0,0.8)]'
       >
-        <div className='absolute  left-1/2  top-[43%]  -translate-x-1/2  -translate-y-1/2'>
+        <div
+          className='absolute  left-1/2  top-[43%]  -translate-x-1/2  -translate-y-1/2
+                        max-sm:top-[41%]'
+        >
           <p
             className='
                     text-center  text-[8vw]  font-bold  leading-tight  
@@ -163,7 +166,7 @@ function EndPage(): ReactElement {
           <p className='text-center  text-[2vw]  text-white  max-lg:text-[2.5vw]  max-md:text-[4vw]'>
             Follow our social media for updates:
           </p>
-          <ul className='mt-4  flex  justify-center  gap-5'>
+          <ul className='mt-4  flex  justify-center  gap-5  max-lg:mt-3  max-sm:mt-2'>
             <li>
               <ExternalLink href='https://t.me/nikmas_studio'>
                 <Image
