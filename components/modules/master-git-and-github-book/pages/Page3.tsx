@@ -1290,28 +1290,28 @@ function Page3(): ReactElement {
                 <div className='flex  flex-row  gap-[0.3em]'>
                   <div
                     className='grid  size-[1.9em]  place-content-center  
-                             rounded-full  bg-git-blue  pt-[0.15em]
+                             rounded-full  bg-git-blue  pt-[0.32em]
                              text-[0.42em]  text-white  '
                   >
                     T
                   </div>
                   <div
                     className='grid  size-[1.9em]  place-content-center 
-                              rounded-full  bg-git-blue  pt-[0.15em]
+                              rounded-full  bg-git-blue  pt-[0.32em]
                                 text-[0.42em]  text-white'
                   >
                     I
                   </div>
                   <div
                     className='grid  size-[1.9em]  place-content-center
-                              rounded-full  bg-git-blue  pt-[0.15em]
+                              rounded-full  bg-git-blue  pt-[0.32em]
                                 text-[0.42em]  text-white'
                   >
                     F
                   </div>
                   <div
                     className='grid  size-[1.9em]  place-content-center
-                              rounded-full  bg-git-blue  pt-[0.15em]
+                              rounded-full  bg-git-blue  pt-[0.32em]
                                 text-[0.42em]  text-white'
                   >
                     L
