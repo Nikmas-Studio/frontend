@@ -1394,7 +1394,7 @@ function Page3(): ReactElement {
                   branch
                 </TextNode>
                 <TextNode
-                  ref={step6TextNodeRef}
+                  ref={step6TextNodeSmallRef}
                   className='absolute  inset-x-0  top-0  !mb-0  text-sm  opacity-0
                              transition-opacity  max-md:text-[1.9vw]
                              max-md:leading-snug'
