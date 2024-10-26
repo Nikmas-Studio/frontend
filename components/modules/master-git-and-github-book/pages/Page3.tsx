@@ -967,7 +967,7 @@ function Page3(): ReactElement {
               <TextNode
                 ref={step1TextNodeRef}
                 className='absolute  inset-x-0  bottom-0  z-50  !mb-0  text-sm
-                           transition-opacity  h-md:text-[1.5vh]  h-md:leading-snug'
+                           leading-normal  transition-opacity  h-md:text-[1.5vh]'
               >
                 We&apos;ll be&nbsp;working on&nbsp;the&nbsp;studio website.
                 First, let&apos;s initialize our&nbsp;project and&nbsp;make
@@ -975,22 +975,25 @@ function Page3(): ReactElement {
               </TextNode>
               <TextNode
                 ref={step2TextNodeRef}
-                className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  opacity-0
-                           transition-opacity  h-md:text-[1.5vh]  h-md:leading-snug'
+                className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  leading-normal
+                           opacity-0
+                           transition-opacity  h-md:text-[1.5vh]'
               >
                 Then, add the&nbsp;header and&nbsp;make a&nbsp;commit
               </TextNode>
               <TextNode
                 ref={step3TextNodeRef}
-                className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  opacity-0
-                           transition-opacity  h-md:text-[1.5vh]  h-md:leading-snug'
+                className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  leading-normal
+                           opacity-0  transition-opacity  h-md:text-[1.5vh]
+                           '
               >
                 Next, add the&nbsp;intro section and&nbsp;commit changes
               </TextNode>
               <TextNode
                 ref={step4TextNodeRef}
-                className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  opacity-0
-                           transition-opacity  h-md:text-[1.5vh]  h-md:leading-snug'
+                className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  leading-normal
+                           opacity-0  transition-opacity  h-md:text-[1.5vh]
+                           '
               >
                 Now, we got the&nbsp;idea to&nbsp;animate the&nbsp;elements
                 in&nbsp;the&nbsp;intro section. But&nbsp;we see this rather
@@ -1003,8 +1006,9 @@ function Page3(): ReactElement {
               </TextNode>
               <TextNode
                 ref={step5TextNodeRef}
-                className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  opacity-0
-                           transition-opacity  h-md:text-[1.5vh]  h-md:leading-snug'
+                className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  leading-normal
+                           opacity-0  transition-opacity  h-md:text-[1.5vh]
+                           '
               >
                 After&nbsp;spending a&nbsp;day playing
                 with&nbsp;the&nbsp;animation, we realized that it would be great
@@ -1014,24 +1018,27 @@ function Page3(): ReactElement {
               </TextNode>
               <TextNode
                 ref={step6TextNodeRef}
-                className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  opacity-0
-                           transition-opacity  h-md:text-[1.5vh]  h-md:leading-snug'
+                className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  leading-normal
+                           opacity-0  transition-opacity  h-md:text-[1.5vh]
+                           '
               >
                 Then,&nbsp;we add the&nbsp;products section and&nbsp;make
                 a&nbsp;commit
               </TextNode>
               <TextNode
                 ref={step7TextNodeRef}
-                className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  opacity-0
-                           transition-opacity  h-md:text-[1.5vh]  h-md:leading-snug'
+                className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  leading-normal
+                           opacity-0  transition-opacity  h-md:text-[1.5vh]
+                           '
               >
                 To&nbsp;finilize the&nbsp;main part of&nbsp;the&nbsp;project,
                 we&nbsp;implement the&nbsp;footer and&nbsp;commit changes
               </TextNode>
               <TextNode
                 ref={step8TextNodeRef}
-                className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  opacity-0
-                           transition-opacity  h-md:text-[1.5vh]  h-md:leading-snug'
+                className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  leading-normal
+                           opacity-0  transition-opacity  h-md:text-[1.5vh]
+                           '
               >
                 With&nbsp;a&nbsp;couple of&nbsp;hours left before
                 the&nbsp;deadline, we&nbsp;cherish the&nbsp;hope
@@ -1041,8 +1048,9 @@ function Page3(): ReactElement {
               </TextNode>
               <TextNode
                 ref={step9TextNodeRef}
-                className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  opacity-0
-                           transition-opacity  h-md:text-[1.5vh]  h-md:leading-snug'
+                className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  leading-normal
+                           opacity-0  transition-opacity  h-md:text-[1.5vh]
+                           '
               >
                 Now, we speed run the&nbsp;animation of&nbsp;the&nbsp;spine
                 and&nbsp;commit it. All that&apos;s left is to&nbsp;merge
@@ -1052,16 +1060,18 @@ function Page3(): ReactElement {
               </TextNode>
               <TextNode
                 ref={step10TextNodeRef}
-                className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  opacity-0
-                           transition-opacity  h-md:text-[1.5vh]  h-md:leading-snug'
+                className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  leading-normal
+                           opacity-0  transition-opacity  h-md:text-[1.5vh]
+                           '
               >
                 So, we switch to&nbsp;the latest commit
                 on&nbsp;the&nbsp;main&nbsp;branch
               </TextNode>
               <TextNode
                 ref={step11TextNodeRef}
-                className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  opacity-0
-                           transition-opacity  h-md:text-[1.5vh]  h-md:leading-snug'
+                className='absolute  inset-x-0  bottom-0  !mb-0  text-sm  leading-normal
+                           opacity-0  transition-opacity  h-md:text-[1.5vh]
+                           '
               >
                 And&nbsp;do a&nbsp;merge
               </TextNode>
@@ -1341,8 +1351,8 @@ function Page3(): ReactElement {
                 <TextNode
                   ref={step1TextNodeSmallRef}
                   className='absolute  inset-x-0  top-0  z-50  !mb-0  text-sm
-                             transition-opacity  max-md:text-[1.9vw]
-                             max-md:leading-snug'
+                             leading-normal  transition-opacity
+                             max-md:text-[1.9vw]'
                 >
                   We&apos;ll be&nbsp;working on&nbsp;the&nbsp;studio website.
                   First, let&apos;s initialize our&nbsp;project and&nbsp;make
@@ -1350,25 +1360,25 @@ function Page3(): ReactElement {
                 </TextNode>
                 <TextNode
                   ref={step2TextNodeSmallRef}
-                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  opacity-0
-                             transition-opacity  max-md:text-[1.9vw]
-                             max-md:leading-snug'
+                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  leading-normal
+                             opacity-0  transition-opacity
+                             max-md:text-[1.9vw]'
                 >
                   Then, add the&nbsp;header and&nbsp;make a&nbsp;commit
                 </TextNode>
                 <TextNode
                   ref={step3TextNodeSmallRef}
-                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  opacity-0
-                             transition-opacity  max-md:text-[1.9vw]
-                             max-md:leading-snug'
+                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  leading-normal
+                             opacity-0  transition-opacity
+                             max-md:text-[1.9vw]'
                 >
                   Next, add the&nbsp;intro section and&nbsp;commit changes
                 </TextNode>
                 <TextNode
                   ref={step4TextNodeSmallRef}
-                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  opacity-0
-                             transition-opacity  max-md:text-[1.9vw]
-                             max-md:leading-snug'
+                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  leading-normal
+                             opacity-0  transition-opacity
+                             max-md:text-[1.9vw]'
                 >
                   Now, we got the&nbsp;idea to&nbsp;animate the&nbsp;elements
                   in&nbsp;the&nbsp;intro section. But&nbsp;we see this rather
@@ -1382,9 +1392,9 @@ function Page3(): ReactElement {
                 </TextNode>
                 <TextNode
                   ref={step5TextNodeSmallRef}
-                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  opacity-0
-                             transition-opacity  max-md:text-[1.9vw]
-                             max-md:leading-snug'
+                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  leading-normal
+                             opacity-0  transition-opacity
+                             max-md:text-[1.9vw]'
                 >
                   After&nbsp;spending a&nbsp;day playing
                   with&nbsp;the&nbsp;animation, we realized that it would be
@@ -1395,27 +1405,27 @@ function Page3(): ReactElement {
                 </TextNode>
                 <TextNode
                   ref={step6TextNodeSmallRef}
-                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  opacity-0
-                             transition-opacity  max-md:text-[1.9vw]
-                             max-md:leading-snug'
+                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  leading-normal
+                             opacity-0  transition-opacity
+                             max-md:text-[1.9vw]'
                 >
                   Then,&nbsp;we add the&nbsp;products section and&nbsp;make
                   a&nbsp;commit
                 </TextNode>
                 <TextNode
                   ref={step7TextNodeSmallRef}
-                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  opacity-0
-                             transition-opacity  max-md:text-[1.9vw]
-                             max-md:leading-snug'
+                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  leading-normal
+                             opacity-0  transition-opacity
+                             max-md:text-[1.9vw]'
                 >
                   To&nbsp;finilize the&nbsp;main part of&nbsp;the&nbsp;project,
                   we&nbsp;implement the&nbsp;footer and&nbsp;commit changes
                 </TextNode>
                 <TextNode
                   ref={step8TextNodeSmallRef}
-                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  opacity-0
-                             transition-opacity  max-md:text-[1.9vw]
-                             max-md:leading-snug'
+                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  leading-normal
+                             opacity-0  transition-opacity
+                             max-md:text-[1.9vw]'
                 >
                   With&nbsp;a&nbsp;couple of&nbsp;hours left before
                   the&nbsp;deadline, we&nbsp;cherish the&nbsp;hope
@@ -1425,9 +1435,9 @@ function Page3(): ReactElement {
                 </TextNode>
                 <TextNode
                   ref={step9TextNodeSmallRef}
-                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  opacity-0
-                             transition-opacity  max-md:text-[1.9vw]
-                             max-md:leading-snug'
+                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  leading-normal
+                             opacity-0  transition-opacity
+                             max-md:text-[1.9vw]'
                 >
                   Now, we speed run the&nbsp;animation of&nbsp;the&nbsp;spine
                   and&nbsp;commit it. All that&apos;s left is to&nbsp;merge
@@ -1437,18 +1447,18 @@ function Page3(): ReactElement {
                 </TextNode>
                 <TextNode
                   ref={step10TextNodeSmallRef}
-                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  opacity-0
-                             transition-opacity  max-md:text-[1.9vw]
-                             max-md:leading-snug'
+                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  leading-normal
+                             opacity-0  transition-opacity
+                             max-md:text-[1.9vw]'
                 >
                   So, we switch to&nbsp;the latest commit
                   on&nbsp;the&nbsp;main&nbsp;branch
                 </TextNode>
                 <TextNode
                   ref={step11TextNodeSmallRef}
-                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  opacity-0
-                             transition-opacity  max-md:text-[1.9vw]
-                             max-md:leading-snug'
+                  className='absolute  inset-x-0  top-0  !mb-0  text-sm  leading-normal
+                             opacity-0  transition-opacity
+                             max-md:text-[1.9vw]'
                 >
                   And&nbsp;do a&nbsp;merge
                 </TextNode>
