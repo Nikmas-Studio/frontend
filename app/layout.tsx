@@ -1,3 +1,4 @@
+import Script from 'next/script';
 import './globals.css';
 
 import { ReactElement, ReactNode } from 'react';
@@ -10,6 +11,19 @@ export default function RootLayout({
   return (
     <html lang='en' className='bg-white  dark:bg-black'>
       <head>
+        <Script
+          async
+          src='https://www.googletagmanager.com/gtag/js?id=G-0Z0LRD55BR'
+        ></Script>
+        <Script id='google-analytics'>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-0Z0LRD55BR');
+        `}
+        </Script>
         <meta name='format-detection' content='email=no' />
         <script
           dangerouslySetInnerHTML={{
