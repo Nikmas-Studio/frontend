@@ -24,7 +24,7 @@ function Controls({
     <div className='absolute  inset-0  z-50'>
       {pageNumber && (
         <p
-          className='absolute  bottom-7  right-[3vw]  text-git-black  max-md:bottom-[1.1rem]
+          className='absolute  bottom-6  right-[3vw]  text-git-black  max-md:bottom-[1.1rem]
                  max-md:right-[4.2vw]  dark:text-git-white'
         >
           {pageNumber}
