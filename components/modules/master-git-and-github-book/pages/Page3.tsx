@@ -137,9 +137,12 @@ function Page3(): ReactElement {
 
   useGSAP(
     () => {
-      function toggleLettersAnimation(finalAnimation: boolean = false): void {
-        console.log('toggleLettersAnimation at ', new Date().getTime());
-        if (lettersAnimationTweenRef.current === null) {
+      function toggleLettersAnimation(
+        action: 'start' | 'stop',
+        direction: number | undefined,
+        finalAnimation: boolean = false,
+      ): void {
+        function start(): void {
           lettersAnimationTweenRef.current = gsap.fromTo(
             introSectionTextRef.current!.querySelectorAll('span'),
             {
@@ -154,15 +157,59 @@ function Page3(): ReactElement {
               repeat: finalAnimation ? 0 : -1,
             },
           );
+        }
+
+        function stop(): void {
+          if (lettersAnimationTweenRef.current !== null) {
+            lettersAnimationTweenRef.current.revert();
+            lettersAnimationTweenRef.current = null;
+          }
+        }
+
+        console.log('toggleLettersAnimation');
+        if (action === 'start') {
+          console.log('action === start');
+          if (lettersAnimationTweenRef.current === null) {
+            console.log('lettersAnimationTweenRef.current === null');
+            start();
+          } else {
+            console.log('lettersAnimationTweenRef.current !== null');
+            console.log('direction: ', direction);
+            if (direction === 1) {
+              console.log('direction === 1');
+              start();
+            } else {
+              console.log('direction !== 1');
+              stop();
+            }
+          }
         } else {
-          lettersAnimationTweenRef.current.revert();
-          lettersAnimationTweenRef.current = null;
+          console.log('action === ', action);
+          if (lettersAnimationTweenRef.current !== null) {
+            console.log('lettersAnimationTweenRef.current !== null');
+            console.log('direction: ', direction);
+            if (direction === 1) {
+              console.log('direction === 1');
+              stop();
+            } else {
+              console.log('direction !== 1');
+              start();
+            }
+          } else {
+            console.log('direction: ', direction);
+            if (direction === -1) {
+              start();
+            }
+          }
         }
       }
 
-      function toggleSpineAnimation(finalAnimation: boolean = false): void {
-        console.log('toggleSpineAnimation at ', new Date().getTime());
-        if (spineAnimationTweenRef.current === null) {
+      function toggleSpineAnimation(
+        action: 'start' | 'stop',
+        direction: number | undefined,
+        finalAnimation: boolean = false,
+      ): void {
+        function start(): void {
           spineAnimationTweenRef.current = gsap.fromTo(
             introSectionSpineRef.current,
             {
@@ -176,9 +223,42 @@ function Page3(): ReactElement {
               repeat: finalAnimation ? 7 : -1,
             },
           );
+        }
+
+        function stop(): void {
+          if (spineAnimationTweenRef.current !== null) {
+            spineAnimationTweenRef.current.revert();
+            spineAnimationTweenRef.current = null;
+          }
+        }
+
+        console.log('toggleSpineAnimation');
+        if (action === 'start') {
+          console.log('action === start');
+          if (spineAnimationTweenRef.current === null) {
+            console.log('spineAnimationTweenRef.current === null');
+            start();
+          } else {
+            console.log('spineAnimationTweenRef.current !== null');
+            if (direction === 1) {
+              start();
+            } else {
+              stop();
+            }
+          }
         } else {
-          spineAnimationTweenRef.current.revert();
-          spineAnimationTweenRef.current = null;
+          console.log('action === ', action);
+          if (spineAnimationTweenRef.current !== null) {
+            if (direction === 1) {
+              stop();
+            } else {
+              start();
+            }
+          } else {
+            if (direction === -1) {
+              start();
+            }
+          }
         }
       }
 
@@ -280,7 +360,11 @@ function Page3(): ReactElement {
 
         timeline.set(animateLettersCommitRef.current, { opacity: 1 }, '4');
         timeline.set(introSectionTextRef.current, { color: '#4CBB17' }, '4');
-        timeline.add(toggleLettersAnimation, '4');
+        timeline.add(
+          () =>
+            toggleLettersAnimation('start', timeline.scrollTrigger?.direction),
+          '4',
+        );
         timeline.set(
           animateLettersCommitCircleRef.current,
           {
@@ -318,7 +402,11 @@ function Page3(): ReactElement {
           { boxShadow: blueBoxShadow },
           '5',
         );
-        timeline.add(toggleLettersAnimation, '5');
+        timeline.add(
+          () =>
+            toggleLettersAnimation('stop', timeline.scrollTrigger?.direction),
+          '5',
+        );
         timeline.set(introSectionTextRef.current, { color: '#271AD3' }, '5');
         timeline.set(
           animateLettersCommitCircleRef.current,
@@ -413,7 +501,11 @@ function Page3(): ReactElement {
           { boxShadow: greenBoxShadow },
           '8',
         );
-        timeline.add(toggleLettersAnimation, '8');
+        timeline.add(
+          () =>
+            toggleLettersAnimation('start', timeline.scrollTrigger?.direction),
+          '8',
+        );
         timeline.set(introSectionTextRef.current, { color: '#4CBB17' }, '8');
         timeline.set(
           addFooterCommitCircleRef.current,
@@ -449,7 +541,11 @@ function Page3(): ReactElement {
           { backgroundColor: '#4CBB17' },
           '9',
         );
-        timeline.add(toggleSpineAnimation, '9');
+        timeline.add(
+          () =>
+            toggleSpineAnimation('start', timeline.scrollTrigger?.direction),
+          '9',
+        );
         timeline.set(
           animateLogoCommitCircleRef.current,
           {
@@ -485,8 +581,15 @@ function Page3(): ReactElement {
           '10',
         );
         timeline.set(addFooterCommitRef.current, { opacity: 1 }, '10');
-        timeline.add(toggleLettersAnimation, '10');
-        timeline.add(toggleSpineAnimation, '10');
+        timeline.add(
+          () =>
+            toggleLettersAnimation('stop', timeline.scrollTrigger?.direction),
+          '10',
+        );
+        timeline.add(
+          () => toggleSpineAnimation('stop', timeline.scrollTrigger?.direction),
+          '10',
+        );
         timeline.set(introSectionTextRef.current, { color: '#271AD3' }, '10');
         timeline.set(
           introSectionSpineRef.current,
@@ -568,8 +671,24 @@ function Page3(): ReactElement {
           { opacity: 0, zIndex: 'auto' },
           '11',
         );
-        timeline.add(() => toggleLettersAnimation(true), '11');
-        timeline.add(() => toggleSpineAnimation(true), '11');
+        timeline.add(
+          () =>
+            toggleLettersAnimation(
+              'start',
+              timeline.scrollTrigger?.direction,
+              true,
+            ),
+          '11',
+        );
+        timeline.add(
+          () =>
+            toggleSpineAnimation(
+              'start',
+              timeline.scrollTrigger?.direction,
+              true,
+            ),
+          '11',
+        );
       }
 
       const mm = gsap.matchMedia();
@@ -584,8 +703,8 @@ function Page3(): ReactElement {
             pin: true,
             anticipatePin: 1,
             onEnterBack: () => {
-              toggleLettersAnimation();
-              toggleSpineAnimation();
+              toggleLettersAnimation('stop', 1);
+              toggleSpineAnimation('stop', 1);
             },
           },
         });
@@ -609,8 +728,8 @@ function Page3(): ReactElement {
             pin: true,
             anticipatePin: 1,
             onEnterBack: () => {
-              toggleLettersAnimation();
-              toggleSpineAnimation();
+              toggleLettersAnimation('stop', 1);
+              toggleSpineAnimation('stop', 1);
             },
           },
         });
@@ -628,8 +747,8 @@ function Page3(): ReactElement {
             pin: true,
             anticipatePin: 1,
             onEnterBack: () => {
-              toggleLettersAnimation();
-              toggleSpineAnimation();
+              toggleLettersAnimation('stop', 1);
+              toggleSpineAnimation('stop', 1);
             },
           },
         });
