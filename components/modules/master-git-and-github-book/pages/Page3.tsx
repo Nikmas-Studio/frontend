@@ -166,37 +166,24 @@ function Page3(): ReactElement {
           }
         }
 
-        console.log('toggleLettersAnimation');
         if (action === 'start') {
-          console.log('action === start');
           if (lettersAnimationTweenRef.current === null) {
-            console.log('lettersAnimationTweenRef.current === null');
             start();
           } else {
-            console.log('lettersAnimationTweenRef.current !== null');
-            console.log('direction: ', direction);
             if (direction === 1) {
-              console.log('direction === 1');
               start();
             } else {
-              console.log('direction !== 1');
               stop();
             }
           }
         } else {
-          console.log('action === ', action);
           if (lettersAnimationTweenRef.current !== null) {
-            console.log('lettersAnimationTweenRef.current !== null');
-            console.log('direction: ', direction);
             if (direction === 1) {
-              console.log('direction === 1');
               stop();
             } else {
-              console.log('direction !== 1');
               start();
             }
           } else {
-            console.log('direction: ', direction);
             if (direction === -1) {
               start();
             }
@@ -232,14 +219,10 @@ function Page3(): ReactElement {
           }
         }
 
-        console.log('toggleSpineAnimation');
         if (action === 'start') {
-          console.log('action === start');
           if (spineAnimationTweenRef.current === null) {
-            console.log('spineAnimationTweenRef.current === null');
             start();
           } else {
-            console.log('spineAnimationTweenRef.current !== null');
             if (direction === 1) {
               start();
             } else {
