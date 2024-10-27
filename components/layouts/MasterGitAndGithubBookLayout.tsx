@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-head-element */
 'use client';
 
 import { gilroy } from '@/fonts';
@@ -7,7 +6,7 @@ import Background from '../elements/master-git-and-github-book/Background';
 import ProvidersDefault from '../modules/providers/ProvidersDefault';
 import ProvidersMasterGitAndGithubBook from '../modules/providers/ProvidersMasterGitAndGithubBook';
 
-function MasterGitAndGithubBookReadLayout({
+function MasterGitAndGithubBookLayout({
   children,
 }: {
   children: ReactNode;
@@ -42,4 +41,4 @@ function MasterGitAndGithubBookReadLayout({
   );
 }
 
-export default MasterGitAndGithubBookReadLayout;
+export default MasterGitAndGithubBookLayout;

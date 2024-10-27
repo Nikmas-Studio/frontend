@@ -1,7 +1,8 @@
+import BookDemo from '@/components/modules/master-git-and-github-book/BookDemo';
 import { ReactElement } from 'react';
 
-function MasterGitAndGithubBookDemo(): ReactElement {
-  return <div className='text-5xl'>Master Git & Github Book Demo</div>;
+function MasterGitAndGithubBookRead(): ReactElement {
+  return <BookDemo />;
 }
 
-export default MasterGitAndGithubBookDemo;
+export default MasterGitAndGithubBookRead;

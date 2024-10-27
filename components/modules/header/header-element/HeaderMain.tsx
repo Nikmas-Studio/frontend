@@ -165,7 +165,7 @@ function HeaderMain(): ReactElement {
   }, []);
 
   const headerClasses = classNames(
-    `pt-4  pb-6  md:pt-5  md:pb-7  fixed  left-0  right-0  top-0  border-b
+    `pt-4  pb-6  fixed  left-0  right-0  top-0  border-b
      header-transition z-50
      [background-image:linear-gradient(135deg,var(--headerLightModeBgFirstColor),var(--headerLightModeBgSecondColor))]
      dark:[background-image:linear-gradient(135deg,var(--headerDarkModeBgFirstColor),var(--headerDarkModeBgSecondColor))]`,
@@ -182,7 +182,7 @@ function HeaderMain(): ReactElement {
       <MainContainer className='flex  items-center  justify-between  gap-x-7'>
         <Logo
           ref={headerLogoElementRef}
-          className='flex-none  translate-y-[0.187rem]'
+          className='flex-none  translate-y-[0.187rem]  cursor-default'
         />
         <HeaderButtonsMain />
       </MainContainer>

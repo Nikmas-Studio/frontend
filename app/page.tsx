@@ -12,7 +12,7 @@ export default function Home(): ReactElement {
   return (
     <DefaultLayout>
       <ProvidersMain>
-        <div className='pt-[5.118rem]  md:pt-[6.0625rem]'>
+        <div className='pt-[5.118rem]'>
           <HeaderMain />
           <main>
             <IntroSection />

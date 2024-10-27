@@ -9,6 +9,11 @@ export const gilroy = localFont({
       style: 'normal',
     },
     {
+      path: './public/fonts/Gilroy-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
       path: './public/fonts/Gilroy-Semibold.woff2',
       weight: '600',
       style: 'normal',

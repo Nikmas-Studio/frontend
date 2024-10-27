@@ -2,10 +2,15 @@
 
 import BookMainContainer from '@/components/elements/master-git-and-github-book/BookMainContainer';
 import H1 from '@/components/elements/master-git-and-github-book/H1';
-import { BASE_PATH_READ } from '@/constants/master-git-and-github-book';
+import {
+  BASE_PATH_DEMO,
+  BASE_PATH_READ,
+} from '@/constants/master-git-and-github-book';
 import { useActiveBackgroundDispatch } from '@/context/background-master-git-and-github-book/Context';
+import { useBookVersion } from '@/context/book-version/Context';
 import useGsapResizeUpdate from '@/hooks/use-gsap-resize-update';
 import { useUrlUpdate } from '@/hooks/use-url-update';
+import { BookVersion } from '@/types/book-version';
 import { ActiveBackground } from '@/types/master-git-and-github-book/active-background';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -20,6 +25,9 @@ function Page1(): ReactElement {
   const sectionRef = useRef<HTMLElement | null>(null);
   const { gsapShouldUpdate } = useGsapResizeUpdate();
   const { setActiveBackground } = useActiveBackgroundDispatch();
+  const bookVersion = useBookVersion();
+  const basePath =
+    bookVersion === BookVersion.DEMO ? BASE_PATH_DEMO : BASE_PATH_READ;
 
   useGSAP(
     () => {
@@ -41,7 +49,7 @@ function Page1(): ReactElement {
   useUrlUpdate({
     pageRef: sectionRef,
     currentPage: 1,
-    basePath: BASE_PATH_READ,
+    basePath,
   });
 
   return (

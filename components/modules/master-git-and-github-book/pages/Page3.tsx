@@ -7,13 +7,18 @@ import TextLi from '@/components/elements/master-git-and-github-book/TextLi';
 import TextNode from '@/components/elements/master-git-and-github-book/TextNode';
 import TextUl from '@/components/elements/master-git-and-github-book/TextUl';
 import SpanSplitter from '@/components/elements/SpanSplitter';
-import { BASE_PATH_READ } from '@/constants/master-git-and-github-book';
+import {
+  BASE_PATH_DEMO,
+  BASE_PATH_READ,
+} from '@/constants/master-git-and-github-book';
 import {
   useActiveBackground,
   useActiveBackgroundDispatch,
 } from '@/context/background-master-git-and-github-book/Context';
+import { useBookVersion } from '@/context/book-version/Context';
 import useGsapResizeUpdate from '@/hooks/use-gsap-resize-update';
 import { useUrlUpdate } from '@/hooks/use-url-update';
+import { BookVersion } from '@/types/book-version';
 import { ActiveBackground } from '@/types/master-git-and-github-book/active-background';
 import { useGSAP } from '@gsap/react';
 import classNames from 'classnames';
@@ -30,6 +35,9 @@ function Page3(): ReactElement {
   const { setActiveBackground } = useActiveBackgroundDispatch();
   const sectionRef = useRef<HTMLElement | null>(null);
   const { gsapShouldUpdate } = useGsapResizeUpdate();
+  const bookVersion = useBookVersion();
+  const basePath =
+    bookVersion === BookVersion.DEMO ? BASE_PATH_DEMO : BASE_PATH_READ;
 
   const pageWrapperRef = useRef<HTMLDivElement | null>(null);
 
@@ -107,6 +115,12 @@ function Page3(): ReactElement {
   const spineAnimationTweenRef = useRef<gsap.core.Tween | null>(null);
 
   const themeToggleRef = useRef<HTMLDivElement | null>(null);
+
+  useUrlUpdate({
+    pageRef: sectionRef,
+    currentPage: 3,
+    basePath,
+  });
 
   useGSAP(
     () => {
@@ -733,12 +747,6 @@ function Page3(): ReactElement {
     },
     { dependencies: [gsapShouldUpdate], revertOnUpdate: true },
   );
-
-  useUrlUpdate({
-    pageRef: sectionRef,
-    currentPage: 3,
-    basePath: BASE_PATH_READ,
-  });
 
   const pageClasses = classNames('bg-white  dark:bg-git-black', {
     'border-b  border-[#EBEBEB]  dark:border-[#414141]':
@@ -1435,7 +1443,7 @@ function Page3(): ReactElement {
               </div>
             </div>
             <div
-              className='mt-14  flex  flex-row  justify-between  max-md:mt-[4vh]
+              className='mt-10  flex  flex-row  justify-between  max-md:mt-[4vh]
                           h-md:mt-[6vh]'
             >
               <div

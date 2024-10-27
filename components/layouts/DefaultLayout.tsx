@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/no-head-element */
-
 import localFont from 'next/font/local';
 import { ReactElement, ReactNode } from 'react';
 import ProvidersDefault from '../modules/providers/ProvidersDefault';

@@ -1,24 +1,30 @@
 'use client';
 
-import { BASE_PATH_READ } from '@/constants/master-git-and-github-book';
+import {
+  BASE_PATH_DEMO,
+  BASE_PATH_READ,
+} from '@/constants/master-git-and-github-book';
 import { useActiveBackgroundDispatch } from '@/context/background-master-git-and-github-book/Context';
+import { useBookVersion } from '@/context/book-version/Context';
 import { useSmallDevicesUrlUpdate } from '@/hooks/use-small-devices-page-update';
+import { BookVersion } from '@/types/book-version';
 import { ActiveBackground } from '@/types/master-git-and-github-book/active-background';
 import { updateUrl } from '@/utils/update-url';
 import { ReactElement, ReactNode, useEffect } from 'react';
 
 interface GlobalEffectsProps {
   initialPageId?: string;
-  basePath: string;
   children: ReactNode;
 }
 
 function GlobalEffects({
   initialPageId,
-  basePath,
   children,
 }: GlobalEffectsProps): ReactElement {
   const { setActiveBackground } = useActiveBackgroundDispatch();
+  const bookVersion = useBookVersion();
+  const basePath =
+    bookVersion === BookVersion.DEMO ? BASE_PATH_DEMO : BASE_PATH_READ;
 
   useEffect(() => {
     function showBook(): void {
@@ -37,7 +43,7 @@ function GlobalEffects({
         });
 
         setTimeout(() => {
-          updateUrl({ basePath: `${BASE_PATH_READ}/end` });
+          updateUrl({ basePath: `${basePath}/end` });
           setActiveBackground(ActiveBackground.DARK);
           document.documentElement.classList.add('!bg-black');
           setTimeout(() => {

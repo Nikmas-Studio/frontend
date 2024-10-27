@@ -10,16 +10,28 @@ import H3 from '@/components/elements/master-git-and-github-book/H3';
 import TextLi from '@/components/elements/master-git-and-github-book/TextLi';
 import TextNode from '@/components/elements/master-git-and-github-book/TextNode';
 import TextUl from '@/components/elements/master-git-and-github-book/TextUl';
-import { BASE_PATH_READ } from '@/constants/master-git-and-github-book';
+import {
+  BASE_PATH_DEMO,
+  BASE_PATH_READ,
+} from '@/constants/master-git-and-github-book';
+import { useBookVersion } from '@/context/book-version/Context';
 import useGsapResizeUpdate from '@/hooks/use-gsap-resize-update';
 import { useUrlUpdate } from '@/hooks/use-url-update';
+import { BookVersion } from '@/types/book-version';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
 import { ReactElement, useRef } from 'react';
 import Page from '../../../elements/master-git-and-github-book/Page';
 import Controls from './Controls';
 
+gsap.registerPlugin(ScrollTrigger);
+
 function Page2(): ReactElement {
+  const bookVersion = useBookVersion();
+  const basePath =
+    bookVersion === BookVersion.DEMO ? BASE_PATH_DEMO : BASE_PATH_READ;
+
   const sectionRef = useRef<HTMLElement | null>(null);
 
   const dir1Ref = useRef<HTMLDivElement | null>(null);
@@ -39,7 +51,7 @@ function Page2(): ReactElement {
   useUrlUpdate({
     pageRef: sectionRef,
     currentPage: 2,
-    basePath: BASE_PATH_READ,
+    basePath,
   });
 
   useGSAP(

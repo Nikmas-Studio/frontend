@@ -1,17 +1,15 @@
 'use client';
 
-import ExternalLink from '@/components/elements/ExternalLink';
-import { BASE_PATH_READ } from '@/constants/master-git-and-github-book';
-import { useActiveBackgroundDispatch } from '@/context/background-master-git-and-github-book/Context';
+import {
+  BASE_PATH_DEMO,
+  BASE_PATH_READ,
+} from '@/constants/master-git-and-github-book';
+import { useBookVersion } from '@/context/book-version/Context';
 import useGsapResizeUpdate from '@/hooks/use-gsap-resize-update';
 import { useUrlUpdate } from '@/hooks/use-url-update';
-import facebookLogo from '@/public/images/facebook-logo.svg';
 import bookCoverDark from '@/public/images/git-and-github-book-cover-dark-no-spine.jpg';
 import bookCoverLight from '@/public/images/git-and-github-book-cover-light-no-spine.jpg';
-import instagramLogo from '@/public/images/instagram-logo.png';
-import linkedinLogo from '@/public/images/linkedin-logo.png';
-import telegramLogo from '@/public/images/telegram-logo.png';
-import { ActiveBackground } from '@/types/master-git-and-github-book/active-background';
+import { BookVersion } from '@/types/book-version';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
@@ -20,13 +18,15 @@ import { ReactElement, useRef } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-function EndPage(): ReactElement {
+function EndPageDemo(): ReactElement {
   const sectionRef = useRef<HTMLElement | null>(null);
   const innerContentRef = useRef<HTMLDivElement | null>(null);
   const spineRef = useRef<HTMLDivElement | null>(null);
   const { gsapShouldUpdate } = useGsapResizeUpdate();
   const afterwordRef = useRef<HTMLDivElement | null>(null);
-  const { setActiveBackground } = useActiveBackgroundDispatch();
+  const bookVersion = useBookVersion();
+  const basePath =
+    bookVersion === BookVersion.DEMO ? BASE_PATH_DEMO : BASE_PATH_READ;
 
   useGSAP(
     () => {
@@ -73,30 +73,9 @@ function EndPage(): ReactElement {
     { dependencies: [gsapShouldUpdate], revertOnUpdate: true },
   );
 
-  useGSAP(
-    () => {
-      ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: 'top top',
-        end: '+=120',
-        onLeave: () => {
-          console.log('onLeave');
-          setActiveBackground(ActiveBackground.DARK);
-          document.documentElement.classList.add('!bg-black');
-        },
-        onEnterBack: () => {
-          console.log('onEnterBack');
-          setActiveBackground(ActiveBackground.DEFAULT);
-          document.documentElement.classList.remove('!bg-black');
-        },
-      });
-    },
-    { dependencies: [gsapShouldUpdate], revertOnUpdate: true },
-  );
-
   useUrlUpdate({
     pageRef: sectionRef,
-    basePath: BASE_PATH_READ,
+    basePath,
     end: {
       previousPage: 3,
     },
@@ -153,69 +132,27 @@ function EndPage(): ReactElement {
                     [background-color:rgba(0,0,0,0.8)]'
       >
         <div
-          className='absolute  left-1/2  top-[43%]  -translate-x-1/2  -translate-y-1/2
-                        max-sm:top-[41%]'
+          className='absolute  left-1/2  top-[38%]  flex  -translate-x-1/2
+                        -translate-y-1/2  flex-col  items-center  max-sm:top-[44.7%]'
         >
           <p
             className='
-                    text-center  text-[8vw]  font-bold  leading-tight  
+                    text-center  text-[8vw]  font-bold  leading-none  
                     text-white  max-sm:text-[12vw]'
           >
-            To Be Continued...{' '}
+            The&nbsp;End of&nbsp;Demo
           </p>
-          <p className='text-center  text-[2vw]  text-white  max-lg:text-[2.5vw]  max-md:text-[4vw]'>
-            Follow our social media for updates:
-          </p>
-          <ul className='mt-4  flex  justify-center  gap-5  max-lg:mt-3  max-sm:mt-2'>
-            <li>
-              <ExternalLink href='https://t.me/nikmas_studio'>
-                <Image
-                  src={telegramLogo}
-                  alt='Telegram logo'
-                  width={50}
-                  height={50}
-                  className='transition-all  hover:scale-[1.2]'
-                />
-              </ExternalLink>
-            </li>
-            <li>
-              <ExternalLink href='https://www.instagram.com/nikmas.studio/'>
-                <Image
-                  src={instagramLogo}
-                  alt='Instagram logo'
-                  width={50}
-                  height={50}
-                  className='transition-all  hover:scale-[1.2]'
-                />
-              </ExternalLink>
-            </li>
-            <li>
-              <ExternalLink href='https://www.facebook.com/nikmas.studio'>
-                <Image
-                  src={facebookLogo}
-                  alt='Facebook logo'
-                  width={50}
-                  height={50}
-                  className='transition-all  hover:scale-[1.2]'
-                />
-              </ExternalLink>
-            </li>
-            <li>
-              <ExternalLink href='https://www.linkedin.com/company/nikmas-studio'>
-                <Image
-                  src={linkedinLogo}
-                  alt='LinkedIn logo'
-                  width={50}
-                  height={50}
-                  className='transition-all  hover:scale-[1.2]'
-                />
-              </ExternalLink>
-            </li>
-          </ul>
+          <button
+            className='mt-7  inline-block  rounded-lg  bg-[#29AD04]  px-6  pb-[.58rem]  pt-2  text-lg 
+                           font-semibold  text-white  hover:bg-[#248F04] 
+                           hover:transition-colors  max-sm:mt-5'
+          >
+            Subscription
+          </button>
         </div>
       </div>
     </section>
   );
 }
 
-export default EndPage;
+export default EndPageDemo;

@@ -4,6 +4,7 @@ import Logo from '@/components/elements/Logo';
 import MainContainer from '@/components/elements/MainContainer';
 import { useGSAP } from '@gsap/react';
 import classNames from 'classnames';
+import Link from 'next/link';
 import { ReactElement, useEffect, useRef, useState } from 'react';
 import HeaderButtonsDefault from '../header-buttons/HeaderButtonsDefault';
 
@@ -85,7 +86,7 @@ function HeaderDefault({
   }, [onHeaderIsScrolledChange]);
 
   const headerClasses = classNames(
-    `pt-4  pb-6  md:pt-5  md:pb-7  fixed  left-0  right-0  top-0  border-b
+    `pt-4  pb-6  fixed  left-0  right-0  top-0  border-b
      header-transition z-50
      [background-image:linear-gradient(135deg,var(--headerLightModeBgFirstColor),var(--headerLightModeBgSecondColor))]
      dark:[background-image:linear-gradient(135deg,var(--headerDarkModeBgFirstColor),var(--headerDarkModeBgSecondColor))]`,
@@ -98,10 +99,12 @@ function HeaderDefault({
   return (
     <header id='main-header' ref={headerRef} className={headerClasses}>
       <MainContainer className='flex  items-center  justify-between  gap-x-7'>
-        <Logo
-          ref={headerLogoRef}
-          className='flex-none  translate-y-[0.187rem]'
-        />
+        <Link href='/'>
+          <Logo
+            ref={headerLogoRef}
+            className='flex-none  translate-y-[0.187rem]'
+          />
+        </Link>
         <HeaderButtonsDefault />
       </MainContainer>
     </header>

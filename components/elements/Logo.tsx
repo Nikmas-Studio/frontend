@@ -10,7 +10,7 @@ const Logo = forwardRef<HTMLParagraphElement, LogoProps>(function Logo(
   ref,
 ): ReactElement {
   const logoClasses = classNames(
-    `font-bold  text-[1.7rem]  md:text-[2rem]  cursor-default  select-none  
+    `font-bold  text-[1.7rem]  md:text-[2rem]  select-none  
      dark:text-white`,
     className,
   );
