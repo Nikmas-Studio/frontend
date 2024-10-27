@@ -170,9 +170,7 @@ function Page3(): ReactElement {
           if (lettersAnimationTweenRef.current === null) {
             start();
           } else {
-            if (direction === 1) {
-              start();
-            } else {
+            if (direction === -1) {
               stop();
             }
           }
@@ -180,8 +178,6 @@ function Page3(): ReactElement {
           if (lettersAnimationTweenRef.current !== null) {
             if (direction === 1) {
               stop();
-            } else {
-              start();
             }
           } else {
             if (direction === -1) {
@@ -223,9 +219,7 @@ function Page3(): ReactElement {
           if (spineAnimationTweenRef.current === null) {
             start();
           } else {
-            if (direction === 1) {
-              start();
-            } else {
+            if (direction === -1) {
               stop();
             }
           }
@@ -234,8 +228,6 @@ function Page3(): ReactElement {
           if (spineAnimationTweenRef.current !== null) {
             if (direction === 1) {
               stop();
-            } else {
-              start();
             }
           } else {
             if (direction === -1) {
