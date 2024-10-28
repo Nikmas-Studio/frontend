@@ -96,7 +96,7 @@ function BookSection(): ReactElement {
         <MainContainer className='flex  flex-col  items-center  !px-11'>
           <h2
             className='mb-8  text-3xl  font-bold  text-white  
-                       sm:text-[2.7rem]  dark:text-black'
+                       sm:text-[2.7rem]  dark:text-[#050c1b]'
           >
             Our first book
           </h2>
@@ -110,8 +110,8 @@ function BookSection(): ReactElement {
                 ref={lightBookCoverRef}
                 src={bookCoverLight}
                 alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
-                className='w-full  select-none  rounded-[3vw]  sm:h-[65vh]  
-                           sm:max-h-[570px]  sm:w-auto  sm:rounded-[1.5vh]  
+                className='w-full  select-none  rounded-[14px]  sm:h-[65vh]  
+                           sm:max-h-[570px]  sm:w-auto 
                            dark:hidden'
                 priority
               />
@@ -119,9 +119,9 @@ function BookSection(): ReactElement {
                 ref={darkBookCoverRef}
                 src={bookCoverDark}
                 alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
-                className='hidden  w-full  select-none  rounded-[3vw]  
+                className='hidden  w-full  select-none  rounded-[14px] 
                          sm:h-[65vh]  sm:max-h-[570px]  sm:w-auto  
-                         sm:rounded-[1.5vh]  dark:inline-block'
+                         dark:inline-block'
                 priority
               />
             </Link>
