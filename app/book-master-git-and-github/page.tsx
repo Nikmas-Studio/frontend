@@ -6,7 +6,6 @@ import bookCoverDark from '@/public/images/git-and-github-book-cover-dark.jpg';
 import bookCoverLight from '@/public/images/git-and-github-book-cover-light.jpg';
 import { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import { ReactElement } from 'react';
 
 export const metadata: Metadata = {
@@ -46,7 +45,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
               />
             </div>
             <div className='mb-5'>
-              <Link
+              <a
                 href='/book-master-git-and-github/demo'
                 className='inline-block  rounded-lg  bg-black  px-6  pb-[.58rem]  pt-2  text-lg 
                            font-semibold  text-white  hover:bg-git-blue  
@@ -54,7 +53,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                            dark:text-black  dark:hover:text-white'
               >
                 Try demo
-              </Link>
+              </a>
             </div>
           </MainContainer>
           <Footer />
