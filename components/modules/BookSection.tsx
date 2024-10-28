@@ -93,7 +93,7 @@ function BookSection(): ReactElement {
                   [background:linear-gradient(135deg,#ff5013,#271ad3)]
                   [transition:opacity_1s_ease-out]'
       >
-        <MainContainer className='flex  flex-col  items-center  !px-12'>
+        <MainContainer className='flex  flex-col  items-center  !px-11'>
           <h2
             className='mb-8  text-3xl  font-bold  text-white  
                        sm:text-[2.7rem]  dark:text-black'
