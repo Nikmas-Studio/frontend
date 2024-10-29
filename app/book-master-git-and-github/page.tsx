@@ -34,7 +34,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
             </h2>
             <div
               className='mt-11  lg:flex  lg:flex-row  lg:justify-between  
-                            lg:gap-8  xl:gap-0'
+                            lg:gap-8  xl:gap-16'
             >
               <div
                 className='flex  w-full  flex-none  flex-col  sm:w-[400px]  
@@ -72,7 +72,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                   Try demo
                 </Link>
               </div>
-              <div className='mt-16  lg:mt-0  xl:pl-16  xl:pr-20'>
+              <div className='mt-16  lg:mt-0'>
                 <BasicTextNode
                   className='mb-7  text-[1.375rem]  font-semibold
                            leading-snug'
@@ -124,8 +124,10 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                   quality={100}
                   priority
                 />
-                <BasicTextNode className='mb-1  mt-5  w-[275px]  text-[1.3125rem]
-                                          font-bold  lg:w-[225px]  lg:text-[1.2rem]'>
+                <BasicTextNode
+                  className='mb-1  mt-5  w-[275px]  text-[1.3125rem]
+                                          font-bold  lg:w-[225px]  lg:text-[1.2rem]'
+                >
                   Author:&nbsp;Nick&nbsp;Maslov
                 </BasicTextNode>
                 <TextNode className='w-[275px]  !text-base  lg:w-auto'>
