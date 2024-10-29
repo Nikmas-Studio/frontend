@@ -12,9 +12,9 @@ import Link from 'next/link';
 import { ReactElement } from 'react';
 
 export const metadata: Metadata = {
-  title: 'Nikmas Studio',
+  title: 'Master Git & Github: From Everyday Tasks to Deep Waters',
   description:
-    'Next-gen publishing studio that specializes in creating interactive e-books.',
+    'A next-gen, highly illustrative, and interactive e-book to master Git and Github and make you a version control guru.',
 };
 
 function MasterGitAndGithubBookPromo(): ReactElement {
@@ -107,6 +107,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
               </TextNode>
               <TextNode>Enjoy the&nbsp;book!</TextNode>
             </div>
+            <div></div>
           </MainContainer>
           <Footer />
         </div>

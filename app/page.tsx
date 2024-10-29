@@ -6,7 +6,43 @@ import HBASection from '@/components/modules/HBASection';
 import HeaderMain from '@/components/modules/header/header-element/HeaderMain';
 import IntroSection from '@/components/modules/IntroSection';
 import ProvidersMain from '@/components/modules/providers/ProvidersMain';
+import { Metadata } from 'next';
 import { ReactElement } from 'react';
+
+export const metadata: Metadata = {
+  title: 'Nikmas Studio',
+  description:
+    'Next-gen publishing studio that specializes in creating interactive e-books.',
+  openGraph: {
+    title: 'Nikmas Studio',
+    description:
+      'Next-gen publishing studio that specializes in creating interactive e-books.',
+    url: 'https://nikmas.studio',
+    siteName: 'Nikmas Studio',
+    images: [
+      {
+        url: 'https://nikmas.studio/images/og-primary.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Nikmas Studio',
+      },
+      {
+        url: 'https://nikmas.studio/images/og-high-res.jpg',
+        width: 1800,
+        height: 945,
+        alt: 'Nikmas Studio',
+      },
+      {
+        url: 'https://nikmas.studio/images/og-square.jpg',
+        width: 1080,
+        height: 1080,
+        alt: 'Nikmas Studio',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+};
 
 export default function Home(): ReactElement {
   return (
