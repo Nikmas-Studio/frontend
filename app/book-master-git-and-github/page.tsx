@@ -34,7 +34,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
             </h2>
             <div
               className='mt-11  lg:flex  lg:flex-row  lg:justify-between  
-                            lg:gap-8  xl:gap-16'
+                            lg:gap-8  xl:gap-0'
             >
               <div
                 className='flex  w-full  flex-none  flex-col  sm:w-[400px]  
@@ -72,7 +72,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                   Try demo
                 </Link>
               </div>
-              <div className='mt-16  lg:mt-0'>
+              <div className='mt-16  lg:mt-0  lg:pl-14  lg:pr-16'>
                 <BasicTextNode
                   className='mb-7  text-[1.375rem]  font-semibold
                            leading-snug'
