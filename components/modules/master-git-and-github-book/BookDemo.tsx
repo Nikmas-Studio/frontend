@@ -17,7 +17,7 @@ interface BookDemoProps {
 
 function BookDemo({ initialPageId }: BookDemoProps): ReactElement {
   return (
-    <MasterGitAndGithubBookLayout>
+    <MasterGitAndGithubBookLayout initialPageId={initialPageId}>
       <BookVersionProvider version={BookVersion.DEMO}>
         <GlobalEffects initialPageId={initialPageId}>
           <CoverPage />

@@ -15,7 +15,7 @@ interface BookReadProps {
 
 function BookRead({ initialPageId }: BookReadProps): ReactElement {
   return (
-    <MasterGitAndGithubBookLayout>
+    <MasterGitAndGithubBookLayout initialPageId={initialPageId}>
       <BookVersionProvider version={BookVersion.READ}>
         <GlobalEffects initialPageId={initialPageId}>
           <CoverPage />

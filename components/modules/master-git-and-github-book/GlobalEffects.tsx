@@ -6,7 +6,7 @@ import {
 } from '@/constants/master-git-and-github-book';
 import { useActiveBackgroundDispatch } from '@/context/background-master-git-and-github-book/Context';
 import { useBookVersion } from '@/context/book-version/Context';
-import { useInitialScrollToPageState } from '@/context/initial-scroll-to-page/Context';
+import { useInitialScrollToPageStateDispatch } from '@/context/initial-scroll-to-page/Context';
 import { useSmallDevicesUrlUpdate } from '@/hooks/use-small-devices-page-update';
 import { BookVersion } from '@/types/book-version';
 import { ActiveBackground } from '@/types/master-git-and-github-book/active-background';
@@ -28,7 +28,8 @@ function GlobalEffects({
   const basePath =
     bookVersion === BookVersion.DEMO ? BASE_PATH_DEMO : BASE_PATH_READ;
 
-  const { initialScrollToPageIsCompletedRef } = useInitialScrollToPageState();
+  const { setInitialScrollToPageIsCompleted } =
+    useInitialScrollToPageStateDispatch();
 
   const previousPathRef = useRef<string | null>(null);
   const path = usePathname();
@@ -62,7 +63,7 @@ function GlobalEffects({
     }
 
     if (initialPageId === undefined) {
-      initialScrollToPageIsCompletedRef.current = true;
+      setInitialScrollToPageIsCompleted(true);
       return;
     }
 
@@ -75,7 +76,7 @@ function GlobalEffects({
 
         setTimeout(() => {
           updateUrl({ basePath: `${basePath}/end` });
-          initialScrollToPageIsCompletedRef.current = true;
+          setInitialScrollToPageIsCompleted(true);
           setActiveBackground(ActiveBackground.DARK);
           document.documentElement.classList.add('!bg-black');
           setTimeout(() => {
@@ -90,7 +91,7 @@ function GlobalEffects({
       page?.scrollIntoView({ behavior: 'instant' });
       setTimeout(() => {
         updateUrl({ page: Number(initialPageId), basePath });
-        initialScrollToPageIsCompletedRef.current = true;
+        setInitialScrollToPageIsCompleted(true);
         showBook();
       }, 20);
     }
@@ -100,7 +101,7 @@ function GlobalEffects({
     initialPageId,
     basePath,
     setActiveBackground,
-    initialScrollToPageIsCompletedRef,
+    setInitialScrollToPageIsCompleted,
   ]);
 
   useSmallDevicesUrlUpdate({ basePath });

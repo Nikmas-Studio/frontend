@@ -6,14 +6,18 @@ import Background from '../elements/master-git-and-github-book/Background';
 import ProvidersDefault from '../modules/providers/ProvidersDefault';
 import ProvidersMasterGitAndGithubBook from '../modules/providers/ProvidersMasterGitAndGithubBook';
 
-function MasterGitAndGithubBookLayout({
-  children,
-}: {
+interface MasterGitAndGithubBookLayoutProps {
+  initialPageId: string | undefined;
   children: ReactNode;
-}): ReactElement {
+}
+
+function MasterGitAndGithubBookLayout({
+  initialPageId,
+  children,
+}: MasterGitAndGithubBookLayoutProps): ReactElement {
   return (
     <ProvidersDefault>
-      <ProvidersMasterGitAndGithubBook>
+      <ProvidersMasterGitAndGithubBook initialPageId={initialPageId}>
         <div id='main-book-wrapper' className={`${gilroy.className}`}>
           <script
             dangerouslySetInnerHTML={{
