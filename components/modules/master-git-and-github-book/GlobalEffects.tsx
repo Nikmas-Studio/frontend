@@ -76,7 +76,7 @@ function GlobalEffects({
           setTimeout(() => {
             showBook();
           }, 20);
-        }, 20);
+        }, 40);
 
         return;
       }
@@ -86,7 +86,7 @@ function GlobalEffects({
       setTimeout(() => {
         updateUrl({ page: Number(initialPageId), basePath });
         showBook();
-      }, 20);
+      }, 40);
     }
 
     scrollToPage(initialPageId);
