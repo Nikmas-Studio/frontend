@@ -486,6 +486,7 @@ const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
             height={27}
             alt='Sun icon'
             className={lightModeBlackToggleIconClasses}
+            quality={100}
           />
           <Image
             priority
@@ -495,6 +496,7 @@ const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
             height={27}
             alt='Sun icon'
             className={lightModeWhiteToggleIconClasses}
+            quality={100}
           />
           <Image
             priority
@@ -504,6 +506,7 @@ const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
             height={27}
             alt='Moon icon'
             className={darkModeWhiteToggleIconClasses}
+            quality={100}
           />
           <Image
             priority
@@ -513,6 +516,7 @@ const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
             height={27}
             alt='Moon icon'
             className={darkModeBlackToggleIconClasses}
+            quality={100}
           />
         </button>
         <ul ref={dropdownElementRef} className={dropdownClasses}>
@@ -530,6 +534,7 @@ const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
               alt='Sun icon'
               className='size-6  translate-y-[-0.031rem]
                        dark:hidden'
+              quality={100}
             />
             <Image
               src={iconsSources.lightModeWhiteIcon}
@@ -538,6 +543,7 @@ const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
               alt='Sun icon'
               className='hidden  size-6  translate-y-[-0.031rem]
                        dark:inline-block'
+              quality={100}
             />
             <p className={textClasses}>Light</p>
           </ThemeToggleDropdownItem>
@@ -556,6 +562,7 @@ const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
               className='size-[1.3rem]  translate-x-[0.15rem]
                        translate-y-[-0.031rem]
                        dark:hidden'
+              quality={100}
             />
             <Image
               src={iconsSources.darkModeWhiteIcon}
@@ -565,6 +572,7 @@ const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
               className='hidden  size-[1.3rem]  translate-x-[0.15rem]
                        translate-y-[-0.031rem]
                        dark:inline-block'
+              quality={100}
             />
             <p className={textClasses}>Dark</p>
           </ThemeToggleDropdownItem>
@@ -582,6 +590,7 @@ const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
               alt='Gear icon'
               className='size-[1.3rem]  translate-x-[0.13rem]
                        translate-y-[-0.031rem]  dark:hidden'
+              quality={100}
             />
             <Image
               src={iconsSources.systemModeWhiteIcon}
@@ -590,6 +599,7 @@ const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
               alt='Gear icon'
               className='hidden  size-[1.3rem]  translate-x-[0.13rem]
                        translate-y-[-0.031rem]  dark:inline-block'
+              quality={100}
             />
             <p className={textClasses}>System</p>
           </ThemeToggleDropdownItem>

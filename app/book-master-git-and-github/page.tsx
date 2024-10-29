@@ -39,6 +39,8 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                   className='w-full  select-none  rounded-[14px]
                            [box-shadow:0px_0px_85px_20px_rgba(0,0,0,0.06)]  
                            dark:hidden'
+                  sizes='(max-width: 639px) 100vw, 378px'
+                  quality={100}
                   priority
                 />
                 <Image
@@ -46,6 +48,8 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                   alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
                   className='hidden  w-full  select-none  rounded-[14px]
                              dark:inline-block'
+                  sizes='(max-width: 639px) 100vw, 378px'
+                  quality={100}
                   priority
                 />
               </div>

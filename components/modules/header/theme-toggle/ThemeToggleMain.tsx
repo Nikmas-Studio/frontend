@@ -504,6 +504,7 @@ function ThemeToggleMain({ className }: ThemeToggleProps): ReactElement {
           height={27}
           alt='Sun icon'
           className={lightModeBlackToggleIconClasses}
+          quality={100}
         />
         <Image
           priority
@@ -513,6 +514,7 @@ function ThemeToggleMain({ className }: ThemeToggleProps): ReactElement {
           height={27}
           alt='Sun icon'
           className={lightModeWhiteToggleIconClasses}
+          quality={100}
         />
         <Image
           priority
@@ -522,6 +524,7 @@ function ThemeToggleMain({ className }: ThemeToggleProps): ReactElement {
           height={27}
           alt='Moon icon'
           className={darkModeWhiteToggleIconClasses}
+          quality={100}
         />
       </button>
       <ul ref={dropdownElementRef} className={dropdownClasses}>
@@ -538,6 +541,7 @@ function ThemeToggleMain({ className }: ThemeToggleProps): ReactElement {
             alt='Sun icon'
             className='size-6  translate-y-[-0.031rem] 
                        dark:hidden'
+            quality={100}
           />
           <Image
             src={sunIconWhite}
@@ -546,6 +550,7 @@ function ThemeToggleMain({ className }: ThemeToggleProps): ReactElement {
             alt='Sun icon'
             className='hidden  size-6  translate-y-[-0.031rem] 
                        dark:inline-block'
+            quality={100}
           />
           <p className='select-none  dark:text-white'>Light</p>
         </ThemeToggleDropdownItem>
@@ -563,6 +568,7 @@ function ThemeToggleMain({ className }: ThemeToggleProps): ReactElement {
             className='size-[1.3rem]  translate-x-[0.15rem]
                        translate-y-[-0.031rem] 
                        dark:hidden'
+            quality={100}
           />
           <Image
             src={moonIconWhite}
@@ -572,6 +578,7 @@ function ThemeToggleMain({ className }: ThemeToggleProps): ReactElement {
             className='hidden  size-[1.3rem]  translate-x-[0.15rem]
                        translate-y-[-0.031rem] 
                        dark:inline-block'
+            quality={100}
           />
           <p className='select-none  dark:text-white'>Dark</p>
         </ThemeToggleDropdownItem>
@@ -588,6 +595,7 @@ function ThemeToggleMain({ className }: ThemeToggleProps): ReactElement {
             alt='Gear icon'
             className='size-[1.3rem]  translate-x-[0.13rem]
                        translate-y-[-0.031rem]   dark:hidden'
+            quality={100}
           />
           <Image
             src={gearIconWhite}
@@ -596,6 +604,7 @@ function ThemeToggleMain({ className }: ThemeToggleProps): ReactElement {
             alt='Gear icon'
             className='hidden  size-[1.3rem]  translate-x-[0.13rem]
                        translate-y-[-0.031rem]  dark:inline-block'
+            quality={100}
           />
           <p className='select-none  dark:text-white'>System</p>
         </ThemeToggleDropdownItem>
