@@ -50,7 +50,6 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                 />
               </div>
               <Link
-                scroll={false}
                 href='/book-master-git-and-github/demo'
                 className='inline-block  self-center  rounded-lg  bg-black  px-6  py-2  
                            text-lg  font-semibold  text-white 
