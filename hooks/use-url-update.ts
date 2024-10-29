@@ -54,9 +54,16 @@ export function useUrlUpdate({
         start: `top ${offset ?? '280px'}`,
         end: '+=0',
         onEnter: () => {
+          console.log(
+            'initialScrollToPageIsCompletedRef.current',
+            initialScrollToPageIsCompletedRef.current,
+          );
+
           if (!initialScrollToPageIsCompletedRef.current) {
             return;
           }
+
+          console.log('onEnter');
 
           if (isMobileOrTablet()) {
             if (end) {
