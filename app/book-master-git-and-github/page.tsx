@@ -150,7 +150,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                   We got so&nbsp;many tools to&nbsp;make the&nbsp;reading
                   process dynamic, interactive, and&nbsp;thus
                   more&nbsp;immersive, but&nbsp;our e&#8209;books are&nbsp;still
-                  static canvases of&nbsp;text. It&apos;s time to&nbsp;change
+                  static canvases of&nbsp;text. It&apos;s&nbsp;time to&nbsp;change
                   this.
                 </TextNode>
               </div>
