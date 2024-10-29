@@ -96,7 +96,7 @@ function BookSection(): ReactElement {
         <MainContainer className='flex  flex-col  items-center  !px-11'>
           <h2
             className='mb-8  text-3xl  font-bold  text-white  
-                       sm:text-[2.7rem]  dark:text-[#050c1b]'
+                       sm:text-[2.7rem]  dark:text-[#09132a]'
           >
             Our first book
           </h2>

@@ -37,7 +37,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                   src={bookCoverLight}
                   alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
                   className='w-full  select-none  rounded-[14px]
-                           [box-shadow:0px_0px_85px_20px_rgba(0,0,0,0.05)]  
+                           [box-shadow:0px_0px_85px_20px_rgba(0,0,0,0.06)]  
                            dark:hidden'
                   priority
                 />
