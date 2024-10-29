@@ -8,6 +8,7 @@ import bookCoverDark from '@/public/images/git-and-github-book-cover-dark.jpg';
 import bookCoverLight from '@/public/images/git-and-github-book-cover-light.jpg';
 import { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ReactElement } from 'react';
 
 export const metadata: Metadata = {
@@ -48,11 +49,8 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                   priority
                 />
               </div>
-              {/* Book depends on the loading behavior by forbidding scrolling 
-                  till the page is fully loaded + the book page should be loaded
-                  exactly at the top, which isn't stable with Next.js Link component,
-                  so I use the anchor tag here. */}
-              <a
+              <Link
+                scroll={false}
                 href='/book-master-git-and-github/demo'
                 className='inline-block  self-center  rounded-lg  bg-black  px-6  py-2  
                            text-lg  font-semibold  text-white 
@@ -61,7 +59,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                            dark:hover:text-white'
               >
                 Try demo
-              </a>
+              </Link>
             </div>
             <div className='mt-16'>
               <BasicTextNode

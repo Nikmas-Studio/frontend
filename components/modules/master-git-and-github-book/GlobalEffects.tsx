@@ -10,6 +10,7 @@ import { useSmallDevicesUrlUpdate } from '@/hooks/use-small-devices-page-update'
 import { BookVersion } from '@/types/book-version';
 import { ActiveBackground } from '@/types/master-git-and-github-book/active-background';
 import { updateUrl } from '@/utils/update-url';
+import { usePathname } from 'next/navigation';
 import { ReactElement, ReactNode, useEffect } from 'react';
 
 interface GlobalEffectsProps {
@@ -25,6 +26,21 @@ function GlobalEffects({
   const bookVersion = useBookVersion();
   const basePath =
     bookVersion === BookVersion.DEMO ? BASE_PATH_DEMO : BASE_PATH_READ;
+
+  const path = usePathname();
+
+  useEffect(() => {
+    if (
+      path.endsWith('/demo') ||
+      path.endsWith('/demo/') ||
+      path.endsWith('/read') ||
+      path.endsWith('/read/')
+    ) {
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 30);
+    }
+  }, [path]);
 
   useEffect(() => {
     function showBook(): void {

@@ -1,3 +1,5 @@
+'use client';
+
 import MasterGitAndGithubBookLayout from '@/components/layouts/MasterGitAndGithubBookLayout';
 import { BookVersionProvider } from '@/context/book-version/Context';
 import { BookVersion } from '@/types/book-version';
