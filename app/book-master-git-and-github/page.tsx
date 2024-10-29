@@ -37,8 +37,8 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                             lg:gap-8  xl:gap-0'
             >
               <div
-                className='flex  w-full  flex-none  flex-col  sm:w-[400px]  
-                              lg:w-[30vw]  xl:w-[400px]  lg:sticky  top-[6.2rem]  self-start'
+                className='top-[6.2rem]  flex  w-full  flex-none  flex-col  
+                              self-start  sm:w-[400px]  lg:sticky  lg:w-[30vw]  xl:w-[400px]'
               >
                 <div className='mb-10'>
                   <Image
@@ -63,11 +63,11 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                 </div>
                 <Link
                   href='/book-master-git-and-github/demo'
-                  className='inline-block  self-center  rounded-lg  bg-black  px-6  py-2  
-                           text-lg  font-semibold  text-white 
-                         hover:bg-git-blue  hover:transition-colors  xl:pb-[.60rem]  
-                           dark:bg-white dark:text-black  
-                           dark:hover:text-white  mb-1'
+                  className='mb-1  inline-block  self-center  rounded-lg  bg-black  px-6  
+                           py-2  text-lg  font-semibold 
+                         text-white  hover:bg-git-blue  hover:transition-colors  
+                           xl:pb-[.60rem] dark:bg-white  
+                           dark:text-black  dark:hover:text-white'
                 >
                   Try demo
                 </Link>
@@ -116,7 +116,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                 </TextNode>
                 <TextNode>Enjoy the&nbsp;book!</TextNode>
               </div>
-              <div className='mt-10  lg:mt-0  lg:w-[235px]  flex-none'>
+              <div className='mt-10  flex-none  lg:mt-0  lg:w-[235px]'>
                 <Image
                   src={authorPhoto}
                   alt='Author: Nick Maslov'
@@ -136,7 +136,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                 </TextNode>
                 <BasicTextNode
                   className='mt-11  text-6xl  font-medium  
-                             leading-[1.1]  lg:text-4xl  lg:mt-9'
+                             leading-[1.1]  lg:mt-9  lg:text-4xl'
                 >
                   It&apos;s time
                   <br />
@@ -146,12 +146,12 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                   <br />
                   alive
                 </BasicTextNode>
-                <TextNode className='mt-7  lg:text-[1.0625rem]  lg:leading-normal  lg:mt-5'>
+                <TextNode className='mt-7  lg:mt-5  lg:text-[1.0625rem]  lg:leading-normal'>
                   We got so&nbsp;many tools to&nbsp;make the&nbsp;reading
                   process dynamic, interactive, and&nbsp;thus
                   more&nbsp;immersive, but&nbsp;our e&#8209;books are&nbsp;still
-                  static canvases of&nbsp;text. It&apos;s&nbsp;time to&nbsp;change
-                  this.
+                  static canvases of&nbsp;text. It&apos;s&nbsp;time
+                  to&nbsp;change this.
                 </TextNode>
               </div>
             </div>

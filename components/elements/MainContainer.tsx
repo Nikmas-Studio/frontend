@@ -12,7 +12,7 @@ const MainContainer = forwardRef<HTMLDivElement, MainContainerProps>(
     ref,
   ): ReactElement {
     const mainContainerClasses = classnames(
-      'mx-5  sm:mx-9  lg:mx-14  xl:mx-[6%]  2xl:mx-auto  max-w-[1320px]',
+      'mx-5  max-w-[1320px]  sm:mx-9  lg:mx-14  xl:mx-[6%]  2xl:mx-auto',
       className,
     );
 
