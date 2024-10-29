@@ -1,3 +1,4 @@
+import { useInitialScrollToPageState } from '@/context/initial-scroll-to-page/Context';
 import { usePendingUrlUpdatedDispatch } from '@/context/pending-url-updates/Context';
 import { updateUrl } from '@/utils/update-url';
 import { useGSAP } from '@gsap/react';
@@ -38,6 +39,8 @@ export function useUrlUpdate({
   end,
 }: Options): void {
   const { gsapShouldUpdate } = useGsapResizeUpdate();
+  const { initialScrollToPageIsCompletedRef } = useInitialScrollToPageState();
+
   const { setPendingUrlUpdates } = usePendingUrlUpdatedDispatch();
 
   function isMobileOrTablet(): boolean {
@@ -51,6 +54,10 @@ export function useUrlUpdate({
         start: `top ${offset ?? '280px'}`,
         end: '+=0',
         onEnter: () => {
+          if (!initialScrollToPageIsCompletedRef.current) {
+            return;
+          }
+
           if (isMobileOrTablet()) {
             if (end) {
               setPendingUrlUpdates((prev) => [...prev, { end: {} }]);
@@ -72,6 +79,10 @@ export function useUrlUpdate({
           updateUrl({ page: currentPage, basePath });
         },
         onEnterBack: () => {
+          if (!initialScrollToPageIsCompletedRef.current) {
+            return;
+          }
+
           if (isMobileOrTablet()) {
             if (end) {
               setPendingUrlUpdates((prev) => [
@@ -102,6 +113,9 @@ export function useUrlUpdate({
         },
       });
     },
-    { dependencies: [gsapShouldUpdate], revertOnUpdate: true },
+    {
+      dependencies: [gsapShouldUpdate],
+      revertOnUpdate: true,
+    },
   );
 }

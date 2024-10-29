@@ -6,6 +6,7 @@ import {
 } from '@/constants/master-git-and-github-book';
 import { useActiveBackgroundDispatch } from '@/context/background-master-git-and-github-book/Context';
 import { useBookVersion } from '@/context/book-version/Context';
+import { useInitialScrollToPageState } from '@/context/initial-scroll-to-page/Context';
 import { useSmallDevicesUrlUpdate } from '@/hooks/use-small-devices-page-update';
 import { BookVersion } from '@/types/book-version';
 import { ActiveBackground } from '@/types/master-git-and-github-book/active-background';
@@ -26,6 +27,8 @@ function GlobalEffects({
   const bookVersion = useBookVersion();
   const basePath =
     bookVersion === BookVersion.DEMO ? BASE_PATH_DEMO : BASE_PATH_READ;
+
+  const { initialScrollToPageIsCompletedRef } = useInitialScrollToPageState();
 
   const previousPathRef = useRef<string | null>(null);
   const path = usePathname();
@@ -59,6 +62,7 @@ function GlobalEffects({
     }
 
     if (initialPageId === undefined) {
+      initialScrollToPageIsCompletedRef.current = true;
       return;
     }
 
@@ -71,12 +75,13 @@ function GlobalEffects({
 
         setTimeout(() => {
           updateUrl({ basePath: `${basePath}/end` });
+          initialScrollToPageIsCompletedRef.current = true;
           setActiveBackground(ActiveBackground.DARK);
           document.documentElement.classList.add('!bg-black');
           setTimeout(() => {
             showBook();
           }, 20);
-        }, 200);
+        }, 20);
 
         return;
       }
@@ -85,12 +90,18 @@ function GlobalEffects({
       page?.scrollIntoView({ behavior: 'instant' });
       setTimeout(() => {
         updateUrl({ page: Number(initialPageId), basePath });
+        initialScrollToPageIsCompletedRef.current = true;
         showBook();
-      }, 200);
+      }, 20);
     }
 
     scrollToPage(initialPageId);
-  }, [initialPageId, basePath, setActiveBackground]);
+  }, [
+    initialPageId,
+    basePath,
+    setActiveBackground,
+    initialScrollToPageIsCompletedRef,
+  ]);
 
   useSmallDevicesUrlUpdate({ basePath });
 
