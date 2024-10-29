@@ -12,7 +12,7 @@ function Footer(): ReactElement {
   return (
     <footer
       className='mt-44  border-t  border-[#EBEBEB]  
-                     pb-[4.4rem]  pt-12  dark:border-[#414141]'
+                     sm:pb-[4.4rem]  pb-20  pt-12  dark:border-[#414141]'
     >
       <MainContainer
         className='flex  flex-col-reverse  items-center  sm:flex-row
