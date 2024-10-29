@@ -10,8 +10,7 @@ import { useSmallDevicesUrlUpdate } from '@/hooks/use-small-devices-page-update'
 import { BookVersion } from '@/types/book-version';
 import { ActiveBackground } from '@/types/master-git-and-github-book/active-background';
 import { updateUrl } from '@/utils/update-url';
-import { usePathname } from 'next/navigation';
-import { ReactElement, ReactNode, useEffect, useRef } from 'react';
+import { ReactElement, ReactNode, useEffect } from 'react';
 
 interface GlobalEffectsProps {
   initialPageId?: string;
@@ -27,25 +26,25 @@ function GlobalEffects({
   const basePath =
     bookVersion === BookVersion.DEMO ? BASE_PATH_DEMO : BASE_PATH_READ;
 
-  const previousPathRef = useRef<string | null>(null);
-  const path = usePathname();
+  // const previousPathRef = useRef<string | null>(null);
+  // const path = usePathname();
 
-  useEffect(() => {
-    if (
-      !previousPathRef.current?.endsWith('1') &&
-      !previousPathRef.current?.endsWith('1/') &&
-      (path.endsWith('demo') ||
-        path.endsWith('demo/') ||
-        path.endsWith('read') ||
-        path.endsWith('read/'))
-    ) {
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-      }, 20);
-    }
+  // useEffect(() => {
+  //   if (
+  //     !previousPathRef.current?.endsWith('1') &&
+  //     !previousPathRef.current?.endsWith('1/') &&
+  //     (path.endsWith('demo') ||
+  //       path.endsWith('demo/') ||
+  //       path.endsWith('read') ||
+  //       path.endsWith('read/'))
+  //   ) {
+  //     setTimeout(() => {
+  //       window.scrollTo(0, 0);
+  //     }, 20);
+  //   }
 
-    previousPathRef.current = path;
-  }, [path]);
+  //   previousPathRef.current = path;
+  // }, [path]);
 
   useEffect(() => {
     return () => {
