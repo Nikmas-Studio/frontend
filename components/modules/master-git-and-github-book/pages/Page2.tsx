@@ -229,8 +229,8 @@ function Page2(): ReactElement {
             <TextNode>
               Copying directories and&nbsp;renaming them is a&nbsp;go-to version
               control method for&nbsp;many people. It&apos;s so&nbsp;simple,
-              and&nbsp;that makes it so&nbsp;appealing. But this&nbsp;simplicity
-              comes with&nbsp;its drawbacks:
+              and&nbsp;that makes it so&nbsp;appealing. But,
+              this&nbsp;simplicity comes with&nbsp;its drawbacks:
             </TextNode>
             <TextUl>
               <TextLi>
