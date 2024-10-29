@@ -5,6 +5,7 @@ import {
   BASE_PATH_DEMO,
   BASE_PATH_READ,
 } from '@/constants/master-git-and-github-book';
+import { useActiveBackgroundDispatch } from '@/context/background-master-git-and-github-book/Context';
 import { useBookVersion } from '@/context/book-version/Context';
 import useGsapResizeUpdate from '@/hooks/use-gsap-resize-update';
 import { useUrlUpdate } from '@/hooks/use-url-update';
@@ -15,6 +16,7 @@ import instagramLogo from '@/public/images/instagram-logo.png';
 import linkedinLogo from '@/public/images/linkedin-logo.png';
 import telegramLogo from '@/public/images/telegram-logo.png';
 import { BookVersion } from '@/types/book-version';
+import { ActiveBackground } from '@/types/master-git-and-github-book/active-background';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
@@ -29,6 +31,7 @@ function EndPageRead(): ReactElement {
   const spineRef = useRef<HTMLDivElement | null>(null);
   const { gsapShouldUpdate } = useGsapResizeUpdate();
   const afterwordRef = useRef<HTMLDivElement | null>(null);
+  const { setActiveBackground } = useActiveBackgroundDispatch();
   const bookVersion = useBookVersion();
   const basePath =
     bookVersion === BookVersion.DEMO ? BASE_PATH_DEMO : BASE_PATH_READ;
@@ -74,6 +77,25 @@ function EndPageRead(): ReactElement {
       );
 
       document.documentElement.classList.remove('overflow-hidden');
+    },
+    { dependencies: [gsapShouldUpdate], revertOnUpdate: true },
+  );
+
+  useGSAP(
+    () => {
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: 'top top',
+        end: '+=120',
+        onLeave: () => {
+          setActiveBackground(ActiveBackground.DARK);
+          document.documentElement.classList.add('!bg-black');
+        },
+        onEnterBack: () => {
+          setActiveBackground(ActiveBackground.DEFAULT);
+          document.documentElement.classList.remove('!bg-black');
+        },
+      });
     },
     { dependencies: [gsapShouldUpdate], revertOnUpdate: true },
   );

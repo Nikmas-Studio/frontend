@@ -43,6 +43,12 @@ function GlobalEffects({
   }, [path]);
 
   useEffect(() => {
+    return () => {
+      document.documentElement.classList.remove('!bg-black');
+    };
+  }, []);
+
+  useEffect(() => {
     function showBook(): void {
       document.body.classList.remove('invisible');
     }
