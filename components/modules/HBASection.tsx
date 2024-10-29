@@ -61,6 +61,8 @@ function HBASection(): ReactElement {
             src={circle}
             alt='Dotted elipse'
             className='size-full  [transition:transform_1s_ease-out]  xl:transition-none'
+            quality={100}
+            priority
           />
           <div
             className='absolute  left-1/2  top-1/2  z-20  flex  -translate-x-1/2
@@ -94,6 +96,8 @@ function HBASection(): ReactElement {
                          xl:w-[4vw]  2xl:w-[61.4px]'
               src={cakeHBA}
               alt='Cake HBA'
+              sizes='(max-width: 639px) 8vw, (max-width: 1023px) 6vw, (max-width: 1279px) 5vw, (max-width: 1535px) 4vw, 62px'
+              quality={100}
               priority
             />
           </div>
