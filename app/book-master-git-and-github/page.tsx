@@ -251,7 +251,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                                md:ml-0  md:mt-12  md:max-w-[245px]  
                                md:[filter:drop-shadow(0_0_250px_rgba(0,0,0,0.22))]  
                                dark:fill-black  
-                               dark:[filter:drop-shadow(0_0_250px_rgba(255,255,255,0.5))]'
+                               dark:[filter:drop-shadow(0_0_250px_rgba(255,255,255,0.45))]'
                   />
                 </div>
               </div>
