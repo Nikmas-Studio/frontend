@@ -58,89 +58,93 @@ export function useUrlUpdate({
       );
 
       if (initialScrollToPageIsCompleted) {
-        ScrollTrigger.create({
-          trigger: pageRef.current,
-          start: `top ${offset ?? '280px'}`,
-          end: '+=0',
-          onEnter: () => {
-            console.log('onEnter attempt');
+        setTimeout(() => {
+          ScrollTrigger.create({
+            trigger: pageRef.current,
+            start: `top ${offset ?? '280px'}`,
+            end: '+=0',
+            onEnter: () => {
+              console.log('onEnter attempt');
 
-            if (firstOnEnterCallRef.current) {
-              console.log('firstOnEnterCall');
-              console.log('initialPageId', initialPageId);
-              console.log('currentPage', currentPage);
+              if (firstOnEnterCallRef.current) {
+                console.log('firstOnEnterCall');
+                console.log('initialPageId', initialPageId);
+                console.log('currentPage', currentPage);
 
-              if (initialPageId === 'end') {
+                if (initialPageId === 'end') {
+                  firstOnEnterCallRef.current = false;
+                  console.log('return from === end');
+                  return;
+                }
+
+                if (currentPage !== undefined) {
+                  if (currentPage <= Number(initialPageId)) {
+                    firstOnEnterCallRef.current = false;
+                    console.log('return from second condition');
+                    return;
+                  }
+                }
+
                 firstOnEnterCallRef.current = false;
-                console.log('return from === end');
+              }
+
+              console.log('useUrlUpdate onEnter let it');
+
+              if (isMobileOrTablet()) {
+                if (end) {
+                  setPendingUrlUpdates((prev) => [...prev, { end: {} }]);
+                } else {
+                  setPendingUrlUpdates((prev) => [
+                    ...prev,
+                    { currentPage: { pageNumber: currentPage } },
+                  ]);
+                }
+
                 return;
               }
 
-              if (currentPage !== undefined) {
-                if (currentPage <= Number(initialPageId)) {
-                  firstOnEnterCallRef.current = false;
-                  console.log('return from second condition');
-                  return;
+              if (end) {
+                updateUrl({ basePath: `${basePath}/end` });
+                return;
+              }
+
+              updateUrl({ page: currentPage, basePath });
+            },
+            onEnterBack: () => {
+              console.log('useUrlUpdate onEnterBack');
+
+              if (isMobileOrTablet()) {
+                if (end) {
+                  setPendingUrlUpdates((prev) => [
+                    ...prev,
+                    { end: { previousPage: end.previousPage } },
+                  ]);
+                } else {
+                  setPendingUrlUpdates((prev) => [
+                    ...prev,
+                    {
+                      currentPage: { pageNumber: currentPage, enterBack: true },
+                    },
+                  ]);
                 }
+
+                return;
               }
 
-              firstOnEnterCallRef.current = false;
-            }
-
-            console.log('useUrlUpdate onEnter let it');
-
-            if (isMobileOrTablet()) {
               if (end) {
-                setPendingUrlUpdates((prev) => [...prev, { end: {} }]);
-              } else {
-                setPendingUrlUpdates((prev) => [
-                  ...prev,
-                  { currentPage: { pageNumber: currentPage } },
-                ]);
+                updateUrl({ page: end.previousPage, basePath });
+                return;
               }
 
-              return;
-            }
-
-            if (end) {
-              updateUrl({ basePath: `${basePath}/end` });
-              return;
-            }
-
-            updateUrl({ page: currentPage, basePath });
-          },
-          onEnterBack: () => {
-            console.log('useUrlUpdate onEnterBack');
-
-            if (isMobileOrTablet()) {
-              if (end) {
-                setPendingUrlUpdates((prev) => [
-                  ...prev,
-                  { end: { previousPage: end.previousPage } },
-                ]);
-              } else {
-                setPendingUrlUpdates((prev) => [
-                  ...prev,
-                  { currentPage: { pageNumber: currentPage, enterBack: true } },
-                ]);
+              if (currentPage > 1) {
+                updateUrl({ page: currentPage - 1, basePath });
+                return;
               }
 
-              return;
-            }
-
-            if (end) {
-              updateUrl({ page: end.previousPage, basePath });
-              return;
-            }
-
-            if (currentPage > 1) {
-              updateUrl({ page: currentPage - 1, basePath });
-              return;
-            }
-
-            updateUrl({ basePath });
-          },
-        });
+              updateUrl({ basePath });
+            },
+          });
+        }, 200);
       }
     },
     {
