@@ -1,7 +1,6 @@
 'use client';
 
 import { ReactElement, useRef } from 'react';
-import RemoveWillChangeEffect from './RemoveWillChangeEffect';
 
 interface BuddhaSvgProps {
   className?: string;
