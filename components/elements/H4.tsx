@@ -12,7 +12,9 @@ const H4 = forwardRef<HTMLHeadingElement, H2Props>(function H2(
 ): ReactElement {
   const classes = classNames(
     `text-[1.4375rem]  font-medium  text-black
-     dark:text-white  leading-tight`,
+     dark:text-white  leading-tight
+     `,
+
     className,
   );
 

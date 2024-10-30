@@ -1,4 +1,5 @@
 import BasicTextNode from '@/components/elements/BasicTextNode';
+import BuddhaSvg from '@/components/elements/BuddhaSvg';
 import H2 from '@/components/elements/H2';
 import H3 from '@/components/elements/H3';
 import H4 from '@/components/elements/H4';
@@ -7,7 +8,6 @@ import TextNode from '@/components/elements/TextNode';
 import DefaultLayout from '@/components/layouts/DefaultLayout';
 import Footer from '@/components/modules/Footer';
 import HeaderDefault from '@/components/modules/header/header-element/HeaderDefault';
-import buddha from '@/public/images/buddha.png';
 import bookCoverDark from '@/public/images/git-and-github-book-cover-dark.jpg';
 import bookCoverLight from '@/public/images/git-and-github-book-cover-light.jpg';
 import authorPhoto from '@/public/images/Nick_Maslov.jpg';
@@ -29,12 +29,15 @@ function MasterGitAndGithubBookPromo(): ReactElement {
         <div className='pt-[5.118rem]'>
           <HeaderDefault />
           <MainContainer>
-            <h1 className='mb-3  mt-5  text-4xl  font-bold  leading-tight  lg:text-[2.7rem]  dark:text-white'>
-              Master Git & Github: <br className='xl:hidden' />
+            <h1
+              className='mb-3  mt-5  text-4xl  font-bold  leading-tight  
+                           lg:text-[2.7rem]  dark:text-white'
+            >
+              Master Git&nbsp;& Github: <br className='xl:hidden' />
               From&nbsp;Everyday Tasks to&nbsp;Deep Waters
             </h1>
             <h2 className='text-4xl  font-medium  lg:text-[2.7rem]  dark:text-white'>
-              Interactive e-book
+              Interactive e&#8209;book
             </h2>
             <section
               className='mt-11  lg:flex  lg:flex-row  lg:justify-between  
@@ -42,7 +45,8 @@ function MasterGitAndGithubBookPromo(): ReactElement {
             >
               <div
                 className='top-[6.2rem]  flex  w-full  flex-none  flex-col  
-                              self-start  sm:w-[400px]  lg:sticky  lg:w-[30vw]  xl:w-[400px]'
+                           self-start  sm:w-[400px]  lg:sticky  lg:w-[30vw]
+                           xl:w-[400px]'
               >
                 <div className='mb-10'>
                   <Image
@@ -170,22 +174,27 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                 </H2>
                 <hr className='border-[#EBEBEB]  dark:border-[#414141]' />
               </div>
-              <div className='mt-14  flex  flex-col  gap-16  md:flex-row  lg:justify-between'>
-                <div className='basis-1/2'>
-                  <div className='flex  flex-row  items-center  gap-3  md:items-end  md:gap-4'>
-                    <H3 className='!text-git-orange'>
-                      Part 1. <br className='hidden  md:inline' />
-                      Everyday Tasks
-                    </H3>
+              <div
+                className='mt-14  flex  flex-col  gap-16  md:flex-row  
+                           md:justify-between  lg:justify-center  lg:gap-40'
+              >
+                <div className='basis-1/2  lg:basis-auto'>
+                  <div
+                    className='flex  flex-col  items-start  gap-2  
+                                 2sm:flex-row  2sm:items-end  2sm:gap-3  
+                                 md:flex-col  md:items-start  md:gap-2  
+                                 lg:flex-row  lg:items-end  lg:gap-3'
+                  >
+                    <H3 className='!text-git-orange'>Part 1. Everyday Tasks</H3>
                     <p
-                      className='translate-y-[-0.12rem]  rounded-md  border  border-git-orange
-                                px-[0.65rem]  pb-[0.28rem]  pt-[0.2rem]  text-base  leading-[1.2]
-                                text-git-orange  md:translate-y-[-0.24rem]'
+                      className='translate-y-[-0.24rem]  rounded-md  border  border-git-orange
+                                 px-[0.65rem]  pb-[0.28rem]  pt-[0.2rem]  text-base  leading-[1.2]
+                               text-git-orange  lg:pb-[0.23rem]  lg:pt-[0.15rem]'
                     >
                       In progress
                     </p>
                   </div>
-                  <div className='mt-6'>
+                  <div className='mt-8  2sm:mt-6'>
                     <ul className='flex  flex-col  gap-4'>
                       <H4>Introduction to Version Control</H4>
                       <H4>Fundamental Concepts Overview</H4>
@@ -205,36 +214,44 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                     </ul>
                   </div>
                 </div>
-                <div className='flex  basis-1/2  flex-col  justify-between'>
-                  <div className='flex  flex-row  items-center  gap-3  md:items-end  md:gap-4'>
-                    <H3 className='!text-git-blue'>
-                      Part 2. <br className='hidden  md:inline' />
-                      Deep Waters
-                    </H3>
-                    <p
-                      className='translate-y-[-0.12rem]  rounded-md  border  border-git-blue
-                                px-[0.65rem]  pb-[0.28rem]  pt-[0.2rem]  text-base  leading-[1.2]
-                                text-git-blue  md:translate-y-[-0.24rem]'
+                <div className='flex  basis-1/2  flex-col  justify-between  lg:basis-auto'>
+                  <div>
+                    <div
+                      className='flex  flex-col  items-start  gap-2  
+                                 2sm:flex-row  2sm:items-end  2sm:gap-3  
+                                 md:flex-col  md:items-start  md:gap-2  
+                                 lg:flex-row  lg:items-end  lg:gap-3'
                     >
-                      In progress
-                    </p>
+                      <H3 className='!text-git-blue'>Part 2. Deep Waters</H3>
+                      <p
+                        className='translate-y-[-0.24rem]  rounded-md  border
+                                 border-git-blue  px-[0.65rem]  pb-[0.28rem]
+                                  pt-[0.2rem]  text-base  leading-[1.2]
+                                 text-git-blue  lg:pb-[0.23rem]  lg:pt-[0.15rem]'
+                      >
+                        In progress
+                      </p>
+                    </div>
+                    <div className='mt-8  2sm:mt-6'>
+                      <ul className='flex  flex-col  gap-4'>
+                        <H4>The Dark Magic of Reflogs</H4>
+                        <H4>On Stranger Tides of Worktrees</H4>
+                        <H4>A Song of Submodules</H4>
+                        <H4>Catching Bugs with Git Bisect</H4>
+                        <H4>Github, Again</H4>
+                        <H4>Subtle Tools of Git Guru</H4>
+                        <H4>Internal Mysteries of Git</H4>
+                      </ul>
+                    </div>
                   </div>
-                  <div className='mt-6'>
-                    <ul className='flex  flex-col  gap-4'>
-                      <H4>The Dark Magic of Reflogs</H4>
-                      <H4>On Stranger Tides of Worktrees</H4>
-                      <H4>A Song of Submodules</H4>
-                      <H4>Catching Bugs with Git Bisect</H4>
-                      <H4>Github, Again</H4>
-                      <H4>Subtle Tools of Git Guru</H4>
-                      <H4>Internal Mysteries of Git</H4>
-                    </ul>
-                  </div>
-                  <Image
-                    src={buddha}
-                    alt='Buddha'
-                    className='mx-auto  mt-[4.8rem]  w-[70%]  [filter:drop-shadow(0_0_250px_rgba(0,0,0,0.18))]
-                               md:ml-0  md:mt-12  md:[filter:drop-shadow(0_0_250px_rgba(0,0,0,0.22))]'
+                  <BuddhaSvg
+                    className='mx-auto  mt-[4.8rem]  w-[70%]  max-w-[270px]  
+                               fill-white  
+                               [filter:drop-shadow(0_0_250px_rgba(0,0,0,0.20))]
+                               md:ml-0  md:mt-12  md:max-w-[245px]  
+                               md:[filter:drop-shadow(0_0_250px_rgba(0,0,0,0.22))]  
+                               dark:fill-black  
+                               dark:[filter:drop-shadow(0_0_250px_rgba(255,255,255,0.5))]'
                   />
                 </div>
               </div>
