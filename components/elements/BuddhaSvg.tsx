@@ -239,7 +239,7 @@ M411.939606,1485.709229
 z'
       />
 
-      <RemoveWillChangeEffect buddhaImageRef={buddhaImageRef} />
+      {/* <RemoveWillChangeEffect buddhaImageRef={buddhaImageRef} /> */}
     </svg>
   );
 }
