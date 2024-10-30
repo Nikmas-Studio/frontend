@@ -72,7 +72,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                   Try demo
                 </Link>
               </div>
-              <div className='mt-16  lg:mt-0  xl:pl-14  xl:pr-16'>
+              <div className='mt-14  lg:mt-0  xl:pl-14  xl:pr-16'>
                 <BasicTextNode
                   className='mb-7  text-[1.375rem]  font-semibold
                            leading-snug'
@@ -125,8 +125,8 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                   priority
                 />
                 <BasicTextNode
-                  className='mb-1  mt-5  w-[275px]  text-[1.3125rem]
-                                          font-bold  lg:w-[225px]  lg:text-[1.2rem]'
+                  className='mb-1  mt-5  w-[275px]  text-[1.28rem]
+                             font-bold  lg:w-[225px]  lg:text-[1.2rem]'
                 >
                   Author:&nbsp;Nick&nbsp;Maslov
                 </BasicTextNode>
