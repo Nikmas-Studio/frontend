@@ -63,15 +63,23 @@ export function useUrlUpdate({
           start: `top ${offset ?? '280px'}`,
           end: '+=0',
           onEnter: () => {
+            console.log('onEnter attempt');
+
             if (firstOnEnterCallRef.current) {
+              console.log('firstOnEnterCall');
+              console.log('initialPageId', initialPageId);
+              console.log('currentPage', currentPage);
+
               if (initialPageId === 'end') {
                 firstOnEnterCallRef.current = false;
+                console.log('return from === end');
                 return;
               }
 
               if (currentPage !== undefined) {
                 if (currentPage <= Number(initialPageId)) {
                   firstOnEnterCallRef.current = false;
+                  console.log('return from second condition');
                   return;
                 }
               }
@@ -79,7 +87,7 @@ export function useUrlUpdate({
               firstOnEnterCallRef.current = false;
             }
 
-            console.log('useUrlUpdate onEnter');
+            console.log('useUrlUpdate onEnter let it');
 
             if (isMobileOrTablet()) {
               if (end) {
