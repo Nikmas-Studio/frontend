@@ -114,7 +114,7 @@ export function useUrlUpdate({
               updateUrl({ basePath });
             },
           });
-        }, 100);
+        }, 20);
       }
     },
     {
