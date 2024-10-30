@@ -74,26 +74,26 @@ function GlobalEffects({
           behavior: 'instant',
         });
 
-        setTimeout(() => {
-          updateUrl({ basePath: `${basePath}/end` });
-          setInitialScrollToPageIsCompleted(true);
-          setActiveBackground(ActiveBackground.DARK);
-          document.documentElement.classList.add('!bg-black');
-          setTimeout(() => {
-            showBook();
-          }, 20);
-        }, 20);
+        // setTimeout(() => {
+        updateUrl({ basePath: `${basePath}/end` });
+        setInitialScrollToPageIsCompleted(true);
+        setActiveBackground(ActiveBackground.DARK);
+        document.documentElement.classList.add('!bg-black');
+        // setTimeout(() => {
+        showBook();
+        // }, 20);
+        // }, 20);
 
         return;
       }
 
       const page = document.getElementById(`page-${initialPageId}`);
       page?.scrollIntoView({ behavior: 'instant' });
-      setTimeout(() => {
-        updateUrl({ page: Number(initialPageId), basePath });
-        setInitialScrollToPageIsCompleted(true);
-        showBook();
-      }, 20);
+      // setTimeout(() => {
+      updateUrl({ page: Number(initialPageId), basePath });
+      setInitialScrollToPageIsCompleted(true);
+      showBook();
+      // }, 20);
     }
 
     scrollToPage(initialPageId);

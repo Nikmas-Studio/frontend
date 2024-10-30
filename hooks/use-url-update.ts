@@ -1,11 +1,10 @@
-import { useInitialPageId } from '@/context/initial-page-id/Context';
 import { useInitialScrollToPageState } from '@/context/initial-scroll-to-page/Context';
 import { usePendingUrlUpdatedDispatch } from '@/context/pending-url-updates/Context';
 import { updateUrl } from '@/utils/update-url';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
-import { RefObject, useRef } from 'react';
+import { RefObject } from 'react';
 import useGsapResizeUpdate from './use-gsap-resize-update';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -41,8 +40,6 @@ export function useUrlUpdate({
 }: Options): void {
   const { gsapShouldUpdate } = useGsapResizeUpdate();
   const { initialScrollToPageIsCompleted } = useInitialScrollToPageState();
-  const initialPageId = useInitialPageId();
-  const firstOnEnterCallRef = useRef(true);
 
   const { setPendingUrlUpdates } = usePendingUrlUpdatedDispatch();
 
@@ -52,11 +49,6 @@ export function useUrlUpdate({
 
   useGSAP(
     () => {
-      console.log(
-        'initialScrollToPageIsCompleted',
-        initialScrollToPageIsCompleted,
-      );
-
       if (initialScrollToPageIsCompleted) {
         setTimeout(() => {
           ScrollTrigger.create({
@@ -64,31 +56,11 @@ export function useUrlUpdate({
             start: `top ${offset ?? '280px'}`,
             end: '+=0',
             onEnter: () => {
-              console.log('onEnter attempt');
-
-              if (firstOnEnterCallRef.current) {
-                console.log('firstOnEnterCall');
-                console.log('initialPageId', initialPageId);
-                console.log('currentPage', currentPage);
-
-                if (initialPageId === 'end') {
-                  firstOnEnterCallRef.current = false;
-                  console.log('return from === end');
-                  return;
-                }
-
-                if (currentPage !== undefined) {
-                  if (currentPage <= Number(initialPageId)) {
-                    firstOnEnterCallRef.current = false;
-                    console.log('return from second condition');
-                    return;
-                  }
-                }
-
-                firstOnEnterCallRef.current = false;
+              const pageBottom =
+                pageRef.current?.getBoundingClientRect().bottom;
+              if (pageBottom && pageBottom < 0) {
+                return;
               }
-
-              console.log('useUrlUpdate onEnter let it');
 
               if (isMobileOrTablet()) {
                 if (end) {
@@ -111,8 +83,6 @@ export function useUrlUpdate({
               updateUrl({ page: currentPage, basePath });
             },
             onEnterBack: () => {
-              console.log('useUrlUpdate onEnterBack');
-
               if (isMobileOrTablet()) {
                 if (end) {
                   setPendingUrlUpdates((prev) => [
@@ -144,7 +114,7 @@ export function useUrlUpdate({
               updateUrl({ basePath });
             },
           });
-        }, 200);
+        }, 100);
       }
     },
     {
