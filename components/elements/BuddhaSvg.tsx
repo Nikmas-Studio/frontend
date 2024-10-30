@@ -1,12 +1,18 @@
-import { ReactElement } from 'react';
+'use client';
+
+import { ReactElement, useRef } from 'react';
+import RemoveWillChangeEffect from './RemoveWillChangeEffect';
 
 interface BuddhaSvgProps {
   className?: string;
 }
 
 function BuddhaSvg({ className }: BuddhaSvgProps): ReactElement {
+  const buddhaImageRef = useRef<SVGSVGElement>(null);
+
   return (
     <svg
+      ref={buddhaImageRef}
       className={className}
       version='1.1'
       id='Layer_1'
@@ -232,8 +238,9 @@ M411.939606,1485.709229
 	C398.099854,1554.038086 400.937622,1520.104858 411.939606,1485.709229 
 z'
       />
+
+      <RemoveWillChangeEffect buddhaImageRef={buddhaImageRef} />
     </svg>
   );
 }
-
 export default BuddhaSvg;

@@ -248,7 +248,6 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                     className='mx-auto  mt-[4.8rem]  w-[70%]  max-w-[270px]  
                                fill-white  
                                will-change-transform
-                               [backface-visibility:hidden]
                                [filter:drop-shadow(0_0_250px_rgba(0,0,0,0.20))]
                                md:ml-0  md:mt-12  md:max-w-[245px]  
                                md:[filter:drop-shadow(0_0_250px_rgba(0,0,0,0.22))]  
