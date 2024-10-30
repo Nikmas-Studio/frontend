@@ -1,6 +1,7 @@
 'use client';
 
 import { ReactElement, useRef } from 'react';
+import RemoveWillChangeEffect from './RemoveWillChangeEffect';
 
 interface BuddhaSvgProps {
   className?: string;
@@ -238,7 +239,7 @@ M411.939606,1485.709229
 z'
       />
 
-      {/* <RemoveWillChangeEffect buddhaImageRef={buddhaImageRef} /> */}
+      <RemoveWillChangeEffect buddhaImageRef={buddhaImageRef} />
     </svg>
   );
 }

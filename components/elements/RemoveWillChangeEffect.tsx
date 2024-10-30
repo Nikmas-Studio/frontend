@@ -8,7 +8,9 @@ function RemoveWillChangeEffect({
   buddhaImageRef: RefObject<SVGSVGElement>;
 }): null {
   useEffect(() => {
-    buddhaImageRef.current?.classList.remove('will-change-transform');
+    setTimeout(() => {
+      buddhaImageRef.current?.classList.remove('will-change-transform');
+    }, 100);
   }, [buddhaImageRef]);
 
   return null;
