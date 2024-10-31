@@ -56,7 +56,7 @@ function Page1(): ReactElement {
     <Page
       id='page-1'
       ref={sectionRef}
-      className='flex  h-[calc(100vh+10px)]  bg-git-orange'
+      className='flex  h-[calc(100vh+10px)]  bg-orange'
     >
       <Controls reversedColors />
       <BookMainContainer>

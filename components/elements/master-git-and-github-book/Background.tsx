@@ -69,7 +69,7 @@ function Background(): ReactElement {
      `,
     {
       'bg-white  dark:bg-black': activeBackground === ActiveBackground.DEFAULT,
-      'bg-git-part-1-light  dark:bg-git-part-1-dark  bg-git-orange':
+      'bg-git-part-1-light  dark:bg-git-part-1-dark  bg-orange':
         activeBackground === ActiveBackground.PART1,
       'bg-git-part-2-light  dark:bg-git-part-2-dark':
         activeBackground === ActiveBackground.PART2,

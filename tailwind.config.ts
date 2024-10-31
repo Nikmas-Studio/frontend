@@ -31,8 +31,13 @@ const config: Config = {
       colors: {
         'git-black': '#00040A',
         'git-white': '#e3e3e3',
-        'git-orange': '#ff5013',
-        'git-blue': '#271ad3',
+        orange: '#ff5013',
+        blue: '#271ad3',
+        'git-dark-blue': '#09132a',
+        subscription: '#29AD04',
+        'subscription-darker': '#248F04',
+        'gray-light': '#EBEBEB',
+        'gray-dark': '#414141',
       },
       backgroundImage: {
         'git-part-1-dark':

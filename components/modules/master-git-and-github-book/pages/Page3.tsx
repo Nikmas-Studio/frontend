@@ -818,11 +818,11 @@ function Page3(): ReactElement {
                   <li
                     ref={initializeProjectCommitRef}
                     className='relative  z-[70]  size-[5vw]  rounded-full
-                           bg-git-blue  transition-shadow  h-md:size-[5vh]'
+                           bg-blue  transition-shadow  h-md:size-[5vh]'
                   >
                     <p
                       className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left   rotate-[-25deg]
-                              text-xl  leading-normal  text-git-blue  max-md:text-[3vw]  h-md:bottom-[4.5vh]
+                              text-xl  leading-normal  text-blue  max-md:text-[3vw]  h-md:bottom-[4.5vh]
                               h-md:left-[0.5vh]  h-md:text-[3vh]  dark:text-[#3D32D1]'
                     >
                       Initialize&nbsp;the&nbsp;project
@@ -835,12 +835,12 @@ function Page3(): ReactElement {
                   >
                     <div
                       ref={addHeaderCommitCircleRef}
-                      className='absolute  inset-0  z-30  rounded-full  bg-git-blue
+                      className='absolute  inset-0  z-30  rounded-full  bg-blue
                                transition-shadow'
                     >
                       <p
                         className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
-                                text-xl  leading-normal  text-git-blue  max-md:text-[3vw]
+                                text-xl  leading-normal  text-blue  max-md:text-[3vw]
                                 h-md:bottom-[4.5vh]  h-md:left-[0.5vh]  h-md:text-[3vh]  dark:text-[#3D32D1]'
                       >
                         Add&nbsp;the&nbsp;header
@@ -862,12 +862,12 @@ function Page3(): ReactElement {
                   >
                     <div
                       ref={addIntroSectionCommitCircleRef}
-                      className='absolute  inset-0  z-30  rounded-full  bg-git-blue
+                      className='absolute  inset-0  z-30  rounded-full  bg-blue
                                transition-shadow'
                     >
                       <p
                         className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
-                                text-xl  leading-normal  text-git-blue  max-md:text-[3vw]
+                                text-xl  leading-normal  text-blue  max-md:text-[3vw]
                                 h-md:bottom-[4.5vh]  h-md:left-[0.5vh]  
                                 h-md:text-[3vh]  dark:text-[#3D32D1]'
                       >
@@ -901,13 +901,13 @@ function Page3(): ReactElement {
                   >
                     <div
                       ref={addProductsSectionCommitCircleRef}
-                      className='absolute  inset-0  z-30  rounded-full  bg-git-blue
+                      className='absolute  inset-0  z-30  rounded-full  bg-blue
                                transition-shadow'
                     >
                       <p
                         className='absolute  bottom-[5.2vw]  left-[0.5vw]  
                                origin-top-left  rotate-[-25deg]  text-xl
-                               leading-normal  text-git-blue  max-md:text-[3vw]
+                               leading-normal  text-blue  max-md:text-[3vw]
                                h-md:bottom-[4.5vh]  h-md:left-[0.5vh]
                                h-md:text-[3vh]  dark:text-[#3D32D1]'
                       >
@@ -929,12 +929,12 @@ function Page3(): ReactElement {
                   >
                     <div
                       ref={addFooterCommitCircleRef}
-                      className='absolute  inset-0  z-30  rounded-full  bg-git-blue
+                      className='absolute  inset-0  z-30  rounded-full  bg-blue
                                transition-shadow'
                     >
                       <p
                         className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
-                               text-xl  leading-normal  text-git-blue  max-md:text-[3vw]
+                               text-xl  leading-normal  text-blue  max-md:text-[3vw]
                                h-md:bottom-[4.5vh]  h-md:left-[0.5vh]
                                h-md:text-[3vh]  dark:text-[#3D32D1]'
                       >
@@ -956,12 +956,12 @@ function Page3(): ReactElement {
                   >
                     <div
                       ref={mergeCommitCircleRef}
-                      className='absolute  inset-0  z-40  rounded-full  bg-git-orange
+                      className='absolute  inset-0  z-40  rounded-full  bg-orange
                                transition-shadow'
                     >
                       <p
                         className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
-                              text-xl  leading-normal  text-git-blue  max-md:text-[3vw]
+                              text-xl  leading-normal  text-blue  max-md:text-[3vw]
                               h-md:bottom-[4.5vh]  h-md:left-[0.5vh]
                               h-md:text-[3vh]  dark:text-[#3D32D1]'
                       >
@@ -997,7 +997,7 @@ function Page3(): ReactElement {
                          h-md:translate-y-[-5vh]  h-md:rotate-[-40deg]  h-md:gap-[5vh]'
               >
                 <li
-                  className='relative  size-[5vw]  rounded-full  bg-git-blue  opacity-0
+                  className='relative  size-[5vw]  rounded-full  bg-blue  opacity-0
                              h-md:size-[5vh]'
                 ></li>
                 <li
@@ -1186,7 +1186,7 @@ function Page3(): ReactElement {
             <div
               ref={browserWrapperRef}
               className='pointer-events-none  w-[22vw]  select-none  overflow-hidden  
-                       rounded-3xl  border  border-git-blue  text-[1vw]
+                       rounded-3xl  border  border-blue  text-[1vw]
                        transition-colors  max-2xl:w-[21rem]  max-2xl:text-[14.95px] 
                        max-xl:w-[28vw]  max-xl:text-[1.7vh]  max-2md:w-full  
                        max-2md:text-[1vh]  h-md:w-[40vw]  max-lg:portrait:text-[1vh]'
@@ -1252,12 +1252,12 @@ function Page3(): ReactElement {
                 className='mt-[0.55em]  flex  flex-row  items-center
                          justify-between  px-[10%]  opacity-0  transition-opacity'
               >
-                <p className='text-[0.8em]  font-bold  text-git-blue  dark:text-[#3D32D1]'>
+                <p className='text-[0.8em]  font-bold  text-blue  dark:text-[#3D32D1]'>
                   Nikmas Studio
                 </p>
                 <div className='flex  flex-row  items-center  gap-[0.25em]'>
                   <svg
-                    className='translate-y-[-0.031em]  fill-git-blue  dark:fill-[#3D32D1]'
+                    className='translate-y-[-0.031em]  fill-blue  dark:fill-[#3D32D1]'
                     version='1.1'
                     id='Capa_1'
                     xmlns='http://www.w3.org/2000/svg'
@@ -1305,7 +1305,7 @@ function Page3(): ReactElement {
                     <g></g>
                     <g></g>
                   </svg>
-                  <div className='grid  size-[0.625em]  place-content-center  rounded-full  bg-git-blue'>
+                  <div className='grid  size-[0.625em]  place-content-center  rounded-full  bg-blue'>
                     <div
                       className='h-[0.3125em]  w-px  translate-y-[-0.006em]  rounded-[0.0625em]
                                   bg-white'
@@ -1348,13 +1348,13 @@ function Page3(): ReactElement {
                             dark:bg-[#04061E]'
               >
                 <p
-                  className='mb-[0.5em]  text-[0.8em]  font-bold  text-git-blue
+                  className='mb-[0.5em]  text-[0.8em]  font-bold  text-blue
                             dark:text-[#3D32D1]'
                 >
                   Our first book
                 </p>
                 <div
-                  className='h-[7.8em]  w-[5.4em]  rounded-[0.4em]  bg-git-blue
+                  className='h-[7.8em]  w-[5.4em]  rounded-[0.4em]  bg-blue
                               px-[0.5em]  pt-[0.67em]'
                 >
                   <p className='text-[0.42em]  text-white'>
@@ -1372,7 +1372,7 @@ function Page3(): ReactElement {
                     <div
                       className='absolute  left-1/2  top-[47%]  h-3/4  w-[7%]  
                                -translate-x-1/2  -translate-y-1/2  
-                              rounded-[0.08em]  bg-git-blue  dark:bg-white'
+                              rounded-[0.08em]  bg-blue  dark:bg-white'
                     ></div>
                   </div>
                 </div>
@@ -1385,13 +1385,13 @@ function Page3(): ReactElement {
               >
                 <div>
                   <p
-                    className='mb-[0.6em]  text-[0.42em]  text-git-blue  
+                    className='mb-[0.6em]  text-[0.42em]  text-blue  
                             dark:text-[#3D32D1]'
                   >
                     © Nikmas Studio, 2024
                   </p>
                   <ul
-                    className='flex  flex-col  gap-[0.05em]  text-git-blue  
+                    className='flex  flex-col  gap-[0.05em]  text-blue  
                              dark:text-[#3D32D1]'
                   >
                     <li className='text-[0.3em]'>Terms and conditions</li>
@@ -1402,34 +1402,34 @@ function Page3(): ReactElement {
                 <div className='flex  flex-row  gap-[0.3em]'>
                   <div
                     className='grid  size-[1.9em]  place-content-center  
-                             rounded-full  bg-git-blue  pt-[0.32em]
+                             rounded-full  bg-blue  pt-[0.32em]
                              text-[0.42em]  text-white  '
                   >
                     T
                   </div>
                   <div
                     className='grid  size-[1.9em]  place-content-center 
-                              rounded-full  bg-git-blue  pt-[0.32em]
+                              rounded-full  bg-blue  pt-[0.32em]
                                 text-[0.42em]  text-white'
                   >
                     I
                   </div>
                   <div
                     className='grid  size-[1.9em]  place-content-center
-                              rounded-full  bg-git-blue  pt-[0.32em]
+                              rounded-full  bg-blue  pt-[0.32em]
                                 text-[0.42em]  text-white'
                   >
                     F
                   </div>
                   <div
                     className='grid  size-[1.9em]  place-content-center
-                              rounded-full  bg-git-blue  pt-[0.32em]
+                              rounded-full  bg-blue  pt-[0.32em]
                                 text-[0.42em]  text-white'
                   >
                     L
                   </div>
                 </div>
-                <div className='text-[0.42em]  text-git-blue  dark:text-[#3D32D1]'>
+                <div className='text-[0.42em]  text-blue  dark:text-[#3D32D1]'>
                   <p className='leading-tight'>
                     For questions <br /> and suggestions:
                   </p>
@@ -1571,11 +1571,11 @@ function Page3(): ReactElement {
                              h-md:gap-[1.4vh]'
                 >
                   <div
-                    className='size-6  rounded-full  bg-git-blue  max-md:size-[4vw]
+                    className='size-6  rounded-full  bg-blue  max-md:size-[4vw]
                                 h-md:size-[4vh]'
                   ></div>
                   <p
-                    className='text-xl  leading-tight  text-git-blue  max-md:text-[3vw]
+                    className='text-xl  leading-tight  text-blue  max-md:text-[3vw]
                               h-md:text-[3vh]  dark:text-[#3D32D1]'
                   >
                     Main branch

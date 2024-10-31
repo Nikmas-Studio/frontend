@@ -15,7 +15,7 @@ function GuestAccountIconDefault({
 
   const guestAccountIconClasses = classNames(
     `w-[1.9rem]  h-[1.9rem]  md:w-[2.1rem]  md:h-[2.1rem]  bg-black
-     hover:transition-colors  hover:bg-[#281AD2]
+     hover:transition-colors  hover:bg-blue
      rounded-full  flex  items-center  justify-center  hover:cursor-pointer
      dark:bg-white  group`,
     className,

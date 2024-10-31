@@ -24,20 +24,17 @@ function Footer(): ReactElement {
           </p>
           <ul className='flex  flex-col  items-center  gap-2  text-sm  sm:items-start'>
             <li>
-              <Link
-                className='default-underlined-link'
-                href='/terms-and-conditions'
-              >
+              <Link className='default-link' href='/terms-and-conditions'>
                 Terms and conditions
               </Link>
             </li>
             <li>
-              <Link className='default-underlined-link' href='/privacy-policy'>
+              <Link className='default-link' href='/privacy-policy'>
                 Privacy policy
               </Link>
             </li>
             <li>
-              <Link className='default-underlined-link' href='/cookies-policy'>
+              <Link className='default-link' href='/cookies-policy'>
                 Cookies policy
               </Link>
             </li>

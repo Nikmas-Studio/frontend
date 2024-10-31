@@ -4,10 +4,13 @@ import H2 from '@/components/elements/H2';
 import H3 from '@/components/elements/H3';
 import H4 from '@/components/elements/H4';
 import MainContainer from '@/components/elements/MainContainer';
+import TextLi from '@/components/elements/TextLi';
 import TextNode from '@/components/elements/TextNode';
+import TextUl from '@/components/elements/TextUl';
 import DefaultLayout from '@/components/layouts/DefaultLayout';
 import Footer from '@/components/modules/Footer';
 import HeaderDefault from '@/components/modules/header/header-element/HeaderDefault';
+import { merriweather } from '@/fonts';
 import bookCoverDark from '@/public/images/git-and-github-book-cover-dark.jpg';
 import bookCoverLight from '@/public/images/git-and-github-book-cover-light.jpg';
 import authorPhoto from '@/public/images/Nick_Maslov.jpg';
@@ -71,16 +74,15 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                 </div>
                 <Link
                   href='/book-master-git-and-github/demo'
-                  className='mb-1  inline-block  self-center  rounded-lg  bg-black  px-6  
-                           py-2  text-lg  font-semibold 
-                         text-white  hover:bg-git-blue  hover:transition-colors  
-                           xl:pb-[.60rem] dark:bg-white  
-                           dark:text-black  dark:hover:text-white'
+                  className='button  mb-1  self-center 
+                         bg-black  text-white
+                         hover:bg-blue  dark:bg-white
+                         dark:text-black dark:hover:text-white'
                 >
                   Try demo
                 </Link>
               </div>
-              <div className='mt-14  lg:mt-0  xl:pl-14  xl:pr-16'>
+              <div className='mt-12  max-w-[685px]  lg:mt-0  xl:pl-14  xl:pr-16'>
                 <BasicTextNode
                   className='mb-7  text-[1.375rem]  font-semibold
                            leading-snug'
@@ -117,7 +119,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                 <TextNode>
                   And&nbsp;unlike video format, it&apos;ll&nbsp;be
                   very&nbsp;convenient to&nbsp;use this&nbsp;book
-                  as&nbsp;a&nbsp;reference. You&apos;ll
+                  as&nbsp;a&nbsp;reference: you&apos;ll
                   be&nbsp;able&nbsp;to&nbsp;find the&nbsp;necessary piece
                   of&nbsp;information instantly with&nbsp;special search tools
                   that&nbsp;are&nbsp;coming soon.
@@ -154,7 +156,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                   <br />
                   alive
                 </BasicTextNode>
-                <TextNode className='mt-7  lg:mt-5  lg:text-[1.0625rem]  lg:leading-normal'>
+                <TextNode className='mt-7  max-w-[685px]  lg:mt-5  lg:text-[1.0625rem]  lg:leading-normal'>
                   We got so&nbsp;many tools to&nbsp;make the&nbsp;reading
                   process dynamic, interactive, and&nbsp;thus
                   more&nbsp;immersive, but&nbsp;our e&#8209;books are&nbsp;still
@@ -172,7 +174,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                 >
                   Contents
                 </H2>
-                <hr className='border-[#EBEBEB]  dark:border-[#414141]' />
+                <hr className='border-gray-light  dark:border-gray-dark' />
               </div>
               <div
                 className='mt-14  flex  flex-col  gap-16  md:flex-row  
@@ -185,11 +187,13 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                                  md:flex-col  md:items-start  md:gap-2  
                                  lg:flex-row  lg:items-end  lg:gap-3'
                   >
-                    <H3 className='!text-git-orange'>Part 1. Everyday Tasks</H3>
+                    <H3 className='font-bold  !text-orange'>
+                      Part 1. Everyday Tasks
+                    </H3>
                     <p
-                      className='translate-y-[-0.24rem]  rounded-md  border  border-git-orange
+                      className='translate-y-[-0.24rem]  rounded-md  border  border-orange
                                  px-[0.65rem]  pb-[0.28rem]  pt-[0.2rem]  text-base  leading-[1.2]
-                               text-git-orange  lg:pb-[0.23rem]  lg:pt-[0.15rem]'
+                               text-orange  lg:pb-[0.23rem]  lg:pt-[0.15rem]'
                     >
                       In progress
                     </p>
@@ -222,12 +226,14 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                                  md:flex-col  md:items-start  md:gap-2  
                                  lg:flex-row  lg:items-end  lg:gap-3'
                     >
-                      <H3 className='!text-git-blue'>Part 2. Deep Waters</H3>
+                      <H3 className='font-bold  !text-blue'>
+                        Part 2. Deep Waters
+                      </H3>
                       <p
                         className='translate-y-[-0.24rem]  rounded-md  border
-                                 border-git-blue  px-[0.65rem]  pb-[0.28rem]
+                                 border-blue  px-[0.65rem]  pb-[0.28rem]
                                   pt-[0.2rem]  text-base  leading-[1.2]
-                                 text-git-blue  lg:pb-[0.23rem]  lg:pt-[0.15rem]'
+                                 text-blue  lg:pb-[0.23rem]  lg:pt-[0.15rem]'
                       >
                         In progress
                       </p>
@@ -245,15 +251,181 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                     </div>
                   </div>
                   <BuddhaSvg
-                    className='mx-auto  mt-[4.8rem]  w-[70%]  max-w-[270px]  
-                               fill-white  
+                    className='buddha-firefox-shadow  mx-auto  mt-16  w-[70%]  
+                               max-w-[270px]  
+                               fill-white
                                will-change-transform
-                               [filter:drop-shadow(0_0_250px_rgba(0,0,0,0.20))]
-                               md:ml-0  md:mt-12  md:max-w-[245px]  
+                               [filter:drop-shadow(0_0_250px_rgba(0,0,0,0.20))]  md:ml-0  md:mt-12  
+                               md:max-w-[245px]  
                                md:[filter:drop-shadow(0_0_250px_rgba(0,0,0,0.22))]  
-                               dark:fill-black  
-                               dark:[filter:drop-shadow(0_0_250px_rgba(255,255,255,0.45))]'
+                               dark:fill-black
+                               dark:[filter:drop-shadow(0_0_250px_rgba(255,255,255,0.55))]'
                   />
+                </div>
+              </div>
+            </section>
+            <section
+              className='mt-[5.7rem]  rounded-[14px]  border  border-gray-light  
+                         px-5  pb-12  pt-8  lg:mt-24  lg:flex
+                         lg:flex-col  lg:items-center  lg:px-12  lg:pb-20
+                         lg:pt-10  dark:border-gray-dark'
+            >
+              <div>
+                <div>
+                  <H2 className='mb-3'>Subscription</H2>
+                  <TextNode className='max-w-[500px]'>
+                    The&nbsp;book is at&nbsp;early stages, and this&nbsp;is
+                    the&nbsp;opportunity for&nbsp;you to&nbsp;both benefit
+                    from&nbsp;it and&nbsp;support the&nbsp;studio.
+                  </TextNode>
+                </div>
+                <div className='mt-9  lg:flex  lg:flex-row  lg:gap-10'>
+                  <div className='flex  flex-col'>
+                    <p
+                      className='translate-y-1.5  text-[1.1875rem]  font-bold
+                                text-subscription'
+                    >
+                      Now
+                    </p>
+                    <H3 className='mb-6  font-medium'>During early access</H3>
+                    <ul>
+                      <li>
+                        <TextNode className='max-w-72'>
+                          <strong className='font-black'>
+                            Read all the&nbsp;book sections
+                          </strong>{' '}
+                          as&nbsp;we gradually publish&nbsp;them
+                        </TextNode>
+                      </li>
+                      <li>
+                        <TextNode className='!text-2xl  font-light'>+</TextNode>
+                      </li>
+                      <li>
+                        <TextNode className='max-w-80'>
+                          <strong className='font-black'>
+                            Lifetime subscription to&nbsp;the&nbsp;book
+                          </strong>{' '}
+                          with&nbsp;a&nbsp;one-time payment
+                        </TextNode>
+                      </li>
+                      <li>
+                        <TextNode className='!text-2xl  font-light'>+</TextNode>
+                      </li>
+                      <li>
+                        <TextNode className='font-black'>
+                          Investor status:
+                        </TextNode>
+                        <TextUl>
+                          <TextLi className='max-w-72'>
+                            20% lifetime discount on&nbsp;all studio books
+                            that&nbsp;will&nbsp;ever be&nbsp;published
+                          </TextLi>
+                          <TextLi>investor badge</TextLi>
+                        </TextUl>
+                      </li>
+                      <li>
+                        <TextNode className='!text-2xl  font-light'>+</TextNode>
+                      </li>
+                      <li>
+                        <TextNode className='max-w-[25.4rem]'>
+                          Automatic enrolment{' '}
+                          <a
+                            href='https://intagram.com'
+                            className='default-link'
+                          >
+                            to&nbsp;the&nbsp;contest
+                          </a>{' '}
+                          in&nbsp;honour of&nbsp;the&nbsp;company launch
+                          with&nbsp;the&nbsp;chance to&nbsp;
+                          <strong>
+                            win&nbsp;one of&nbsp;ten free lifetime accesses
+                            to&nbsp;all studio books
+                          </strong>{' '}
+                          that&nbsp;will&nbsp;ever be published
+                        </TextNode>
+                      </li>
+                      <li>
+                        <TextNode className='!text-2xl  font-light'>+</TextNode>
+                      </li>
+                      <li>
+                        <TextNode className='!mb-0  max-w-[25.4rem]'>
+                          By&nbsp;purchasing the&nbsp;early access, you directly
+                          help speed&nbsp;up the&nbsp;release of&nbsp;new
+                          sections of&nbsp;the&nbsp;book, and useful and
+                          convenient features for&nbsp;reading and&nbsp;better
+                          assimilation of&nbsp;the&nbsp;material
+                        </TextNode>
+                      </li>
+                    </ul>
+                    <BasicTextNode
+                      className='mt-11  text-center  text-4xl  
+                               font-medium'
+                    >
+                      $23
+                    </BasicTextNode>
+                    <button
+                      className='button  mt-12  self-center  bg-subscription
+                             text-white  hover:bg-subscription-darker'
+                    >
+                      Subscription
+                    </button>
+                  </div>
+                  <div
+                    className='mt-20  h-px  bg-gray-light  lg:mb-20
+                               lg:mt-0  lg:h-auto  lg:w-px
+                               dark:bg-gray-dark'
+                  />
+                  <div className='mt-7'>
+                    <H3 className='mb-6  font-medium'>After release</H3>
+                    <TextNode className='!mb-0  font-black'>
+                      Read all the&nbsp;book sections
+                    </TextNode>
+                    <div className='mb-5  mt-9'>
+                      <TextNode className='!mb-2'>
+                        First 5 months access
+                      </TextNode>
+                      <BasicTextNode className='text-4xl  font-medium'>
+                        $23
+                      </BasicTextNode>
+                    </div>
+                    <div>
+                      <TextNode className='!mb-2'>Then</TextNode>
+                      <BasicTextNode className='text-4xl  font-medium'>
+                        $23<span className='text-xl  font-black'>/</span>
+                        <span className={`text-lg  ${merriweather.className}`}>
+                          year
+                        </span>
+                      </BasicTextNode>
+                    </div>
+                    <div className='mt-16  max-w-[32.5rem]'>
+                      <H3 className='mb-6  font-medium'>Why subscription</H3>
+                      <TextNode>
+                        Unlike a&nbsp;paper book, a&nbsp;web book must always be
+                        online and&nbsp;requires ongoing maintenance.
+                        The&nbsp;more people read a&nbsp;web book, the&nbsp;more
+                        server resources are&nbsp;needed. That&apos;s why our
+                        books are&nbsp;available through a&nbsp;subscription.
+                      </TextNode>
+                      <TextNode>
+                        The&nbsp;subscription not&nbsp;only covers server
+                        and&nbsp;maintenance costs, but&nbsp;also supports
+                        the&nbsp;creation of&nbsp;new books. It allows us
+                        to&nbsp;make our books the&nbsp;way we envision them,
+                        rather than settling for&nbsp;less to&nbsp;save
+                        on&nbsp;production.
+                      </TextNode>
+                      <TextNode className='!mb-0'>
+                        However, during the&nbsp;early access period of&nbsp;our
+                        first book, we&apos;re making an&nbsp;exception:
+                        we&apos;re offering a&nbsp;lifetime subscription
+                        to&nbsp;the book with a&nbsp;one-time payment
+                        to&nbsp;our first readers whom&nbsp;we&nbsp;consider our
+                        investors. Their support gives us the&nbsp;initial
+                        boost, and we highly appreciate it, reciprocating
+                        in&nbsp;kind.
+                      </TextNode>
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>

@@ -17,9 +17,9 @@ const H3 = forwardRef<HTMLHeadingElement, H3Props>(function H3(
   );
 
   return (
-    <h2 ref={ref} className={classes}>
+    <h3 ref={ref} className={classes}>
       {children}
-    </h2>
+    </h3>
   );
 });
 

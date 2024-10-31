@@ -6,15 +6,33 @@
   --root-font-size: 16;
 }
 
+html,
+body {
+  overflow-x: clip;
+}
+
 @layer components {
-  .default-underlined-link {
+  .default-link {
     @apply text-black  dark:text-white  border-b border-[#EBEBEB]
-           dark:border-[#414141]  pb-[0.08rem]  transition-[border-color]
+           dark:border-[#414141]  pb-[0.07rem]  transition-[border-color]
            hover:border-black  dark:hover:border-white;
   }
-  
+
+  .special-link {
+    @apply text-black  dark:text-white 
+           pb-[0] [background-image:linear-gradient(to_right,#EBEBEB,#EBEBEB)]
+           hover:[background-image:linear-gradient(to_right,#414141,#414141)]
+           bg-[0_100%]  bg-repeat-x  bg-[length:1px_1px];
+  }
+
   .git-book-main-container {
     @apply px-[8.4vw]  max-md:px-[4.2vw];
+  }
+
+  .button {
+    @apply inline-block  rounded-lg  px-6  
+           py-2  text-lg  font-semibold 
+           hover:transition-colors  xl:pb-[.60rem];
   }
 }
 
@@ -50,5 +68,16 @@
       --headerDarkModeBgFirstColor 0.3s linear,
       --headerDarkModeBgSecondColor 0.3s linear,
       transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@-moz-document url-prefix() {
+  .buddha-firefox-shadow {
+    filter: drop-shadow(0 0 250px rgba(0, 0, 0, 0.05)) !important;
+  }
+
+  .dark .buddha-firefox-shadow {
+    filter: none  !important;
+    fill: rgb(15, 15, 15) !important;
   }
 }

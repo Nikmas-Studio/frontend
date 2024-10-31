@@ -165,10 +165,8 @@ function EndPageDemo(): ReactElement {
             The&nbsp;End of&nbsp;Demo
           </p>
           <button
-            className='mt-7  inline-block  rounded-lg  bg-[#29AD04]  px-6  
-                       py-2  text-lg  font-semibold  text-white 
-                     hover:bg-[#248F04]  hover:transition-colors  
-                       xl:pb-[.60rem]  max-sm:mt-5'
+            className='button  mt-7  bg-subscription text-white 
+                     hover:bg-subscription-darker  max-sm:mt-5'
           >
             Subscription
           </button>
