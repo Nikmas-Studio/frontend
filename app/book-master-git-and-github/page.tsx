@@ -369,8 +369,8 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                       $23
                     </BasicTextNode>
                     <button
-                      className='button  mt-12  self-center  bg-subscription
-                             text-white  hover:bg-subscription-darker'
+                      className='button  mt-12  self-center  bg-subscription  text-white
+                             hover:bg-subscription-darker  lg:mt-14'
                     >
                       Subscription
                     </button>
@@ -406,7 +406,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                         </BasicTextNode>
                       </div>
                     </div>
-                    <div className='mt-16  max-w-[32.5rem]  lg:mb-28'>
+                    <div className='mt-16  max-w-[32.5rem]  lg:mb-[7.6rem]'>
                       <H3 className='mb-6  font-medium'>Why subscription</H3>
                       <TextNode>
                         Unlike a&nbsp;paper book, a&nbsp;web book must always be
