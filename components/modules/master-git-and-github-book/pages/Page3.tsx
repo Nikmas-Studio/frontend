@@ -1175,7 +1175,7 @@ function Page3(): ReactElement {
                            opacity-0  transition-opacity  h-md:text-[1.5vh]
                            '
               >
-                And&nbsp;do a&nbsp;merge
+                And&nbsp;do the&nbsp;merge
               </TextNode>
             </div>
           </div>
@@ -1562,7 +1562,7 @@ function Page3(): ReactElement {
                              opacity-0  transition-opacity
                              max-md:text-[1.9vw]'
                 >
-                  And&nbsp;do a&nbsp;merge
+                  And&nbsp;do the&nbsp;merge
                 </TextNode>
               </div>
               <ul className='flex  flex-col  gap-3  max-md:gap-[2vw]  h-md:gap-[2vh]'>

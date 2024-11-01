@@ -218,7 +218,10 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                     </ul>
                   </div>
                 </div>
-                <div className='flex  basis-1/2  flex-col  justify-between  lg:basis-auto'>
+                <div
+                  className='relative  flex  basis-1/2  flex-col  justify-between
+                                 lg:basis-auto'
+                >
                   <div>
                     <div
                       className='flex  flex-col  items-start  gap-2  
@@ -255,7 +258,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                                max-w-[270px]  
                                fill-white
                                will-change-transform
-                               [filter:drop-shadow(0_0_250px_rgba(0,0,0,0.20))]  md:ml-0  md:mt-12  
+                               [filter:drop-shadow(0_0_250px_rgba(0,0,0,0.20))]  md:ml-0  md:mt-24  
                                md:max-w-[245px]  
                                md:[filter:drop-shadow(0_0_250px_rgba(0,0,0,0.22))]  
                                dark:fill-black
@@ -265,21 +268,22 @@ function MasterGitAndGithubBookPromo(): ReactElement {
               </div>
             </section>
             <section
-              className='mt-[5.7rem]  rounded-[14px]  border  border-gray-light  
-                         px-5  pb-12  pt-8  lg:mt-24  lg:flex
-                         lg:flex-col  lg:items-center  lg:px-12  lg:pb-20
-                         lg:pt-10  dark:border-gray-dark'
+              className='mt-24  rounded-[14px]  border  border-gray-light  
+                         px-5  pb-12  pt-8  lg:mt-24  lg:flex  lg:flex-col
+                         lg:items-center  lg:rounded-[20px]  lg:px-14  lg:pb-24
+                         lg:pt-10  xl:px-20  xl:pb-28  xl:pt-14  dark:border-gray-dark'
             >
               <div>
                 <div>
                   <H2 className='mb-3'>Subscription</H2>
-                  <TextNode className='max-w-[500px]'>
-                    The&nbsp;book is at&nbsp;early stages, and this&nbsp;is
-                    the&nbsp;opportunity for&nbsp;you to&nbsp;both benefit
-                    from&nbsp;it and&nbsp;support the&nbsp;studio.
+                  <TextNode className='max-w-[530px]'>
+                    The&nbsp;book is in&nbsp;the&nbsp;early stages,
+                    and&nbsp;this&nbsp;is the&nbsp;opportunity for&nbsp;you
+                    to&nbsp;both benefit from&nbsp;it and&nbsp;support
+                    the&nbsp;studio.
                   </TextNode>
                 </div>
-                <div className='mt-9  lg:flex  lg:flex-row  lg:gap-10'>
+                <div className='mt-9  lg:flex  lg:flex-row  lg:gap-12  xl:gap-14'>
                   <div className='flex  flex-col'>
                     <p
                       className='translate-y-1.5  text-[1.1875rem]  font-bold
