@@ -380,29 +380,33 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                                lg:mt-0  lg:h-auto  lg:w-px
                                dark:bg-gray-dark'
                   />
-                  <div className='mt-7'>
-                    <H3 className='mb-6  font-medium'>After release</H3>
-                    <TextNode className='!mb-0  font-black'>
-                      Read all the&nbsp;book sections
-                    </TextNode>
-                    <div className='mb-5  mt-9'>
-                      <TextNode className='!mb-2'>
-                        First 5 months access
-                      </TextNode>
-                      <BasicTextNode className='text-4xl  font-medium'>
-                        $23
-                      </BasicTextNode>
-                    </div>
+                  <div className='mt-7  lg:flex  lg:flex-col  lg:justify-between'>
                     <div>
-                      <TextNode className='!mb-2'>Then</TextNode>
-                      <BasicTextNode className='text-4xl  font-medium'>
-                        $23<span className='text-xl  font-black'>/</span>
-                        <span className={`text-lg  ${merriweather.className}`}>
-                          year
-                        </span>
-                      </BasicTextNode>
+                      <H3 className='mb-6  font-medium'>After release</H3>
+                      <TextNode className='!mb-0  font-black'>
+                        Read all the&nbsp;book sections
+                      </TextNode>
+                      <div className='mb-5  mt-9'>
+                        <TextNode className='!mb-2'>
+                          First 5 months access
+                        </TextNode>
+                        <BasicTextNode className='text-4xl  font-medium'>
+                          $23
+                        </BasicTextNode>
+                      </div>
+                      <div>
+                        <TextNode className='!mb-2'>Then</TextNode>
+                        <BasicTextNode className='text-4xl  font-medium'>
+                          $23<span className='text-xl  font-black'>/</span>
+                          <span
+                            className={`text-lg  ${merriweather.className}`}
+                          >
+                            year
+                          </span>
+                        </BasicTextNode>
+                      </div>
                     </div>
-                    <div className='mt-16  max-w-[32.5rem]'>
+                    <div className='mt-16  max-w-[32.5rem]  lg:mb-28'>
                       <H3 className='mb-6  font-medium'>Why subscription</H3>
                       <TextNode>
                         Unlike a&nbsp;paper book, a&nbsp;web book must always be
@@ -433,6 +437,14 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                   </div>
                 </div>
               </div>
+            </section>
+            <section className='mt-[5.7rem]  lg:mt-24'>
+              <H2 className='mb-10'>
+                Interactivity that&apos;s based on scrolling
+              </H2>
+              <TextNode>
+                Illustrations appear, change, and disappear as you scroll:
+              </TextNode>
             </section>
           </MainContainer>
           <Footer />

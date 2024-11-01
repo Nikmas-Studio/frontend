@@ -11,7 +11,7 @@ const H2 = forwardRef<HTMLHeadingElement, H2Props>(function H2(
   ref,
 ): ReactElement {
   const classes = classNames(
-    `text-[2rem]  font-bold  leading-tight
+    `text-[2.1rem]  font-bold  leading-tight
      text-black  dark:text-white`,
 
     className,
