@@ -14,3 +14,9 @@ export function lightThemeIsSelected(theme: Theme): boolean {
     (theme === Theme.SYSTEM && getSystemTheme() === Theme.LIGHT)
   );
 }
+
+export function getSelectedThemeByDocumentClass(): Theme.DARK | Theme.LIGHT {
+  return document.documentElement.classList.contains('dark')
+    ? Theme.DARK
+    : Theme.LIGHT;
+}

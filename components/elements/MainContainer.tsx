@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import { forwardRef, ReactElement, ReactNode } from 'react';
 
 interface MainContainerProps {
-  children: ReactNode;
+  children?: ReactNode;
   className?: string;
 }
 

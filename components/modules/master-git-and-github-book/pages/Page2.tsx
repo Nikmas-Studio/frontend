@@ -254,7 +254,7 @@ function Page2(): ReactElement {
               is&nbsp;Git.
             </TextNode>
             <TextNode
-              className='!mb-0  mt-12  hidden  max-w-[27.5rem]  text-sm
+              className='!mb-0  mt-12  hidden  max-w-[27.5rem]  !text-sm
                                     max-2md:block  max-sm:mt-10'
             >
               The&nbsp;Stack Overflow Survey abandoned asking
