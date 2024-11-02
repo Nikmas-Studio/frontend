@@ -3,6 +3,7 @@ import DefaultLayout from '@/components/layouts/DefaultLayout';
 import Footer from '@/components/modules/Footer';
 import HeaderDefault from '@/components/modules/header/header-element/HeaderDefault';
 import Contents from '@/components/modules/master-git-and-github-book/promo-page/Contents';
+import DarkMode from '@/components/modules/master-git-and-github-book/promo-page/DarkMode';
 import InteractivityDemo from '@/components/modules/master-git-and-github-book/promo-page/InteractivityDemo';
 import Intro from '@/components/modules/master-git-and-github-book/promo-page/Intro';
 import PageNumbersUpdate from '@/components/modules/master-git-and-github-book/promo-page/PageNumbersUpdate';
@@ -34,6 +35,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
             <ReadOnAnyDevice />
             <PageNumbersUpdate />
           </MainContainer>
+          <DarkMode />
           <Footer />
         </div>
       </div>
