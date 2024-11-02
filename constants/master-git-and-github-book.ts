@@ -6,3 +6,5 @@ export const INTERACTIVITY_DEMO_VIDEO_LIGHT_SRC =
 
 export const INTERACTIVITY_DEMO_VIDEO_DARK_SRC =
   '/videos/interactivity-demo-dark.mp4';
+
+export const PAGE_NUMBERS_UPDATE_VIDEO_SRC = '/videos/page-numbers-update.mp4';

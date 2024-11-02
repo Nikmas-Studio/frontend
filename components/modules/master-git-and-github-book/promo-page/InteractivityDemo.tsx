@@ -26,7 +26,7 @@ function InteractivityDemo(): ReactElement {
           className='w-full  rounded-[14px]  border  border-gray-light  
                      lg:rounded-[20px]  dark:border-gray-dark'
         />
-        <TextNode className='mt-4  !text-sm'>
+        <TextNode className='!mb-0  mt-4  !text-sm'>
           &quot;Visualizing Git&quot; section from the book
         </TextNode>
       </MainContainer>

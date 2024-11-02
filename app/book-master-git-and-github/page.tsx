@@ -5,7 +5,7 @@ import HeaderDefault from '@/components/modules/header/header-element/HeaderDefa
 import Contents from '@/components/modules/master-git-and-github-book/promo-page/Contents';
 import InteractivityDemo from '@/components/modules/master-git-and-github-book/promo-page/InteractivityDemo';
 import Intro from '@/components/modules/master-git-and-github-book/promo-page/Intro';
-import PageNumberUpdate from '@/components/modules/master-git-and-github-book/promo-page/PageNumberUpdate';
+import PageNumbersUpdate from '@/components/modules/master-git-and-github-book/promo-page/PageNumbersUpdate';
 import ReadOnAnyDevice from '@/components/modules/master-git-and-github-book/promo-page/ReadOnAnyDevice';
 import Subscription from '@/components/modules/master-git-and-github-book/promo-page/Subscription';
 import { Metadata } from 'next';
@@ -32,7 +32,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
                                     lg:gap-20'
           >
             <ReadOnAnyDevice />
-            <PageNumberUpdate />
+            <PageNumbersUpdate />
           </MainContainer>
           <Footer />
         </div>
