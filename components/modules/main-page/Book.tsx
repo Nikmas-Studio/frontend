@@ -112,7 +112,7 @@ function Book(): ReactElement {
                 alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
                 className='w-full  select-none  rounded-[14px]  sm:h-[65vh]  
                            sm:max-h-[570px]  sm:w-auto 
-                           dark:hidden'
+                           dark:hidden  pointer-events-none'
                 sizes='(max-width: 639px) 100vw, 378px'
                 quality={100}
                 priority
@@ -123,7 +123,7 @@ function Book(): ReactElement {
                 alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
                 className='hidden  w-full  select-none  rounded-[14px] 
                          sm:h-[65vh]  sm:max-h-[570px]  sm:w-auto  
-                         dark:inline-block'
+                         dark:inline-block  pointer-events-none'
                 sizes='(max-width: 639px) 100vw, 378px'
                 quality={100}
                 priority
