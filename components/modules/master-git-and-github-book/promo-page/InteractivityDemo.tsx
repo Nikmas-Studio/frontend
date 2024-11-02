@@ -1,8 +1,16 @@
 import H2 from '@/components/elements/H2';
 import MainContainer from '@/components/elements/MainContainer';
-import InteractivityDemoVideo from '@/components/elements/master-git-and-github-book/InteractivityDemoVideo';
 import TextNode from '@/components/elements/TextNode';
+import dynamic from 'next/dynamic';
 import { ReactElement } from 'react';
+
+const InteractivityDemoVideoDynamic = dynamic(
+  () =>
+    import(
+      '@/components/elements/master-git-and-github-book/InteractivityDemoVideo'
+    ),
+  { ssr: false },
+);
 
 function InteractivityDemo(): ReactElement {
   return (
@@ -14,7 +22,7 @@ function InteractivityDemo(): ReactElement {
         <TextNode className='lg:mb-6'>
           Illustrations appear, change, and&nbsp;disappear as&nbsp;you scroll:
         </TextNode>
-        <InteractivityDemoVideo
+        <InteractivityDemoVideoDynamic
           className='w-full  rounded-[14px]  border  border-gray-light  
                      lg:rounded-[20px]  dark:border-gray-dark'
         />

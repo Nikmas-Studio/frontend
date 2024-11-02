@@ -16,12 +16,7 @@ export function lightThemeIsSelected(theme: Theme): boolean {
 }
 
 export function getSelectedThemeByDocumentClass(): Theme.DARK | Theme.LIGHT {
-  if (typeof window === 'undefined') {
-    return Theme.LIGHT;
-  } else {
-    return document.documentElement.classList.contains('dark')
-      ? Theme.DARK
-      : Theme.LIGHT;
-  }
-
+  return document.documentElement.classList.contains('dark')
+    ? Theme.DARK
+    : Theme.LIGHT;
 }
