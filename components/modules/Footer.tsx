@@ -11,8 +11,8 @@ import MainContainer from '../elements/MainContainer';
 function Footer(): ReactElement {
   return (
     <footer
-      className='mt-44  border-t  border-[#EBEBEB]  
-                     pb-20  pt-12  sm:pb-[4.5rem]  dark:border-[#414141]'
+      className='mt-44  border-t  border-gray-light  
+                     pb-20  pt-12  sm:pb-[4.5rem]  dark:border-gray-dark'
     >
       <MainContainer
         className='flex  flex-col-reverse  items-center  sm:flex-row
@@ -49,6 +49,7 @@ function Footer(): ReactElement {
                 width={50}
                 height={50}
                 className='transition-all  hover:scale-[1.2]'
+                quality={100}
               />
             </ExternalLink>
           </li>
@@ -60,6 +61,7 @@ function Footer(): ReactElement {
                 width={50}
                 height={50}
                 className='transition-all  hover:scale-[1.2]'
+                quality={100}
               />
             </ExternalLink>
           </li>
@@ -71,6 +73,7 @@ function Footer(): ReactElement {
                 width={50}
                 height={50}
                 className='transition-all  hover:scale-[1.2]'
+                quality={100}
               />
             </ExternalLink>
           </li>
@@ -82,6 +85,7 @@ function Footer(): ReactElement {
                 width={50}
                 height={50}
                 className='transition-all  hover:scale-[1.2]'
+                quality={100}
               />
             </ExternalLink>
           </li>

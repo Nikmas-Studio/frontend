@@ -1,9 +1,12 @@
+import MainContainer from '@/components/elements/MainContainer';
 import DefaultLayout from '@/components/layouts/DefaultLayout';
 import Footer from '@/components/modules/Footer';
 import HeaderDefault from '@/components/modules/header/header-element/HeaderDefault';
 import Contents from '@/components/modules/master-git-and-github-book/promo-page/Contents';
 import InteractivityDemo from '@/components/modules/master-git-and-github-book/promo-page/InteractivityDemo';
 import Intro from '@/components/modules/master-git-and-github-book/promo-page/Intro';
+import PageNumberUpdate from '@/components/modules/master-git-and-github-book/promo-page/PageNumberUpdate';
+import ReadOnAnyDevice from '@/components/modules/master-git-and-github-book/promo-page/ReadOnAnyDevice';
 import Subscription from '@/components/modules/master-git-and-github-book/promo-page/Subscription';
 import { Metadata } from 'next';
 import { ReactElement } from 'react';
@@ -24,6 +27,13 @@ function MasterGitAndGithubBookPromo(): ReactElement {
           <Contents />
           <Subscription />
           <InteractivityDemo />
+          <MainContainer
+            className='lg:flex  lg:flex-row  lg:justify-between
+                                    lg:gap-20'
+          >
+            <ReadOnAnyDevice />
+            <PageNumberUpdate />
+          </MainContainer>
           <Footer />
         </div>
       </div>

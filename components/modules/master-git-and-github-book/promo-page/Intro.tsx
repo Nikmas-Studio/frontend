@@ -35,9 +35,9 @@ function Intro(): ReactElement {
               <Image
                 src={bookCoverLight}
                 alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
-                className='w-full  select-none  rounded-[14px]
-                           [box-shadow:0px_0px_85px_20px_rgba(0,0,0,0.06)]  
-                           dark:hidden'
+                className='pointer-events-none  w-full  select-none
+                           rounded-[14px]  
+                           [box-shadow:0px_0px_85px_20px_rgba(0,0,0,0.06)]  dark:hidden'
                 sizes='(max-width: 639px) 100vw, (max-width: 1023px) 400px, (max-width: 1279px) 30vw, 400px'
                 quality={100}
                 priority
@@ -45,8 +45,8 @@ function Intro(): ReactElement {
               <Image
                 src={bookCoverDark}
                 alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
-                className='hidden  w-full  select-none  rounded-[14px]
-                             dark:inline-block'
+                className='pointer-events-none  hidden  w-full  select-none
+                             rounded-[14px]  dark:inline-block'
                 sizes='(max-width: 639px) 100vw, (max-width: 1023px) 400px, (max-width: 1279px) 30vw, 400px'
                 quality={100}
                 priority
@@ -109,7 +109,9 @@ function Intro(): ReactElement {
             <Image
               src={authorPhoto}
               alt='Author: Nick Maslov'
-              className='w-[275px]  rounded-[14px]  lg:w-[215px]'
+              className='pointer-events-none  w-[275px]  select-none  rounded-[14px]
+                         lg:w-[215px]'
+              sizes='(max-width: 1023) 275px, 215px'
               quality={100}
               priority
             />

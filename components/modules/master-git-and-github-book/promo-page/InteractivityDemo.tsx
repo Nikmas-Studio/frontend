@@ -11,14 +11,14 @@ function InteractivityDemo(): ReactElement {
         <H2 className='mb-7  lg:mb-9'>
           Interactivity that&apos;s based on&nbsp;scrolling
         </H2>
-        <TextNode>
+        <TextNode className='lg:mb-6'>
           Illustrations appear, change, and&nbsp;disappear as&nbsp;you scroll:
         </TextNode>
         <InteractivityDemoVideo
           className='w-full  rounded-[14px]  border  border-gray-light  
                      lg:rounded-[20px]  dark:border-gray-dark'
         />
-        <TextNode className='mt-3  !text-sm'>
+        <TextNode className='mt-4  !text-sm'>
           &quot;Visualizing Git&quot; section from the book
         </TextNode>
       </MainContainer>
