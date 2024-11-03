@@ -170,7 +170,7 @@ function HeaderMain(): ReactElement {
      [background-image:linear-gradient(135deg,var(--headerLightModeBgFirstColor),var(--headerLightModeBgSecondColor))]
      dark:[background-image:linear-gradient(135deg,var(--headerDarkModeBgFirstColor),var(--headerDarkModeBgSecondColor))]`,
     {
-      'border-b-[#EBEBEB]  dark:border-b-[#414141]':
+      'border-b-[#EBEBEB]  dark:border-b-[#282828]':
         headerIsScrolled && !bookSectionInViewport,
       'border-b-[#EBEBEB]  dark:border-b-[#EBEBEB]': bookSectionInViewport,
       'border-b-white  dark:border-b-black': !headerIsScrolled,

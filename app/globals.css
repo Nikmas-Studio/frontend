@@ -13,16 +13,9 @@ body {
 
 @layer components {
   .default-link {
-    @apply text-black  dark:text-white  border-b border-[#EBEBEB]
-           dark:border-[#414141]  pb-[0.07rem]  transition-[border-color]
+    @apply text-black  dark:text-white  border-b border-gray-light-darker
+           dark:border-gray-dark-lighter  pb-[0.07rem]  transition-[border-color]
            hover:border-black  dark:hover:border-white;
-  }
-
-  .special-link {
-    @apply text-black  dark:text-white 
-           pb-[0] [background-image:linear-gradient(to_right,#EBEBEB,#EBEBEB)]
-           hover:[background-image:linear-gradient(to_right,#414141,#414141)]
-           bg-[0_100%]  bg-repeat-x  bg-[length:1px_1px];
   }
 
   .git-book-main-container {
@@ -77,7 +70,7 @@ body {
   }
 
   .dark .buddha-firefox-shadow {
-    filter: none  !important;
+    filter: none !important;
     fill: rgb(15, 15, 15) !important;
   }
 }

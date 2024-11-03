@@ -119,7 +119,7 @@ function ThemeToggleMain({ className }: ThemeToggleProps): ReactElement {
           });
         } else {
           gsap.set(dropdownElement, {
-            borderColor: '#414141',
+            borderColor: '#282828',
           });
         }
       } else {
@@ -459,7 +459,7 @@ function ThemeToggleMain({ className }: ThemeToggleProps): ReactElement {
 
   const dropdownClasses = classNames(
     `absolute  right-0  top-10  flex  flex-col  rounded-lg  bg-white
-     border  border-[#EBEBEB]  dark:border-[#414141]
+     border  border-[#EBEBEB]  dark:border-[#282828]
      dark:bg-black  pb-9  pt-7  
      `,
     {

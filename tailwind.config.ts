@@ -12,6 +12,7 @@ const config: Config = {
       sm: '640px',
       md: '768px',
       lg: '1024px',
+      '2lg': '1180px',
       xl: '1280px',
       '2xl': '1536px',
       'max-2xl': { max: '1536px' },
@@ -37,7 +38,11 @@ const config: Config = {
         subscription: '#29AD04',
         'subscription-darker': '#248F04',
         'gray-light': '#EBEBEB',
-        'gray-dark': '#414141',
+        'gray-light-darker': '#E3E3E3',
+        'gray-light-darker2': '#D0D0D0',
+        'gray-dark': '#282828',
+        'gray-dark-lighter': '#414141',
+        'gray-dark-lighter2': '#505050',
       },
       backgroundImage: {
         'git-part-1-dark':
