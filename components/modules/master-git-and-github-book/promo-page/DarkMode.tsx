@@ -15,7 +15,10 @@ function DarkMode(): ReactElement {
         <H2 className='mb-7  lg:mb-9'>
           Dark mode saves your&nbsp;eyes in&nbsp;the&nbsp;evening
         </H2>
-        <div className='flex  flex-col  gap-11  lg:flex-row'>
+        <div
+          className='flex  flex-col  gap-11  lg:relative  lg:flex-row
+                     lg:justify-between'
+        >
           <div>
             <H3 className='mb-5  font-medium'>Dark mode disabled</H3>
             <Image
@@ -28,9 +31,9 @@ function DarkMode(): ReactElement {
               Kind&quot;
             </TextNode>
           </div>
-          <div className='relative'>
+          <div>
             <H3 className='mb-5  font-medium'>Dark mode enabled</H3>
-            <div className='relative'>
+            <div className='relative  lg:static'>
               <Image
                 className='rounded-[14px]  lg:rounded-[20px]  
                          dark:border  dark:border-gray-dark'
@@ -39,7 +42,9 @@ function DarkMode(): ReactElement {
               />
               <Image
                 className='absolute  right-[10px]  top-[5px]  w-1/4  rounded-[8px]
-                             dark:border-gray-dark'
+                           lg:right-1/2  lg:top-[48%]  lg:w-[16%]  lg:-translate-y-1/2  
+                           lg:translate-x-1/2  lg:rounded-[20px]  xl:top-[46%]
+                         lg:dark:border-gray-dark'
                 src={themeToggle}
                 alt='Theme toggle'
               />

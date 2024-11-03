@@ -104,7 +104,7 @@ function Contents(): ReactElement {
                                md:max-w-[280px]  
                                md:[filter:drop-shadow(0_0_250px_rgba(0,0,0,0.22))]
                                dark:fill-black
-                               dark:[filter:drop-shadow(0_0_250px_rgba(255,255,255,0.45))]'
+                               dark:[filter:drop-shadow(0_0_250px_rgba(255,255,255,0.68))]'
             />
           </div>
         </div>
