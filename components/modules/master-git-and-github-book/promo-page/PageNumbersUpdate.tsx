@@ -18,6 +18,7 @@ function PageNumbersUpdate(): ReactElement {
         muted
         playsInline
         loop
+        preload=''
       >
         <source src={PAGE_NUMBERS_UPDATE_VIDEO_SRC} type='video/mp4' />
         Your browser does not support the video tag.

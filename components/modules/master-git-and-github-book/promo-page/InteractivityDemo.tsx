@@ -1,16 +1,11 @@
 import H2 from '@/components/elements/H2';
 import MainContainer from '@/components/elements/MainContainer';
 import TextNode from '@/components/elements/TextNode';
-import dynamic from 'next/dynamic';
+import {
+  INTERACTIVITY_DEMO_VIDEO_DARK_SRC,
+  INTERACTIVITY_DEMO_VIDEO_LIGHT_SRC,
+} from '@/constants/master-git-and-github-book';
 import { ReactElement } from 'react';
-
-const InteractivityDemoVideoDynamic = dynamic(
-  () =>
-    import(
-      '@/components/elements/master-git-and-github-book/InteractivityDemoVideo'
-    ),
-  { ssr: false },
-);
 
 function InteractivityDemo(): ReactElement {
   return (
@@ -22,10 +17,32 @@ function InteractivityDemo(): ReactElement {
         <TextNode className='lg:mb-6'>
           Illustrations appear, change, and&nbsp;disappear as&nbsp;you scroll:
         </TextNode>
-        <InteractivityDemoVideoDynamic
-          className='w-full  rounded-[14px]  border  border-gray-light  
-                     lg:rounded-[20px]  dark:border-gray-dark'
-        />
+        <video
+          className='pointer-events-none  w-full  rounded-[14px]  border  
+                     border-gray-light  lg:rounded-[20px]  dark:hidden'
+          autoPlay
+          muted
+          playsInline
+          loop
+          width={2992}
+          height={1624}
+        >
+          <source src={INTERACTIVITY_DEMO_VIDEO_LIGHT_SRC} type='video/mp4' />
+          Your browser does not support the video tag.
+        </video>
+        <video
+          className='pointer-events-none  hidden  w-full  rounded-[14px]  border  
+                     border-gray-dark  lg:rounded-[20px]  dark:block'
+          autoPlay
+          muted
+          playsInline
+          loop
+          width={2992}
+          height={1624}
+        >
+          <source src={INTERACTIVITY_DEMO_VIDEO_DARK_SRC} type='video/mp4' />
+          Your browser does not support the video tag.
+        </video>
         <TextNode className='!mb-0  mt-4  !text-sm'>
           &quot;Visualizing Git&quot; section from the book
         </TextNode>
