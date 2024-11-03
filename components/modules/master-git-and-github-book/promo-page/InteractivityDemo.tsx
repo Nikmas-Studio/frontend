@@ -26,6 +26,7 @@ function InteractivityDemo(): ReactElement {
           loop
           width={2992}
           height={1624}
+          preload='none'
         >
           <source src={INTERACTIVITY_DEMO_VIDEO_LIGHT_SRC} type='video/mp4' />
           Your browser does not support the video tag.
@@ -39,6 +40,7 @@ function InteractivityDemo(): ReactElement {
           loop
           width={2992}
           height={1624}
+          preload='none'
         >
           <source src={INTERACTIVITY_DEMO_VIDEO_DARK_SRC} type='video/mp4' />
           Your browser does not support the video tag.
