@@ -50,7 +50,6 @@ function InteractivityDemoVideo({
       loop
       width={2992}
       height={1624}
-      preload='none'
     >
       <source src={videoSrc} type='video/mp4' />
       Your browser does not support the video tag.
