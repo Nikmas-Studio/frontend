@@ -8,9 +8,9 @@ import { ReactElement } from 'react';
 
 function BookNavigator(): ReactElement {
   return (
-    <section className='mt-[4.5rem]  lg:mt-24'>
+    <section className='mt-20  lg:mt-24'>
       <MainContainer>
-        <H2 className='mb-7  lg:mb-9'>
+        <H2 className='mb-9  lg:mb-11  2lg:mb-9'>
           Book navigator with&nbsp;search and&nbsp;bookmarks at&nbsp;your{' '}
           disposal
           <br className='2lg:hidden' />

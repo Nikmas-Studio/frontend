@@ -8,8 +8,10 @@ import DarkMode from '@/components/modules/master-git-and-github-book/promo-page
 import InteractivityDemo from '@/components/modules/master-git-and-github-book/promo-page/InteractivityDemo';
 import Intro from '@/components/modules/master-git-and-github-book/promo-page/Intro';
 import PageNumbersUpdate from '@/components/modules/master-git-and-github-book/promo-page/PageNumbersUpdate';
+import QuizzesAndExercises from '@/components/modules/master-git-and-github-book/promo-page/QuizzesAndExercises';
 import ReadOnAnyDevice from '@/components/modules/master-git-and-github-book/promo-page/ReadOnAnyDevice';
 import Subscription from '@/components/modules/master-git-and-github-book/promo-page/Subscription';
+import ThreeDots from '@/components/modules/master-git-and-github-book/promo-page/ThreeDots';
 import { Metadata } from 'next';
 import { ReactElement } from 'react';
 
@@ -38,6 +40,8 @@ function MasterGitAndGithubBookPromo(): ReactElement {
           </MainContainer>
           <DarkMode />
           <BookNavigator />
+          <QuizzesAndExercises />
+          <ThreeDots />
           <Footer />
         </div>
       </div>

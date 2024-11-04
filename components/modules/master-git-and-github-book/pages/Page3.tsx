@@ -749,7 +749,7 @@ function Page3(): ReactElement {
   );
 
   const pageClasses = classNames('bg-white  dark:bg-git-black', {
-    'border-b  border-[#EBEBEB]  dark:border-[#414141]':
+    'border-b  border-[#EBEBEB]  dark:border-[#282828]':
       activeBackground === ActiveBackground.DEFAULT,
   });
 
