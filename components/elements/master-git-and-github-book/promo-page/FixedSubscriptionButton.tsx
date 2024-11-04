@@ -9,12 +9,12 @@ function FixedSubscriptionButton(): ReactElement {
 
   return (
     <MainContainer
-      className='pointer-events-none  sticky  bottom-6  right-0  flex  flex-row
+      className='pointer-events-none  bottom-6  right-0  flex  flex-row
                               justify-end'
     >
       <button
         ref={buttonRef}
-        className='button  pointer-events-auto  mr-5  translate-x-[200%]  
+        className='button  pointer-events-auto  mr-5 
                    bg-subscription  text-white  transition-transform  !duration-700
                    hover:bg-subscription-darker'
       >

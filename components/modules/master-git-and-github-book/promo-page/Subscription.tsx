@@ -171,7 +171,6 @@ function Subscription(): ReactElement {
             </div>
           </div>
         </div>
-        <EndOfSubscriptionSectionEffect />
       </MainContainer>
     </section>
   );
