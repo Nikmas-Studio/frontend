@@ -2,6 +2,7 @@ import BasicTextNode from '@/components/elements/BasicTextNode';
 import H2 from '@/components/elements/H2';
 import H3 from '@/components/elements/H3';
 import MainContainer from '@/components/elements/MainContainer';
+import EndOfSubscriptionSectionEffect from '@/components/elements/master-git-and-github-book/promo-page/EndOfSubscriptionSectionEffect';
 import TextLi from '@/components/elements/TextLi';
 import TextNode from '@/components/elements/TextNode';
 import TextUl from '@/components/elements/TextUl';
@@ -170,6 +171,7 @@ function Subscription(): ReactElement {
             </div>
           </div>
         </div>
+        <EndOfSubscriptionSectionEffect />
       </MainContainer>
     </section>
   );
