@@ -213,7 +213,7 @@ function Page2(): ReactElement {
             </ul>
             <TextNode
               ref={factoidRef}
-              className='!mb-0  max-w-[27.5rem]  text-sm  opacity-0  transition-opacity  max-2md:hidden'
+              className='!mb-0  max-w-[27.5rem]  !text-sm  opacity-0  transition-opacity  max-2md:hidden'
             >
               The&nbsp;Stack Overflow Survey abandoned asking
               about&nbsp;preferred VCS after&nbsp;2018, as&nbsp;Git&apos;s

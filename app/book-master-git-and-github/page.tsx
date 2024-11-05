@@ -13,7 +13,9 @@ import QuizzesAndExercises from '@/components/modules/master-git-and-github-book
 import ReadOnAnyDevice from '@/components/modules/master-git-and-github-book/promo-page/ReadOnAnyDevice';
 import Subscription from '@/components/modules/master-git-and-github-book/promo-page/Subscription';
 import ThreeDots from '@/components/modules/master-git-and-github-book/promo-page/ThreeDots';
+import SubscriptionModal from '@/components/modules/master-git-and-github-book/SubsctiptionModal';
 import { ButtonRefProvider } from '@/context/button-ref/Context';
+import { SubscriptionModalProvider } from '@/context/subscription-modal/Context';
 import { Metadata } from 'next';
 import { ReactElement } from 'react';
 
@@ -27,28 +29,31 @@ function MasterGitAndGithubBookPromo(): ReactElement {
   return (
     <DefaultLayout>
       <ButtonRefProvider>
-        <div>
-          <div className='pt-[5.118rem]'>
-            <HeaderDefault />
-            <Intro />
-            <Contents />
-            <Subscription />
-            <InteractivityDemo />
-            <MainContainer
-              className='lg:flex  lg:flex-row  lg:justify-between
+        <SubscriptionModalProvider>
+          <div>
+            <div className='pt-[5.118rem]'>
+              <HeaderDefault />
+              <Intro />
+              <Contents />
+              <Subscription />
+              <InteractivityDemo />
+              <MainContainer
+                className='lg:flex  lg:flex-row  lg:justify-between
                                     lg:gap-20'
-            >
-              <ReadOnAnyDevice />
-              <PageNumbersUpdate />
-            </MainContainer>
-            <DarkMode />
-            <BookNavigator />
-            <QuizzesAndExercises />
-            <ThreeDots />
-            <FixedSubscriptionButton />
-            <Footer />
+              >
+                <ReadOnAnyDevice />
+                <PageNumbersUpdate />
+              </MainContainer>
+              <DarkMode />
+              <BookNavigator />
+              <QuizzesAndExercises />
+              <ThreeDots />
+              <FixedSubscriptionButton />
+              <SubscriptionModal />
+              <Footer />
+            </div>
           </div>
-        </div>
+        </SubscriptionModalProvider>
       </ButtonRefProvider>
     </DefaultLayout>
   );

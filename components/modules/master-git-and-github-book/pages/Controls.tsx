@@ -21,16 +21,16 @@ function Controls({
   themeToggleRef,
 }: ControlsProps): ReactElement {
   return (
-    <div className='absolute  inset-0  z-50'>
+    <div>
       {pageNumber && (
         <p
-          className='absolute  bottom-6  right-[3vw]  text-git-black  max-md:bottom-[1.1rem]
-                 max-md:right-[4.2vw]  dark:text-git-white'
+          className='absolute  bottom-6  right-[3vw]  z-50  text-git-black
+                 max-md:bottom-[1.1rem]  max-md:right-[4.2vw]  dark:text-git-white'
         >
           {pageNumber}
         </p>
       )}
-      <div className='absolute  right-[3vw]  top-5  max-md:right-[4.2vw]  max-md:top-4'>
+      <div className='absolute  right-[3vw]  top-5  z-50  max-md:right-[4.2vw]  max-md:top-4'>
         <ThemeToggleDefault
           ref={themeToggleRef}
           reversedColors={reversedColors}

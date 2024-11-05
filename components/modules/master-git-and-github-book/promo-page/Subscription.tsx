@@ -2,6 +2,7 @@ import BasicTextNode from '@/components/elements/BasicTextNode';
 import H2 from '@/components/elements/H2';
 import H3 from '@/components/elements/H3';
 import MainContainer from '@/components/elements/MainContainer';
+import SubscriptionButton from '@/components/elements/master-git-and-github-book/SubscriptionButton';
 import TextLi from '@/components/elements/TextLi';
 import TextNode from '@/components/elements/TextNode';
 import TextUl from '@/components/elements/TextUl';
@@ -95,9 +96,10 @@ function Subscription(): ReactElement {
                   <TextNode className='!mb-0  max-w-[25.4rem]'>
                     By&nbsp;purchasing the&nbsp;early access, you directly help
                     speed&nbsp;up the&nbsp;release of&nbsp;new sections
-                    of&nbsp;the&nbsp;book, and useful and convenient features
+                    of&nbsp;the&nbsp;book, useful&nbsp;and convenient features
                     for&nbsp;reading and&nbsp;better assimilation
-                    of&nbsp;the&nbsp;material
+                    of&nbsp;the&nbsp;material, and&nbsp;also support
+                    the&nbsp;development of&nbsp;other&nbsp;books
                   </TextNode>
                 </li>
               </ul>
@@ -107,12 +109,7 @@ function Subscription(): ReactElement {
               >
                 $23
               </BasicTextNode>
-              <button
-                className='button  mt-12  self-center  bg-subscription  text-white
-                             hover:bg-subscription-darker  lg:mt-14'
-              >
-                Subscription
-              </button>
+              <SubscriptionButton className='mt-12  self-center  lg:mt-14' />
             </div>
             <div
               className='mt-20  h-px  bg-gray-light  lg:mb-20

@@ -9,7 +9,7 @@ export default function RootLayout({
   children: ReactNode;
 }): ReactElement {
   return (
-    <html lang='en' className='bg-white  dark:bg-black'>
+    <html lang='en' className='bg-white dark:bg-black'>
       <head>
         <Script
           async

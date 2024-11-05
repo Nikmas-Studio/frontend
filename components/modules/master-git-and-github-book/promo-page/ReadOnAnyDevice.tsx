@@ -15,7 +15,7 @@ function ReadOnAnyDevice(): ReactElement {
         <path
           className='stroke-black  dark:stroke-white'
           d='M10.5 7C10.5 3.96243 12.9624 1.5 16 1.5H192C195.038 1.5 197.5 3.96243 197.5 7V121C197.5 121.828 196.828 122.5 196 122.5H12C11.1716 122.5 10.5 121.828 10.5 121V7Z'
-          stroke-width='3'
+          strokeWidth='3'
         />
         <rect
           className='fill-black  dark:fill-white'
@@ -31,7 +31,7 @@ function ReadOnAnyDevice(): ReactElement {
           width='134'
           height='86'
           rx='5.5'
-          stroke-width='3'
+          strokeWidth='3'
         />
         <rect
           className='fill-none  stroke-black  dark:stroke-white'
@@ -40,7 +40,7 @@ function ReadOnAnyDevice(): ReactElement {
           width='27'
           height='55'
           rx='5.5'
-          stroke-width='3'
+          strokeWidth='3'
         />
       </svg>
       <TextNode className='!mb-0  mt-6  lg:mt-7'>
