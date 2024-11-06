@@ -49,7 +49,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
             <MainContainer className='flex  flex-row  justify-end'>
               <SubscriptionButton className='mr-5' />
             </MainContainer>
-            <SubscriptionModal />
+            <SubscriptionModal formInputId='promo-subscription-modal-email' />
             <Footer />
           </div>
         </div>

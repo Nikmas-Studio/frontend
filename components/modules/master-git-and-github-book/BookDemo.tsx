@@ -28,7 +28,10 @@ function BookDemo({ initialPageId }: BookDemoProps): ReactElement {
             <Page2 />
             <Page3 />
             <EndPageDemo />
-            <SubscriptionModal fixBody={false} />
+            <SubscriptionModal
+              formInputId='demo-subscription-modal-email'
+              fixBody={false}
+            />
           </GlobalEffects>
         </SubscriptionModalProvider>
       </BookVersionProvider>

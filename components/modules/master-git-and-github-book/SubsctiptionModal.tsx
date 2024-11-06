@@ -11,22 +11,22 @@ import {
 } from '@/context/subscription-modal/Context';
 import useOutsideClick from '@/hooks/use-outside-click';
 import classNames from 'classnames';
-import { FormEvent, ReactElement, useEffect, useRef, useState } from 'react';
+import { ReactElement, useEffect, useRef } from 'react';
+import EmailForm from '../EmailForm';
 
 interface SubscriptionModalProps {
+  formInputId: string;
   fixBody?: boolean;
 }
 
 function SubscriptionModal({
+  formInputId,
   fixBody = true,
 }: SubscriptionModalProps): ReactElement {
   const modalRef = useRef<HTMLDivElement>(null);
   const modalCoverRef = useRef<HTMLDivElement>(null);
   const { subscriptionModalIsOpened } = useSubscriptionModal();
   const { setSubscriptionModalIsOpened } = useSubscriptionModalDispatch();
-
-  const [inputIsFocused, setInputIsFocused] = useState(false);
-  const [email, setEmail] = useState('');
 
   useOutsideClick([modalRef], () => {
     setSubscriptionModalIsOpened(false);
@@ -102,28 +102,6 @@ function SubscriptionModal({
       window.removeEventListener('resize', handleResize);
     };
   }, [subscriptionModalIsOpened, fixBody]);
-
-  function handleSubmit(e: FormEvent<HTMLFormElement>): void {
-    e.preventDefault();
-
-    if (email === '') {
-      return;
-    }
-
-    if (e.currentTarget.reportValidity()) {
-      alert(`Email submitted: ${email}`);
-    }
-  }
-
-  const buttonClasses = classNames(
-    `absolute  right-0  h-[2.53125rem]  w-[80px]  rounded-r-[5px]  border
-     border-subscription`,
-    {
-      '[box-shadow:0_0_0_2px_#29AD04]': inputIsFocused,
-      'bg-subscription': email !== '',
-      'bg-[#CFCFCF]  dark:bg-gray-dark-lighter2': email === '',
-    },
-  );
 
   const modalClasses = classNames(
     `transition-transform  !duration-500  fixed  inset-0  z-[2000]  !overflow-y-auto
@@ -236,77 +214,17 @@ function SubscriptionModal({
           $23
         </BasicTextNode>
         <div className='mb-20  mt-[2.85rem]'>
-          <form onSubmit={handleSubmit}>
-            <label htmlFor='email'>
-              <BasicTextNode className='text-[1.375rem]  font-bold'>
-                Get payment link by email
-              </BasicTextNode>
-            </label>
-            <div className='relative  mt-3'>
-              <input
-                className='h-[2.53125rem]  w-full  rounded-[5px]  border  border-subscription
-                         bg-white  pb-2  pl-4  pt-1.5  text-xl  
-                         font-semibold leading-none  text-black  
-                         placeholder:text-[#A1A1A1]  focus:outline-none  
-                         focus:[box-shadow:0_0_0_2px_#29AD04]
-                         dark:bg-black  dark:text-white'
-                id='email'
-                type='email'
-                name='email'
-                placeholder='Email'
-                autoComplete='email'
-                onChange={(e) => setEmail(e.target.value)}
-                onFocus={() => setInputIsFocused(true)}
-                onBlur={() => setInputIsFocused(false)}
-              />
-              <button type='submit' className={buttonClasses}>
-                <svg
-                  className='absolute  left-1/2  top-[48%]  -translate-x-1/2  -translate-y-1/2'
-                  width='31'
-                  height='31'
-                  viewBox='0 0 31 31'
-                  fill='none'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <g clipPath='url(#clip0_472_44)'>
-                    <path
-                      d='M31 0H0V31H31V0Z'
-                      fill='white'
-                      fillOpacity='0.01'
-                    />
-                    <path
-                      d='M27.2549 15.5H4.00489'
-                      stroke='white'
-                      strokeWidth='3'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                    />
-                    <path
-                      d='M19.505 23.25L27.2549 15.5L19.505 7.75'
-                      stroke='white'
-                      strokeWidth='3'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id='clip0_472_44'>
-                      <rect
-                        width='31'
-                        height='31'
-                        fill='white'
-                        transform='matrix(-1 0 0 1 31 0)'
-                      />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </button>
-            </div>
-            <TextNode className='mt-2  !text-sm'>
-              This&nbsp;email will&nbsp;be&nbsp;used as&nbsp;a&nbsp;key
-              to&nbsp;you&nbsp;library
-            </TextNode>
-          </form>
+          <EmailForm
+            label='Get payment link by&nbsp;email'
+            caption='This&nbsp;email will&nbsp;be&nbsp;used as&nbsp;a&nbsp;key to&nbsp;you&nbsp;library'
+            inputId={formInputId}
+            inputName='email'
+            inputClasses='border-subscription  focus:[box-shadow:0_0_0_2px_#29AD04]'
+            buttonClasses='border-subscription'
+            buttonInputFocusedClasses='[box-shadow:0_0_0_2px_#29AD04]'
+            buttonInputFilledClasses='bg-subscription'
+            buttonInputEmptyClasses='bg-[#CFCFCF]  dark:bg-gray-dark-lighter2'
+          />
         </div>
       </div>
     </div>

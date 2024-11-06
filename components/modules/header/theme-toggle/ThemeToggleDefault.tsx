@@ -414,8 +414,8 @@ const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
     }, []);
 
     const dropdownClasses = classNames(
-      `absolute  right-0  top-10  flex  flex-col  rounded-lg
-     border  border-[#EBEBEB]  dark:border-[#282828]
+      `absolute  right-0  top-[34px]  flex  flex-col  rounded-[14px]
+     border  border-gray-light  dark:border-gray-dark
      pb-9  pt-7  
      `,
       bgClass,

@@ -1,12 +1,14 @@
 'use client';
 
+import EmailForm from '@/components/modules/EmailForm';
 import { useBookSectionState } from '@/context/book-section/Context';
 import { useTheme } from '@/context/theme/Context';
+import useOutsideClick from '@/hooks/use-outside-click';
 import { darkThemeIsSelected } from '@/utils/check-selected-theme';
 import { useGSAP } from '@gsap/react';
 import classNames from 'classnames';
 import gsap from 'gsap';
-import { ReactElement, useEffect, useRef } from 'react';
+import { ReactElement, useEffect, useRef, useState } from 'react';
 
 interface GuestAccountIconProps {
   className?: string;
@@ -15,6 +17,7 @@ interface GuestAccountIconProps {
 function GuestAccountIconMain({
   className,
 }: GuestAccountIconProps): ReactElement {
+  const [dropdownIsOpened, setDropdownIsOpened] = useState(false);
   const { bookSectionInViewport } = useBookSectionState();
   const accountIconElementRef = useRef<HTMLDivElement | null>(null);
   const spineElementRef = useRef<HTMLDivElement | null>(null);
@@ -22,6 +25,12 @@ function GuestAccountIconMain({
   const { selectedTheme, isManualThemeChange } = useTheme();
   const selectedThemeRef = useRef(selectedTheme);
   const bookSectionWasInViewport = useRef(false);
+
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+
+  useOutsideClick([accountIconElementRef, dropdownRef], () => {
+    setDropdownIsOpened(false);
+  });
 
   useEffect(() => {
     selectedThemeRef.current = selectedTheme;
@@ -167,19 +176,45 @@ function GuestAccountIconMain({
     className,
   );
 
+  const dropdownClasses = classNames(
+    `absolute  right-0  top-[44px]  w-[28.375rem]  max-w-[91vw]  rounded-[14px]  border
+     border-gray-light  bg-white  px-6  pb-16  pt-7  dark:border-gray-dark
+     dark:bg-black`,
+    {
+      'opacity-0  pointer-events-none': !dropdownIsOpened,
+      'opacity-100  pointer-events-auto': dropdownIsOpened,
+    },
+  );
+
   return (
-    <div
-      id='header-account-icon'
-      ref={accountIconElementRef}
-      className={guestAccountIconClasses}
-    >
+    <div className='relative'>
       <div
-        id='header-account-icon-spine'
-        ref={spineElementRef}
-        className='h-[1.05rem]  w-[0.234rem]  translate-y-[-0.03rem]
+        onClick={() => setDropdownIsOpened((prev) => !prev)}
+        ref={accountIconElementRef}
+        className={guestAccountIconClasses}
+      >
+        <div
+          ref={spineElementRef}
+          className='h-[1.05rem]  w-[0.234rem]  translate-y-[-0.03rem]
                    rounded-[0.06rem]  bg-white  md:h-[1.1rem]  
                    md:w-[0.2447rem]  dark:bg-black'
-      ></div>
+        ></div>
+      </div>
+      <div ref={dropdownRef} className={dropdownClasses}>
+        <EmailForm
+          label='Enter your library'
+          caption="We'll send the link to&nbsp;your library to&nbsp;this email"
+          inputId='login-email'
+          inputName='email'
+          inputClasses='border-[#CFCFCF]  dark:border-gray-dark-lighter2  
+                        focus:border-[#000000]  dark:focus:border-[#FFFFFF]'
+          buttonClasses='border-[#CFCFCF]  dark:border-gray-dark-lighter2'
+          buttonInputFocusedClasses='!border-[#000000]  dark:!border-[#FFFFFF]'
+          buttonInputFilledClasses='bg-black  dark:bg-white'
+          buttonInputEmptyClasses='bg-[#CFCFCF]  dark:bg-gray-dark-lighter2'
+          changeArrowColorInDarkMode
+        />
+      </div>
     </div>
   );
 }
