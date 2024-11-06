@@ -16,7 +16,7 @@ function Intro(): ReactElement {
           className='mb-3  mt-5  text-4xl  font-bold  leading-tight  
                            lg:text-[2.7rem]  dark:text-white'
         >
-          Master Git&nbsp;& Github: <br className='xl:hidden' />
+          Master Git&nbsp;& GitHub: <br className='xl:hidden' />
           From&nbsp;Everyday Tasks to&nbsp;Deep Waters
         </h1>
         <h2 className='text-4xl  font-medium  lg:text-[2.7rem]  dark:text-white'>
