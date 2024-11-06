@@ -1,3 +1,4 @@
+import { RESIZE_THRESHOLD } from '@/constants/general';
 import { useEffect, useState } from 'react';
 
 function useGsapResizeUpdate(): { gsapShouldUpdate: boolean } {
@@ -6,8 +7,6 @@ function useGsapResizeUpdate(): { gsapShouldUpdate: boolean } {
   useEffect(() => {
     let initialHeight = window.innerHeight;
     let initialWidth = window.innerWidth;
-
-    const RESIZE_THRESHOLD = 179;
 
     function handleResize(): void {
       const currentHeight = window.innerHeight;

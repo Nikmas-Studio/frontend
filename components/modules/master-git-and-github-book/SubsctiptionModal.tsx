@@ -9,10 +9,18 @@ import {
   useSubscriptionModal,
   useSubscriptionModalDispatch,
 } from '@/context/subscription-modal/Context';
+import useOutsideClick from '@/hooks/use-outside-click';
 import classNames from 'classnames';
 import { FormEvent, ReactElement, useEffect, useRef, useState } from 'react';
 
-function SubscriptionModal(): ReactElement {
+interface SubscriptionModalProps {
+  fixBody?: boolean;
+}
+
+function SubscriptionModal({
+  fixBody = true,
+}: SubscriptionModalProps): ReactElement {
+  const modalRef = useRef<HTMLDivElement>(null);
   const modalCoverRef = useRef<HTMLDivElement>(null);
   const { subscriptionModalIsOpened } = useSubscriptionModal();
   const { setSubscriptionModalIsOpened } = useSubscriptionModalDispatch();
@@ -20,27 +28,87 @@ function SubscriptionModal(): ReactElement {
   const [inputIsFocused, setInputIsFocused] = useState(false);
   const [email, setEmail] = useState('');
 
+  useOutsideClick([modalRef], () => {
+    setSubscriptionModalIsOpened(false);
+  });
+
   useEffect(() => {
+    const modalCover = modalCoverRef.current!;
+    const modal = modalRef.current!;
+
     if (!subscriptionModalIsOpened) {
-      // const modalCover = modalCoverRef.current!;
-      // modalCover.classList.add('hidden');
-      // modalCover.classList.remove('!opacity-100');
-      // setTimeout(() => {
-      // modalCover.classList.add('hidden');
-      // }, 500);
+      if (window.innerWidth < 640) {
+        const scrollY = document.body.style.top;
+
+        if (fixBody) {
+          document.body.style.position = '';
+          document.body.style.top = '';
+        }
+
+        setTimeout(() => {
+          if (fixBody) {
+            if (parseInt(scrollY || '0') !== 0) {
+              window.scrollTo(0, parseInt(scrollY || '0') * -1);
+            }
+          }
+          modalCover.classList.remove('!opacity-100');
+          modalCover.classList.remove('!opacity-20');
+          modalCover.classList.add('pointer-events-none');
+        }, 200);
+      } else {
+        modalCover.classList.remove('!opacity-20');
+        modalCover.classList.remove('!opacity-100');
+        modalCover.classList.add('pointer-events-none');
+      }
+
+      setTimeout(() => {
+        modal.scrollTo(0, 0);
+      }, 500);
     } else {
-      // const modalCover = modalCoverRef.current!;
-      // modalCover.classList.remove('hidden');
-      // modalCover.classList.add('!opacity-100');
+      if (window.innerWidth < 640) {
+        if (fixBody) {
+          document.body.style.top = `-${window.scrollY}px`;
+          document.body.style.position = 'fixed';
+        }
+
+        modalCover.classList.add('!opacity-100');
+      } else {
+        modalCover.classList.add('!opacity-20');
+        modalCover.classList.remove('pointer-events-none');
+      }
     }
 
+    function handleResize(): void {
+      if (window.innerWidth >= 640 && subscriptionModalIsOpened) {
+        modalCover.classList.remove('transition-opacity');
+        modalCover.classList.remove('!opacity-100');
+        modalCover.classList.add('!opacity-20');
+        modalCover.classList.add('transition-opacity');
+
+        if (fixBody) {
+          const scrollY = document.body.style.top;
+          document.body.style.position = '';
+          document.body.style.top = '';
+          if (parseInt(scrollY || '0') !== 0) {
+            window.scrollTo(0, parseInt(scrollY || '0') * -1);
+          }
+        }
+      }
+    }
+
+    window.addEventListener('resize', handleResize);
+
     return () => {
-      document.body.style.position = '';
+      window.removeEventListener('resize', handleResize);
     };
-  }, [subscriptionModalIsOpened]);
+  }, [subscriptionModalIsOpened, fixBody]);
 
   function handleSubmit(e: FormEvent<HTMLFormElement>): void {
     e.preventDefault();
+
+    if (email === '') {
+      return;
+    }
 
     if (e.currentTarget.reportValidity()) {
       alert(`Email submitted: ${email}`);
@@ -49,17 +117,19 @@ function SubscriptionModal(): ReactElement {
 
   const buttonClasses = classNames(
     `absolute  right-0  h-[2.53125rem]  w-[80px]  rounded-r-[5px]  border
-                border-subscription`,
+     border-subscription`,
     {
       '[box-shadow:0_0_0_2px_#29AD04]': inputIsFocused,
       'bg-subscription': email !== '',
-      'bg-[#CFCFCF]': email === '',
+      'bg-[#CFCFCF]  dark:bg-gray-dark-lighter2': email === '',
     },
   );
 
   const modalClasses = classNames(
     `transition-transform  !duration-500  fixed  inset-0  z-[2000]  !overflow-y-auto
-     bg-white  px-5  pt-12  dark:bg-black`,
+     bg-white  px-5  pt-12  dark:bg-black  sm:left-auto  scrollbar-hidden
+     sm:px-9  sm:pt-10  sm:dark:border-l  sm:dark:border-gray-dark
+     `,
     {
       'translate-x-0': subscriptionModalIsOpened,
       'translate-x-full': !subscriptionModalIsOpened,
@@ -70,14 +140,18 @@ function SubscriptionModal(): ReactElement {
     <div>
       <div
         ref={modalCoverRef}
-        className='inset-0  z-[1000]  hidden  bg-white  opacity-100  transition-opacity  duration-500'
+        className='pointer-events-none  fixed  inset-0  z-[1000]  h-screen 
+                   w-screen
+                 bg-white  opacity-0  transition-opacity  !duration-300  
+                 sm:bg-black  dark:bg-black'
       ></div>
-      <div className={modalClasses}>
+      <div ref={modalRef} className={modalClasses}>
         <div
           onClick={() => {
             setSubscriptionModalIsOpened(false);
           }}
-          className='absolute  right-5  top-4  size-[21px]'
+          className='absolute  right-5  top-4  size-[21px]  cursor-pointer
+                     sm:hidden'
         >
           <div
             className='absolute  left-1/2  top-1/2  h-[2px]  w-[27px]  -translate-x-1/2
@@ -171,9 +245,11 @@ function SubscriptionModal(): ReactElement {
             <div className='relative  mt-3'>
               <input
                 className='h-[2.53125rem]  w-full  rounded-[5px]  border  border-subscription
-                         pb-2  pl-4  pt-1.5  text-xl  font-semibold  
-                         leading-none focus:outline-none
-                         focus:[box-shadow:0_0_0_2px_#29AD04]'
+                         bg-white  pb-2  pl-4  pt-1.5  text-xl  
+                         font-semibold leading-none  text-black  
+                         placeholder:text-[#A1A1A1]  focus:outline-none  
+                         focus:[box-shadow:0_0_0_2px_#29AD04]
+                         dark:bg-black  dark:text-white'
                 id='email'
                 type='email'
                 name='email'

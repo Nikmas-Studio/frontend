@@ -1,5 +1,6 @@
 'use client';
 
+import SubscriptionButton from '@/components/elements/master-git-and-github-book/SubscriptionButton';
 import {
   BASE_PATH_DEMO,
   BASE_PATH_READ,
@@ -164,12 +165,13 @@ function EndPageDemo(): ReactElement {
           >
             The&nbsp;End of&nbsp;Demo
           </p>
-          <button
+          {/* <button
             className='button  mt-7  bg-subscription text-white 
                      hover:bg-subscription-darker  max-sm:mt-5'
           >
             Subscription
-          </button>
+          </button> */}
+          <SubscriptionButton className='mt-7  max-sm:mt-5' />
         </div>
       </div>
     </section>

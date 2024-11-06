@@ -83,7 +83,7 @@ function Intro(): ReactElement {
               person who&nbsp;works with&nbsp;files can benefit from.
               And&nbsp;there&nbsp;are&nbsp;many resources to&nbsp;learn those
               things. But,&nbsp;the&nbsp;popular resources on&nbsp;Git
-              and&nbsp;Github I know are&nbsp;either highly illustrative
+              and&nbsp;GitHub I know are&nbsp;either highly illustrative
               and&nbsp;interactive but&nbsp;quite superficial, deep enough
               but&nbsp;static and&nbsp;dull, or&nbsp;they are&nbsp;videos.
             </TextNode>
