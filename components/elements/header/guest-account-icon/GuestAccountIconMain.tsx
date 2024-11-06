@@ -177,7 +177,7 @@ function GuestAccountIconMain({
   );
 
   const dropdownClasses = classNames(
-    `absolute  right-0  top-[44px]  w-[28.375rem]  max-w-[91vw]  rounded-[14px]  border
+    `absolute  right-0  top-[42px]  md:top-[44px]  w-[28.375rem]  max-w-[91vw]  rounded-[14px]  border
      border-gray-light  bg-white  px-6  pb-16  pt-7  dark:border-gray-dark
      dark:bg-black`,
     {

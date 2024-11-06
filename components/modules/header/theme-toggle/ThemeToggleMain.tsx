@@ -458,7 +458,7 @@ function ThemeToggleMain({ className }: ThemeToggleProps): ReactElement {
   }, []);
 
   const dropdownClasses = classNames(
-    `absolute  right-0  top-10  flex  flex-col  rounded-[14px]  bg-white
+    `absolute  right-0  top-[34px]  flex  flex-col  rounded-[14px]  bg-white
      border  border-gray-light  dark:border-gray-dark 
      dark:bg-black  pb-9  pt-7  
      `,
