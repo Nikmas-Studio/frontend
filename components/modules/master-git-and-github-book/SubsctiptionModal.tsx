@@ -216,7 +216,7 @@ function SubscriptionModal({
         <div className='mb-20  mt-[2.85rem]'>
           <EmailForm
             label='Get payment link by&nbsp;email'
-            caption='This&nbsp;email will&nbsp;be&nbsp;used as&nbsp;a&nbsp;key to&nbsp;you&nbsp;library'
+            caption='This&nbsp;email will&nbsp;be&nbsp;used as&nbsp;a&nbsp;key to&nbsp;your&nbsp;library'
             inputId={formInputId}
             inputName='email'
             inputClasses='border-subscription  focus:[box-shadow:0_0_0_2px_#29AD04]'
