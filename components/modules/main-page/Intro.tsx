@@ -4,7 +4,6 @@ import IntroDescrLine from '@/components/elements/IntroDescrLine';
 import MainContainer from '@/components/elements/MainContainer';
 import { useTouchDevice } from '@/context/touch-device/Context';
 import { useGSAP } from '@gsap/react';
-import classNames from 'classnames';
 import gsap from 'gsap';
 import { ReactElement, useEffect, useRef } from 'react';
 
@@ -19,6 +18,13 @@ function Intro(): ReactElement {
   useEffect(() => {
     isTouchDeviceRef.current = isTouchDevice;
   }, [isTouchDevice]);
+
+  useEffect(() => {
+    const translateSpineClass =
+      window.innerWidth <= 1900 ? 'translate-x-[300px]' : 'translate-x-[28vw]';
+    spineRef.current!.classList.add(translateSpineClass);
+    spineRef.current!.classList.remove('opacity-0');
+  }, []);
 
   useGSAP(
     (context, contextSave) => {
@@ -202,23 +208,6 @@ function Intro(): ReactElement {
     { scope: containerRef, dependencies: [] },
   );
 
-  const spineClasses = classNames(
-    `hidden  
-     h-[clamp(1px,63.1vh,min(700px,51.7vw))]  
-     w-[clamp(1px,7.7vh,min(66px,6vw))]
-     rounded-[14px] bg-black
-     sm:block
-     xl:h-[clamp(1px,72.8vh,min(700px,51.7vw))]  
-     xl:w-[clamp(1px,7.7vh,min(66px,6vw))]  
-     h-sm:h-[56.8vh]
-     dark:bg-white
-    `,
-    {
-      'translate-x-[300px]': window.innerWidth <= 1900,
-      'translate-x-[28vw]': window.innerWidth > 1900,
-    },
-  );
-
   return (
     <section className='mt-2'>
       <MainContainer className='flex  justify-between' ref={containerRef}>
@@ -268,7 +257,17 @@ function Intro(): ReactElement {
         <div
           ref={spineRef}
           data-element='studio-intro-spine'
-          className={spineClasses}
+          className='hidden  
+                     h-[clamp(1px,63.1vh,min(700px,51.7vw))]
+                     w-[clamp(1px,7.7vh,min(66px,6vw))]  
+                     rounded-[14px]
+                     bg-black opacity-0
+                     sm:block
+                     xl:h-[clamp(1px,72.8vh,min(700px,51.7vw))]  
+                     xl:w-[clamp(1px,7.7vh,min(66px,6vw))]  
+                     h-sm:h-[56.8vh]
+                     dark:bg-white
+                     '
         ></div>
       </MainContainer>
     </section>
