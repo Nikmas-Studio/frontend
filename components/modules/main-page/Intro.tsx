@@ -265,6 +265,7 @@ function Intro(): ReactElement {
                      sm:block
                      xl:h-[clamp(1px,72.8vh,min(700px,51.7vw))]  
                      xl:w-[clamp(1px,7.7vh,min(66px,6vw))]  
+                     h-md:rounded-[2vh]
                      h-sm:h-[56.8vh]
                      dark:bg-white
                      '
