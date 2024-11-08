@@ -4,10 +4,15 @@ import HeaderMain from '@/components/modules/header/header-element/HeaderMain';
 import Book from '@/components/modules/main-page/Book';
 import Contest from '@/components/modules/main-page/Contest';
 import HBA from '@/components/modules/main-page/HBA';
-import Intro from '@/components/modules/main-page/Intro';
+// import Intro from '@/components/modules/main-page/Intro';
 import ProvidersMain from '@/components/modules/providers/ProvidersMain';
 import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import { ReactElement } from 'react';
+
+const Intro = dynamic(() => import('@/components/modules/main-page/Intro'), {
+  ssr: false,
+});
 
 export const metadata: Metadata = {
   title: 'Nikmas Studio',

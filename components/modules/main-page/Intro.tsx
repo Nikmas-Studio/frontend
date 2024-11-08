@@ -4,6 +4,7 @@ import IntroDescrLine from '@/components/elements/IntroDescrLine';
 import MainContainer from '@/components/elements/MainContainer';
 import { useTouchDevice } from '@/context/touch-device/Context';
 import { useGSAP } from '@gsap/react';
+import classNames from 'classnames';
 import gsap from 'gsap';
 import { ReactElement, useEffect, useRef } from 'react';
 
@@ -201,12 +202,26 @@ function Intro(): ReactElement {
     { scope: containerRef, dependencies: [] },
   );
 
+  const spineClasses = classNames(
+    `hidden  
+     h-[clamp(1px,63.1vh,min(700px,51.7vw))]  
+     w-[clamp(1px,7.7vh,min(66px,6vw))]
+     rounded-[14px] bg-black
+     sm:block
+     xl:h-[clamp(1px,72.8vh,min(700px,51.7vw))]  
+     xl:w-[clamp(1px,7.7vh,min(66px,6vw))]  
+     h-sm:h-[56.8vh]
+     dark:bg-white
+    `,
+    {
+      'translate-x-[300px]': window.innerWidth <= 1900,
+      'translate-x-[28vw]': window.innerWidth > 1900,
+    },
+  );
+
   return (
     <section className='mt-2'>
-      <MainContainer
-        className='flex  justify-between  overflow-hidden'
-        ref={containerRef}
-      >
+      <MainContainer className='flex  justify-between' ref={containerRef}>
         <h1
           ref={h1Ref}
           aria-hidden='true'
@@ -253,16 +268,7 @@ function Intro(): ReactElement {
         <div
           ref={spineRef}
           data-element='studio-intro-spine'
-          className='hidden  
-                     h-[clamp(1px,63.1vh,min(700px,51.7vw))]  
-                     w-[clamp(1px,7.7vh,min(66px,6vw))]
-                     translate-x-[300px]  
-                     rounded-[14px] bg-black
-                     sm:block
-                     xl:h-[clamp(1px,72.8vh,min(700px,51.7vw))]  
-                     xl:w-[clamp(1px,7.7vh,min(66px,6vw))]  
-                     h-sm:h-[56.8vh]
-                     dark:bg-white'
+          className={spineClasses}
         ></div>
       </MainContainer>
     </section>
