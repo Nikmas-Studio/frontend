@@ -73,7 +73,7 @@ function EmailForm({
   });
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} autoComplete='on'>
       {label && (
         <label htmlFor={inputId}>
           <BasicTextNode className='!inline-block  text-[1.375rem]  font-bold'>
