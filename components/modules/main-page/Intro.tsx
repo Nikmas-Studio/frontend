@@ -20,6 +20,7 @@ function Intro(): ReactElement {
   }, [isTouchDevice]);
 
   useEffect(() => {
+    spineRef.current!.classList.remove('translate-x-[100vw]');
     const translateSpineClass =
       window.innerWidth <= 1900 ? 'translate-x-[300px]' : 'translate-x-[28vw]';
     spineRef.current!.classList.add(translateSpineClass);
@@ -258,8 +259,10 @@ function Intro(): ReactElement {
           ref={spineRef}
           data-element='studio-intro-spine'
           className='hidden  
+                    
                      h-[clamp(1px,63.1vh,min(700px,51.7vw))]
                      w-[clamp(1px,7.7vh,min(66px,6vw))]  
+                     translate-x-[100vw]
                      rounded-[14px]
                      bg-black opacity-0
                      sm:block
