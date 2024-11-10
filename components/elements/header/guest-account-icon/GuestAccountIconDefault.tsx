@@ -58,7 +58,7 @@ function GuestAccountIconDefault({
       <div ref={dropdownRef} className={dropdownClasses}>
         <EmailForm
           label='Enter your library'
-          caption="We'll send the link to&nbsp;your library to&nbsp;this email"
+          caption='We’ll email you the&nbsp;link to&nbsp;access your&nbsp;library'
           inputId='login-email'
           inputName='email'
           inputClasses='border-[#CFCFCF]  dark:border-gray-dark-lighter2  
