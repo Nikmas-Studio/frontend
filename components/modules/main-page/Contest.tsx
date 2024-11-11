@@ -23,7 +23,7 @@ function Contest(): ReactElement {
             {/* <ExternalLink href='https://www.instagram.com' defaultTextLink> */}
             by&nbsp;participating <br />
             in&nbsp;a&nbsp;contest <br />
-            (details very soon)
+            (details very soon...)
             {/* </ExternalLink> */}
           </p>
         </div>
