@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 };
 
 function MasterGitAndGithubBookPromo(): ReactElement {
-  const isAuthnticated = checkAuth();
+  const isAuthenticated = checkAuth();
   return (
     <DefaultLayout>
       <SubscriptionModalProvider>
@@ -52,7 +52,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
               <SubscriptionButton className='mr-5' />
             </MainContainer>
             <SubscriptionModal
-              isAuthenticated={isAuthnticated}
+              isAuthenticated={isAuthenticated}
               formInputId='promo-subscription-modal-email'
             />
             <Footer />

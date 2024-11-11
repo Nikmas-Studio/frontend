@@ -7,11 +7,13 @@ import classNames from 'classnames';
 import { ReactElement, useRef, useState } from 'react';
 
 interface GuestAccountIconProps {
+  isAuthenticated: boolean;
   className?: string;
 }
 
 function GuestAccountIconDefault({
   className,
+  isAuthenticated,
 }: GuestAccountIconProps): ReactElement {
   const [dropdownIsOpened, setDropdownIsOpened] = useState(false);
 
@@ -58,6 +60,7 @@ function GuestAccountIconDefault({
       </div>
       <div ref={dropdownRef} className={dropdownClasses}>
         <EmailForm
+          isAuthenticated={isAuthenticated}
           type={EmailFormType.LOGIN}
           label='Enter your library'
           caption='We’ll email you the&nbsp;link to&nbsp;access your&nbsp;library'
