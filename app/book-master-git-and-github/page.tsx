@@ -15,6 +15,7 @@ import Subscription from '@/components/modules/master-git-and-github-book/promo-
 import ThreeDots from '@/components/modules/master-git-and-github-book/promo-page/ThreeDots';
 import SubscriptionModal from '@/components/modules/master-git-and-github-book/SubsctiptionModal';
 import { SubscriptionModalProvider } from '@/context/subscription-modal/Context';
+import { checkAuth } from '@/utils/is-authenticated';
 import { Metadata } from 'next';
 import { ReactElement } from 'react';
 
@@ -25,6 +26,7 @@ export const metadata: Metadata = {
 };
 
 function MasterGitAndGithubBookPromo(): ReactElement {
+  const isAuthnticated = checkAuth();
   return (
     <DefaultLayout>
       <SubscriptionModalProvider>
@@ -49,7 +51,10 @@ function MasterGitAndGithubBookPromo(): ReactElement {
             <MainContainer className='flex  flex-row  justify-end'>
               <SubscriptionButton className='mr-5' />
             </MainContainer>
-            <SubscriptionModal formInputId='promo-subscription-modal-email' />
+            <SubscriptionModal
+              isAuthenticated={isAuthnticated}
+              formInputId='promo-subscription-modal-email'
+            />
             <Footer />
           </div>
         </div>

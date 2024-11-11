@@ -2,6 +2,7 @@
 
 import EmailForm from '@/components/modules/EmailForm';
 import useOutsideClick from '@/hooks/use-outside-click';
+import { EmailFormType } from '@/types/email-form';
 import classNames from 'classnames';
 import { ReactElement, useRef, useState } from 'react';
 
@@ -57,6 +58,7 @@ function GuestAccountIconDefault({
       </div>
       <div ref={dropdownRef} className={dropdownClasses}>
         <EmailForm
+          type={EmailFormType.LOGIN}
           label='Enter your library'
           caption='We’ll email you the&nbsp;link to&nbsp;access your&nbsp;library'
           inputId='login-email'

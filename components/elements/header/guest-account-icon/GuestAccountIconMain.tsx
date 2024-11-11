@@ -4,6 +4,7 @@ import EmailForm from '@/components/modules/EmailForm';
 import { useBookSectionState } from '@/context/book-section/Context';
 import { useTheme } from '@/context/theme/Context';
 import useOutsideClick from '@/hooks/use-outside-click';
+import { EmailFormType } from '@/types/email-form';
 import { darkThemeIsSelected } from '@/utils/check-selected-theme';
 import { useGSAP } from '@gsap/react';
 import classNames from 'classnames';
@@ -202,6 +203,7 @@ function GuestAccountIconMain({
       </div>
       <div ref={dropdownRef} className={dropdownClasses}>
         <EmailForm
+          type={EmailFormType.LOGIN}
           label='Enter your library'
           caption='We’ll email you the&nbsp;link to&nbsp;access your&nbsp;library'
           inputId='login-email'
