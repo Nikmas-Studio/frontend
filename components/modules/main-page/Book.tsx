@@ -130,6 +130,15 @@ function Book(): ReactElement {
               />
             </Link>
           </div>
+          <Link
+            href='/book-master-git-and-github'
+            className='button mt-10
+                         bg-white  text-black
+                         hover:bg-blue  hover:text-white  dark:bg-git-dark-blue
+                         dark:text-white'
+          >
+            Details
+          </Link>
         </MainContainer>
       </section>
     </div>
