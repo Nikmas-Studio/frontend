@@ -1,4 +1,3 @@
-import ExternalLink from '@/components/elements/ExternalLink';
 import MainContainer from '@/components/elements/MainContainer';
 import { ReactElement } from 'react';
 
@@ -21,10 +20,11 @@ function Contest(): ReactElement {
             Nikmas&nbsp;Studio
           </p>
           <p className='mt-5  text-2xl  !leading-snug  sm:text-3xl'>
-            <ExternalLink href='https://www.instagram.com' defaultTextLink>
-              by&nbsp;participating <br />
-              in&nbsp;a&nbsp;contest
-            </ExternalLink>
+            {/* <ExternalLink href='https://www.instagram.com' defaultTextLink> */}
+            by&nbsp;participating <br />
+            in&nbsp;a&nbsp;contest <br />
+            (details very soon)
+            {/* </ExternalLink> */}
           </p>
         </div>
       </MainContainer>
