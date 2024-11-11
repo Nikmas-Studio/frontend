@@ -16,8 +16,10 @@ interface BookDemoProps {
   initialPageId?: string;
 }
 
-function BookDemo({ initialPageId }: BookDemoProps): ReactElement {
-  const isAuthenticated = checkAuth();
+async function BookDemo({
+  initialPageId,
+}: BookDemoProps): Promise<ReactElement> {
+  const isAuthenticated = await checkAuth();
 
   return (
     <MasterGitAndGithubBookLayout initialPageId={initialPageId}>

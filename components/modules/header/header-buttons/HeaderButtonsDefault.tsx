@@ -3,8 +3,8 @@ import { ReactElement } from 'react';
 import GuestAccountIconDefault from '../../../elements/header/guest-account-icon/GuestAccountIconDefault';
 import ThemeToggleDefault from '../theme-toggle/ThemeToggleDefault';
 
-function HeaderButtonsDefault(): ReactElement {
-  const isAuthenticated = checkAuth();
+async function HeaderButtonsDefault(): Promise<ReactElement> {
+  const isAuthenticated = await checkAuth();
 
   return (
     <div className='flex  items-center  gap-x-5'>
