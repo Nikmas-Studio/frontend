@@ -20,7 +20,7 @@ function BookNavigator(): ReactElement {
                        py-2  text-2xl  font-normal  leading-none
                        text-blue  2lg:ml-4  2lg:mt-0'
           >
-            Soon...
+            Soon
           </span>
         </H2>
         <TextNode className='lg:mb-6'>
