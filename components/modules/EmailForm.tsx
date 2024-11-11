@@ -7,6 +7,7 @@ import {
   PAYMENT_URL_GUEST,
 } from '@/constants/general';
 import { EmailFormType, FormState } from '@/types/email-form';
+import { validateSession } from '@/utils/validate-session';
 import { CircularProgress } from '@mui/material';
 import axios from 'axios';
 import classNames from 'classnames';
@@ -26,7 +27,6 @@ interface EmailFormProps {
   buttonInputEmptyClasses?: string;
   changeArrowColorInDarkMode?: boolean;
   type: EmailFormType;
-  isAuthenticated: boolean;
 }
 
 function EmailForm({
@@ -41,7 +41,6 @@ function EmailForm({
   buttonInputEmptyClasses = '',
   changeArrowColorInDarkMode = false,
   type,
-  isAuthenticated,
 }: EmailFormProps): ReactElement {
   const [inputIsFocused, setInputIsFocused] = useState(false);
   const [email, setEmail] = useState('');
@@ -63,6 +62,8 @@ function EmailForm({
     }
 
     if (e.currentTarget.reportValidity()) {
+      const isAuthenticated = await validateSession();
+
       switch (type) {
         case EmailFormType.LOGIN: {
           setFormState(FormState.SUBMITTING);

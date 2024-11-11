@@ -1,10 +1,10 @@
 'use client';
 
-import EmailForm from '@/components/modules/EmailForm';
 import useOutsideClick from '@/hooks/use-outside-click';
-import { EmailFormType } from '@/types/email-form';
 import classNames from 'classnames';
 import { ReactElement, useRef, useState } from 'react';
+import BasicTextNode from '../../BasicTextNode';
+import TextNode from '../../TextNode';
 
 interface GuestAccountIconProps {
   isAuthenticated: boolean;
@@ -13,7 +13,7 @@ interface GuestAccountIconProps {
 
 function GuestAccountIconDefault({
   className,
-  isAuthenticated,
+  // isAuthenticated,
 }: GuestAccountIconProps): ReactElement {
   const [dropdownIsOpened, setDropdownIsOpened] = useState(false);
 
@@ -59,7 +59,7 @@ function GuestAccountIconDefault({
         ></div>
       </div>
       <div ref={dropdownRef} className={dropdownClasses}>
-        <EmailForm
+        {/* <EmailForm
           isAuthenticated={isAuthenticated}
           type={EmailFormType.LOGIN}
           label='Enter your library'
@@ -73,7 +73,11 @@ function GuestAccountIconDefault({
           buttonInputFilledClasses='bg-black  dark:bg-white'
           buttonInputEmptyClasses='bg-[#CFCFCF]  dark:bg-gray-dark-lighter2'
           changeArrowColorInDarkMode
-        />
+        /> */}
+        <BasicTextNode className='!inline-block  text-[1.375rem]  font-bold'>
+          Enter your library
+        </BasicTextNode>
+        <TextNode className='mt-3'>Very soon...</TextNode>
       </div>
     </div>
   );

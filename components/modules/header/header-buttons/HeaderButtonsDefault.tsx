@@ -1,18 +1,14 @@
-import { checkAuth } from '@/utils/is-authenticated';
 import { ReactElement } from 'react';
 import GuestAccountIconDefault from '../../../elements/header/guest-account-icon/GuestAccountIconDefault';
 import ThemeToggleDefault from '../theme-toggle/ThemeToggleDefault';
 
-async function HeaderButtonsDefault(): Promise<ReactElement> {
-  const isAuthenticated = await checkAuth();
+function HeaderButtonsDefault(): ReactElement {
+  // const isAuthenticated = await validateSession();
 
   return (
     <div className='flex  items-center  gap-x-5'>
       <ThemeToggleDefault className='flex-none' />
-      <GuestAccountIconDefault
-        isAuthenticated={isAuthenticated}
-        className='flex-none'
-      />
+      <GuestAccountIconDefault isAuthenticated={false} className='flex-none' />
     </div>
   );
 }

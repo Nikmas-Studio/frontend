@@ -1,15 +1,15 @@
 'use client';
 
-import EmailForm from '@/components/modules/EmailForm';
 import { useBookSectionState } from '@/context/book-section/Context';
 import { useTheme } from '@/context/theme/Context';
 import useOutsideClick from '@/hooks/use-outside-click';
-import { EmailFormType } from '@/types/email-form';
 import { darkThemeIsSelected } from '@/utils/check-selected-theme';
 import { useGSAP } from '@gsap/react';
 import classNames from 'classnames';
 import gsap from 'gsap';
 import { ReactElement, useEffect, useRef, useState } from 'react';
+import BasicTextNode from '../../BasicTextNode';
+import TextNode from '../../TextNode';
 
 interface GuestAccountIconProps {
   className?: string;
@@ -18,7 +18,7 @@ interface GuestAccountIconProps {
 
 function GuestAccountIconMain({
   className,
-  isAuthenticated,
+  // isAuthenticated,
 }: GuestAccountIconProps): ReactElement {
   const [dropdownIsOpened, setDropdownIsOpened] = useState(false);
   const { bookSectionInViewport } = useBookSectionState();
@@ -204,7 +204,7 @@ function GuestAccountIconMain({
         ></div>
       </div>
       <div ref={dropdownRef} className={dropdownClasses}>
-        <EmailForm
+        {/* <EmailForm
           isAuthenticated={isAuthenticated}
           type={EmailFormType.LOGIN}
           label='Enter your library'
@@ -218,7 +218,11 @@ function GuestAccountIconMain({
           buttonInputFilledClasses='bg-black  dark:bg-white'
           buttonInputEmptyClasses='bg-[#CFCFCF]  dark:bg-gray-dark-lighter2'
           changeArrowColorInDarkMode
-        />
+        /> */}
+        <BasicTextNode className='!inline-block  text-[1.375rem]  font-bold'>
+          Enter your library
+        </BasicTextNode>
+        <TextNode className='mt-3'>Very soon...</TextNode>
       </div>
     </div>
   );

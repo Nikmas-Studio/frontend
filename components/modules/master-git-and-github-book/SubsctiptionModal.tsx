@@ -10,10 +10,8 @@ import {
   useSubscriptionModalDispatch,
 } from '@/context/subscription-modal/Context';
 import useOutsideClick from '@/hooks/use-outside-click';
-import { EmailFormType } from '@/types/email-form';
 import classNames from 'classnames';
 import { ReactElement, useEffect, useRef } from 'react';
-import EmailForm from '../EmailForm';
 
 interface SubscriptionModalProps {
   formInputId: string;
@@ -22,9 +20,9 @@ interface SubscriptionModalProps {
 }
 
 function SubscriptionModal({
-  formInputId,
+  // formInputId,
   fixBody = true,
-  isAuthenticated,
+  // isAuthenticated,
 }: SubscriptionModalProps): ReactElement {
   const modalRef = useRef<HTMLDivElement>(null);
   const modalCoverRef = useRef<HTMLDivElement>(null);
@@ -217,7 +215,7 @@ function SubscriptionModal({
           $23
         </BasicTextNode>
         <div className='mb-20  mt-[2.85rem]'>
-          <EmailForm
+          {/* <EmailForm
             isAuthenticated={isAuthenticated}
             type={EmailFormType.PAYMENT}
             label='Get payment link by&nbsp;email'
@@ -229,7 +227,11 @@ function SubscriptionModal({
             buttonInputFocusedClasses='[box-shadow:0_0_0_2px_#29AD04]'
             buttonInputFilledClasses='bg-subscription'
             buttonInputEmptyClasses='bg-[#CFCFCF]  dark:bg-gray-dark-lighter2'
-          />
+          /> */}
+          <BasicTextNode className='!inline-block  text-[1.375rem]  font-bold'>
+            Get payment link by&nbsp;email
+          </BasicTextNode>
+          <TextNode className='mt-3'>Very soon...</TextNode>
         </div>
       </div>
     </div>

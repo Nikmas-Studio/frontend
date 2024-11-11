@@ -2,7 +2,6 @@ import MasterGitAndGithubBookLayout from '@/components/layouts/MasterGitAndGithu
 import { BookVersionProvider } from '@/context/book-version/Context';
 import { SubscriptionModalProvider } from '@/context/subscription-modal/Context';
 import { BookVersion } from '@/types/book-version';
-import { checkAuth } from '@/utils/is-authenticated';
 import { ReactElement } from 'react';
 import GlobalEffects from './GlobalEffects';
 import CoverPage from './pages/CoverPage';
@@ -17,7 +16,7 @@ interface BookDemoProps {
 }
 
 function BookDemo({ initialPageId }: BookDemoProps): ReactElement {
-  const isAuthenticated = checkAuth();
+  // const isAuthenticated = await validateSession();
 
   return (
     <MasterGitAndGithubBookLayout initialPageId={initialPageId}>
@@ -30,7 +29,7 @@ function BookDemo({ initialPageId }: BookDemoProps): ReactElement {
             <Page3 />
             <EndPageDemo />
             <SubscriptionModal
-              isAuthenticated={isAuthenticated}
+              isAuthenticated={false}
               formInputId='demo-subscription-modal-email'
               fixBody={false}
             />
