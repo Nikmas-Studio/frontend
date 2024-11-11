@@ -21,7 +21,7 @@ function Footer(): ReactElement {
           <p className='mb-5  text-lg  dark:text-white'>
             © Nikmas Studio, 2024
           </p>
-          <ul className='flex  flex-col  items-center  gap-2  text-sm  sm:items-start'>
+          <ul className='flex  flex-col  items-center  gap-2  text-sm  sm:items-start  dark:text-white'>
             <li>
               {/* <Link className='default-link' href='/terms-and-conditions'> */}
               Terms and conditions (very soon...)
