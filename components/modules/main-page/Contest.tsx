@@ -19,7 +19,7 @@ function Contest(): ReactElement {
             from <br />
             Nikmas&nbsp;Studio
           </p>
-          <p className='mt-5  text-2xl  !leading-snug  sm:text-3xl'>
+          <p className='mt-5  text-2xl  !leading-snug  sm:text-3xl  dark:text-white'>
             {/* <ExternalLink href='https://www.instagram.com' defaultTextLink> */}
             by&nbsp;participating <br />
             in&nbsp;a&nbsp;contest <br />
