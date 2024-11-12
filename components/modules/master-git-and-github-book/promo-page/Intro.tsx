@@ -91,7 +91,7 @@ function Intro(): ReactElement {
               at&nbsp;the&nbsp;same time highly illustrative, interactive, deep
               enough, up-to-date, and&nbsp;that&nbsp;will&nbsp;take you step
               by&nbsp;step from&nbsp;a&nbsp;point where you know nothing
-              about&nbsp;Git and&nbsp;Github to&nbsp;a&nbsp;master level
+              about&nbsp;Git and&nbsp;GitHub to&nbsp;a&nbsp;master level
               in&nbsp;those tools.
             </TextNode>
             <TextNode>
