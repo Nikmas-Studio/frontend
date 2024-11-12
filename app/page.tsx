@@ -3,7 +3,7 @@ import Footer from '@/components/modules/Footer';
 import HeaderMain from '@/components/modules/header/header-element/HeaderMain';
 import Book from '@/components/modules/main-page/Book';
 import Contest from '@/components/modules/main-page/Contest';
-import Eleven from '@/components/modules/main-page/ElevenEleven';
+import Eleven from '@/components/modules/main-page/Eleven';
 import Intro from '@/components/modules/main-page/Intro';
 import ProvidersMain from '@/components/modules/providers/ProvidersMain';
 import { Metadata } from 'next';

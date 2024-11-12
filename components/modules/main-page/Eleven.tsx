@@ -64,7 +64,7 @@ function Eleven(): ReactElement {
             priority
           />
           <div className='grid  size-full  place-items-center'>
-            <div className='z-20  flex  translate-y-[-32%]  flex-row  items-end  gap-[20px]'>
+            <div className='z-20  flex  -translate-y-1/2  flex-row  items-end  gap-[20px]'>
               <div className='flex  flex-row  gap-[2vw]  sm:gap-[10px]'>
                 <div className='h-[13vw]  w-[2.5vw]  rounded-[2px]  bg-[#4CBB17]  sm:h-[75px]  sm:w-[12px]'></div>
                 <div className='h-[13vw]  w-[2.5vw]  rounded-[2px]  bg-[#4CBB17]  sm:h-[75px]  sm:w-[12px]'></div>
