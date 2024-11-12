@@ -5,7 +5,6 @@ import bookCoverDark from '@/public/images/git-and-github-book-cover-dark.jpg';
 import bookCoverLight from '@/public/images/git-and-github-book-cover-light.jpg';
 import authorPhoto from '@/public/images/Nick_Maslov.jpg';
 import Image from 'next/image';
-import Link from 'next/link';
 import { ReactElement } from 'react';
 
 function Intro(): ReactElement {
@@ -52,7 +51,7 @@ function Intro(): ReactElement {
                 priority
               />
             </div>
-            <Link
+            <a
               href='/book-master-git-and-github/demo'
               className='button  mb-1  self-center 
                          bg-black  text-white
@@ -60,7 +59,7 @@ function Intro(): ReactElement {
                          dark:text-black dark:hover:text-white'
             >
               Try demo
-            </Link>
+            </a>
           </div>
           <div className='mt-12  max-w-[685px]  lg:mt-0  xl:pl-14  xl:pr-16'>
             <BasicTextNode
