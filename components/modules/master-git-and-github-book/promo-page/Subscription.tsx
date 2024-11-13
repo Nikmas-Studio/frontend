@@ -123,13 +123,6 @@ function Subscription(): ReactElement {
                   Read all the&nbsp;book sections
                 </TextNode>
                 <div className='mb-5  mt-9'>
-                  <TextNode className='!mb-2'>First 5 months access</TextNode>
-                  <BasicTextNode className='text-4xl  font-medium'>
-                    $23
-                  </BasicTextNode>
-                </div>
-                <div>
-                  <TextNode className='!mb-2'>Then</TextNode>
                   <BasicTextNode className='text-4xl  font-medium'>
                     $23<span className='text-xl  font-black'>/</span>
                     <span className={`text-lg  ${merriweather.className}`}>
