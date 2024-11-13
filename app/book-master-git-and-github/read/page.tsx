@@ -1,8 +1,8 @@
-import BookRead from '@/components/modules/master-git-and-github-book/BookRead';
 import { ReactElement } from 'react';
 
 function MasterGitAndGithubBookRead(): ReactElement {
-  return <BookRead />;
+  // return <BookRead />;
+  return <></>;
 }
 
 export default MasterGitAndGithubBookRead;
