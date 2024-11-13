@@ -13,12 +13,10 @@ import TextNode from '../../TextNode';
 
 interface GuestAccountIconProps {
   className?: string;
-  isAuthenticated: boolean;
 }
 
 function GuestAccountIconMain({
   className,
-  // isAuthenticated,
 }: GuestAccountIconProps): ReactElement {
   const [dropdownIsOpened, setDropdownIsOpened] = useState(false);
   const { bookSectionInViewport } = useBookSectionState();
@@ -205,7 +203,6 @@ function GuestAccountIconMain({
       </div>
       <div ref={dropdownRef} className={dropdownClasses}>
         {/* <EmailForm
-          isAuthenticated={isAuthenticated}
           type={EmailFormType.LOGIN}
           label='Enter your library'
           caption='We’ll email you the&nbsp;link to&nbsp;access your&nbsp;library'

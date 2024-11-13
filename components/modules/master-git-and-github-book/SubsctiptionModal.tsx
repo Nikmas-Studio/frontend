@@ -16,13 +16,10 @@ import { ReactElement, useEffect, useRef } from 'react';
 interface SubscriptionModalProps {
   formInputId: string;
   fixBody?: boolean;
-  isAuthenticated: boolean;
 }
 
 function SubscriptionModal({
-  // formInputId,
   fixBody = true,
-  // isAuthenticated,
 }: SubscriptionModalProps): ReactElement {
   const modalRef = useRef<HTMLDivElement>(null);
   const modalCoverRef = useRef<HTMLDivElement>(null);
@@ -215,7 +212,6 @@ function SubscriptionModal({
         </BasicTextNode>
         <div className='mb-20  mt-[2.85rem]'>
           {/* <EmailForm
-            isAuthenticated={isAuthenticated}
             type={EmailFormType.PAYMENT}
             label='Get payment link by&nbsp;email'
             caption='This&nbsp;email will&nbsp;be&nbsp;used as&nbsp;a&nbsp;key to&nbsp;your&nbsp;library'

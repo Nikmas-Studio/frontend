@@ -16,8 +16,6 @@ interface BookDemoProps {
 }
 
 function BookDemo({ initialPageId }: BookDemoProps): ReactElement {
-  // const isAuthenticated = await validateSession();
-
   return (
     <MasterGitAndGithubBookLayout initialPageId={initialPageId}>
       <BookVersionProvider version={BookVersion.DEMO}>
@@ -29,7 +27,6 @@ function BookDemo({ initialPageId }: BookDemoProps): ReactElement {
             <Page3 />
             <EndPageDemo />
             <SubscriptionModal
-              isAuthenticated={false}
               formInputId='demo-subscription-modal-email'
               fixBody={false}
             />
