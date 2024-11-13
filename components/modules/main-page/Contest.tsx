@@ -3,7 +3,7 @@ import { ReactElement } from 'react';
 
 function Contest(): ReactElement {
   return (
-    <section className='mt-32  lg:mt-36'>
+    <section className='mt-[6.5rem]  lg:mt-36'>
       <MainContainer className='flex  flex-col  items-center  px-[6.3rem]'>
         <div>
           <p className='text-2xl  !leading-snug  sm:text-3xl  dark:text-white'>

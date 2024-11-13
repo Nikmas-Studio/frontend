@@ -10,8 +10,8 @@ import MainContainer from '../elements/MainContainer';
 function Footer(): ReactElement {
   return (
     <footer
-      className='mt-44  border-t  border-gray-light  
-                     pb-20  pt-12  sm:pb-[4.5rem]  dark:border-gray-dark'
+      className='mt-44  border-t  border-gray-light  pb-20  
+                 pt-12  sm:pb-[4.5rem]  lg:mt-48  dark:border-gray-dark'
     >
       <MainContainer
         className='flex  flex-col-reverse  items-center  sm:flex-row

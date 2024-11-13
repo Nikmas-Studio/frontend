@@ -47,7 +47,7 @@ function Eleven(): ReactElement {
   return (
     <section
       ref={elevenSectionRef}
-      className='pointer-events-none  mb-32  mt-20  select-none  lg:mb-40  lg:mt-32'
+      className='pointer-events-none  mb-28  mt-16  select-none  lg:mb-40  lg:mt-32'
     >
       <MainContainer>
         <div
