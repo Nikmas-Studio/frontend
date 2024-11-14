@@ -2,9 +2,9 @@
 
 import { useEscapeInAppBrowser } from '@/hooks/use-escape-in-app-browser';
 import { ReactElement, useState } from 'react';
+import ExternalLink from './ExternalLink';
 import MainContainer from './MainContainer';
 import TextNode from './TextNode';
-import ExternalLink from './ExternalLink';
 
 function EscapeInAppBrowser(): ReactElement | null {
   const [returnEscapeComponent, setReturnEscapeComponent] = useState<
