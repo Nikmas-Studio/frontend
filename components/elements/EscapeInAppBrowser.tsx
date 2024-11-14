@@ -24,7 +24,9 @@ function EscapeInAppBrowser(): ReactElement | null {
           This website requires a modern browser like Chrome, Safari, or Firefox
           to function properly.
         </TextNode>
-        <TextNode>Open this link in a modern browser:</TextNode>
+        <TextNode className='!mb-0'>
+          Open this link in a modern browser:
+        </TextNode>
         <ExternalLink defaultTextLink href={returnEscapeComponentURL}>
           {returnEscapeComponentURL}
         </ExternalLink>
