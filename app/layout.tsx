@@ -41,8 +41,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>{children}</body>
-      <EscapeInAppBrowser />
+      <body>
+        {children}
+        <EscapeInAppBrowser />
+      </body>
     </html>
   );
 }

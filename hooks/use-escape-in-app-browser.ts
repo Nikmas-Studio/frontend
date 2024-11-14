@@ -1,14 +1,27 @@
+import { usePathname } from 'next/navigation';
+import { Dispatch, SetStateAction, useEffect } from 'react';
 import Bowser from 'bowser';
 import InAppSpy from 'inapp-spy';
-import { useEffect } from 'react';
+const { isInApp } = InAppSpy();
 
-export function useEscapeInAppBrowser(): void {
+export interface UseEscapeInAppBrowserHookProps {
+  setReturnEscapeComponent: Dispatch<SetStateAction<string | null>>;
+}
+
+export function useEscapeInAppBrowser({
+  setReturnEscapeComponent,
+}: UseEscapeInAppBrowserHookProps): void {
+  const path = usePathname();
+
   useEffect(() => {
-    const currentUrl = window.location.href; // Get the current URL
+    const currentUrl = path;
+
     const { isInApp } = InAppSpy();
+
     if (!isInApp) return;
 
     const os = Bowser.getParser(window.navigator.userAgent).getOSName(true);
+
     let link;
     if (os === 'android') {
       link = `intent:${currentUrl}#Intent;end`;
@@ -21,14 +34,6 @@ export function useEscapeInAppBrowser(): void {
 
     window.location.replace(link);
 
-    const div = document.createElement('div');
-    div.className = 'fixed  size-full  inset-0  bg-white  dark:bg-black';
-    div.innerHTML = `
-      <div class='mt-[40px]  ml-[20px]'>
-        <p class='text-black  dark:text-white'>Tap the link to open in your default browser:</p>
-        <a class='text-black  dark:text-white' href="${link}" target="_blank">Open</a>
-      </div>
-    `;
-    document.body.appendChild(div);
-  }, []);
+    setReturnEscapeComponent(path);
+  }, [path, setReturnEscapeComponent]);
 }
