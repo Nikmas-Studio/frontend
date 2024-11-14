@@ -9,11 +9,11 @@ function Mission(): ReactElement {
     <section className='mb-[7.5rem]  lg:mb-48'>
       <MainContainer>
         <TextNode
-          className='!mb-0  w-[22.6rem]  text-xl  [transition:opacity_1s_ease-out]
-                     first-letter:float-left  first-letter:mr-1  
-                     first-letter:mt-[0.3rem]  first-letter:text-8xl  
-                     first-letter:font-bold  first-letter:[line-height:0.8]
-                     sm:mx-auto  lg:w-[27rem]  lg:text-2xl  lg:leading-snug
+          className='!mb-0  max-w-[23rem]  text-xl  leading-normal
+                     [transition:opacity_1s_ease-out]  first-letter:float-left  
+                     first-letter:mr-1  first-letter:mt-[0.3rem]  
+                     first-letter:text-[6.48rem]  first-letter:font-bold
+                     first-letter:[line-height:0.8]  sm:mx-auto  lg:w-[27rem]  lg:text-2xl
                      lg:first-letter:mt-[0.28rem]  lg:first-letter:text-[7.2rem]'
         >
           The&nbsp;Studio empowers authors from&nbsp;various fields
