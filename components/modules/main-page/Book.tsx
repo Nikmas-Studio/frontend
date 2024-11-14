@@ -70,7 +70,7 @@ function Book(): ReactElement {
     <div ref={sectionWrapperRef}>
       <section
         ref={sectionRef}
-        className='w-screen  pb-32  pt-16  opacity-1 
+        className='w-screen  pb-32  pt-16 
                   [background:linear-gradient(135deg,#ff5013,#271ad3)]
                   [transition:opacity_1s_ease-out]'
       >

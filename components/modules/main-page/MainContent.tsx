@@ -1,13 +1,13 @@
 'use client';
 
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
 import { ReactElement, useRef } from 'react';
-import Eleven from './Eleven';
-import Mission from './Mission';
 import Book from './Book';
 import Contest from './Contest';
-import { ScrollTrigger } from 'gsap/all';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
+import Eleven from './Eleven';
+import Mission from './Mission';
 gsap.registerPlugin(ScrollTrigger);
 
 function MainContent(): ReactElement {
@@ -42,7 +42,10 @@ function MainContent(): ReactElement {
   }, []);
 
   return (
-    <div ref={mainContentBlockRef} className='opacity-0  [transition:opacity_1s_ease-out]'>
+    <div
+      ref={mainContentBlockRef}
+      className='opacity-0  [transition:opacity_1s_ease-out]'
+    >
       <Eleven />
       <Mission />
       <Book />

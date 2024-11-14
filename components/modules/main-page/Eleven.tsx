@@ -3,28 +3,25 @@
 import MainContainer from '@/components/elements/MainContainer';
 import cakeEleven from '@/public/images/cake-1111.png';
 import circle from '@/public/images/dotted-elipse.svg';
-import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Image from 'next/image';
-import { ReactElement, useRef } from 'react';
+import { ReactElement } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 function Eleven(): ReactElement {
   return (
-    <section
-      className='pointer-events-none  mb-[5.5rem]  select-none  lg:mb-40'
-    >
+    <section className='pointer-events-none  mb-[5.5rem]  select-none  lg:mb-40'>
       <MainContainer>
         <div
-          className='relative  mx-auto  aspect-square  w-[80vw]  place-items-center  opacity-1  [transition:transform_1s_ease-out,opacity_1s_ease-out]  
-                     sm:w-[460px]'
+          className='relative  mx-auto  aspect-square  w-[80vw]  
+                     place-items-center  sm:w-[460px]'
         >
           <Image
             src={circle}
             alt='Dotted elipse'
-            className='absolute  inset-0  [transition:transform_1s_ease-out]  xl:transition-none'
+            className='absolute  inset-0'
             quality={100}
             priority
           />
