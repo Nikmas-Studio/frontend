@@ -2,7 +2,6 @@
 
 import { useEscapeInAppBrowser } from '@/hooks/use-escape-in-app-browser';
 import { ReactElement, useState } from 'react';
-import ExternalLink from './ExternalLink';
 import MainContainer from './MainContainer';
 import TextNode from './TextNode';
 
@@ -22,12 +21,6 @@ function EscapeInAppBrowser(): ReactElement | null {
           This website requires a modern browser like Chrome, Safari, or Firefox
           to function properly.
         </TextNode>
-        <TextNode className='!mb-0'>
-          Tap the link to open in your default browser:
-        </TextNode>
-        <ExternalLink defaultTextLink href={returnEscapeComponent}>
-          Open in the default browser
-        </ExternalLink>
       </MainContainer>
     </div>
   );
