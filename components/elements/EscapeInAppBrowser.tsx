@@ -25,7 +25,7 @@ function EscapeInAppBrowser(): ReactElement | null {
           to function properly.
         </TextNode>
         <TextNode>Open this link in a modern browser:</TextNode>
-        <ExternalLink href={returnEscapeComponentURL}>
+        <ExternalLink defaultTextLink href={returnEscapeComponentURL}>
           {returnEscapeComponentURL}
         </ExternalLink>
       </MainContainer>
