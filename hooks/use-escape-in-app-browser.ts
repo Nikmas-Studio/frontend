@@ -5,11 +5,11 @@ import { usePathname } from 'next/navigation';
 import { Dispatch, SetStateAction, useEffect } from 'react';
 
 export interface UseEscapeInAppBrowserHookProps {
-  setReturnEscapeComponent: Dispatch<SetStateAction<string | null>>;
+  setReturnEscapeComponentURL: Dispatch<SetStateAction<string | null>>;
 }
 
 export function useEscapeInAppBrowser({
-  setReturnEscapeComponent,
+  setReturnEscapeComponentURL,
 }: UseEscapeInAppBrowserHookProps): void {
   const path = usePathname();
 
@@ -31,8 +31,8 @@ export function useEscapeInAppBrowser({
       return;
     }
 
-    window.location.replace(link);
+    window.location.replace(currentUrl);
 
-    setReturnEscapeComponent(link);
-  }, [path, setReturnEscapeComponent]);
+    setReturnEscapeComponentURL(link);
+  }, [path, setReturnEscapeComponentURL]);
 }
