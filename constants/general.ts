@@ -7,3 +7,4 @@ export const PAYMENT_URL_AUTHENTICATED = `${BACKEND_URL}/purchase-book-authentic
 export const VALIDATE_SESSION_URL = `${BACKEND_URL}/validate-session`;
 export const SESSION_ID_COOKIE_NAME = 'sessionId';
 export const MASTER_GIT_AND_GITHUB_BOOK_URI = 'book-master-git-and-github';
+export const BASE_FRONTEND_URL = 'https://nikmas.studio';
