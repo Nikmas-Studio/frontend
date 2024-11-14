@@ -24,7 +24,7 @@ export function useEscapeInAppBrowser({
 
     let link;
     if (os === 'android') {
-      link = `intent:${currentUrl}#Intent;end`;
+      link = `intent:${BASE_FRONTEND_URL}#Intent;end`;
       console.log('redirect in-app browser link for android: ', link);
     } else if (os === 'ios') {
       link = `shortcuts://x-callback-url/run-shortcut?name=${crypto.randomUUID()}&x-error=${encodeURIComponent(currentUrl)}`;
