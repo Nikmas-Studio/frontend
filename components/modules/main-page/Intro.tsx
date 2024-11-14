@@ -210,7 +210,7 @@ function Intro(): ReactElement {
   );
 
   return (
-    <section className='mt-2'>
+    <section className='mb-16  mt-2  lg:mb-32'>
       <MainContainer className='flex  justify-between' ref={containerRef}>
         <h1
           ref={h1Ref}
