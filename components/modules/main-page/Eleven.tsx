@@ -12,51 +12,16 @@ import { ReactElement, useRef } from 'react';
 gsap.registerPlugin(ScrollTrigger);
 
 function Eleven(): ReactElement {
-  const circleRef = useRef<HTMLImageElement | null>(null);
-  const elevenSectionRef = useRef<HTMLElement | null>(null);
-  const elevenBlock = useRef<HTMLDivElement | null>(null);
-
-  useGSAP(() => {
-    const mm = gsap.matchMedia();
-
-    mm.add('(min-width: 1280px)', () => {
-      ScrollTrigger.create({
-        trigger: elevenSectionRef.current,
-        start: 'top 750',
-        onEnter: () => {
-          gsap.set(elevenBlock.current, {
-            opacity: 1,
-          });
-        },
-      });
-    });
-
-    mm.add('(max-width: 1279px)', () => {
-      ScrollTrigger.create({
-        trigger: elevenSectionRef.current,
-        start: 'top 390',
-        onEnter: () => {
-          gsap.set(elevenBlock.current, {
-            opacity: 1,
-          });
-        },
-      });
-    });
-  }, []);
-
   return (
     <section
-      ref={elevenSectionRef}
-      className='pointer-events-none  mb-28  mt-16  select-none  lg:mb-40  lg:mt-32'
+      className='pointer-events-none  mb-[5.5rem]  select-none  lg:mb-40'
     >
       <MainContainer>
         <div
-          ref={elevenBlock}
-          className='relative  mx-auto  aspect-square  w-[80vw]  place-items-center  opacity-0  [transition:transform_1s_ease-out,opacity_1s_ease-out]  
+          className='relative  mx-auto  aspect-square  w-[80vw]  place-items-center  opacity-1  [transition:transform_1s_ease-out,opacity_1s_ease-out]  
                      sm:w-[460px]'
         >
           <Image
-            ref={circleRef}
             src={circle}
             alt='Dotted elipse'
             className='absolute  inset-0  [transition:transform_1s_ease-out]  xl:transition-none'

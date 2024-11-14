@@ -1,6 +1,7 @@
 'use client';
 
 import { useBookSectionStateDispatch } from '@/context/book-section/Context';
+import useGsapResizeUpdate from '@/hooks/use-gsap-resize-update';
 import bookCoverDark from '@/public/images/git-and-github-book-cover-dark.jpg';
 import bookCoverLight from '@/public/images/git-and-github-book-cover-light.jpg';
 import { useGSAP } from '@gsap/react';
@@ -21,75 +22,55 @@ function Book(): ReactElement {
   const sectionWrapperRef = useRef<HTMLDivElement | null>(null);
   const imageWrapperRef = useRef<HTMLDivElement | null>(null);
   const { setBookSectionInViewport } = useBookSectionStateDispatch();
+  const { gsapShouldUpdate } = useGsapResizeUpdate();
 
-  useGSAP(() => {
-    const headerElement = document.getElementById('main-header');
-    const headerHeight = headerElement?.offsetHeight;
+  useGSAP(
+    () => {
+      const headerElement = document.getElementById('main-header');
+      const headerHeight = headerElement?.offsetHeight;
 
-    const mm = gsap.matchMedia();
+      const mm = gsap.matchMedia();
 
-    mm.add('(min-width: 1280px)', () => {
-      gsap.to(imageWrapperRef.current, {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 600',
-          scrub: true,
-          end: '+=520',
-        },
-        scale: 1,
-        opacity: 1,
+      mm.add('(min-width: 1280px)', () => {
+        gsap.to(imageWrapperRef.current, {
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 600',
+            scrub: true,
+            end: '+=520',
+          },
+          scale: 1,
+          opacity: 1,
+        });
       });
-    });
 
-    mm.add('(min-width: 640px)', () => {
       ScrollTrigger.create({
-        trigger: sectionWrapperRef.current,
-        start: 'top 700',
+        trigger: sectionRef.current,
+        start: `top ${headerHeight}`,
+        end: `bottom ${headerHeight}`,
+        toggleActions: 'play reverse play reverse',
         onEnter: () => {
-          gsap.set(sectionRef.current, {
-            opacity: 1,
-          });
+          setBookSectionInViewport(true);
+        },
+        onEnterBack: () => {
+          setBookSectionInViewport(true);
+        },
+        onLeave: () => {
+          setBookSectionInViewport(false);
+        },
+        onLeaveBack: () => {
+          setBookSectionInViewport(false);
         },
       });
-    });
-
-    mm.add('(max-width: 639px)', () => {
-      ScrollTrigger.create({
-        trigger: sectionWrapperRef.current,
-        start: 'top 320',
-        onEnter: () => {
-          gsap.set(sectionRef.current, {
-            opacity: 1,
-          });
-        },
-      });
-    });
-
-    ScrollTrigger.create({
-      trigger: sectionRef.current,
-      start: `top ${headerHeight}`,
-      end: `bottom ${headerHeight}`,
-      toggleActions: 'play reverse play reverse',
-      onEnter: () => {
-        setBookSectionInViewport(true);
-      },
-      onEnterBack: () => {
-        setBookSectionInViewport(true);
-      },
-      onLeave: () => {
-        setBookSectionInViewport(false);
-      },
-      onLeaveBack: () => {
-        setBookSectionInViewport(false);
-      },
-    });
-  }, []);
+    },
+    { dependencies: [gsapShouldUpdate], revertOnUpdate: true },
+  );
 
   return (
     <div ref={sectionWrapperRef}>
       <section
         ref={sectionRef}
-        className='w-screen  pb-32  pt-16  opacity-0 
+        className='w-screen  pb-32  pt-16  opacity-1 
                   [background:linear-gradient(135deg,#ff5013,#271ad3)]
                   [transition:opacity_1s_ease-out]'
       >

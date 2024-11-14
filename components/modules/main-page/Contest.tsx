@@ -3,10 +3,10 @@ import { ReactElement } from 'react';
 
 function Contest(): ReactElement {
   return (
-    <section className='mt-[6.5rem]  lg:mt-36'>
+    <section className='mt-[7rem]  lg:mt-40  lg:mb-48'>
       <MainContainer className='flex  flex-col  items-center  px-[6.3rem]'>
         <div>
-          <p className='text-2xl  !leading-snug  sm:text-3xl  dark:text-white'>
+          <p className='text-3xl  lg:text-4xl  !leading-snug  dark:text-white'>
             Get <br />
             free <br />
             lifetime <br />
@@ -19,7 +19,7 @@ function Contest(): ReactElement {
             from <br />
             Nikmas&nbsp;Studio
           </p>
-          <p className='mt-5  text-2xl  !leading-snug  sm:text-3xl  dark:text-white'>
+          <p className='mt-5  text-3xl  lg:text-4xl  !leading-snug  dark:text-white'>
             {/* <ExternalLink href='https://www.instagram.com' defaultTextLink> */}
             by&nbsp;participating <br />
             in&nbsp;a&nbsp;contest <br />
