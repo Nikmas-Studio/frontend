@@ -31,8 +31,8 @@ export function useEscapeInAppBrowser({
       return;
     }
 
-    window.location.replace(currentUrl);
+    window.location.replace(link);
 
-    setReturnEscapeComponentURL(link);
+    setReturnEscapeComponentURL(currentUrl);
   }, [path, setReturnEscapeComponentURL]);
 }
