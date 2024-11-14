@@ -24,13 +24,10 @@ export function useEscapeInAppBrowser({
 
     let link;
     if (os === 'android') {
-      link = `intent:${BASE_FRONTEND_URL}#Intent;end`;
-      console.log('redirect in-app browser link for android: ', link);
+      link = `intent:${currentUrl}#Intent;end`;
     } else if (os === 'ios') {
       link = `shortcuts://x-callback-url/run-shortcut?name=${crypto.randomUUID()}&x-error=${encodeURIComponent(currentUrl)}`;
-      console.log('redirect in-app browser link for ios: ', link);
     } else {
-      console.error('Unsupported OS or in-app browser.');
       return;
     }
 
