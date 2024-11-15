@@ -14,7 +14,7 @@ export function useEscapeInAppBrowser({
   const path = usePathname();
 
   useEffect(() => {
-    const currentUrl = `${BASE_FRONTEND_URL}${path}`;
+    const currentUrl = `${BASE_FRONTEND_URL}${path === '/' ? '' : path}`;
 
     const { isInApp } = InAppSpy();
 
