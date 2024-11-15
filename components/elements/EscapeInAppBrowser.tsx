@@ -20,11 +20,11 @@ function EscapeInAppBrowser(): ReactElement | null {
     <div className='fixed  inset-0  z-[9999999]  size-full  bg-white  dark:bg-black'>
       <MainContainer className='mt-10'>
         <TextNode>
-          This&nbsp;website requires a&nbsp;modern full-fledged browser
+          This&nbsp;website requires a&nbsp;modern full&#8209;fledged browser
           like&nbsp;Chrome, Safari, or&nbsp;Firefox to&nbsp;function properly.
         </TextNode>
         <TextNode className='!mb-0'>
-          Copy and open this link in a modern browser:
+          Copy and&nbsp;open this&nbsp;link in&nbsp;a&nbsp;modern browser:
         </TextNode>
         <TextNode className='!mb-0'>
           <a href={returnEscapeComponentURL} className='default-link'>
