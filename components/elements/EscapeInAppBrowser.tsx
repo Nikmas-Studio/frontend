@@ -2,7 +2,6 @@
 
 import { useEscapeInAppBrowser } from '@/hooks/use-escape-in-app-browser';
 import { ReactElement, useState } from 'react';
-import ExternalLink from './ExternalLink';
 import MainContainer from './MainContainer';
 import TextNode from './TextNode';
 
@@ -21,15 +20,17 @@ function EscapeInAppBrowser(): ReactElement | null {
     <div className='fixed  inset-0  z-[9999999]  size-full  bg-white  dark:bg-black'>
       <MainContainer className='mt-10'>
         <TextNode>
-          This website requires a modern browser like Chrome, Safari, or Firefox
-          to function properly.
+          This&nbsp;website requires a&nbsp;modern full-fledged browser
+          like&nbsp;Chrome, Safari, or&nbsp;Firefox to&nbsp;function properly.
         </TextNode>
         <TextNode className='!mb-0'>
-          Open this link in a modern browser:
+          Copy and open this link in a modern browser:
         </TextNode>
-        <ExternalLink defaultTextLink href={returnEscapeComponentURL}>
-          {returnEscapeComponentURL}
-        </ExternalLink>
+        <TextNode className='!mb-0'>
+          <a href={returnEscapeComponentURL} className='default-link'>
+            {returnEscapeComponentURL}
+          </a>
+        </TextNode>
       </MainContainer>
     </div>
   );
