@@ -24,7 +24,9 @@ function EscapeInAppBrowser(): ReactElement | null {
           like&nbsp;Chrome, Safari, or&nbsp;Firefox to&nbsp;function properly.
         </TextNode>
         <TextNode className='!mb-0'>
-          Copy and&nbsp;open this&nbsp;link in&nbsp;a&nbsp;modern browser:
+          Copy and&nbsp;open this&nbsp;link in&nbsp;a&nbsp;full&#8209;fledged
+          browser manually, or&nbsp;use your&nbsp;current browser&apos;s
+          features to&nbsp;do so:
         </TextNode>
         <TextNode className='!mb-0'>
           <a href={returnEscapeComponentURL} className='default-link'>
