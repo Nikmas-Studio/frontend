@@ -1,7 +1,7 @@
 'use client';
 
 import MainContainer from '@/components/elements/MainContainer';
-import cakeEleven from '@/public/images/cake-1111.png';
+import cakeEleven from '@/public/images/cake-eleven.png';
 import circle from '@/public/images/dotted-elipse.svg';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
