@@ -33,7 +33,7 @@ const config: Config = {
         'git-black': '#00040A',
         'git-white': '#e3e3e3',
         orange: '#ff5013',
-        blue: '#271ad3',
+        blue: '#2e1eff',
         'git-dark-blue': '#09132a',
         subscription: '#29AD04',
         'subscription-darker': '#248F04',
