@@ -396,7 +396,7 @@ function Page3(): ReactElement {
             toggleLettersAnimation('stop', timeline.scrollTrigger?.direction),
           '5',
         );
-        timeline.set(introSectionTextRef.current, { color: '#271AD3' }, '5');
+        timeline.set(introSectionTextRef.current, { color: '#473AFF' }, '5');
         timeline.set(
           animateLettersCommitCircleRef.current,
           { boxShadow: 'none' },
@@ -579,10 +579,10 @@ function Page3(): ReactElement {
           () => toggleSpineAnimation('stop', timeline.scrollTrigger?.direction),
           '10',
         );
-        timeline.set(introSectionTextRef.current, { color: '#271AD3' }, '10');
+        timeline.set(introSectionTextRef.current, { color: '#473AFF' }, '10');
         timeline.set(
           introSectionSpineRef.current,
-          { backgroundColor: '#271AD3' },
+          { backgroundColor: '#473AFF' },
           '10',
         );
         timeline.set(addProductsSectionCommitRef.current, { opacity: 1 }, '10');
@@ -823,7 +823,7 @@ function Page3(): ReactElement {
                     <p
                       className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left   rotate-[-25deg]
                               text-xl  leading-normal  text-blue  max-md:text-[3vw]  h-md:bottom-[4.5vh]
-                              h-md:left-[0.5vh]  h-md:text-[3vh]  dark:text-[#3D32D1]'
+                              h-md:left-[0.5vh]  h-md:text-[3vh]  dark:text-[#473AFF]'
                     >
                       Initialize&nbsp;the&nbsp;project
                     </p>
@@ -841,7 +841,7 @@ function Page3(): ReactElement {
                       <p
                         className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
                                 text-xl  leading-normal  text-blue  max-md:text-[3vw]
-                                h-md:bottom-[4.5vh]  h-md:left-[0.5vh]  h-md:text-[3vh]  dark:text-[#3D32D1]'
+                                h-md:bottom-[4.5vh]  h-md:left-[0.5vh]  h-md:text-[3vh]  dark:text-[#473AFF]'
                       >
                         Add&nbsp;the&nbsp;header
                       </p>
@@ -869,7 +869,7 @@ function Page3(): ReactElement {
                         className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
                                 text-xl  leading-normal  text-blue  max-md:text-[3vw]
                                 h-md:bottom-[4.5vh]  h-md:left-[0.5vh]  
-                                h-md:text-[3vh]  dark:text-[#3D32D1]'
+                                h-md:text-[3vh]  dark:text-[#473AFF]'
                       >
                         Add&nbsp;the&nbsp;intro&nbsp;section
                       </p>
@@ -909,7 +909,7 @@ function Page3(): ReactElement {
                                origin-top-left  rotate-[-25deg]  text-xl
                                leading-normal  text-blue  max-md:text-[3vw]
                                h-md:bottom-[4.5vh]  h-md:left-[0.5vh]
-                               h-md:text-[3vh]  dark:text-[#3D32D1]'
+                               h-md:text-[3vh]  dark:text-[#473AFF]'
                       >
                         Add&nbsp;the&nbsp;products&nbsp;section
                       </p>
@@ -936,7 +936,7 @@ function Page3(): ReactElement {
                         className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
                                text-xl  leading-normal  text-blue  max-md:text-[3vw]
                                h-md:bottom-[4.5vh]  h-md:left-[0.5vh]
-                               h-md:text-[3vh]  dark:text-[#3D32D1]'
+                               h-md:text-[3vh]  dark:text-[#473AFF]'
                       >
                         Add&nbsp;the&nbsp;footer
                       </p>
@@ -963,7 +963,7 @@ function Page3(): ReactElement {
                         className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
                               text-xl  leading-normal  text-blue  max-md:text-[3vw]
                               h-md:bottom-[4.5vh]  h-md:left-[0.5vh]
-                              h-md:text-[3vh]  dark:text-[#3D32D1]'
+                              h-md:text-[3vh]  dark:text-[#473AFF]'
                       >
                         Merge
                       </p>
@@ -1252,12 +1252,12 @@ function Page3(): ReactElement {
                 className='mt-[0.55em]  flex  flex-row  items-center
                          justify-between  px-[10%]  opacity-0  transition-opacity'
               >
-                <p className='text-[0.8em]  font-bold  text-blue  dark:text-[#3D32D1]'>
+                <p className='text-[0.8em]  font-bold  text-blue  dark:text-[#473AFF]'>
                   Nikmas Studio
                 </p>
                 <div className='flex  flex-row  items-center  gap-[0.25em]'>
                   <svg
-                    className='translate-y-[-0.031em]  fill-blue  dark:fill-[#3D32D1]'
+                    className='translate-y-[-0.031em]  fill-blue  dark:fill-[#473AFF]'
                     version='1.1'
                     id='Capa_1'
                     xmlns='http://www.w3.org/2000/svg'
@@ -1320,7 +1320,7 @@ function Page3(): ReactElement {
               >
                 <p
                   ref={introSectionTextRef}
-                  className='text-[1.05em]  leading-[1.1]  text-[#3D32D1]
+                  className='text-[1.05em]  leading-[1.1]  text-[#473AFF]
                            transition-colors'
                 >
                   <SpanSplitter text='Next-gen' />
@@ -1337,7 +1337,7 @@ function Page3(): ReactElement {
                 </p>
                 <div
                   ref={introSectionSpineRef}
-                  className='h-[6.7em]  w-[0.65em]  rounded-[0.18em]  bg-[#3D32D1]
+                  className='h-[6.7em]  w-[0.65em]  rounded-[0.18em]  bg-[#473AFF]
                            transition-colors'
                 ></div>
               </div>
@@ -1349,7 +1349,7 @@ function Page3(): ReactElement {
               >
                 <p
                   className='mb-[0.5em]  text-[0.8em]  font-bold  text-blue
-                            dark:text-[#3D32D1]'
+                            dark:text-[#473AFF]'
                 >
                   Our first book
                 </p>
@@ -1386,13 +1386,13 @@ function Page3(): ReactElement {
                 <div>
                   <p
                     className='mb-[0.6em]  text-[0.42em]  text-blue  
-                            dark:text-[#3D32D1]'
+                            dark:text-[#473AFF]'
                   >
                     © Nikmas Studio, 2024
                   </p>
                   <ul
                     className='flex  flex-col  gap-[0.05em]  text-blue  
-                             dark:text-[#3D32D1]'
+                             dark:text-[#473AFF]'
                   >
                     <li className='text-[0.3em]'>Terms and conditions</li>
                     <li className='text-[0.3em]'>Privacy policy</li>
@@ -1429,7 +1429,7 @@ function Page3(): ReactElement {
                     L
                   </div>
                 </div>
-                <div className='text-[0.42em]  text-blue  dark:text-[#3D32D1]'>
+                <div className='text-[0.42em]  text-blue  dark:text-[#473AFF]'>
                   <p className='leading-tight'>
                     For questions <br /> and suggestions:
                   </p>
@@ -1576,7 +1576,7 @@ function Page3(): ReactElement {
                   ></div>
                   <p
                     className='text-xl  leading-tight  text-blue  max-md:text-[3vw]
-                              h-md:text-[3vh]  dark:text-[#3D32D1]'
+                              h-md:text-[3vh]  dark:text-[#473AFF]'
                   >
                     Main branch
                   </p>
