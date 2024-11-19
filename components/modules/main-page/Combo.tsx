@@ -12,7 +12,7 @@ function Combo(): ReactElement {
         <div className='flex  flex-col  items-center'>
           <div>
             <BasicTextNode
-              className='mb-[2.7vw]  ml-[11.7vw]  rotate-[-6.3deg]
+              className='mb-[2.7vw]  ml-[11.9vw]  rotate-[-6.3deg]
                          text-[8vw]  font-bold  1.5sm:mb-[14.499px]
                          1.5sm:ml-[66px]  1.5sm:text-[45px]
                          '
