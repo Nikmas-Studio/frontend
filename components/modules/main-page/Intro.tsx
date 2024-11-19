@@ -215,11 +215,12 @@ function Intro(): ReactElement {
         <h1
           ref={h1Ref}
           aria-hidden='true'
-          className='translate-x-[-1.5px]  translate-y-[-4px]  select-none  
-                     text-[11.5vw]  leading-none  text-black 
-                     sm:text-[clamp(1px,11vh,min(122px,9vw))]
-                     xl:text-[clamp(1px,12.7vh,min(122px,9vw))]
-                     h-sm:text-[10vh]  dark:text-white'
+          className='translate-x-[-1.5px]  
+                     translate-y-[-4px]  select-none  text-[11.5vw] 
+                     leading-none
+                     text-black  sm:text-[clamp(1px,11vh,min(122px,9vw))]
+                     xl:translate-x-[-5px]
+                     xl:text-[clamp(1px,12.7vh,min(122px,9vw))]  h-sm:text-[10vh]  dark:text-white'
         >
           <IntroDescrLine text='Next-gen' dataElement='studio-intro-next-gen' />
           <br />
