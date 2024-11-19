@@ -12,9 +12,9 @@ function Combo(): ReactElement {
         <div className='flex  flex-col  items-center'>
           <div>
             <BasicTextNode
-              className='mb-[2.7vw]  ml-[12vw]  rotate-[-6.3deg]
+              className='mb-[2.7vw]  ml-[11.7vw]  rotate-[-6.3deg]
                          text-[8vw]  font-bold  1.5sm:mb-[14.499px]
-                         1.5sm:ml-[66.4806px]  1.5sm:text-[45px]
+                         1.5sm:ml-[66px]  1.5sm:text-[45px]
                          '
             >
               Serenely&nbsp;to&nbsp;the&nbsp;Stars
@@ -164,8 +164,8 @@ function Combo(): ReactElement {
                 />
               </svg>
               <TextNode
-                className='!mb-0  ml-[-11.1vw]  mt-[12.2vw]  
-                           !text-[4.1vw]  !leading-normal  1.5sm:ml-[-62px]
+                className='!mb-0  ml-[-10.8vw]  mt-[12.2vw]  
+                           !text-[4.1vw]  !leading-normal  1.5sm:ml-[-61px]
                            1.5sm:mt-[65.514px]  1.5sm:!text-[22px]'
               >
                 he&nbsp;Studio&nbsp;empowers&nbsp;authors
