@@ -165,7 +165,7 @@ function HeaderMain(): ReactElement {
   }, []);
 
   const headerClasses = classNames(
-    `pt-4  pb-6  fixed  left-0  right-0  top-0  border-b
+    `pt-[1.1rem]  pb-[1.6rem]  sm:pt-4  sm:pb-6  fixed  left-0  right-0  top-0  border-b
      header-transition z-50
      [background-image:linear-gradient(135deg,var(--headerLightModeBgFirstColor),var(--headerLightModeBgSecondColor))]
      dark:[background-image:linear-gradient(135deg,var(--headerDarkModeBgFirstColor),var(--headerDarkModeBgSecondColor))]`,

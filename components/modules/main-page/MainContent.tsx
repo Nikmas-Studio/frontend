@@ -5,9 +5,9 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { ReactElement, useRef } from 'react';
 import Book from './Book';
+import Combo from './Combo';
 import Contest from './Contest';
 import Eleven from './Eleven';
-import Mission from './Mission';
 gsap.registerPlugin(ScrollTrigger);
 
 function MainContent(): ReactElement {
@@ -47,7 +47,7 @@ function MainContent(): ReactElement {
       className='opacity-0  [transition:opacity_1s_ease-out]'
     >
       <Eleven />
-      <Mission />
+      <Combo />
       <Book />
       <Contest />
     </div>
