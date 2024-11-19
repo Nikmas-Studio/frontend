@@ -12,8 +12,8 @@ function Combo(): ReactElement {
         <div className='flex  flex-col  items-center'>
           <div>
             <BasicTextNode
-              className='mb-[2.7vw]  ml-[12.38vw]  rotate-[-6.3deg]
-                         text-[8vw]  font-bold  1.5sm:mb-[14.499px]
+              className='mb-[2.7vw]  ml-[12vw]  rotate-[-6.3deg]
+                         text-[7.8vw]  font-bold  1.5sm:mb-[14.499px]
                          1.5sm:ml-[66.4806px]  1.5sm:text-[45px]
                          '
             >
@@ -21,7 +21,7 @@ function Combo(): ReactElement {
             </BasicTextNode>
             <div className='flex  flex-row'>
               <svg
-                className='w-[30vw]  shrink-0  1.5sm:w-[161.094px]'
+                className='w-[29vw]  shrink-0  1.5sm:w-[161.094px]'
                 version='1.1'
                 xmlns='http://www.w3.org/2000/svg'
                 x='0px'
