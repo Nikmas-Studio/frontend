@@ -164,7 +164,7 @@ function Combo(): ReactElement {
                 />
               </svg>
               <TextNode
-                className='!mb-0  ml-[-11vw]  mt-[12.2vw]  
+                className='!mb-0  ml-[-10.8vw]  mt-[12.2vw]  
                            !text-[4.1vw]  !leading-normal  1.5sm:ml-[-61px]
                            1.5sm:mt-[65.514px]  1.5sm:!text-[22px]'
               >
