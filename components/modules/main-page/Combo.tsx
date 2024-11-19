@@ -7,7 +7,7 @@ import { ReactElement } from 'react';
 
 function Combo(): ReactElement {
   return (
-    <section className='mb-32  lg:mb-48'>
+    <section className='mb-[7.5rem]  lg:mb-48'>
       <MainContainer>
         <div className='flex  flex-col  items-center'>
           <div>
