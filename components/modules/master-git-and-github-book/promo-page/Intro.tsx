@@ -89,10 +89,9 @@ function Intro(): ReactElement {
             <TextNode>
               What I&nbsp;offer is&nbsp;an&nbsp;e&#8209;book that&nbsp;is
               at&nbsp;the&nbsp;same time highly illustrative, interactive, deep
-              enough, up-to-date, and&nbsp;that&nbsp;will&nbsp;take you step
-              by&nbsp;step from&nbsp;a&nbsp;point where you know nothing
-              about&nbsp;Git and&nbsp;GitHub to&nbsp;a&nbsp;master level
-              in&nbsp;those tools.
+              enough, and&nbsp;that&nbsp;will&nbsp;take you step by&nbsp;step
+              from&nbsp;a&nbsp;point where you know nothing about&nbsp;Git
+              and&nbsp;GitHub to&nbsp;a&nbsp;master level in&nbsp;those tools.
             </TextNode>
             <TextNode>
               And&nbsp;unlike video format, it&apos;ll&nbsp;be

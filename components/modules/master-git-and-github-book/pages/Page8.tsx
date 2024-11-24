@@ -1,7 +1,12 @@
 'use client';
 
+import BookLeftPartContainer from '@/components/elements/master-git-and-github-book/BookLeftPartContainer';
 import BookMainContainer from '@/components/elements/master-git-and-github-book/BookMainContainer';
+import BookRightPartContainer from '@/components/elements/master-git-and-github-book/BookRightPartContainer';
+import GitHubLogo from '@/components/elements/master-git-and-github-book/GitHubLogo';
+import GitLogo from '@/components/elements/master-git-and-github-book/GitLogo';
 import H3 from '@/components/elements/master-git-and-github-book/H3';
+import H4 from '@/components/elements/master-git-and-github-book/H4';
 import Page from '@/components/elements/master-git-and-github-book/Page';
 import TextNode from '@/components/elements/master-git-and-github-book/TextNode';
 import {
@@ -81,12 +86,51 @@ function Page8(): ReactElement {
         <Controls pageNumber={8} />
         <BookMainContainer>
           <H3>Git ≠ GitHub</H3>
-          <TextNode>
-            Beginners often confuse Git with&nbsp;GitHub and&nbsp;use
-            the&nbsp;names interchangeably. While&nbsp;Git and&nbsp;GitHub
-            are&nbsp;closely related, they&nbsp;are&nbsp;fundamentally
-            different:
-          </TextNode>
+          <BookLeftPartContainer className='w-1/2  max-md:w-full  max-md:pr-0'>
+            <TextNode className='!mb-0'>
+              Beginners often confuse Git with&nbsp;GitHub and&nbsp;use
+              the&nbsp;names interchangeably. While&nbsp;Git and&nbsp;GitHub
+              are&nbsp;closely related, they&nbsp;are&nbsp;fundamentally
+              different:
+            </TextNode>
+          </BookLeftPartContainer>
+          <div className='mt-12  flex  flex-row  items-baseline  max-md:flex-col'>
+            <BookLeftPartContainer className='w-1/2  max-md:w-full  max-md:pr-0'>
+              <GitLogo className='mb-10  w-2/5' />
+              <H4>Git</H4>
+              <TextNode className='!mb-0'>
+                Git is a&nbsp;version control system that&nbsp;tracks changes
+                in&nbsp;files and&nbsp;helps developers collaborate. It&apos;s
+                a&nbsp;tool that&nbsp;you install locally
+                on&nbsp;your&nbsp;computer to&nbsp;manage and&nbsp;version
+                control your&nbsp;projects.
+              </TextNode>
+            </BookLeftPartContainer>
+            <BookRightPartContainer
+              className='w-1/2  max-md:mt-16  max-md:w-full  
+                         max-md:pl-0'
+            >
+              <GitHubLogo className='mb-10  w-2/5' />
+              <H4>GitHub</H4>
+              <TextNode className='!mb-0'>
+                GitHub is&nbsp;a&nbsp;cloud-based service built around Git
+                that&nbsp;hosts repositories online and&nbsp;provides tools
+                for&nbsp;collaboration.
+              </TextNode>
+            </BookRightPartContainer>
+          </div>
+          <hr
+            className='mt-14  
+                     border-gray-light-darker2
+                     dark:border-gray-dark-lighter2'
+          />
+          <BookLeftPartContainer className='mt-6  w-1/2  max-md:w-full  max-md:pr-0'>
+            <TextNode className='!mb-0'>
+              Usually, you work on&nbsp;a&nbsp;project locally using Git,
+              and&nbsp;additionally host your&nbsp;repository on&nbsp;GitHub
+              as&nbsp;a&nbsp;backup and&nbsp;for&nbsp;collaboration purposes.
+            </TextNode>
+          </BookLeftPartContainer>
         </BookMainContainer>
       </Page>
     </div>

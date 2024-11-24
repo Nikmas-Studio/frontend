@@ -39,7 +39,7 @@ function Page7(): ReactElement {
     <Page id='page-7' ref={sectionRef} className={pageClasses}>
       <Controls pageNumber={7} />
       <BookMainContainer className='flex  flex-row  max-md:flex-col-reverse  max-md:gap-12'>
-        <BookLeftPartContainer className='w-1/2  max-md:w-full'>
+        <BookLeftPartContainer className='w-1/2  max-md:w-full  max-md:pr-0'>
           <H3>Repository</H3>
           <TextNode>
             <span className='text-[#f03c2e]'>
@@ -101,7 +101,7 @@ function Page7(): ReactElement {
               </div>
             </div>
             <div
-              className='mt-[3vw]  grid  w-4/5  grid-cols-4  gap-[1.2vw]
+              className='mt-[2.5vw]  grid  w-4/5  grid-cols-4  gap-[1.2vw]
                          max-md:mt-[7vw]  max-md:w-[99.9%]  max-md:gap-[2.8vw]'
             >
               <div className='relative'>

@@ -75,7 +75,7 @@ function Page5(): ReactElement {
     <Page id='page-5' ref={sectionRef} className={pageClasses}>
       <Controls pageNumber={5} />
       <BookMainContainer className='flex  flex-row  max-md:flex-col-reverse  max-md:!pt-0'>
-        <BookLeftPartContainer className='w-1/2  max-lg:w-3/5  max-md:w-full'>
+        <BookLeftPartContainer className='w-1/2  max-lg:w-3/5  max-md:w-full  max-md:pr-0'>
           <H3>The History of Git</H3>
           <TextNode>
             Git was developed in&nbsp;2005 by&nbsp;Linus Torvalds,
