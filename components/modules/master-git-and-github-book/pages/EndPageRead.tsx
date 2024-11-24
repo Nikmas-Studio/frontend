@@ -104,7 +104,7 @@ function EndPageRead(): ReactElement {
     pageRef: sectionRef,
     basePath,
     end: {
-      previousPage: 3,
+      previousPage: 8,
     },
   });
 

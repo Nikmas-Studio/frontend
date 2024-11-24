@@ -8,7 +8,7 @@ import CoverPage from './pages/CoverPage';
 import EndPageDemo from './pages/EndPageDemo';
 import Page1 from './pages/Page1';
 import Page2 from './pages/Page2';
-import Page3 from './pages/Page3';
+import Page3Demo from './pages/Page3Demo';
 import SubscriptionModal from './SubsctiptionModal';
 
 interface BookDemoProps {
@@ -24,7 +24,7 @@ function BookDemo({ initialPageId }: BookDemoProps): ReactElement {
             <CoverPage />
             <Page1 />
             <Page2 />
-            <Page3 />
+            <Page3Demo />
             <EndPageDemo />
             <SubscriptionModal
               formInputId='demo-subscription-modal-email'

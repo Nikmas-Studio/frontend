@@ -9,3 +9,9 @@ export const INTERACTIVITY_DEMO_VIDEO_DARK_SRC =
 
 export const PAGE_NUMBERS_UPDATE_VIDEO_SRC =
   'https://9lqg3ssfq5ex47ks.public.blob.vercel-storage.com/page-numbers-update-edmHkSnEAna17jHM2lWOOMfzP3g2og.mp4';
+
+export const REPOSITORY_VIDEO_LIGHT_SRC =
+  'https://9lqg3ssfq5ex47ks.public.blob.vercel-storage.com/repository-light-4rp1ukcVJSk1DpqvHJZbdKNUgXsyTo.mp4';
+
+export const REPOSITORY_VIDEO_DARK_SRC =
+  'https://9lqg3ssfq5ex47ks.public.blob.vercel-storage.com/repository-dark-sxRQRbHYt7ETjRjDsabwIvugo9gEuh.mp4';

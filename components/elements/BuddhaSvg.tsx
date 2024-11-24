@@ -1,17 +1,12 @@
-'use client';
-
-import { ReactElement, useRef } from 'react';
+import { ReactElement } from 'react';
 
 interface BuddhaSvgProps {
   className?: string;
 }
 
 function BuddhaSvg({ className }: BuddhaSvgProps): ReactElement {
-  const buddhaImageRef = useRef<SVGSVGElement>(null);
-
   return (
     <svg
-      ref={buddhaImageRef}
       className={`${className}`}
       id='Layer_1'
       data-name='Layer 1'
