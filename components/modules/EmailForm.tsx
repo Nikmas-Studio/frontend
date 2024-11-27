@@ -154,7 +154,7 @@ function EmailForm({
     {
       [buttonInputFocusedClasses]: inputIsFocused,
       [buttonInputFilledClasses]: email !== '',
-      [buttonInputEmptyClasses]: email === '',
+      [`${buttonInputEmptyClasses} cursor-default`]: email === '',
     },
     buttonClasses,
   );
