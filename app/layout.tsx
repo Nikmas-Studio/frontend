@@ -1,7 +1,8 @@
 import Script from 'next/script';
 import './globals.css';
 
-import EscapeInAppBrowser from '@/components/elements/EscapeInAppBrowser';
+import EscapeInAppBrowser from '@/components/modules/EscapeInAppBrowser';
+import RecaptchaSettings from '@/components/modules/RecaptchaSettings';
 import { ReactElement, ReactNode } from 'react';
 
 export default function RootLayout({
@@ -44,6 +45,7 @@ export default function RootLayout({
       <body>
         {children}
         <EscapeInAppBrowser />
+        <RecaptchaSettings />
       </body>
     </html>
   );
