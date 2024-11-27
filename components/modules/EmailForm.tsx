@@ -9,6 +9,7 @@ import { ChangeEvent, FormEvent, ReactElement, useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import BasicTextNode from '../elements/BasicTextNode';
 import TextNode from '../elements/TextNode';
+import { Env } from '@/types/env';
 
 interface EmailFormProps {
   inputId: string;
@@ -226,7 +227,7 @@ function EmailForm({
         ref={recaptchaRef}
         size='invisible'
         sitekey={
-          process.env.NEXT_PUBLIC_ENV === 'development'
+          process.env.NEXT_PUBLIC_ENV === Env.DEVELOPMENT
             ? process.env.NEXT_PUBLIC_RECAPTCHA_TEST_SITE_KEY || ''
             : process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''
         }
