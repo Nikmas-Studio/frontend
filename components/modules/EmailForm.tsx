@@ -2,6 +2,7 @@
 
 import { LOG_ERROR_URL } from '@/constants/general';
 import { FormState } from '@/types/email-form';
+import { Env } from '@/types/env';
 import { CircularProgress } from '@mui/material';
 import axios from 'axios';
 import classNames from 'classnames';
@@ -9,7 +10,6 @@ import { ChangeEvent, FormEvent, ReactElement, useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import BasicTextNode from '../elements/BasicTextNode';
 import TextNode from '../elements/TextNode';
-import { Env } from '@/types/env';
 
 interface EmailFormProps {
   inputId: string;
