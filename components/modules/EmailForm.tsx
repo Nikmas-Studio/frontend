@@ -218,7 +218,11 @@ function EmailForm({
       <ReCAPTCHA
         ref={recaptchaRef}
         size='invisible'
-        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+        sitekey={
+          process.env.NEXT_PUBLIC_ENV === 'development'
+            ? process.env.NEXT_PUBLIC_RECAPTCHA_TEST_SITE_KEY || ''
+            : process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''
+        }
       />
       <input
         type='text'
