@@ -213,9 +213,6 @@ function EmailForm({
     },
   );
 
-  console.log('site key test', process.env.NEXT_PUBLIC_RECAPTCHA_TEST_SITE_KEY);
-  console.log('site key prod', process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY);
-
   return (
     <form onSubmit={handleSubmit} autoComplete='on'>
       <ReCAPTCHA
