@@ -214,7 +214,7 @@ function EmailForm({
   );
 
   console.log(
-    'captcha: ',
+    'captcha value: ',
     process.env.NEXT_PUBLIC_ENV === 'development'
       ? process.env.NEXT_PUBLIC_RECAPTCHA_TEST_SITE_KEY || ''
       : process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '',
