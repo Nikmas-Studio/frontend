@@ -8,4 +8,5 @@ export enum FormState {
   SUBMITTING = 'SUBMITTING',
   SUBMITTED = 'SUBMITTED',
   RELEASED = 'RELEASED',
+  ERROR = 'ERROR',
 }

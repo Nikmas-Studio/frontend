@@ -1,8 +1,9 @@
 'use client';
 
 import EmailForm from '@/components/modules/EmailForm';
+import { LOGIN_URL } from '@/constants/general';
 import useOutsideClick from '@/hooks/use-outside-click';
-import { EmailFormType } from '@/types/email-form';
+import axios from 'axios';
 import classNames from 'classnames';
 import { ReactElement, useRef, useState } from 'react';
 
@@ -58,7 +59,13 @@ function AccountIconDefault({
       </div>
       <div ref={dropdownRef} className={dropdownClasses}>
         <EmailForm
-          type={EmailFormType.LOGIN}
+          requestCallback={async (email: string, token: string) => {
+            await axios.post(LOGIN_URL, {
+              email,
+              captchaToken: token,
+              readerName: process.env.NEXT_PUBLIC_HONEYPOT_KEY,
+            });
+          }}
           label='Enter your library'
           caption='We’ll send you an&nbsp;email with&nbsp;a&nbsp;link to&nbsp;access your&nbsp;library'
           inputId='login-email'
@@ -70,6 +77,7 @@ function AccountIconDefault({
           buttonInputFilledClasses='bg-black  dark:bg-white'
           buttonInputEmptyClasses='bg-[#CFCFCF]  dark:bg-gray-dark-lighter2'
           changeArrowColorInDarkMode
+          spinnerIconsClasses='dark:!text-black'
         />
       </div>
     </div>

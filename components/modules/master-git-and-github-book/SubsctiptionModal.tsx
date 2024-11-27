@@ -6,12 +6,18 @@ import TextLi from '@/components/elements/TextLi';
 import TextNode from '@/components/elements/TextNode';
 import TextUl from '@/components/elements/TextUl';
 import {
+  MASTER_GIT_AND_GITHUB_BOOK_URI,
+  PAYMENT_URL_GUEST,
+} from '@/constants/general';
+import {
   useSubscriptionModal,
   useSubscriptionModalDispatch,
 } from '@/context/subscription-modal/Context';
 import useOutsideClick from '@/hooks/use-outside-click';
+import axios from 'axios';
 import classNames from 'classnames';
 import { ReactElement, useEffect, useRef } from 'react';
+import EmailForm from '../EmailForm';
 
 interface SubscriptionModalProps {
   formInputId: string;
@@ -19,6 +25,7 @@ interface SubscriptionModalProps {
 }
 
 function SubscriptionModal({
+  formInputId,
   fixBody = true,
 }: SubscriptionModalProps): ReactElement {
   const modalRef = useRef<HTMLDivElement>(null);
@@ -211,8 +218,15 @@ function SubscriptionModal({
           $23
         </BasicTextNode>
         <div className='mb-20  mt-[2.85rem]'>
-          {/* <EmailForm
-            type={EmailFormType.PAYMENT}
+          <EmailForm
+            requestCallback={async (email, token) => {
+              await axios.post(PAYMENT_URL_GUEST, {
+                email,
+                bookURI: MASTER_GIT_AND_GITHUB_BOOK_URI,
+                captchaToken: token,
+                readerName: process.env.NEXT_PUBLIC_HONEYPOT_KEY,
+              });
+            }}
             label='Get payment link by&nbsp;email'
             caption='This&nbsp;email will&nbsp;be&nbsp;used as&nbsp;a&nbsp;key to&nbsp;your&nbsp;library'
             inputId={formInputId}
@@ -222,11 +236,10 @@ function SubscriptionModal({
             buttonInputFocusedClasses='[box-shadow:0_0_0_2px_#29AD04]'
             buttonInputFilledClasses='bg-subscription'
             buttonInputEmptyClasses='bg-[#CFCFCF]  dark:bg-gray-dark-lighter2'
-          /> */}
-          <BasicTextNode className='!inline-block  text-[1.375rem]  font-bold'>
-            Get payment link by&nbsp;email
-          </BasicTextNode>
-          <TextNode className='mt-3'>Very soon...</TextNode>
+            tickIconClasses='!fill-white'
+            reloadIconClasses='!fill-white'
+            spinnerIconsClasses='dark:!text-white'
+          />
         </div>
       </div>
     </div>

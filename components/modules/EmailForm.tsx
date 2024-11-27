@@ -1,13 +1,7 @@
 'use client';
 
-import {
-  LOGIN_URL,
-  MASTER_GIT_AND_GITHUB_BOOK_URI,
-  PAYMENT_URL_GUEST,
-} from '@/constants/general';
-import { EmailFormType, FormState } from '@/types/email-form';
+import { FormState } from '@/types/email-form';
 import { CircularProgress } from '@mui/material';
-import axios from 'axios';
 import classNames from 'classnames';
 import { ChangeEvent, FormEvent, ReactElement, useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
@@ -17,6 +11,7 @@ import TextNode from '../elements/TextNode';
 interface EmailFormProps {
   inputId: string;
   inputName: string;
+  requestCallback: (email: string, captchaToken: string) => Promise<void>;
   label?: ReactElement | string;
   caption?: ReactElement | string;
   inputClasses?: string;
@@ -25,7 +20,9 @@ interface EmailFormProps {
   buttonInputFilledClasses?: string;
   buttonInputEmptyClasses?: string;
   changeArrowColorInDarkMode?: boolean;
-  type: EmailFormType;
+  tickIconClasses?: string;
+  reloadIconClasses?: string;
+  spinnerIconsClasses?: string;
 }
 
 function EmailForm({
@@ -33,13 +30,16 @@ function EmailForm({
   caption,
   inputId,
   inputName,
+  requestCallback,
   inputClasses,
   buttonClasses,
   buttonInputFocusedClasses = '',
   buttonInputFilledClasses = '',
   buttonInputEmptyClasses = '',
   changeArrowColorInDarkMode = false,
-  type,
+  tickIconClasses = '',
+  reloadIconClasses = '',
+  spinnerIconsClasses = '',
 }: EmailFormProps): ReactElement {
   const [inputIsFocused, setInputIsFocused] = useState(false);
   const [email, setEmail] = useState('');
@@ -54,8 +54,6 @@ function EmailForm({
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>): Promise<void> {
     e.preventDefault();
-
-    console.log('EmailForm handleSubmit');
 
     if (honeypot !== '') {
       return;
@@ -75,49 +73,23 @@ function EmailForm({
       let token: string | null;
 
       try {
+        initCaptchaIframeObserver();
         token = await recaptchaRef.current!.executeAsync();
       } catch (e) {
-        console.log('Error executing recaptcha', JSON.stringify(e));
-        // set ui state to error
+        setFormState(FormState.ERROR);
         return;
       }
 
       if (token === null) {
-        console.log('Recaptcha token is null');
-        // set ui state to error
+        setFormState(FormState.ERROR);
         return;
       }
 
-      console.log('Recaptcha token', token);
-
-      switch (type) {
-        case EmailFormType.LOGIN: {
-          try {
-            await axios.post(LOGIN_URL, {
-              email,
-              captchaToken: token,
-              readerName: process.env.NEXT_PUBLIC_HONEYPOT_KEY,
-            });
-          } catch (error) {
-            // set ui state to error
-          }
-
-          break;
-        }
-        case EmailFormType.PAYMENT: {
-          try {
-            await axios.post(PAYMENT_URL_GUEST, {
-              email,
-              bookURI: MASTER_GIT_AND_GITHUB_BOOK_URI,
-              captchaToken: token,
-              readerName: process.env.NEXT_PUBLIC_HONEYPOT_KEY,
-            });
-          } catch (error) {
-            // set ui state to error
-          }
-
-          break;
-        }
+      try {
+        await requestCallback(email, token);
+      } catch (error) {
+        setFormState(FormState.ERROR);
+        return;
       }
 
       setFormState(FormState.SUBMITTED);
@@ -157,6 +129,9 @@ function EmailForm({
       [`${buttonInputEmptyClasses} cursor-default`]: email === '',
     },
     buttonClasses,
+    {
+      '!border-red-600  !border-2': formState === FormState.ERROR,
+    },
   );
 
   const inputClassNames = classNames(
@@ -166,6 +141,10 @@ function EmailForm({
      placeholder:text-[#A1A1A1]  focus:outline-none  
      dark:bg-black  dark:text-white`,
     inputClasses,
+    {
+      '!border-red-600  !shadow-none  !border-y-2  !border-l-2':
+        formState === FormState.ERROR,
+    },
   );
 
   const arrowStrokeClasses = classNames(`stroke-white`, {
@@ -180,17 +159,17 @@ function EmailForm({
     `absolute  size-[20px]  fill-white  transition-transform  
     dark:fill-black  left-1/2  -translate-x-1/2  top-[46%]  -translate-y-1/2
     duration-500`,
+    tickIconClasses,
     {
-      '!fill-white': type === EmailFormType.PAYMENT,
       'scale-0': formState !== FormState.SUBMITTED,
     },
   );
 
   const reloadClasses = classNames(
     'absolute  left-1/2  -translate-x-1/2  top-[46%]  -translate-y-1/2  inline-block  size-[20px]  fill-white  transition-transform  duration-500  dark:fill-black',
+    reloadIconClasses,
     {
       'scale-0': formState !== FormState.RELEASED,
-      '!fill-white': type === EmailFormType.PAYMENT,
     },
   );
 
@@ -203,16 +182,14 @@ function EmailForm({
 
   const spinnerClasses = classNames(
     'mx-auto  !mt-[5px]  !size-[20px]  !text-white',
-    {
-      'dark:!text-white': type === EmailFormType.PAYMENT,
-      'dark:!text-black': type === EmailFormType.LOGIN,
-    },
+    spinnerIconsClasses,
   );
 
   const arrowClasses = classNames(
     'absolute  left-1/2  top-[48%]  -translate-x-1/2  -translate-y-1/2  transition-opacity  duration-500',
     {
-      'opacity-0': formState !== FormState.IDLE,
+      'opacity-0':
+        formState !== FormState.IDLE && formState !== FormState.ERROR,
     },
   );
 
@@ -320,6 +297,36 @@ function EmailForm({
       )}
     </form>
   );
+}
+
+function initCaptchaIframeObserver(): void {
+  const recaptchaWindows = [...document.getElementsByTagName('iframe')]
+    ?.filter(
+      (x) =>
+        x.src.includes('google.com/recaptcha/enterprise/bframe') ||
+        x.src.includes('google.com/recaptcha/api2/bframe'),
+    )
+    .map((iframe) => iframe?.parentNode?.parentNode as HTMLDivElement);
+
+  console.log('recaptchaWindows', recaptchaWindows);
+
+  for (const recaptchaWindow of recaptchaWindows) {
+    if (recaptchaWindow) {
+      new MutationObserver(() => {
+        if (
+          recaptchaWindow.style.visibility !== 'visible' ||
+          recaptchaWindow.style.opacity !== '1' ||
+          recaptchaWindow.style.top !== '10px'
+        ) {
+          recaptchaWindow.style.opacity = '1';
+          recaptchaWindow.style.visibility = 'visible';
+          recaptchaWindow.style.top = '10px';
+        }
+      }).observe(recaptchaWindow, {
+        attributeFilter: ['style'],
+      });
+    }
+  }
 }
 
 export default EmailForm;
