@@ -213,6 +213,13 @@ function EmailForm({
     },
   );
 
+  console.log(
+    'captcha: ',
+    process.env.NEXT_PUBLIC_ENV === 'development'
+      ? process.env.NEXT_PUBLIC_RECAPTCHA_TEST_SITE_KEY || ''
+      : process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '',
+  );
+
   return (
     <form onSubmit={handleSubmit} autoComplete='on'>
       <ReCAPTCHA
