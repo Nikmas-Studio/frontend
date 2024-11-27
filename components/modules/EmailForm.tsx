@@ -1,7 +1,9 @@
 'use client';
 
+import { LOG_ERROR_URL } from '@/constants/general';
 import { FormState } from '@/types/email-form';
 import { CircularProgress } from '@mui/material';
+import axios from 'axios';
 import classNames from 'classnames';
 import { ChangeEvent, FormEvent, ReactElement, useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
@@ -76,11 +78,23 @@ function EmailForm({
         initCaptchaIframeObserver();
         token = await recaptchaRef.current!.executeAsync();
       } catch (e) {
+        axios
+          .post(LOG_ERROR_URL, {
+            error: `recaptcha executeAsync error: ${JSON.stringify(e)},`,
+          })
+          .catch(() => {});
+
         setFormState(FormState.ERROR);
         return;
       }
 
       if (token === null) {
+        axios
+          .post(LOG_ERROR_URL, {
+            error: 'recaptcha token is null',
+          })
+          .catch(() => {});
+
         setFormState(FormState.ERROR);
         return;
       }
@@ -88,6 +102,12 @@ function EmailForm({
       try {
         await requestCallback(email, token);
       } catch (error) {
+        axios
+          .post(LOG_ERROR_URL, {
+            error: `email form request callback error: ${JSON.stringify(error)}`,
+          })
+          .catch(() => {});
+
         setFormState(FormState.ERROR);
         return;
       }

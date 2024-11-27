@@ -4,6 +4,7 @@ export const BACKEND_URL = 'http://0.0.0.0:8000';
 export const LOGIN_URL = `${BACKEND_URL}/login`;
 export const PAYMENT_URL_GUEST = `${BACKEND_URL}/purchase-book-guest`;
 export const PAYMENT_URL_AUTHENTICATED = `${BACKEND_URL}/purchase-book-authenticated`;
+export const LOG_ERROR_URL = `${BACKEND_URL}/log-error`;
 export const GET_SESSION_URL = `${BACKEND_URL}/session`;
 export const SESSION_ID_COOKIE_NAME = 'sessionId';
 export const MASTER_GIT_AND_GITHUB_BOOK_URI = 'book-master-git-and-github';
