@@ -73,9 +73,9 @@ function AccountIconDefault({
           caption='We’ll send you an&nbsp;email with&nbsp;a&nbsp;link to&nbsp;access your&nbsp;library'
           inputId='login-email'
           inputName='email'
-          inputClasses='border-[#CFCFCF]  dark:border-gray-dark-lighter2  
-                        focus:border-[#000000]  dark:focus:border-[#FFFFFF]'
+          inputClasses='border-[#CFCFCF]  dark:border-gray-dark-lighter2'
           buttonClasses='border-[#CFCFCF]  dark:border-gray-dark-lighter2'
+          inputFocusedClasses='!border-[#000000]  dark:!border-[#FFFFFF]'
           buttonInputFocusedClasses='!border-[#000000]  dark:!border-[#FFFFFF]'
           buttonInputFilledClasses='bg-black  dark:bg-white'
           buttonInputEmptyClasses='bg-[#CFCFCF]  dark:bg-gray-dark-lighter2'

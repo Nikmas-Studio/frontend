@@ -234,8 +234,9 @@ function SubscriptionModal({
             caption='This&nbsp;email will&nbsp;be&nbsp;used as&nbsp;a&nbsp;key to&nbsp;your&nbsp;library'
             inputId={formInputId}
             inputName='email'
-            inputClasses='border-subscription  focus:[box-shadow:0_0_0_2px_#29AD04]'
+            inputClasses='border-subscription'
             buttonClasses='border-subscription'
+            inputFocusedClasses='[box-shadow:0_0_0_2px_#29AD04]'
             buttonInputFocusedClasses='[box-shadow:0_0_0_2px_#29AD04]'
             buttonInputFilledClasses='bg-subscription'
             buttonInputEmptyClasses='bg-[#CFCFCF]  dark:bg-gray-dark-lighter2'

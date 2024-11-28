@@ -19,6 +19,7 @@ interface EmailFormProps {
   caption?: ReactElement | string;
   inputClasses?: string;
   buttonClasses?: string;
+  inputFocusedClasses?: string;
   buttonInputFocusedClasses?: string;
   buttonInputFilledClasses?: string;
   buttonInputEmptyClasses?: string;
@@ -36,6 +37,7 @@ function EmailForm({
   requestCallback,
   inputClasses,
   buttonClasses,
+  inputFocusedClasses = '',
   buttonInputFocusedClasses = '',
   buttonInputFilledClasses = '',
   buttonInputEmptyClasses = '',
@@ -144,13 +146,11 @@ function EmailForm({
 
   const buttonClassNames = classNames(
     `relative  shrink-0  h-[2.53125rem]  w-[80px]  rounded-r-[5px]  border`,
+    buttonClasses,
     {
       [buttonInputFocusedClasses]: inputIsFocused,
       [buttonInputFilledClasses]: email !== '',
       [`${buttonInputEmptyClasses} cursor-default`]: email === '',
-    },
-    buttonClasses,
-    {
       '!border-red-600  !border-2': formState === FormState.ERROR,
     },
   );
@@ -163,6 +163,7 @@ function EmailForm({
      dark:bg-black  dark:text-white`,
     inputClasses,
     {
+      [inputFocusedClasses]: inputIsFocused,
       '!border-red-600  !shadow-none  !border-y-2  !border-l-2':
         formState === FormState.ERROR,
     },
