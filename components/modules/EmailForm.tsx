@@ -79,7 +79,7 @@ function EmailForm({
         token = await recaptchaRef.current!.executeAsync();
       } catch (e) {
         axios
-          .post(LOG_ERROR_ROUTE, {
+          .post(`${process.env.NEXT_PUBLIC_BACKEND_URL}${LOG_ERROR_ROUTE}`, {
             error: `recaptcha executeAsync error: ${JSON.stringify(e)},`,
           })
           .catch(() => {});
@@ -90,7 +90,7 @@ function EmailForm({
 
       if (token === null) {
         axios
-          .post(LOG_ERROR_ROUTE, {
+          .post(`${process.env.NEXT_PUBLIC_BACKEND_URL}${LOG_ERROR_ROUTE}`, {
             error: 'recaptcha token is null',
           })
           .catch(() => {});
@@ -103,7 +103,7 @@ function EmailForm({
         await requestCallback(email, token);
       } catch (error) {
         axios
-          .post(LOG_ERROR_ROUTE, {
+          .post(`${process.env.NEXT_PUBLIC_BACKEND_URL}${LOG_ERROR_ROUTE}`, {
             error: `email form request callback error: ${JSON.stringify(error)}`,
           })
           .catch(() => {});
