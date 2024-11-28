@@ -316,7 +316,7 @@ function EmailForm({
       {caption && (
         <TextNode className='!mb-5  mt-2  !text-sm'>{caption}</TextNode>
       )}
-      <TextNode className='!mb-0  max-w-80  !text-xs  text-[#B8B8B8]  dark:text-gray-dark-lighter2'>
+      <TextNode className='!mb-0  max-w-80  !text-xs  !text-[#B8B8B8]  dark:!text-gray-dark-lighter2'>
         This&nbsp;site is&nbsp;protected by&nbsp;reCAPTCHA
         and&nbsp;the&nbsp;Google{' '}
         <ExternalLink
