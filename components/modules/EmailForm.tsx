@@ -188,7 +188,7 @@ function EmailForm({
   );
 
   const reloadClasses = classNames(
-    'absolute  left-1/2  -translate-x-1/2  top-[46%]  -translate-y-1/2  inline-block  size-[20px]  fill-white  transition-transform  duration-500  dark:fill-black',
+    'absolute  left-1/2  -translate-x-1/2  top-[47%]  -translate-y-1/2  inline-block  size-[20px]  fill-white  transition-transform  duration-500  dark:fill-black',
     reloadIconClasses,
     {
       'scale-0': formState !== FormState.RELEASED,
