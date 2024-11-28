@@ -202,7 +202,6 @@ function Page3Read(): ReactElement {
             }
           }
         } else {
-          console.log('action === ', action);
           if (spineAnimationTweenRef.current !== null) {
             if (direction === 1) {
               stop();

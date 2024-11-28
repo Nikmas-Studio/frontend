@@ -24,7 +24,6 @@ export function useSmallDevicesUrlUpdate({
 
       function handleUrlUpdate(): void {
         if (pendingUrlUpdates.length > 0) {
-          console.log('pendingUrlUpdates', pendingUrlUpdates);
           const lastPendingUrl = pendingUrlUpdates.at(-1)!;
 
           if (lastPendingUrl.end !== undefined) {

@@ -328,8 +328,6 @@ function initCaptchaIframeObserver(): void {
     )
     .map((iframe) => iframe?.parentNode?.parentNode as HTMLDivElement);
 
-  console.log('recaptchaWindows', recaptchaWindows);
-
   for (const recaptchaWindow of recaptchaWindows) {
     if (recaptchaWindow) {
       new MutationObserver(() => {
