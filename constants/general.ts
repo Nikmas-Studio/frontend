@@ -5,6 +5,7 @@ export const PAYMENT_ROUTE_GUEST = `/purchase-book-guest`;
 export const PAYMENT_ROUTE_AUTHENTICATED = `/purchase-book-authenticated`;
 export const LOG_ERROR_ROUTE = `/log-error`;
 export const GET_SESSION_ROUTE = `/session`;
+export const VALIDATE_AUTH_TOKEN_ROUTE = `/auth-token/validate`;
 export const SESSION_ID_COOKIE_NAME = 'sessionId';
 export const MASTER_GIT_AND_GITHUB_BOOK_URI = 'book-master-git-and-github';
 export const BASE_FRONTEND_URL = 'https://nikmas.studio';

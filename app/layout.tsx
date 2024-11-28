@@ -3,6 +3,7 @@ import './globals.css';
 
 import EscapeInAppBrowser from '@/components/modules/EscapeInAppBrowser';
 import RecaptchaSettings from '@/components/modules/RecaptchaSettings';
+import { SessionProvider } from '@/context/session/Context';
 import { ReactElement, ReactNode } from 'react';
 
 export default function RootLayout({
@@ -43,9 +44,11 @@ export default function RootLayout({
         />
       </head>
       <body>
-        {children}
-        <EscapeInAppBrowser />
-        <RecaptchaSettings />
+        <SessionProvider>
+          {children}
+          <EscapeInAppBrowser />
+          <RecaptchaSettings />
+        </SessionProvider>
       </body>
     </html>
   );

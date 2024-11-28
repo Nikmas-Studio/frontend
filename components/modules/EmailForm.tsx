@@ -2,6 +2,7 @@
 
 import { LOG_ERROR_ROUTE } from '@/constants/general';
 import { FormState } from '@/types/email-form';
+import { buildBackendUrl } from '@/utils/build-backend-url';
 import { CircularProgress } from '@mui/material';
 import axios from 'axios';
 import classNames from 'classnames';
@@ -82,7 +83,7 @@ function EmailForm({
         token = await recaptchaRef.current!.executeAsync();
       } catch (e) {
         axios
-          .post(`${process.env.NEXT_PUBLIC_BACKEND_URL}${LOG_ERROR_ROUTE}`, {
+          .post(buildBackendUrl(LOG_ERROR_ROUTE), {
             error: `recaptcha executeAsync error: ${JSON.stringify(e)},`,
           })
           .catch(() => {});
@@ -93,7 +94,7 @@ function EmailForm({
 
       if (token === null) {
         axios
-          .post(`${process.env.NEXT_PUBLIC_BACKEND_URL}${LOG_ERROR_ROUTE}`, {
+          .post(buildBackendUrl(LOG_ERROR_ROUTE), {
             error: 'recaptcha token is null',
           })
           .catch(() => {});
@@ -106,7 +107,7 @@ function EmailForm({
         await requestCallback(email, token);
       } catch (error) {
         axios
-          .post(`${process.env.NEXT_PUBLIC_BACKEND_URL}${LOG_ERROR_ROUTE}`, {
+          .post(buildBackendUrl(LOG_ERROR_ROUTE), {
             error: `email form request callback error: ${JSON.stringify(error)}`,
           })
           .catch(() => {});
@@ -188,7 +189,9 @@ function EmailForm({
   );
 
   const reloadClasses = classNames(
-    'absolute  left-1/2  -translate-x-1/2  top-[47%]  -translate-y-1/2  inline-block  size-[20px]  fill-white  transition-transform  duration-500  dark:fill-black',
+    `absolute  left-1/2  -translate-x-1/2  top-[47%]  -translate-y-1/2  
+     inline-block  size-[20px]  fill-white  transition-transform  duration-500
+     dark:fill-black`,
     reloadIconClasses,
     {
       'scale-0': formState !== FormState.RELEASED,

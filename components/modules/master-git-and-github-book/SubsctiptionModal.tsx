@@ -14,6 +14,7 @@ import {
   useSubscriptionModalDispatch,
 } from '@/context/subscription-modal/Context';
 import useOutsideClick from '@/hooks/use-outside-click';
+import { buildBackendUrl } from '@/utils/build-backend-url';
 import axios from 'axios';
 import classNames from 'classnames';
 import { ReactElement, useEffect, useRef } from 'react';
@@ -220,15 +221,12 @@ function SubscriptionModal({
         <div className='mb-20  mt-[2.85rem]'>
           <EmailForm
             requestCallback={async (email, token) => {
-              await axios.post(
-                `${process.env.NEXT_PUBLIC_BACKEND_URL}${PAYMENT_ROUTE_GUEST}`,
-                {
-                  email,
-                  bookURI: MASTER_GIT_AND_GITHUB_BOOK_URI,
-                  captchaToken: token,
-                  readerName: process.env.NEXT_PUBLIC_HONEYPOT_KEY,
-                },
-              );
+              await axios.post(buildBackendUrl(PAYMENT_ROUTE_GUEST), {
+                email,
+                bookURI: MASTER_GIT_AND_GITHUB_BOOK_URI,
+                captchaToken: token,
+                readerName: process.env.NEXT_PUBLIC_HONEYPOT_KEY,
+              });
             }}
             label='Get payment link by&nbsp;email'
             caption='This&nbsp;email will&nbsp;be&nbsp;used as&nbsp;a&nbsp;key to&nbsp;your&nbsp;library'
