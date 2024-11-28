@@ -8,6 +8,7 @@ import classNames from 'classnames';
 import { ChangeEvent, FormEvent, ReactElement, useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import BasicTextNode from '../elements/BasicTextNode';
+import ExternalLink from '../elements/ExternalLink';
 import TextNode from '../elements/TextNode';
 
 interface EmailFormProps {
@@ -313,8 +314,28 @@ function EmailForm({
         </button>
       </div>
       {caption && (
-        <TextNode className='!mb-0  mt-2  !text-sm'>{caption}</TextNode>
+        <TextNode className='!mb-5  mt-2  !text-sm'>{caption}</TextNode>
       )}
+      <TextNode className='!mb-0  max-w-80  !text-xs  text-[#B8B8B8]  dark:text-gray-dark-lighter2'>
+        This&nbsp;site is&nbsp;protected by&nbsp;reCAPTCHA
+        and&nbsp;the&nbsp;Google{' '}
+        <ExternalLink
+          className='!text-[#B8B8B8]  dark:!text-gray-dark-lighter2'
+          defaultTextLink
+          href='https://policies.google.com/privacy'
+        >
+          Privacy Policy
+        </ExternalLink>{' '}
+        and&nbsp;
+        <ExternalLink
+          className='!text-[#B8B8B8]  dark:!text-gray-dark-lighter2'
+          defaultTextLink
+          href='https://policies.google.com/terms'
+        >
+          Terms of Service
+        </ExternalLink>{' '}
+        apply.
+      </TextNode>
     </form>
   );
 }
@@ -330,19 +351,23 @@ function initCaptchaIframeObserver(): void {
 
   for (const recaptchaWindow of recaptchaWindows) {
     if (recaptchaWindow) {
-      new MutationObserver(() => {
-        if (
-          recaptchaWindow.style.visibility !== 'visible' ||
-          recaptchaWindow.style.opacity !== '1' ||
-          recaptchaWindow.style.top !== '10px'
-        ) {
-          recaptchaWindow.style.opacity = '1';
-          recaptchaWindow.style.visibility = 'visible';
-          recaptchaWindow.style.top = '10px';
-        }
-      }).observe(recaptchaWindow, {
-        attributeFilter: ['style'],
-      });
+      if (!recaptchaWindow.dataset.observerAttached) {
+        new MutationObserver(() => {
+          if (
+            recaptchaWindow.style.visibility !== 'visible' ||
+            recaptchaWindow.style.opacity !== '1' ||
+            recaptchaWindow.style.top !== '10px'
+          ) {
+            recaptchaWindow.style.opacity = '1';
+            recaptchaWindow.style.visibility = 'visible';
+            recaptchaWindow.style.top = '10px';
+          }
+        }).observe(recaptchaWindow, {
+          attributeFilter: ['style'],
+        });
+
+        recaptchaWindow.dataset.observerAttached = 'true';
+      }
     }
   }
 }

@@ -11,6 +11,8 @@ body {
   overflow-x: clip;
 }
 
+.grecaptcha-badge { visibility: hidden !important; }
+
 @layer components {
   .default-link {
     @apply text-black  dark:text-white  border-b border-gray-light-darker
