@@ -1,7 +1,7 @@
 'use client';
 
 import EmailForm from '@/components/modules/EmailForm';
-import { LOGIN_URL } from '@/constants/general';
+import { LOGIN_ROUTE } from '@/constants/general';
 import { useBookSectionState } from '@/context/book-section/Context';
 import { useTheme } from '@/context/theme/Context';
 import useOutsideClick from '@/hooks/use-outside-click';
@@ -203,11 +203,14 @@ function AccountIconMain({ className }: GuestAccountIconProps): ReactElement {
       <div ref={dropdownRef} className={dropdownClasses}>
         <EmailForm
           requestCallback={async (email: string, token: string) => {
-            await axios.post(LOGIN_URL, {
-              email,
-              captchaToken: token,
-              readerName: process.env.NEXT_PUBLIC_HONEYPOT_KEY,
-            });
+            await axios.post(
+              `${process.env.NEXT_PUBLIC_BACKEND_URL}${LOGIN_ROUTE}`,
+              {
+                email,
+                captchaToken: token,
+                readerName: process.env.NEXT_PUBLIC_HONEYPOT_KEY,
+              },
+            );
           }}
           label='Enter your library'
           caption='We’ll send you an&nbsp;email with&nbsp;a&nbsp;link to&nbsp;access your&nbsp;library'

@@ -1,8 +1,7 @@
 'use client';
 
-import { LOG_ERROR_URL } from '@/constants/general';
+import { LOG_ERROR_ROUTE } from '@/constants/general';
 import { FormState } from '@/types/email-form';
-import { Env } from '@/types/env';
 import { CircularProgress } from '@mui/material';
 import axios from 'axios';
 import classNames from 'classnames';
@@ -80,7 +79,7 @@ function EmailForm({
         token = await recaptchaRef.current!.executeAsync();
       } catch (e) {
         axios
-          .post(LOG_ERROR_URL, {
+          .post(LOG_ERROR_ROUTE, {
             error: `recaptcha executeAsync error: ${JSON.stringify(e)},`,
           })
           .catch(() => {});
@@ -91,7 +90,7 @@ function EmailForm({
 
       if (token === null) {
         axios
-          .post(LOG_ERROR_URL, {
+          .post(LOG_ERROR_ROUTE, {
             error: 'recaptcha token is null',
           })
           .catch(() => {});
@@ -104,7 +103,7 @@ function EmailForm({
         await requestCallback(email, token);
       } catch (error) {
         axios
-          .post(LOG_ERROR_URL, {
+          .post(LOG_ERROR_ROUTE, {
             error: `email form request callback error: ${JSON.stringify(error)}`,
           })
           .catch(() => {});
@@ -214,23 +213,12 @@ function EmailForm({
     },
   );
 
-  console.log(
-    'captcha: ',
-    process.env.NEXT_PUBLIC_ENV === 'development'
-      ? process.env.NEXT_PUBLIC_RECAPTCHA_TEST_SITE_KEY || ''
-      : process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '',
-  );
-
   return (
     <form onSubmit={handleSubmit} autoComplete='on'>
       <ReCAPTCHA
         ref={recaptchaRef}
         size='invisible'
-        sitekey={
-          process.env.NEXT_PUBLIC_ENV === Env.DEVELOPMENT
-            ? process.env.NEXT_PUBLIC_RECAPTCHA_TEST_SITE_KEY || ''
-            : process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''
-        }
+        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
       />
       <input
         type='text'

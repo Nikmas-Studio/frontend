@@ -7,7 +7,7 @@ import TextNode from '@/components/elements/TextNode';
 import TextUl from '@/components/elements/TextUl';
 import {
   MASTER_GIT_AND_GITHUB_BOOK_URI,
-  PAYMENT_URL_GUEST,
+  PAYMENT_ROUTE_GUEST,
 } from '@/constants/general';
 import {
   useSubscriptionModal,
@@ -220,12 +220,15 @@ function SubscriptionModal({
         <div className='mb-20  mt-[2.85rem]'>
           <EmailForm
             requestCallback={async (email, token) => {
-              await axios.post(PAYMENT_URL_GUEST, {
-                email,
-                bookURI: MASTER_GIT_AND_GITHUB_BOOK_URI,
-                captchaToken: token,
-                readerName: process.env.NEXT_PUBLIC_HONEYPOT_KEY,
-              });
+              await axios.post(
+                `${process.env.NEXT_PUBLIC_BACKEND_URL}${PAYMENT_ROUTE_GUEST}`,
+                {
+                  email,
+                  bookURI: MASTER_GIT_AND_GITHUB_BOOK_URI,
+                  captchaToken: token,
+                  readerName: process.env.NEXT_PUBLIC_HONEYPOT_KEY,
+                },
+              );
             }}
             label='Get payment link by&nbsp;email'
             caption='This&nbsp;email will&nbsp;be&nbsp;used as&nbsp;a&nbsp;key to&nbsp;your&nbsp;library'
