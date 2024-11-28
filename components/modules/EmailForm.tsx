@@ -157,7 +157,7 @@ function EmailForm({
 
   const inputClassNames = classNames(
     `h-[2.53125rem]  w-full  rounded-l-[5px]  border-y  border-l  
-     bg-white  pb-2  px-4  pt-1.5  text-xl  
+     bg-white  pb-2  px-4  pt-1.5  text-xl  rounded-r-none
      font-semibold leading-none  text-black  
      placeholder:text-[#A1A1A1]  focus:outline-none  
      dark:bg-black  dark:text-white`,

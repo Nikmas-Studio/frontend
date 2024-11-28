@@ -42,7 +42,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home(): ReactElement {
+export default async function Home(): Promise<ReactElement> {
+  await new Promise((resolve) => setTimeout(resolve, 500000));
+
   return (
     <DefaultLayout>
       <ProvidersMain>
