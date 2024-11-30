@@ -3,11 +3,13 @@
 import EmailForm from '@/components/modules/EmailForm';
 import { LOGIN_ROUTE } from '@/constants/general';
 import { useBookSectionState } from '@/context/book-section/Context';
+import { useSession } from '@/context/session/Context';
 import { useTheme } from '@/context/theme/Context';
 import useOutsideClick from '@/hooks/use-outside-click';
 import { buildBackendUrl } from '@/utils/build-backend-url';
 import { darkThemeIsSelected } from '@/utils/check-selected-theme';
 import { useGSAP } from '@gsap/react';
+import { CircularProgress } from '@mui/material';
 import axios from 'axios';
 import classNames from 'classnames';
 import gsap from 'gsap';
@@ -26,6 +28,7 @@ function AccountIconMain({ className }: GuestAccountIconProps): ReactElement {
   const { selectedTheme, isManualThemeChange } = useTheme();
   const selectedThemeRef = useRef(selectedTheme);
   const bookSectionWasInViewport = useRef(false);
+  const { session, loading } = useSession();
 
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
@@ -202,27 +205,34 @@ function AccountIconMain({ className }: GuestAccountIconProps): ReactElement {
         ></div>
       </div>
       <div ref={dropdownRef} className={dropdownClasses}>
-        <EmailForm
-          requestCallback={async (email: string, token: string) => {
-            await axios.post(buildBackendUrl(LOGIN_ROUTE), {
-              email,
-              captchaToken: token,
-              readerName: process.env.NEXT_PUBLIC_HONEYPOT_KEY,
-            });
-          }}
-          label='Enter your library'
-          caption='We’ll send you an&nbsp;email with&nbsp;a&nbsp;link to&nbsp;access your&nbsp;library'
-          inputId='login-email'
-          inputName='email'
-          inputClasses='border-[#CFCFCF]  dark:border-gray-dark-lighter2'
-          buttonClasses='border-[#CFCFCF]  dark:border-gray-dark-lighter2'
-          inputFocusedClasses='!border-[#000000]  dark:!border-[#FFFFFF]'
-          buttonInputFocusedClasses='!border-[#000000]  dark:!border-[#FFFFFF]'
-          buttonInputFilledClasses='bg-black  dark:bg-white'
-          buttonInputEmptyClasses='bg-[#CFCFCF]  dark:bg-gray-dark-lighter2'
-          changeArrowColorInDarkMode
-          spinnerIconsClasses='dark:!text-black'
-        />
+        {loading && (
+          <div className='mt-5  flex  flex-row  justify-center'>
+            <CircularProgress className='!text-black  dark:!text-white' />
+          </div>
+        )}
+        {!loading && session === null && (
+          <EmailForm
+            requestCallback={async (email: string, token: string) => {
+              await axios.post(buildBackendUrl(LOGIN_ROUTE), {
+                email,
+                captchaToken: token,
+                readerName: process.env.NEXT_PUBLIC_HONEYPOT_KEY,
+              });
+            }}
+            label='Enter your library'
+            caption='We’ll send you an&nbsp;email with&nbsp;a&nbsp;link to&nbsp;access your&nbsp;library'
+            inputId='login-email'
+            inputName='email'
+            inputClasses='border-[#CFCFCF]  dark:border-gray-dark-lighter2'
+            buttonClasses='border-[#CFCFCF]  dark:border-gray-dark-lighter2'
+            inputFocusedClasses='!border-[#000000]  dark:!border-[#FFFFFF]'
+            buttonInputFocusedClasses='!border-[#000000]  dark:!border-[#FFFFFF]'
+            buttonInputFilledClasses='bg-black  dark:bg-white'
+            buttonInputEmptyClasses='bg-[#CFCFCF]  dark:bg-gray-dark-lighter2'
+            changeArrowColorInDarkMode
+            spinnerIconsClasses='dark:!text-black'
+          />
+        )}
       </div>
     </div>
   );
