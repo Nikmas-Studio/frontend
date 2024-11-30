@@ -14,6 +14,7 @@ import axios from 'axios';
 import classNames from 'classnames';
 import gsap from 'gsap';
 import { ReactElement, useEffect, useRef, useState } from 'react';
+import TextNode from '../../TextNode';
 
 interface GuestAccountIconProps {
   className?: string;
@@ -232,6 +233,9 @@ function AccountIconMain({ className }: GuestAccountIconProps): ReactElement {
             changeArrowColorInDarkMode
             spinnerIconsClasses='dark:!text-black'
           />
+        )}
+        {!loading && session !== null && (
+          <TextNode>{session.readerEmail}</TextNode>
         )}
       </div>
     </div>
