@@ -396,7 +396,7 @@ function Page3(): ReactElement {
             toggleLettersAnimation('stop', timeline.scrollTrigger?.direction),
           '5',
         );
-        timeline.set(introSectionTextRef.current, { color: '#271AD3' }, '5');
+        timeline.set(introSectionTextRef.current, { color: '#473AFF' }, '5');
         timeline.set(
           animateLettersCommitCircleRef.current,
           { boxShadow: 'none' },
@@ -579,10 +579,10 @@ function Page3(): ReactElement {
           () => toggleSpineAnimation('stop', timeline.scrollTrigger?.direction),
           '10',
         );
-        timeline.set(introSectionTextRef.current, { color: '#271AD3' }, '10');
+        timeline.set(introSectionTextRef.current, { color: '#473AFF' }, '10');
         timeline.set(
           introSectionSpineRef.current,
-          { backgroundColor: '#271AD3' },
+          { backgroundColor: '#473AFF' },
           '10',
         );
         timeline.set(addProductsSectionCommitRef.current, { opacity: 1 }, '10');
@@ -796,10 +796,10 @@ function Page3(): ReactElement {
           ref={visualizationContainerRef}
           className='absolute  inset-x-0  top-0  z-10  flex    
                      flex-row  justify-between  opacity-0
-                     transition-opacity  max-lg:bottom-0  max-lg:top-auto  
-                     max-2md:flex-col  max-md:!bottom-[4vh]  max-md:!top-auto  max-sm:!bottom-[15vh]
+                     transition-opacity  max-lg:!bottom-[3vh]  max-lg:top-auto  
+                     max-2md:flex-col  max-md:!top-auto  max-sm:!bottom-[15vh]
                      h-md:!bottom-[14vh]  h-md:flex-row  h-sm:!bottom-[10vh]  max-lg:portrait:bottom-auto
-                     max-lg:portrait:top-0  h-2md:portrait:!bottom-[3.5vh]  wh-sm:portrait:!bottom-[10vh]'
+                     max-lg:portrait:top-0  h-2md:portrait:!bottom-[2.5vh]  wh-sm:portrait:!bottom-[10vh]'
         >
           <div
             className='flex  flex-col  justify-between  max-2md:translate-x-[-0.7rem]
@@ -823,7 +823,7 @@ function Page3(): ReactElement {
                     <p
                       className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left   rotate-[-25deg]
                               text-xl  leading-normal  text-blue  max-md:text-[3vw]  h-md:bottom-[4.5vh]
-                              h-md:left-[0.5vh]  h-md:text-[3vh]  dark:text-[#3D32D1]'
+                              h-md:left-[0.5vh]  h-md:text-[3vh]  dark:text-[#473AFF]'
                     >
                       Initialize&nbsp;the&nbsp;project
                     </p>
@@ -841,7 +841,7 @@ function Page3(): ReactElement {
                       <p
                         className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
                                 text-xl  leading-normal  text-blue  max-md:text-[3vw]
-                                h-md:bottom-[4.5vh]  h-md:left-[0.5vh]  h-md:text-[3vh]  dark:text-[#3D32D1]'
+                                h-md:bottom-[4.5vh]  h-md:left-[0.5vh]  h-md:text-[3vh]  dark:text-[#473AFF]'
                       >
                         Add&nbsp;the&nbsp;header
                       </p>
@@ -869,7 +869,7 @@ function Page3(): ReactElement {
                         className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
                                 text-xl  leading-normal  text-blue  max-md:text-[3vw]
                                 h-md:bottom-[4.5vh]  h-md:left-[0.5vh]  
-                                h-md:text-[3vh]  dark:text-[#3D32D1]'
+                                h-md:text-[3vh]  dark:text-[#473AFF]'
                       >
                         Add&nbsp;the&nbsp;intro&nbsp;section
                       </p>
@@ -909,7 +909,7 @@ function Page3(): ReactElement {
                                origin-top-left  rotate-[-25deg]  text-xl
                                leading-normal  text-blue  max-md:text-[3vw]
                                h-md:bottom-[4.5vh]  h-md:left-[0.5vh]
-                               h-md:text-[3vh]  dark:text-[#3D32D1]'
+                               h-md:text-[3vh]  dark:text-[#473AFF]'
                       >
                         Add&nbsp;the&nbsp;products&nbsp;section
                       </p>
@@ -936,7 +936,7 @@ function Page3(): ReactElement {
                         className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
                                text-xl  leading-normal  text-blue  max-md:text-[3vw]
                                h-md:bottom-[4.5vh]  h-md:left-[0.5vh]
-                               h-md:text-[3vh]  dark:text-[#3D32D1]'
+                               h-md:text-[3vh]  dark:text-[#473AFF]'
                       >
                         Add&nbsp;the&nbsp;footer
                       </p>
@@ -963,7 +963,7 @@ function Page3(): ReactElement {
                         className='absolute  bottom-[5.2vw]  left-[0.5vw]  origin-top-left  rotate-[-25deg]
                               text-xl  leading-normal  text-blue  max-md:text-[3vw]
                               h-md:bottom-[4.5vh]  h-md:left-[0.5vh]
-                              h-md:text-[3vh]  dark:text-[#3D32D1]'
+                              h-md:text-[3vh]  dark:text-[#473AFF]'
                       >
                         Merge
                       </p>
@@ -1252,12 +1252,12 @@ function Page3(): ReactElement {
                 className='mt-[0.55em]  flex  flex-row  items-center
                          justify-between  px-[10%]  opacity-0  transition-opacity'
               >
-                <p className='text-[0.8em]  font-bold  text-blue  dark:text-[#3D32D1]'>
+                <p className='text-[0.8em]  font-bold  text-blue  dark:text-[#473AFF]'>
                   Nikmas Studio
                 </p>
                 <div className='flex  flex-row  items-center  gap-[0.25em]'>
                   <svg
-                    className='translate-y-[-0.031em]  fill-blue  dark:fill-[#3D32D1]'
+                    className='translate-y-[-0.031em]  fill-blue  dark:fill-[#473AFF]'
                     version='1.1'
                     id='Capa_1'
                     xmlns='http://www.w3.org/2000/svg'
@@ -1320,7 +1320,7 @@ function Page3(): ReactElement {
               >
                 <p
                   ref={introSectionTextRef}
-                  className='text-[1.05em]  leading-[1.1]  text-[#3D32D1]
+                  className='text-[1.05em]  leading-[1.1]  text-[#473AFF]
                            transition-colors'
                 >
                   <SpanSplitter text='Next-gen' />
@@ -1337,7 +1337,7 @@ function Page3(): ReactElement {
                 </p>
                 <div
                   ref={introSectionSpineRef}
-                  className='h-[6.7em]  w-[0.65em]  rounded-[0.18em]  bg-[#3D32D1]
+                  className='h-[6.7em]  w-[0.65em]  rounded-[0.18em]  bg-[#473AFF]
                            transition-colors'
                 ></div>
               </div>
@@ -1349,7 +1349,7 @@ function Page3(): ReactElement {
               >
                 <p
                   className='mb-[0.5em]  text-[0.8em]  font-bold  text-blue
-                            dark:text-[#3D32D1]'
+                            dark:text-[#473AFF]'
                 >
                   Our first book
                 </p>
@@ -1386,13 +1386,13 @@ function Page3(): ReactElement {
                 <div>
                   <p
                     className='mb-[0.6em]  text-[0.42em]  text-blue  
-                            dark:text-[#3D32D1]'
+                            dark:text-[#473AFF]'
                   >
                     © Nikmas Studio, 2024
                   </p>
                   <ul
                     className='flex  flex-col  gap-[0.05em]  text-blue  
-                             dark:text-[#3D32D1]'
+                             dark:text-[#473AFF]'
                   >
                     <li className='text-[0.3em]'>Terms and conditions</li>
                     <li className='text-[0.3em]'>Privacy policy</li>
@@ -1429,7 +1429,7 @@ function Page3(): ReactElement {
                     L
                   </div>
                 </div>
-                <div className='text-[0.42em]  text-blue  dark:text-[#3D32D1]'>
+                <div className='text-[0.42em]  text-blue  dark:text-[#473AFF]'>
                   <p className='leading-tight'>
                     For questions <br /> and suggestions:
                   </p>
@@ -1448,13 +1448,13 @@ function Page3(): ReactElement {
             >
               <div
                 className='relative  hidden  w-[22rem]  max-2md:block
-                           max-md:w-1/2  h-md:hidden'
+                           max-md:w-3/5  h-md:hidden'
               >
                 <TextNode
                   ref={step1TextNodeSmallRef}
                   className='absolute  inset-x-0  top-0  z-50  !mb-0  text-sm
                              leading-normal  transition-opacity
-                             max-md:text-[1.9vw]'
+                             max-md:text-[1.9vw]  max-2sm:text-[2.5vw]'
                 >
                   We&apos;ll be&nbsp;working on&nbsp;the&nbsp;studio website.
                   First, let&apos;s initialize our&nbsp;project and&nbsp;make
@@ -1464,7 +1464,7 @@ function Page3(): ReactElement {
                   ref={step2TextNodeSmallRef}
                   className='absolute  inset-x-0  top-0  !mb-0  text-sm  leading-normal
                              opacity-0  transition-opacity
-                             max-md:text-[1.9vw]'
+                             max-md:text-[1.9vw]  max-2sm:text-[2.5vw]'
                 >
                   Then, add the&nbsp;header and&nbsp;make a&nbsp;commit
                 </TextNode>
@@ -1472,7 +1472,7 @@ function Page3(): ReactElement {
                   ref={step3TextNodeSmallRef}
                   className='absolute  inset-x-0  top-0  !mb-0  text-sm  leading-normal
                              opacity-0  transition-opacity
-                             max-md:text-[1.9vw]'
+                             max-md:text-[1.9vw]  max-2sm:text-[2.5vw]'
                 >
                   Next, add the&nbsp;intro section and&nbsp;commit changes
                 </TextNode>
@@ -1480,7 +1480,7 @@ function Page3(): ReactElement {
                   ref={step4TextNodeSmallRef}
                   className='absolute  inset-x-0  top-0  !mb-0  text-sm  leading-normal
                              opacity-0  transition-opacity
-                             max-md:text-[1.9vw]'
+                             max-md:text-[1.9vw]  max-2sm:text-[2.5vw]'
                 >
                   Now, we got the&nbsp;idea to&nbsp;animate the&nbsp;elements
                   in&nbsp;the&nbsp;intro section. But&nbsp;we see this rather
@@ -1496,7 +1496,7 @@ function Page3(): ReactElement {
                   ref={step5TextNodeSmallRef}
                   className='absolute  inset-x-0  top-0  !mb-0  text-sm  leading-normal
                              opacity-0  transition-opacity
-                             max-md:text-[1.9vw]'
+                             max-md:text-[1.9vw]  max-2sm:text-[2.5vw]'
                 >
                   After&nbsp;spending a&nbsp;day playing
                   with&nbsp;the&nbsp;animation, we realized that it would be
@@ -1509,7 +1509,7 @@ function Page3(): ReactElement {
                   ref={step6TextNodeSmallRef}
                   className='absolute  inset-x-0  top-0  !mb-0  text-sm  leading-normal
                              opacity-0  transition-opacity
-                             max-md:text-[1.9vw]'
+                             max-md:text-[1.9vw]  max-2sm:text-[2.5vw]'
                 >
                   Then,&nbsp;we add the&nbsp;products section and&nbsp;make
                   a&nbsp;commit
@@ -1518,7 +1518,7 @@ function Page3(): ReactElement {
                   ref={step7TextNodeSmallRef}
                   className='absolute  inset-x-0  top-0  !mb-0  text-sm  leading-normal
                              opacity-0  transition-opacity
-                             max-md:text-[1.9vw]'
+                             max-md:text-[1.9vw]  max-2sm:text-[2.5vw]'
                 >
                   To&nbsp;finilize the&nbsp;main part of&nbsp;the&nbsp;project,
                   we&nbsp;implement the&nbsp;footer and&nbsp;commit changes
@@ -1527,7 +1527,7 @@ function Page3(): ReactElement {
                   ref={step8TextNodeSmallRef}
                   className='absolute  inset-x-0  top-0  !mb-0  text-sm  leading-normal
                              opacity-0  transition-opacity
-                             max-md:text-[1.9vw]'
+                             max-md:text-[1.9vw]  max-2sm:text-[2.5vw]'
                 >
                   With&nbsp;a&nbsp;couple of&nbsp;hours left before
                   the&nbsp;deadline, we&nbsp;cherish the&nbsp;hope
@@ -1539,7 +1539,7 @@ function Page3(): ReactElement {
                   ref={step9TextNodeSmallRef}
                   className='absolute  inset-x-0  top-0  !mb-0  text-sm  leading-normal
                              opacity-0  transition-opacity
-                             max-md:text-[1.9vw]'
+                             max-md:text-[1.9vw]  max-2sm:text-[2.5vw]'
                 >
                   Now, we speed run the&nbsp;animation of&nbsp;the&nbsp;spine
                   and&nbsp;commit it. All that&apos;s left is to&nbsp;merge
@@ -1551,7 +1551,7 @@ function Page3(): ReactElement {
                   ref={step10TextNodeSmallRef}
                   className='absolute  inset-x-0  top-0  !mb-0  text-sm  leading-normal
                              opacity-0  transition-opacity
-                             max-md:text-[1.9vw]'
+                             max-md:text-[1.9vw]  max-2sm:text-[2.5vw]'
                 >
                   So, we switch to&nbsp;the latest commit
                   on&nbsp;the&nbsp;main&nbsp;branch
@@ -1560,7 +1560,7 @@ function Page3(): ReactElement {
                   ref={step11TextNodeSmallRef}
                   className='absolute  inset-x-0  top-0  !mb-0  text-sm  leading-normal
                              opacity-0  transition-opacity
-                             max-md:text-[1.9vw]'
+                             max-md:text-[1.9vw]  max-2sm:text-[2.5vw]'
                 >
                   And&nbsp;do the&nbsp;merge
                 </TextNode>
@@ -1576,7 +1576,7 @@ function Page3(): ReactElement {
                   ></div>
                   <p
                     className='text-xl  leading-tight  text-blue  max-md:text-[3vw]
-                              h-md:text-[3vh]  dark:text-[#3D32D1]'
+                              h-md:text-[3vh]  dark:text-[#473AFF]'
                   >
                     Main branch
                   </p>
@@ -1584,17 +1584,19 @@ function Page3(): ReactElement {
                 <li
                   ref={animationFeatureBranchRef}
                   className='flex  flex-row  items-center  gap-2  opacity-0
-                             transition-opacity  max-md:gap-[1.4vw]  h-md:gap-[1.4vh]'
+                             transition-opacity  max-md:items-start  max-md:gap-[1.4vw]
+                             h-md:gap-[1.4vh]'
                 >
                   <div
                     className='size-6  rounded-full  bg-[#4CBB17]  max-md:size-[4vw]
                                 h-md:size-[4vh]'
                   ></div>
                   <p
-                    className='text-xl  leading-tight  text-[#4CBB17]  max-md:text-[3vw]
-                              h-md:text-[3vh]'
+                    className='text-xl  leading-tight  text-[#4CBB17]  max-md:mt-px
+                              max-md:text-[3vw]  h-md:text-[3vh]'
                   >
-                    Animation feature branch
+                    Animation feature
+                    <br className='hidden  max-md:inline' /> branch
                   </p>
                 </li>
               </ul>

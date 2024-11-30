@@ -26,6 +26,9 @@ importers:
       axios:
         specifier: ^1.7.7
         version: 1.7.7
+      bowser:
+        specifier: ^2.11.0
+        version: 2.11.0
       classnames:
         specifier: ^2.5.1
         version: 2.5.1
@@ -38,6 +41,9 @@ importers:
       gsap:
         specifier: ^3.12.5
         version: 3.12.5
+      inapp-spy:
+        specifier: ^4.1.1
+        version: 4.1.1
       next:
         specifier: 14.x
         version: 14.2.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -747,6 +753,9 @@ packages:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
     engines: {node: '>=8'}
 
+  bowser@2.11.0:
+    resolution: {integrity: sha512-AlcaJBi/pqqJBIQ8U9Mcpc9i8Aqxn88Skv5d+xBX006BY5u8N3mGLHa5Lgppa7L/HfwgwLgZ6NYs+Ag6uUmJRA==}
+
   brace-expansion@1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
 
@@ -1324,6 +1333,9 @@ packages:
   imurmurhash@0.1.4:
     resolution: {integrity: sha512-JmXMZ6wuvDmLiHEml9ykzqO6lwFbof0GG4IkcGaENdCRDDmMVnny7s5HsIgHCbaq0w2MyPhDqkhTUgS2LU2PHA==}
     engines: {node: '>=0.8.19'}
+
+  inapp-spy@4.1.1:
+    resolution: {integrity: sha512-fLIWnri9nk5UjwuN0bifRF9y+P4V1tAwbKyFJZPnIArIyD3cbgiNZOB4IM5J2ozJJQ2IzpBgW86vX0IqQRoWbA==}
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
@@ -2865,6 +2877,8 @@ snapshots:
 
   binary-extensions@2.3.0: {}
 
+  bowser@2.11.0: {}
+
   brace-expansion@1.1.11:
     dependencies:
       balanced-match: 1.0.2
@@ -3627,6 +3641,8 @@ snapshots:
       resolve-from: 4.0.0
 
   imurmurhash@0.1.4: {}
+
+  inapp-spy@4.1.1: {}
 
   inflight@1.0.6:
     dependencies:

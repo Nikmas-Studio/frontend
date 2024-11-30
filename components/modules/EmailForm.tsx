@@ -7,7 +7,6 @@ import {
   PAYMENT_URL_GUEST,
 } from '@/constants/general';
 import { EmailFormType, FormState } from '@/types/email-form';
-import { validateSession } from '@/utils/validate-session';
 import { CircularProgress } from '@mui/material';
 import axios from 'axios';
 import classNames from 'classnames';
@@ -62,7 +61,7 @@ function EmailForm({
     }
 
     if (e.currentTarget.reportValidity()) {
-      const isAuthenticated = await validateSession();
+      const isAuthenticated = false;
 
       switch (type) {
         case EmailFormType.LOGIN: {

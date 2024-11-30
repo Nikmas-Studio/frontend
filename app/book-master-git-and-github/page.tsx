@@ -25,8 +25,6 @@ export const metadata: Metadata = {
 };
 
 function MasterGitAndGithubBookPromo(): ReactElement {
-  const isAuthenticated = false;
-
   return (
     <DefaultLayout>
       <SubscriptionModalProvider>
@@ -51,10 +49,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
             <MainContainer className='flex  flex-row  justify-end'>
               <SubscriptionButton className='mr-5' />
             </MainContainer>
-            <SubscriptionModal
-              isAuthenticated={isAuthenticated}
-              formInputId='promo-subscription-modal-email'
-            />
+            <SubscriptionModal formInputId='promo-subscription-modal-email' />
             <Footer />
           </div>
         </div>
