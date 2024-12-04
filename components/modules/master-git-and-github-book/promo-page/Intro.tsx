@@ -1,5 +1,6 @@
 import BasicTextNode from '@/components/elements/BasicTextNode';
 import MainContainer from '@/components/elements/MainContainer';
+import DemoOrReadButton from '@/components/elements/master-git-and-github-book/promo/DemoOrReadButton';
 import TextNode from '@/components/elements/TextNode';
 import bookCoverDark from '@/public/images/git-and-github-book-cover-dark.jpg';
 import bookCoverLight from '@/public/images/git-and-github-book-cover-light.jpg';
@@ -51,15 +52,7 @@ function Intro(): ReactElement {
                 priority
               />
             </div>
-            <a
-              href='/book-master-git-and-github/demo'
-              className='button  mb-1  self-center 
-                         bg-black  text-white
-                         hover:bg-blue  dark:bg-white
-                         dark:text-black dark:hover:text-white'
-            >
-              Try demo
-            </a>
+           <DemoOrReadButton />
           </div>
           <div className='mt-12  max-w-[685px]  lg:mt-0  xl:pl-14  xl:pr-16'>
             <BasicTextNode

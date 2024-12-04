@@ -1,6 +1,7 @@
 'use client';
 
 import BasicTextNode from '@/components/elements/BasicTextNode';
+import BuddhaSvg from '@/components/elements/BuddhaSvg';
 import H2 from '@/components/elements/H2';
 import TextLi from '@/components/elements/TextLi';
 import TextNode from '@/components/elements/TextNode';
@@ -9,15 +10,18 @@ import {
   MASTER_GIT_AND_GITHUB_BOOK_URI,
   PAYMENT_ROUTE_GUEST,
 } from '@/constants/general';
+import { useSession } from '@/context/session/Context';
 import {
   useSubscriptionModal,
   useSubscriptionModalDispatch,
 } from '@/context/subscription-modal/Context';
 import useOutsideClick from '@/hooks/use-outside-click';
-import { buildBackendUrl } from '@/utils/build-backend-url';
+import { BookState } from '@/types/book-state';
+import { buildBookAccessRoute } from '@/utils/build-book-access-route';
+import { CircularProgress } from '@mui/material';
 import axios from 'axios';
 import classNames from 'classnames';
-import { ReactElement, useEffect, useRef } from 'react';
+import { ReactElement, useEffect, useRef, useState } from 'react';
 import EmailForm from '../EmailForm';
 
 interface SubscriptionModalProps {
@@ -29,10 +33,34 @@ function SubscriptionModal({
   formInputId,
   fixBody = true,
 }: SubscriptionModalProps): ReactElement {
+  const [bookState, setBookState] = useState(BookState.LOADING);
   const modalRef = useRef<HTMLDivElement>(null);
   const modalCoverRef = useRef<HTMLDivElement>(null);
   const { subscriptionModalIsOpened } = useSubscriptionModal();
   const { setSubscriptionModalIsOpened } = useSubscriptionModalDispatch();
+  const { session, loading: sessionStateIsLoading } = useSession();
+  const sessionWasLoaded = useRef(false);
+
+  useEffect(() => {
+    async function defineBookState(): Promise<void> {
+      const res = await axios.get(
+        buildBookAccessRoute(MASTER_GIT_AND_GITHUB_BOOK_URI),
+      );
+      if (res.data.accessGranted) {
+        setBookState(BookState.BOUGHT);
+      } else {
+        setBookState(BookState.UNBOUGHT);
+      }
+    }
+
+    defineBookState();
+  }, []);
+
+  useEffect(() => {
+    if (!sessionStateIsLoading) {
+      sessionWasLoaded.current = true;
+    }
+  }, [sessionStateIsLoading]);
 
   useOutsideClick([modalRef], () => {
     setSubscriptionModalIsOpened(false);
@@ -146,103 +174,182 @@ function SubscriptionModal({
                        -translate-y-1/2  -rotate-45  bg-black  dark:bg-white'
           ></div>
         </div>
-        <H2 className='mb-8  !text-subscription'>Early access</H2>
-        <ul>
-          <li>
-            <TextNode className='max-w-72'>
-              <strong className='font-black'>
-                Read “Master Git & Github: From&nbsp;Everyday Tasks to&nbsp;Deep
-                Waters”
-              </strong>{' '}
-              as&nbsp;we gradually publish new sections of&nbsp;the&nbsp;book
-            </TextNode>
-          </li>
-          <li>
-            <TextNode className='!text-2xl  font-light'>+</TextNode>
-          </li>
-          <li>
-            <TextNode className='max-w-80'>
-              <strong className='font-black'>
-                Lifetime subscription to&nbsp;the&nbsp;book
-              </strong>{' '}
-              with&nbsp;a&nbsp;one-time payment
-            </TextNode>
-          </li>
-          <li>
-            <TextNode className='!text-2xl  font-light'>+</TextNode>
-          </li>
-          <li>
-            <TextNode className='font-black'>Investor status:</TextNode>
-            <TextUl>
-              <TextLi className='max-w-72'>
-                20% lifetime discount on&nbsp;all studio books
-                that&nbsp;will&nbsp;ever be&nbsp;published
-              </TextLi>
-              <TextLi>investor badge</TextLi>
-            </TextUl>
-          </li>
-          <li>
-            <TextNode className='!text-2xl  font-light'>+</TextNode>
-          </li>
-          <li>
-            <TextNode className='max-w-[25.4rem]'>
-              Automatic enrolment{' '}
-              {/* <a href='https://intagram.com' className='default-link'> */}
-              to&nbsp;the&nbsp;contest (details very soon...) {/* </a> */}
-              in&nbsp;honour of&nbsp;the&nbsp;company launch
-              with&nbsp;the&nbsp;chance to&nbsp;
-              <strong>
-                win&nbsp;one of&nbsp;ten free lifetime accesses to&nbsp;all
-                studio books
-              </strong>{' '}
-              that&nbsp;will&nbsp;ever be published
-            </TextNode>
-          </li>
-          <li>
-            <TextNode className='!text-2xl  font-light'>+</TextNode>
-          </li>
-          <li>
-            <TextNode className='!mb-0  max-w-[25.4rem]'>
-              By&nbsp;purchasing the&nbsp;early access, you directly help
-              speed&nbsp;up the&nbsp;release of&nbsp;new sections
-              of&nbsp;the&nbsp;book, useful and&nbsp;convenient features
-              for&nbsp;reading and&nbsp;better assimilation
-              of&nbsp;the&nbsp;material, and&nbsp;also support
-              the&nbsp;development of&nbsp;other&nbsp;books
-            </TextNode>
-          </li>
-        </ul>
-        <BasicTextNode
-          className='mt-11  text-center  text-4xl 
+        {(bookState === BookState.LOADING || !sessionWasLoaded.current) && (
+          <div className='flex  justify-center  sm:w-[25rem]  mt-20'>
+            <CircularProgress className='!text-subscription' />
+          </div>
+        )}
+        {bookState !== BookState.LOADING && sessionWasLoaded.current && (
+          <>
+            <H2 className='mb-8  !text-subscription'>
+              {bookState === BookState.BOUGHT
+                ? 'You have lifetime access'
+                : 'Early access'}
+            </H2>
+            {bookState !== BookState.BOUGHT && (
+              <TextNode className='max-w-[25.4rem]'>
+                The&nbsp;book is&nbsp;in&nbsp;the&nbsp;early stages, and this is
+                the&nbsp;opportunity for&nbsp;you to&nbsp;both benefit
+                from&nbsp;it and&nbsp;support the&nbsp;studio:
+              </TextNode>
+            )}
+            <ul>
+              <li>
+                <TextNode className='max-w-72'>
+                  <strong className='font-black'>
+                    Read “Master Git & Github: From&nbsp;Everyday Tasks
+                    to&nbsp;Deep Waters”
+                  </strong>{' '}
+                  as&nbsp;we gradually publish new sections
+                  of&nbsp;the&nbsp;book
+                </TextNode>
+              </li>
+              <li>
+                <TextNode className='!text-2xl  font-light'>+</TextNode>
+              </li>
+              <li>
+                <TextNode className='max-w-80'>
+                  <strong className='font-black'>
+                    Lifetime subscription to&nbsp;the&nbsp;book
+                  </strong>{' '}
+                  with&nbsp;a&nbsp;one-time payment
+                </TextNode>
+              </li>
+              <li>
+                <TextNode className='!text-2xl  font-light'>+</TextNode>
+              </li>
+              <li>
+                <TextNode className='font-black'>Investor status:</TextNode>
+                <TextUl>
+                  <TextLi className='max-w-72'>
+                    20% lifetime discount on&nbsp;all studio books
+                    that&nbsp;will&nbsp;ever be&nbsp;published
+                  </TextLi>
+                  <TextLi>investor badge</TextLi>
+                </TextUl>
+              </li>
+              <li>
+                <TextNode className='!text-2xl  font-light'>+</TextNode>
+              </li>
+              <li>
+                {bookState === BookState.BOUGHT && (
+                  <TextNode className='max-w-[25.4rem]'>
+                    You're enrolled{' '}
+                    <a href='https://intagram.com' className='default-link'>
+                      in&nbsp;the&nbsp;second part of&nbsp;the&nbsp;contest
+                    </a>{' '}
+                    in&nbsp;honour of&nbsp;the&nbsp;company launch
+                    with&nbsp;the&nbsp;chance to&nbsp;
+                    <strong>
+                      win&nbsp;one of&nbsp;ten free&nbsp;lifetime&nbsp;accesses
+                      to&nbsp;all studio books
+                    </strong>{' '}
+                    that&nbsp;will&nbsp;ever be published
+                  </TextNode>
+                )}
+                <TextNode className='max-w-[25.4rem]'>
+                  Automatic enrolment{' '}
+                  <a href='https://intagram.com' className='default-link'>
+                    in&nbsp;the&nbsp;second part of&nbsp;the&nbsp;contest
+                  </a>{' '}
+                  in&nbsp;honour of&nbsp;the&nbsp;company launch
+                  with&nbsp;the&nbsp;chance to&nbsp;
+                  <strong>
+                    win&nbsp;one of&nbsp;ten free&nbsp;lifetime&nbsp;accesses
+                    to&nbsp;all studio books
+                  </strong>{' '}
+                  that&nbsp;will&nbsp;ever be published
+                </TextNode>
+              </li>
+              <li>
+                <TextNode className='!text-2xl  font-light'>+</TextNode>
+              </li>
+              <li>
+                {bookState === BookState.BOUGHT && (
+                  <TextNode className='!mb-0  max-w-[25.4rem]'>
+                    You helped speed&nbsp;up the&nbsp;release of&nbsp;new
+                    sections of&nbsp;the&nbsp;book, useful and&nbsp;convenient
+                    features for&nbsp;reading and&nbsp;better assimilation
+                    of&nbsp;the&nbsp;material, and&nbsp;also supported
+                    the&nbsp;development of&nbsp;other&nbsp;books
+                  </TextNode>
+                )}
+                {bookState !== BookState.BOUGHT && (
+                  <TextNode className='!mb-0  max-w-[25.4rem]'>
+                    By&nbsp;purchasing the&nbsp;early access, you directly help
+                    speed&nbsp;up the&nbsp;release of&nbsp;new sections
+                    of&nbsp;the&nbsp;book, useful and&nbsp;convenient features
+                    for&nbsp;reading and&nbsp;better assimilation
+                    of&nbsp;the&nbsp;material, and&nbsp;also support
+                    the&nbsp;development of&nbsp;other&nbsp;books
+                  </TextNode>
+                )}
+              </li>
+            </ul>
+            {bookState === BookState.BOUGHT && (
+              <BuddhaSvg
+                className='buddha-firefox-shadow  mx-auto  mt-11  mb-20  w-[70%]  
+                           max-w-[270px]  
+                           fill-white
+                           will-change-transform
+                           [filter:drop-shadow(0_0_150px_rgba(0,0,0,0.10))] 
+                           md:w-4/5
+                           md:max-w-[280px]  
+                           md:[filter:drop-shadow(0_0_250px_rgba(0,0,0,0.22))]
+                           dark:fill-black
+                           dark:[filter:drop-shadow(0_0_150px_rgba(255,255,255,0.34))]
+                           dark:md:[filter:drop-shadow(0_0_250px_rgba(255,255,255,0.68))]'
+              />
+            )}
+            {bookState !== BookState.BOUGHT && (
+              <>
+                <BasicTextNode
+                  className='mt-11  text-center  text-4xl 
                      font-medium  !text-subscription'
-        >
-          $23
-        </BasicTextNode>
-        <div className='mb-20  mt-[2.85rem]'>
-          <EmailForm
-            requestCallback={async (email, token) => {
-              await axios.post(buildBackendUrl(PAYMENT_ROUTE_GUEST), {
-                email,
-                bookURI: MASTER_GIT_AND_GITHUB_BOOK_URI,
-                captchaToken: token,
-                readerName: process.env.NEXT_PUBLIC_HONEYPOT_KEY,
-              });
-            }}
-            label='Get payment link by&nbsp;email'
-            caption='This&nbsp;email will&nbsp;be&nbsp;used as&nbsp;a&nbsp;key to&nbsp;your&nbsp;library'
-            inputId={formInputId}
-            inputName='email'
-            inputClasses='border-subscription'
-            buttonClasses='border-subscription'
-            inputFocusedClasses='[box-shadow:0_0_0_2px_#29AD04]'
-            buttonInputFocusedClasses='[box-shadow:0_0_0_2px_#29AD04]'
-            buttonInputFilledClasses='bg-subscription'
-            buttonInputEmptyClasses='bg-[#CFCFCF]  dark:bg-gray-dark-lighter2'
-            tickIconClasses='!fill-white'
-            reloadIconClasses='!fill-white'
-            spinnerIconsClasses='dark:!text-white'
-          />
-        </div>
+                >
+                  $23
+                </BasicTextNode>
+                <div className='mb-20  mt-[2.85rem]'>
+                  {session === null && (
+                    <EmailForm
+                      requestCallback={async (email, token) => {
+                        await axios.post(PAYMENT_ROUTE_GUEST, {
+                          email,
+                          bookURI: MASTER_GIT_AND_GITHUB_BOOK_URI,
+                          captchaToken: token,
+                          readerName: process.env.NEXT_PUBLIC_HONEYPOT_KEY,
+                        });
+                      }}
+                      label='Get payment link by&nbsp;email'
+                      caption='This&nbsp;email will&nbsp;be&nbsp;used as&nbsp;a&nbsp;key to&nbsp;your&nbsp;library'
+                      inputId={formInputId}
+                      inputName='email'
+                      inputClasses='border-subscription'
+                      buttonClasses='border-subscription'
+                      inputFocusedClasses='[box-shadow:0_0_0_2px_#29AD04]'
+                      buttonInputFocusedClasses='[box-shadow:0_0_0_2px_#29AD04]'
+                      buttonInputFilledClasses='bg-subscription'
+                      buttonInputEmptyClasses='bg-[#CFCFCF]  dark:bg-gray-dark-lighter2'
+                      tickIconClasses='!fill-white'
+                      reloadIconClasses='!fill-white'
+                      spinnerIconsClasses='dark:!text-white'
+                    />
+                  )}
+                  {session !== null && (
+                    <div className='flex  justify-center'>
+                      <button
+                        className='button  bg-subscription  text-white  
+                             hover:bg-subscription-darker '
+                      >
+                        Proceed to payment
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </>
+            )}
+          </>
+        )}
       </div>
     </div>
   );

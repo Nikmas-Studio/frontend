@@ -1,64 +1,57 @@
+'use client';
+
+import LoadingFullPageSpinner from '@/components/elements/LoadingFullPageSpinner';
 import MainContainer from '@/components/elements/MainContainer';
 import TextNode from '@/components/elements/TextNode';
 import { VALIDATE_AUTH_TOKEN_ROUTE } from '@/constants/general';
-import { buildBackendUrl } from '@/utils/build-backend-url';
 import axios from 'axios';
-import { redirect } from 'next/navigation';
-import { ReactElement } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { ReactElement, useEffect, useState } from 'react';
 
-async function Page({
-  searchParams,
-}: {
-  searchParams: Promise<{ authToken: string | undefined }>;
-}): Promise<ReactElement | never> {
-  const { authToken } = await searchParams;
-
-  const { redirect: toRedirect } = await validateAuthToken(authToken);
-
-  if (toRedirect) {
-    redirect('/');
-    // return (
-    //   <MainContainer>
-    //     <TextNode className='mt-[35vh]  text-center'>Correct link.</TextNode>
-    //   </MainContainer>
-    // );
-  }
-
-  return (
-    <MainContainer>
-      <TextNode className='mt-[35vh]  text-center'>
-        This&nbsp;link has&nbsp;expired or&nbsp;is&nbsp;invalid. Please request
-        a&nbsp;new login link.
-      </TextNode>
-    </MainContainer>
-  );
+enum PageState {
+  LOADING = 'LOADING',
+  INVALID = 'INVALID',
 }
 
-async function validateAuthToken(
-  authToken: string | undefined,
-): Promise<{ redirect: boolean }> {
-  if (authToken === undefined) {
-    console.log('authToken is undefined');
-    return { redirect: true };
-  }
+function Page(): ReactElement | never {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const [pageState, setPageState] = useState(PageState.LOADING);
+  const authToken = searchParams.get('authToken');
 
-  console.log('after return');
+  useEffect(() => {
+    async function validateAuthToken(authToken: string | null): Promise<void> {
+      if (authToken === undefined) {
+        router.push('/');
+      }
 
-  try {
-    const res = await axios.post(
-      buildBackendUrl(VALIDATE_AUTH_TOKEN_ROUTE),
-      {
-        authToken,
-      },
-      { withCredentials: true },
+      try {
+        await axios.post(VALIDATE_AUTH_TOKEN_ROUTE, {
+          authToken,
+        });
+      } catch (error) {
+        console.log('error validating auth token', error);
+        setPageState(PageState.INVALID);
+      }
+
+      router.push('/');
+    }
+
+    validateAuthToken(authToken);
+  }, [authToken, router]);
+
+  if (pageState === PageState.INVALID) {
+    return (
+      <MainContainer>
+        <TextNode className='mt-[35vh]  text-center'>
+          This&nbsp;link has&nbsp;expired or&nbsp;is&nbsp;invalid. Please
+          request a&nbsp;new login link.
+        </TextNode>
+      </MainContainer>
     );
-
-    console.log('validate auth token res: ', res);
-  } catch (error) {
-    return { redirect: false };
   }
 
-  return { redirect: true };
+  return <LoadingFullPageSpinner />;
 }
 
 export default Page;

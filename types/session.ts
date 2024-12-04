@@ -4,3 +4,9 @@ export interface Session {
   isInvestor: boolean;
   hasFullAccess: boolean;
 }
+
+export enum ReaderStatus {
+  REGULAR = 'REGULAR',
+  INVESTOR = 'INVESTOR',
+  FULL_ACCESS = 'FULL_ACCESS',
+}

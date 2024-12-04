@@ -2,7 +2,6 @@
 
 import { LOG_ERROR_ROUTE } from '@/constants/general';
 import { FormState } from '@/types/email-form';
-import { buildBackendUrl } from '@/utils/build-backend-url';
 import { CircularProgress } from '@mui/material';
 import axios from 'axios';
 import classNames from 'classnames';
@@ -83,7 +82,7 @@ function EmailForm({
         token = await recaptchaRef.current!.executeAsync();
       } catch (e) {
         axios
-          .post(buildBackendUrl(LOG_ERROR_ROUTE), {
+          .post(LOG_ERROR_ROUTE, {
             error: `recaptcha executeAsync error: ${JSON.stringify(e)},`,
           })
           .catch(() => {});
@@ -94,7 +93,7 @@ function EmailForm({
 
       if (token === null) {
         axios
-          .post(buildBackendUrl(LOG_ERROR_ROUTE), {
+          .post(LOG_ERROR_ROUTE, {
             error: 'recaptcha token is null',
           })
           .catch(() => {});
@@ -107,7 +106,7 @@ function EmailForm({
         await requestCallback(email, token);
       } catch (error) {
         axios
-          .post(buildBackendUrl(LOG_ERROR_ROUTE), {
+          .post(LOG_ERROR_ROUTE, {
             error: `email form request callback error: ${JSON.stringify(error)}`,
           })
           .catch(() => {});

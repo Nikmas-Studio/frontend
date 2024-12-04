@@ -8,7 +8,7 @@ function LoadingFullPageSpinner(): ReactElement {
         className='absolute  left-1/2  top-[44%]  -translate-x-1/2
                    -translate-y-1/2'
       >
-        <CircularProgress className='size-[50px]  !text-black  dark:!text-white' />
+        <CircularProgress className='!size-[50px]  !text-black  dark:!text-white' />
       </div>
     </div>
   );
