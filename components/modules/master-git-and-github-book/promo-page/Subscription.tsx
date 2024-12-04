@@ -137,24 +137,25 @@ function Subscription(): ReactElement {
                   Unlike a&nbsp;paper book, a&nbsp;web book must always be
                   online and&nbsp;requires ongoing maintenance. The&nbsp;more
                   people read a&nbsp;web book, the&nbsp;more server resources
-                  are&nbsp;needed. That&apos;s why our books are&nbsp;available
-                  through a&nbsp;subscription.
+                  are&nbsp;needed. That&apos;s&nbsp;why our&nbsp;books
+                  are&nbsp;available through&nbsp;a&nbsp;subscription.
                 </TextNode>
                 <TextNode>
                   The&nbsp;subscription not&nbsp;only covers server
                   and&nbsp;maintenance costs, but&nbsp;also supports
-                  the&nbsp;creation of&nbsp;new books. It allows us to&nbsp;make
-                  our books the&nbsp;way we envision them, rather than settling
-                  for&nbsp;less to&nbsp;save on&nbsp;production.
+                  the&nbsp;creation of&nbsp;new books. It&nbsp;allows us
+                  to&nbsp;make our&nbsp;books the&nbsp;way we envision them,
+                  rather than settling for&nbsp;less to&nbsp;save
+                  on&nbsp;production.
                 </TextNode>
                 <TextNode className='!mb-0'>
                   However, during the&nbsp;early access period of&nbsp;our first
                   book, we&apos;re making an&nbsp;exception: we&apos;re offering
                   a&nbsp;lifetime subscription to&nbsp;the book with
-                  a&nbsp;one-time payment to&nbsp;our first readers
-                  whom&nbsp;we&nbsp;consider our investors. Their support gives
-                  us the&nbsp;initial boost, and we highly appreciate it,
-                  reciprocating in&nbsp;kind.
+                  a&nbsp;one-time payment to&nbsp;our&nbsp;first readers
+                  whom&nbsp;we&nbsp;consider our&nbsp;investors.
+                  Their&nbsp;support gives us the&nbsp;initial boost, and we
+                  highly appreciate it, reciprocating in&nbsp;kind.
                 </TextNode>
               </div>
             </div>
