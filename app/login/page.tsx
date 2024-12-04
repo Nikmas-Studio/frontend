@@ -21,7 +21,7 @@ function Page(): ReactElement | never {
 
   useEffect(() => {
     async function validateAuthToken(authToken: string | null): Promise<void> {
-      if (authToken === undefined) {
+      if (authToken === null) {
         router.push('/');
       }
 

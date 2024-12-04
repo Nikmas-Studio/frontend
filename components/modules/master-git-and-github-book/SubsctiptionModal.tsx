@@ -175,7 +175,7 @@ function SubscriptionModal({
           ></div>
         </div>
         {(bookState === BookState.LOADING || !sessionWasLoaded.current) && (
-          <div className='flex  justify-center  sm:w-[25rem]  mt-20'>
+          <div className='mt-20  flex  justify-center  sm:w-[25rem]'>
             <CircularProgress className='!text-subscription' />
           </div>
         )}
@@ -234,7 +234,7 @@ function SubscriptionModal({
               <li>
                 {bookState === BookState.BOUGHT && (
                   <TextNode className='max-w-[25.4rem]'>
-                    You're enrolled{' '}
+                    You&apos;re enrolled{' '}
                     <a href='https://intagram.com' className='default-link'>
                       in&nbsp;the&nbsp;second part of&nbsp;the&nbsp;contest
                     </a>{' '}
@@ -288,7 +288,7 @@ function SubscriptionModal({
             </ul>
             {bookState === BookState.BOUGHT && (
               <BuddhaSvg
-                className='buddha-firefox-shadow  mx-auto  mt-11  mb-20  w-[70%]  
+                className='buddha-firefox-shadow  mx-auto  mb-20  mt-11  w-[70%]  
                            max-w-[270px]  
                            fill-white
                            will-change-transform
