@@ -180,7 +180,7 @@ function SubscriptionModal({
             <TextNode className='max-w-[25.4rem]'>
               Automatic enrolment{' '}
               {/* <a href='https://intagram.com' className='default-link'> */}
-              to&nbsp;the&nbsp;contest (details very soon...) {/* </a> */}
+              in&nbsp;the&nbsp;contest (details very soon...) {/* </a> */}
               in&nbsp;honour of&nbsp;the&nbsp;company launch
               with&nbsp;the&nbsp;chance to&nbsp;
               <strong>
