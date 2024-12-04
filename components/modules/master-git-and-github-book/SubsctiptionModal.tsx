@@ -181,10 +181,10 @@ function SubscriptionModal({
               Automatic enrolment{' '}
               {/* <a href='https://intagram.com' className='default-link'> */}
               in&nbsp;the&nbsp;contest (details very soon...) {/* </a> */}
-              in&nbsp;honour of&nbsp;the&nbsp;company launch
-              with&nbsp;the&nbsp;chance to&nbsp;
+              in&nbsp;honor of&nbsp;the&nbsp;company launch, offering
+              a&nbsp;chance to&nbsp;
               <strong>
-                win&nbsp;one of&nbsp;ten free lifetime accesses to&nbsp;all
+                win&nbsp;one of&nbsp;ten free lifetime access passes to&nbsp;all
                 studio books
               </strong>{' '}
               that&nbsp;will&nbsp;ever be published
