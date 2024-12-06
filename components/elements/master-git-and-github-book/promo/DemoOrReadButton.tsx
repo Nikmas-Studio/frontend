@@ -1,30 +1,13 @@
 'use client';
 
+import { useBookState } from '@/context/book-state/Context';
 import { BookState } from '@/types/book-state';
 import { CircularProgress } from '@mui/material';
 import classNames from 'classnames';
-import { ReactElement, useEffect, useState } from 'react';
-import axios from 'axios';
-import { buildBookAccessRoute } from '@/utils/build-book-access-route';
-import { MASTER_GIT_AND_GITHUB_BOOK_URI } from '@/constants/general';
+import { ReactElement } from 'react';
 
 function DemoOrReadButton(): ReactElement {
-  const [bookState, setBookState] = useState<BookState>(BookState.LOADING);
-
-  useEffect(() => {
-    async function defineBookState(): Promise<void> {
-      const res = await axios.get(
-        buildBookAccessRoute(MASTER_GIT_AND_GITHUB_BOOK_URI),
-      );
-      if (res.data.accessGranted) {
-        setBookState(BookState.BOUGHT);
-      } else {
-        setBookState(BookState.UNBOUGHT);
-      }
-    }
-
-    defineBookState();
-  }, []);
+  const { bookState } = useBookState();
 
   const classes = classNames(
     `

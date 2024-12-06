@@ -4,7 +4,6 @@ import BookRead from '@/components/modules/master-git-and-github-book/BookRead';
 import { MASTER_GIT_AND_GITHUB_BOOK_URI } from '@/constants/general';
 import { BookState } from '@/types/book-state';
 import { buildBookAccessRoute } from '@/utils/build-book-access-route';
-import { CircularProgress } from '@mui/material';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { ReactElement, useEffect, useState } from 'react';
@@ -31,24 +30,19 @@ function MasterGitAndGithubBookRead(): ReactElement {
   if (bookState === BookState.LOADING) {
     return (
       <div
-        className='[background:linear-gradient(135deg,#ff5013,#271ad3)]  
-                      w-screen  h-screen  flex  justify-center'
-      >
-        <div className='mt-[40vh]'>
-          <CircularProgress className='!text-white  !size-[50px]' />
-        </div>
-      </div>
+        className='flex  
+                      h-screen  w-screen  justify-center  [background:linear-gradient(135deg,#ff5013,#271ad3)]'
+      ></div>
     );
   }
-  
+
   if (bookState === BookState.UNBOUGHT) {
     router.push(`/${MASTER_GIT_AND_GITHUB_BOOK_URI}`);
     return (
       <div
-        className='[background:linear-gradient(135deg,#ff5013,#271ad3)]  
-                      w-screen  h-screen  flex  justify-center'
-      >
-      </div>
+        className='flex  
+                      h-screen  w-screen  justify-center  [background:linear-gradient(135deg,#ff5013,#271ad3)]'
+      ></div>
     );
   }
 

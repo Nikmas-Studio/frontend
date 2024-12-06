@@ -10,10 +10,12 @@ import HeaderButtonsDefault from '../header-buttons/HeaderButtonsDefault';
 
 interface HeaderBasicProps {
   onHeaderIsScrolledChange?: (headerIsScrolled: boolean) => void;
+  hideHeader?: boolean;
 }
 
 function HeaderDefault({
   onHeaderIsScrolledChange,
+  hideHeader = true,
 }: HeaderBasicProps): ReactElement {
   function pageIsScrolled(): boolean {
     return window.scrollY > 0;
@@ -26,17 +28,28 @@ function HeaderDefault({
 
   useGSAP((_, contextSafe) => {
     const handleScrollAndResize = contextSafe!(() => {
-      const scrollPosition = window.scrollY;
-      const pageHeight = document.body.offsetHeight;
-      const windowHeight = window.innerHeight;
-      const bottomOffset = 200;
+      if (hideHeader) {
+        const scrollPosition = window.scrollY;
+        const pageHeight = document.body.offsetHeight;
+        const windowHeight = window.innerHeight;
+        const bottomOffset = 200;
 
-      if (window.innerWidth < 1280) {
-        if (scrollPosition + windowHeight >= pageHeight - bottomOffset) {
-          const currentTransform = headerRef.current!.style.transform;
+        if (window.innerWidth < 1280) {
+          if (scrollPosition + windowHeight >= pageHeight - bottomOffset) {
+            const currentTransform = headerRef.current!.style.transform;
 
-          if (currentTransform !== 'translateY(-150%)') {
-            headerRef.current!.style.transform = 'translateY(-150%)';
+            if (currentTransform !== 'translateY(-150%)') {
+              headerRef.current!.style.transform = 'translateY(-150%)';
+            }
+          } else {
+            const currentTransform = headerRef.current!.style.transform;
+
+            if (
+              currentTransform !== 'translateY(0%)' &&
+              currentTransform !== ''
+            ) {
+              headerRef.current!.style.transform = 'translateY(0%)';
+            }
           }
         } else {
           const currentTransform = headerRef.current!.style.transform;
@@ -47,12 +60,6 @@ function HeaderDefault({
           ) {
             headerRef.current!.style.transform = 'translateY(0%)';
           }
-        }
-      } else {
-        const currentTransform = headerRef.current!.style.transform;
-
-        if (currentTransform !== 'translateY(0%)' && currentTransform !== '') {
-          headerRef.current!.style.transform = 'translateY(0%)';
         }
       }
     });

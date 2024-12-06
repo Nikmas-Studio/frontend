@@ -52,7 +52,7 @@ function Intro(): ReactElement {
                 priority
               />
             </div>
-           <DemoOrReadButton />
+            <DemoOrReadButton />
           </div>
           <div className='mt-12  max-w-[685px]  lg:mt-0  xl:pl-14  xl:pr-16'>
             <BasicTextNode

@@ -2,11 +2,12 @@
 
 import { Session } from '@/types/session';
 import { getSession } from '@/utils/get-session';
-import { usePathname } from 'next/navigation';
 import {
   createContext,
+  Dispatch,
   ReactElement,
   ReactNode,
+  SetStateAction,
   useContext,
   useEffect,
   useState,
@@ -17,7 +18,13 @@ interface SessionContextProps {
   loading: boolean;
 }
 
+interface SessionDispatchContextProps {
+  setSession: Dispatch<SetStateAction<Session | null>>;
+}
+
 const SessionContext = createContext<SessionContextProps | null>(null);
+const SessionDispatchContext =
+  createContext<SessionDispatchContextProps | null>(null);
 
 export function SessionProvider({
   children,
@@ -26,7 +33,6 @@ export function SessionProvider({
 }): ReactElement {
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
-  const pathname = usePathname();
 
   async function fetchSession(): Promise<void> {
     setLoading(true);
@@ -37,11 +43,13 @@ export function SessionProvider({
 
   useEffect(() => {
     fetchSession();
-  }, [pathname]);
+  }, []);
 
   return (
     <SessionContext.Provider value={{ session, loading }}>
-      {children}
+      <SessionDispatchContext.Provider value={{ setSession }}>
+        {children}
+      </SessionDispatchContext.Provider>
     </SessionContext.Provider>
   );
 }
@@ -53,5 +61,15 @@ export function useSession(): SessionContextProps {
     throw new Error('useSession must be used within a SessionProvider');
   }
 
+  return context;
+}
+
+export function useSessionDispatch(): SessionDispatchContextProps {
+  const context = useContext(SessionDispatchContext);
+  
+  if (!context) {
+    throw new Error('useSessionDispatch must be used within a SessionProvider');
+  }
+  
   return context;
 }

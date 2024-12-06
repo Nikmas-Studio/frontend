@@ -8,8 +8,10 @@ import TextNode from '@/components/elements/TextNode';
 import TextUl from '@/components/elements/TextUl';
 import {
   MASTER_GIT_AND_GITHUB_BOOK_URI,
+  PAYMENT_ROUTE_AUTHENTICATED,
   PAYMENT_ROUTE_GUEST,
 } from '@/constants/general';
+import { useBookState } from '@/context/book-state/Context';
 import { useSession } from '@/context/session/Context';
 import {
   useSubscriptionModal,
@@ -17,7 +19,6 @@ import {
 } from '@/context/subscription-modal/Context';
 import useOutsideClick from '@/hooks/use-outside-click';
 import { BookState } from '@/types/book-state';
-import { buildBookAccessRoute } from '@/utils/build-book-access-route';
 import { CircularProgress } from '@mui/material';
 import axios from 'axios';
 import classNames from 'classnames';
@@ -33,28 +34,16 @@ function SubscriptionModal({
   formInputId,
   fixBody = true,
 }: SubscriptionModalProps): ReactElement {
-  const [bookState, setBookState] = useState(BookState.LOADING);
+  const { bookState } = useBookState();
   const modalRef = useRef<HTMLDivElement>(null);
   const modalCoverRef = useRef<HTMLDivElement>(null);
   const { subscriptionModalIsOpened } = useSubscriptionModal();
   const { setSubscriptionModalIsOpened } = useSubscriptionModalDispatch();
   const { session, loading: sessionStateIsLoading } = useSession();
   const sessionWasLoaded = useRef(false);
-
-  useEffect(() => {
-    async function defineBookState(): Promise<void> {
-      const res = await axios.get(
-        buildBookAccessRoute(MASTER_GIT_AND_GITHUB_BOOK_URI),
-      );
-      if (res.data.accessGranted) {
-        setBookState(BookState.BOUGHT);
-      } else {
-        setBookState(BookState.UNBOUGHT);
-      }
-    }
-
-    defineBookState();
-  }, []);
+  const [paymentPageIsGenerating, setPaymentPageIsGenerating] = useState(false);
+  const [paymentPageGenerationError, setPaymentPageGenerationError] =
+    useState(false);
 
   useEffect(() => {
     if (!sessionStateIsLoading) {
@@ -137,6 +126,25 @@ function SubscriptionModal({
     };
   }, [subscriptionModalIsOpened, fixBody]);
 
+  async function handlePurchaseBookAuthenticated(): Promise<void> {
+    setPaymentPageIsGenerating(true);
+
+    try {
+      const res = await axios.post(PAYMENT_ROUTE_AUTHENTICATED, {
+        bookURI: MASTER_GIT_AND_GITHUB_BOOK_URI,
+      });
+
+      setPaymentPageGenerationError(false);
+
+      const paymentLink = res.data.paymentLink;
+      window.location.href = paymentLink;
+    } catch (error) {
+      setPaymentPageGenerationError(true);
+    }
+
+    setPaymentPageIsGenerating(false);
+  }
+
   const modalClasses = classNames(
     `transition-transform  !duration-500  fixed  inset-0  z-[2000]  !overflow-y-auto
      bg-white  px-5  pt-12  dark:bg-black  sm:left-auto  scrollbar-hidden
@@ -147,6 +155,10 @@ function SubscriptionModal({
       'translate-x-full': !subscriptionModalIsOpened,
     },
   );
+
+  const paymentPageIsGeneratingSpinnerWrapperClasses = classNames('mt-3', {
+    hidden: !paymentPageIsGenerating,
+  });
 
   return (
     <div>
@@ -336,13 +348,24 @@ function SubscriptionModal({
                     />
                   )}
                   {session !== null && (
-                    <div className='flex  justify-center'>
+                    <div className='flex  flex-col  items-center'>
                       <button
+                        onClick={handlePurchaseBookAuthenticated}
                         className='button  bg-subscription  text-white  
-                             hover:bg-subscription-darker '
+                             hover:bg-subscription-darker'
                       >
                         Proceed to payment
                       </button>
+                      <div
+                        className={paymentPageIsGeneratingSpinnerWrapperClasses}
+                      >
+                        <CircularProgress className='!size-[20px]  !text-subscription' />
+                      </div>
+                      {paymentPageGenerationError && (
+                        <BasicTextNode className='mt-3  text-red-600'>
+                          An error occurred. Please try again.
+                        </BasicTextNode>
+                      )}
                     </div>
                   )}
                 </div>

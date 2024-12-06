@@ -15,7 +15,7 @@ function PaymentSuccess(): ReactElement {
   const { session, loading: sessionStateIsLoading } = useSession();
 
   const searchParams = useSearchParams();
-  const orderReference = searchParams.get('orderReference');
+  const orderReference = searchParams.get('order');
   const authToken = searchParams.get('authToken');
 
   useEffect(() => {
@@ -30,8 +30,15 @@ function PaymentSuccess(): ReactElement {
           : PAYMENT_SUCCESS_AUTHENTICATED_ROUTE;
 
       try {
+        const data = {
+          orderId: orderReference,
+          authToken: session === null ? authToken : undefined,
+        };
+
+        console.log(data);
+
         const res = await axios.post(routeUrl, {
-          orderReference,
+          orderId: orderReference,
           authToken: session === null ? authToken : undefined,
         });
 

@@ -13,6 +13,7 @@ import { CircularProgress } from '@mui/material';
 import axios from 'axios';
 import classNames from 'classnames';
 import gsap from 'gsap';
+import Link from 'next/link';
 import { ReactElement, useCallback, useEffect, useRef, useState } from 'react';
 import BasicTextNode from '../../BasicTextNode';
 
@@ -31,21 +32,48 @@ function AccountIconMain({ className }: GuestAccountIconProps): ReactElement {
   const bookSectionWasInViewport = useRef(false);
   const { session, loading } = useSession();
 
-  const [emailWidth, setEmailWidth] = useState<number | null>(null);
+  const [readerData1Width, setReaderData1Width] = useState<number | null>(null);
+  const [readerData2Width, setReaderData2Width] = useState<number | null>(null);
 
   const [logoutLoading, setLogoutLoading] = useState(false);
 
-  const readerEmailElementRef = useCallback((node: HTMLSpanElement | null) => {
-    if (node !== null) {
-      const widthInRem = node.getBoundingClientRect().width / 16;
-      setEmailWidth(widthInRem);
-    }
-  }, []);
+  const readerDataElement1Ref = useCallback(
+    (node: HTMLSpanElement | null) => {
+      if (node !== null) {
+        const widthInRem = node.getBoundingClientRect().width / 16;
+        setReaderData1Width(widthInRem);
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [session],
+  );
 
-  function calcDropdownWidth(emailWidth: number, status: ReaderStatus): string {
+  const readerDataElement2Ref = useCallback(
+    (node: HTMLSpanElement | null) => {
+      if (node !== null) {
+        const widthInRem = node.getBoundingClientRect().width / 16;
+        setReaderData2Width(widthInRem);
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [session],
+  );
+
+  function calcDropdownWidth(
+    data1Width: number,
+    data2Width: number | null,
+    status: ReaderStatus,
+  ): string {
     switch (status) {
       case ReaderStatus.REGULAR: {
-        let width = Math.min(emailWidth + 8, 25);
+        const width1 = Math.min(data1Width + 8, 25);
+        let width2;
+
+        if (data2Width !== null) {
+          width2 = Math.min(data2Width + 8, 25);
+        }
+
+        let width = Math.max(width1, width2 ?? 0);
 
         if (width === 25) {
           width = 28.375;
@@ -54,12 +82,32 @@ function AccountIconMain({ className }: GuestAccountIconProps): ReactElement {
         return `${width}rem`;
       }
       case ReaderStatus.INVESTOR: {
-        const width = Math.min(emailWidth + 13, 28.375);
+        const width1 = Math.min(data1Width + 13, 28.375);
+        let width2;
+
+        if (data2Width !== null) {
+          width2 = Math.min(data2Width + 8, 25);
+          if (width2 === 25) {
+            width2 = 28.375;
+          }
+        }
+
+        const width = Math.max(width1, width2 ?? 0);
 
         return `${width}rem`;
       }
       case ReaderStatus.FULL_ACCESS: {
-        const width = Math.min(emailWidth + 14.5, 28.375);
+        const width1 = Math.min(data1Width + 14.5, 28.375);
+        let width2;
+
+        if (data2Width !== null) {
+          width2 = Math.min(data2Width + 8, 25);
+          if (width2 === 25) {
+            width2 = 28.375;
+          }
+        }
+
+        const width = Math.max(width1, width2 ?? 0);
 
         return `${width}rem`;
       }
@@ -290,8 +338,12 @@ function AccountIconMain({ className }: GuestAccountIconProps): ReactElement {
         className={dropdownClasses}
         style={{
           width:
-            session !== null && emailWidth !== null
-              ? calcDropdownWidth(emailWidth, defineReaderStatus(session))
+            session !== null && readerData1Width !== null
+              ? calcDropdownWidth(
+                  readerData1Width,
+                  readerData2Width,
+                  defineReaderStatus(session),
+                )
               : undefined,
         }}
       >
@@ -329,8 +381,9 @@ function AccountIconMain({ className }: GuestAccountIconProps): ReactElement {
           <>
             <div className='px-6'>
               <BasicTextNode className='break-all  text-xl  font-bold'>
-                <span className='mr-2' ref={readerEmailElementRef}>
-                  {session.readerEmail}
+                <span className='mr-2' ref={readerDataElement1Ref}>
+                  {session.readerFullName !== null && session.readerFullName}
+                  {session.readerFullName === null && session.readerEmail}
                 </span>
                 <span className={badgeClasses}>
                   {defineReaderStatus(session) === ReaderStatus.FULL_ACCESS
@@ -338,31 +391,42 @@ function AccountIconMain({ className }: GuestAccountIconProps): ReactElement {
                     : 'Investor'}
                 </span>
               </BasicTextNode>
+              {session.readerFullName !== null && (
+                <BasicTextNode className='break-all  text-xl  font-semibold'>
+                  <span ref={readerDataElement2Ref}>{session.readerEmail}</span>
+                </BasicTextNode>
+              )}
             </div>
             <ul className='mt-5'>
-              <li
-                className='group  cursor-pointer  pb-[0.35rem]  pt-1  
+              <li>
+                <Link href='/profile'>
+                  <div
+                    className='group  cursor-pointer  pb-[0.35rem]  pt-1  
                            transition-colors  hover:bg-blue'
-              >
-                <BasicTextNode
-                  className='px-6  text-xl  transition-colors
+                  >
+                    <BasicTextNode
+                      className='px-6  text-xl  transition-colors
                            group-hover:text-white'
-                >
-                  Profile
-                </BasicTextNode>
+                    >
+                      Profile
+                    </BasicTextNode>
+                  </div>
+                </Link>
               </li>
-              <li
-                onClick={handleLogout}
-                className='group  flex  cursor-pointer  justify-between  pb-[0.35rem]  
+              <li>
+                <div
+                  onClick={handleLogout}
+                  className='group  flex  cursor-pointer  justify-between  pb-[0.35rem]  
                            pt-1  transition-colors  hover:bg-blue'
-              >
-                <BasicTextNode
-                  className='px-6  text-xl  transition-colors
-                           group-hover:text-white'
                 >
-                  Log out
-                </BasicTextNode>
-                <CircularProgress className={logoutSpinnerClasses} />
+                  <BasicTextNode
+                    className='px-6  text-xl  transition-colors
+                           group-hover:text-white'
+                  >
+                    Log out
+                  </BasicTextNode>
+                  <CircularProgress className={logoutSpinnerClasses} />
+                </div>
               </li>
             </ul>
           </>

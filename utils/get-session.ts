@@ -5,9 +5,7 @@ import axios from 'axios';
 export async function getSession(): Promise<Session | null> {
   let res;
   try {
-    res = await axios.get(GET_SESSION_ROUTE, {
-      withCredentials: true,
-    });
+    res = await axios.get(GET_SESSION_ROUTE);
   } catch (e) {
     return null;
   }

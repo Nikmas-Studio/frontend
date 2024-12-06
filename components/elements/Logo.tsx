@@ -17,7 +17,7 @@ const Logo = forwardRef<HTMLParagraphElement, LogoProps>(function Logo(
 
   return (
     <p ref={ref} className={logoClasses}>
-      Nikmas Studio
+      Nikmas&nbsp;Studio
     </p>
   );
 });

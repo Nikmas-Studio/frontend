@@ -246,6 +246,7 @@ function EmailForm({
           name={inputName}
           placeholder='Email'
           autoComplete='email'
+          value={email}
           onChange={handleEmailChange}
           onFocus={() => setInputIsFocused(true)}
           onBlur={() => setInputIsFocused(false)}

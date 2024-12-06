@@ -1,4 +1,6 @@
 import MasterGitAndGithubBookLayout from '@/components/layouts/MasterGitAndGithubBookLayout';
+import { MASTER_GIT_AND_GITHUB_BOOK_URI } from '@/constants/general';
+import { BookStateProvider } from '@/context/book-state/Context';
 import { BookVersionProvider } from '@/context/book-version/Context';
 import { SubscriptionModalProvider } from '@/context/subscription-modal/Context';
 import { BookVersion } from '@/types/book-version';
@@ -19,19 +21,21 @@ function BookDemo({ initialPageId }: BookDemoProps): ReactElement {
   return (
     <MasterGitAndGithubBookLayout initialPageId={initialPageId}>
       <BookVersionProvider version={BookVersion.DEMO}>
-        <SubscriptionModalProvider>
-          <GlobalEffects initialPageId={initialPageId}>
-            <CoverPage />
-            <Page1 />
-            <Page2 />
-            <Page3Demo />
-            <EndPageDemo />
-            <SubscriptionModal
-              formInputId='demo-subscription-modal-email'
-              fixBody={false}
-            />
-          </GlobalEffects>
-        </SubscriptionModalProvider>
+        <BookStateProvider bookURI={MASTER_GIT_AND_GITHUB_BOOK_URI}>
+          <SubscriptionModalProvider>
+            <GlobalEffects initialPageId={initialPageId}>
+              <CoverPage />
+              <Page1 />
+              <Page2 />
+              <Page3Demo />
+              <EndPageDemo />
+              <SubscriptionModal
+                formInputId='demo-subscription-modal-email'
+                fixBody={false}
+              />
+            </GlobalEffects>
+          </SubscriptionModalProvider>
+        </BookStateProvider>
       </BookVersionProvider>
     </MasterGitAndGithubBookLayout>
   );
