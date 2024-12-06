@@ -4,9 +4,10 @@ import LoadingFullPageSpinner from '@/components/elements/LoadingFullPageSpinner
 import MainContainer from '@/components/elements/MainContainer';
 import TextNode from '@/components/elements/TextNode';
 import { VALIDATE_AUTH_TOKEN_ROUTE } from '@/constants/general';
+import { useSessionDispatch } from '@/context/session/Context';
 import axios from 'axios';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { ReactElement, useEffect, useState } from 'react';
+import { ReactElement, useEffect, useRef, useState } from 'react';
 
 enum PageState {
   LOADING = 'LOADING',
@@ -18,6 +19,8 @@ function Page(): ReactElement | never {
   const router = useRouter();
   const [pageState, setPageState] = useState(PageState.LOADING);
   const authToken = searchParams.get('authToken');
+  const authTokenIsValidated = useRef(false);
+  const { setSession } = useSessionDispatch();
 
   useEffect(() => {
     async function validateAuthToken(authToken: string | null): Promise<void> {
@@ -26,19 +29,24 @@ function Page(): ReactElement | never {
       }
 
       try {
-        await axios.post(VALIDATE_AUTH_TOKEN_ROUTE, {
+        const res = await axios.post(VALIDATE_AUTH_TOKEN_ROUTE, {
           authToken,
         });
+        setSession(res.data.session);
       } catch (error) {
         console.log('error validating auth token', error);
         setPageState(PageState.INVALID);
       }
 
+      authTokenIsValidated.current = true;
+
       router.push('/');
     }
 
-    validateAuthToken(authToken);
-  }, [authToken, router]);
+    if (authTokenIsValidated.current === false) {
+      validateAuthToken(authToken);
+    }
+  }, [authToken, router, setSession]);
 
   if (pageState === PageState.INVALID) {
     return (
