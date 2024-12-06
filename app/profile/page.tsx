@@ -91,7 +91,8 @@ function Profile(): ReactElement {
     {
       '!bg-[#A1A1A1]  dark:!bg-gray-dark-lighter2  !text-white':
         fullName === (session.readerFullName ?? ''),
-      'hover:!bg-black  dark:hover:!bg-white  cursor-default': submitLoading,
+      'hover:!bg-black  dark:hover:!bg-white  dark:hover:!text-black  cursor-default':
+        submitLoading,
     },
   );
 
