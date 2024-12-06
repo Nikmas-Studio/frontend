@@ -27,7 +27,7 @@ function CoverPage(): ReactElement {
     let delay: number;
     if (hasLoaded !== null && justAfterReload === null) {
       console.log('setting justAfterReload');
-      delay = 0.2;
+      delay = 0.1;
       sessionStorage.setItem('justAfterReload', 'false');
     } else {
       delay = 0.7;
@@ -53,7 +53,7 @@ function CoverPage(): ReactElement {
           sessionStorage.setItem('hasReloaded', 'true');
           window.location.reload();
         }
-      }, 500);
+      }, 600);
     }
   }, []);
 
