@@ -22,11 +22,12 @@ function CoverPage(): ReactElement {
 
   useGSAP(() => {
     const justAfterReload = sessionStorage.getItem('justAfterReload');
-    const hasLoaded = sessionStorage.getItem('hasLoaded');
+    const hasLoaded = sessionStorage.getItem('hasReloaded');
 
     let delay: number;
     if (hasLoaded !== null && justAfterReload === null) {
-      delay = 0;
+      console.log('setting justAfterReload');
+      delay = 0.2;
       sessionStorage.setItem('justAfterReload', 'false');
     } else {
       delay = 0.7;
