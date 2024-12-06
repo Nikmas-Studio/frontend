@@ -21,7 +21,18 @@ function CoverPage(): ReactElement {
   const { gsapShouldUpdate } = useGsapResizeUpdate();
 
   useGSAP(() => {
-    gsap.delayedCall(0.7, () => {
+    const justAfterReload = sessionStorage.getItem('justAfterReload');
+    const hasLoaded = sessionStorage.getItem('hasLoaded');
+
+    let delay: number;
+    if (hasLoaded !== null && justAfterReload === null) {
+      delay = 0;
+      sessionStorage.setItem('justAfterReload', 'false');
+    } else {
+      delay = 0.7;
+    }
+
+    gsap.delayedCall(delay, () => {
       gsap.set(innerContentRef.current, {
         opacity: 1,
       });
@@ -33,9 +44,11 @@ function CoverPage(): ReactElement {
 
     if (window.innerWidth < 1024) {
       setTimeout(() => {
+        console.log('reloading');
+
         const hasReloaded = sessionStorage.getItem('hasReloaded');
 
-        if (!hasReloaded) {
+        if (hasReloaded === null) {
           sessionStorage.setItem('hasReloaded', 'true');
           window.location.reload();
         }
