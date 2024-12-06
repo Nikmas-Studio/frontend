@@ -22,8 +22,6 @@ function MasterGitAndGithubBookLayout({
           <script
             dangerouslySetInnerHTML={{
               __html: `
-                document.documentElement.classList.add('overflow-hidden');
-                
                 const path = window.location.pathname;
                 
                 if (
