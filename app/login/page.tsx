@@ -6,7 +6,7 @@ import TextNode from '@/components/elements/TextNode';
 import { VALIDATE_AUTH_TOKEN_ROUTE } from '@/constants/general';
 import { useSessionDispatch } from '@/context/session/Context';
 import axios from 'axios';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { ReactElement, useEffect, useRef, useState } from 'react';
 
 enum PageState {
@@ -16,7 +16,6 @@ enum PageState {
 
 function Page(): ReactElement | never {
   const searchParams = useSearchParams();
-  const router = useRouter();
   const [pageState, setPageState] = useState(PageState.LOADING);
   const authToken = searchParams.get('authToken');
   const authTokenIsValidated = useRef(false);
@@ -25,7 +24,7 @@ function Page(): ReactElement | never {
   useEffect(() => {
     async function validateAuthToken(authToken: string | null): Promise<void> {
       if (authToken === null) {
-        router.push('/');
+        window.location.href = '/';
       }
 
       try {
@@ -40,13 +39,13 @@ function Page(): ReactElement | never {
 
       authTokenIsValidated.current = true;
 
-      router.push('/');
+      window.location.href = '/';
     }
 
     if (authTokenIsValidated.current === false) {
       validateAuthToken(authToken);
     }
-  }, [authToken, router, setSession]);
+  }, [authToken, setSession]);
 
   if (pageState === PageState.INVALID) {
     return (
