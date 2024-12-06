@@ -26,6 +26,21 @@ function CoverPage(): ReactElement {
         opacity: 1,
       });
     });
+
+    if (window.innerWidth > 1024) {
+      return;
+    }
+
+    if (window.innerWidth < 1024) {
+      setTimeout(() => {
+        const hasReloaded = sessionStorage.getItem('hasReloaded');
+
+        if (!hasReloaded) {
+          sessionStorage.setItem('hasReloaded', 'true');
+          window.location.reload();
+        }
+      }, 500);
+    }
   }, []);
 
   useGSAP(
