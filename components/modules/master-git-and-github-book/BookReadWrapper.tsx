@@ -48,9 +48,6 @@ function BookReadWrapper({ initialPageId }: BookReadProps): ReactElement {
     defineBookState();
   }, []);
 
-  console.log('bookState1', bookState);
-  console.log('reloadTokenIsValid?1: ', reloadTokenIsValid);
-
   if (bookState === BookState.LOADING) {
     return (
       <div
@@ -71,11 +68,7 @@ function BookReadWrapper({ initialPageId }: BookReadProps): ReactElement {
     );
   }
 
-  console.log('bookState2', bookState);
-  console.log('reloadTokenIsValid?2: ', reloadTokenIsValid);
-
   if (isSmallDevice.current && !reloadTokenIsValid.current) {
-    console.log('small device and reload token is not valid');
     return (
       <>
         <div
