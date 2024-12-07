@@ -82,9 +82,9 @@ function BookReadWrapper({ initialPageId }: BookReadProps): ReactElement {
           className='fixed  inset-0  z-[111992]  flex  
                       size-full  justify-center [background:linear-gradient(135deg,#ff5013,#271ad3)]'
         >
-          <div className='mt-[40vh]'>
+          {/* <div className='mt-[40vh]'>
             <CircularProgress className='!size-[50px]  !text-white' />
-          </div>
+          </div> */}
         </div>
         <BookRead initialPageId={initialPageId} />
       </>
