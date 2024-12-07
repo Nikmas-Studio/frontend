@@ -157,6 +157,8 @@ function AccountIconDefault({
       hidden:
         session === null ||
         defineReaderStatus(session) === ReaderStatus.REGULAR,
+      '!translate-y-[-0.15rem]':
+        session !== null && session.readerFullName !== null,
     },
   );
 
