@@ -15,12 +15,16 @@ function MasterGitAndGithubBookRead(): ReactElement {
 
   useEffect(() => {
     async function defineBookState(): Promise<void> {
-      const res = await axios.get(
-        buildBookAccessRoute(MASTER_GIT_AND_GITHUB_BOOK_URI),
-      );
-      if (res.data.accessGranted) {
-        setBookState(BookState.BOUGHT);
-      } else {
+      try {
+        const res = await axios.get(
+          buildBookAccessRoute(MASTER_GIT_AND_GITHUB_BOOK_URI),
+        );
+        if (res.data.accessGranted) {
+          setBookState(BookState.BOUGHT);
+        } else {
+          setBookState(BookState.UNBOUGHT);
+        }
+      } catch (error) {
         setBookState(BookState.UNBOUGHT);
       }
     }
@@ -33,12 +37,14 @@ function MasterGitAndGithubBookRead(): ReactElement {
       const encryptedToken = localStorage.getItem('reloadToken');
       const iv = localStorage.getItem('reloadTokenIv');
 
-      const { isValid } = await decryptAndValidateBookReloadToken(
-        encryptedToken!,
-        iv!,
-      );
+      try {
+        const { isValid } = await decryptAndValidateBookReloadToken(
+          encryptedToken!,
+          iv!,
+        );
 
-      reloadTokenIsValid.current = isValid;
+        reloadTokenIsValid.current = isValid;
+      } catch (error) {}
     }
 
     setToken();
