@@ -259,19 +259,21 @@ function SubscriptionModal({
                     that&nbsp;will&nbsp;ever be published
                   </TextNode>
                 )}
-                <TextNode className='max-w-[25.4rem]'>
-                  Automatic enrolment{' '}
-                  <a href='https://intagram.com' className='default-link'>
-                    in&nbsp;the&nbsp;second part of&nbsp;the&nbsp;contest
-                  </a>{' '}
-                  in&nbsp;honor of&nbsp;the&nbsp;company launch,
-                  with&nbsp;a&nbsp;chance to&nbsp;
-                  <strong>
-                    win&nbsp;one of&nbsp;ten free&nbsp;lifetime&nbsp;access
-                    passes to&nbsp;all studio books
-                  </strong>{' '}
-                  that&nbsp;will&nbsp;ever be published
-                </TextNode>
+                {bookState === BookState.UNBOUGHT && (
+                  <TextNode className='max-w-[25.4rem]'>
+                    Automatic enrolment{' '}
+                    <a href='https://intagram.com' className='default-link'>
+                      in&nbsp;the&nbsp;second part of&nbsp;the&nbsp;contest
+                    </a>{' '}
+                    in&nbsp;honor of&nbsp;the&nbsp;company launch,
+                    with&nbsp;a&nbsp;chance to&nbsp;
+                    <strong>
+                      win&nbsp;one of&nbsp;ten free&nbsp;lifetime&nbsp;access
+                      passes to&nbsp;all studio books
+                    </strong>{' '}
+                    that&nbsp;will&nbsp;ever be published
+                  </TextNode>
+                )}
               </li>
               <li>
                 <TextNode className='!text-2xl  font-light'>+</TextNode>
