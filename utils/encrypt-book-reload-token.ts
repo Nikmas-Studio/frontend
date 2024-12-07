@@ -1,38 +1,15 @@
 import { BOOK_RELOAD_KEY } from '@/constants/general';
+import { sha256 } from 'js-sha256';
 
-interface EncryptionResult {
-  encryptedToken: string;
-  iv: string;
-}
-
-export async function encryptBookReloadToken(): Promise<EncryptionResult> {
+export function encryptBookReloadToken(): string {
   const secretKey = BOOK_RELOAD_KEY;
-  const encoder = new TextEncoder();
-  const keyData = encoder.encode(secretKey);
 
-  const hash = await crypto.subtle.digest('SHA-256', keyData);
+  const value = 'bookReloadToken';
 
-  const cryptoKey = await crypto.subtle.importKey(
-    'raw',
-    hash,
-    { name: 'AES-GCM' },
-    false,
-    ['encrypt'],
-  );
+  const expiry = Date.now() + 5 * 60 * 1000;
+  const plainToken = `${value}.${expiry}`;
+  const signature = sha256.hmac(secretKey, plainToken);
 
-  const value = 'true';
-  const expiry = Date.now() + 1000 * 60; // 1 minute
-
-  const token = `${value}.${expiry}`;
-  const iv = crypto.getRandomValues(new Uint8Array(12));
-  const encrypted = await crypto.subtle.encrypt(
-    { name: 'AES-GCM', iv },
-    cryptoKey,
-    encoder.encode(token),
-  );
-
-  return {
-    encryptedToken: btoa(String.fromCharCode(...new Uint8Array(encrypted))),
-    iv: btoa(String.fromCharCode(...iv)),
-  };
+  const combinedToken = `${plainToken}.${signature}`;
+  return btoa(combinedToken);
 }

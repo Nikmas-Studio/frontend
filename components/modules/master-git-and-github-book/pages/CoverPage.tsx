@@ -43,17 +43,16 @@ function CoverPage(): ReactElement {
     }
 
     if (window.innerWidth <= 1280) {
-      setTimeout(async () => {
+      setTimeout(() => {
         console.log('reloading');
 
         const hasReloaded = localStorage.getItem('hasReloaded');
 
         if (hasReloaded === null) {
           localStorage.setItem('hasReloaded', 'true');
-          const { encryptedToken, iv } = await encryptBookReloadToken();
+          const encryptedToken = encryptBookReloadToken();
 
           localStorage.setItem('reloadToken', encryptedToken);
-          localStorage.setItem('reloadTokenIv', iv);
 
           window.location.reload();
         } else {
