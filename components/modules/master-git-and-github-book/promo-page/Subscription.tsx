@@ -86,7 +86,7 @@ function Subscription(): ReactElement {
                       win&nbsp;one of&nbsp;ten free&nbsp;lifetime&nbsp;access
                       passes to&nbsp;all studio books
                     </strong>{' '}
-                    that&nbsp;will&nbsp;ever be published
+                    that&nbsp;will&nbsp;ever be&nbsp;published
                   </TextNode>
                 </li>
                 <li>

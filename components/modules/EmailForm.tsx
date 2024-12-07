@@ -145,7 +145,7 @@ function EmailForm({
   }
 
   const buttonClassNames = classNames(
-    `relative  shrink-0  h-[2.53125rem]  w-[80px]  rounded-r-[5px]  border`,
+    `group  relative  shrink-0  h-[2.53125rem]  w-[80px]  rounded-r-[5px]  border`,
     buttonClasses,
     {
       [buttonInputFocusedClasses]: inputIsFocused,
@@ -210,10 +210,16 @@ function EmailForm({
   );
 
   const arrowClasses = classNames(
-    'absolute  left-1/2  top-[48%]  -translate-x-1/2  -translate-y-1/2  transition-opacity  duration-500',
+    `absolute  left-1/2  top-[48%]  -translate-x-1/2  -translate-y-1/2  
+     [transition:opacity_500ms_cubic-bezier(0.4,0,0.2,1),transform_150ms_cubic-bezier(0.4,0,0.2,1)]`,
     {
       'opacity-0':
         formState !== FormState.IDLE && formState !== FormState.ERROR,
+      'group-hover:scale-[1.25]':
+        email !== '' &&
+        (formState === FormState.IDLE ||
+          formState === FormState.ERROR ||
+          formState === FormState.RELEASED),
     },
   );
 
