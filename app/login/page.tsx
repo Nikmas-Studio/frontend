@@ -35,6 +35,7 @@ function Page(): ReactElement | never {
       } catch (error) {
         console.log('error validating auth token', error);
         setPageState(PageState.INVALID);
+        return;
       }
 
       authTokenIsValidated.current = true;
