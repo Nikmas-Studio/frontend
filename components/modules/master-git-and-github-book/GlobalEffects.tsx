@@ -51,19 +51,6 @@ function GlobalEffects({
     previousPathRef.current = path;
   }, [path]);
 
-  // useEffect(() => {
-  //   if (window.innerWidth > 1024) {
-  //     return;
-  //   }
-
-  //   const hasReloaded = sessionStorage.getItem('hasReloaded');
-
-  //   if (!hasReloaded) {
-  //     sessionStorage.setItem('hasReloaded', 'true');
-  //     window.location.reload();
-  //   }
-  // }, []);
-
   useEffect(() => {
     return () => {
       document.documentElement.classList.remove('!bg-black');

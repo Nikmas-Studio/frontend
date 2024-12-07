@@ -12,3 +12,4 @@ export const SESSION_ID_COOKIE_NAME = 'sessionId';
 export const MASTER_GIT_AND_GITHUB_BOOK_URI = 'book-master-git-and-github';
 export const BASE_FRONTEND_URL = 'https://nikmas.studio';
 export const READER_FULL_NAME_MAX_LENGTH = 50;
+export const BOOK_RELOAD_KEY = '11reloadThisBook11';
