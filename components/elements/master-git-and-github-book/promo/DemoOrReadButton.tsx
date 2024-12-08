@@ -34,7 +34,7 @@ function DemoOrReadButton(): ReactElement {
   }
 
   return (
-    <a href={href} className={classes}>
+    <a {...(bookState !== BookState.LOADING && { href })} className={classes}>
       {bookState === BookState.LOADING && (
         <span className='inline-block  size-[20px]  translate-y-[3px]'>
           <CircularProgress className='!size-[20px]  !text-white  dark:!text-black' />

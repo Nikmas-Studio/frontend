@@ -76,12 +76,12 @@ function Subscription(): ReactElement {
                 </li>
                 <li>
                   <TextNode className='max-w-[25.4rem]'>
-                    Automatic enrolment{' '}
+                    Automatic enrolment in&nbsp;the&nbsp;second part{' '}
                     <a href='https://intagram.com' className='default-link'>
-                      in&nbsp;the&nbsp;second part of&nbsp;the&nbsp;contest
-                    </a>{' '}
-                    in&nbsp;honor of&nbsp;the&nbsp;company launch,
-                    with&nbsp;a&nbsp;chance to&nbsp;
+                      of&nbsp;the&nbsp;contest in&nbsp;honor
+                      of&nbsp;the&nbsp;company launch
+                    </a>
+                    , with&nbsp;a&nbsp;chance to&nbsp;
                     <strong>
                       win&nbsp;one of&nbsp;ten free&nbsp;lifetime&nbsp;access
                       passes to&nbsp;all studio books
