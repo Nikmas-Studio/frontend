@@ -143,10 +143,6 @@ function Intro(): ReactElement {
               0,
             );
 
-          // if (window.innerWidth >= 640) {
-          //   charsTimeline.restart();
-          // }
-
           handleMouseEnter = contextSave!((): void => {
             if (!isTouchDeviceRef.current) {
               if (!charsTimeline.isActive()) {
@@ -260,7 +256,6 @@ function Intro(): ReactElement {
           ref={spineRef}
           data-element='studio-intro-spine'
           className='hidden  
-                    
                      h-[clamp(1px,63.1vh,min(700px,51.7vw))]
                      w-[clamp(1px,7.7vh,min(66px,6vw))]  
                      translate-x-[100vw]

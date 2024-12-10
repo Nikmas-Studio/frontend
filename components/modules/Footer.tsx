@@ -32,18 +32,18 @@ function Footer({ className }: FooterProps): ReactElement {
           </p>
           <ul className='flex  flex-col  items-center  gap-2  text-sm  sm:items-start  dark:text-white'>
             <li>
-              <Link className='default-link' href='/terms-and-conditions'>
+              <Link className='default-link' href='/terms-and-conditions.pdf'>
                 Terms and conditions
               </Link>
             </li>
             <li>
-              <Link className='default-link' href='/privacy-policy'>
+              <Link className='default-link' href='/privacy-policy.pdf'>
                 Privacy policy
               </Link>
             </li>
             <li>
-              <Link className='default-link' href='/cookies-policy'>
-                Cookies policy
+              <Link className='default-link' href='/cookie-policy.pdf'>
+                Cookie policy
               </Link>
             </li>
           </ul>

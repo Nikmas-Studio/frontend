@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --root-font-size: 16;
-}
-
 html,
 body {
   overflow-x: clip;

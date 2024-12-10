@@ -1348,7 +1348,7 @@ function Page3Read(): ReactElement {
                 >
                   <li className='text-[0.3em]'>Terms and conditions</li>
                   <li className='text-[0.3em]'>Privacy policy</li>
-                  <li className='text-[0.3em]'>Cookies policy</li>
+                  <li className='text-[0.3em]'>Cookie policy</li>
                 </ul>
               </div>
               <div className='flex  flex-row  gap-[0.3em]'>
