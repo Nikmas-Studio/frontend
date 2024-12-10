@@ -3,6 +3,7 @@ import instagramLogo from '@/public/images/instagram-logo.png';
 import linkedinLogo from '@/public/images/linkedin-logo.png';
 import telegramLogo from '@/public/images/telegram-logo.png';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ReactElement } from 'react';
 import ExternalLink from '../elements/ExternalLink';
 import MainContainer from '../elements/MainContainer';
@@ -23,19 +24,19 @@ function Footer(): ReactElement {
           </p>
           <ul className='flex  flex-col  items-center  gap-2  text-sm  sm:items-start  dark:text-white'>
             <li>
-              {/* <Link className='default-link' href='/terms-and-conditions'> */}
-              Terms and conditions (very soon...)
-              {/* </Link> */}
+              <Link className='default-link' href='/terms-and-conditions.pdf'>
+                Terms and conditions
+              </Link>
             </li>
             <li>
-              {/* <Link className='default-link' href='/privacy-policy'> */}
-              Privacy policy (very soon...)
-              {/* </Link> */}
+              <Link className='default-link' href='/privacy-policy.pdf'>
+                Privacy policy
+              </Link>
             </li>
             <li>
-              {/* <Link className='default-link' href='/cookies-policy'> */}
-              Cookies policy (very soon...)
-              {/* </Link> */}
+              <Link className='default-link' href='/cookie-policy.pdf'>
+                Cookie policy
+              </Link>
             </li>
           </ul>
         </div>
