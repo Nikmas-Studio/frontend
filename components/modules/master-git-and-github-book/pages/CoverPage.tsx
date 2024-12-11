@@ -4,11 +4,13 @@ import ScrollHintMouse from '@/components/elements/ScrollHintMouse';
 import useGsapResizeUpdate from '@/hooks/use-gsap-resize-update';
 import bookCoverDark from '@/public/images/git-and-github-book-cover-dark-no-spine.jpg';
 import bookCoverLight from '@/public/images/git-and-github-book-cover-light-no-spine.jpg';
+import { encryptBookReloadToken } from '@/utils/encrypt-book-reload-token';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Image from 'next/image';
 import { ReactElement, useRef } from 'react';
+import { setTimeout } from 'timers';
 import Page from '../../../elements/master-git-and-github-book/Page';
 import ThemeToggleDefault from '../../header/theme-toggle/ThemeToggleDefault';
 
@@ -21,11 +23,49 @@ function CoverPage(): ReactElement {
   const { gsapShouldUpdate } = useGsapResizeUpdate();
 
   useGSAP(() => {
-    gsap.delayedCall(0.7, () => {
+    const hasReloaded = localStorage.getItem('hasReloaded');
+
+    let delay: number;
+    if (hasReloaded !== null) {
+      delay = 0.3;
+    } else {
+      delay = 0.7;
+    }
+
+    gsap.delayedCall(delay, () => {
       gsap.set(innerContentRef.current, {
         opacity: 1,
       });
     });
+
+    if (window.innerWidth > 1280) {
+      return;
+    }
+
+    if (window.innerWidth <= 1280) {
+      setTimeout(() => {
+        console.log('reloading');
+
+        const hasReloaded = localStorage.getItem('hasReloaded');
+
+        if (hasReloaded === null) {
+          localStorage.setItem('hasReloaded', 'true');
+          const encryptedToken = encryptBookReloadToken();
+
+          localStorage.setItem('reloadToken', encryptedToken);
+
+          window.location.reload();
+        } else {
+          setTimeout(() => {
+            localStorage.removeItem('hasReloaded');
+            localStorage.removeItem('reloadToken');
+            localStorage.removeItem('reloadTokenIv');
+          }, 100);
+        }
+      }, 600);
+    } else {
+      localStorage.removeItem('hasReloaded');
+    }
   }, []);
 
   useGSAP(

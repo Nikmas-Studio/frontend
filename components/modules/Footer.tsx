@@ -2,18 +2,26 @@ import facebookLogo from '@/public/images/facebook-logo.svg';
 import instagramLogo from '@/public/images/instagram-logo.png';
 import linkedinLogo from '@/public/images/linkedin-logo.png';
 import telegramLogo from '@/public/images/telegram-logo.png';
+import classNames from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ReactElement } from 'react';
 import ExternalLink from '../elements/ExternalLink';
 import MainContainer from '../elements/MainContainer';
 
-function Footer(): ReactElement {
+interface FooterProps {
+  className?: string;
+}
+
+function Footer({ className }: FooterProps): ReactElement {
+  const footerClasses = classNames(
+    `mt-44  border-t  border-gray-light  pb-20
+     pt-12  sm:pb-[4.5rem]  lg:mt-48  dark:border-gray-dark`,
+    className,
+  );
+
   return (
-    <footer
-      className='mt-44  border-t  border-gray-light  pb-20  
-                 pt-12  sm:pb-[4.5rem]  lg:mt-48  dark:border-gray-dark'
-    >
+    <footer className={footerClasses}>
       <MainContainer
         className='flex  flex-col-reverse  items-center  sm:flex-row
                    sm:items-start  sm:justify-between'

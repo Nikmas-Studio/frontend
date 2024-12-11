@@ -19,19 +19,19 @@ export const metadata: Metadata = {
     siteName: 'Nikmas Studio',
     images: [
       {
-        url: 'https://nikmas.studio/images/og-primary.jpg',
+        url: 'https://nikmas.studio/images/main-og-primary.jpg',
         width: 1200,
         height: 630,
         alt: 'Nikmas Studio',
       },
       {
-        url: 'https://nikmas.studio/images/og-high-res.jpg',
+        url: 'https://nikmas.studio/images/main-og-high-res.jpg',
         width: 1800,
         height: 945,
         alt: 'Nikmas Studio',
       },
       {
-        url: 'https://nikmas.studio/images/og-square.jpg',
+        url: 'https://nikmas.studio/images/main-og-square.jpg',
         width: 1080,
         height: 1080,
         alt: 'Nikmas Studio',

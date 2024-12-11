@@ -1,11 +1,11 @@
 import BasicTextNode from '@/components/elements/BasicTextNode';
 import MainContainer from '@/components/elements/MainContainer';
+import DemoOrReadButton from '@/components/elements/master-git-and-github-book/promo/DemoOrReadButton';
 import TextNode from '@/components/elements/TextNode';
-import bookCoverDark from '@/public/images/git-and-github-book-cover-dark.jpg';
-import bookCoverLight from '@/public/images/git-and-github-book-cover-light.jpg';
 import authorPhoto from '@/public/images/Nick_Maslov.jpg';
 import Image from 'next/image';
 import { ReactElement } from 'react';
+import BookCover from './BookCover';
 
 function Intro(): ReactElement {
   return (
@@ -31,35 +31,9 @@ function Intro(): ReactElement {
                            xl:w-[400px]'
           >
             <div className='mb-10'>
-              <Image
-                src={bookCoverLight}
-                alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
-                className='pointer-events-none  w-full  select-none
-                           rounded-[14px]  
-                           [box-shadow:0px_0px_85px_20px_rgba(0,0,0,0.06)]  dark:hidden'
-                sizes='(max-width: 639px) 100vw, (max-width: 1023px) 400px, (max-width: 1279px) 30vw, 400px'
-                quality={100}
-                priority
-              />
-              <Image
-                src={bookCoverDark}
-                alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
-                className='pointer-events-none  hidden  w-full  select-none
-                             rounded-[14px]  dark:inline-block'
-                sizes='(max-width: 639px) 100vw, (max-width: 1023px) 400px, (max-width: 1279px) 30vw, 400px'
-                quality={100}
-                priority
-              />
+              <BookCover />
             </div>
-            <a
-              href='/book-master-git-and-github/demo'
-              className='button  mb-1  self-center 
-                         bg-black  text-white
-                         hover:bg-blue  dark:bg-white
-                         dark:text-black dark:hover:text-white'
-            >
-              Try demo
-            </a>
+            <DemoOrReadButton />
           </div>
           <div className='mt-12  max-w-[685px]  lg:mt-0  xl:pl-14  xl:pr-16'>
             <BasicTextNode
@@ -89,10 +63,9 @@ function Intro(): ReactElement {
             <TextNode>
               What I&nbsp;offer is&nbsp;an&nbsp;e&#8209;book that&nbsp;is
               at&nbsp;the&nbsp;same time highly illustrative, interactive, deep
-              enough, up-to-date, and&nbsp;that&nbsp;will&nbsp;take you step
-              by&nbsp;step from&nbsp;a&nbsp;point where you know nothing
-              about&nbsp;Git and&nbsp;GitHub to&nbsp;a&nbsp;master level
-              in&nbsp;those tools.
+              enough, and&nbsp;that&nbsp;will&nbsp;take you step by&nbsp;step
+              from&nbsp;a&nbsp;point where you know nothing about&nbsp;Git
+              and&nbsp;GitHub to&nbsp;a&nbsp;master level in&nbsp;those tools.
             </TextNode>
             <TextNode>
               And&nbsp;unlike video format, it&apos;ll&nbsp;be

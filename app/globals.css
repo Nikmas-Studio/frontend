@@ -2,19 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --root-font-size: 16;
-}
-
 html,
 body {
   overflow-x: clip;
 }
 
+.grecaptcha-badge {
+  visibility: hidden !important;
+}
+
 @layer components {
   .default-link {
-    @apply text-black  dark:text-white  border-b border-gray-light-darker
-           dark:border-gray-dark-lighter  pb-[0.07rem]  transition-[border-color]
+    @apply text-black  dark:text-white  border-b border-gray-light-darker2
+           dark:border-gray-dark-lighter2  pb-[0.07rem]  transition-[border-color]
            hover:border-black  dark:hover:border-white;
   }
 
@@ -25,7 +25,7 @@ body {
   .button {
     @apply inline-block  rounded-lg  px-6  
            py-2  text-lg  font-semibold 
-           hover:transition-colors  xl:pb-[.60rem];
+           transition-colors  xl:pb-[.60rem];
   }
 }
 

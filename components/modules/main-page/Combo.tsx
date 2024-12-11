@@ -27,7 +27,7 @@ function Combo(): ReactElement {
                 x='0px'
                 y='0px'
                 viewBox='0 0 622 1729'
-                enable-background='new 0 0 622 1729'
+                enableBackground='new 0 0 622 1729'
               >
                 <path
                   className='fill-black  dark:fill-white'
@@ -98,7 +98,7 @@ function Combo(): ReactElement {
                 x='0px'
                 y='0px'
                 viewBox='0 0 622 1789'
-                enable-background='new 0 0 622 1789'
+                enableBackground='new 0 0 622 1789'
               >
                 <path
                   className='fill-black  dark:fill-white'

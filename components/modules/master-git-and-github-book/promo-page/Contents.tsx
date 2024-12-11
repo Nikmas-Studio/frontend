@@ -99,12 +99,12 @@ function Contents(): ReactElement {
                                max-w-[270px]  
                                fill-white
                                will-change-transform
-                               [filter:drop-shadow(0_0_150px_rgba(0,0,0,0.10))]  md:ml-0  md:mt-20  
+                               [filter:drop-shadow(0_0_120px_rgba(0,0,0,0.08))]  md:ml-0  md:mt-20  
                                md:w-4/5
                                md:max-w-[280px]  
                                md:[filter:drop-shadow(0_0_250px_rgba(0,0,0,0.22))]
                                dark:fill-black
-                               dark:[filter:drop-shadow(0_0_150px_rgba(255,255,255,0.34))]
+                               dark:[filter:drop-shadow(0_0_120px_rgba(255,255,255,0.25))]
                                dark:md:[filter:drop-shadow(0_0_250px_rgba(255,255,255,0.68))]'
             />
           </div>

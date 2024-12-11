@@ -11,7 +11,7 @@ const H3 = forwardRef<HTMLHeadingElement, H3Props>(function H3(
   ref,
 ): ReactElement {
   const classes = classNames(
-    `text-3xl  font-semibold  max-lg:text-2xl  leading-tight
+    `text-3xl  font-semibold  max-lg:text-[1.625rem]  leading-tight
      text-git-black  dark:text-git-white  mb-5`,
     className,
   );

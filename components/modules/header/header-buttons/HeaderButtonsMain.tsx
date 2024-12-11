@@ -1,12 +1,12 @@
 import { ReactElement } from 'react';
-import GuestAccountIconMain from '../../../elements/header/guest-account-icon/GuestAccountIconMain';
+import AccountIconMain from '../../../elements/header/guest-account-icon/AccountIconMain';
 import ThemeToggleMain from '../theme-toggle/ThemeToggleMain';
 
 function HeaderButtonsMain(): ReactElement {
   return (
     <div className='flex  items-center  gap-x-5'>
       <ThemeToggleMain className='flex-none' />
-      <GuestAccountIconMain className='flex-none' />
+      <AccountIconMain className='flex-none' />
     </div>
   );
 }

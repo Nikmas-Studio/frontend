@@ -12,16 +12,15 @@ const H4 = forwardRef<HTMLHeadingElement, H2Props>(function H2(
 ): ReactElement {
   const classes = classNames(
     `text-[1.4375rem]  font-medium  text-black
-     dark:text-white  leading-tight
-     `,
+     dark:text-white  leading-tight`,
 
     className,
   );
 
   return (
-    <h3 ref={ref} className={classes}>
+    <h4 ref={ref} className={classes}>
       {children}
-    </h3>
+    </h4>
   );
 });
 

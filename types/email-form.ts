@@ -4,7 +4,9 @@ export enum EmailFormType {
 }
 
 export enum FormState {
-  IDLE,
-  SUBMITTING,
-  SUBMITTED,
+  IDLE = 'IDLE',
+  SUBMITTING = 'SUBMITTING',
+  SUBMITTED = 'SUBMITTED',
+  RELEASED = 'RELEASED',
+  ERROR = 'ERROR',
 }
