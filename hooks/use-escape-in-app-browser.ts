@@ -26,7 +26,8 @@ export function useEscapeInAppBrowser({
     if (os === 'android') {
       link = `intent:${currentUrl}#Intent;end`;
     } else if (os === 'ios') {
-      link = `x-safari-${currentUrl}`;
+      // link = `shortcuts://x-callback-url/run-shortcut?name=${crypto.randomUUID()}&x-error=${encodeURIComponent(currentUrl)}`;
+      setReturnEscapeComponentURL(currentUrl);
       return;
     } else {
       return;
