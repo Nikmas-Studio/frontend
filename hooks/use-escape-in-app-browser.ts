@@ -26,9 +26,23 @@ export function useEscapeInAppBrowser({
     if (os === 'android') {
       link = `intent:${currentUrl}#Intent;end`;
     } else if (os === 'ios') {
-      // link = `shortcuts://x-callback-url/run-shortcut?name=${crypto.randomUUID()}&x-error=${encodeURIComponent(currentUrl)}`;
-      setReturnEscapeComponentURL(currentUrl);
-      return;
+      const osVersion = Bowser.getParser(
+        window.navigator.userAgent,
+      ).getOSVersion();
+
+      if (osVersion) {
+        const [majorVersion] = osVersion.split('.').map(Number);
+
+        if (majorVersion >= 17) {
+          link = `x-safari-${currentUrl}`;
+        } else {
+          setReturnEscapeComponentURL(currentUrl);
+          return;
+        }
+      } else {
+        setReturnEscapeComponentURL(currentUrl);
+        return;
+      }
     } else {
       return;
     }
