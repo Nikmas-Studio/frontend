@@ -22,12 +22,12 @@ function EscapeInAppBrowser(): ReactElement | null {
     const initialUrl = initialUrlMatch![1];
     return (
       <div className='fixed  inset-0  z-[9999999]  size-full  bg-white  dark:bg-black'>
-        <MainContainer className='!mb-0  mt-10'>
+        <MainContainer className='mt-10'>
           <TextNode>
             This&nbsp;website requires a&nbsp;modern, full&#8209;fledged browser
             like&nbsp;Chrome, Safari, or&nbsp;Firefox to&nbsp;function properly:
           </TextNode>
-          <TextNode>
+          <TextNode className='!mb-10'>
             <a href={returnEscapeComponentURL} className='default-link'>
               Open in&nbsp;a&nbsp;modern browser
             </a>
