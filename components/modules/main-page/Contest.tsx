@@ -21,7 +21,10 @@ function Contest(): ReactElement {
             Nikmas&nbsp;Studio
           </p>
           <p className='mt-5  text-3xl  !leading-snug  lg:text-[2.2rem]  dark:text-white'>
-            <ExternalLink href='https://www.instagram.com' defaultTextLink>
+            <ExternalLink
+              href='https://www.instagram.com/nikmas.studio'
+              defaultTextLink
+            >
               by&nbsp;participating <br />
               in&nbsp;a&nbsp;contest <br />
             </ExternalLink>
