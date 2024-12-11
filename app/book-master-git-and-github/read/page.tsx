@@ -1,5 +1,3 @@
-'use client';
-
 import BookReadWrapper from '@/components/modules/master-git-and-github-book/BookReadWrapper';
 import { Metadata } from 'next';
 import { ReactElement } from 'react';
