@@ -24,7 +24,7 @@ export function useEscapeInAppBrowser({
 
     let link;
     if (os === 'android') {
-      link = `intent:${currentUrl}#Intent;end`;
+      link = `intent:${currentUrl}#Intent;scheme=https;end`;
     } else if (os === 'ios') {
       const osVersion = Bowser.getParser(
         window.navigator.userAgent,
@@ -49,6 +49,12 @@ export function useEscapeInAppBrowser({
 
     window.location.replace(link);
 
-    setReturnEscapeComponentURL(currentUrl);
+    if (os === 'android') {
+      setReturnEscapeComponentURL(
+        `intent:${currentUrl}#Intent;scheme=https;end`,
+      );
+    } else {
+      setReturnEscapeComponentURL(currentUrl);
+    }
   }, [path, setReturnEscapeComponentURL]);
 }
