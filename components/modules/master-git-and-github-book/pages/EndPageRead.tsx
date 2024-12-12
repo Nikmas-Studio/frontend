@@ -1,6 +1,7 @@
 'use client';
 
 import ExternalLink from '@/components/elements/ExternalLink';
+import BasicTextNode from '@/components/elements/master-git-and-github-book/BasicTextNode';
 import {
   BASE_PATH_DEMO,
   BASE_PATH_READ,
@@ -21,6 +22,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ReactElement, useRef } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -169,8 +171,11 @@ function EndPageRead(): ReactElement {
           >
             To&nbsp;Be Continued...
           </p>
-          <p className='text-center  text-[2vw]  text-white  max-lg:text-[2.5vw]  max-md:text-[4vw]'>
-            Follow our social media for updates:
+          <p
+            className='text-center  text-[2vw]  text-white  max-lg:text-[2.5vw]  
+                        max-md:text-[4vw]  max-sm:text-[5vw]  max-sm:leading-[1.3]'
+          >
+            Follow our social media for&nbsp;updates:
           </p>
           <ul className='mt-4  flex  justify-center  gap-5  max-lg:mt-3  max-sm:mt-2'>
             <li>
@@ -218,6 +223,17 @@ function EndPageRead(): ReactElement {
               </ExternalLink>
             </li>
           </ul>
+          <div className='mt-7 flex  justify-center'>
+            <Link href='/'>
+              <BasicTextNode
+                className='inline-block  border-b  border-transparent  
+                           pb-[0.07rem]  text-lg  !text-white  transition-colors
+                           hover:border-white'
+              >
+                Go to Homepage
+              </BasicTextNode>
+            </Link>
+          </div>
         </div>
       </div>
     </section>
