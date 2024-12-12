@@ -33,7 +33,7 @@ function EscapeInAppBrowser(): ReactElement | null {
             </a>
           </TextNode>
           <TextNode className='!mb-0'>
-            You can also manually copy and&nbsp;open this&nbsp;link
+            Alternatively, You can also manually copy and&nbsp;open this&nbsp;link
             in&nbsp;a&nbsp;modern, full&#8209;fledged browser, or&nbsp;use
             your&nbsp;current browser&apos;s features to&nbsp;perform
             the&nbsp;switch:
