@@ -1,25 +1,22 @@
 'use client';
 
 import { useEscapeInAppBrowser } from '@/hooks/use-escape-in-app-browser';
+import { EscapeComponentURLs } from '@/types/escape-component-urls';
 import { ReactElement, useState } from 'react';
 import MainContainer from '../elements/MainContainer';
 import TextNode from '../elements/TextNode';
 
 function EscapeInAppBrowser(): ReactElement | null {
-  const [returnEscapeComponentURL, setReturnEscapeComponent] = useState<
-    string | null
-  >(null);
+  const [returnEscapeComponentURLs, setReturnEscapeComponentURLs] =
+    useState<EscapeComponentURLs | null>(null);
 
   useEscapeInAppBrowser({
-    setReturnEscapeComponentURL: setReturnEscapeComponent,
+    setReturnEscapeComponentURL: setReturnEscapeComponentURLs,
   });
 
-  if (returnEscapeComponentURL === null) return null;
+  if (returnEscapeComponentURLs === null) return null;
 
-  if (returnEscapeComponentURL.startsWith('intent:')) {
-    const initialUrlMatch =
-      returnEscapeComponentURL.match(/intent:(.*?)#Intent/);
-    const initialUrl = initialUrlMatch![1];
+  if (returnEscapeComponentURLs.escapeURL !== undefined) {
     return (
       <div className='fixed  inset-0  z-[9999999]  size-full  bg-white  dark:bg-black'>
         <MainContainer className='mt-10'>
@@ -28,7 +25,10 @@ function EscapeInAppBrowser(): ReactElement | null {
             like&nbsp;Chrome, Safari, or&nbsp;Firefox to&nbsp;function properly:
           </TextNode>
           <TextNode className='!mb-10'>
-            <a href={returnEscapeComponentURL} className='default-link'>
+            <a
+              href={returnEscapeComponentURLs.escapeURL}
+              className='default-link'
+            >
               Open in&nbsp;a&nbsp;modern browser
             </a>
           </TextNode>
@@ -39,8 +39,11 @@ function EscapeInAppBrowser(): ReactElement | null {
             the&nbsp;switch:
           </TextNode>
           <TextNode className='!mb-0'>
-            <a href={initialUrl} className='default-link'>
-              {initialUrl}
+            <a
+              href={returnEscapeComponentURLs.originalURL}
+              className='default-link'
+            >
+              {returnEscapeComponentURLs.originalURL}
             </a>
           </TextNode>
         </MainContainer>
@@ -61,8 +64,11 @@ function EscapeInAppBrowser(): ReactElement | null {
           browser&apos;s features to&nbsp;perform the&nbsp;switch:
         </TextNode>
         <TextNode className='!mb-0'>
-          <a href={returnEscapeComponentURL} className='default-link'>
-            {returnEscapeComponentURL}
+          <a
+            href={returnEscapeComponentURLs.originalURL}
+            className='default-link'
+          >
+            {returnEscapeComponentURLs.originalURL}
           </a>
         </TextNode>
       </MainContainer>
