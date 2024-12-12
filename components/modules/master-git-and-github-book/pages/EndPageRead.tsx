@@ -22,7 +22,6 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Image from 'next/image';
-import Link from 'next/link';
 import { ReactElement, useRef } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -224,7 +223,7 @@ function EndPageRead(): ReactElement {
             </li>
           </ul>
           <div className='mt-7 flex  justify-center'>
-            <Link href='/'>
+            <a href='/'>
               <BasicTextNode
                 className='inline-block  border-b  border-transparent  
                            pb-[0.07rem]  text-lg  !text-white  transition-colors
@@ -232,7 +231,7 @@ function EndPageRead(): ReactElement {
               >
                 Go to Homepage
               </BasicTextNode>
-            </Link>
+            </a>
           </div>
         </div>
       </div>
