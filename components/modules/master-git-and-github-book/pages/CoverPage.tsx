@@ -44,8 +44,6 @@ function CoverPage(): ReactElement {
 
     if (window.innerWidth <= 1280) {
       setTimeout(() => {
-        console.log('reloading');
-
         const hasReloaded = localStorage.getItem('hasReloaded');
 
         if (hasReloaded === null) {
