@@ -59,7 +59,6 @@ export default function RootLayout({
               fbq('init', '3555681048062939');
               fbq('track', 'PageView');
               </script>
-              <!-- End Meta Pixel Code -->
             `,
           }}
         />
