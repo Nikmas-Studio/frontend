@@ -6,5 +6,6 @@ declare global {
       useRecaptchaNet?: boolean;
       enterprise?: boolean;
     };
+    fbq: (...args: unknown[]) => void;
   }
 }

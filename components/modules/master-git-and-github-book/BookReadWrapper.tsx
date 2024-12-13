@@ -1,11 +1,18 @@
 'use client';
 
-import { MASTER_GIT_AND_GITHUB_BOOK_URI } from '@/constants/general';
+import {
+  LOG_INFO_ROUTE,
+  MASTER_GIT_AND_GITHUB_BOOK_PRICE,
+  MASTER_GIT_AND_GITHUB_BOOK_URI,
+} from '@/constants/general';
 import { BookState } from '@/types/book-state';
+import { EventName } from '@/types/meta-pixel';
 import { buildBookAccessRoute } from '@/utils/build-book-access-route';
 import { decryptAndValidateBookReloadToken } from '@/utils/decrypt-and-validate-book-reload-token';
+import { verifyOrder } from '@/utils/verifyOrder';
 import { CircularProgress } from '@mui/material';
 import axios from 'axios';
+import { useSearchParams } from 'next/navigation';
 import { ReactElement, useEffect, useRef, useState } from 'react';
 import BookRead from './BookRead';
 
@@ -17,6 +24,7 @@ function BookReadWrapper({ initialPageId }: BookReadProps): ReactElement {
   const [bookState, setBookState] = useState<BookState>(BookState.LOADING);
   const reloadTokenIsValid = useRef(false);
   const isSmallDevice = useRef(false);
+  const searchParams = useSearchParams();
 
   useEffect(() => {
     async function defineBookState(): Promise<void> {
@@ -47,6 +55,39 @@ function BookReadWrapper({ initialPageId }: BookReadProps): ReactElement {
 
     defineBookState();
   }, []);
+
+  useEffect(() => {
+    async function notifyMetaPixelOfPurchase(): Promise<void> {
+      const orderId = searchParams.get('order');
+      if (orderId === null) {
+        return;
+      }
+
+      window.history.replaceState(
+        null,
+        '',
+        `/${MASTER_GIT_AND_GITHUB_BOOK_URI}/read`,
+      );
+
+      const { isValid } = await verifyOrder(orderId);
+      if (isValid) {
+        window.fbq(
+          'track',
+          EventName.PURCHASE,
+          { value: MASTER_GIT_AND_GITHUB_BOOK_PRICE, currency: 'USD' },
+          { eventID: orderId },
+        );
+
+        axios
+          .post(LOG_INFO_ROUTE, {
+            message: `Successfully notified MetaPixel of purchase with orderId: ${orderId}`,
+          })
+          .catch(() => {});
+      }
+    }
+
+    notifyMetaPixelOfPurchase();
+  }, [searchParams]);
 
   if (bookState === BookState.LOADING) {
     return (
