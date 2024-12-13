@@ -6,6 +6,7 @@ export async function verifyOrder(
 ): Promise<{ isValid: boolean }> {
   try {
     const res = await axios.post(`/api/orders/verify`, { orderId });
+    console.log('res.data', JSON.stringify(res.data));
     return res.data.isValid;
   } catch (error) {
     axios
