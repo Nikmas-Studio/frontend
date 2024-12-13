@@ -43,9 +43,7 @@ export default function RootLayout({
             `,
           }}
         />
-        <Script
-          id='meta-pixel'
-          strategy='afterInteractive'
+        <script
           dangerouslySetInnerHTML={{
             __html: `
               !function(f,b,e,v,n,t,s)
