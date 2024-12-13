@@ -71,7 +71,6 @@ function BookReadWrapper({ initialPageId }: BookReadProps): ReactElement {
 
       const { isValid } = await verifyOrder(orderId);
       if (isValid) {
-        console.log('order with orderId:', orderId, 'is valid');
         window.fbq(
           'track',
           EventName.PURCHASE,
@@ -84,8 +83,6 @@ function BookReadWrapper({ initialPageId }: BookReadProps): ReactElement {
             message: `Successfully notified MetaPixel of purchase with orderId: ${orderId}`,
           })
           .catch(() => {});
-      } else {
-        console.log('order with orderId:', orderId, 'is not valid');
       }
     }
 
