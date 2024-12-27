@@ -27,7 +27,7 @@ function CoverPage(): ReactElement {
 
     let delay: number;
     if (hasReloaded !== null) {
-      delay = 0.3;
+      delay = 0.7;
     } else {
       delay = 0.7;
     }
