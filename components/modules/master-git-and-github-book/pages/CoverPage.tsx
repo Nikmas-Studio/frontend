@@ -23,14 +23,7 @@ function CoverPage(): ReactElement {
   const { gsapShouldUpdate } = useGsapResizeUpdate();
 
   useGSAP(() => {
-    const hasReloaded = localStorage.getItem('hasReloaded');
-
-    let delay: number;
-    if (hasReloaded !== null) {
-      delay = 0.7;
-    } else {
-      delay = 0.7;
-    }
+    const delay = 0.7;
 
     gsap.delayedCall(delay, () => {
       gsap.set(innerContentRef.current, {
