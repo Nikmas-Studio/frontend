@@ -245,47 +245,6 @@ function SubscriptionModal({
               </li>
               <li>
                 {bookState === BookState.BOUGHT && (
-                  <TextNode className='max-w-[25.4rem]'>
-                    You&apos;re enrolled in&nbsp;the&nbsp;second part{' '}
-                    <a
-                      href='https://www.instagram.com/p/DDmKQ1pIaoF/?igsh=eXBqc2IzbWRnZWhh'
-                      className='default-link'
-                    >
-                      of&nbsp;the&nbsp;contest in&nbsp;honor
-                      of&nbsp;the&nbsp;company launch
-                    </a>
-                    , with&nbsp;a&nbsp;chance to&nbsp;
-                    <strong>
-                      win&nbsp;one of&nbsp;ten free&nbsp;lifetime&nbsp;access
-                      passes to&nbsp;all studio books
-                    </strong>{' '}
-                    that&nbsp;will&nbsp;ever be&nbsp;published
-                  </TextNode>
-                )}
-                {bookState === BookState.UNBOUGHT && (
-                  <TextNode className='max-w-[25.4rem]'>
-                    Automatic enrolment in&nbsp;the&nbsp;second part{' '}
-                    <a
-                      href='https://www.instagram.com/p/DDmKQ1pIaoF/?igsh=eXBqc2IzbWRnZWhh'
-                      className='default-link'
-                    >
-                      of&nbsp;the&nbsp;contest in&nbsp;honor
-                      of&nbsp;the&nbsp;company launch
-                    </a>
-                    , with&nbsp;a&nbsp;chance to&nbsp;
-                    <strong>
-                      win&nbsp;one of&nbsp;ten free&nbsp;lifetime&nbsp;access
-                      passes to&nbsp;all studio books
-                    </strong>{' '}
-                    that&nbsp;will&nbsp;ever be&nbsp;published
-                  </TextNode>
-                )}
-              </li>
-              <li>
-                <TextNode className='!text-2xl  font-light'>+</TextNode>
-              </li>
-              <li>
-                {bookState === BookState.BOUGHT && (
                   <TextNode className='!mb-0  max-w-[25.4rem]'>
                     You helped speed&nbsp;up the&nbsp;release of&nbsp;new
                     sections of&nbsp;the&nbsp;book, useful and&nbsp;convenient
