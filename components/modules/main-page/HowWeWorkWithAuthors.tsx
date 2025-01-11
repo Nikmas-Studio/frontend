@@ -19,7 +19,7 @@ function HowWeWorkWithAuthors(): ReactElement {
             or&nbsp;previously published books and&nbsp;submit requests
             to&nbsp;create interactive e&#8209;books.
           </TextNode>
-          <div className='mb-6'>
+          <div className='mb-7'>
             <BasicTextNode className='text-4xl  leading-[0.5]'>.</BasicTextNode>
             <BasicTextNode className='text-4xl  leading-[0.5]'>.</BasicTextNode>
             <BasicTextNode className='text-4xl  leading-[0.5]'>.</BasicTextNode>
@@ -29,7 +29,7 @@ function HowWeWorkWithAuthors(): ReactElement {
             based on&nbsp;criteria such as&nbsp;quality, usefulness,
             originality, relevance, and&nbsp;demand.
           </TextNode>
-          <div className='mb-6'>
+          <div className='mb-7'>
             <BasicTextNode className='text-4xl  leading-[0.5]'>.</BasicTextNode>
             <BasicTextNode className='text-4xl  leading-[0.5]'>.</BasicTextNode>
             <BasicTextNode className='text-4xl  leading-[0.5]'>.</BasicTextNode>
@@ -43,7 +43,7 @@ function HowWeWorkWithAuthors(): ReactElement {
             on&nbsp;the&nbsp;studio&apos;s website. The&nbsp;marketing
             department handles the&nbsp;promotion of&nbsp;the&nbsp;book.
           </TextNode>
-          <div className='mb-6'>
+          <div className='mb-7'>
             <BasicTextNode className='text-4xl  leading-[0.5]'>.</BasicTextNode>
             <BasicTextNode className='text-4xl  leading-[0.5]'>.</BasicTextNode>
             <BasicTextNode className='text-4xl  leading-[0.5]'>.</BasicTextNode>
