@@ -99,9 +99,6 @@ function Footer({ className }: FooterProps): ReactElement {
           </li>
         </ul>
         <div className='mb-9  flex  flex-col  sm:mb-0'>
-          <p className='mb-1  text-lg  leading-snug  dark:text-white'>
-            For&nbsp;questions <br /> and&nbsp;suggestions:
-          </p>
           <p className='text-lg  font-semibold  dark:text-white'>
             <ExternalLink href='mailto:team@nikmas.studio'>
               team@nikmas.studio

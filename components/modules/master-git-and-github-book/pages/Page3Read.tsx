@@ -1382,11 +1382,8 @@ function Page3Read(): ReactElement {
                 </div>
               </div>
               <div className='text-[0.42em]  text-blue  dark:text-[#473AFF]'>
-                <p className='leading-tight'>
-                  For questions <br /> and suggestions:
-                </p>
                 <p
-                  className='pointer-events-none  mt-[0.3em]  select-none  
+                  className='pointer-events-none  select-none  
                               font-semibold  no-underline'
                 >
                   team@nikmas.studio
