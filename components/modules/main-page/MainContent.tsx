@@ -6,8 +6,8 @@ import { ScrollTrigger } from 'gsap/all';
 import { ReactElement, useRef } from 'react';
 import Book from './Book';
 import Combo from './Combo';
-import Contest from './Contest';
 import Eleven from './Eleven';
+import HowWeWorkWithAuthors from './HowWeWorkWithAuthors';
 gsap.registerPlugin(ScrollTrigger);
 
 function MainContent(): ReactElement {
@@ -49,7 +49,7 @@ function MainContent(): ReactElement {
       <Eleven />
       <Combo />
       <Book />
-      <Contest />
+      <HowWeWorkWithAuthors />
     </div>
   );
 }
