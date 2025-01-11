@@ -28,7 +28,7 @@ function Footer({ className }: FooterProps): ReactElement {
       >
         <div className='flex  flex-col  items-center  sm:items-start'>
           <p className='mb-5  text-lg  dark:text-white'>
-            © Nikmas Studio, 2024
+            © Nikmas Studio, {new Date().getFullYear()}
           </p>
           <ul className='flex  flex-col  items-center  gap-2  text-sm  sm:items-start  dark:text-white'>
             <li>
