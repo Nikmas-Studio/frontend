@@ -1340,7 +1340,7 @@ function Page3Read(): ReactElement {
                   className='mb-[0.6em]  text-[0.42em]  text-blue  
                             dark:text-[#473AFF]'
                 >
-                  © Nikmas Studio, 2024
+                  © Nikmas Studio, {new Date().getFullYear()}
                 </p>
                 <ul
                   className='flex  flex-col  gap-[0.05em]  text-blue  
