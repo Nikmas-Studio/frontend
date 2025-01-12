@@ -448,6 +448,8 @@ function Page3Read(): ReactElement {
         );
 
         timeline.set(animateLettersCommitRef.current, { opacity: 1 }, '8');
+        timeline.set(footerSectionRef.current, { opacity: 0 }, '8');
+        timeline.set(productsSectionRef.current, { opacity: 0 }, '8');
         timeline.set(
           animateLettersCommitCircleRef.current,
           { boxShadow: greenBoxShadow },
@@ -533,6 +535,8 @@ function Page3Read(): ReactElement {
           '10',
         );
         timeline.set(addFooterCommitRef.current, { opacity: 1 }, '10');
+        timeline.set(footerSectionRef.current, { opacity: 1 }, '10');
+        timeline.set(productsSectionRef.current, { opacity: 1 }, '10');
         timeline.add(
           () =>
             toggleLettersAnimation('stop', timeline.scrollTrigger?.direction),
