@@ -62,7 +62,7 @@ function Footer({ className }: FooterProps): ReactElement {
             </ExternalLink>
           </li>
           <li>
-            <ExternalLink href='https://www.instagram.com/nikmas.studio/'>
+            <ExternalLink href='https://www.instagram.com/nikmas.studio'>
               <Image
                 src={instagramLogo}
                 alt='Instagram logo'
