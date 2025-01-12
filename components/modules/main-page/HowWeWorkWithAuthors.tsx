@@ -48,7 +48,7 @@ function HowWeWorkWithAuthors(): ReactElement {
             <BasicTextNode className='text-4xl  leading-[0.5]'>.</BasicTextNode>
             <BasicTextNode className='text-4xl  leading-[0.5]'>.</BasicTextNode>
           </div>
-          <TextNode className='!mb-2'>
+          <TextNode className='!mb-0'>
             The&nbsp;studio earns <strong className='font-black'>70%</strong>{' '}
             of&nbsp;the book&apos;s sales, while&nbsp;the&nbsp;other{' '}
             <strong className='font-black'>30%</strong> goes
