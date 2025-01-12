@@ -15,7 +15,7 @@ interface FooterProps {
 
 function Footer({ className }: FooterProps): ReactElement {
   const footerClasses = classNames(
-    `mt-44  border-t  border-gray-light  pb-20
+    `mt-36  border-t  border-gray-light  pb-20
      pt-12  sm:pb-[4.5rem]  lg:mt-48  dark:border-gray-dark`,
     className,
   );
