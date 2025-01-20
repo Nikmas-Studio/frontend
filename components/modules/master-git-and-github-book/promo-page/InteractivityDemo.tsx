@@ -15,7 +15,8 @@ function InteractivityDemo(): ReactElement {
           Interactivity that&apos;s based on&nbsp;scrolling
         </H2>
         <TextNode className='lg:mb-6'>
-          Illustrations appear, change, and&nbsp;disappear as&nbsp;you scroll:
+          Illustrations appear, pin, change, and&nbsp;disappear as&nbsp;you
+          scroll:
         </TextNode>
         <video
           className='pointer-events-none  w-full  rounded-[14px]  border  
