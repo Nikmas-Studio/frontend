@@ -48,11 +48,29 @@ function HowWeWorkWithAuthors(): ReactElement {
             <BasicTextNode className='text-4xl  leading-[0.5]'>.</BasicTextNode>
             <BasicTextNode className='text-4xl  leading-[0.5]'>.</BasicTextNode>
           </div>
-          <TextNode className='!mb-0'>
+          <TextNode className='!mb-2'>
             The&nbsp;studio earns <strong className='font-black'>70%</strong>{' '}
             of&nbsp;the book&apos;s sales, while&nbsp;the&nbsp;other{' '}
             <strong className='font-black'>30%</strong> goes
             to&nbsp;the&nbsp;author.
+          </TextNode>
+          <div className='mb-7'>
+            <BasicTextNode className='text-4xl  leading-[0.5]'>.</BasicTextNode>
+            <BasicTextNode className='text-4xl  leading-[0.5]'>.</BasicTextNode>
+            <BasicTextNode className='text-4xl  leading-[0.5]'>.</BasicTextNode>
+          </div>
+          <TextNode className='!mb-0'>
+            It&apos;s worth noting that for&nbsp;printed books, authors
+            typically earn an&nbsp;average of&nbsp;
+            <strong className='font-black'>5—10%</strong>{' '}
+            of&nbsp;the&nbsp;book&apos;s price, with&nbsp;the&nbsp;remainder
+            distributed among&nbsp;the&nbsp;retailer, publisher,
+            and&nbsp;printer. In&nbsp;contrast, with&nbsp;our&nbsp;online
+            publishing model, as we need neither&nbsp;the&nbsp;retailer
+            nor&nbsp;the&nbsp;printer, authors can earn{' '}
+            <strong className='font-black'>
+              3&#8288;—&#8288;6&nbsp;times&nbsp;more.
+            </strong>
           </TextNode>
         </div>
       </MainContainer>

@@ -76,12 +76,12 @@ function Subscription(): ReactElement {
                 </li>
                 <li>
                   <TextNode className='!mb-0  max-w-[25.4rem]'>
-                    By&nbsp;purchasing the&nbsp;early access, you directly help
-                    speed&nbsp;up the&nbsp;release of&nbsp;new sections
-                    of&nbsp;the&nbsp;book, useful&nbsp;and convenient features
-                    for&nbsp;reading and&nbsp;better assimilation
-                    of&nbsp;the&nbsp;material, and&nbsp;also support
-                    the&nbsp;development of&nbsp;other&nbsp;books
+                    By&nbsp;purchasing the&nbsp;early access, you provide
+                    the&nbsp;essential initial boost, directly accelerating
+                    the&nbsp;release of&nbsp;new book sections, enhancing
+                    features for&nbsp;a&nbsp;more seamless and&nbsp;immersive
+                    reading experience, and&nbsp;supporting the&nbsp;creation
+                    of&nbsp;future books
                   </TextNode>
                 </li>
               </ul>
@@ -136,8 +136,9 @@ function Subscription(): ReactElement {
                   a&nbsp;lifetime subscription to&nbsp;the book with
                   a&nbsp;one-time payment to&nbsp;our&nbsp;first readers
                   whom&nbsp;we&nbsp;consider our&nbsp;investors.
-                  Their&nbsp;support gives us the&nbsp;initial boost, and we
-                  highly appreciate it, reciprocating in&nbsp;kind.
+                  Their&nbsp;support gives us the&nbsp;essential initial boost,
+                  and&nbsp;we&nbsp;highly appreciate it, reciprocating
+                  in&nbsp;kind.
                 </TextNode>
               </div>
             </div>
