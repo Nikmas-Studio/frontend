@@ -196,7 +196,7 @@ function SubscriptionModal({
             <H2 className='mb-8  !text-subscription'>
               {bookState === BookState.BOUGHT
                 ? 'You have lifetime access'
-                : 'Early Access'}
+                : 'Premium Early Access'}
             </H2>
             {bookState !== BookState.BOUGHT && (
               <TextNode className='max-w-[25.4rem]'>
