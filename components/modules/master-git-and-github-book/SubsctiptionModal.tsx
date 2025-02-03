@@ -255,12 +255,12 @@ function SubscriptionModal({
                 )}
                 {bookState !== BookState.BOUGHT && (
                   <TextNode className='!mb-0  max-w-[25.4rem]'>
-                    By&nbsp;purchasing the&nbsp;early access, you directly help
-                    speed&nbsp;up the&nbsp;release of&nbsp;new sections
-                    of&nbsp;the&nbsp;book, useful and&nbsp;convenient features
-                    for&nbsp;reading and&nbsp;better assimilation
-                    of&nbsp;the&nbsp;material, and&nbsp;also support
-                    the&nbsp;development of&nbsp;other&nbsp;books
+                    By&nbsp;purchasing the&nbsp;early access, you provide
+                    the&nbsp;essential initial boost, directly accelerating
+                    the&nbsp;release of&nbsp;new book sections, enhancing
+                    features for&nbsp;a&nbsp;more seamless and&nbsp;immersive
+                    reading experience, and&nbsp;supporting the&nbsp;creation
+                    of&nbsp;future books
                   </TextNode>
                 )}
               </li>
