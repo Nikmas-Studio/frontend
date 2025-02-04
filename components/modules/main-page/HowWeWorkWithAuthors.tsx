@@ -62,7 +62,7 @@ function HowWeWorkWithAuthors(): ReactElement {
           <TextNode className='!mb-0'>
             It&apos;s worth noting that for&nbsp;printed books, authors
             typically earn an&nbsp;average of&nbsp;
-            <strong className='font-black'>5—10%</strong>{' '}
+            <strong className='font-black'>5&#8288;—&#8288;10%</strong>{' '}
             of&nbsp;the&nbsp;book&apos;s price, with&nbsp;the&nbsp;remainder
             distributed among&nbsp;the&nbsp;retailer, publisher,
             and&nbsp;printer. In&nbsp;contrast, with&nbsp;our&nbsp;online
