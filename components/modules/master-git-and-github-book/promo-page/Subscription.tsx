@@ -78,9 +78,9 @@ function Subscription(): ReactElement {
                   <TextNode className='!mb-0  max-w-[25.4rem]'>
                     By&nbsp;purchasing the&nbsp;early access, you provide
                     the&nbsp;essential initial boost, directly accelerating
-                    the&nbsp;release of&nbsp;new book sections, enhancing
-                    features for&nbsp;a&nbsp;more seamless and&nbsp;immersive
-                    reading experience, and&nbsp;supporting the&nbsp;creation
+                    the&nbsp;release of&nbsp;new book sections and&nbsp;features
+                    for&nbsp;a&nbsp;more seamless and&nbsp;immersive reading
+                    experience while&nbsp;supporting the&nbsp;creation
                     of&nbsp;future books
                   </TextNode>
                 </li>
