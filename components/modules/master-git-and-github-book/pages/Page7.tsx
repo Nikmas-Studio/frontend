@@ -52,11 +52,12 @@ function Page7(): ReactElement {
           </TextNode>
           <TextNode className='!mb-0'>
             Whenever&nbsp;you want to&nbsp;use Git for&nbsp;a&nbsp;project, you
-            need to&nbsp;create a&nbsp;new Git repository. You can&nbsp;have
-            as&nbsp;many repositories on&nbsp;your&nbsp;machine as&nbsp;needed,
-            each with&nbsp;its&nbsp;own separate history
-            and&nbsp;configurations. This makes Git highly flexible
-            for&nbsp;managing multiple projects independently.
+            need to&nbsp;initialize a&nbsp;Git repository inside
+            your&nbsp;project directory. You can&nbsp;have as&nbsp;many
+            repositories on&nbsp;your&nbsp;machine as&nbsp;needed, each
+            with&nbsp;its&nbsp;own separate history and&nbsp;configurations.
+            This makes Git highly flexible for&nbsp;managing multiple projects
+            independently.
           </TextNode>
         </BookLeftPartContainer>
         <BookRightPartContainer className='w-1/2  max-md:w-full  max-md:pl-0'>
