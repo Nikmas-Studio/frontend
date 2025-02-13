@@ -45,26 +45,17 @@ function Page7(): ReactElement {
             <span className='text-[#f03c2e]'>
               A&nbsp;Git &ldquo;repo&rdquo;
             </span>{' '}
-            is a&nbsp;workspace where&nbsp;Git tracks and&nbsp;manages
-            your&nbsp;project files, along with&nbsp;their complete version
-            history. It&nbsp;serves as&nbsp;the&nbsp;foundation for&nbsp;version
-            control, enabling you to&nbsp;monitor changes, collaborate,
-            and&nbsp;maintain a&nbsp;record of&nbsp;your&nbsp;project&apos;s
+            is a&nbsp;hidden <strong>.git</strong> directory located inside
+            a&nbsp;project folder. The&nbsp;repository stores all
+            the&nbsp;information necessary for&nbsp;version control
+            and&nbsp;acts as&nbsp;the&nbsp;core of&nbsp;Git’s versioning system.
             evolution.
-          </TextNode>
-          <TextNode>
-            In&nbsp;practice, a&nbsp;Git repository is&nbsp;simply a&nbsp;folder
-            on&nbsp;your computer that&nbsp;is&nbsp;tracked by&nbsp;Git.
-            This&nbsp;folder contains your project files and&nbsp;a&nbsp;hidden
-            <strong> .git</strong> directory where&nbsp;Git stores
-            all&nbsp;the&nbsp;information it&nbsp;needs to&nbsp;manage changes,
-            versions, and&nbsp;collaboration.
           </TextNode>
           <TextNode className='!mb-0'>
             Whenever&nbsp;you want to&nbsp;use Git for&nbsp;a&nbsp;project, you
             need to&nbsp;create a&nbsp;new Git repository. You can&nbsp;have
             as&nbsp;many repositories on&nbsp;your&nbsp;machine as&nbsp;needed,
-            each with&nbsp;its&nbsp;own separate history, contents,
+            each with&nbsp;its&nbsp;own separate history
             and&nbsp;configurations. This makes Git highly flexible
             for&nbsp;managing multiple projects independently.
           </TextNode>
