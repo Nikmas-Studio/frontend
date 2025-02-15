@@ -48,7 +48,8 @@ function Page7(): ReactElement {
             is a&nbsp;hidden <strong>.git</strong> directory located inside
             a&nbsp;project folder. The&nbsp;Git repository stores all
             the&nbsp;information necessary for&nbsp;version control
-            and&nbsp;acts as&nbsp;the&nbsp;core of&nbsp;Git’s versioning system.
+            and&nbsp;acts as&nbsp;the&nbsp;foundation of&nbsp;Git’s versioning
+            system.
           </TextNode>
           <TextNode className='!mb-0'>
             Whenever&nbsp;you want to&nbsp;use Git for&nbsp;a&nbsp;project, you
