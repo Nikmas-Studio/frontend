@@ -92,7 +92,7 @@ function Subscription(): ReactElement {
               <SubscriptionButton className='mt-12  self-center  lg:mt-14' />
             </div>
             <div
-              className='mt-20  h-px  bg-gray-light  lg:mb-20
+              className='mt-20  h-px  bg-gray-light  lg:mb-16
                                lg:mt-0  lg:h-auto  lg:w-px
                                dark:bg-gray-dark'
             />
