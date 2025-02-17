@@ -3,9 +3,7 @@ import H2 from '@/components/elements/H2';
 import H3 from '@/components/elements/H3';
 import MainContainer from '@/components/elements/MainContainer';
 import SubscriptionButton from '@/components/elements/master-git-and-github-book/SubscriptionButton';
-import TextLi from '@/components/elements/TextLi';
 import TextNode from '@/components/elements/TextNode';
-import TextUl from '@/components/elements/TextUl';
 import { merriweather } from '@/fonts';
 import { ReactElement } from 'react';
 
@@ -15,8 +13,8 @@ function Subscription(): ReactElement {
       <MainContainer
         className='rounded-[14px]  border  border-gray-light
                    px-5  pb-12  pt-8  lg:flex  lg:flex-col
-                   lg:items-center  lg:rounded-[20px]  lg:px-14  lg:pb-24
-                   lg:pt-10  xl:px-20  xl:pb-28  
+                   lg:items-center  lg:rounded-[20px]  lg:px-14  lg:pb-10
+                   lg:pt-10  xl:px-20 
                    xl:pt-14  dark:border-gray-dark'
       >
         <div>
