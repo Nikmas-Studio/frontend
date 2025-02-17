@@ -3,9 +3,7 @@
 import BasicTextNode from '@/components/elements/BasicTextNode';
 import BuddhaSvg from '@/components/elements/BuddhaSvg';
 import H2 from '@/components/elements/H2';
-import TextLi from '@/components/elements/TextLi';
 import TextNode from '@/components/elements/TextNode';
-import TextUl from '@/components/elements/TextUl';
 import {
   MASTER_GIT_AND_GITHUB_BOOK_URI,
   PAYMENT_ROUTE_AUTHENTICATED,

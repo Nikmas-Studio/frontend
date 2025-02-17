@@ -13,9 +13,9 @@ function Subscription(): ReactElement {
       <MainContainer
         className='rounded-[14px]  border  border-gray-light
                    px-5  pb-12  pt-8  lg:flex  lg:flex-col
-                   lg:items-center  lg:rounded-[20px]  lg:px-14  lg:pb-10
-                   lg:pt-10  xl:px-20 
-                   xl:pt-14  dark:border-gray-dark'
+                   lg:items-center  lg:rounded-[20px]  lg:px-14  lg:py-10
+                   xl:px-20  xl:pt-14 
+                   dark:border-gray-dark'
       >
         <div>
           <div>
