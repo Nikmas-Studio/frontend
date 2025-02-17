@@ -231,14 +231,14 @@ function SubscriptionModal({
                 <TextNode className='!text-2xl  font-light'>+</TextNode>
               </li>
               <li>
-                <TextNode className='font-black'>Investor status:</TextNode>
-                <TextUl>
+                <TextNode className='font-black'>Investor badge</TextNode>
+                {/* <TextUl>
                   <TextLi className='max-w-72'>
                     20% lifetime discount on&nbsp;all studio books
                     that&nbsp;will&nbsp;ever be&nbsp;published
                   </TextLi>
                   <TextLi>investor badge</TextLi>
-                </TextUl>
+                </TextUl> */}
               </li>
               <li>
                 <TextNode className='!text-2xl  font-light'>+</TextNode>
