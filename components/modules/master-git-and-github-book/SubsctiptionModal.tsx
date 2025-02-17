@@ -3,9 +3,7 @@
 import BasicTextNode from '@/components/elements/BasicTextNode';
 import BuddhaSvg from '@/components/elements/BuddhaSvg';
 import H2 from '@/components/elements/H2';
-import TextLi from '@/components/elements/TextLi';
 import TextNode from '@/components/elements/TextNode';
-import TextUl from '@/components/elements/TextUl';
 import {
   MASTER_GIT_AND_GITHUB_BOOK_URI,
   PAYMENT_ROUTE_AUTHENTICATED,
@@ -231,14 +229,14 @@ function SubscriptionModal({
                 <TextNode className='!text-2xl  font-light'>+</TextNode>
               </li>
               <li>
-                <TextNode className='font-black'>Investor status:</TextNode>
-                <TextUl>
+                <TextNode className='font-black'>Investor badge</TextNode>
+                {/* <TextUl>
                   <TextLi className='max-w-72'>
                     20% lifetime discount on&nbsp;all studio books
                     that&nbsp;will&nbsp;ever be&nbsp;published
                   </TextLi>
                   <TextLi>investor badge</TextLi>
-                </TextUl>
+                </TextUl> */}
               </li>
               <li>
                 <TextNode className='!text-2xl  font-light'>+</TextNode>

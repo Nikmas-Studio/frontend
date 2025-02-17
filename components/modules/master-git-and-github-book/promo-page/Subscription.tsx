@@ -3,9 +3,7 @@ import H2 from '@/components/elements/H2';
 import H3 from '@/components/elements/H3';
 import MainContainer from '@/components/elements/MainContainer';
 import SubscriptionButton from '@/components/elements/master-git-and-github-book/SubscriptionButton';
-import TextLi from '@/components/elements/TextLi';
 import TextNode from '@/components/elements/TextNode';
-import TextUl from '@/components/elements/TextUl';
 import { merriweather } from '@/fonts';
 import { ReactElement } from 'react';
 
@@ -15,9 +13,9 @@ function Subscription(): ReactElement {
       <MainContainer
         className='rounded-[14px]  border  border-gray-light
                    px-5  pb-12  pt-8  lg:flex  lg:flex-col
-                   lg:items-center  lg:rounded-[20px]  lg:px-14  lg:pb-24
-                   lg:pt-10  xl:px-20  xl:pb-28  
-                   xl:pt-14  dark:border-gray-dark'
+                   lg:items-center  lg:rounded-[20px]  lg:px-14  lg:py-10
+                   xl:px-20  xl:pt-14 
+                   dark:border-gray-dark'
       >
         <div>
           <div>
@@ -62,14 +60,14 @@ function Subscription(): ReactElement {
                   <TextNode className='!text-2xl  font-light'>+</TextNode>
                 </li>
                 <li>
-                  <TextNode className='font-black'>Investor status:</TextNode>
-                  <TextUl>
+                  <TextNode className='font-black'>Investor badge</TextNode>
+                  {/* <TextUl>
                     <TextLi className='max-w-72'>
                       20% lifetime discount on&nbsp;all studio books
                       that&nbsp;will&nbsp;ever be&nbsp;published
                     </TextLi>
                     <TextLi>investor badge</TextLi>
-                  </TextUl>
+                  </TextUl> */}
                 </li>
                 <li>
                   <TextNode className='!text-2xl  font-light'>+</TextNode>
