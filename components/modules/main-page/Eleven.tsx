@@ -32,7 +32,7 @@ function Eleven(): ReactElement {
                 <div className='h-[13vw]  w-[2.5vw]  rounded-[2px]  bg-[#4CBB17]  sm:h-[75px]  sm:w-[12px]'></div>
               </div>
               <Image
-                className='w-[21vw]  sm:w-[120px]'
+                className='w-[21vw]  opacity-0  sm:w-[120px]'
                 src={cakeEleven}
                 alt='Cake Eleven Eleven'
                 quality={100}
