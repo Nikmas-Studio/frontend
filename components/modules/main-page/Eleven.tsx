@@ -3,14 +3,23 @@
 import MainContainer from '@/components/elements/MainContainer';
 import cakeEleven from '@/public/images/cake-eleven.png';
 import circle from '@/public/images/dotted-elipse.svg';
+import classNames from 'classnames';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Image from 'next/image';
-import { ReactElement } from 'react';
+import { ReactElement, useState } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 function Eleven(): ReactElement {
+  const [circleIsRotated, setCircleIsRotated] = useState(false);
+  const circleClasses = classNames(
+    'pointer-events-auto  absolute  inset-0  transition-transform  duration-[1.2s]',
+    {
+      'rotate-45': circleIsRotated,
+    },
+  );
+
   return (
     <section className='pointer-events-none  mb-[5.5rem]  select-none  lg:mb-40'>
       <MainContainer>
@@ -21,7 +30,10 @@ function Eleven(): ReactElement {
           <Image
             src={circle}
             alt='Dotted elipse'
-            className='absolute  inset-0'
+            className={circleClasses}
+            onClick={() => setCircleIsRotated((prev) => !prev)}
+            onMouseEnter={() => setCircleIsRotated((prev) => !prev)}
+            onMouseLeave={() => setCircleIsRotated((prev) => !prev)}
             quality={100}
             priority
           />
