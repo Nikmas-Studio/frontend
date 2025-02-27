@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 function Eleven(): ReactElement {
   const [circleIsRotated, setCircleIsRotated] = useState(false);
   const circleClasses = classNames(
-    'pointer-events-auto  absolute  inset-0  transition-transform  duration-[1.2s]',
+    'pointer-events-auto  absolute  inset-0  transition-transform  duration-[1.2s]  will-change-transform',
     {
       'rotate-45': circleIsRotated,
     },
