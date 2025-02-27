@@ -1,6 +1,7 @@
 'use client';
 
 import MainContainer from '@/components/elements/MainContainer';
+import { useTouchDevice } from '@/context/touch-device/Context';
 import cakeEleven from '@/public/images/cake-eleven.png';
 import circle from '@/public/images/dotted-elipse.svg';
 import classNames from 'classnames';
@@ -19,6 +20,7 @@ function Eleven(): ReactElement {
       'rotate-45': circleIsRotated,
     },
   );
+  const { isTouchDevice } = useTouchDevice();
 
   return (
     <section className='pointer-events-none  mb-[5.5rem]  select-none  lg:mb-40'>
@@ -32,8 +34,12 @@ function Eleven(): ReactElement {
             alt='Dotted elipse'
             className={circleClasses}
             onClick={() => setCircleIsRotated((prev) => !prev)}
-            onMouseEnter={() => setCircleIsRotated((prev) => !prev)}
-            onMouseLeave={() => setCircleIsRotated((prev) => !prev)}
+            onMouseEnter={() =>
+              !isTouchDevice && setCircleIsRotated((prev) => !prev)
+            }
+            onMouseLeave={() =>
+              !isTouchDevice && setCircleIsRotated((prev) => !prev)
+            }
             quality={100}
             priority
           />
