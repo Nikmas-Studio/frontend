@@ -108,7 +108,9 @@ function Page5(): ReactElement {
             Linus Torvalds described the name “git” as&nbsp;a&nbsp;reflection
             of&nbsp;himself: &ldquo;I&apos;m an&nbsp;egotistical bastard, so I
             name all my&nbsp;projects after&nbsp;myself. First
-            &lsquo;Linux&rsquo;, now &lsquo;Git&rsquo;&rdquo;.
+            &lsquo;Linux&rsquo;, now &lsquo;Git&rsquo; (in British slang,
+            &lsquo;git&rsquo; refers to an unpleasant or contemptible
+            person)&rdquo;.
           </TextNode>
           <TextNode>
             The&nbsp;man page describes Git as&nbsp;&ldquo;the stupid content
