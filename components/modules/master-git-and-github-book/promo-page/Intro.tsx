@@ -94,8 +94,8 @@ function Intro(): ReactElement {
               Author:&nbsp;Nick&nbsp;Maslov
             </BasicTextNode>
             <TextNode className='w-[275px]  !text-base  lg:w-auto'>
-              CEO, Enterprise Architect, and&nbsp;Chief Book Director
-              at&nbsp;Nikmas&nbsp;Studio
+              CEO, Enterprise&nbsp;Architect,
+              and&nbsp;Chief&nbsp;Book&nbsp;Director at&nbsp;Nikmas&nbsp;Studio
             </TextNode>
             <BasicTextNode
               className='mt-11  text-6xl  font-medium  
