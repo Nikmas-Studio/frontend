@@ -61,7 +61,7 @@ function Intro(): ReactElement {
               but&nbsp;static and&nbsp;dull, or&nbsp;they are&nbsp;videos.
             </TextNode>
             <TextNode>
-              What I&nbsp;offer is&nbsp;an&nbsp;e&#8209;book that&nbsp;is
+              What I&nbsp;offer is&nbsp;the&nbsp;e&#8209;book that&nbsp;is
               at&nbsp;the&nbsp;same time highly illustrative, interactive, deep
               enough, and&nbsp;that&nbsp;will&nbsp;take you step by&nbsp;step
               from&nbsp;a&nbsp;point where you know nothing about&nbsp;Git
