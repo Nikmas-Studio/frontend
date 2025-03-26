@@ -281,7 +281,7 @@ function SubscriptionModal({
             {bookState !== BookState.BOUGHT && (
               <>
                 <BasicTextNode
-                  className='mt-8  text-center  text-4xl 
+                  className='mt-9  text-center  text-4xl 
                      font-medium  !text-subscription'
                 >
                   $23
