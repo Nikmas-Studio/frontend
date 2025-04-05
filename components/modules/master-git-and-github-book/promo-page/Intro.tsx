@@ -101,19 +101,16 @@ function Intro(): ReactElement {
               className='mt-11  text-6xl  font-medium  
                              leading-[1.1]  lg:mt-9  lg:text-4xl'
             >
-              It&apos;s time
+              Future
               <br />
-              to make
+              of edu
               <br />
-              e&#8209;books
-              <br />
-              alive
+              books
             </BasicTextNode>
             <TextNode className='mt-7  max-w-[685px]  lg:mt-5  lg:text-[1.0625rem]  lg:leading-normal'>
-              We got so&nbsp;many tools to&nbsp;make the&nbsp;reading process
-              dynamic, interactive, and&nbsp;thus more&nbsp;immersive,
-              but&nbsp;our e&#8209;books are&nbsp;still static canvases
-              of&nbsp;text. It&apos;s&nbsp;time to&nbsp;change this.
+              Through our format of&nbsp;interactive e-books, we&nbsp;create
+              the&nbsp;best conditions for&nbsp;deep understanding
+              and&nbsp;thorough internalization of&nbsp;the&nbsp;material.
             </TextNode>
           </div>
         </div>
