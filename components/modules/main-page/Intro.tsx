@@ -244,7 +244,7 @@ function Intro(): ReactElement {
           <br />
           <IntroDescrLine
             ref={lineSpanRef}
-            text='e-books'
+            text='edu books'
             dataElement='studio-intro-e-books'
           />
         </h1>
