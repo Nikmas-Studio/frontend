@@ -17,7 +17,7 @@ function HowWeWorkWithAuthors(): ReactElement {
           <TextNode className='!mb-2'>
             Authors approach the&nbsp;studio with&nbsp;manuscripts
             or&nbsp;previously published books and&nbsp;submit requests
-            to&nbsp;create interactive e&#8209;books.
+            to&nbsp;create interactive edu&#8209;books.
           </TextNode>
           <div className='mb-7'>
             <BasicTextNode className='text-4xl  leading-[0.5]'>.</BasicTextNode>
