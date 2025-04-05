@@ -13,7 +13,7 @@ function Combo(): ReactElement {
           <div>
             <BasicTextNode
               className='mb-[2.7vw]  ml-[1.95vw]
-                         text-[10.5vw]  font-bold  leading-none
+                         text-[9.5vw]  font-bold  leading-none
                          1.5sm:mb-[18px]  1.5sm:ml-[10px]
                          1.5sm:text-[57px]
                          '
