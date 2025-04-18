@@ -10,11 +10,11 @@ import { ReactElement } from 'react';
 export const metadata: Metadata = {
   title: 'Nikmas Studio',
   description:
-    'Next-gen publishing studio that specializes in creating interactive e-books.',
+    'Next-gen publishing studio that specializes in creating interactive edu books.',
   openGraph: {
     title: 'Nikmas Studio',
     description:
-      'Next-gen publishing studio that specializes in creating interactive e-books.',
+      'Next-gen publishing studio that specializes in creating interactive edu books.',
     url: 'https://nikmas.studio',
     siteName: 'Nikmas Studio',
     images: [
