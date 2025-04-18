@@ -40,6 +40,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
+  robots: 'max-image-preview:none',
 };
 
 export default function Home(): ReactElement {
