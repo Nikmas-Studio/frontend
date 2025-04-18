@@ -53,6 +53,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
+  robots: 'max-image-preview:none',
 };
 
 function MasterGitAndGithubBookPromo(): ReactElement {
