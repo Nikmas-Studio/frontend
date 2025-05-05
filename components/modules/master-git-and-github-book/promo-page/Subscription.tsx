@@ -41,7 +41,7 @@ function Subscription(): ReactElement {
                     <strong className='font-black'>
                       Read all the&nbsp;book sections
                     </strong>{' '}
-                    as&nbsp;we gradually publish&nbsp;them
+                    as&nbsp;we gradually publish&nbsp;them;
                   </TextNode>
                 </li>
                 <li>
@@ -55,7 +55,7 @@ function Subscription(): ReactElement {
                     with&nbsp;a&nbsp;one&#8209;time&nbsp;payment.
                     Such&nbsp;subscription will never be&nbsp;available again
                     through&nbsp;a&nbsp;regular purchase after the&nbsp;early
-                    access period of&nbsp;our&nbsp;first book
+                    access period of&nbsp;our&nbsp;first book;
                   </TextNode>
                 </li>
                 <li>
@@ -69,7 +69,7 @@ function Subscription(): ReactElement {
                     the&nbsp;release of&nbsp;new book sections and&nbsp;features
                     for&nbsp;a&nbsp;more seamless and&nbsp;immersive reading
                     experience while&nbsp;supporting the&nbsp;creation
-                    of&nbsp;future books
+                    of&nbsp;future books.
                   </TextNode>
                   {/* <TextUl>
                     <TextLi className='max-w-72'>

@@ -211,7 +211,7 @@ function SubscriptionModal({
                     From&nbsp;Everyday&nbsp;Tasks to&nbsp;Deep&nbsp;Waters”
                   </strong>{' '}
                   as&nbsp;we gradually publish new sections
-                  of&nbsp;the&nbsp;book
+                  of&nbsp;the&nbsp;book;
                 </TextNode>
               </li>
               <li>
@@ -225,7 +225,7 @@ function SubscriptionModal({
                   with&nbsp;a&nbsp;one&#8209;time&nbsp;payment.
                   Such&nbsp;subscription will never be&nbsp;available again
                   through&nbsp;a&nbsp;regular purchase after the&nbsp;early
-                  access period of&nbsp;our&nbsp;first book
+                  access period of&nbsp;our&nbsp;first book;
                 </TextNode>
               </li>
               <li>
@@ -241,7 +241,7 @@ function SubscriptionModal({
                       and&nbsp;features for&nbsp;a&nbsp;more seamless
                       and&nbsp;immersive reading experience
                       while&nbsp;supporting the&nbsp;creation of&nbsp;future
-                      books
+                      books.
                     </span>
                   )}
                   {bookState !== BookState.BOUGHT && (
@@ -252,7 +252,7 @@ function SubscriptionModal({
                       and&nbsp;features for&nbsp;a&nbsp;more seamless
                       and&nbsp;immersive reading experience
                       while&nbsp;supporting the&nbsp;creation of&nbsp;future
-                      books
+                      books.
                     </span>
                   )}
                 </TextNode>
