@@ -56,16 +56,22 @@ function Intro(): ReactElement {
               person who&nbsp;works with&nbsp;files can benefit from.
               And&nbsp;there&nbsp;are&nbsp;many resources to&nbsp;learn those
               things. But,&nbsp;the&nbsp;popular resources on&nbsp;Git
-              and&nbsp;GitHub I know are&nbsp;either highly illustrative
+              and&nbsp;GitHub we know are&nbsp;either highly illustrative
               and&nbsp;interactive but&nbsp;quite superficial, deep enough
               but&nbsp;static and&nbsp;dull, or&nbsp;they are&nbsp;videos.
             </TextNode>
             <TextNode>
-              What I&nbsp;offer is&nbsp;the&nbsp;e&#8209;book that&nbsp;is
+              What we&nbsp;offer is&nbsp;the&nbsp;e&#8209;book that&nbsp;is
               at&nbsp;the&nbsp;same time highly illustrative, interactive, deep
               enough, and&nbsp;that&nbsp;will&nbsp;take you step by&nbsp;step
               from&nbsp;a&nbsp;point where you know nothing about&nbsp;Git
               and&nbsp;GitHub to&nbsp;a&nbsp;master level in&nbsp;those tools.
+              The&nbsp;book is&nbsp;crafted from&nbsp;the&nbsp;finest materials
+              sourced from&nbsp;top resources and&nbsp;enriched
+              with&nbsp;personal experience. Our goal is to&nbsp;make
+              this&nbsp;book a&nbsp;global bestseller and&nbsp;a&nbsp;timeless
+              classic that&nbsp;every developer will&nbsp;be&nbsp;encouraged
+              to&nbsp;read.
             </TextNode>
             <TextNode>
               And&nbsp;unlike video format, it&apos;ll&nbsp;be
@@ -99,13 +105,16 @@ function Intro(): ReactElement {
             </TextNode>
             <BasicTextNode
               className='mt-11  text-6xl  font-medium  
-                             leading-[1.1]  lg:mt-9  lg:text-4xl'
+                             leading-[1.1]  lg:mt-9  lg:text-4xl  
+                             lg:leading-[1.1]'
             >
-              Future
+              We Are
               <br />
-              of edu
+              The Future
               <br />
-              books
+              of Edu
+              <br />
+              Books
             </BasicTextNode>
             <TextNode className='mt-7  max-w-[685px]  lg:mt-5  lg:text-[1.0625rem]  lg:leading-normal'>
               Through our format of&nbsp;interactive e-books, we&nbsp;create
