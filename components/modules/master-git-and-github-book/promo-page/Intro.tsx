@@ -117,7 +117,7 @@ function Intro(): ReactElement {
               Books
             </BasicTextNode>
             <TextNode
-              className='mt-7  max-w-[685px]  lg:mt-5  lg:max-w-52  
+              className='mt-7  max-w-[685px]  lg:mt-5  lg:max-w-48  
                                  lg:text-[1.0625rem]  lg:leading-normal'
             >
               Through our format of&nbsp;interactive e-books, we&nbsp;create
