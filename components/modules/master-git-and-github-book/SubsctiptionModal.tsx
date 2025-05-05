@@ -198,9 +198,9 @@ function SubscriptionModal({
             </H2>
             {bookState !== BookState.BOUGHT && (
               <TextNode className='max-w-[25.4rem]'>
-                The&nbsp;book is&nbsp;in&nbsp;the&nbsp;early stages, and this is
-                the&nbsp;opportunity for&nbsp;you to&nbsp;both benefit
-                from&nbsp;it and&nbsp;support the&nbsp;studio:
+                We&apos;re already on&nbsp;track to&nbsp;secure a&nbsp;major
+                deal with&nbsp;a&nbsp;prominent investor. Become our premium
+                early reader and&nbsp;get exclusive benefits:
               </TextNode>
             )}
             <ul>
@@ -253,8 +253,8 @@ function SubscriptionModal({
                 )}
                 {bookState !== BookState.BOUGHT && (
                   <TextNode className='!mb-0  max-w-[25.4rem]'>
-                    By&nbsp;purchasing the&nbsp;early access, you provide
-                    the&nbsp;essential initial boost, directly accelerating
+                    By&nbsp;purchasing the&nbsp;early access, you become
+                    the&nbsp;essential driving force, directly accelerating
                     the&nbsp;release of&nbsp;new book sections and&nbsp;features
                     for&nbsp;a&nbsp;more seamless and&nbsp;immersive reading
                     experience while&nbsp;supporting the&nbsp;creation

@@ -21,10 +21,9 @@ function Subscription(): ReactElement {
           <div>
             <H2 className='mb-3'>Subscription</H2>
             <TextNode className='max-w-[530px]'>
-              The&nbsp;book is in&nbsp;the&nbsp;early stages,
-              and&nbsp;this&nbsp;is the&nbsp;opportunity for&nbsp;you
-              to&nbsp;both benefit from&nbsp;it and&nbsp;support
-              the&nbsp;studio.
+              We&apos;re already on&nbsp;track to&nbsp;secure a&nbsp;major deal
+              with&nbsp;a&nbsp;prominent investor. Become our premium early
+              reader and&nbsp;get exclusive benefits.
             </TextNode>
           </div>
           <div className='mt-9  lg:flex  lg:flex-row  lg:gap-12  xl:gap-14'>
@@ -74,8 +73,8 @@ function Subscription(): ReactElement {
                 </li>
                 <li>
                   <TextNode className='!mb-0  max-w-[25.4rem]'>
-                    By&nbsp;purchasing the&nbsp;early access, you provide
-                    the&nbsp;essential initial boost, directly accelerating
+                    By&nbsp;purchasing the&nbsp;early access, you become
+                    the&nbsp;essential driving force, directly accelerating
                     the&nbsp;release of&nbsp;new book sections and&nbsp;features
                     for&nbsp;a&nbsp;more seamless and&nbsp;immersive reading
                     experience while&nbsp;supporting the&nbsp;creation
