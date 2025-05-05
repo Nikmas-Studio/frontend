@@ -205,10 +205,10 @@ function SubscriptionModal({
             )}
             <ul>
               <li>
-                <TextNode className='max-w-72'>
+                <TextNode className='max-w-[25rem]'>
                   <strong className='font-black'>
-                    Read “Master Git & Github: From&nbsp;Everyday Tasks
-                    to&nbsp;Deep Waters”
+                    Read “Master&nbsp;Git&nbsp;&&nbsp;Github:
+                    From&nbsp;Everyday&nbsp;Tasks to&nbsp;Deep&nbsp;Waters”
                   </strong>{' '}
                   as&nbsp;we gradually publish new sections
                   of&nbsp;the&nbsp;book
@@ -222,8 +222,8 @@ function SubscriptionModal({
                   <strong className='font-black'>
                     Lifetime subscription to&nbsp;the&nbsp;book
                   </strong>{' '}
-                  with&nbsp;a&nbsp;one&#8209;time&nbsp;payment. Such
-                  subscription will never be&nbsp;available again
+                  with&nbsp;a&nbsp;one&#8209;time&nbsp;payment.
+                  Such&nbsp;subscription will never be&nbsp;available again
                   through&nbsp;a&nbsp;regular purchase after the&nbsp;early
                   access period of&nbsp;our&nbsp;first book
                 </TextNode>

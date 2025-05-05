@@ -52,8 +52,8 @@ function Subscription(): ReactElement {
                     <strong className='font-black'>
                       Lifetime subscription to&nbsp;the&nbsp;book
                     </strong>{' '}
-                    with&nbsp;a&nbsp;one&#8209;time&nbsp;payment. Such
-                    subscription will never be&nbsp;available again
+                    with&nbsp;a&nbsp;one&#8209;time&nbsp;payment.
+                    Such&nbsp;subscription will never be&nbsp;available again
                     through&nbsp;a&nbsp;regular purchase after the&nbsp;early
                     access period of&nbsp;our&nbsp;first book
                   </TextNode>
