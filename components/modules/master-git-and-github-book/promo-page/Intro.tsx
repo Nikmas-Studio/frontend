@@ -116,10 +116,14 @@ function Intro(): ReactElement {
               <br />
               Books
             </BasicTextNode>
-            <TextNode className='mt-7  max-w-[685px]  lg:mt-5  lg:text-[1.0625rem]  lg:leading-normal'>
+            <TextNode
+              className='mt-7  max-w-[685px]  lg:mt-5  lg:max-w-52  
+                                 lg:text-[1.0625rem]  lg:leading-normal'
+            >
               Through our format of&nbsp;interactive e-books, we&nbsp;create
               the&nbsp;best conditions for&nbsp;deep understanding
-              and&nbsp;thorough internalization of&nbsp;the&nbsp;material.
+              and&nbsp;thorough internalization of&nbsp;the&nbsp;material —
+              solving&nbsp;the&nbsp;core challenges of&nbsp;education.
             </TextNode>
           </div>
         </div>
