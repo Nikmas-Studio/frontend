@@ -218,18 +218,44 @@ function SubscriptionModal({
                 <TextNode className='!text-2xl  font-light'>+</TextNode>
               </li>
               <li>
-                <TextNode className='max-w-80'>
+                <TextNode className='max-w-[25.8rem]'>
                   <strong className='font-black'>
                     Lifetime subscription to&nbsp;the&nbsp;book
                   </strong>{' '}
-                  with&nbsp;a&nbsp;one-time payment
+                  with&nbsp;a&nbsp;one&#8209;time&nbsp;payment. Such
+                  subscription will never be&nbsp;available again
+                  through&nbsp;a&nbsp;regular purchase after the&nbsp;early
+                  access period of&nbsp;our&nbsp;first book
                 </TextNode>
               </li>
               <li>
                 <TextNode className='!text-2xl  font-light'>+</TextNode>
               </li>
               <li>
-                <TextNode className='font-black'>Investor badge</TextNode>
+                <TextNode className='!mb-0  max-w-[27rem]'>
+                  <strong className='font-black'>Investor badge.</strong>{' '}
+                  {bookState === BookState.BOUGHT && (
+                    <span>
+                      You provided the&nbsp;essential initial boost, directly
+                      accelerating the&nbsp;release of&nbsp;new book sections
+                      and&nbsp;features for&nbsp;a&nbsp;more seamless
+                      and&nbsp;immersive reading experience
+                      while&nbsp;supporting the&nbsp;creation of&nbsp;future
+                      books
+                    </span>
+                  )}
+                  {bookState !== BookState.BOUGHT && (
+                    <span>
+                      By&nbsp;purchasing the&nbsp;early access, you become
+                      the&nbsp;essential driving force, directly accelerating
+                      the&nbsp;release of&nbsp;new book sections
+                      and&nbsp;features for&nbsp;a&nbsp;more seamless
+                      and&nbsp;immersive reading experience
+                      while&nbsp;supporting the&nbsp;creation of&nbsp;future
+                      books
+                    </span>
+                  )}
+                </TextNode>
                 {/* <TextUl>
                   <TextLi className='max-w-72'>
                     20% lifetime discount on&nbsp;all studio books
@@ -237,30 +263,6 @@ function SubscriptionModal({
                   </TextLi>
                   <TextLi>investor badge</TextLi>
                 </TextUl> */}
-              </li>
-              <li>
-                <TextNode className='!text-2xl  font-light'>+</TextNode>
-              </li>
-              <li>
-                {bookState === BookState.BOUGHT && (
-                  <TextNode className='!mb-0  max-w-[25.4rem]'>
-                    You provided the&nbsp;essential initial boost, directly
-                    accelerating the&nbsp;release of&nbsp;new book sections
-                    and&nbsp;features for&nbsp;a&nbsp;more seamless
-                    and&nbsp;immersive reading experience while&nbsp;supporting
-                    the&nbsp;creation of&nbsp;future books
-                  </TextNode>
-                )}
-                {bookState !== BookState.BOUGHT && (
-                  <TextNode className='!mb-0  max-w-[25.4rem]'>
-                    By&nbsp;purchasing the&nbsp;early access, you become
-                    the&nbsp;essential driving force, directly accelerating
-                    the&nbsp;release of&nbsp;new book sections and&nbsp;features
-                    for&nbsp;a&nbsp;more seamless and&nbsp;immersive reading
-                    experience while&nbsp;supporting the&nbsp;creation
-                    of&nbsp;future books
-                  </TextNode>
-                )}
               </li>
             </ul>
             {bookState === BookState.BOUGHT && (

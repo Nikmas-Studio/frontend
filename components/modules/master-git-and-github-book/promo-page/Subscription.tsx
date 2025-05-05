@@ -20,10 +20,10 @@ function Subscription(): ReactElement {
         <div>
           <div>
             <H2 className='mb-3'>Subscription</H2>
-            <TextNode className='max-w-[530px]'>
+            <TextNode className='max-w-[480px]'>
               We&apos;re already on&nbsp;track to&nbsp;secure a&nbsp;major deal
-              with&nbsp;a&nbsp;prominent investor. Become our premium early
-              reader and&nbsp;get exclusive benefits.
+              with&nbsp;a&nbsp;prominent investor. Become our
+              premium&nbsp;early&nbsp;reader and&nbsp;get exclusive benefits.
             </TextNode>
           </div>
           <div className='mt-9  lg:flex  lg:flex-row  lg:gap-12  xl:gap-14'>
@@ -48,31 +48,22 @@ function Subscription(): ReactElement {
                   <TextNode className='!text-2xl  font-light'>+</TextNode>
                 </li>
                 <li>
-                  <TextNode className='max-w-80'>
+                  <TextNode className='max-w-[25.8rem]'>
                     <strong className='font-black'>
                       Lifetime subscription to&nbsp;the&nbsp;book
                     </strong>{' '}
-                    with&nbsp;a&nbsp;one-time payment
+                    with&nbsp;a&nbsp;one&#8209;time&nbsp;payment. Such
+                    subscription will never be&nbsp;available again
+                    through&nbsp;a&nbsp;regular purchase after the&nbsp;early
+                    access period of&nbsp;our&nbsp;first book
                   </TextNode>
                 </li>
                 <li>
                   <TextNode className='!text-2xl  font-light'>+</TextNode>
                 </li>
                 <li>
-                  <TextNode className='font-black'>Investor badge</TextNode>
-                  {/* <TextUl>
-                    <TextLi className='max-w-72'>
-                      20% lifetime discount on&nbsp;all studio books
-                      that&nbsp;will&nbsp;ever be&nbsp;published
-                    </TextLi>
-                    <TextLi>investor badge</TextLi>
-                  </TextUl> */}
-                </li>
-                <li>
-                  <TextNode className='!text-2xl  font-light'>+</TextNode>
-                </li>
-                <li>
-                  <TextNode className='!mb-0  max-w-[25.4rem]'>
+                  <TextNode className='!mb-0  max-w-[27rem]'>
+                    <strong className='font-black'>Investor badge.</strong>{' '}
                     By&nbsp;purchasing the&nbsp;early access, you become
                     the&nbsp;essential driving force, directly accelerating
                     the&nbsp;release of&nbsp;new book sections and&nbsp;features
@@ -80,6 +71,13 @@ function Subscription(): ReactElement {
                     experience while&nbsp;supporting the&nbsp;creation
                     of&nbsp;future books
                   </TextNode>
+                  {/* <TextUl>
+                    <TextLi className='max-w-72'>
+                      20% lifetime discount on&nbsp;all studio books
+                      that&nbsp;will&nbsp;ever be&nbsp;published
+                    </TextLi>
+                    <TextLi>investor badge</TextLi>
+                  </TextUl> */}
                 </li>
               </ul>
               <BasicTextNode
@@ -91,7 +89,7 @@ function Subscription(): ReactElement {
               <SubscriptionButton className='mt-12  self-center  lg:mt-14' />
             </div>
             <div
-              className='mt-20  h-px  bg-gray-light  lg:mb-16
+              className='mt-20  h-px  bg-gray-light  lg:mb-[3.2rem]
                                lg:mt-0  lg:h-auto  lg:w-px
                                dark:bg-gray-dark'
             />
@@ -110,7 +108,7 @@ function Subscription(): ReactElement {
                   </BasicTextNode>
                 </div>
               </div>
-              <div className='mt-16  max-w-[32.5rem]  lg:mb-[7.6rem]'>
+              <div className='mt-[3.8rem]  max-w-[32.5rem]  lg:mb-[6.875rem]'>
                 <H3 className='mb-6  font-medium'>Why subscription</H3>
                 <TextNode>
                   Unlike a&nbsp;paper book, a&nbsp;web book must always be
