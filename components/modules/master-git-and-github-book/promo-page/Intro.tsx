@@ -68,9 +68,9 @@ function Intro(): ReactElement {
               and&nbsp;GitHub to&nbsp;a&nbsp;master level in&nbsp;those tools.
               The&nbsp;book is&nbsp;crafted from&nbsp;the&nbsp;finest materials
               sourced from&nbsp;top resources and&nbsp;enriched
-              with&nbsp;personal experience. Our goal is to&nbsp;make
-              this&nbsp;book a&nbsp;global bestseller and&nbsp;a&nbsp;timeless
-              classic that&nbsp;every developer will&nbsp;be&nbsp;encouraged
+              with&nbsp;personal experience. Our goal is to&nbsp;make it
+              a&nbsp;global bestseller and&nbsp;a&nbsp;timeless classic
+              that&nbsp;every developer will&nbsp;be&nbsp;encouraged
               to&nbsp;read.
             </TextNode>
             <TextNode>
