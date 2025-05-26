@@ -10,8 +10,10 @@ export const VALIDATE_AUTH_TOKEN_ROUTE = '/api/auth-token/validate';
 export const UPDATE_READER_FULL_NAME_ROUTE = '/api/readers/full-name';
 export const LOGOUT_ROUTE = `/api/logout`;
 export const SESSION_ID_COOKIE_NAME = 'sessionId';
-export const MASTER_GIT_AND_GITHUB_BOOK_URI = 'book-master-git-and-github';
+export const BOOK_MASTER_GIT_AND_GITHUB_URI = 'book-master-git-and-github';
+export const BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI =
+  'book-master-english-with-sherlock-holmes';
 export const BASE_FRONTEND_URL = 'https://nikmas.studio';
 export const READER_FULL_NAME_MAX_LENGTH = 50;
 export const BOOK_RELOAD_KEY = '11reloadThisBook11';
-export const MASTER_GIT_AND_GITHUB_BOOK_PRICE = 23;
+export const BOOK_PRICE = 23;

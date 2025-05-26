@@ -1,4 +1,8 @@
-import { Merriweather } from 'next/font/google';
+import {
+  Cormorant_Garamond as CormorantGaramond,
+  Libre_Baskerville as LibreBaskerville,
+  Merriweather,
+} from 'next/font/google';
 import localFont from 'next/font/local';
 
 export const gilroy = localFont({
@@ -39,6 +43,20 @@ export const gilroy = localFont({
 export const merriweather = Merriweather({
   weight: ['300', '400', '900'],
   style: 'normal',
-  subsets: ['latin'],
+  subsets: ['latin', 'cyrillic', 'vietnamese', 'latin-ext', 'cyrillic-ext'],
   variable: '--font-merriweather',
+});
+
+export const libreBaskerville = LibreBaskerville({
+  weight: ['400', '700'],
+  style: 'normal',
+  subsets: ['latin'],
+  variable: '--font-libre-baskerville',
+});
+
+export const cormorantGaramond = CormorantGaramond({
+  weight: ['700'],
+  style: 'normal',
+  subsets: ['latin'],
+  variable: '--font-cormorant-garamond',
 });
