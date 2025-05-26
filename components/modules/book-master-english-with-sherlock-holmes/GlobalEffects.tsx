@@ -8,15 +8,14 @@ import {
 import { BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI } from '@/constants/general';
 import { useBookVersion } from '@/context/book-version/Context';
 import { useInitialScrollToPageStateDispatch } from '@/context/initial-scroll-to-page/Context';
+import { useTranslationTooltipDispatch } from '@/context/translation-tooltip/Context';
 import { useSmallDevicesUrlUpdate } from '@/hooks/use-small-devices-page-update';
 import { BookVersion } from '@/types/book-version';
 import { getSelectionData } from '@/utils/get-selection-data';
 import { translate } from '@/utils/translate';
 import { updateUrl } from '@/utils/update-url';
-import { CircularProgress } from '@mui/material';
 import { usePathname } from 'next/navigation';
 import { ReactElement, ReactNode, useEffect, useRef } from 'react';
-import { createRoot } from 'react-dom/client';
 
 interface GlobalEffectsProps {
   initialPageId?: string;
@@ -37,7 +36,8 @@ function GlobalEffects({
   const previousPathRef = useRef<string | null>(null);
   const path = usePathname();
 
-  const tooltipRoot = useRef<ReturnType<typeof createRoot> | null>(null);
+  const { setIsShown, setIsLoading, setContent, setPosition } =
+    useTranslationTooltipDispatch();
 
   useEffect(() => {
     if (
@@ -144,32 +144,23 @@ function GlobalEffects({
           const rect = rects[0];
 
           const tooltip = document.getElementById('translation-tooltip');
-          if (!tooltip) {
-            return;
-          }
-
-          if (tooltipRoot.current === null) {
-            tooltipRoot.current = createRoot(tooltip);
-          }
+          if (!tooltip) return;
 
           if (content !== undefined) {
-            tooltipRoot.current.render(<span>{content}</span>);
+            setContent(content);
+            setIsLoading(false);
           } else {
-            tooltipRoot.current.render(
-              <div className='flex  w-24  items-center  justify-center'>
-                <CircularProgress size={20} className='!text-black' />
-              </div>,
-            );
+            setIsLoading(true);
           }
-          tooltip.style.display = 'block';
+
+          setIsShown(true);
 
           requestAnimationFrame(() => {
             const tooltipHeight = tooltip.offsetHeight;
             const top = window.scrollY + rect.top - tooltipHeight - 8;
             const left = window.scrollX + rect.left;
 
-            tooltip.style.top = `${top}px`;
-            tooltip.style.left = `${left}px`;
+            setPosition({ top, left });
           });
         }
       }, 500);
@@ -180,7 +171,7 @@ function GlobalEffects({
     return () => {
       document.removeEventListener('selectionchange', handleSelectionChange);
     };
-  }, []);
+  }, [setContent, setIsLoading, setIsShown, setPosition]);
 
   return <>{children}</>;
 }

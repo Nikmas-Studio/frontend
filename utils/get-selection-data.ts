@@ -1,4 +1,4 @@
-import { SelectionData } from "@/types/translations";
+import { SelectionData } from '@/types/translations';
 
 export function getSelectionData(): SelectionData | null {
   const selection = getSelection();
@@ -9,6 +9,10 @@ export function getSelectionData(): SelectionData | null {
 
   const range = selection.getRangeAt(0);
   const fragment = selection.toString().trim();
+  if (fragment.length === 0) {
+    return null;
+  }
+
   const container = range.commonAncestorContainer;
 
   const containerElement =
@@ -49,7 +53,7 @@ export function getSelectionData(): SelectionData | null {
 
   return {
     context: sentence,
-    fragment: fragment,
+    fragment,
     range,
   };
 }
