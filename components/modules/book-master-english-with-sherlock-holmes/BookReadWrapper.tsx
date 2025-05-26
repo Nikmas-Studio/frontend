@@ -92,11 +92,14 @@ function BookReadWrapper({ initialPageId }: BookReadProps): ReactElement {
   if (bookState === BookState.LOADING) {
     return (
       <div
-        className='flex  
-                      h-screen  w-screen  justify-center'
+        className='flex  h-screen  w-screen  justify-center
+                  bg-white  dark:bg-black'
       >
         <div className='mt-[40vh]'>
-          <CircularProgress className='!size-[50px]  !text-black' />
+          <CircularProgress
+            className='!size-[50px]  !text-black  
+                     dark:!text-white'
+          />
         </div>
       </div>
     );
@@ -112,11 +115,14 @@ function BookReadWrapper({ initialPageId }: BookReadProps): ReactElement {
       <>
         <div
           className='fixed  inset-0  z-[111992]  flex  
-                      size-full  justify-center'
+                      size-full  justify-center  bg-white  dark:bg-black'
         >
           {initialPageId === undefined && (
             <div className='mt-[40vh]'>
-              <CircularProgress className='!size-[50px]  !text-black' />
+              <CircularProgress
+                className='!size-[50px]  !text-black
+                         dark:!text-white'
+              />
             </div>
           )}
         </div>
