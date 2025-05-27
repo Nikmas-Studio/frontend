@@ -3,7 +3,7 @@
 import { gilroy } from '@/fonts';
 import { ReactElement, ReactNode } from 'react';
 import Background from '../elements/book-master-git-and-github/Background';
-import ProvidersBookMasterGitAndGithub from '../modules/providers/ProvidersBookMasterGitAndGithu';
+import ProvidersBookMasterGitAndGithub from '../modules/providers/ProvidersBookMasterGitAndGithub';
 import ProvidersDefault from '../modules/providers/ProvidersDefault';
 
 interface MasterGitAndGithubBookLayoutProps {

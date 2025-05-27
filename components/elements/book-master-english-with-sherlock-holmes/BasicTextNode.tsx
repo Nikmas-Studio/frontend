@@ -11,10 +11,7 @@ const BasicTextNode = forwardRef<HTMLParagraphElement, TextNodeProps>(
     { className, children }: TextNodeProps,
     ref,
   ): ReactElement {
-    const classes = classNames(
-      'text-smooth-black  dark:text-smooth-white',
-      className,
-    );
+    const classes = classNames('text-black  dark:text-smooth-white', className);
 
     return (
       <p ref={ref} className={classes}>

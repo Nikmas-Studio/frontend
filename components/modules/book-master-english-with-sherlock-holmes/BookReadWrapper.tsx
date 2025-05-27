@@ -22,15 +22,10 @@ interface BookReadProps {
 function BookReadWrapper({ initialPageId }: BookReadProps): ReactElement {
   const [bookState, setBookState] = useState<BookState>(BookState.LOADING);
   const reloadTokenIsValid = useRef(false);
-  const isSmallDevice = useRef(false);
   const searchParams = useSearchParams();
 
   useEffect(() => {
     async function defineBookState(): Promise<void> {
-      if (window.innerWidth <= 1280) {
-        isSmallDevice.current = true;
-      }
-
       const encryptedReloadToken = localStorage.getItem('reloadToken');
       if (encryptedReloadToken !== null) {
         const { isValid } =
@@ -108,27 +103,6 @@ function BookReadWrapper({ initialPageId }: BookReadProps): ReactElement {
   if (bookState === BookState.UNBOUGHT) {
     window.location.href = `/${BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI}`;
     return <div className='flex  h-screen  w-screen  justify-center'></div>;
-  }
-
-  if (isSmallDevice.current && !reloadTokenIsValid.current) {
-    return (
-      <>
-        <div
-          className='fixed  inset-0  z-[111992]  flex  
-                      size-full  justify-center  bg-white  dark:bg-black'
-        >
-          {initialPageId === undefined && (
-            <div className='mt-[40vh]'>
-              <CircularProgress
-                className='!size-[50px]  !text-black
-                         dark:!text-white'
-              />
-            </div>
-          )}
-        </div>
-        <BookRead initialPageId={initialPageId} />
-      </>
-    );
   }
 
   return <BookRead initialPageId={initialPageId} />;

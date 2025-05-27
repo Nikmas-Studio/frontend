@@ -39,6 +39,8 @@ function GlobalEffects({
   const { setIsShown, setIsLoading, setContent, setPosition } =
     useTranslationTooltipDispatch();
 
+  const lastTranslationRequestId = useRef(0);
+
   useEffect(() => {
     if (
       !previousPathRef.current?.endsWith('1') &&
@@ -105,12 +107,21 @@ function GlobalEffects({
           return;
         }
 
+        const currentTranslationRequestId = ++lastTranslationRequestId.current;
+
         if (selectionData.fragment.length > MAX_SELECTION_LENGTH) {
           showTranslationTooltip({
             range: selectionData.range,
-            content:
-              'Selected text is too long. Please select a shorter fragment.',
           });
+
+          setTimeout(() => {
+            showTranslationTooltip({
+              range: selectionData.range,
+              content:
+                'Selected text is too long. Please select a shorter fragment.',
+            });
+          }, 500);
+
           return;
         }
 
@@ -124,6 +135,10 @@ function GlobalEffects({
           context: selectionData.context,
           fragment: selectionData.fragment,
         });
+
+        if (currentTranslationRequestId !== lastTranslationRequestId.current) {
+          return;
+        }
 
         showTranslationTooltip({
           range: selectionData.range,

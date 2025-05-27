@@ -7,7 +7,7 @@ import moonIconWhite from '@/public/images/moon-icon-git-white.png';
 import sunIconBlack from '@/public/images/sun-icon-git-black.png';
 import sunIconWhite from '@/public/images/sun-icon-git-white.png';
 import { ReactElement, RefObject } from 'react';
-import ThemeToggleDefault from '../../header/theme-toggle/ThemeToggleDefault';
+import ThemeToggleDefault from '../header/theme-toggle/ThemeToggleDefault';
 
 interface ControlsProps {
   pageNumber?: number;

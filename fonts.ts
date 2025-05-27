@@ -1,5 +1,4 @@
 import {
-  Cormorant_Garamond as CormorantGaramond,
   Libre_Baskerville as LibreBaskerville,
   Merriweather,
 } from 'next/font/google';
@@ -52,11 +51,4 @@ export const libreBaskerville = LibreBaskerville({
   style: 'normal',
   subsets: ['latin'],
   variable: '--font-libre-baskerville',
-});
-
-export const cormorantGaramond = CormorantGaramond({
-  weight: ['700'],
-  style: 'normal',
-  subsets: ['latin'],
-  variable: '--font-cormorant-garamond',
 });

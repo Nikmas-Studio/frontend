@@ -27,7 +27,7 @@ import classNames from 'classnames';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { ReactElement, useRef } from 'react';
-import Controls from './Controls';
+import Controls from '../Controls';
 
 gsap.registerPlugin(ScrollTrigger);
 

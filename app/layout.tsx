@@ -35,14 +35,28 @@ export default function RootLayout({
               try {
                 if (localStorage.theme === 'dark' || (!('theme' in localStorage) &&
                    window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                  document.documentElement.classList.add('dark')
+                    document.documentElement.classList.add('dark')
                 } else {
                   document.documentElement.classList.remove('dark')
                 }
-              } catch (_) {}
+              } catch (_) {
+              }
             `,
           }}
         />
+        <Script id='theme-setup'>
+          {`
+            try {
+              if (localStorage.theme === 'dark' || (!('theme' in localStorage) &&
+                 window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                  document.documentElement.classList.add('dark')
+              } else {
+                document.documentElement.classList.remove('dark')
+              }
+            } catch (_) {
+            }
+          `}
+        </Script>
         <Script id='meta-pixel'>
           {`
             !function(f,b,e,v,n,t,s)

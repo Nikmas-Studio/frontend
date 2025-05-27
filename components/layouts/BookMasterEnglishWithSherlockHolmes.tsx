@@ -2,6 +2,7 @@
 
 import { gilroy } from '@/fonts';
 import { ReactElement, ReactNode } from 'react';
+import Background from '../elements/book-master-english-with-sherlock-holmes/Background';
 import ProvidersBookMasterEnglishWithSherlockHolmes from '../modules/providers/ProvidersBookMasterEnglishWithSherlockHolmes.tsx';
 import ProvidersDefault from '../modules/providers/ProvidersDefault';
 
@@ -36,6 +37,7 @@ function BookMasterEnglishWithSherlockHolmesLayout({
               `,
             }}
           />
+          <Background />
           {children}
         </div>
       </ProvidersBookMasterEnglishWithSherlockHolmes>

@@ -13,7 +13,7 @@ import { useUrlUpdate } from '@/hooks/use-url-update';
 import { BookVersion } from '@/types/book-version';
 import classNames from 'classnames';
 import { ReactElement, useRef } from 'react';
-import Controls from './Controls';
+import Controls from '../Controls';
 
 function Page6(): ReactElement {
   const sectionRef = useRef<HTMLElement | null>(null);

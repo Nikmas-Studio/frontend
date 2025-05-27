@@ -25,7 +25,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Image from 'next/image';
 import { ReactElement, useRef } from 'react';
-import Controls from './Controls';
+import Controls from '../Controls';
 
 gsap.registerPlugin(ScrollTrigger);
 

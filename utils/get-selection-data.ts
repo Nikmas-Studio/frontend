@@ -15,11 +15,10 @@ export function getSelectionData(): SelectionData | null {
 
   const container = range.commonAncestorContainer;
 
-  const containerElement =
+  const paragraph =
     container.nodeType === Node.TEXT_NODE
       ? container.parentElement
       : (container as Element);
-  const paragraph = containerElement?.closest('p, h1, h2, h3, h4, h5, h6');
 
   if (!paragraph) {
     return null;

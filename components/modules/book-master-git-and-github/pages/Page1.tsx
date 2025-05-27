@@ -17,7 +17,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { ReactElement, useRef } from 'react';
 import Page from '../../../elements/book-master-git-and-github/Page';
-import Controls from './Controls';
+import Controls from '../Controls';
 
 gsap.registerPlugin(ScrollTrigger);
 

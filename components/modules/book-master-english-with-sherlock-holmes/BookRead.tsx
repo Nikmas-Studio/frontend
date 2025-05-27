@@ -5,6 +5,7 @@ import { BookVersion } from '@/types/book-version';
 import { ReactElement } from 'react';
 import GlobalEffects from './GlobalEffects';
 import Page1 from './pages/Page1';
+import Page2 from './pages/Page2';
 
 interface BookReadProps {
   initialPageId?: string;
@@ -16,6 +17,7 @@ function BookRead({ initialPageId }: BookReadProps): ReactElement {
       <BookVersionProvider version={BookVersion.READ}>
         <GlobalEffects initialPageId={initialPageId}>
           <Page1 />
+          <Page2 />
           <TranslationTooltip />
         </GlobalEffects>
       </BookVersionProvider>

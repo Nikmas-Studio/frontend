@@ -6,12 +6,17 @@ import BasicTextNode from './BasicTextNode';
 interface TextNodeProps {
   children?: ReactNode;
   className?: string;
+  noIndent?: boolean;
 }
 
 const TextNode = forwardRef<HTMLParagraphElement, TextNodeProps>(
-  function TextNode({ className, children }: TextNodeProps, ref): ReactElement {
+  function TextNode(
+    { className, noIndent, children }: TextNodeProps,
+    ref,
+  ): ReactElement {
     const classes = classNames(
-      `lining-nums  text-lg  mb-5  [-webkit-font-smoothing:subpixel-antialiased]`,
+      `lining-nums  text-lg  [-webkit-font-smoothing:subpixel-antialiased]`,
+      { 'indent-7': !noIndent },
       merriweather.className,
       className,
     );
