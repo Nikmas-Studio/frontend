@@ -1,5 +1,6 @@
 'use client';
 
+import { useTouchDevice } from '@/context/touch-device/Context';
 import {
   useTranslationTooltip,
   useTranslationTooltipDispatch,
@@ -15,6 +16,7 @@ function TranslationTooltip(): ReactElement {
   const { setIsShown } = useTranslationTooltipDispatch();
   const tooltipRef = useRef<HTMLDivElement | null>(null);
   const [adjustedLeft, setAdjustedLeft] = useState(position.left);
+  const { isTouchDevice } = useTouchDevice();
 
   const tooltipClasses = classNames(
     merriweather.className,
@@ -70,12 +72,13 @@ function TranslationTooltip(): ReactElement {
   } else {
     left = position.left;
   }
+  
 
   return (
     <div
       ref={tooltipRef}
       style={{
-        top: position.top,
+        top: isTouchDevice ? position.top - 70 : position.top,
         left,
         width,
       }}

@@ -5,15 +5,21 @@ import Image, { StaticImageData } from 'next/image';
 import { forwardRef, ReactElement, useEffect, useRef, useState } from 'react';
 
 import ThemeToggleDropdownItem from '@/components/elements/book-master-english-with-sherlock-holmes/ThemeToggleDropdownItem';
+import TranslationLanguageSelectDropdownItem from '@/components/elements/book-master-english-with-sherlock-holmes/TranslationLanguageSelectDropdownItem';
+import {
+  useTranslationLanguage,
+  useTranslationLanguageDispatch,
+} from '@/context/book-master-english-with-sherlock-holmes/translation-language/Context';
 import { useTheme, useThemeDispatch } from '@/context/theme/Context';
 import { useTouchDevice } from '@/context/touch-device/Context';
-import { libreBaskerville } from '@/fonts';
+import { libreBaskerville, merriweather } from '@/fonts';
 import gearIconBlack from '@/public/images/gear-icon-git-black.png';
 import gearIconWhite from '@/public/images/gear-icon-git-white.png';
 import moonIconBlack from '@/public/images/moon-icon-git-black.png';
 import moonIconWhite from '@/public/images/moon-icon-git-white.png';
 import sunIconBlack from '@/public/images/sun-icon-git-black.png';
 import sunIconWhite from '@/public/images/sun-icon-git-white.png';
+import { TranslationLanguage } from '@/types/master-english-with-sherlock-holmes/translation-laguage';
 
 interface ThemeToggleProps {
   className?: string;
@@ -52,6 +58,9 @@ const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
     const [dropdownIsOpened, setDropdownIsOpened] = useState(false);
     const { selectedTheme } = useTheme();
     const { setSelectedTheme } = useThemeDispatch();
+
+    const { selectedLanguage } = useTranslationLanguage();
+    const { setSelectedTranslationLanguage } = useTranslationLanguageDispatch();
 
     const dropdownElementRef = useRef<HTMLUListElement | null>(null);
     const toggleButtonRef = useRef<HTMLButtonElement | null>(null);
@@ -101,10 +110,21 @@ const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
       className,
     );
 
-    const textClasses = classNames(`select-none`, textClass);
+    const textClasses = classNames(
+      'select-none  text-lg',
+      textClass,
+      merriweather.className,
+    );
 
-    const titleClasses = classNames(
-      'pl-6  text-lg  font-bold  text-black  dark:text-smooth-white  mb-2',
+    const modeTitleClasses = classNames(
+      `pl-6  text-[1.1875rem]  font-bold  text-black  dark:text-smooth-white  
+      mb-2  select-none`,
+      libreBaskerville.className,
+    );
+
+    const translateToTitleClasses = classNames(
+      `pl-6  text-[1.1875rem]  font-bold  text-black  dark:text-smooth-white  
+      mb-5  select-none`,
       libreBaskerville.className,
     );
 
@@ -189,8 +209,8 @@ const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
           </svg>
         </button>
         <ul ref={dropdownElementRef} className={dropdownClasses}>
-          <div className='border-b  border-gray-light  pb-8  dark:border-gray-dark'>
-            <p className={titleClasses}>Mode</p>
+          <div className='border-b  border-gray-light  pb-7  dark:border-gray-dark'>
+            <p className={modeTitleClasses}>Mode</p>
             <ThemeToggleDropdownItem
               className='gap-[0.7rem]'
               itemTheme={Theme.LIGHT}
@@ -204,7 +224,7 @@ const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
                 height={27}
                 alt='Sun icon'
                 className='size-6  translate-y-[-0.031rem]
-                       dark:hidden'
+                       select-none  dark:hidden'
                 quality={100}
               />
               <Image
@@ -213,7 +233,7 @@ const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
                 height={27}
                 alt='Sun icon'
                 className='hidden  size-6  translate-y-[-0.031rem]
-                       dark:inline-block'
+                       select-none  dark:inline-block'
                 quality={100}
               />
               <p className={textClasses}>Light</p>
@@ -231,7 +251,7 @@ const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
                 height={27}
                 alt='Moon icon'
                 className='size-[1.3rem]  translate-x-[0.15rem]
-                       translate-y-[-0.031rem]
+                       translate-y-[-0.031rem]  select-none
                        dark:hidden'
                 quality={100}
               />
@@ -241,7 +261,7 @@ const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
                 height={27}
                 alt='Moon icon'
                 className='hidden  size-[1.3rem]  translate-x-[0.15rem]
-                       translate-y-[-0.031rem]
+                       translate-y-[-0.031rem]  select-none
                        dark:inline-block'
                 quality={100}
               />
@@ -259,8 +279,8 @@ const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
                 width={27}
                 height={27}
                 alt='Gear icon'
-                className='size-[1.3rem]  translate-x-[0.13rem]
-                       translate-y-[-0.031rem]  dark:hidden'
+                className='size-[1.3rem]  translate-x-[0.13rem]  translate-y-[-0.031rem]
+                       select-none  dark:hidden'
                 quality={100}
               />
               <Image
@@ -268,15 +288,386 @@ const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
                 width={27}
                 height={27}
                 alt='Gear icon'
-                className='hidden  size-[1.3rem]  translate-x-[0.13rem]
-                       translate-y-[-0.031rem]  dark:inline-block'
+                className='hidden  size-[1.3rem]  translate-x-[0.13rem]  translate-y-[-0.031rem]
+                       select-none  dark:inline-block'
                 quality={100}
               />
               <p className={textClasses}>System</p>
             </ThemeToggleDropdownItem>
           </div>
           <div className='pt-7'>
-            <p className={titleClasses}>Translate to</p>
+            <p className={translateToTitleClasses}>Translate to</p>
+            <div
+              className='mx-6  rounded-[8px]  border  
+                         border-black  px-[0.85rem]  pb-[0.4rem]  pt-1  dark:border-smooth-white'
+            >
+              <p className={textClasses}>{selectedLanguage}</p>
+            </div>
+            <ul
+              className='mx-6  mt-[0.35rem]  h-[11.5rem]  overflow-y-scroll  rounded-[8px]  border 
+                         border-gray-light    pb-[0.4rem]  pt-1  dark:border-gray-dark'
+            >
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.FRENCH}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.FRENCH)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.FRENCH}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.SPANISH}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.SPANISH)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.SPANISH}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.PORTUGUESE}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.PORTUGUESE)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.PORTUGUESE}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.ITALIAN}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.ITALIAN)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.ITALIAN}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.GERMAN}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.GERMAN)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.GERMAN}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.DUTCH}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.DUTCH)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.DUTCH}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.CATALAN}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.CATALAN)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.CATALAN}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.NORWEGIAN}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.NORWEGIAN)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.NORWEGIAN}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.SWEDISH}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.SWEDISH)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.SWEDISH}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.FINNISH}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.FINNISH)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.FINNISH}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.UKRAINIAN}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.UKRAINIAN)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.UKRAINIAN}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.RUSSIAN}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.RUSSIAN)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.RUSSIAN}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.SERBIAN}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.SERBIAN)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.SERBIAN}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.CROATIAN}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.CROATIAN)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.CROATIAN}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.BELARUSIAN}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.BELARUSIAN)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.BELARUSIAN}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.POLISH}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.POLISH)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.POLISH}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.CZECH}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.CZECH)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.CZECH}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.SLOVAK}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.SLOVAK)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.SLOVAK}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.SLOVAK}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.SLOVAK)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.SLOVAK}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.HUNGARIAN}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.HUNGARIAN)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.HUNGARIAN}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.ROMANIAN}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.ROMANIAN)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.ROMANIAN}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.BULGARIAN}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.BULGARIAN)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.BULGARIAN}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.GREEK}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.GREEK)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.GREEK}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.TURKISH}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.TURKISH)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.TURKISH}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.ARABIC}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.ARABIC)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.ARABIC}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.PERSIAN}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.PERSIAN)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.PERSIAN}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.HEBREW}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.HEBREW)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.HEBREW}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.JAPANESE}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.JAPANESE)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.JAPANESE}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.KOREAN}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.KOREAN)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.KOREAN}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.CHINESE}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.CHINESE)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.CHINESE}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.HINDI}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.HINDI)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.HINDI}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.THAI}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.THAI)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.THAI}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.INDONESIAN}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.INDONESIAN)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.INDONESIAN}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.MALAY}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.MALAY)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.MALAY}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.VIETNAMESE}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.VIETNAMESE)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.VIETNAMESE}</p>
+              </TranslationLanguageSelectDropdownItem>
+              <TranslationLanguageSelectDropdownItem
+                itemLanguage={TranslationLanguage.SWAHILI}
+                selectedLanguage={selectedLanguage}
+                activeItemDotClass={activeItemDotClass}
+                onClick={() =>
+                  setSelectedTranslationLanguage(TranslationLanguage.SWAHILI)
+                }
+              >
+                <p className={textClasses}>{TranslationLanguage.SWAHILI}</p>
+              </TranslationLanguageSelectDropdownItem>
+            </ul>
           </div>
         </ul>
       </div>

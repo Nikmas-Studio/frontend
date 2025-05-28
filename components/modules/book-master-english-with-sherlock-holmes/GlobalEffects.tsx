@@ -6,6 +6,7 @@ import {
   MAX_SELECTION_LENGTH,
 } from '@/constants/book-master-english-with-sherlock-holmes';
 import { BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI } from '@/constants/general';
+import { useTranslationLanguage } from '@/context/book-master-english-with-sherlock-holmes/translation-language/Context';
 import { useBookVersion } from '@/context/book-version/Context';
 import { useInitialScrollToPageStateDispatch } from '@/context/initial-scroll-to-page/Context';
 import { useTranslationTooltipDispatch } from '@/context/translation-tooltip/Context';
@@ -38,6 +39,8 @@ function GlobalEffects({
 
   const { setIsShown, setIsLoading, setContent, setPosition } =
     useTranslationTooltipDispatch();
+  
+  const { selectedLanguage } = useTranslationLanguage();
 
   const lastTranslationRequestId = useRef(0);
 
@@ -131,7 +134,7 @@ function GlobalEffects({
 
         const translation = await translate({
           bookURI: BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI,
-          targetLanguage: 'Russian',
+          targetLanguage: selectedLanguage,
           context: selectionData.context,
           fragment: selectionData.fragment,
         });
@@ -186,7 +189,7 @@ function GlobalEffects({
     return () => {
       document.removeEventListener('selectionchange', handleSelectionChange);
     };
-  }, [setContent, setIsLoading, setIsShown, setPosition]);
+  }, [setContent, setIsLoading, setIsShown, setPosition, selectedLanguage]);
 
   return <>{children}</>;
 }
