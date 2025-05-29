@@ -1,8 +1,8 @@
+import { CONNECTING_WORDS } from '@/constants/connecting-words';
 import { merriweather } from '@/fonts';
 import classNames from 'classnames';
 import { forwardRef, ReactElement, ReactNode } from 'react';
 import BasicTextNode from './BasicTextNode';
-import { CONNECTING_WORDS } from '@/constants/connecting-words';
 
 interface TextNodeProps {
   children?: ReactNode;
@@ -23,7 +23,7 @@ function processChildren(children: ReactNode): ReactNode {
   }
 
   if (Array.isArray(children)) {
-    return children.map((child, i) => processChildren(child));
+    return children.map((child) => processChildren(child));
   }
 
   if (
@@ -55,7 +55,7 @@ const TextNode = forwardRef<HTMLParagraphElement, TextNodeProps>(
       merriweather.className,
       className,
     );
-    
+
     const processedChildren = processChildren(children);
 
     return (
