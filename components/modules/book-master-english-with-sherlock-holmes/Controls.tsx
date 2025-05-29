@@ -1,5 +1,6 @@
 'use client';
 
+import BookNavigatorIcon from '@/components/elements/book-master-git-and-github/BookNavigatorIcon';
 import { merriweather } from '@/fonts';
 import classNames from 'classnames';
 import { ReactElement, RefObject } from 'react';
@@ -22,7 +23,10 @@ function Controls({ pageNumber, themeToggleRef }: ControlsProps): ReactElement {
     <div>
       {pageNumber && <p className={pageNumberClasses}>{pageNumber}</p>}
       <div className='absolute  right-[3vw]  top-5  z-50  max-md:right-[4.2vw]  max-md:top-4'>
-        <Settings ref={themeToggleRef} />
+        <div className='flex  gap-1'>
+          <BookNavigatorIcon className='translate-y-[0.48rem]' />
+          <Settings ref={themeToggleRef} />
+        </div>
       </div>
     </div>
   );

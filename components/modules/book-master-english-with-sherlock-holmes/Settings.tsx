@@ -124,7 +124,7 @@ const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
 
     const translateToTitleClasses = classNames(
       `pl-6  text-[1.1875rem]  font-bold  text-black  dark:text-smooth-white  
-      mb-5  select-none`,
+      mb-[1.15rem]  select-none`,
       libreBaskerville.className,
     );
 

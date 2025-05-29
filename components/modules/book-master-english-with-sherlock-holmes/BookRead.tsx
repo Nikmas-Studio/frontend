@@ -3,6 +3,7 @@ import BookMasterEnglishWithSherlockHolmesLayout from '@/components/layouts/Book
 import { BookVersionProvider } from '@/context/book-version/Context';
 import { BookVersion } from '@/types/book-version';
 import { ReactElement } from 'react';
+import BookNavigator from './BookNavigator';
 import GlobalEffects from './GlobalEffects';
 import Page1 from './pages/Page1';
 import Page2 from './pages/Page2';
@@ -19,6 +20,7 @@ function BookRead({ initialPageId }: BookReadProps): ReactElement {
           <Page1 />
           <Page2 />
           <TranslationTooltip />
+          <BookNavigator />
         </GlobalEffects>
       </BookVersionProvider>
     </BookMasterEnglishWithSherlockHolmesLayout>

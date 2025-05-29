@@ -22,7 +22,7 @@ function TranslationTooltip(): ReactElement {
     merriweather.className,
 
     `text-black  absolute  
-     rounded-[7px]  z-[9999]  dark:border-gray-dark  text-lg  
+     rounded-[7px]  z-[9999999]  dark:border-gray-dark  text-lg  
      [-webkit-font-smoothing:subpixel-antialiased]  max-w-[30vw]
      bg-[#FFEAC5]  pt-2  pb-[0.65rem]  px-4  lining-nums  min-h-[2.9rem]
      max-sm:max-w-[70vw] 
