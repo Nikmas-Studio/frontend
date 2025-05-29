@@ -39,7 +39,7 @@ function GlobalEffects({
 
   const { setIsShown, setIsLoading, setContent, setPosition } =
     useTranslationTooltipDispatch();
-  
+
   const { selectedLanguage } = useTranslationLanguage();
 
   const lastTranslationRequestId = useRef(0);

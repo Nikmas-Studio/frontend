@@ -72,7 +72,6 @@ function TranslationTooltip(): ReactElement {
   } else {
     left = position.left;
   }
-  
 
   return (
     <div

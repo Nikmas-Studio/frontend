@@ -96,7 +96,7 @@ const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
     const dropdownClasses = classNames(
       `absolute  right-0  top-[34px]  flex  flex-col  rounded-[14px]
      border  border-gray-light  dark:border-gray-dark
-     pb-9  pt-7  
+     pb-10  pt-7  
      `,
       bgClass,
       {
@@ -105,7 +105,7 @@ const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
       },
     );
 
-    const themeToggleWrapperClasses = classNames(
+    const settingsWrapperClasses = classNames(
       'relative  flex  flex-col  justify-center  transition-opacity',
       className,
     );
@@ -129,7 +129,7 @@ const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
     );
 
     return (
-      <div ref={ref} className={themeToggleWrapperClasses}>
+      <div ref={ref} className={settingsWrapperClasses}>
         <button
           ref={toggleButtonRef}
           className='group  relative  size-[35px]  translate-x-[7px]  cursor-pointer'
