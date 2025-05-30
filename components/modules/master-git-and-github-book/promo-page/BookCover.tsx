@@ -1,26 +1,24 @@
 'use client';
 
-import { useBookState } from '@/context/book-state/Context';
 import bookCoverDark from '@/public/images/git-and-github-book-cover-dark.jpg';
 import bookCoverLight from '@/public/images/git-and-github-book-cover-light.jpg';
-import { BookState } from '@/types/book-state';
 import Image from 'next/image';
 import { ReactElement } from 'react';
 
 function BookCover(): ReactElement {
-  const { bookState } = useBookState();
+  // const { bookState } = useBookState();
 
-  let href: string;
+  // let href: string;
 
-  switch (bookState) {
-    case BookState.LOADING:
-    case BookState.UNBOUGHT:
-      href = '/book-master-git-and-github/demo';
-      break;
-    case BookState.BOUGHT:
-      href = '/book-master-git-and-github/read';
-      break;
-  }
+  // switch (bookState) {
+  //   case BookState.LOADING:
+  //   case BookState.UNBOUGHT:
+  //     href = '/book-master-git-and-github/demo';
+  //     break;
+  //   case BookState.BOUGHT:
+  //     href = '/book-master-git-and-github/read';
+  //     break;
+  // }
 
   return (
     // <a {...(bookState !== BookState.LOADING && { href })} className='block'>
