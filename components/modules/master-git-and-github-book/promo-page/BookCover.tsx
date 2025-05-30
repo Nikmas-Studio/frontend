@@ -23,7 +23,8 @@ function BookCover(): ReactElement {
   }
 
   return (
-    <a {...(bookState !== BookState.LOADING && { href })} className='block'>
+    // <a {...(bookState !== BookState.LOADING && { href })} className='block'>
+    <div>
       <Image
         src={bookCoverLight}
         alt='Master Git & GitHub: From Everyday Tasks to Deep Waters'
@@ -43,7 +44,8 @@ function BookCover(): ReactElement {
         quality={100}
         priority
       />
-    </a>
+    </div>
+    // </a>
   );
 }
 
