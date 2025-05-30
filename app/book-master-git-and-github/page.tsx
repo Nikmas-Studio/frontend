@@ -65,7 +65,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
               <HeaderDefault />
               <Intro />
               <Contents />
-              <Subscription />
+              {/* <Subscription /> */}
               <InteractivityDemo />
               <MainContainer
                 className='lg:flex  lg:flex-row  lg:justify-between
@@ -78,10 +78,10 @@ function MasterGitAndGithubBookPromo(): ReactElement {
               <BookNavigator />
               <QuizzesAndExercises />
               <ThreeDots />
-              <MainContainer className='flex  flex-row  justify-end'>
+              {/* <MainContainer className='flex  flex-row  justify-end'>
                 <SubscriptionButton className='mr-5' />
-              </MainContainer>
-              <SubscriptionModal formInputId='promo-subscription-modal-email' />
+              </MainContainer> */}
+              {/* <SubscriptionModal formInputId='promo-subscription-modal-email' /> */}
               <Footer />
             </div>
           </div>
