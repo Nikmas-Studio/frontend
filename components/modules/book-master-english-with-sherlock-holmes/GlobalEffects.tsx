@@ -180,14 +180,6 @@ function GlobalEffects({
 
             setPosition({ top, left });
           }, 30);
-
-          // requestAnimationFrame(() => {
-          //   const tooltipHeight = tooltip.offsetHeight;
-          //   const top = window.scrollY + rect.top - tooltipHeight - 8;
-          //   const left = window.scrollX + rect.left;
-
-          //   setPosition({ top, left });
-          // });
         }
       }, 500);
     }

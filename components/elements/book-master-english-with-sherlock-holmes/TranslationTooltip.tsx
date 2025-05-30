@@ -45,16 +45,14 @@ function TranslationTooltip(): ReactElement {
   useEffect(() => {
     if (!tooltipRef.current || !isShown) return;
 
-    requestAnimationFrame(() => {
-      const tooltipWidth = tooltipRef.current!.offsetWidth;
-      const viewportWidth = window.innerWidth;
+    const tooltipWidth = tooltipRef.current!.offsetWidth;
+    const viewportWidth = window.innerWidth;
 
-      if (position.left + tooltipWidth > viewportWidth - 17.388) {
-        setUseRight(true);
-      } else {
-        setUseRight(false);
-      }
-    });
+    if (position.left + tooltipWidth > viewportWidth - 17.388) {
+      setUseRight(true);
+    } else {
+      setUseRight(false);
+    }
   }, [position.left, isShown, content]);
 
   let width: string | undefined;
