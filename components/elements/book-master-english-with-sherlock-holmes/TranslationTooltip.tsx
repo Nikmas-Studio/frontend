@@ -15,7 +15,8 @@ function TranslationTooltip(): ReactElement {
   const { isShown, isLoading, content, position } = useTranslationTooltip();
   const { setIsShown } = useTranslationTooltipDispatch();
   const tooltipRef = useRef<HTMLDivElement | null>(null);
-  const [adjustedLeft, setAdjustedLeft] = useState(position.left);
+  // const [adjustedLeft, setAdjustedLeft] = useState(position.left);
+  const [useRight, setUseRight] = useState(false);
   const { isTouchDevice } = useTouchDevice();
 
   const tooltipClasses = classNames(
@@ -44,17 +45,16 @@ function TranslationTooltip(): ReactElement {
   useEffect(() => {
     if (!tooltipRef.current || !isShown) return;
 
-    const tooltipWidth = tooltipRef.current.offsetWidth;
-    console.log('Tooltip width:', tooltipWidth);
-    const viewportWidth = window.innerWidth;
+    requestAnimationFrame(() => {
+      const tooltipWidth = tooltipRef.current!.offsetWidth;
+      const viewportWidth = window.innerWidth;
 
-    let newLeft = position.left;
-
-    if (position.left + tooltipWidth > viewportWidth - 17.388) {
-      newLeft = Math.max(viewportWidth - tooltipWidth - 17.388, 17.388);
-    }
-
-    setAdjustedLeft(newLeft);
+      if (position.left + tooltipWidth > viewportWidth - 17.388) {
+        setUseRight(true);
+      } else {
+        setUseRight(false);
+      }
+    });
   }, [position.left, isShown, content]);
 
   let width: string | undefined;
@@ -65,12 +65,14 @@ function TranslationTooltip(): ReactElement {
   }
 
   let left: string | number | undefined;
-  if (isLoading) {
-    left = adjustedLeft;
-  } else if (position.left !== adjustedLeft) {
-    left = `calc(${adjustedLeft}px - 20vw)`;
+  let right: string | number | undefined;
+
+  if (useRight) {
+    left = '';
+    right = window.innerWidth < 640 ? '17.388px' : '7vw';
   } else {
     left = position.left;
+    right = '';
   }
 
   return (
@@ -79,6 +81,7 @@ function TranslationTooltip(): ReactElement {
       style={{
         top: isTouchDevice ? position.top - 70 : position.top,
         left,
+        right,
         width,
       }}
       id='translation-tooltip'
