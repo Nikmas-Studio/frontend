@@ -66,7 +66,7 @@ function BookNavigator(): ReactElement {
       <div className={overlayClasses}></div>
       <div ref={containerRef} className={containerClasses}>
         <div className='flex'>
-          <ul className='overflow-y-scroll  h-[calc(100vh-60px)]'>
+          <ul className='h-[calc(100vh-60px)]  overflow-y-scroll'>
             <BookNavigatorStory title='A Study In Scarlet' />
             <BookNavigatorStory title='The Sign of the Four' />
             <BookNavigatorPart title='THE ADVENTURES OF SHERLOCK HOLMES'>
