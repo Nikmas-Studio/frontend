@@ -1,7 +1,4 @@
-import {
-  TranslationTooltipContent,
-  TranslationTooltipPosition,
-} from '@/types/master-english-with-sherlock-holmes/translation-tooltip';
+import { TranslationTooltipContent } from '@/types/master-english-with-sherlock-holmes/translation-tooltip';
 import {
   createContext,
   Dispatch,
@@ -16,14 +13,14 @@ interface TranslationTooltipContextProps {
   isShown: boolean;
   isLoading: boolean;
   content: TranslationTooltipContent;
-  position: TranslationTooltipPosition;
+  position: DOMRect;
 }
 
 interface TranslationTooltipDispatchContextProps {
   setIsShown: Dispatch<SetStateAction<boolean>>;
   setIsLoading: Dispatch<SetStateAction<boolean>>;
   setContent: Dispatch<SetStateAction<TranslationTooltipContent>>;
-  setPosition: Dispatch<SetStateAction<TranslationTooltipPosition>>;
+  setPosition: Dispatch<SetStateAction<DOMRect>>;
 }
 
 const TranslationTooltipContext =
@@ -40,10 +37,7 @@ export function TranslationTooltipProvider({
   const [isShown, setIsShown] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [content, setContent] = useState<TranslationTooltipContent>('');
-  const [position, setPosition] = useState<TranslationTooltipPosition>({
-    top: 0,
-    left: 0,
-  });
+  const [position, setPosition] = useState<DOMRect>(new DOMRect());
 
   return (
     <TranslationTooltipContext.Provider

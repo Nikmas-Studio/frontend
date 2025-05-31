@@ -15,7 +15,6 @@ function TranslationTooltip(): ReactElement {
   const { isShown, isLoading, content, position } = useTranslationTooltip();
   const { setIsShown } = useTranslationTooltipDispatch();
   const tooltipRef = useRef<HTMLDivElement | null>(null);
-  // const [adjustedLeft, setAdjustedLeft] = useState(position.left);
   const [useRight, setUseRight] = useState(false);
   const { isTouchDevice } = useTouchDevice();
 
@@ -59,7 +58,7 @@ function TranslationTooltip(): ReactElement {
   if (isLoading) {
     width = '7rem';
   } else {
-    width = undefined;
+    width = '';
   }
 
   let left: string | number | undefined;
@@ -67,7 +66,7 @@ function TranslationTooltip(): ReactElement {
 
   if (useRight) {
     left = '';
-    right = window.innerWidth < 640 ? '17.388px' : '7vw';
+    right = window.innerWidth < 640 ? '17.388px' : '100px';
   } else {
     left = position.left;
     right = '';

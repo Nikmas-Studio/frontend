@@ -172,14 +172,15 @@ function GlobalEffects({
           }
 
           setIsShown(true);
+          setPosition(rect);
 
-          setTimeout(() => {
-            const tooltipHeight = tooltip.offsetHeight;
-            const top = window.scrollY + rect.top - tooltipHeight - 8;
-            const left = window.scrollX + rect.left;
+          // setTimeout(() => {
+          //   const tooltipHeight = tooltip.offsetHeight;
+          //   const top = window.scrollY + rect.top - tooltipHeight - 8;
+          //   const left = window.scrollX + rect.left;
 
-            setPosition({ top, left });
-          }, 30);
+          //   setPosition({ top, left });
+          // }, 30);
         }
       }, 500);
     }
