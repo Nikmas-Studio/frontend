@@ -9,14 +9,24 @@ import { merriweather } from '@/fonts';
 import useOutsideClick from '@/hooks/use-outside-click';
 import { CircularProgress } from '@mui/material';
 import classNames from 'classnames';
-import { ReactElement, useEffect, useRef, useState } from 'react';
+import { ReactElement, useRef, useState } from 'react';
 
 function TranslationTooltip(): ReactElement {
-  const { isShown, isLoading, content, position } = useTranslationTooltip();
+  const { isShown, isLoading, content, fragmentPosition } =
+    useTranslationTooltip();
   const { setIsShown } = useTranslationTooltipDispatch();
   const tooltipRef = useRef<HTMLDivElement | null>(null);
-  const [useRight, setUseRight] = useState(false);
   const { isTouchDevice } = useTouchDevice();
+
+  const [tooltipPosition, setTooltipPosition] = useState<{
+    top?: string | number;
+    left?: string | number;
+    right?: string | number;
+  }>({
+    top: '',
+    left: '',
+    right: '',
+  });
 
   const tooltipClasses = classNames(
     merriweather.className,
@@ -41,18 +51,39 @@ function TranslationTooltip(): ReactElement {
     setIsShown(false);
   });
 
-  useEffect(() => {
-    if (!tooltipRef.current || !isShown) return;
+  setTimeout(() => {
+    if (!tooltipRef.current) {
+      return;
+    }
 
-    const tooltipWidth = tooltipRef.current!.offsetWidth;
+    const tooltipWidth = tooltipRef.current.offsetWidth;
+    const tooltipHeight = tooltipRef.current.offsetHeight;
+
+    let top =
+      fragmentPosition.scrollY + fragmentPosition.rect.top - tooltipHeight - 8;
+
+    let left: number | string =
+      fragmentPosition.scrollX + fragmentPosition.rect.left;
+
+    let right: string | number | undefined;
+
     const viewportWidth = window.innerWidth;
 
-    if (position.left + tooltipWidth > viewportWidth - 17.388) {
-      setUseRight(true);
-    } else {
-      setUseRight(false);
+    if (left + tooltipWidth > viewportWidth - 17.388) {
+      left = '';
+      right = window.innerWidth < 640 ? '17.388px' : '100px';
     }
-  }, [position.left, isShown, content]);
+
+    if (isTouchDevice) {
+      top -= 70;
+    }
+
+    setTooltipPosition({
+      top,
+      left,
+      right,
+    });
+  }, 10);
 
   let width: string | undefined;
   if (isLoading) {
@@ -61,24 +92,13 @@ function TranslationTooltip(): ReactElement {
     width = '';
   }
 
-  let left: string | number | undefined;
-  let right: string | number | undefined;
-
-  if (useRight) {
-    left = '';
-    right = window.innerWidth < 640 ? '17.388px' : '100px';
-  } else {
-    left = position.left;
-    right = '';
-  }
-
   return (
     <div
       ref={tooltipRef}
       style={{
-        top: isTouchDevice ? position.top - 70 : position.top,
-        left,
-        right,
+        top: tooltipPosition.top,
+        left: tooltipPosition.left,
+        right: tooltipPosition.right,
         width,
       }}
       id='translation-tooltip'

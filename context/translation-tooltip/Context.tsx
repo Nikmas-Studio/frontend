@@ -1,4 +1,7 @@
-import { TranslationTooltipContent } from '@/types/master-english-with-sherlock-holmes/translation-tooltip';
+import {
+  TranslationTooltipContent,
+  TranslationTooltipFragmentPosition,
+} from '@/types/master-english-with-sherlock-holmes/translation-tooltip';
 import {
   createContext,
   Dispatch,
@@ -13,14 +16,16 @@ interface TranslationTooltipContextProps {
   isShown: boolean;
   isLoading: boolean;
   content: TranslationTooltipContent;
-  position: DOMRect;
+  fragmentPosition: TranslationTooltipFragmentPosition;
 }
 
 interface TranslationTooltipDispatchContextProps {
   setIsShown: Dispatch<SetStateAction<boolean>>;
   setIsLoading: Dispatch<SetStateAction<boolean>>;
   setContent: Dispatch<SetStateAction<TranslationTooltipContent>>;
-  setPosition: Dispatch<SetStateAction<DOMRect>>;
+  setFragmentPosition: Dispatch<
+    SetStateAction<TranslationTooltipFragmentPosition>
+  >;
 }
 
 const TranslationTooltipContext =
@@ -37,7 +42,12 @@ export function TranslationTooltipProvider({
   const [isShown, setIsShown] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [content, setContent] = useState<TranslationTooltipContent>('');
-  const [position, setPosition] = useState<DOMRect>(new DOMRect());
+  const [fragmentPosition, setFragmentPosition] =
+    useState<TranslationTooltipFragmentPosition>({
+      rect: new DOMRect(),
+      scrollY: 0,
+      scrollX: 0,
+    });
 
   return (
     <TranslationTooltipContext.Provider
@@ -45,11 +55,16 @@ export function TranslationTooltipProvider({
         isShown,
         isLoading,
         content,
-        position,
+        fragmentPosition,
       }}
     >
       <TranslationTooltipDispatchContext.Provider
-        value={{ setIsShown, setIsLoading, setContent, setPosition }}
+        value={{
+          setIsShown,
+          setIsLoading,
+          setContent,
+          setFragmentPosition,
+        }}
       >
         {children}
       </TranslationTooltipDispatchContext.Provider>

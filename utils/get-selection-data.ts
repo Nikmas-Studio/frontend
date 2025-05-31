@@ -24,6 +24,12 @@ export function getSelectionData(): SelectionData | null {
     return null;
   }
 
+  if (paragraph.id === 'translation-tooltip') {
+    return null;
+  }
+
+  console.log('Selection is in a paragraph:', paragraph.id);
+
   const paragraphText = paragraph?.textContent || '';
 
   const tempRange = range.cloneRange();

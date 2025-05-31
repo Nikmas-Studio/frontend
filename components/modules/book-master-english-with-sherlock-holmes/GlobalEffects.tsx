@@ -37,7 +37,7 @@ function GlobalEffects({
   const previousPathRef = useRef<string | null>(null);
   const path = usePathname();
 
-  const { setIsShown, setIsLoading, setContent, setPosition } =
+  const { setIsShown, setIsLoading, setContent, setFragmentPosition } =
     useTranslationTooltipDispatch();
 
   const { selectedLanguage } = useTranslationLanguage();
@@ -121,7 +121,7 @@ function GlobalEffects({
             showTranslationTooltip({
               range: selectionData.range,
               content:
-                'Selected text is too long. Please select a shorter fragment.',
+                'Selected text is too long. Please highlight a\u00A0shorter fragment.',
             });
           }, 500);
 
@@ -172,15 +172,11 @@ function GlobalEffects({
           }
 
           setIsShown(true);
-          setPosition(rect);
-
-          // setTimeout(() => {
-          //   const tooltipHeight = tooltip.offsetHeight;
-          //   const top = window.scrollY + rect.top - tooltipHeight - 8;
-          //   const left = window.scrollX + rect.left;
-
-          //   setPosition({ top, left });
-          // }, 30);
+          setFragmentPosition({
+            rect,
+            scrollY: window.scrollY,
+            scrollX: window.scrollX,
+          });
         }
       }, 500);
     }
@@ -190,7 +186,13 @@ function GlobalEffects({
     return () => {
       document.removeEventListener('selectionchange', handleSelectionChange);
     };
-  }, [setContent, setIsLoading, setIsShown, setPosition, selectedLanguage]);
+  }, [
+    setContent,
+    setIsLoading,
+    setIsShown,
+    setFragmentPosition,
+    selectedLanguage,
+  ]);
 
   return <>{children}</>;
 }
