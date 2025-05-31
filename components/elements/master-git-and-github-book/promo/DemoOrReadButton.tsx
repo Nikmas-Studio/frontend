@@ -18,6 +18,7 @@ function DemoOrReadButton(): ReactElement {
   `,
     {
       'pointer-events-none': bookState === BookState.LOADING,
+      'cursor-default': bookState === BookState.UNBOUGHT,
     },
   );
 
@@ -33,18 +34,14 @@ function DemoOrReadButton(): ReactElement {
       break;
   }
 
-  if (bookState === BookState.UNBOUGHT) {
-    return <span></span>;
-  }
-
   return (
-    <a {...(bookState !== BookState.LOADING && { href })} className={classes}>
+    <a {...(bookState === BookState.BOUGHT && { href })} className={classes}>
       {bookState === BookState.LOADING && (
         <span className='inline-block  size-[20px]  translate-y-[3px]'>
           <CircularProgress className='!size-[20px]  !text-white  dark:!text-black' />
         </span>
       )}
-      {/* {bookState === BookState.UNBOUGHT && 'Try demo'} */}
+      {bookState === BookState.UNBOUGHT && 'Soon'}
       {bookState === BookState.BOUGHT && 'Read'}
     </a>
   );
