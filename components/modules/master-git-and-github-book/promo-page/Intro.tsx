@@ -79,9 +79,9 @@ function Intro(): ReactElement {
               as&nbsp;a&nbsp;reference: you&apos;ll
               be&nbsp;able&nbsp;to&nbsp;find the&nbsp;necessary piece
               of&nbsp;information instantly with&nbsp;special search tools
-              that&nbsp;are&nbsp;coming soon.
+              integrated into&nbsp;the&nbsp;book navigator.
             </TextNode>
-            <TextNode>Enjoy the&nbsp;book!</TextNode>
+            <TextNode>Enjoy the&nbsp;read!</TextNode>
           </div>
           <div className='mt-10  flex-none  lg:mt-0  lg:w-[235px]'>
             <Image

@@ -14,7 +14,7 @@ function QuizzesAndExercises(): ReactElement {
         <H2 className='mb-12  lg:mb-14  2lg:mb-12'>
           Test and&nbsp;reinforce your knowledge with&nbsp;quizzes
           and&nbsp;exercises
-          <br className='2lg:hidden' />
+          {/* <br className='2lg:hidden' />
           <span
             className='mt-[1.2rem] inline-block  translate-y-[-0.26rem]  rounded-[10px]
                        border  border-blue  px-4
@@ -22,7 +22,7 @@ function QuizzesAndExercises(): ReactElement {
                        text-blue  2lg:ml-4  2lg:mt-0'
           >
             Soon
-          </span>
+          </span> */}
         </H2>
         <div
           className='relative  flex  flex-col  gap-11  lg:flex-row  lg:justify-between
