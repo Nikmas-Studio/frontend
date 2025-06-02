@@ -1,4 +1,4 @@
-import { TranslationLanguage } from '@/types/master-english-with-sherlock-holmes/translation-laguage';
+import { TranslationLanguage } from '@/types/translation-laguage';
 import {
   createContext,
   ReactElement,

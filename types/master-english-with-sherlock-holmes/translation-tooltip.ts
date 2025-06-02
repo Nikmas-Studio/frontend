@@ -4,4 +4,7 @@ export interface TranslationTooltipFragmentPosition {
   scrollX: number;
 }
 
-export type TranslationTooltipContent = string;
+export type TranslationTooltipContent = {
+  translation: string;
+  error: boolean;
+};

@@ -41,7 +41,10 @@ export function TranslationTooltipProvider({
 }): ReactElement {
   const [isShown, setIsShown] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [content, setContent] = useState<TranslationTooltipContent>('');
+  const [content, setContent] = useState<TranslationTooltipContent>({
+    translation: '',
+    error: false,
+  });
   const [fragmentPosition, setFragmentPosition] =
     useState<TranslationTooltipFragmentPosition>({
       rect: new DOMRect(),

@@ -28,6 +28,8 @@ function TranslationTooltip(): ReactElement {
     right: '',
   });
 
+  const [innerIsShown, setInnerIsShown] = useState(false);
+
   const tooltipClasses = classNames(
     merriweather.className,
 
@@ -35,11 +37,12 @@ function TranslationTooltip(): ReactElement {
      rounded-[7px]  z-[9999999]  dark:border-gray-dark  text-lg  
      [-webkit-font-smoothing:subpixel-antialiased]  max-w-[30vw]
      bg-[#FFEAC5]  pt-2  pb-[0.65rem]  px-4  lining-nums  min-h-[2.9rem]
-     max-sm:max-w-[70vw] 
+     max-sm:max-w-[70vw]
      `,
 
     {
-      invisible: !isShown,
+      invisible: !innerIsShown,
+      'text-red-600': content.error,
     },
   );
 
@@ -83,6 +86,8 @@ function TranslationTooltip(): ReactElement {
       left,
       right,
     });
+
+    setInnerIsShown(isShown);
   }, 10);
 
   let width: string | undefined;
@@ -109,7 +114,7 @@ function TranslationTooltip(): ReactElement {
           <CircularProgress size={20} className='!mt-[4px]  !text-black' />
         </div>
       ) : (
-        content
+        content.translation
       )}
     </div>
   );

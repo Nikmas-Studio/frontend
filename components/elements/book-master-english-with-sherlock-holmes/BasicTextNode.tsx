@@ -4,17 +4,18 @@ import { forwardRef, ReactElement, ReactNode } from 'react';
 interface TextNodeProps {
   children?: ReactNode;
   className?: string;
+  onClick?: () => void;
 }
 
 const BasicTextNode = forwardRef<HTMLParagraphElement, TextNodeProps>(
   function BasicTextNode(
-    { className, children }: TextNodeProps,
+    { className, children, onClick }: TextNodeProps,
     ref,
   ): ReactElement {
     const classes = classNames('text-black  dark:text-smooth-white', className);
 
     return (
-      <p ref={ref} className={classes}>
+      <p ref={ref} onClick={onClick} className={classes}>
         {children}
       </p>
     );

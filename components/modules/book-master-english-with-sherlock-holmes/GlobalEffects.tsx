@@ -3,7 +3,7 @@
 import {
   BASE_PATH_DEMO,
   BASE_PATH_READ,
-  MAX_SELECTION_LENGTH,
+  MAX_TRANSLATION_FRAGMENT_LENGTH,
 } from '@/constants/book-master-english-with-sherlock-holmes';
 import { BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI } from '@/constants/general';
 import { useTranslationLanguage } from '@/context/book-master-english-with-sherlock-holmes/translation-language/Context';
@@ -112,7 +112,7 @@ function GlobalEffects({
 
         const currentTranslationRequestId = ++lastTranslationRequestId.current;
 
-        if (selectionData.fragment.length > MAX_SELECTION_LENGTH) {
+        if (selectionData.fragment.length > MAX_TRANSLATION_FRAGMENT_LENGTH) {
           showTranslationTooltip({
             range: selectionData.range,
           });
@@ -123,7 +123,7 @@ function GlobalEffects({
               content:
                 'Selected text is too long. Please highlight a\u00A0shorter fragment.',
             });
-          }, 500);
+          }, 700);
 
           return;
         }
@@ -132,28 +132,46 @@ function GlobalEffects({
           range: selectionData.range,
         });
 
-        const translation = await translate({
-          bookURI: BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI,
-          targetLanguage: selectedLanguage,
-          context: selectionData.context,
-          fragment: selectionData.fragment,
-        });
-
-        if (currentTranslationRequestId !== lastTranslationRequestId.current) {
-          return;
+        const start = Date.now();
+        let translation: string;
+        let error = false;
+        try {
+          translation = await translate({
+            bookURI: BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI,
+            targetLanguage: selectedLanguage,
+            context: selectionData.context,
+            fragment: selectionData.fragment,
+          });
+        } catch (e) {
+          error = true;
+          translation =
+            'An error occurred while translating the text. Please try again after a pause.';
         }
+        const timeElapsed = Date.now() - start;
+        const timeoutDuration = Math.max(700 - timeElapsed, 0);
 
-        showTranslationTooltip({
-          range: selectionData.range,
-          content: translation,
-        });
+        setTimeout(() => {
+          if (
+            currentTranslationRequestId !== lastTranslationRequestId.current
+          ) {
+            return;
+          }
+
+          showTranslationTooltip({
+            range: selectionData.range,
+            content: translation,
+            error,
+          });
+        }, timeoutDuration);
 
         function showTranslationTooltip({
           range,
           content,
+          error = false,
         }: {
           range: Range;
           content?: string;
+          error?: boolean;
         }): void {
           const rects = range.getClientRects();
           if (rects.length === 0) {
@@ -165,7 +183,10 @@ function GlobalEffects({
           if (!tooltip) return;
 
           if (content !== undefined) {
-            setContent(content);
+            setContent({
+              translation: content,
+              error,
+            });
             setIsLoading(false);
           } else {
             setIsLoading(true);

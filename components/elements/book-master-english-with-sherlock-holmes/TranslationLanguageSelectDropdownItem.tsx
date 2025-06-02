@@ -1,5 +1,5 @@
 import { merriweather } from '@/fonts';
-import { TranslationLanguage } from '@/types/master-english-with-sherlock-holmes/translation-laguage';
+import { TranslationLanguage } from '@/types/translation-laguage';
 import classNames from 'classnames';
 import { ReactElement, ReactNode } from 'react';
 
