@@ -3,17 +3,12 @@
 import {
   BASE_PATH_DEMO,
   BASE_PATH_READ,
-  MAX_TRANSLATION_FRAGMENT_LENGTH,
 } from '@/constants/book-master-english-with-sherlock-holmes';
-import { BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI } from '@/constants/general';
-import { useTranslationLanguage } from '@/context/book-master-english-with-sherlock-holmes/translation-language/Context';
 import { useBookVersion } from '@/context/book-version/Context';
 import { useInitialScrollToPageStateDispatch } from '@/context/initial-scroll-to-page/Context';
-import { useTranslationTooltipDispatch } from '@/context/translation-tooltip/Context';
+import { useSelectTranslation } from '@/hooks/book-master-english-with-sherlock-holmes/use-select-translation';
 import { useSmallDevicesUrlUpdate } from '@/hooks/use-small-devices-page-update';
 import { BookVersion } from '@/types/book-version';
-import { getSelectionData } from '@/utils/get-selection-data';
-import { translate } from '@/utils/translate';
 import { updateUrl } from '@/utils/update-url';
 import { usePathname } from 'next/navigation';
 import { ReactElement, ReactNode, useEffect, useRef } from 'react';
@@ -36,13 +31,6 @@ function GlobalEffects({
 
   const previousPathRef = useRef<string | null>(null);
   const path = usePathname();
-
-  const { setIsShown, setIsLoading, setContent, setFragmentPosition } =
-    useTranslationTooltipDispatch();
-
-  const { selectedLanguage } = useTranslationLanguage();
-
-  const lastTranslationRequestId = useRef(0);
 
   useEffect(() => {
     if (
@@ -97,123 +85,7 @@ function GlobalEffects({
 
   useSmallDevicesUrlUpdate({ basePath });
 
-  useEffect(() => {
-    let selectionTimeout: NodeJS.Timeout | undefined;
-
-    function handleSelectionChange(): void {
-      clearTimeout(selectionTimeout);
-
-      selectionTimeout = setTimeout(async () => {
-        const selectionData = getSelectionData();
-
-        if (selectionData === null) {
-          return;
-        }
-
-        const currentTranslationRequestId = ++lastTranslationRequestId.current;
-
-        if (selectionData.fragment.length > MAX_TRANSLATION_FRAGMENT_LENGTH) {
-          showTranslationTooltip({
-            range: selectionData.range,
-          });
-
-          setTimeout(() => {
-            showTranslationTooltip({
-              range: selectionData.range,
-              content:
-                'Selected text is too long. Please highlight a\u00A0shorter fragment.',
-            });
-          }, 700);
-
-          return;
-        }
-
-        showTranslationTooltip({
-          range: selectionData.range,
-        });
-
-        const start = Date.now();
-        let translation: string;
-        let error = false;
-        try {
-          translation = await translate({
-            bookURI: BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI,
-            targetLanguage: selectedLanguage,
-            context: selectionData.context,
-            fragment: selectionData.fragment,
-          });
-        } catch (e) {
-          error = true;
-          translation =
-            'An error occurred while translating the text. Please try again after a pause.';
-        }
-        const timeElapsed = Date.now() - start;
-        const timeoutDuration = Math.max(700 - timeElapsed, 0);
-
-        setTimeout(() => {
-          if (
-            currentTranslationRequestId !== lastTranslationRequestId.current
-          ) {
-            return;
-          }
-
-          showTranslationTooltip({
-            range: selectionData.range,
-            content: translation,
-            error,
-          });
-        }, timeoutDuration);
-
-        function showTranslationTooltip({
-          range,
-          content,
-          error = false,
-        }: {
-          range: Range;
-          content?: string;
-          error?: boolean;
-        }): void {
-          const rects = range.getClientRects();
-          if (rects.length === 0) {
-            return;
-          }
-          const rect = rects[0];
-
-          const tooltip = document.getElementById('translation-tooltip');
-          if (!tooltip) return;
-
-          if (content !== undefined) {
-            setContent({
-              translation: content,
-              error,
-            });
-            setIsLoading(false);
-          } else {
-            setIsLoading(true);
-          }
-
-          setIsShown(true);
-          setFragmentPosition({
-            rect,
-            scrollY: window.scrollY,
-            scrollX: window.scrollX,
-          });
-        }
-      }, 500);
-    }
-
-    document.addEventListener('selectionchange', handleSelectionChange);
-
-    return () => {
-      document.removeEventListener('selectionchange', handleSelectionChange);
-    };
-  }, [
-    setContent,
-    setIsLoading,
-    setIsShown,
-    setFragmentPosition,
-    selectedLanguage,
-  ]);
+  useSelectTranslation();
 
   return <>{children}</>;
 }

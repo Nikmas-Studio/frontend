@@ -28,7 +28,7 @@ export function getSelectionData(): SelectionData | null {
     return null;
   }
 
-  console.log('Selection is in a paragraph:', paragraph.id);
+  const pageNumber = getPageNumber(paragraph);
 
   const paragraphText = paragraph?.textContent || '';
 
@@ -60,5 +60,23 @@ export function getSelectionData(): SelectionData | null {
     context: sentence,
     fragment,
     range,
+    pageNumber,
   };
+}
+
+function getPageNumber(paragraph: Element | null): number | null {
+  if (!paragraph) return null;
+
+  let node: HTMLElement | null = paragraph as HTMLElement;
+
+  while (node) {
+    if (node.tagName === 'SECTION' && node.id && /^page-\d+$/.test(node.id)) {
+      const match = node.id.match(/^page-(\d+)$/);
+      return match ? parseInt(match[1], 10) : null;
+    }
+
+    node = node.parentElement;
+  }
+
+  return null;
 }

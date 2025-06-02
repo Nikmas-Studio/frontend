@@ -5,10 +5,12 @@ import {
 import {
   createContext,
   Dispatch,
+  MutableRefObject,
   ReactElement,
   ReactNode,
   SetStateAction,
   useContext,
+  useRef,
   useState,
 } from 'react';
 
@@ -17,6 +19,7 @@ interface TranslationTooltipContextProps {
   isLoading: boolean;
   content: TranslationTooltipContent;
   fragmentPosition: TranslationTooltipFragmentPosition;
+  ref: MutableRefObject<HTMLDivElement | null>;
 }
 
 interface TranslationTooltipDispatchContextProps {
@@ -51,6 +54,8 @@ export function TranslationTooltipProvider({
       scrollY: 0,
       scrollX: 0,
     });
+    
+  const ref = useRef<HTMLDivElement | null>(null);
 
   return (
     <TranslationTooltipContext.Provider
@@ -59,6 +64,7 @@ export function TranslationTooltipProvider({
         isLoading,
         content,
         fragmentPosition,
+        ref,
       }}
     >
       <TranslationTooltipDispatchContext.Provider

@@ -11,6 +11,7 @@ import classNames from 'classnames';
 import { ReactElement, useEffect, useRef, useState } from 'react';
 import BookNavigatorPart from './BookNavigatorPart';
 import BookNavigatorStory from './BookNavigatorStory';
+import { useTranslationTooltip } from '@/context/translation-tooltip/Context';
 
 function BookNavigator(): ReactElement {
   const { bookNavigatorIsOpened } = useBookNavigator();
@@ -18,6 +19,7 @@ function BookNavigator(): ReactElement {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const { isTouchDevice } = useTouchDevice();
   const [selectedStory, setSelectedStory] = useState(Story.A_STUDY_IN_SCARLET);
+  const { ref: tooltipRef } = useTranslationTooltip();
 
   const overlayClasses = classNames(
     'fixed  inset-0  z-[9999]  bg-black  transition-opacity  duration-300',
@@ -39,7 +41,7 @@ function BookNavigator(): ReactElement {
     },
   );
 
-  useOutsideClick([containerRef], () => {
+  useOutsideClick([containerRef, tooltipRef], () => {
     setBookNavigatorIsOpened(false);
   });
 

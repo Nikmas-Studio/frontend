@@ -12,10 +12,9 @@ import classNames from 'classnames';
 import { ReactElement, useRef, useState } from 'react';
 
 function TranslationTooltip(): ReactElement {
-  const { isShown, isLoading, content, fragmentPosition } =
+  const { isShown, isLoading, content, fragmentPosition, ref: tooltipRef } =
     useTranslationTooltip();
   const { setIsShown } = useTranslationTooltipDispatch();
-  const tooltipRef = useRef<HTMLDivElement | null>(null);
   const { isTouchDevice } = useTouchDevice();
 
   const [tooltipPosition, setTooltipPosition] = useState<{
