@@ -9,11 +9,16 @@ import { merriweather } from '@/fonts';
 import useOutsideClick from '@/hooks/use-outside-click';
 import { CircularProgress } from '@mui/material';
 import classNames from 'classnames';
-import { ReactElement, useRef, useState } from 'react';
+import { ReactElement, useState } from 'react';
 
 function TranslationTooltip(): ReactElement {
-  const { isShown, isLoading, content, fragmentPosition, ref: tooltipRef } =
-    useTranslationTooltip();
+  const {
+    isShown,
+    isLoading,
+    content,
+    fragmentPosition,
+    ref: tooltipRef,
+  } = useTranslationTooltip();
   const { setIsShown } = useTranslationTooltipDispatch();
   const { isTouchDevice } = useTouchDevice();
 

@@ -5,13 +5,13 @@ import {
   useBookNavigatorDispatch,
 } from '@/context/book-navigator/Context';
 import { useTouchDevice } from '@/context/touch-device/Context';
+import { useTranslationTooltip } from '@/context/translation-tooltip/Context';
 import useOutsideClick from '@/hooks/use-outside-click';
 import { Story } from '@/types/master-english-with-sherlock-holmes/book-navigator';
 import classNames from 'classnames';
 import { ReactElement, useEffect, useRef, useState } from 'react';
 import BookNavigatorPart from './BookNavigatorPart';
 import BookNavigatorStory from './BookNavigatorStory';
-import { useTranslationTooltip } from '@/context/translation-tooltip/Context';
 
 function BookNavigator(): ReactElement {
   const { bookNavigatorIsOpened } = useBookNavigator();
