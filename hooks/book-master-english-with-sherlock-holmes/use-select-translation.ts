@@ -2,7 +2,7 @@ import { MAX_TRANSLATION_FRAGMENT_LENGTH } from '@/constants/book-master-english
 import { BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI } from '@/constants/general';
 import { useTranslationLanguage } from '@/context/book-master-english-with-sherlock-holmes/translation-language/Context';
 import { useTranslationTooltipDispatch } from '@/context/translation-tooltip/Context';
-import { getStoryByPage } from '@/utils/book-master-english-with-sherlock-holmes/get-story-by-page';
+import { getBookPartByPage } from '@/utils/get-book-part-by-page';
 import { getSelectionData } from '@/utils/get-selection-data';
 import { translate } from '@/utils/translate';
 import { useEffect, useRef } from 'react';
@@ -44,9 +44,9 @@ export function useSelectTranslation(): void {
           return;
         }
 
-        let story = '';
+        let bookPart = '';
         if (selectionData.pageNumber !== null) {
-          story = getStoryByPage(selectionData.pageNumber) ?? '';
+          bookPart = getBookPartByPage(selectionData.pageNumber) ?? '';
         }
 
         showTranslationTooltip({
@@ -62,7 +62,7 @@ export function useSelectTranslation(): void {
             targetLanguage: selectedLanguage,
             context: selectionData.context,
             fragment: selectionData.fragment,
-            story,
+            bookPart,
           });
         } catch (e) {
           error = true;

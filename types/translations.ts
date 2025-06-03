@@ -3,7 +3,7 @@ export interface TranslateProps {
   targetLanguage: string;
   context: string;
   fragment: string;
-  story: string;
+  bookPart: string;
 }
 
 export interface SelectionData {
