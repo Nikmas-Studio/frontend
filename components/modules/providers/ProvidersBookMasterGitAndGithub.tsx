@@ -1,5 +1,6 @@
 'use client';
 
+import { ActivePageProvider } from '@/context/active-page/Context';
 import { ActiveBackgroundProvider } from '@/context/background-master-git-and-github-book/Context';
 import { InitialPageIdProvider } from '@/context/initial-page-id/Context';
 import { InitialScrollToPageStateProvider } from '@/context/initial-scroll-to-page/Context';
@@ -19,7 +20,9 @@ function ProvidersBookMasterGitAndGithub({
     <InitialPageIdProvider initialPageId={initialPageId}>
       <InitialScrollToPageStateProvider>
         <ActiveBackgroundProvider>
-          <PendingUrlUpdatesProvider>{children}</PendingUrlUpdatesProvider>
+          <ActivePageProvider>
+            <PendingUrlUpdatesProvider>{children}</PendingUrlUpdatesProvider>
+          </ActivePageProvider>
         </ActiveBackgroundProvider>
       </InitialScrollToPageStateProvider>
     </InitialPageIdProvider>
