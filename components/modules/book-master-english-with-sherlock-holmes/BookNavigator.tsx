@@ -81,7 +81,7 @@ function BookNavigator(): ReactElement {
         <div className='flex'>
           <ul
             className='h-[calc(100vh-60px)]  overflow-y-scroll  border-r
-                     border-[#E0E0E0]  dark:border-[#212932]  py-6'
+                     border-[#E0E0E0]  py-6  dark:border-[#212932]'
           >
             <BookNavigatorStory
               selectedStory={selectedStory}

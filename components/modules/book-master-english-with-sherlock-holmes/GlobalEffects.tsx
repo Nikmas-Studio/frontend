@@ -8,7 +8,6 @@ import { useActivePageDispatch } from '@/context/active-page/Context';
 import { useBookVersion } from '@/context/book-version/Context';
 import { useInitialScrollToPageStateDispatch } from '@/context/initial-scroll-to-page/Context';
 import { useSelectTranslation } from '@/hooks/book-master-english-with-sherlock-holmes/use-select-translation';
-import { useSmallDevicesUrlUpdate } from '@/hooks/use-small-devices-page-update';
 import { BookVersion } from '@/types/book-version';
 import { updateUrl } from '@/utils/update-url';
 import { ReactElement, ReactNode, useEffect } from 'react';
@@ -64,7 +63,12 @@ function GlobalEffects({
     }
 
     scrollToPage(initialPageId);
-  }, [initialPageId, basePath, setInitialScrollToPageIsCompleted]);
+  }, [
+    initialPageId,
+    basePath,
+    setInitialScrollToPageIsCompleted,
+    setActivePage,
+  ]);
 
   useSelectTranslation();
 

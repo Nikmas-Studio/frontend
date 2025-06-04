@@ -1,13 +1,13 @@
 'use client';
 
 import { PAGES_SCREENSHOTS } from '@/constants/book-master-english-with-sherlock-holmes/pages-screenshots';
+import { useActivePage } from '@/context/active-page/Context';
+import { useBookNavigatorDispatch } from '@/context/book-navigator/Context';
 import { merriweather } from '@/fonts';
 import classNames from 'classnames';
 import Image from 'next/image';
 import { ReactElement, useState } from 'react';
 import BasicTextNode from './BasicTextNode';
-import { useBookNavigatorDispatch } from '@/context/book-navigator/Context';
-import { useActivePage } from '@/context/active-page/Context';
 
 interface BookNavigatorPageProps {
   pageNumber: number;
@@ -32,11 +32,12 @@ function BookNavigatorPage({
   const previewDarkClasses = classNames(
     'cursor-pointer  hidden  dark:inline-block',
     {
-      'outline  outline-1  outline-orange': hovered || activePage === pageNumber,
+      'outline  outline-1  outline-orange':
+        hovered || activePage === pageNumber,
     },
   );
 
-  function handleClick() {
+  function handleClick(): void {
     setBookNavigatorIsOpened(false);
     const page = document.getElementById(`page-${pageNumber}`);
     page?.scrollIntoView({ behavior: 'smooth' });
