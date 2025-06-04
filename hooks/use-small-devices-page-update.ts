@@ -3,7 +3,7 @@ import {
   usePendingUrlUpdates,
 } from '@/context/pending-url-updates/Context';
 import { updateUrl } from '@/utils/update-url';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
 interface UseSmallDevicesUrlUpdateProps {
   basePath: string;
@@ -14,55 +14,41 @@ export function useSmallDevicesUrlUpdate({
 }: UseSmallDevicesUrlUpdateProps): void {
   const { pendingUrlUpdates } = usePendingUrlUpdates();
   const { setPendingUrlUpdates } = usePendingUrlUpdatedDispatch();
-  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     function handleScroll(): void {
-      if (scrollTimeoutRef.current) {
-        clearTimeout(scrollTimeoutRef.current);
-      }
+      if (pendingUrlUpdates.length > 0) {
+        const lastPendingUrl = pendingUrlUpdates.at(-1)!;
 
-      function handleUrlUpdate(): void {
-        if (pendingUrlUpdates.length > 0) {
-          const lastPendingUrl = pendingUrlUpdates.at(-1)!;
-
-          if (lastPendingUrl.end !== undefined) {
-            if (lastPendingUrl.end.previousPage !== undefined) {
-              updateUrl({
-                page: lastPendingUrl.end.previousPage,
-                basePath,
-              });
-            } else {
-              updateUrl({ basePath: `${basePath}/end` });
-            }
+        if (lastPendingUrl.end !== undefined) {
+          if (lastPendingUrl.end.previousPage !== undefined) {
+            updateUrl({
+              page: lastPendingUrl.end.previousPage,
+              basePath,
+            });
           } else {
-            if (!lastPendingUrl.currentPage.enterBack) {
+            updateUrl({ basePath: `${basePath}/end` });
+          }
+        } else {
+          if (!lastPendingUrl.currentPage.enterBack) {
+            updateUrl({
+              page: lastPendingUrl.currentPage.pageNumber,
+              basePath,
+            });
+          } else {
+            if (lastPendingUrl.currentPage.pageNumber > 1) {
               updateUrl({
-                page: lastPendingUrl.currentPage.pageNumber,
+                page: lastPendingUrl.currentPage.pageNumber - 1,
                 basePath,
               });
             } else {
-              if (lastPendingUrl.currentPage.pageNumber > 1) {
-                updateUrl({
-                  page: lastPendingUrl.currentPage.pageNumber - 1,
-                  basePath,
-                });
-              } else {
-                updateUrl({ basePath });
-              }
+              updateUrl({ basePath });
             }
           }
-
-          setPendingUrlUpdates([]);
         }
-      }
 
-      if (window.scrollY === 0) {
-        handleUrlUpdate();
-        return;
+        setPendingUrlUpdates([]);
       }
-
-      scrollTimeoutRef.current = setTimeout(handleUrlUpdate, 150);
     }
 
     window.addEventListener('scroll', handleScroll);

@@ -41,7 +41,7 @@ export const gilroy = localFont({
 
 export const merriweather = Merriweather({
   weight: ['300', '400', '900'],
-  style: 'normal',
+  style: ['normal', 'italic'],
   subsets: ['latin', 'cyrillic', 'vietnamese', 'latin-ext', 'cyrillic-ext'],
   variable: '--font-merriweather',
 });

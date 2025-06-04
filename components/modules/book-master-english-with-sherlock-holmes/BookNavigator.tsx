@@ -1,13 +1,18 @@
 'use client';
 
+import BasicTextNode from '@/components/elements/book-master-english-with-sherlock-holmes/BasicTextNode';
+import BookNavigatorPage from '@/components/elements/book-master-english-with-sherlock-holmes/BookNavigatorPage';
+import { DETAILED_BOOK_PART_PAGE_RANGES } from '@/constants/book-master-english-with-sherlock-holmes/main';
 import {
   useBookNavigator,
   useBookNavigatorDispatch,
 } from '@/context/book-navigator/Context';
 import { useTouchDevice } from '@/context/touch-device/Context';
 import { useTranslationTooltip } from '@/context/translation-tooltip/Context';
+import { libreBaskerville } from '@/fonts';
 import useOutsideClick from '@/hooks/use-outside-click';
 import { Story } from '@/types/master-english-with-sherlock-holmes/book-navigator';
+import { generateRangeArray } from '@/utils/generate-range-array';
 import classNames from 'classnames';
 import { ReactElement, useEffect, useRef, useState } from 'react';
 import BookNavigatorPart from './BookNavigatorPart';
@@ -22,7 +27,7 @@ function BookNavigator(): ReactElement {
   const { ref: tooltipRef } = useTranslationTooltip();
 
   const overlayClasses = classNames(
-    'fixed  inset-0  z-[9999]  bg-black  transition-opacity  duration-300',
+    'fixed  inset-0  z-[9999]  bg-black  transition-opacity  duration-[400ms]',
     {
       'opacity-60': bookNavigatorIsOpened,
       'opacity-0  pointer-events-none': !bookNavigatorIsOpened,
@@ -33,7 +38,7 @@ function BookNavigator(): ReactElement {
     ` 
       h-[calc(100vh-60px)]]  fixed  bottom-0  left-[80px]  top-[60px]
       z-[9999]  w-[calc(100vw-160px)]  rounded-t-[20px]  bg-[#F3F3F3]
-      transition-transform  duration-300 overflow-hidden
+      dark:bg-[#0F151D]  transition-transform  duration-[400ms] overflow-hidden
   `,
     {
       'translate-y-0': bookNavigatorIsOpened,
@@ -58,9 +63,13 @@ function BookNavigator(): ReactElement {
 
       if (isTouchDevice) {
         const scrollY = document.body.style.top;
-        document.body.style.position = '';
-        document.body.style.top = '';
-        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+
+        if (scrollY !== '') {
+          document.body.style.position = '';
+          document.body.style.top = '';
+
+          window.scrollTo(0, parseInt(scrollY || '0') * -1);
+        }
       }
     }
   }, [bookNavigatorIsOpened, isTouchDevice]);
@@ -72,7 +81,7 @@ function BookNavigator(): ReactElement {
         <div className='flex'>
           <ul
             className='h-[calc(100vh-60px)]  overflow-y-scroll  border-r
-                     border-[#E0E0E0]  py-6'
+                     border-[#E0E0E0]  dark:border-[#212932]  py-6'
           >
             <BookNavigatorStory
               selectedStory={selectedStory}
@@ -406,7 +415,43 @@ function BookNavigator(): ReactElement {
               />
             </BookNavigatorPart>
           </ul>
-          <div></div>
+          <div
+            className='h-[calc(100vh-60px)]  flex-1  overflow-y-scroll  
+                       px-12  pb-[3.72rem]  pt-6'
+          >
+            <div>
+              <BasicTextNode
+                className={`mb-2  text-xl  font-bold  ${libreBaskerville.className}`}
+              >
+                A Study in Scarlet
+              </BasicTextNode>
+              <BasicTextNode
+                className={`mb-2  text-xl  ${libreBaskerville.className}`}
+              >
+                Part I
+              </BasicTextNode>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter I. Mr. Sherlock Holmes
+              </BasicTextNode>
+              <ul
+                className='grid  gap-x-5  gap-y-4  
+                            [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'
+              >
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.A_STUDY_IN_SCARLET_PART_1_CHAPTER_1,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>

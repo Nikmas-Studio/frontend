@@ -16,13 +16,11 @@ import Controls from '../Controls';
 interface PageProps {
   pageNumber: number;
   hidePageNumber?: boolean;
-  viewportHeight?: boolean;
 }
 
-function Page2({
+function InstructionsPage({
   pageNumber,
   hidePageNumber = false,
-  viewportHeight = false,
 }: PageProps): ReactElement {
   const sectionRef = useRef<HTMLElement | null>(null);
   const bookVersion = useBookVersion();
@@ -36,21 +34,13 @@ function Page2({
   });
 
   return (
-    <Page
-      id={`page-${pageNumber}`}
-      viewportHeight={viewportHeight}
-      className='mb-5'
-      ref={sectionRef}
-    >
+    <Page id={`page-${pageNumber}`} className='mb-5' ref={sectionRef}>
       <Controls pageNumber={hidePageNumber ? undefined : pageNumber} />
-      <BookMainContainer
-        className='grid  h-full  place-content-center
-                   max-sm:flex  max-sm:items-center  max-sm:justify-start'
-      >
-        <H2 className='mb-20'>A&nbsp;Study in&nbsp;Scarlet</H2>
+      <BookMainContainer>
+        <H2 className='mb-10'>Book Usage Instructions</H2>
       </BookMainContainer>
     </Page>
   );
 }
 
-export default Page2;
+export default InstructionsPage;

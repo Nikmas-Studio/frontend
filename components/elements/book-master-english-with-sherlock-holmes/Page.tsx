@@ -1,23 +1,71 @@
+import { RESIZE_THRESHOLD } from '@/constants/general';
 import classNames from 'classnames';
-import { forwardRef, ReactElement, ReactNode } from 'react';
+import {
+  CSSProperties,
+  forwardRef,
+  ReactElement,
+  ReactNode,
+  useEffect,
+  useState,
+} from 'react';
 
 interface PageProps {
   id: string;
   className?: string;
   children: ReactNode;
+  viewportHeight?: boolean;
 }
 
 const Page = forwardRef<HTMLElement, PageProps>(function Page(
-  { id, className, children }: PageProps,
+  { id, className, children, viewportHeight = false }: PageProps,
   ref,
 ): ReactElement {
+  const [minHeight, setMinHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+    let initialHeight = window.innerHeight;
+    let initialWidth = window.innerWidth;
+
+    function handleResize(): void {
+      const currentHeight = window.innerHeight;
+      const currentWidth = window.innerWidth;
+
+      const heightChanged =
+        Math.abs(currentHeight - initialHeight) > RESIZE_THRESHOLD;
+      const widthChanged =
+        Math.abs(currentWidth - initialWidth) > RESIZE_THRESHOLD;
+
+      if (heightChanged || widthChanged) {
+        initialHeight = currentHeight;
+        initialWidth = currentWidth;
+        setMinHeight(window.innerHeight);
+      }
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return (): void => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const classes = classNames(
-    'relative  z-30  w-screen  min-h-screen  bg-white  dark:bg-black',
+    'relative  z-30  w-screen  bg-white  dark:bg-black',
     className,
   );
 
   return (
-    <section id={id} ref={ref} className={classes}>
+    <section
+      style={
+        {
+          minHeight: `${minHeight}px`,
+          height: viewportHeight ? `${minHeight}px` : '',
+        } as CSSProperties
+      }
+      id={id}
+      ref={ref}
+      className={classes}
+    >
       {children}
     </section>
   );

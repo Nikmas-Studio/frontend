@@ -1,4 +1,4 @@
-import { MAX_TRANSLATION_FRAGMENT_LENGTH } from '@/constants/book-master-english-with-sherlock-holmes';
+import { MAX_TRANSLATION_FRAGMENT_LENGTH } from '@/constants/book-master-english-with-sherlock-holmes/main';
 import { BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI } from '@/constants/general';
 import { useTranslationLanguage } from '@/context/book-master-english-with-sherlock-holmes/translation-language/Context';
 import { useTranslationTooltipDispatch } from '@/context/translation-tooltip/Context';

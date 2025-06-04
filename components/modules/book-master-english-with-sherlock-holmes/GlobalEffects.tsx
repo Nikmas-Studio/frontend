@@ -3,15 +3,15 @@
 import {
   BASE_PATH_DEMO,
   BASE_PATH_READ,
-} from '@/constants/book-master-english-with-sherlock-holmes';
+} from '@/constants/book-master-english-with-sherlock-holmes/main';
+import { useActivePageDispatch } from '@/context/active-page/Context';
 import { useBookVersion } from '@/context/book-version/Context';
 import { useInitialScrollToPageStateDispatch } from '@/context/initial-scroll-to-page/Context';
 import { useSelectTranslation } from '@/hooks/book-master-english-with-sherlock-holmes/use-select-translation';
 import { useSmallDevicesUrlUpdate } from '@/hooks/use-small-devices-page-update';
 import { BookVersion } from '@/types/book-version';
 import { updateUrl } from '@/utils/update-url';
-import { usePathname } from 'next/navigation';
-import { ReactElement, ReactNode, useEffect, useRef } from 'react';
+import { ReactElement, ReactNode, useEffect } from 'react';
 
 interface GlobalEffectsProps {
   initialPageId?: string;
@@ -25,29 +25,10 @@ function GlobalEffects({
   const bookVersion = useBookVersion();
   const basePath =
     bookVersion === BookVersion.DEMO ? BASE_PATH_DEMO : BASE_PATH_READ;
+  const { setActivePage } = useActivePageDispatch();
 
   const { setInitialScrollToPageIsCompleted } =
     useInitialScrollToPageStateDispatch();
-
-  const previousPathRef = useRef<string | null>(null);
-  const path = usePathname();
-
-  useEffect(() => {
-    if (
-      !previousPathRef.current?.endsWith('1') &&
-      !previousPathRef.current?.endsWith('1/') &&
-      (path.endsWith('demo') ||
-        path.endsWith('demo/') ||
-        path.endsWith('read') ||
-        path.endsWith('read/'))
-    ) {
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-      }, 20);
-    }
-
-    previousPathRef.current = path;
-  }, [path]);
 
   useEffect(() => {
     function showBook(): void {
@@ -67,6 +48,7 @@ function GlobalEffects({
         });
 
         updateUrl({ basePath: `${basePath}/end` });
+        setActivePage('end');
         setInitialScrollToPageIsCompleted(true);
         showBook();
 
@@ -76,14 +58,13 @@ function GlobalEffects({
       const page = document.getElementById(`page-${initialPageId}`);
       page?.scrollIntoView({ behavior: 'instant' });
       updateUrl({ page: Number(initialPageId), basePath });
+      setActivePage(Number(initialPageId));
       setInitialScrollToPageIsCompleted(true);
       showBook();
     }
 
     scrollToPage(initialPageId);
   }, [initialPageId, basePath, setInitialScrollToPageIsCompleted]);
-
-  useSmallDevicesUrlUpdate({ basePath });
 
   useSelectTranslation();
 

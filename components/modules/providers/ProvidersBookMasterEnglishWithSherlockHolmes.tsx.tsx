@@ -1,5 +1,6 @@
 'use client';
 
+import { ActivePageProvider } from '@/context/active-page/Context';
 import { ActiveBackgroundProvider } from '@/context/background-master-git-and-github-book/Context';
 import { TranslationLanguageProvider } from '@/context/book-master-english-with-sherlock-holmes/translation-language/Context';
 import { BookNavigatorProvider } from '@/context/book-navigator/Context';
@@ -25,7 +26,9 @@ function ProvidersMasterEnglishWithSherlockHolmes({
           <PendingUrlUpdatesProvider>
             <TranslationTooltipProvider>
               <TranslationLanguageProvider>
-                <BookNavigatorProvider>{children}</BookNavigatorProvider>
+                <BookNavigatorProvider>
+                  <ActivePageProvider>{children}</ActivePageProvider>
+                </BookNavigatorProvider>
               </TranslationLanguageProvider>
             </TranslationTooltipProvider>
           </PendingUrlUpdatesProvider>

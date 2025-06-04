@@ -2,27 +2,27 @@ import { libreBaskerville } from '@/fonts';
 import classNames from 'classnames';
 import { forwardRef, ReactElement, ReactNode } from 'react';
 
-interface H2Props {
+interface H3Props {
   className?: string;
   children?: ReactNode;
 }
 
-const H2 = forwardRef<HTMLHeadingElement, H2Props>(function H2(
-  { className, children }: H2Props,
+const H3 = forwardRef<HTMLHeadingElement, H3Props>(function H2(
+  { className, children }: H3Props,
   ref,
 ): ReactElement {
   const classes = classNames(
-    `text-7xl  font-bold  max-lg:text-6xl  max-sm:text-5xl  !leading-snug
+    `text-6xl  font-bold  max-lg:text-5xl  max-sm:text-4xl  !leading-snug
      text-git-black  dark:text-git-white`,
     libreBaskerville.className,
     className,
   );
 
   return (
-    <h2 ref={ref} className={classes}>
+    <h3 ref={ref} className={classes}>
       {children}
-    </h2>
+    </h3>
   );
 });
 
-export default H2;
+export default H3;

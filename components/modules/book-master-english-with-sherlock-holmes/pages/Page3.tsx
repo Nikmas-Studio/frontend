@@ -1,8 +1,9 @@
 'use client';
 
 import BookMainContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookMainContainer';
-import H2 from '@/components/elements/book-master-english-with-sherlock-holmes/H2';
+import H3 from '@/components/elements/book-master-english-with-sherlock-holmes/H3';
 import Page from '@/components/elements/book-master-english-with-sherlock-holmes/Page';
+import TextNode from '@/components/elements/book-master-english-with-sherlock-holmes/TextNode';
 import {
   BASE_PATH_DEMO,
   BASE_PATH_READ,
@@ -19,10 +20,10 @@ interface PageProps {
   viewportHeight?: boolean;
 }
 
-function Page2({
+function Page3({
   pageNumber,
-  hidePageNumber = false,
-  viewportHeight = false,
+  hidePageNumber,
+  viewportHeight,
 }: PageProps): ReactElement {
   const sectionRef = useRef<HTMLElement | null>(null);
   const bookVersion = useBookVersion();
@@ -44,13 +45,19 @@ function Page2({
     >
       <Controls pageNumber={hidePageNumber ? undefined : pageNumber} />
       <BookMainContainer
-        className='grid  h-full  place-content-center
-                   max-sm:flex  max-sm:items-center  max-sm:justify-start'
+        className='flex  h-full  items-center  
+                   justify-center  max-sm:justify-start'
       >
-        <H2 className='mb-20'>A&nbsp;Study in&nbsp;Scarlet</H2>
+        <div className='mb-20  flex  max-w-72  flex-col  items-center  max-sm:items-start'>
+          <H3 className='mb-5'>Part&nbsp;I</H3>
+          <TextNode className='text-center  italic  max-sm:text-left' noIndent>
+            (Being a reprint from the reminiscences of John H. Watson, M.D.,
+            late of the Army Medical Department.)
+          </TextNode>
+        </div>
       </BookMainContainer>
     </Page>
   );
 }
 
-export default Page2;
+export default Page3;

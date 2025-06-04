@@ -3,20 +3,30 @@
 import BookLeftPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookLeftPartContainer';
 import BookMainContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookMainContainer';
 import BookRightPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookRightPartContainer';
-import H2 from '@/components/elements/book-master-english-with-sherlock-holmes/H2';
+import H4 from '@/components/elements/book-master-english-with-sherlock-holmes/H4';
 import Page from '@/components/elements/book-master-english-with-sherlock-holmes/Page';
 import TextNode from '@/components/elements/book-master-english-with-sherlock-holmes/TextNode';
 import {
   BASE_PATH_DEMO,
   BASE_PATH_READ,
-} from '@/constants/book-master-english-with-sherlock-holmes';
+} from '@/constants/book-master-english-with-sherlock-holmes/main';
 import { useBookVersion } from '@/context/book-version/Context';
 import { useUrlUpdate } from '@/hooks/use-url-update';
 import { BookVersion } from '@/types/book-version';
 import { ReactElement, useRef } from 'react';
 import Controls from '../Controls';
 
-function Page1(): ReactElement {
+interface PageProps {
+  pageNumber: number;
+  hidePageNumber?: boolean;
+  viewportHeight?: boolean;
+}
+
+function Page4({
+  pageNumber,
+  hidePageNumber,
+  viewportHeight,
+}: PageProps): ReactElement {
   const sectionRef = useRef<HTMLElement | null>(null);
   const bookVersion = useBookVersion();
   const basePath =
@@ -24,19 +34,24 @@ function Page1(): ReactElement {
 
   useUrlUpdate({
     pageRef: sectionRef,
-    currentPage: 1,
+    currentPage: pageNumber,
     basePath,
   });
 
   return (
-    <Page id='page-1' className='mb-5' ref={sectionRef}>
-      <Controls pageNumber={1} />
+    <Page
+      id={`page-${pageNumber}`}
+      viewportHeight={viewportHeight}
+      className='mb-5'
+      ref={sectionRef}
+    >
+      <Controls pageNumber={hidePageNumber ? undefined : pageNumber} />
       <BookMainContainer>
-        <H2 className='mb-10'>
+        <H4 className='mb-10'>
           Chapter I.
           <br />
           Mr. Sherlock Holmes
-        </H2>
+        </H4>
         <div className='flex  max-2md:flex-col'>
           <BookLeftPartContainer className='w-1/2  max-2md:w-full  max-2md:pr-0'>
             <TextNode noIndent>
@@ -153,4 +168,4 @@ function Page1(): ReactElement {
   );
 }
 
-export default Page1;
+export default Page4;

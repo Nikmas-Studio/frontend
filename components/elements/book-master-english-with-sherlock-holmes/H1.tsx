@@ -2,13 +2,13 @@ import { libreBaskerville } from '@/fonts';
 import classNames from 'classnames';
 import { forwardRef, ReactElement, ReactNode } from 'react';
 
-interface H2Props {
+interface H1Props {
   className?: string;
   children?: ReactNode;
 }
 
-const H2 = forwardRef<HTMLHeadingElement, H2Props>(function H2(
-  { className, children }: H2Props,
+const H1 = forwardRef<HTMLHeadingElement, H1Props>(function H2(
+  { className, children }: H1Props,
   ref,
 ): ReactElement {
   const classes = classNames(
@@ -19,10 +19,10 @@ const H2 = forwardRef<HTMLHeadingElement, H2Props>(function H2(
   );
 
   return (
-    <h2 ref={ref} className={classes}>
+    <h1 ref={ref} className={classes}>
       {children}
-    </h2>
+    </h1>
   );
 });
 
-export default H2;
+export default H1;

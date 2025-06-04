@@ -22,7 +22,7 @@ function BookNavigatorStory({
     libreBaskerville.className,
     className,
     {
-      'bg-[#FFEAC5]': selectedStory === title,
+      'bg-[#FFEAC5]  dark:bg-[#0E2640]': selectedStory === title,
     },
   );
 

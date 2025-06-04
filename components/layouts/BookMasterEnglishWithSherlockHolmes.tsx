@@ -1,6 +1,7 @@
 'use client';
 
 import { gilroy } from '@/fonts';
+import Script from 'next/script';
 import { ReactElement, ReactNode } from 'react';
 import Background from '../elements/book-master-english-with-sherlock-holmes/Background';
 import ProvidersBookMasterEnglishWithSherlockHolmes from '../modules/providers/ProvidersBookMasterEnglishWithSherlockHolmes.tsx';

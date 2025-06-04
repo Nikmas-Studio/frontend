@@ -1,4 +1,4 @@
-import { BOOK_PART_PAGE_RANGES } from '@/constants/book-master-english-with-sherlock-holmes';
+import { BOOK_PART_PAGE_RANGES } from '@/constants/book-master-english-with-sherlock-holmes/main';
 
 export function getBookPartByPage(page: number): string | null {
   const match = BOOK_PART_PAGE_RANGES.find(

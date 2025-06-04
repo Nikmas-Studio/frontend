@@ -9,6 +9,18 @@ const nextConfig = {
       },
     ];
   },
+  images: {
+    // remotePatterns: [new URL('https://nikmas-studio-media.s3.eu-north-1.amazonaws.com/**')],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'nikmas-studio-media.s3.eu-north-1.amazonaws.com',
+        port: '',
+        pathname: '/**',
+        search: '',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

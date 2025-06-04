@@ -1,11 +1,12 @@
 import { useInitialScrollToPageState } from '@/context/initial-scroll-to-page/Context';
-import { usePendingUrlUpdatedDispatch } from '@/context/pending-url-updates/Context';
 import { updateUrl } from '@/utils/update-url';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { RefObject } from 'react';
 import useGsapResizeUpdate from './use-gsap-resize-update';
+import { useActiveBackgroundDispatch } from '@/context/background-master-git-and-github-book/Context';
+import { useActivePageDispatch } from '@/context/active-page/Context';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,12 +41,7 @@ export function useUrlUpdate({
 }: Options): void {
   const { gsapShouldUpdate } = useGsapResizeUpdate();
   const { initialScrollToPageIsCompleted } = useInitialScrollToPageState();
-
-  const { setPendingUrlUpdates } = usePendingUrlUpdatedDispatch();
-
-  function isMobileOrTablet(): boolean {
-    return window.innerWidth < 1024;
-  }
+  const { setActivePage } = useActivePageDispatch();
 
   useGSAP(
     () => {
@@ -62,56 +58,30 @@ export function useUrlUpdate({
                 return;
               }
 
-              if (isMobileOrTablet()) {
-                if (end) {
-                  setPendingUrlUpdates((prev) => [...prev, { end: {} }]);
-                } else {
-                  setPendingUrlUpdates((prev) => [
-                    ...prev,
-                    { currentPage: { pageNumber: currentPage } },
-                  ]);
-                }
-
-                return;
-              }
-
               if (end) {
                 updateUrl({ basePath: `${basePath}/end` });
+                setActivePage('end');
                 return;
               }
 
               updateUrl({ page: currentPage, basePath });
+              setActivePage(currentPage);
             },
             onEnterBack: () => {
-              if (isMobileOrTablet()) {
-                if (end) {
-                  setPendingUrlUpdates((prev) => [
-                    ...prev,
-                    { end: { previousPage: end.previousPage } },
-                  ]);
-                } else {
-                  setPendingUrlUpdates((prev) => [
-                    ...prev,
-                    {
-                      currentPage: { pageNumber: currentPage, enterBack: true },
-                    },
-                  ]);
-                }
-
-                return;
-              }
-
               if (end) {
                 updateUrl({ page: end.previousPage, basePath });
+                setActivePage(end.previousPage);
                 return;
               }
 
               if (currentPage > 1) {
                 updateUrl({ page: currentPage - 1, basePath });
+                setActivePage(currentPage - 1);
                 return;
               }
 
               updateUrl({ basePath });
+              setActivePage('');
             },
           });
         }, 20);
