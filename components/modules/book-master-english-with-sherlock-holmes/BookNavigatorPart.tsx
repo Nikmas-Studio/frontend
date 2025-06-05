@@ -14,7 +14,10 @@ function BookNavigatorPart({
   onClick,
   children,
 }: BookNavigatorPartProps): ReactElement {
-  const classes = classNames('text-lg  px-8  py-1', libreBaskerville.className);
+  const classes = classNames(
+    'text-lg  px-8  py-1  max-1.5lg:px-[4.2vw]',
+    libreBaskerville.className,
+  );
 
   return (
     <li className='cursor-pointer'>

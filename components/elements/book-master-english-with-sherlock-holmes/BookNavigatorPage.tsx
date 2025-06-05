@@ -1,5 +1,9 @@
 'use client';
 
+import {
+  DARK_PAGE_PLACEHOLDER,
+  LIGHT_PAGE_PLACEHOLDER,
+} from '@/constants/book-master-english-with-sherlock-holmes/main';
 import { PAGES_SCREENSHOTS } from '@/constants/book-master-english-with-sherlock-holmes/pages-screenshots';
 import { useActivePage } from '@/context/active-page/Context';
 import { useBookNavigatorDispatch } from '@/context/book-navigator/Context';
@@ -40,31 +44,43 @@ function BookNavigatorPage({
   function handleClick(): void {
     setBookNavigatorIsOpened(false);
     const page = document.getElementById(`page-${pageNumber}`);
-    page?.scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => {
+      page?.scrollIntoView({ behavior: 'smooth' });
+    }, 10);
   }
 
   return (
     <li className='select-none'>
-      <Image
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        onClick={handleClick}
-        className={previewLightClasses}
-        src={PAGES_SCREENSHOTS[pageNumber - 1].light}
-        width={165}
-        height={90}
-        alt='Page preview'
-      />
-      <Image
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        onClick={handleClick}
-        className={previewDarkClasses}
-        src={PAGES_SCREENSHOTS[pageNumber - 1].dark}
-        width={165}
-        height={90}
-        alt='Page preview'
-      />
+      <div className='inline-block  h-[90px]  w-[165px]  dark:hidden'>
+        <Image
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+          onClick={handleClick}
+          className={previewLightClasses}
+          src={PAGES_SCREENSHOTS[pageNumber - 1].light}
+          width={330}
+          height={180}
+          quality={100}
+          placeholder='blur'
+          blurDataURL={LIGHT_PAGE_PLACEHOLDER}
+          alt='Page preview'
+        />
+      </div>
+      <div className='hidden  h-[90px]  w-[165px]  dark:inline-block'>
+        <Image
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+          onClick={handleClick}
+          className={previewDarkClasses}
+          src={PAGES_SCREENSHOTS[pageNumber - 1].dark}
+          width={165}
+          height={90}
+          quality={100}
+          placeholder='blur'
+          blurDataURL={DARK_PAGE_PLACEHOLDER}
+          alt='Page preview'
+        />
+      </div>
       <BasicTextNode
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}

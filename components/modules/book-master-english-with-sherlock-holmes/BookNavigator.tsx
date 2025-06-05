@@ -3,6 +3,11 @@
 import BasicTextNode from '@/components/elements/book-master-english-with-sherlock-holmes/BasicTextNode';
 import BookNavigatorPage from '@/components/elements/book-master-english-with-sherlock-holmes/BookNavigatorPage';
 import { DETAILED_BOOK_PART_PAGE_RANGES } from '@/constants/book-master-english-with-sherlock-holmes/main';
+import { RESIZE_THRESHOLD } from '@/constants/general';
+import {
+  useActivePage,
+  useActivePageDispatch,
+} from '@/context/active-page/Context';
 import {
   useBookNavigator,
   useBookNavigatorDispatch,
@@ -18,6 +23,11 @@ import { ReactElement, useEffect, useRef, useState } from 'react';
 import BookNavigatorPart from './BookNavigatorPart';
 import BookNavigatorStory from './BookNavigatorStory';
 
+enum BookNavigatorTab {
+  CONTENTS = 'contents',
+  CARDS = 'cards',
+}
+
 function BookNavigator(): ReactElement {
   const { bookNavigatorIsOpened } = useBookNavigator();
   const { setBookNavigatorIsOpened } = useBookNavigatorDispatch();
@@ -25,6 +35,91 @@ function BookNavigator(): ReactElement {
   const { isTouchDevice } = useTouchDevice();
   const [selectedStory, setSelectedStory] = useState(Story.A_STUDY_IN_SCARLET);
   const { ref: tooltipRef } = useTranslationTooltip();
+  const [activeTab, setActiveTab] = useState(BookNavigatorTab.CONTENTS);
+  const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
+  const { activePage } = useActivePage();
+  const { setActivePage } = useActivePageDispatch();
+
+  useEffect(() => {
+    let initialHeight = window.innerHeight;
+    let initialWidth = window.innerWidth;
+
+    function handleResize(): void {
+      const currentHeight = window.innerHeight;
+      const currentWidth = window.innerWidth;
+
+      const heightChanged =
+        Math.abs(currentHeight - initialHeight) > RESIZE_THRESHOLD;
+      const widthChanged =
+        Math.abs(currentWidth - initialWidth) > RESIZE_THRESHOLD;
+
+      if (heightChanged || widthChanged) {
+        initialHeight = currentHeight;
+        initialWidth = currentWidth;
+        setViewportHeight(window.innerHeight);
+      }
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return (): void => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const cardsComponentClasses = classNames(
+    `h-[calc(100vh-60px)]  flex-1  overflow-y-scroll  px-12  
+     pb-[3.72rem]  pt-6  max-1.5lg:px-[4.2vw]  max-1.5lg:w-full
+     max-1.5lg:h-[calc(100vh-4rem)]`,
+    {
+      'max-1.5lg:hidden': activeTab !== BookNavigatorTab.CARDS,
+    },
+  );
+
+  const cardsButtonClasses = classNames(
+    `mb-1  h-10  rounded-r-md  border-y  border-r  border-black  px-8
+     pb-1.5  pt-1  dark:border-smooth-white  select-none`,
+    {
+      'bg-black  dark:bg-smooth-white  !border-none':
+        activeTab === BookNavigatorTab.CARDS,
+    },
+  );
+
+  const cardsIconRectClasses = classNames(
+    `size-2  border-[1.5px]  border-black  dark:border-smooth-white`,
+    {
+      '!border-smooth-white  dark:!border-black':
+        activeTab === BookNavigatorTab.CARDS,
+    },
+  );
+
+  const contentsComponentClasses = classNames(
+    `h-[calc(100vh-60px)]  overflow-y-scroll  border-r  border-[#E0E0E0]  
+     py-6  dark:border-[#212932]  max-1.5lg:w-full  max-1.5lg:h-[calc(100vh-5rem)]
+     max-1.5lg:border-none`,
+    {
+      'max-1.5lg:hidden': activeTab !== BookNavigatorTab.CONTENTS,
+    },
+  );
+
+  const contentsButtonClasses = classNames(
+    `mb-1  h-10  rounded-l-md  border  border-black  
+     px-4  pb-1.5  pt-1  dark:border-smooth-white  select-none`,
+    {
+      'bg-black  dark:bg-smooth-white  !border-none':
+        activeTab === BookNavigatorTab.CONTENTS,
+    },
+  );
+
+  const contentsTextClasses = classNames(
+    'text-lg',
+    libreBaskerville.className,
+    {
+      'text-white  dark:text-black': activeTab === BookNavigatorTab.CONTENTS,
+      'text-black  dark:text-smooth-white':
+        activeTab !== BookNavigatorTab.CONTENTS,
+    },
+  );
 
   const overlayClasses = classNames(
     'fixed  inset-0  z-[9999]  bg-black  transition-opacity  duration-[400ms]',
@@ -39,11 +134,9 @@ function BookNavigator(): ReactElement {
       h-[calc(100vh-60px)]]  fixed  bottom-0  left-[80px]  top-[60px]
       z-[9999]  w-[calc(100vw-160px)]  rounded-t-[20px]  bg-[#F3F3F3]
       dark:bg-[#0F151D]  transition-transform  duration-[400ms] overflow-hidden
+      max-1.5lg:w-screen  max-1.5lg:h-screen  max-1.5lg:left-0  max-1.5lg:top-0
+      max-1.5lg:rounded-none
   `,
-    {
-      'translate-y-0': bookNavigatorIsOpened,
-      'translate-y-[105vh]': !bookNavigatorIsOpened,
-    },
   );
 
   useOutsideClick([containerRef, tooltipRef], () => {
@@ -55,8 +148,12 @@ function BookNavigator(): ReactElement {
       document.documentElement.style.overflowY = 'hidden';
 
       if (isTouchDevice) {
+        const innerActivePage = activePage;
         document.body.style.top = `-${window.scrollY}px`;
         document.body.style.position = 'fixed';
+        setTimeout(() => {
+          setActivePage(innerActivePage);
+        }, 10);
       }
     } else {
       document.documentElement.style.overflowY = '';
@@ -72,17 +169,47 @@ function BookNavigator(): ReactElement {
         }
       }
     }
-  }, [bookNavigatorIsOpened, isTouchDevice]);
+  }, [bookNavigatorIsOpened, isTouchDevice, activePage, setActivePage]);
 
   return (
     <div>
       <div className={overlayClasses}></div>
-      <div ref={containerRef} className={containerClasses}>
+      <div
+        ref={containerRef}
+        style={{
+          transform: bookNavigatorIsOpened
+            ? 'translateY(0)'
+            : `translateY(${viewportHeight + 200}px)`,
+        }}
+        className={containerClasses}
+      >
+        <div
+          className='hidden  h-20  w-full  border-b  border-[#E0E0E0]  
+                   bg-white  px-[4.2vw]  max-1.5lg:flex  dark:border-[#212932]
+                   dark:bg-[#171E27]'
+        >
+          <div className='flex  items-center'>
+            <button
+              onClick={() => setActiveTab(BookNavigatorTab.CONTENTS)}
+              className={contentsButtonClasses}
+            >
+              <span className={contentsTextClasses}>Contents</span>
+            </button>
+            <button
+              onClick={() => setActiveTab(BookNavigatorTab.CARDS)}
+              className={cardsButtonClasses}
+            >
+              <div className='grid  grid-cols-2  grid-rows-2  gap-[3px]'>
+                <div className={cardsIconRectClasses}></div>
+                <div className={cardsIconRectClasses}></div>
+                <div className={cardsIconRectClasses}></div>
+                <div className={cardsIconRectClasses}></div>
+              </div>
+            </button>
+          </div>
+        </div>
         <div className='flex'>
-          <ul
-            className='h-[calc(100vh-60px)]  overflow-y-scroll  border-r
-                     border-[#E0E0E0]  py-6  dark:border-[#212932]'
-          >
+          <ul className={contentsComponentClasses}>
             <BookNavigatorStory
               selectedStory={selectedStory}
               setSelectedStory={setSelectedStory}
@@ -415,10 +542,7 @@ function BookNavigator(): ReactElement {
               />
             </BookNavigatorPart>
           </ul>
-          <div
-            className='h-[calc(100vh-60px)]  flex-1  overflow-y-scroll  
-                       px-12  pb-[3.72rem]  pt-6'
-          >
+          <div className={cardsComponentClasses}>
             <div>
               <BasicTextNode
                 className={`mb-2  text-xl  font-bold  ${libreBaskerville.className}`}
@@ -435,10 +559,7 @@ function BookNavigator(): ReactElement {
               >
                 Chapter I. Mr. Sherlock Holmes
               </BasicTextNode>
-              <ul
-                className='grid  gap-x-5  gap-y-4  
-                            [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'
-              >
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
                 {generateRangeArray(
                   DETAILED_BOOK_PART_PAGE_RANGES.A_STUDY_IN_SCARLET_PART_1_CHAPTER_1,
                 ).map((pageNumber) => {

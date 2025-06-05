@@ -18,7 +18,7 @@ function BookNavigatorStory({
   className,
 }: BookNavigatorStoryProps): ReactElement {
   const classes = classNames(
-    'text-lg  px-8  py-1  last:mb-7  cursor-pointer',
+    'text-lg  px-8  py-1  last:mb-7  cursor-pointer  max-1.5lg:px-[4.2vw]',
     libreBaskerville.className,
     className,
     {
