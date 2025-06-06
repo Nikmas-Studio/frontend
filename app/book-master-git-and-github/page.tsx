@@ -1,3 +1,4 @@
+import SubscriptionButton from '@/components/elements/book-master-git-and-github/SubscriptionButton';
 import MainContainer from '@/components/elements/MainContainer';
 import DefaultLayout from '@/components/layouts/DefaultLayout';
 import BookNavigator from '@/components/modules/book-master-git-and-github/promo-page/BookNavigator';
@@ -8,7 +9,9 @@ import Intro from '@/components/modules/book-master-git-and-github/promo-page/In
 import PageNumbersUpdate from '@/components/modules/book-master-git-and-github/promo-page/PageNumbersUpdate';
 import QuizzesAndExercises from '@/components/modules/book-master-git-and-github/promo-page/QuizzesAndExercises';
 import ReadOnAnyDevice from '@/components/modules/book-master-git-and-github/promo-page/ReadOnAnyDevice';
+import Subscription from '@/components/modules/book-master-git-and-github/promo-page/Subscription';
 import ThreeDots from '@/components/modules/book-master-git-and-github/promo-page/ThreeDots';
+import SubscriptionModal from '@/components/modules/book-master-git-and-github/SubsctiptionModal';
 import Footer from '@/components/modules/Footer';
 import HeaderDefault from '@/components/modules/header/header-element/HeaderDefault';
 import { BOOK_MASTER_GIT_AND_GITHUB_URI } from '@/constants/general';
@@ -62,7 +65,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
               <HeaderDefault />
               <Intro />
               <Contents />
-              {/* <Subscription /> */}
+              <Subscription />
               <InteractivityDemo />
               <MainContainer
                 className='lg:flex  lg:flex-row  lg:justify-between
@@ -75,10 +78,10 @@ function MasterGitAndGithubBookPromo(): ReactElement {
               <BookNavigator />
               <QuizzesAndExercises />
               <ThreeDots />
-              {/* <MainContainer className='flex  flex-row  justify-end'>
+              <MainContainer className='flex  flex-row  justify-end'>
                 <SubscriptionButton className='mr-5' />
-              </MainContainer> */}
-              {/* <SubscriptionModal formInputId='promo-subscription-modal-email' /> */}
+              </MainContainer>
+              <SubscriptionModal formInputId='promo-subscription-modal-email' />
               <Footer />
             </div>
           </div>

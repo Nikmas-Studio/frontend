@@ -20,10 +20,11 @@ function Subscription(): ReactElement {
         <div>
           <div>
             <H2 className='mb-3'>Subscription</H2>
-            <TextNode className='max-w-[480px]'>
-              We&apos;re already on&nbsp;track to&nbsp;secure a&nbsp;major deal
-              with&nbsp;a&nbsp;prominent investor. Become our
-              premium&nbsp;early&nbsp;reader and&nbsp;get exclusive benefits.
+            <TextNode className='max-w-[530px]'>
+              The&nbsp;book is in&nbsp;the&nbsp;early stages,
+              and&nbsp;this&nbsp;is the&nbsp;opportunity for&nbsp;you
+              to&nbsp;both benefit from&nbsp;it and&nbsp;support
+              the&nbsp;studio.
             </TextNode>
           </div>
           <div className='mt-9  lg:flex  lg:flex-row  lg:gap-12  xl:gap-14'>
@@ -127,8 +128,8 @@ function Subscription(): ReactElement {
                 </TextNode>
                 <TextNode className='!mb-0'>
                   However, during the&nbsp;early access period of&nbsp;our first
-                  book, we&apos;re making an&nbsp;exception: we&apos;re offering
-                  a&nbsp;lifetime subscription to&nbsp;the book with
+                  tech book, we&apos;re making an&nbsp;exception: we&apos;re
+                  offering a&nbsp;lifetime subscription to&nbsp;the book with
                   a&nbsp;one-time payment to&nbsp;our&nbsp;first readers
                   whom&nbsp;we&nbsp;consider our&nbsp;investors.
                   Their&nbsp;support gives us the&nbsp;essential initial boost,

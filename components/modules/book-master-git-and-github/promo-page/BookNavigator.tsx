@@ -13,7 +13,7 @@ function BookNavigator(): ReactElement {
         <H2 className='mb-9  lg:mb-11  2lg:mb-9'>
           Book navigator with&nbsp;search and&nbsp;bookmarks at&nbsp;your{' '}
           disposal
-          <br className='2lg:hidden' />
+          {/* <br className='2lg:hidden' />
           <span
             className='mt-[1.2rem] inline-block  translate-y-[-0.26rem]  rounded-[10px]
                        border  border-blue  px-4
@@ -21,7 +21,7 @@ function BookNavigator(): ReactElement {
                        text-blue  2lg:ml-4  2lg:mt-0'
           >
             Soon
-          </span>
+          </span> */}
         </H2>
         <TextNode className='lg:mb-6'>
           Explore the&nbsp;book&apos;s structure, and&nbsp;use search,

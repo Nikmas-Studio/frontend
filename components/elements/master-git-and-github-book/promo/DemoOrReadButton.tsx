@@ -34,10 +34,6 @@ function DemoOrReadButton(): ReactElement {
   //     break;
   // }
 
-  // if (bookState === BookState.UNBOUGHT) {
-  //   return <span></span>;
-  // }
-
   return (
     <a className={classes}>
       {bookState === BookState.LOADING && (
