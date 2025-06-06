@@ -22,27 +22,26 @@ function DemoOrReadButton(): ReactElement {
     },
   );
 
-  let href: string;
+  // let href: string;
 
-  switch (bookState) {
-    case BookState.LOADING:
-    case BookState.UNBOUGHT:
-      href = '/book-master-git-and-github/demo';
-      break;
-    case BookState.BOUGHT:
-      href = '/book-master-git-and-github/read';
-      break;
-  }
+  // switch (bookState) {
+  //   case BookState.LOADING:
+  //   case BookState.UNBOUGHT:
+  //     href = '/book-master-git-and-github/demo';
+  //     break;
+  //   case BookState.BOUGHT:
+  //     href = '/book-master-git-and-github/read';
+  //     break;
+  // }
 
   return (
-    <a {...(bookState === BookState.BOUGHT && { href })} className={classes}>
+    <a className={classes}>
       {bookState === BookState.LOADING && (
         <span className='inline-block  size-[20px]  translate-y-[3px]'>
           <CircularProgress className='!size-[20px]  !text-white  dark:!text-black' />
         </span>
       )}
-      {bookState === BookState.UNBOUGHT && 'Soon'}
-      {bookState === BookState.BOUGHT && 'Read'}
+      {bookState !== BookState.LOADING && 'Soon'}
     </a>
   );
 }

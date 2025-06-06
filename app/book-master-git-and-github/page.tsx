@@ -1,4 +1,5 @@
 import MainContainer from '@/components/elements/MainContainer';
+import SubscriptionButton from '@/components/elements/master-git-and-github-book/SubscriptionButton';
 import DefaultLayout from '@/components/layouts/DefaultLayout';
 import Footer from '@/components/modules/Footer';
 import HeaderDefault from '@/components/modules/header/header-element/HeaderDefault';
@@ -10,7 +11,9 @@ import Intro from '@/components/modules/master-git-and-github-book/promo-page/In
 import PageNumbersUpdate from '@/components/modules/master-git-and-github-book/promo-page/PageNumbersUpdate';
 import QuizzesAndExercises from '@/components/modules/master-git-and-github-book/promo-page/QuizzesAndExercises';
 import ReadOnAnyDevice from '@/components/modules/master-git-and-github-book/promo-page/ReadOnAnyDevice';
+import Subscription from '@/components/modules/master-git-and-github-book/promo-page/Subscription';
 import ThreeDots from '@/components/modules/master-git-and-github-book/promo-page/ThreeDots';
+import SubscriptionModal from '@/components/modules/master-git-and-github-book/SubsctiptionModal';
 import { MASTER_GIT_AND_GITHUB_BOOK_URI } from '@/constants/general';
 import { BookStateProvider } from '@/context/book-state/Context';
 import { SubscriptionModalProvider } from '@/context/subscription-modal/Context';
@@ -62,7 +65,7 @@ function MasterGitAndGithubBookPromo(): ReactElement {
               <HeaderDefault />
               <Intro />
               <Contents />
-              {/* <Subscription /> */}
+              <Subscription />
               <InteractivityDemo />
               <MainContainer
                 className='lg:flex  lg:flex-row  lg:justify-between
@@ -75,10 +78,10 @@ function MasterGitAndGithubBookPromo(): ReactElement {
               <BookNavigator />
               <QuizzesAndExercises />
               <ThreeDots />
-              {/* <MainContainer className='flex  flex-row  justify-end'>
+              <MainContainer className='flex  flex-row  justify-end'>
                 <SubscriptionButton className='mr-5' />
               </MainContainer>
-              <SubscriptionModal formInputId='promo-subscription-modal-email' /> */}
+              <SubscriptionModal formInputId='promo-subscription-modal-email' />
               <Footer />
             </div>
           </div>
