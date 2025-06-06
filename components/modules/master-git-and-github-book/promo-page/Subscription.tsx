@@ -128,8 +128,8 @@ function Subscription(): ReactElement {
                 </TextNode>
                 <TextNode className='!mb-0'>
                   However, during the&nbsp;early access period of&nbsp;our first
-                  book, we&apos;re making an&nbsp;exception: we&apos;re offering
-                  a&nbsp;lifetime subscription to&nbsp;the book with
+                  tech book, we&apos;re making an&nbsp;exception: we&apos;re
+                  offering a&nbsp;lifetime subscription to&nbsp;the book with
                   a&nbsp;one-time payment to&nbsp;our&nbsp;first readers
                   whom&nbsp;we&nbsp;consider our&nbsp;investors.
                   Their&nbsp;support gives us the&nbsp;essential initial boost,

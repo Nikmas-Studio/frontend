@@ -198,9 +198,9 @@ function SubscriptionModal({
             </H2>
             {bookState !== BookState.BOUGHT && (
               <TextNode className='max-w-[25.4rem]'>
-                We&apos;re already on&nbsp;track to&nbsp;secure a&nbsp;major
-                deal with&nbsp;a&nbsp;prominent investor. Become our premium
-                early reader and&nbsp;get exclusive benefits:
+                The&nbsp;book is&nbsp;in&nbsp;the&nbsp;early stages, and this is
+                the&nbsp;opportunity for&nbsp;you to&nbsp;both benefit
+                from&nbsp;it and&nbsp;support the&nbsp;studio:
               </TextNode>
             )}
             <ul>
