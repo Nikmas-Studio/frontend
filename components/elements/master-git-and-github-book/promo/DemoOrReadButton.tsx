@@ -18,7 +18,7 @@ function DemoOrReadButton(): ReactElement {
   `,
     {
       'pointer-events-none': bookState === BookState.LOADING,
-      'cursor-default': bookState === BookState.UNBOUGHT,
+      'cursor-default': bookState !== BookState.LOADING,
     },
   );
 
