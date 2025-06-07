@@ -12,7 +12,7 @@ const Page = forwardRef<HTMLElement, PageProps>(function Page(
   ref,
 ): ReactElement {
   const classes = classNames(
-    'relative  z-30  w-screen  min-h-screen',
+    'relative  z-30  min-h-screen  w-screen',
     className,
   );
 

@@ -40,6 +40,7 @@ function CoverPage(): ReactElement {
         const hasReloaded = localStorage.getItem('hasReloaded');
 
         if (hasReloaded === null) {
+          console.log('hasReloaded is null');
           localStorage.setItem('hasReloaded', 'true');
           const encryptedToken = encryptBookReloadToken();
 
@@ -51,7 +52,7 @@ function CoverPage(): ReactElement {
             localStorage.removeItem('hasReloaded');
             localStorage.removeItem('reloadToken');
             localStorage.removeItem('reloadTokenIv');
-          }, 100);
+          }, 1000);
         }
       }, 600);
     } else {

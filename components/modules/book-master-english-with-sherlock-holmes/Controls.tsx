@@ -2,17 +2,22 @@
 
 import BasicTextNode from '@/components/elements/book-master-english-with-sherlock-holmes/BasicTextNode';
 import BookNavigatorIcon from '@/components/elements/book-master-git-and-github/BookNavigatorIcon';
-import { merriweather } from '@/fonts';
+import { libreBaskerville, merriweather } from '@/fonts';
 import classNames from 'classnames';
 import { ReactElement, RefObject } from 'react';
 import Settings from './Settings';
 
 interface ControlsProps {
   pageNumber?: number;
+  title?: string;
   themeToggleRef?: RefObject<HTMLDivElement>;
 }
 
-function Controls({ pageNumber, themeToggleRef }: ControlsProps): ReactElement {
+function Controls({
+  pageNumber,
+  title,
+  themeToggleRef,
+}: ControlsProps): ReactElement {
   const pageNumberClasses = classNames(
     `absolute  bottom-6  right-[3vw]  z-50 
      max-md:bottom-[1.1rem]  max-md:right-[4.2vw]  text-base  font-light`,
@@ -32,6 +37,13 @@ function Controls({ pageNumber, themeToggleRef }: ControlsProps): ReactElement {
           <Settings ref={themeToggleRef} />
         </div>
       </div>
+      {title && (
+        <div className='absolute  left-[8.4vw]  top-6  max-md:left-[4.2vw]  max-md:top-5'>
+          <BasicTextNode className={`${libreBaskerville.className}  text-base`}>
+            {title}
+          </BasicTextNode>
+        </div>
+      )}
     </div>
   );
 }

@@ -45,7 +45,10 @@ function Page4({
       className='mb-5'
       ref={sectionRef}
     >
-      <Controls pageNumber={hidePageNumber ? undefined : pageNumber} />
+      <Controls
+        pageNumber={hidePageNumber ? undefined : pageNumber}
+        title='A STUDY IN SCARLET'
+      />
       <BookMainContainer>
         <H4 className='mb-10'>
           Chapter I.

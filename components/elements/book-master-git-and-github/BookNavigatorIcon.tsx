@@ -29,7 +29,7 @@ function BookNavigatorIcon({
         r='12.3594'
         transform='rotate(45 20.3074 20.3073)'
         className='stroke-black  group-hover:stroke-orange  dark:stroke-smooth-white'
-        stroke-width='3.6'
+        strokeWidth='3.6'
       />
       <rect
         x='29.8264'

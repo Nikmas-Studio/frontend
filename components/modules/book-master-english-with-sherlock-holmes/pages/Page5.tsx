@@ -44,7 +44,10 @@ function Page5({
       className='mb-5'
       ref={sectionRef}
     >
-      <Controls pageNumber={hidePageNumber ? undefined : pageNumber} />
+      <Controls
+        pageNumber={hidePageNumber ? undefined : pageNumber}
+        title='A STUDY IN SCARLET'
+      />
       <BookMainContainer>
         <div className='flex  max-2md:flex-col'>
           <BookLeftPartContainer className='w-1/2  max-2md:w-full  max-2md:pr-0'>

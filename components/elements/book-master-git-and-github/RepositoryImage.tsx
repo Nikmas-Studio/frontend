@@ -24,7 +24,7 @@ function RepositoryImage({
         height='287.707'
         rx='11'
         stroke={color}
-        stroke-width='8'
+        strokeWidth='8'
       />
       <mask id='path-2-inside-1_988_64'>
         <path

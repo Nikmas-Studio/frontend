@@ -110,6 +110,7 @@ function BookReadWrapper({ initialPageId }: BookReadProps): ReactElement {
   }
 
   if (isSmallDevice.current && !reloadTokenIsValid.current) {
+    // if (isSmallDevice.current) {
     return (
       <>
         <div

@@ -43,7 +43,10 @@ function Page3({
       className='mb-5'
       ref={sectionRef}
     >
-      <Controls pageNumber={hidePageNumber ? undefined : pageNumber} />
+      <Controls
+        pageNumber={hidePageNumber ? undefined : pageNumber}
+        title='A STUDY IN SCARLET'
+      />
       <BookMainContainer
         className='flex  h-full  items-center  
                    justify-center  max-sm:justify-start'

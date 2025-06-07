@@ -145,19 +145,21 @@ function BookNavigator(): ReactElement {
 
   useEffect(() => {
     if (bookNavigatorIsOpened) {
-      document.documentElement.style.overflowY = 'hidden';
-
       if (isTouchDevice) {
+        if (document.body.style.position === 'fixed') {
+          return;
+        }
+
         const innerActivePage = activePage;
+
         document.body.style.top = `-${window.scrollY}px`;
         document.body.style.position = 'fixed';
+
         setTimeout(() => {
           setActivePage(innerActivePage);
         }, 10);
       }
     } else {
-      document.documentElement.style.overflowY = '';
-
       if (isTouchDevice) {
         const scrollY = document.body.style.top;
 
@@ -168,8 +170,10 @@ function BookNavigator(): ReactElement {
           window.scrollTo(0, parseInt(scrollY || '0') * -1);
         }
       }
+
+      setActiveTab(BookNavigatorTab.CONTENTS);
     }
-  }, [bookNavigatorIsOpened, isTouchDevice, activePage, setActivePage]);
+  }, [bookNavigatorIsOpened, isTouchDevice, setActivePage, activePage]);
 
   return (
     <div>
@@ -184,9 +188,9 @@ function BookNavigator(): ReactElement {
         className={containerClasses}
       >
         <div
-          className='hidden  h-20  w-full  border-b  border-[#E0E0E0]  
-                   bg-white  px-[4.2vw]  max-1.5lg:flex  dark:border-[#212932]
-                   dark:bg-[#171E27]'
+          className='hidden  h-20  w-full  items-center  justify-between  border-b  
+                   border-[#E0E0E0]  bg-white  px-[4.2vw]  max-1.5lg:flex  
+                   dark:border-[#212932]  dark:bg-[#171E27]'
         >
           <div className='flex  items-center'>
             <button
@@ -206,6 +210,22 @@ function BookNavigator(): ReactElement {
                 <div className={cardsIconRectClasses}></div>
               </div>
             </button>
+          </div>
+
+          <div
+            onClick={() => {
+              setBookNavigatorIsOpened(false);
+            }}
+            className='relative  mb-1.5  size-[21px]  cursor-pointer'
+          >
+            <div
+              className='absolute  left-1/2  top-1/2  h-[2px]  w-[27px]  -translate-x-1/2
+                       -translate-y-1/2  rotate-45  bg-black  dark:bg-smooth-white'
+            ></div>
+            <div
+              className='absolute  left-1/2  top-1/2  h-[2px]  w-[27px]  -translate-x-1/2
+                       -translate-y-1/2  -rotate-45  bg-black  dark:bg-smooth-white'
+            ></div>
           </div>
         </div>
         <div className='flex'>
@@ -561,7 +581,8 @@ function BookNavigator(): ReactElement {
               </BasicTextNode>
               <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
                 {generateRangeArray(
-                  DETAILED_BOOK_PART_PAGE_RANGES.A_STUDY_IN_SCARLET_PART_1_CHAPTER_1,
+                  DETAILED_BOOK_PART_PAGE_RANGES.A_STUDY_IN_SCARLET.PART_1
+                    .CHAPTER_1_MR_SHERLOCK_HOLMES,
                 ).map((pageNumber) => {
                   return (
                     <BookNavigatorPage

@@ -9,7 +9,14 @@ export const BOOK_PART_PAGE_RANGES: BookPartPageRange[] = [
 ];
 
 export const DETAILED_BOOK_PART_PAGE_RANGES = {
-  A_STUDY_IN_SCARLET_PART_1_CHAPTER_1: { from: 2, to: 5 },
+  A_STUDY_IN_SCARLET: {
+    PART_1: {
+      CHAPTER_1_MR_SHERLOCK_HOLMES: {
+        from: 2,
+        to: 5,
+      },
+    },
+  },
 };
 
 export const PAGES_WITHOUT_CONTROLS = [1, 2, 3];
