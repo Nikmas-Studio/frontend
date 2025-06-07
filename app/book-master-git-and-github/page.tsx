@@ -11,7 +11,7 @@ import QuizzesAndExercises from '@/components/modules/book-master-git-and-github
 import ReadOnAnyDevice from '@/components/modules/book-master-git-and-github/promo-page/ReadOnAnyDevice';
 import Subscription from '@/components/modules/book-master-git-and-github/promo-page/Subscription';
 import ThreeDots from '@/components/modules/book-master-git-and-github/promo-page/ThreeDots';
-import SubscriptionModal from '@/components/modules/book-master-git-and-github/SubsctiptionModal';
+import SubscriptionModal from '@/components/modules/book-master-git-and-github/SubscriptionModal';
 import Footer from '@/components/modules/Footer';
 import HeaderDefault from '@/components/modules/header/header-element/HeaderDefault';
 import { BOOK_MASTER_GIT_AND_GITHUB_URI } from '@/constants/general';
