@@ -11,7 +11,7 @@ import EndPageDemo from './pages/EndPageDemo';
 import Page1 from './pages/Page1';
 import Page2 from './pages/Page2';
 import Page3Demo from './pages/Page3Demo';
-import SubscriptionModal from './SubsctiptionModal';
+import SubscriptionModal from './SubscriptionModal';
 
 interface BookDemoProps {
   initialPageId?: string;

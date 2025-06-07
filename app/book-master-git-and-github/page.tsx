@@ -13,7 +13,7 @@ import QuizzesAndExercises from '@/components/modules/master-git-and-github-book
 import ReadOnAnyDevice from '@/components/modules/master-git-and-github-book/promo-page/ReadOnAnyDevice';
 import Subscription from '@/components/modules/master-git-and-github-book/promo-page/Subscription';
 import ThreeDots from '@/components/modules/master-git-and-github-book/promo-page/ThreeDots';
-import SubscriptionModal from '@/components/modules/master-git-and-github-book/SubsctiptionModal';
+import SubscriptionModal from '@/components/modules/master-git-and-github-book/SubscriptionModal';
 import { MASTER_GIT_AND_GITHUB_BOOK_URI } from '@/constants/general';
 import { BookStateProvider } from '@/context/book-state/Context';
 import { SubscriptionModalProvider } from '@/context/subscription-modal/Context';
