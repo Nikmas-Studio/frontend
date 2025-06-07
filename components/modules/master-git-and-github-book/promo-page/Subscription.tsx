@@ -55,8 +55,8 @@ function Subscription(): ReactElement {
                     </strong>{' '}
                     with&nbsp;a&nbsp;one&#8209;time&nbsp;payment.
                     Such&nbsp;subscription will never be&nbsp;available again
-                    through&nbsp;a&nbsp;regular purchase after the&nbsp;early
-                    access period of&nbsp;our&nbsp;first tech book;
+                    through&nbsp;a&nbsp;regular purchase after the&nbsp;preorder
+                    period of&nbsp;our&nbsp;first tech book;
                   </TextNode>
                 </li>
                 <li>
