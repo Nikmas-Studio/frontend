@@ -127,7 +127,7 @@ function Subscription(): ReactElement {
                   on&nbsp;production.
                 </TextNode>
                 <TextNode className='!mb-0'>
-                  However, during the&nbsp;early access period of&nbsp;our first
+                  However, during the&nbsp;preorder period of&nbsp;our first
                   tech book, we&apos;re making an&nbsp;exception: we&apos;re
                   offering a&nbsp;lifetime subscription to&nbsp;the book with
                   a&nbsp;one-time payment to&nbsp;our&nbsp;first readers
