@@ -194,7 +194,7 @@ function SubscriptionModal({
             <H2 className='mb-8  !text-subscription'>
               {bookState === BookState.BOUGHT
                 ? 'You have lifetime access'
-                : 'Premium Early Access'}
+                : 'Premium Preorder'}
             </H2>
             {bookState !== BookState.BOUGHT && (
               <TextNode className='max-w-[25.4rem]'>
@@ -246,7 +246,7 @@ function SubscriptionModal({
                   )}
                   {bookState !== BookState.BOUGHT && (
                     <span>
-                      By&nbsp;purchasing the&nbsp;early access, you become
+                      By&nbsp;preordering the&nbsp;book, you&nbsp;become
                       the&nbsp;essential driving force, directly accelerating
                       the&nbsp;release of&nbsp;new book sections
                       and&nbsp;features for&nbsp;a&nbsp;more seamless

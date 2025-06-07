@@ -35,7 +35,7 @@ function Subscription(): ReactElement {
               >
                 Now
               </p>
-              <H3 className='mb-6  font-medium'>During early access</H3>
+              <H3 className='mb-6  font-medium'>During Premium Preorder</H3>
               <ul>
                 <li>
                   <TextNode className='max-w-72'>
@@ -65,7 +65,7 @@ function Subscription(): ReactElement {
                 <li>
                   <TextNode className='!mb-0  max-w-[27rem]'>
                     <strong className='font-black'>Investor badge.</strong>{' '}
-                    By&nbsp;purchasing the&nbsp;early access, you become
+                    By&nbsp;preordering the&nbsp;book, you&nbsp;become
                     the&nbsp;essential driving force, directly accelerating
                     the&nbsp;release of&nbsp;new book sections and&nbsp;features
                     for&nbsp;a&nbsp;more seamless and&nbsp;immersive reading
@@ -96,7 +96,7 @@ function Subscription(): ReactElement {
             />
             <div className='mt-7  lg:flex  lg:flex-col  lg:justify-between'>
               <div>
-                <H3 className='mb-6  font-medium'>After release</H3>
+                <H3 className='mb-6  font-medium'>After Release</H3>
                 <TextNode className='!mb-0  font-black'>
                   Read all the&nbsp;book sections
                 </TextNode>
