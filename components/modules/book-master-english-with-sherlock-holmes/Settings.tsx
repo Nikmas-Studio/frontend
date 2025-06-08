@@ -1,7 +1,7 @@
 import useOutsideClick from '@/hooks/use-outside-click';
 import { Theme } from '@/types/theme';
 import classNames from 'classnames';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import { forwardRef, ReactElement, useEffect, useRef, useState } from 'react';
 
 import ThemeToggleDropdownItem from '@/components/elements/book-master-english-with-sherlock-holmes/ThemeToggleDropdownItem';
@@ -23,28 +23,26 @@ import { TranslationLanguage } from '@/types/translation-laguage';
 
 interface ThemeToggleProps {
   className?: string;
-  reversedColors?: boolean;
-  textClass?: string;
-  bgClass?: string;
-  activeItemDotClass?: string;
-  iconsSources?: {
-    lightModeBlackIcon: StaticImageData;
-    lightModeWhiteIcon: StaticImageData;
-    darkModeWhiteIcon: StaticImageData;
-    darkModeBlackIcon: StaticImageData;
-    systemModeBlackIcon: StaticImageData;
-    systemModeWhiteIcon: StaticImageData;
-  };
+  alwaysWhite?: boolean;
 }
 
 const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
   function ThemeToggleDefault(
-    { className }: ThemeToggleProps,
+    { className, alwaysWhite = false }: ThemeToggleProps,
     ref,
   ): ReactElement {
     const bgClass = 'bg-white  dark:bg-black';
     const activeItemDotClass = 'after:bg-black  after:dark:bg-smooth-white';
     const textClass = 'text-black  dark:text-smooth-white';
+    const iconClasses = classNames(
+      'fill-none  [stroke-linecap:round]  [stroke-linejoin:round]',
+      {
+        'stroke-black  group-hover:stroke-orange  dark:stroke-smooth-white':
+          !alwaysWhite,
+        'stroke-white  group-hover:stroke-orange  dark:stroke-smooth-white':
+          alwaysWhite,
+      },
+    );
 
     const iconsSources = {
       lightModeBlackIcon: sunIconBlack,
@@ -144,66 +142,15 @@ const ThemeToggleDefault = forwardRef<HTMLDivElement, ThemeToggleProps>(
             <g data-name='Layer 2' id='Layer_2'>
               <g id='Workspace'>
                 <rect className='fill-none' height='24' width='24' />
-                <line
-                  className='fill-none  stroke-black  [stroke-linecap:round]  [stroke-linejoin:round]  group-hover:stroke-orange  dark:stroke-smooth-white'
-                  x1='7'
-                  x2='7'
-                  y1='6'
-                  y2='13'
-                />
-                <circle
-                  className='fill-none  stroke-black  [stroke-linecap:round]  [stroke-linejoin:round]  group-hover:stroke-orange  dark:stroke-smooth-white'
-                  cx='7'
-                  cy='14.5'
-                  r='1.5'
-                />
-                <line
-                  className='fill-none  stroke-black  [stroke-linecap:round]  [stroke-linejoin:round]  group-hover:stroke-orange  dark:stroke-smooth-white'
-                  x1='7'
-                  x2='7'
-                  y1='16'
-                  y2='18'
-                />
-                <line
-                  className='fill-none  stroke-black  [stroke-linecap:round]  [stroke-linejoin:round]  group-hover:stroke-orange  dark:stroke-smooth-white'
-                  x1='12'
-                  x2='12'
-                  y1='6'
-                  y2='8'
-                />
-                <circle
-                  className='fill-none  stroke-black  [stroke-linecap:round]  [stroke-linejoin:round]  group-hover:stroke-orange  dark:stroke-smooth-white'
-                  cx='12'
-                  cy='9.5'
-                  r='1.5'
-                />
-                <line
-                  className='fill-none  stroke-black  [stroke-linecap:round]  [stroke-linejoin:round]  group-hover:stroke-orange  dark:stroke-smooth-white'
-                  x1='12'
-                  x2='12'
-                  y1='11'
-                  y2='18'
-                />
-                <line
-                  className='fill-none  stroke-black  [stroke-linecap:round]  [stroke-linejoin:round]  group-hover:stroke-orange  dark:stroke-smooth-white'
-                  x1='17'
-                  x2='17'
-                  y1='6'
-                  y2='11'
-                />
-                <circle
-                  className='fill-none  stroke-black  [stroke-linecap:round]  [stroke-linejoin:round]  group-hover:stroke-orange  dark:stroke-smooth-white'
-                  cx='17'
-                  cy='12.5'
-                  r='1.5'
-                />
-                <line
-                  className='fill-none  stroke-black  [stroke-linecap:round]  [stroke-linejoin:round]  group-hover:stroke-orange  dark:stroke-smooth-white'
-                  x1='17'
-                  x2='17'
-                  y1='14'
-                  y2='18'
-                />
+                <line className={iconClasses} x1='7' x2='7' y1='6' y2='13' />
+                <circle className={iconClasses} cx='7' cy='14.5' r='1.5' />
+                <line className={iconClasses} x1='7' x2='7' y1='16' y2='18' />
+                <line className={iconClasses} x1='12' x2='12' y1='6' y2='8' />
+                <circle className={iconClasses} cx='12' cy='9.5' r='1.5' />
+                <line className={iconClasses} x1='12' x2='12' y1='11' y2='18' />
+                <line className={iconClasses} x1='17' x2='17' y1='6' y2='11' />
+                <circle className={iconClasses} cx='17' cy='12.5' r='1.5' />
+                <line className={iconClasses} x1='17' x2='17' y1='14' y2='18' />
               </g>
             </g>
           </svg>

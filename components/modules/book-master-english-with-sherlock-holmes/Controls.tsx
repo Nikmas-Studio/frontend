@@ -11,12 +11,14 @@ interface ControlsProps {
   pageNumber?: number;
   title?: string;
   themeToggleRef?: RefObject<HTMLDivElement>;
+  alwaysWhite?: boolean;
 }
 
 function Controls({
   pageNumber,
   title,
   themeToggleRef,
+  alwaysWhite = false,
 }: ControlsProps): ReactElement {
   const pageNumberClasses = classNames(
     `absolute  bottom-6  right-[3vw]  z-50 
@@ -33,8 +35,11 @@ function Controls({
       )}
       <div className='absolute  right-[3vw]  top-5  z-50  max-md:right-[4.2vw]  max-md:top-4'>
         <div className='flex  gap-1'>
-          <BookNavigatorIcon className='translate-y-[0.48rem]' />
-          <Settings ref={themeToggleRef} />
+          <BookNavigatorIcon
+            alwaysWhite={alwaysWhite}
+            className='translate-y-[0.48rem]'
+          />
+          <Settings alwaysWhite={alwaysWhite} ref={themeToggleRef} />
         </div>
       </div>
       {title && (

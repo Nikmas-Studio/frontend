@@ -4,13 +4,26 @@ import { ReactElement } from 'react';
 
 interface BookNavigatorIconProps {
   className?: string;
+  alwaysWhite?: boolean;
 }
 
 function BookNavigatorIcon({
   className,
+  alwaysWhite = false,
 }: BookNavigatorIconProps): ReactElement {
   const classes = classNames(className, 'group  cursor-pointer');
   const { setBookNavigatorIsOpened } = useBookNavigatorDispatch();
+
+  const circleClasses = classNames({
+    'stroke-black  group-hover:stroke-orange  dark:stroke-smooth-white':
+      !alwaysWhite,
+    'stroke-smooth-white  group-hover:stroke-orange': alwaysWhite,
+  });
+
+  const rectClasses = classNames({
+    'fill-black  group-hover:fill-orange  dark:fill-smooth-white': !alwaysWhite,
+    'fill-white  group-hover:fill-orange  dark:fill-smooth-white': alwaysWhite,
+  });
 
   return (
     <svg
@@ -28,7 +41,7 @@ function BookNavigatorIcon({
         cy='20.3073'
         r='12.3594'
         transform='rotate(45 20.3074 20.3073)'
-        className='stroke-black  group-hover:stroke-orange  dark:stroke-smooth-white'
+        className={circleClasses}
         strokeWidth='3.6'
       />
       <rect
@@ -38,7 +51,7 @@ function BookNavigatorIcon({
         height='3.6'
         rx='2'
         transform='rotate(45 29.8264 28.5571)'
-        className='fill-black  group-hover:fill-orange  dark:fill-smooth-white'
+        className={rectClasses}
       />
     </svg>
   );

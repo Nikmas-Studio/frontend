@@ -12,8 +12,8 @@ const H1 = forwardRef<HTMLHeadingElement, H1Props>(function H2(
   ref,
 ): ReactElement {
   const classes = classNames(
-    `text-7xl  font-bold  max-lg:text-6xl  max-sm:text-5xl  !leading-snug
-     text-git-black  dark:text-git-white`,
+    `text-[4.8rem]  font-bold  max-lg:text-[4rem]  max-sm:text-5xl  !leading-snug
+     text-git-black  dark:text-git-white  max-2sm:text-[11vw]`,
     libreBaskerville.className,
     className,
   );
