@@ -1,4 +1,5 @@
 import { libreBaskerville } from '@/fonts';
+import { processChildren } from '@/utils/insert-non-breaking-spaces';
 import classNames from 'classnames';
 import { forwardRef, ReactElement, ReactNode } from 'react';
 
@@ -18,9 +19,11 @@ const H4 = forwardRef<HTMLHeadingElement, H4Props>(function H2(
     className,
   );
 
+  const processedChildren = processChildren(children);
+
   return (
     <h4 ref={ref} className={classes}>
-      {children}
+      {processedChildren}
     </h4>
   );
 });

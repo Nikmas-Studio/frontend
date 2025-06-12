@@ -1,3 +1,4 @@
+import { processChildren } from '@/utils/insert-non-breaking-spaces';
 import classNames from 'classnames';
 import { forwardRef, ReactElement, ReactNode } from 'react';
 
@@ -16,6 +17,8 @@ const BasicTextNode = forwardRef<HTMLParagraphElement, TextNodeProps>(
   ): ReactElement {
     const classes = classNames('text-black  dark:text-smooth-white', className);
 
+    const processedChildren = processChildren(children);
+
     return (
       <p
         ref={ref}
@@ -24,7 +27,7 @@ const BasicTextNode = forwardRef<HTMLParagraphElement, TextNodeProps>(
         onMouseLeave={onMouseLeave}
         className={classes}
       >
-        {children}
+        {processedChildren}
       </p>
     );
   },

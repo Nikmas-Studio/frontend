@@ -158,6 +158,8 @@ function BookNavigator(): ReactElement {
         setTimeout(() => {
           setActivePage(innerActivePage);
         }, 10);
+      } else {
+        document.documentElement.style.overflow = 'hidden';
       }
     } else {
       if (isTouchDevice) {
@@ -169,6 +171,8 @@ function BookNavigator(): ReactElement {
 
           window.scrollTo(0, parseInt(scrollY || '0') * -1);
         }
+      } else {
+        document.documentElement.style.overflow = '';
       }
 
       setActiveTab(BookNavigatorTab.CONTENTS);

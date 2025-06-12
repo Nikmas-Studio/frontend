@@ -7,7 +7,9 @@ function Background(): ReactElement {
   const backgroundClasses = classNames(
     `fixed  [z-index:-1]  inset-0  bg-center  bg-repeat-y  h-screen  w-screen
      bg-[length:1000px_auto]  max-lg:bg-[length:100vw_auto]
-     bg-gray-light  dark:bg-gray-dark`,
+     bg-book-master-english-with-sherlock-holmes-light
+     dark:bg-book-master-english-with-sherlock-holmes-dark
+     bg-[#FFEAC5]  dark:bg-[#ffca9a]`,
   );
 
   return <div ref={backgroundElementRef} className={backgroundClasses}></div>;

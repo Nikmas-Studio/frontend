@@ -55,6 +55,10 @@ const config: Config = {
           'url("../public/images/git-and-github-book-part-1-bg-pattern-dark.jpg")',
         'git-part-1-light':
           'url("../public/images/git-and-github-book-part-1-bg-pattern-light.jpg")',
+        'book-master-english-with-sherlock-holmes-light':
+          'url("../public/images/book-master-english-with-sherlock-holmes-bg-pattern-light.jpg")',
+        'book-master-english-with-sherlock-holmes-dark':
+          'url("../public/images/book-master-english-with-sherlock-holmes-bg-pattern-dark.jpg")',
       },
       keyframes: {
         'scroll-hint-arrows': {
