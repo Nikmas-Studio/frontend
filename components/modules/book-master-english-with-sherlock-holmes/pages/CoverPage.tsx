@@ -147,8 +147,8 @@ function Page1(): ReactElement {
       <BookMainContainer>
         <p
           className={`${libreBaskerville.className}  text-3xl  text-white  
-                      max-lg:text-[1.6rem]  max-sm:text-2xl  dark:text-smooth-white
-                      max-2sm:text-[4.7vw]`}
+                      max-lg:text-[1.6rem]  max-sm:text-2xl  max-2sm:text-[4.7vw]
+                      dark:text-smooth-white`}
         >
           Arthur Conan Doyle
         </p>
@@ -173,8 +173,8 @@ function Page1(): ReactElement {
             opacity: showSherlock ? 1 : 0,
           }}
           height={sherlockHeight ?? undefined}
-          className='absolute  bottom-0  right-[20px] transition-opacity  duration-1000
-                     max-2md:right-1/2  max-2md:translate-x-1/2  z-[-1]'
+          className='absolute  bottom-0  right-[20px] z-[-1]  transition-opacity
+                     duration-1000  max-2md:right-1/2  max-2md:translate-x-1/2'
         />
         <div
           style={{
@@ -183,8 +183,8 @@ function Page1(): ReactElement {
             width: aiCircleHeight ?? undefined,
             opacity: showAiCircle ? 1 : 0,
           }}
-          className='absolute  right-[-32px]  z-[-2]  max-2md:right-1/2
-                     max-2md:translate-x-1/2  transition-opacity  duration-1000'
+          className='absolute  right-[-32px]  z-[-2]  transition-opacity
+                     duration-1000  max-2md:right-1/2  max-2md:translate-x-1/2'
         >
           <Image
             ref={aiCircleRef}
