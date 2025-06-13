@@ -159,7 +159,7 @@ function Page1(): ReactElement {
         </H1>
         <p
           className={`${libreBaskerville.className}  mt-6  
-                      text-6xl  font-bold  text-[#7badff]  max-lg:mt-[1.2rem]
+                      text-6xl  font-bold  text-[#7aadff]  max-lg:mt-[1.2rem]
                       max-lg:text-5xl  max-1.5lg:mb-[50vw]  max-2md:mb-[58vw]  max-md:mb-[77vw]
                       max-sm:mb-[94vw]  max-sm:mt-[0.65rem]  max-sm:text-4xl
                       max-2sm:mb-[112vw]  max-2sm:text-[8.5vw]`}
