@@ -13,7 +13,10 @@ const BookRightPartContainer = forwardRef<
   { className, children }: BookRightPartContainerProps,
   ref,
 ): ReactElement {
-  const classes = classNames('pl-[4.2vw]', className);
+  const classes = classNames(
+    'pl-[4.2vw]  w-1/2  max-2md:w-full  max-2md:pl-0',
+    className,
+  );
 
   return (
     <div ref={ref} className={classes}>

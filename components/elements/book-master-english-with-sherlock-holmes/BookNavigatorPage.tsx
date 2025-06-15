@@ -29,12 +29,16 @@ function BookNavigatorPage({
     merriweather.className,
   );
 
-  const previewLightClasses = classNames('cursor-pointer  dark:hidden', {
-    'outline  outline-1  outline-orange': hovered || activePage === pageNumber,
-  });
+  const previewLightClasses = classNames(
+    'h-full  object-fill  cursor-pointer  dark:hidden',
+    {
+      'outline  outline-1  outline-orange':
+        hovered || activePage === pageNumber,
+    },
+  );
 
   const previewDarkClasses = classNames(
-    'cursor-pointer  hidden  dark:inline-block',
+    'h-full  object-fill  cursor-pointer  hidden  dark:inline-block',
     {
       'outline  outline-1  outline-orange':
         hovered || activePage === pageNumber,
@@ -45,13 +49,15 @@ function BookNavigatorPage({
     setBookNavigatorIsOpened(false);
     const page = document.getElementById(`page-${pageNumber}`);
     setTimeout(() => {
-      page?.scrollIntoView({ behavior: 'smooth' });
+      page?.scrollIntoView({
+        behavior: 'instant',
+      });
     }, 10);
   }
 
   return (
     <li className='select-none'>
-      <div className='inline-block  h-[90px]  w-[165px]  dark:hidden'>
+      <div className='h-[90px]  w-[165px]'>
         <Image
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
@@ -65,16 +71,14 @@ function BookNavigatorPage({
           blurDataURL={LIGHT_PAGE_PLACEHOLDER}
           alt='Page preview'
         />
-      </div>
-      <div className='hidden  h-[90px]  w-[165px]  dark:inline-block'>
         <Image
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
           onClick={handleClick}
           className={previewDarkClasses}
           src={PAGES_SCREENSHOTS[pageNumber - 1].dark}
-          width={165}
-          height={90}
+          width={330}
+          height={180}
           quality={100}
           placeholder='blur'
           blurDataURL={DARK_PAGE_PLACEHOLDER}

@@ -2,18 +2,18 @@ import BasicTextNode from '@/components/elements/book-master-english-with-sherlo
 import { libreBaskerville } from '@/fonts';
 import { Story } from '@/types/master-english-with-sherlock-holmes/book-navigator';
 import classNames from 'classnames';
-import { Dispatch, ReactElement, SetStateAction } from 'react';
+import { ReactElement } from 'react';
 
 interface BookNavigatorStoryProps {
   title: Story;
   selectedStory: Story;
-  setSelectedStory: Dispatch<SetStateAction<Story>>;
+  udpateSelectedStory: (newStory: Story) => void;
   className?: string;
 }
 
 function BookNavigatorStory({
   selectedStory,
-  setSelectedStory,
+  udpateSelectedStory: setSelectedStory,
   title,
   className,
 }: BookNavigatorStoryProps): ReactElement {

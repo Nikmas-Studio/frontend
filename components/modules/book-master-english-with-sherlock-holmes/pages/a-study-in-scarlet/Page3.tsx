@@ -12,7 +12,7 @@ import { useBookVersion } from '@/context/book-version/Context';
 import { useUrlUpdate } from '@/hooks/use-url-update';
 import { BookVersion } from '@/types/book-version';
 import { ReactElement, useRef } from 'react';
-import Controls from '../Controls';
+import Controls from '../../Controls';
 
 interface PageProps {
   pageNumber: number;

@@ -37,8 +37,7 @@ function BookMasterEnglishWithSherlockHolmesLayout({
               `,
             }}
           />
-          <Background />
-          {children}
+          <Background>{children}</Background>
         </div>
       </ProvidersBookMasterEnglishWithSherlockHolmes>
     </ProvidersDefault>

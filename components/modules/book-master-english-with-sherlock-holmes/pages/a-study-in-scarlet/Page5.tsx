@@ -13,7 +13,7 @@ import { useBookVersion } from '@/context/book-version/Context';
 import { useUrlUpdate } from '@/hooks/use-url-update';
 import { BookVersion } from '@/types/book-version';
 import { ReactElement, useRef } from 'react';
-import Controls from '../Controls';
+import Controls from '../../Controls';
 
 interface PageProps {
   pageNumber: number;
@@ -50,7 +50,7 @@ function Page5({
       />
       <BookMainContainer>
         <div className='flex  max-2md:flex-col'>
-          <BookLeftPartContainer className='w-1/2  max-2md:w-full  max-2md:pr-0'>
+          <BookLeftPartContainer>
             <TextNode noIndent>
               Young Stamford looked rather strangely at me over his wine-glass.
               “You don’t know Sherlock Holmes yet,” he said; “perhaps you would
@@ -114,7 +114,7 @@ function Page5({
               mealy-mouthed about it.”
             </TextNode>
           </BookLeftPartContainer>
-          <BookRightPartContainer className='w-1/2  max-2md:w-full  max-2md:pl-0'>
+          <BookRightPartContainer>
             <TextNode noIndent>
               “It is not easy to express the inexpressible,” he answered with a
               laugh. “Holmes is a little too scientific for my tastes—it

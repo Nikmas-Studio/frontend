@@ -17,8 +17,13 @@ import { useTranslationTooltip } from '@/context/translation-tooltip/Context';
 import { libreBaskerville } from '@/fonts';
 import useOutsideClick from '@/hooks/use-outside-click';
 import { Story } from '@/types/master-english-with-sherlock-holmes/book-navigator';
+import { getFirstPageOfStory } from '@/utils/book-master-english-with-sherlock-holmes/get-first-page-of-story';
+import { getPreviousStory } from '@/utils/book-master-english-with-sherlock-holmes/get-previous-story';
 import { generateRangeArray } from '@/utils/generate-range-array';
+import { useGSAP } from '@gsap/react';
 import classNames from 'classnames';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
 import { ReactElement, useEffect, useRef, useState } from 'react';
 import BookNavigatorPart from './BookNavigatorPart';
 import BookNavigatorStory from './BookNavigatorStory';
@@ -28,10 +33,13 @@ enum BookNavigatorTab {
   CARDS = 'cards',
 }
 
+gsap.registerPlugin(ScrollTrigger);
+
 function BookNavigator(): ReactElement {
   const { bookNavigatorIsOpened } = useBookNavigator();
   const { setBookNavigatorIsOpened } = useBookNavigatorDispatch();
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const cardsComponentRef = useRef<HTMLDivElement | null>(null);
   const { isTouchDevice } = useTouchDevice();
   const [selectedStory, setSelectedStory] = useState(Story.A_STUDY_IN_SCARLET);
   const { ref: tooltipRef } = useTranslationTooltip();
@@ -69,7 +77,7 @@ function BookNavigator(): ReactElement {
 
   const cardsComponentClasses = classNames(
     `h-[calc(100vh-60px)]  flex-1  overflow-y-scroll  px-12  
-     pb-[3.72rem]  pt-6  max-1.5lg:px-[4.2vw]  max-1.5lg:w-full
+     pb-[3.72rem]  pt-[1.6rem]  max-1.5lg:px-[4.2vw]  max-1.5lg:w-full
      max-1.5lg:h-[calc(100vh-4rem)]`,
     {
       'max-1.5lg:hidden': activeTab !== BookNavigatorTab.CARDS,
@@ -145,6 +153,8 @@ function BookNavigator(): ReactElement {
 
   useEffect(() => {
     if (bookNavigatorIsOpened) {
+      document.documentElement.style.overflow = 'hidden';
+
       if (isTouchDevice) {
         if (document.body.style.position === 'fixed') {
           return;
@@ -158,10 +168,10 @@ function BookNavigator(): ReactElement {
         setTimeout(() => {
           setActivePage(innerActivePage);
         }, 10);
-      } else {
-        document.documentElement.style.overflow = 'hidden';
       }
     } else {
+      document.documentElement.style.overflow = '';
+
       if (isTouchDevice) {
         const scrollY = document.body.style.top;
 
@@ -171,13 +181,79 @@ function BookNavigator(): ReactElement {
 
           window.scrollTo(0, parseInt(scrollY || '0') * -1);
         }
-      } else {
-        document.documentElement.style.overflow = '';
       }
 
       setActiveTab(BookNavigatorTab.CONTENTS);
     }
   }, [bookNavigatorIsOpened, isTouchDevice, setActivePage, activePage]);
+
+  useGSAP(() => {
+    const storyBoundaries = document.querySelectorAll('[id^="navigator-"]');
+    console.log('storyBoundaries', storyBoundaries);
+    for (const storyBoundary of storyBoundaries) {
+      console.log('storyBoundary', storyBoundary);
+      const story = storyBoundary.id
+        .replace('navigator-', '')
+        .replaceAll('_', ' ') as Story;
+
+      console.log('story', story);
+
+      const previousStory =
+        getPreviousStory(story as Story) ?? Story.A_STUDY_IN_SCARLET;
+      console.log('previousStory', previousStory);
+
+      ScrollTrigger.create({
+        trigger: storyBoundary,
+        scroller: cardsComponentRef.current,
+        start: `top 120px`,
+        end: '+=0',
+        onEnter: () => {
+          console.log('onEnter', story);
+          setSelectedStory(story);
+        },
+        onEnterBack: () => {
+          console.log('onEnterBack', story);
+          setSelectedStory(previousStory);
+        },
+      });
+    }
+  }, []);
+
+  function updateSelectedStory(newStory: Story): void {
+    setSelectedStory(newStory);
+    if (innerWidth > 1120) {
+      const storyCardComponent = document.getElementById(
+        `navigator-${newStory.replaceAll(' ', '_')}`,
+      );
+      storyCardComponent?.scrollIntoView({
+        behavior: 'smooth',
+      });
+
+      if (cardsComponentRef.current !== null && storyCardComponent !== null) {
+        const container = cardsComponentRef.current;
+        const containerRect = cardsComponentRef.current.getBoundingClientRect();
+        const targetRect = storyCardComponent.getBoundingClientRect();
+        const offset = 25;
+
+        const scrollTop =
+          container.scrollTop + (targetRect.top - containerRect.top) - offset;
+
+        container.scrollTo({
+          top: scrollTop,
+          behavior: 'smooth',
+        });
+      }
+    } else {
+      setBookNavigatorIsOpened(false);
+      const storyFirstPage = getFirstPageOfStory(newStory);
+      const page = document.getElementById(`page-${storyFirstPage}`);
+      setTimeout(() => {
+        page?.scrollIntoView({
+          behavior: 'instant',
+        });
+      }, 10);
+    }
+  }
 
   return (
     <div>
@@ -236,345 +312,348 @@ function BookNavigator(): ReactElement {
           <ul className={contentsComponentClasses}>
             <BookNavigatorStory
               selectedStory={selectedStory}
-              setSelectedStory={setSelectedStory}
+              udpateSelectedStory={updateSelectedStory}
               title={Story.A_STUDY_IN_SCARLET}
             />
             <BookNavigatorStory
               className='mb-7'
               selectedStory={selectedStory}
-              setSelectedStory={setSelectedStory}
+              udpateSelectedStory={updateSelectedStory}
               title={Story.THE_SIGN_OF_THE_FOUR}
             />
             <BookNavigatorPart
-              onClick={() => setSelectedStory(Story.A_SCANDAL_IN_BOHEMIA)}
+              onClick={() => updateSelectedStory(Story.A_SCANDAL_IN_BOHEMIA)}
               title='THE ADVENTURES OF SHERLOCK HOLMES'
             >
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.A_SCANDAL_IN_BOHEMIA}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_RED_HEADED_LEAGUE}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.A_CASE_OF_IDENTITY}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_BOSCOMBE_VALLEY_MYSTERY}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_FIVE_ORANGE_PIPS}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_MAN_WITH_THE_TWISTED_LIP}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_BLUE_CARBUNCLE}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_SPECKLED_BAND}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_ENGINEERS_THUMB}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_NOBLE_BACHELOR}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_BERYL_CORONET}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_COPPER_BEECHES}
               />
             </BookNavigatorPart>
             <BookNavigatorPart
-              onClick={() => setSelectedStory(Story.SILVER_BLAZE)}
+              onClick={() => updateSelectedStory(Story.SILVER_BLAZE)}
               title='THE MEMOIRS OF SHERLOCK HOLMES'
             >
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.SILVER_BLAZE}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_YELLOW_FACE}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_STOCK_BROKERS_CLERK}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_GLORIA_SCOTT}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_MUSGRAVE_RITUAL}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_REIGATE_SQUIRES}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_CROOKED_MAN}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_RESIDENT_PATIENT}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_GREEK_INTERPRETER}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_NAVAL_TREATY}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_FINAL_PROBLEM}
               />
             </BookNavigatorPart>
             <BookNavigatorPart
               onClick={() =>
-                setSelectedStory(Story.THE_ADVENTURE_OF_THE_EMPTY_HOUSE)
+                updateSelectedStory(Story.THE_ADVENTURE_OF_THE_EMPTY_HOUSE)
               }
               title='THE RETURN OF SHERLOCK HOLMES'
             >
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_EMPTY_HOUSE}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_NORWOOD_BUILDER}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_DANCING_MEN}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_SOLITARY_CYCLIST}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_PRIORY_SCHOOL}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_BLACK_PETER}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_CHARLES_AUGUSTUS_MILVERTON}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_SIX_NAPOLEONS}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_THREE_STUDENTS}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_GOLDEN_PINCE_NEZ}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_MISSING_THREE_QUARTER}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_ABBEY_GRANGE}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_SECOND_STAIN}
               />
             </BookNavigatorPart>
             <BookNavigatorStory
               selectedStory={selectedStory}
-              setSelectedStory={setSelectedStory}
+              udpateSelectedStory={updateSelectedStory}
               title={Story.THE_HOUND_OF_THE_BASKERVILLES}
             />
             <BookNavigatorStory
               className='mb-7'
               selectedStory={selectedStory}
-              setSelectedStory={setSelectedStory}
+              udpateSelectedStory={updateSelectedStory}
               title={Story.THE_VALLEY_OF_FEAR}
             />
             <BookNavigatorPart
               onClick={() =>
-                setSelectedStory(Story.THE_ADVENTURE_OF_WISTERIA_LODGE)
+                updateSelectedStory(Story.THE_ADVENTURE_OF_WISTERIA_LODGE)
               }
               title='HIS LAST BOW'
             >
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_WISTERIA_LODGE}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_CARDBOARD_BOX}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_RED_CIRCLE}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_BRUCE_PARTINGTON_PLANS}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_DYING_DETECTIVE}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_DISAPPEARANCE_OF_LADY_FRANCES_CARFAX}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_DEVILS_FOOT}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.HIS_LAST_BOW}
               />
             </BookNavigatorPart>
             <BookNavigatorPart
-              onClick={() => setSelectedStory(Story.THE_ILLUSTRIOUS_CLIENT)}
+              onClick={() => updateSelectedStory(Story.THE_ILLUSTRIOUS_CLIENT)}
               title='THE CASE-BOOK OF SHERLOCK HOLMES'
             >
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ILLUSTRIOUS_CLIENT}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_BLANCHED_SOLDIER}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_MAZARIN_STONE}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_THREE_GABLES}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_SUSSEX_VAMPIRE}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_THREE_GARRIDEBS}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_PROBLEM_OF_THOR_BRIDGE}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_CREEPING_MAN}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_LIONS_MANE}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_VEILED_LODGER}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_SHOSCOMBE_OLD_PLACE}
               />
               <BookNavigatorStory
                 selectedStory={selectedStory}
-                setSelectedStory={setSelectedStory}
+                udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_RETIRED_COLOURMAN}
               />
             </BookNavigatorPart>
           </ul>
-          <div className={cardsComponentClasses}>
-            <div>
+          <div ref={cardsComponentRef} className={cardsComponentClasses}>
+            <div
+              id={`navigator-${Story.A_STUDY_IN_SCARLET.replaceAll(' ', '_')}`}
+              className='mb-7'
+            >
               <BasicTextNode
-                className={`mb-2  text-xl  font-bold  ${libreBaskerville.className}`}
+                className={`mb-1.5  text-xl  font-bold  ${libreBaskerville.className}`}
               >
                 A Study in Scarlet
               </BasicTextNode>
               <BasicTextNode
-                className={`mb-2  text-xl  ${libreBaskerville.className}`}
+                className={`mb-1.5  text-xl  ${libreBaskerville.className}`}
               >
                 Part I
               </BasicTextNode>
@@ -587,6 +666,360 @@ function BookNavigator(): ReactElement {
                 {generateRangeArray(
                   DETAILED_BOOK_PART_PAGE_RANGES.A_STUDY_IN_SCARLET.PART_1
                     .CHAPTER_1_MR_SHERLOCK_HOLMES,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter II. The Science of Deduction
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.A_STUDY_IN_SCARLET.PART_1
+                    .CHAPTER_2_THE_SCIENCE_OF_DEDUCTION,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter III. The Lauriston Garden Mystery
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.A_STUDY_IN_SCARLET.PART_1
+                    .CHAPTER_3_THE_LAURISTON_GARDEN_MYSTERY,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter IV. What John Rance Had to Tell
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.A_STUDY_IN_SCARLET.PART_1
+                    .CHAPTER_4_WHAT_JOHN_RANCE_HAD_TO_TELL,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter V. Our Advertisement Brings a Visitor
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.A_STUDY_IN_SCARLET.PART_1
+                    .CHAPTER_5_OUR_ADVERTISEMENT_BRINGS_A_VISITOR,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter VI. Tobias Gregson Shows What He Can Do
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.A_STUDY_IN_SCARLET.PART_1
+                    .CHAPTER_6_TOBIAS_GREGSON_SHOWS_WHAT_HE_CAN_DO,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter VII. Light In The Darkness
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.A_STUDY_IN_SCARLET.PART_1
+                    .CHAPTER_7_LIGHT_IN_THE_DARKNESS,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-1.5  text-xl  ${libreBaskerville.className}`}
+              >
+                Part II
+              </BasicTextNode>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter I. On the Great Alkali Plain
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.A_STUDY_IN_SCARLET.PART_2
+                    .CHAPTER_1_ON_THE_GREAT_ALKALI_PLAIN,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter II. The Flower of Utah
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.A_STUDY_IN_SCARLET.PART_2
+                    .CHAPTER_2_THE_FLOWER_OF_UTAH,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter III. John Ferrier Talks with the Prophet
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.A_STUDY_IN_SCARLET.PART_2
+                    .CHAPTER_3_JOHN_FERRIER_TALKS_WITH_THE_PROPHET,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter IV. A Flight for Life
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.A_STUDY_IN_SCARLET.PART_2
+                    .CHAPTER_4_A_FLIGHT_FOR_LIFE,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter V. The Avenging Angels
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.A_STUDY_IN_SCARLET.PART_2
+                    .CHAPTER_5_THE_AVENGING_ANGELS,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter VI. A Continuation of the Reminiscences of John Watson,
+                M.D.
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.A_STUDY_IN_SCARLET.PART_2
+                    .CHAPTER_6_A_CONTINUATION_OF_THE_REMINISCENCES_OF_JOHN_WATSON_M_D,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-4  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter VII. The Conclusion
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.A_STUDY_IN_SCARLET.PART_2
+                    .CHAPTER_7_THE_CONCLUSION,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={`navigator-${Story.THE_SIGN_OF_THE_FOUR.replaceAll(' ', '_')}`}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-1.5  text-xl  font-bold  ${libreBaskerville.className}`}
+              >
+                The Sign of the Four
+              </BasicTextNode>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter I. The Science of Deduction
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.THE_SIGN_OF_THE_FOUR
+                    .CHAPTER_1_THE_SCIENCE_OF_DEDUCTION,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter II. The Statement of the Case
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.THE_SIGN_OF_THE_FOUR
+                    .CHAPTER_2_THE_STATEMENT_OF_THE_CASE,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter III. In Quest of a Solution
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.THE_SIGN_OF_THE_FOUR
+                    .CHAPTER_3_IN_QUEST_OF_A_SOLUTION,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter IV. The Story of the Bald-Headed Man
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.THE_SIGN_OF_THE_FOUR
+                    .CHAPTER_4_THE_STORY_OF_THE_BALD_HEADED_MAN,
                 ).map((pageNumber) => {
                   return (
                     <BookNavigatorPage

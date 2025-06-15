@@ -1,5 +1,5 @@
-import { CONNECTING_WORDS } from "@/constants/connecting-words";
-import { ReactNode } from "react";
+import { CONNECTING_WORDS } from '@/constants/connecting-words';
+import { ReactNode } from 'react';
 
 function wrapTextWithNbsp(text: string): string {
   return text.replace(
@@ -8,9 +8,17 @@ function wrapTextWithNbsp(text: string): string {
   );
 }
 
+function addWordJoinerBeforeDash(text: string): string {
+  return text.replace(/([—–])/g, '\u2060$1');
+}
+
+function typographicFixes(text: string): string {
+  return addWordJoinerBeforeDash(wrapTextWithNbsp(text));
+}
+
 export function processChildren(children: ReactNode): ReactNode {
   if (typeof children === 'string') {
-    return wrapTextWithNbsp(children);
+    return typographicFixes(children);
   }
 
   if (Array.isArray(children)) {

@@ -1,3 +1,4 @@
+import { useActivePageDispatch } from '@/context/active-page/Context';
 import { useInitialScrollToPageState } from '@/context/initial-scroll-to-page/Context';
 import { updateUrl } from '@/utils/update-url';
 import { useGSAP } from '@gsap/react';
@@ -5,8 +6,6 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { RefObject } from 'react';
 import useGsapResizeUpdate from './use-gsap-resize-update';
-import { useActiveBackgroundDispatch } from '@/context/background-master-git-and-github-book/Context';
-import { useActivePageDispatch } from '@/context/active-page/Context';
 
 gsap.registerPlugin(ScrollTrigger);
 

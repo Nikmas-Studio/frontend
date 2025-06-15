@@ -1,5 +1,5 @@
 export const CONNECTING_WORDS = [
-  "I",
+  'I',
   'it',
   'he',
   'she',
@@ -10,6 +10,7 @@ export const CONNECTING_WORDS = [
   'her',
   'their',
   'have',
+  'having',
   'has',
   'had',
   'never',

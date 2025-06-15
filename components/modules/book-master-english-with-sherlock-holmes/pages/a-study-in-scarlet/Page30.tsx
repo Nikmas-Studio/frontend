@@ -1,0 +1,341 @@
+'use client';
+
+import BookLeftPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookLeftPartContainer';
+import BookMainContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookMainContainer';
+import BookRightPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookRightPartContainer';
+import H4 from '@/components/elements/book-master-english-with-sherlock-holmes/H4';
+import Page from '@/components/elements/book-master-english-with-sherlock-holmes/Page';
+import TextNode from '@/components/elements/book-master-english-with-sherlock-holmes/TextNode';
+import {
+  BASE_PATH_DEMO,
+  BASE_PATH_READ,
+} from '@/constants/book-master-english-with-sherlock-holmes/main';
+import { useBookVersion } from '@/context/book-version/Context';
+import { useUrlUpdate } from '@/hooks/use-url-update';
+import { BookVersion } from '@/types/book-version';
+import { ReactElement, useRef } from 'react';
+import Controls from '../../Controls';
+
+interface PageProps {
+  pageNumber: number;
+  hidePageNumber?: boolean;
+  viewportHeight?: boolean;
+}
+
+function Page30({
+  pageNumber,
+  hidePageNumber,
+  viewportHeight,
+}: PageProps): ReactElement {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const bookVersion = useBookVersion();
+  const basePath =
+    bookVersion === BookVersion.DEMO ? BASE_PATH_DEMO : BASE_PATH_READ;
+
+  useUrlUpdate({
+    pageRef: sectionRef,
+    currentPage: pageNumber,
+    basePath,
+  });
+
+  return (
+    <Page
+      id={`page-${pageNumber}`}
+      viewportHeight={viewportHeight}
+      className='mb-5'
+      ref={sectionRef}
+    >
+      <Controls
+        pageNumber={hidePageNumber ? undefined : pageNumber}
+        title='A STUDY IN SCARLET'
+      />
+      <BookMainContainer>
+        <H4>
+          Chapter V.
+          <br />
+          The Avenging Angels
+        </H4>
+        <div className='flex  max-2md:flex-col'>
+          <BookLeftPartContainer>
+            <TextNode noIndent>
+              All night their course lay through intricate defiles and over
+              irregular and rock-strewn paths. More than once they lost their
+              way, but Hope's intimate knowledge of the mountains enabled them
+              to regain the track once more. When morning broke, a scene of
+              marvellous though savage beauty lay before them. In every
+              direction the great snow-capped peaks hemmed them in, peeping over
+              each other's shoulders to the far horizon. So steep were the rocky
+              banks on either side of them, that the larch and the pine seemed
+              to be suspended over their heads, and to need only a gust of wind
+              to come hurtling down upon them. Nor was the fear entirely an
+              illusion, for the barren valley was thickly strewn with trees and
+              boulders which had fallen in a similar manner. Even as they
+              passed, a great rock came thundering down with a hoarse rattle
+              which woke the echoes in the silent gorges, and startled the weary
+              horses into a gallop.
+            </TextNode>
+
+            <TextNode>
+              As the sun rose slowly above the eastern horizon, the caps of the
+              great mountains lit up one after the other, like lamps at a
+              festival, until they were all ruddy and glowing. The magnificent
+              spectacle cheered the hearts of the three fugitives and gave them
+              fresh energy. At a wild torrent which swept out of a ravine they
+              called a halt and watered their horses, while they partook of a
+              hasty breakfast. Lucy and her father would fain have rested
+              longer, but Jefferson Hope was inexorable. “They will be upon our
+              track by this time,” he said. “Everything depends upon our speed.
+              Once safe in Carson we may rest for the remainder of our lives.”
+            </TextNode>
+
+            <TextNode>
+              During the whole of that day they struggled on through the
+              defiles, and by evening they calculated that they were more than
+              thirty miles from their enemies. At night-time they chose the base
+              of a beetling crag, where the rocks offered some protection from
+              the chill wind, and there huddled together for warmth, they
+              enjoyed a few hours' sleep. Before daybreak, however, they were up
+              and on their way once more. They had seen no signs of any
+              pursuers, and Jefferson Hope began to think that they were fairly
+              out of the reach of the terrible organization whose enmity they
+              had incurred. He little knew how far that iron grasp could reach,
+              or how soon it was to close upon them and crush them.
+            </TextNode>
+
+            <TextNode>
+              About the middle of the second day of their flight their scanty
+              store of provisions began to run out. This gave the hunter little
+              uneasiness, however, for there was game to be had among the
+              mountains, and he had frequently before had to depend upon his
+              rifle for the needs of life. Choosing a sheltered nook, he piled
+              together a few dried branches and made a blazing fire, at which
+              his companions might warm themselves, for they were now nearly
+              five thousand feet above the sea level, and the air was bitter and
+              keen. Having tethered the horses, and bade Lucy adieu, he threw
+              his gun over his shoulder, and set out in search of whatever
+              chance might throw in his way. Looking back he saw the old man and
+              the young girl crouching over the blazing fire, while the three
+              animals stood motionless in the back-ground. Then the intervening
+              rocks hid them from his view.
+            </TextNode>
+
+            <TextNode>
+              He walked for a couple of miles through one ravine after another
+              without success, though from the marks upon the bark of the trees,
+              and other indications, he judged that there were numerous bears in
+              the vicinity. At last, after two or three hours' fruitless search,
+              he was thinking of turning back in despair, when casting his eyes
+              upwards he saw a sight which sent a thrill of pleasure through his
+              heart. On the edge of a jutting pinnacle, three or four hundred
+              feet above him, there stood a creature somewhat resembling a sheep
+              in appearance, but armed with a pair of gigantic horns. The
+              big-horn—for so it is called—was acting, probably, as a guardian
+              over a flock which were invisible to the hunter; but fortunately
+              it was heading in the opposite direction, and had not perceived
+              him. Lying on his face, he rested his rifle upon a rock, and took
+              a long and steady aim before drawing the trigger. The animal
+              sprang into the air, tottered for a moment upon the edge of the
+              precipice, and then came crashing down into the valley beneath.
+            </TextNode>
+
+            <TextNode>
+              The creature was too unwieldy to lift, so the hunter contented
+              himself with cutting away one haunch and part of the flank. With
+              this trophy over his shoulder, he hastened to retrace his steps,
+              for the evening was already drawing in. He had hardly started,
+              however, before he realized the difficulty which faced him. In his
+              eagerness he had wandered far past the ravines which were known to
+              him, and it was no easy matter to pick out the path which he had
+              taken. The valley in which he found himself divided and
+              sub-divided into many gorges, which were so like each other that
+              it was impossible to distinguish one from the other. He followed
+              one for a mile or more until he came to a mountain torrent which
+              he was sure that he had never seen before. Convinced that he had
+              taken the wrong turn, he tried another, but with the same result.
+              Night was coming on rapidly, and it was almost dark before he at
+              last found himself in a defile which was familiar to him. Even
+              then it was no easy matter to keep to the right track, for the
+              moon had not yet risen, and the high cliffs on either side made
+              the obscurity more profound. Weighed down with his burden, and
+              weary from his exertions, he stumbled along, keeping up his heart
+              by the reflection that every step brought him nearer to Lucy, and
+              that he carried with him enough to ensure them food for the
+              remainder of their journey.
+            </TextNode>
+
+            <TextNode>
+              He had now come to the mouth of the very defile in which he had
+              left them. Even in the darkness he could recognize the outline of
+              the cliffs which bounded it. They must, he reflected, be awaiting
+              him anxiously, for he had been absent nearly five hours. In the
+              gladness of his heart he put his hands to his mouth and made the
+              glen re-echo to a loud halloo as a signal that he was coming. He
+              paused and listened for an answer. None came save his own cry,
+              which clattered up the dreary silent ravines, and was borne back
+              to his ears in countless repetitions. Again he shouted, even
+              louder than before, and again no whisper came back from the
+              friends whom he had left such a short time ago. A vague, nameless
+              dread came over him, and he hurried onwards frantically, dropping
+              the precious food in his agitation.
+            </TextNode>
+          </BookLeftPartContainer>
+          <BookRightPartContainer>
+            <TextNode noIndent>
+              When he turned the corner, he came full in sight of the spot where
+              the fire had been lit. There was still a glowing pile of wood
+              ashes there, but it had evidently not been tended since his
+              departure. The same dead silence still reigned all round. With his
+              fears all changed to convictions, he hurried on. There was no
+              living creature near the remains of the fire: animals, man,
+              maiden, all were gone. It was only too clear that some sudden and
+              terrible disaster had occurred during his absence—a disaster which
+              had embraced them all, and yet had left no traces behind it.
+            </TextNode>
+
+            <TextNode>
+              Bewildered and stunned by this blow, Jefferson Hope felt his head
+              spin round, and had to lean upon his rifle to save himself from
+              falling. He was essentially a man of action, however, and speedily
+              recovered from his temporary impotence. Seizing a half-consumed
+              piece of wood from the smouldering fire, he blew it into a flame,
+              and proceeded with its help to examine the little camp. The ground
+              was all stamped down by the feet of horses, showing that a large
+              party of mounted men had overtaken the fugitives, and the
+              direction of their tracks proved that they had afterwards turned
+              back to Salt Lake City. Had they carried back both of his
+              companions with them? Jefferson Hope had almost persuaded himself
+              that they must have done so, when his eye fell upon an object
+              which made every nerve of his body tingle within him. A little way
+              on one side of the camp was a low-lying heap of reddish soil,
+              which had assuredly not been there before. There was no mistaking
+              it for anything but a newly-dug grave. As the young hunter
+              approached it, he perceived that a stick had been planted on it,
+              with a sheet of paper stuck in the cleft fork of it. The
+              inscription upon the paper was brief, but to the point:
+            </TextNode>
+
+            <TextNode className='text-center  italic'>
+              JOHN FERRIER,
+              <br />
+              Formerly of Salt Lake City,
+              <br />
+              Died August 4th, 1860.
+            </TextNode>
+
+            <TextNode noIndent>
+              The sturdy old man, whom he had left so short a time before, was
+              gone, then, and this was all his epitaph. Jefferson Hope looked
+              wildly round to see if there was a second grave, but there was no
+              sign of one. Lucy had been carried back by their terrible pursuers
+              to fulfil her original destiny, by becoming one of the harem of
+              the Elder's son. As the young fellow realized the certainty of her
+              fate, and his own powerlessness to prevent it, he wished that he,
+              too, was lying with the old farmer in his last silent
+              resting-place.
+            </TextNode>
+
+            <TextNode>
+              Again, however, his active spirit shook off the lethargy which
+              springs from despair. If there was nothing else left to him, he
+              could at least devote his life to revenge. With indomitable
+              patience and perseverance, Jefferson Hope possessed also a power
+              of sustained vindictiveness, which he may have learned from the
+              Indians amongst whom he had lived. As he stood by the desolate
+              fire, he felt that the only one thing which could assuage his
+              grief would be thorough and complete retribution, brought by his
+              own hand upon his enemies. His strong will and untiring energy
+              should, he determined, be devoted to that one end. With a grim,
+              white face, he retraced his steps to where he had dropped the
+              food, and having stirred up the smouldering fire, he cooked enough
+              to last him for a few days. This he made up into a bundle, and,
+              tired as he was, he set himself to walk back through the mountains
+              upon the track of the avenging angels.
+            </TextNode>
+
+            <TextNode>
+              For five days he toiled footsore and weary through the defiles
+              which he had already traversed on horseback. At night he flung
+              himself down among the rocks, and snatched a few hours of sleep;
+              but before daybreak he was always well on his way. On the sixth
+              day, he reached the Eagle Cañon, from which they had commenced
+              their ill-fated flight. Thence he could look down upon the home of
+              the saints. Worn and exhausted, he leaned upon his rifle and shook
+              his gaunt hand fiercely at the silent widespread city beneath him.
+              As he looked at it, he observed that there were flags in some of
+              the principal streets, and other signs of festivity. He was still
+              speculating as to what this might mean when he heard the clatter
+              of horse's hoofs, and saw a mounted man riding towards him. As he
+              approached, he recognized him as a Mormon named Cowper, to whom he
+              had rendered services at different times. He therefore accosted
+              him when he got up to him, with the object of finding out what
+              Lucy Ferrier's fate had been.
+            </TextNode>
+
+            <TextNode>
+              “I am Jefferson Hope,” he said. “You remember me.”
+            </TextNode>
+
+            <TextNode>
+              The Mormon looked at him with undisguised astonishment—indeed, it
+              was difficult to recognize in this tattered, unkempt wanderer,
+              with ghastly white face and fierce, wild eyes, the spruce young
+              hunter of former days. Having, however, at last, satisfied himself
+              as to his identity, the man's surprise changed to consternation.
+            </TextNode>
+
+            <TextNode>
+              “You are mad to come here,” he cried. “It is as much as my own
+              life is worth to be seen talking with you. There is a warrant
+              against you from the Holy Four for assisting the Ferriers away.”
+            </TextNode>
+
+            <TextNode>
+              “I don't fear them, or their warrant,” Hope said, earnestly. “You
+              must know something of this matter, Cowper. I conjure you by
+              everything you hold dear to answer a few questions. We have always
+              been friends. For God's sake, don't refuse to answer me.”
+            </TextNode>
+
+            <TextNode>
+              “What is it?” the Mormon asked uneasily. “Be quick. The very rocks
+              have ears and the trees eyes.”
+            </TextNode>
+
+            <TextNode>“What has become of Lucy Ferrier?”</TextNode>
+
+            <TextNode>
+              “She was married yesterday to young Drebber. Hold up, man, hold
+              up, you have no life left in you.”
+            </TextNode>
+
+            <TextNode>
+              “Don't mind me,” said Hope faintly. He was white to the very lips,
+              and had sunk down on the stone against which he had been leaning.
+              “Married, you say?”
+            </TextNode>
+
+            <TextNode>
+              “Married yesterday—that's what those flags are for on the
+              Endowment House. There was some words between young Drebber and
+              young Stangerson as to which was to have her. They'd both been in
+              the party that followed them, and Stangerson had shot her father,
+              which seemed to give him the best claim; but when they argued it
+              out in council, Drebber's party was the stronger, so the Prophet
+              gave her over to him. No one won't have her very long though, for
+              I saw death in her face yesterday. She is more like a ghost than a
+              woman. Are you off, then?”
+            </TextNode>
+
+            <TextNode>
+              “Yes, I am off,” said Jefferson Hope, who had risen from his seat.
+              His face might have been chiselled out of marble, so hard and set
+              was its expression, while its eyes glowed with a baleful light.
+            </TextNode>
+          </BookRightPartContainer>
+        </div>
+      </BookMainContainer>
+    </Page>
+  );
+}
+
+export default Page30;

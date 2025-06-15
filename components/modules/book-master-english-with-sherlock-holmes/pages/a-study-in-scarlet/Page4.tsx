@@ -14,7 +14,7 @@ import { useBookVersion } from '@/context/book-version/Context';
 import { useUrlUpdate } from '@/hooks/use-url-update';
 import { BookVersion } from '@/types/book-version';
 import { ReactElement, useRef } from 'react';
-import Controls from '../Controls';
+import Controls from '../../Controls';
 
 interface PageProps {
   pageNumber: number;
@@ -50,15 +50,21 @@ function Page4({
         title='A STUDY IN SCARLET'
       />
       <BookMainContainer>
-        <H4 className='mb-10'>
+        <H4>
           Chapter I.
           <br />
           Mr. Sherlock Holmes
         </H4>
         <div className='flex  max-2md:flex-col'>
-          <BookLeftPartContainer className='w-1/2  max-2md:w-full  max-2md:pr-0'>
+          <BookLeftPartContainer>
             <TextNode noIndent>
-              In the year 1878 I took my degree of Doctor of Medicine of the
+              <span
+                className='float-left  translate-y-[0.32rem]  pr-1
+                           text-[5.55rem]  leading-[0.9]'
+              >
+                I
+              </span>
+              n the year 1878 I took my degree of Doctor of Medicine of the
               University of London, and proceeded to Netley to go through the
               course prescribed for surgeons in the army. Having completed my
               studies there, I was duly attached to the Fifth Northumberland
@@ -106,7 +112,7 @@ function Page4({
               loungers and idlers of the Empire are irresistibly drained.
             </TextNode>
           </BookLeftPartContainer>
-          <BookRightPartContainer className='w-1/2  max-2md:w-full  max-2md:pl-0'>
+          <BookRightPartContainer>
             <TextNode noIndent>
               There I stayed for some time at a private hotel in the Strand,
               leading a comfortless, meaningless existence, and spending such
