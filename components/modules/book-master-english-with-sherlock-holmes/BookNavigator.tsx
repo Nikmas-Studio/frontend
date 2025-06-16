@@ -2,8 +2,18 @@
 
 import BasicTextNode from '@/components/elements/book-master-english-with-sherlock-holmes/BasicTextNode';
 import BookNavigatorPage from '@/components/elements/book-master-english-with-sherlock-holmes/BookNavigatorPage';
-import { DETAILED_BOOK_PART_PAGE_RANGES } from '@/constants/book-master-english-with-sherlock-holmes/main';
-import { RESIZE_THRESHOLD } from '@/constants/general';
+import {
+  BASE_PATH_DEMO,
+  BASE_PATH_READ,
+  BOOK_PARTS,
+  DETAILED_BOOK_PART_PAGE_RANGES,
+} from '@/constants/book-master-english-with-sherlock-holmes/main';
+import {
+  NAVIGATOR_PAGE_CARD_ID_PREFIX,
+  NAVIGATOR_PART_ID_PREFIX,
+  NAVIGATOR_TITLE_ID_PREFIX,
+  RESIZE_THRESHOLD,
+} from '@/constants/general';
 import {
   useActivePage,
   useActivePageDispatch,
@@ -12,14 +22,19 @@ import {
   useBookNavigator,
   useBookNavigatorDispatch,
 } from '@/context/book-navigator/Context';
+import { useBookVersion } from '@/context/book-version/Context';
 import { useTouchDevice } from '@/context/touch-device/Context';
 import { useTranslationTooltip } from '@/context/translation-tooltip/Context';
 import { libreBaskerville } from '@/fonts';
+import useGsapResizeUpdate from '@/hooks/use-gsap-resize-update';
 import useOutsideClick from '@/hooks/use-outside-click';
+import { BookVersion } from '@/types/book-version';
 import { Story } from '@/types/master-english-with-sherlock-holmes/book-navigator';
+import { getBookPartByPage } from '@/utils/book-master-english-with-sherlock-holmes/get-book-part-by-page';
 import { getFirstPageOfStory } from '@/utils/book-master-english-with-sherlock-holmes/get-first-page-of-story';
 import { getPreviousStory } from '@/utils/book-master-english-with-sherlock-holmes/get-previous-story';
 import { generateRangeArray } from '@/utils/generate-range-array';
+import { isInViewportWithinContainer } from '@/utils/is-in-viewport-within-container';
 import { useGSAP } from '@gsap/react';
 import classNames from 'classnames';
 import gsap from 'gsap';
@@ -40,6 +55,7 @@ function BookNavigator(): ReactElement {
   const { setBookNavigatorIsOpened } = useBookNavigatorDispatch();
   const containerRef = useRef<HTMLDivElement | null>(null);
   const cardsComponentRef = useRef<HTMLDivElement | null>(null);
+  const contentsComponentRef = useRef<HTMLUListElement | null>(null);
   const { isTouchDevice } = useTouchDevice();
   const [selectedStory, setSelectedStory] = useState(Story.A_STUDY_IN_SCARLET);
   const { ref: tooltipRef } = useTranslationTooltip();
@@ -47,6 +63,10 @@ function BookNavigator(): ReactElement {
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
   const { activePage } = useActivePage();
   const { setActivePage } = useActivePageDispatch();
+  const { gsapShouldUpdate } = useGsapResizeUpdate();
+  const bookVersion = useBookVersion();
+  const basePath =
+    bookVersion === BookVersion.DEMO ? BASE_PATH_DEMO : BASE_PATH_READ;
 
   useEffect(() => {
     let initialHeight = window.innerHeight;
@@ -142,7 +162,7 @@ function BookNavigator(): ReactElement {
       h-[calc(100vh-60px)]]  fixed  bottom-0  left-[80px]  top-[60px]
       z-[9999]  w-[calc(100vw-160px)]  rounded-t-[20px]  bg-[#F3F3F3]
       dark:bg-[#0F151D]  transition-transform  duration-[400ms] overflow-hidden
-      max-1.5lg:w-screen  max-1.5lg:h-screen  max-1.5lg:left-0  max-1.5lg:top-0
+      max-1.5lg:w-screen  max-1.5lg:h-[110vh]  max-1.5lg:border-b  max-1.5lg:left-0  max-1.5lg:top-0
       max-1.5lg:rounded-none
   `,
   );
@@ -152,78 +172,140 @@ function BookNavigator(): ReactElement {
   });
 
   useEffect(() => {
+    const activePageCard = document.getElementById(
+      `${NAVIGATOR_PAGE_CARD_ID_PREFIX}${activePage}`,
+    );
+
+    if (cardsComponentRef.current !== null && activePageCard !== null) {
+      const container = cardsComponentRef.current;
+      const containerRect = cardsComponentRef.current.getBoundingClientRect();
+      const targetRect = activePageCard.getBoundingClientRect();
+      const offset = 17;
+
+      const scrollTop =
+        container.scrollTop + (targetRect.top - containerRect.top) - offset;
+
+      if (bookNavigatorIsOpened) {
+        container.scrollTo({
+          top: scrollTop,
+          behavior: 'instant',
+        });
+      }
+    }
+  }, [activePage, bookNavigatorIsOpened, activeTab]);
+
+  useEffect(() => {
     if (bookNavigatorIsOpened) {
       document.documentElement.style.overflow = 'hidden';
-
-      if (isTouchDevice) {
-        if (document.body.style.position === 'fixed') {
-          return;
-        }
-
-        const innerActivePage = activePage;
-
-        document.body.style.top = `-${window.scrollY}px`;
-        document.body.style.position = 'fixed';
-
-        setTimeout(() => {
-          setActivePage(innerActivePage);
-        }, 10);
-      }
     } else {
       document.documentElement.style.overflow = '';
-
-      if (isTouchDevice) {
-        const scrollY = document.body.style.top;
-
-        if (scrollY !== '') {
-          document.body.style.position = '';
-          document.body.style.top = '';
-
-          window.scrollTo(0, parseInt(scrollY || '0') * -1);
-        }
-      }
-
       setActiveTab(BookNavigatorTab.CONTENTS);
     }
-  }, [bookNavigatorIsOpened, isTouchDevice, setActivePage, activePage]);
+  }, [
+    bookNavigatorIsOpened,
+    isTouchDevice,
+    setActivePage,
+    activePage,
+    basePath,
+  ]);
 
-  useGSAP(() => {
-    const storyBoundaries = document.querySelectorAll('[id^="navigator-"]');
-    console.log('storyBoundaries', storyBoundaries);
-    for (const storyBoundary of storyBoundaries) {
-      console.log('storyBoundary', storyBoundary);
-      const story = storyBoundary.id
-        .replace('navigator-', '')
-        .replaceAll('_', ' ') as Story;
+  useEffect(() => {
+    try {
+      let activeStory: Story;
 
-      console.log('story', story);
+      if (activePage === '') {
+        activeStory = BOOK_PARTS.at(0)!;
+      } else if (activePage === 'end') {
+        activeStory = BOOK_PARTS.at(-1)!;
+      } else {
+        const bookPart = Object.keys(
+          JSON.parse(getBookPartByPage(activePage as number)!),
+        )[0];
+        activeStory = BOOK_PARTS.find((part) => {
+          return (
+            part.replaceAll(' ', '_').toLowerCase() === bookPart.toLowerCase()
+          );
+        })!;
+      }
 
-      const previousStory =
-        getPreviousStory(story as Story) ?? Story.A_STUDY_IN_SCARLET;
-      console.log('previousStory', previousStory);
+      setSelectedStory(activeStory);
+      const storyTitleComponent = document.getElementById(
+        `${NAVIGATOR_TITLE_ID_PREFIX}${activeStory.replaceAll(' ', '_')}`,
+      );
+      if (bookNavigatorIsOpened) {
+        storyTitleComponent?.scrollIntoView({
+          behavior: 'instant',
+          block: 'center',
+        });
+      }
+    } catch (error) {}
+  }, [activePage, bookNavigatorIsOpened]);
 
-      ScrollTrigger.create({
-        trigger: storyBoundary,
-        scroller: cardsComponentRef.current,
-        start: `top 120px`,
-        end: '+=0',
-        onEnter: () => {
-          console.log('onEnter', story);
-          setSelectedStory(story);
-        },
-        onEnterBack: () => {
-          console.log('onEnterBack', story);
-          setSelectedStory(previousStory);
-        },
-      });
-    }
-  }, []);
+  useGSAP(
+    () => {
+      if (window.innerWidth > 1120) {
+        const storyBoundaries = document.querySelectorAll(
+          `[id^="${NAVIGATOR_PART_ID_PREFIX}"]`,
+        );
+        for (const storyBoundary of storyBoundaries) {
+          const story = storyBoundary.id
+            .replace(`${NAVIGATOR_PART_ID_PREFIX}`, '')
+            .replaceAll('_', ' ') as Story;
+
+          const previousStory =
+            getPreviousStory(story as Story) ?? Story.A_STUDY_IN_SCARLET;
+
+          ScrollTrigger.create({
+            trigger: storyBoundary,
+            scroller: cardsComponentRef.current,
+            start: `top 120px`,
+            end: '+=0',
+            onEnter: () => {
+              setSelectedStory(story);
+              updateStoryTitleVisibility(story);
+            },
+            onEnterBack: () => {
+              setSelectedStory(previousStory);
+              updateStoryTitleVisibility(story);
+            },
+          });
+
+          function updateStoryTitleVisibility(activeStory: Story): void {
+            const storyTitleComponent = document.getElementById(
+              `${NAVIGATOR_TITLE_ID_PREFIX}${activeStory.replaceAll(' ', '_')}`,
+            );
+
+            if (
+              storyTitleComponent !== null &&
+              contentsComponentRef.current !== null
+            ) {
+              if (
+                !isInViewportWithinContainer(
+                  storyTitleComponent,
+                  contentsComponentRef.current,
+                )
+              ) {
+                storyTitleComponent.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'center',
+                });
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      dependencies: [gsapShouldUpdate],
+      revertOnUpdate: true,
+    },
+  );
 
   function updateSelectedStory(newStory: Story): void {
     setSelectedStory(newStory);
-    if (innerWidth > 1120) {
+    if (window.innerWidth > 1120) {
       const storyCardComponent = document.getElementById(
-        `navigator-${newStory.replaceAll(' ', '_')}`,
+        `${NAVIGATOR_PART_ID_PREFIX}${newStory.replaceAll(' ', '_')}`,
       );
       storyCardComponent?.scrollIntoView({
         behavior: 'smooth',
@@ -309,7 +391,7 @@ function BookNavigator(): ReactElement {
           </div>
         </div>
         <div className='flex'>
-          <ul className={contentsComponentClasses}>
+          <ul ref={contentsComponentRef} className={contentsComponentClasses}>
             <BookNavigatorStory
               selectedStory={selectedStory}
               udpateSelectedStory={updateSelectedStory}
@@ -644,7 +726,7 @@ function BookNavigator(): ReactElement {
           </ul>
           <div ref={cardsComponentRef} className={cardsComponentClasses}>
             <div
-              id={`navigator-${Story.A_STUDY_IN_SCARLET.replaceAll(' ', '_')}`}
+              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.A_STUDY_IN_SCARLET.replaceAll(' ', '_')}`}
               className='mb-7'
             >
               <BasicTextNode
@@ -943,7 +1025,7 @@ function BookNavigator(): ReactElement {
               </ul>
             </div>
             <div
-              id={`navigator-${Story.THE_SIGN_OF_THE_FOUR.replaceAll(' ', '_')}`}
+              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.THE_SIGN_OF_THE_FOUR.replaceAll(' ', '_')}`}
               className='mb-7'
             >
               <BasicTextNode

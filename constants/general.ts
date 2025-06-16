@@ -17,3 +17,6 @@ export const BASE_FRONTEND_URL = 'https://nikmas.studio';
 export const READER_FULL_NAME_MAX_LENGTH = 50;
 export const BOOK_RELOAD_KEY = '11reloadThisBook11';
 export const BOOK_PRICE = 23;
+export const NAVIGATOR_PART_ID_PREFIX = 'navigator-part-';
+export const NAVIGATOR_TITLE_ID_PREFIX = 'navigator-title-';
+export const NAVIGATOR_PAGE_CARD_ID_PREFIX = 'navigator-page-card-';

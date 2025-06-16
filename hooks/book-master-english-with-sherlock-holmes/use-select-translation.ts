@@ -2,7 +2,7 @@ import { MAX_TRANSLATION_FRAGMENT_LENGTH } from '@/constants/book-master-english
 import { BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI } from '@/constants/general';
 import { useTranslationLanguage } from '@/context/book-master-english-with-sherlock-holmes/translation-language/Context';
 import { useTranslationTooltipDispatch } from '@/context/translation-tooltip/Context';
-import { getBookPartByPage } from '@/utils/get-book-part-by-page';
+import { getBookPartByPage } from '@/utils/book-master-english-with-sherlock-holmes/get-book-part-by-page';
 import { getSelectionData } from '@/utils/get-selection-data';
 import { translate } from '@/utils/translate';
 import { useEffect, useRef } from 'react';

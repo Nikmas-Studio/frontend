@@ -1,13 +1,22 @@
 'use client';
 
 import {
+  BASE_PATH_DEMO,
+  BASE_PATH_READ,
   DARK_PAGE_PLACEHOLDER,
   LIGHT_PAGE_PLACEHOLDER,
 } from '@/constants/book-master-english-with-sherlock-holmes/main';
 import { PAGES_SCREENSHOTS } from '@/constants/book-master-english-with-sherlock-holmes/pages-screenshots';
-import { useActivePage } from '@/context/active-page/Context';
+import { NAVIGATOR_PAGE_CARD_ID_PREFIX } from '@/constants/general';
+import {
+  useActivePage,
+  useActivePageDispatch,
+} from '@/context/active-page/Context';
 import { useBookNavigatorDispatch } from '@/context/book-navigator/Context';
+import { useBookVersion } from '@/context/book-version/Context';
 import { merriweather } from '@/fonts';
+import { BookVersion } from '@/types/book-version';
+import { updateUrl } from '@/utils/update-url';
 import classNames from 'classnames';
 import Image from 'next/image';
 import { ReactElement, useState } from 'react';
@@ -23,6 +32,7 @@ function BookNavigatorPage({
   const [hovered, setHovered] = useState(false);
   const { setBookNavigatorIsOpened } = useBookNavigatorDispatch();
   const { activePage } = useActivePage();
+  const { setActivePage } = useActivePageDispatch();
 
   const pageNumberClasses = classNames(
     'text-[13px]  mt-1  cursor-pointer  inline-block',
@@ -45,6 +55,10 @@ function BookNavigatorPage({
     },
   );
 
+  const bookVersion = useBookVersion();
+  const basePath =
+    bookVersion === BookVersion.DEMO ? BASE_PATH_DEMO : BASE_PATH_READ;
+
   function handleClick(): void {
     setBookNavigatorIsOpened(false);
     const page = document.getElementById(`page-${pageNumber}`);
@@ -52,11 +66,18 @@ function BookNavigatorPage({
       page?.scrollIntoView({
         behavior: 'instant',
       });
+      setTimeout(() => {
+        updateUrl({ page: pageNumber, basePath });
+        setActivePage(pageNumber);
+      }, 50);
     }, 10);
   }
 
   return (
-    <li className='select-none'>
+    <li
+      id={`${NAVIGATOR_PAGE_CARD_ID_PREFIX}${pageNumber}`}
+      className='select-none'
+    >
       <div className='h-[90px]  w-[165px]'>
         <Image
           onMouseEnter={() => setHovered(true)}
