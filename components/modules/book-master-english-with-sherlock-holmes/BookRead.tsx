@@ -39,19 +39,26 @@ import Page32 from './pages/a-study-in-scarlet/Page32';
 import Page33 from './pages/a-study-in-scarlet/Page33';
 import Page34 from './pages/a-study-in-scarlet/Page34';
 import Page35 from './pages/a-study-in-scarlet/Page35';
-import Page36 from './pages/a-study-in-scarlet/Page36';
-import Page37 from './pages/a-study-in-scarlet/Page37';
-import Page38 from './pages/a-study-in-scarlet/Page38';
-import Page39 from './pages/a-study-in-scarlet/Page39';
 import Page4 from './pages/a-study-in-scarlet/Page4';
-import Page40 from './pages/a-study-in-scarlet/Page40';
-import Page41 from './pages/a-study-in-scarlet/Page41';
-import Page42 from './pages/a-study-in-scarlet/Page42';
 import Page5 from './pages/a-study-in-scarlet/Page5';
 import Page6 from './pages/a-study-in-scarlet/Page6';
 import Page7 from './pages/a-study-in-scarlet/Page7';
 import Page8 from './pages/a-study-in-scarlet/Page8';
 import Page9 from './pages/a-study-in-scarlet/Page9';
+import Page36 from './pages/the-sign-of-the-four/Page36';
+import Page37 from './pages/the-sign-of-the-four/Page37';
+import Page38 from './pages/the-sign-of-the-four/Page38';
+import Page39 from './pages/the-sign-of-the-four/Page39';
+import Page40 from './pages/the-sign-of-the-four/Page40';
+import Page41 from './pages/the-sign-of-the-four/Page41';
+import Page42 from './pages/the-sign-of-the-four/Page42';
+import Page43 from './pages/the-sign-of-the-four/Page43';
+import Page44 from './pages/the-sign-of-the-four/Page44';
+import Page45 from './pages/the-sign-of-the-four/Page45';
+import Page46 from './pages/the-sign-of-the-four/Page46';
+import Page47 from './pages/the-sign-of-the-four/Page47';
+import Page48 from './pages/the-sign-of-the-four/Page48';
+import Page49 from './pages/the-sign-of-the-four/Page49';
 
 interface BookReadProps {
   initialPageId?: string;
@@ -106,6 +113,13 @@ function BookRead({ initialPageId }: BookReadProps): ReactElement {
             Page40,
             Page41,
             Page42,
+            Page43,
+            Page44,
+            Page45,
+            Page46,
+            Page47,
+            Page48,
+            Page49,
           ].map((PageComponent, index) => {
             return (
               <PageComponent

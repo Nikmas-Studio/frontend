@@ -161,9 +161,9 @@ function BookNavigator(): ReactElement {
     ` 
       h-[calc(100vh-60px)]]  fixed  bottom-0  left-[80px]  top-[60px]
       z-[9999]  w-[calc(100vw-160px)]  rounded-t-[20px]  bg-[#F3F3F3]
-      dark:bg-[#0F151D]  transition-transform  duration-[400ms] overflow-hidden
-      max-1.5lg:w-screen  max-1.5lg:h-[150vh]  max-1.5lg:border-b  max-1.5lg:left-0  max-1.5lg:top-0
-      max-1.5lg:rounded-none
+      dark:bg-[#0F151D]  transition-transform  duration-[400ms]  overflow-hidden
+      max-1.5lg:w-screen  max-1.5lg:h-[150vh]  max-1.5lg:left-0
+      max-1.5lg:top-0  max-1.5lg:rounded-none
   `,
   );
 
@@ -1102,6 +1102,66 @@ function BookNavigator(): ReactElement {
                 {generateRangeArray(
                   DETAILED_BOOK_PART_PAGE_RANGES.THE_SIGN_OF_THE_FOUR
                     .CHAPTER_4_THE_STORY_OF_THE_BALD_HEADED_MAN,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter V. The Tragedy of Pondicherry Lodge
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.THE_SIGN_OF_THE_FOUR
+                    .CHAPTER_5_THE_TRAGEDY_OF_PONDICHERRY_LODGE,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter VI. Sherlock Holmes Gives a Demonstration
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.THE_SIGN_OF_THE_FOUR
+                    .CHAPTER_6_SHERLOCK_HOLMES_GIVES_A_DEMONSTRATION,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter VII. The Episode of the Barrel
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.THE_SIGN_OF_THE_FOUR
+                    .CHAPTER_7_THE_EPISODE_OF_THE_BARREL,
                 ).map((pageNumber) => {
                   return (
                     <BookNavigatorPage

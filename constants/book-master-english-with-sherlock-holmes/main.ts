@@ -84,6 +84,18 @@ export const DETAILED_BOOK_PART_PAGE_RANGES = {
       from: 41,
       to: 42,
     },
+    CHAPTER_5_THE_TRAGEDY_OF_PONDICHERRY_LODGE: {
+      from: 43,
+      to: 44,
+    },
+    CHAPTER_6_SHERLOCK_HOLMES_GIVES_A_DEMONSTRATION: {
+      from: 45,
+      to: 46,
+    },
+    CHAPTER_7_THE_EPISODE_OF_THE_BARREL: {
+      from: 47,
+      to: 49,
+    },
   },
 };
 
