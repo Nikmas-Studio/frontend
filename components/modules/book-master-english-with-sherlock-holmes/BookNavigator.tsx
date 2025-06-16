@@ -239,7 +239,7 @@ function BookNavigator(): ReactElement {
         });
       }
     } catch (error) {}
-  }, [activePage, bookNavigatorIsOpened]);
+  }, [activePage, activeTab, bookNavigatorIsOpened]);
 
   useGSAP(
     () => {
