@@ -21,10 +21,13 @@ function BookMasterEnglishWithSherlockHolmesLayout({
         initialPageId={initialPageId}
       >
         <div id='main-book-wrapper' className={`${gilroy.className}`}>
-          <script
+          {/* <Script
+            id='book-master-english-with-sherlock-holmes-invisible-script'
+            strategy='beforeInteractive'
             dangerouslySetInnerHTML={{
               __html: `
                 const path = window.location.pathname;
+                console.log('invisible');
                 
                 if (
                   !path.endsWith('read') &&
@@ -36,7 +39,7 @@ function BookMasterEnglishWithSherlockHolmesLayout({
                 }
               `,
             }}
-          />
+          /> */}
           <Background>{children}</Background>
         </div>
       </ProvidersBookMasterEnglishWithSherlockHolmes>

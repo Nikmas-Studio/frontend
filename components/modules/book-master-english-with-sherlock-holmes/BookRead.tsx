@@ -59,6 +59,12 @@ import Page46 from './pages/the-sign-of-the-four/Page46';
 import Page47 from './pages/the-sign-of-the-four/Page47';
 import Page48 from './pages/the-sign-of-the-four/Page48';
 import Page49 from './pages/the-sign-of-the-four/Page49';
+import Page50 from './pages/the-sign-of-the-four/Page50';
+import Page51 from './pages/the-sign-of-the-four/Page51';
+import Page52 from './pages/the-sign-of-the-four/Page52';
+import Page53 from './pages/the-sign-of-the-four/Page53';
+import Page54 from './pages/the-sign-of-the-four/Page54';
+import Page55 from './pages/the-sign-of-the-four/Page55';
 
 interface BookReadProps {
   initialPageId?: string;
@@ -120,6 +126,12 @@ function BookRead({ initialPageId }: BookReadProps): ReactElement {
             Page47,
             Page48,
             Page49,
+            Page50,
+            Page51,
+            Page52,
+            Page53,
+            Page54,
+            Page55,
           ].map((PageComponent, index) => {
             return (
               <PageComponent

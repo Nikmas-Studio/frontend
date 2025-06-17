@@ -1004,7 +1004,7 @@ function BookNavigator(): ReactElement {
                 })}
               </ul>
             </div>
-            <div className='mb-7'>
+            <div className='mb-12'>
               <BasicTextNode
                 className={`mb-4  text-xl  ${libreBaskerville.className}`}
               >
@@ -1162,6 +1162,66 @@ function BookNavigator(): ReactElement {
                 {generateRangeArray(
                   DETAILED_BOOK_PART_PAGE_RANGES.THE_SIGN_OF_THE_FOUR
                     .CHAPTER_7_THE_EPISODE_OF_THE_BARREL,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter VIII. The Baker Street Irregulars
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.THE_SIGN_OF_THE_FOUR
+                    .CHAPTER_8_THE_BAKER_STREET_IRREGULARS,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter IX. A Break in the Chain
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.THE_SIGN_OF_THE_FOUR
+                    .CHAPTER_9_A_BREAK_IN_THE_CHAIN,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter X. The End of the Islander
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.THE_SIGN_OF_THE_FOUR
+                    .CHAPTER_10_THE_END_OF_THE_ISLANDER,
                 ).map((pageNumber) => {
                   return (
                     <BookNavigatorPage

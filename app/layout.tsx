@@ -29,9 +29,7 @@ export default function RootLayout({
         `}
         </Script>
         <meta name='format-detection' content='email=no' />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+        <Script id='early-theme-setup' strategy='beforeInteractive'>{`
               try {
                 if (localStorage.theme === 'dark' || (!('theme' in localStorage) &&
                    window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -41,10 +39,8 @@ export default function RootLayout({
                 }
               } catch (_) {
               }
-            `,
-          }}
-        />
-        <Script id='theme-setup'>
+        `}</Script>
+        <Script id='later-theme-setup'>
           {`
             try {
               if (localStorage.theme === 'dark' || (!('theme' in localStorage) &&
@@ -55,6 +51,29 @@ export default function RootLayout({
               }
             } catch (_) {
             }
+          `}
+        </Script>
+        <Script
+          id='early-remove-invisible-body-class'
+          strategy='beforeInteractive'
+        >
+          {`
+              const path = window.location.pathname;
+              
+              if (!path.includes('/read') && !path.includes('/demo')) {
+                document.body.classList.remove('invisible');
+              }
+          `}
+        </Script>
+        <Script
+          id='later-remove-invisible-body-class'
+        >
+          {`
+              const path = window.location.pathname;
+              
+              if (!path.includes('/read') && !path.includes('/demo')) {
+                document.body.classList.remove('invisible');
+              }
           `}
         </Script>
         <Script id='meta-pixel'>
@@ -81,7 +100,7 @@ export default function RootLayout({
           />
         </noscript>
       </head>
-      <body>
+      <body className='invisible'>
         <SessionProvider>
           {children}
           <EscapeInAppBrowser />

@@ -96,6 +96,18 @@ export const DETAILED_BOOK_PART_PAGE_RANGES = {
       from: 47,
       to: 49,
     },
+    CHAPTER_8_THE_BAKER_STREET_IRREGULARS: {
+      from: 50,
+      to: 51,
+    },
+    CHAPTER_9_A_BREAK_IN_THE_CHAIN: {
+      from: 52,
+      to: 54,
+    },
+    CHAPTER_10_THE_END_OF_THE_ISLANDER: {
+      from: 55,
+      to: 58,
+    },
   },
 };
 

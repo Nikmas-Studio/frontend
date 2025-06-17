@@ -35,6 +35,7 @@ function GlobalEffects({
     }
 
     if (initialPageId === undefined) {
+      showBook();
       setInitialScrollToPageIsCompleted(true);
       return;
     }
