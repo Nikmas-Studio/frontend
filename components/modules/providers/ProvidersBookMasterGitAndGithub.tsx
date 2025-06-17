@@ -4,6 +4,7 @@ import { ActivePageProvider } from '@/context/active-page/Context';
 import { ActiveBackgroundProvider } from '@/context/background-master-git-and-github-book/Context';
 import { InitialPageIdProvider } from '@/context/initial-page-id/Context';
 import { InitialScrollToPageStateProvider } from '@/context/initial-scroll-to-page/Context';
+import { IsScrollingToPageProvider } from '@/context/is-scrolling-to-page/Context';
 import { PendingUrlUpdatesProvider } from '@/context/pending-url-updates/Context';
 import { ReactElement, ReactNode } from 'react';
 
@@ -21,7 +22,9 @@ function ProvidersBookMasterGitAndGithub({
       <InitialScrollToPageStateProvider>
         <ActiveBackgroundProvider>
           <ActivePageProvider>
-            <PendingUrlUpdatesProvider>{children}</PendingUrlUpdatesProvider>
+            <IsScrollingToPageProvider>
+              <PendingUrlUpdatesProvider>{children}</PendingUrlUpdatesProvider>
+            </IsScrollingToPageProvider>
           </ActivePageProvider>
         </ActiveBackgroundProvider>
       </InitialScrollToPageStateProvider>
