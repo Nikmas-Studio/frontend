@@ -65,9 +65,7 @@ export default function RootLayout({
               }
           `}
         </Script>
-        <Script
-          id='later-remove-invisible-body-class'
-        >
+        <Script id='later-remove-invisible-body-class'>
           {`
               const path = window.location.pathname;
               

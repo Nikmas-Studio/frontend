@@ -197,9 +197,9 @@ function BookNavigator(): ReactElement {
   useEffect(() => {
     if (bookNavigatorIsOpened) {
       document.documentElement.style.overflow = 'hidden';
+      setActiveTab(BookNavigatorTab.CONTENTS);
     } else {
       document.documentElement.style.overflow = '';
-      setActiveTab(BookNavigatorTab.CONTENTS);
     }
   }, [
     bookNavigatorIsOpened,
@@ -333,7 +333,7 @@ function BookNavigator(): ReactElement {
         page?.scrollIntoView({
           behavior: 'instant',
         });
-      }, 10);
+      }, 200);
     }
   }
 

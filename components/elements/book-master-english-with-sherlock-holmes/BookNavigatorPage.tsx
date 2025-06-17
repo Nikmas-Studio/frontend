@@ -70,7 +70,7 @@ function BookNavigatorPage({
         updateUrl({ page: pageNumber, basePath });
         setActivePage(pageNumber);
       }, 50);
-    }, 10);
+    }, 200);
   }
 
   return (
