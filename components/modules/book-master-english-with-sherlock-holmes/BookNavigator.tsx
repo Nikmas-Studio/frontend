@@ -67,6 +67,7 @@ function BookNavigator(): ReactElement {
   const bookVersion = useBookVersion();
   const basePath =
     bookVersion === BookVersion.DEMO ? BASE_PATH_DEMO : BASE_PATH_READ;
+  const isScrollingToStory = useRef(false);
 
   useEffect(() => {
     let initialHeight = window.innerHeight;
@@ -218,9 +219,19 @@ function BookNavigator(): ReactElement {
       } else if (activePage === 'end') {
         activeStory = BOOK_PARTS.at(-1)!;
       } else {
-        const bookPart = Object.keys(
-          JSON.parse(getBookPartByPage(activePage as number)!),
-        )[0];
+        let bookPart = JSON.parse(getBookPartByPage(activePage as number)!);
+        switch (Object.keys(bookPart)[0]) {
+          case 'THE_ADVENTURES_OF_SHERLOCK_HOLMES':
+          case 'THE_MEMOIRS_OF_SHERLOCK_HOLMES':
+          case 'THE_RETURN_OF_SHERLOCK_HOLMES':
+          case 'HIS_LAST_BOW':
+          case 'THE_CASE_BOOK_OF_SHERLOCK_HOLMES':
+            bookPart = Object.keys(bookPart[Object.keys(bookPart)[0]])[0];
+            break;
+          default:
+            bookPart = Object.keys(bookPart)[0];
+        }
+
         activeStory = BOOK_PARTS.find((part) => {
           return (
             part.replaceAll(' ', '_').toLowerCase() === bookPart.toLowerCase()
@@ -261,10 +272,18 @@ function BookNavigator(): ReactElement {
             start: `top 120px`,
             end: '+=0',
             onEnter: () => {
+              if (isScrollingToStory.current) {
+                return;
+              }
+
               setSelectedStory(story);
               updateStoryTitleVisibility(story);
             },
             onEnterBack: () => {
+              if (isScrollingToStory.current) {
+                return;
+              }
+
               setSelectedStory(previousStory);
               updateStoryTitleVisibility(story);
             },
@@ -320,14 +339,30 @@ function BookNavigator(): ReactElement {
         const scrollTop =
           container.scrollTop + (targetRect.top - containerRect.top) - offset;
 
+        isScrollingToStory.current = true;
         container.scrollTo({
           top: scrollTop,
           behavior: 'smooth',
         });
+        setTimeout(() => {
+          isScrollingToStory.current = false;
+        }, 1000);
       }
     } else {
       setBookNavigatorIsOpened(false);
-      const storyFirstPage = getFirstPageOfStory(newStory);
+      let storyFirstPage = getFirstPageOfStory(newStory)!;
+
+      switch (newStory) {
+        case Story.A_SCANDAL_IN_BOHEMIA:
+        case Story.SILVER_BLAZE:
+        case Story.THE_ADVENTURE_OF_THE_EMPTY_HOUSE:
+          storyFirstPage += 1;
+          break;
+        case Story.THE_ADVENTURE_OF_WISTERIA_LODGE:
+        case Story.THE_ILLUSTRIOUS_CLIENT:
+          storyFirstPage += 2;
+      }
+
       const page = document.getElementById(`page-${storyFirstPage}`);
       setTimeout(() => {
         page?.scrollIntoView({
@@ -1222,6 +1257,122 @@ function BookNavigator(): ReactElement {
                 {generateRangeArray(
                   DETAILED_BOOK_PART_PAGE_RANGES.THE_SIGN_OF_THE_FOUR
                     .CHAPTER_10_THE_END_OF_THE_ISLANDER,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter XI. The Great Agra Treasure
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.THE_SIGN_OF_THE_FOUR
+                    .CHAPTER_11_THE_GREAT_AGRA_TREASURE,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-12'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter XII. The Strange Story of Jonathan Small
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.THE_SIGN_OF_THE_FOUR
+                    .CHAPTER_12_THE_STRANGE_STORY_OF_JONATHAN_SMALL,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.A_SCANDAL_IN_BOHEMIA.replaceAll(' ', '_')}`}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-1.5  text-xl  font-bold  ${libreBaskerville.className}`}
+              >
+                The Adventures of Sherlock Holmes
+              </BasicTextNode>
+              <BasicTextNode
+                className={`mb-1.5  text-xl  ${libreBaskerville.className}`}
+              >
+                A Scandal in Bohemia
+              </BasicTextNode>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter I
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES
+                    .THE_ADVENTURES_OF_SHERLOCK_HOLMES.A_SCANDAL_IN_BOHEMIA
+                    .CHAPTER_1,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter II
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES
+                    .THE_ADVENTURES_OF_SHERLOCK_HOLMES.A_SCANDAL_IN_BOHEMIA
+                    .CHAPTER_2,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter III
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES
+                    .THE_ADVENTURES_OF_SHERLOCK_HOLMES.A_SCANDAL_IN_BOHEMIA
+                    .CHAPTER_3,
                 ).map((pageNumber) => {
                   return (
                     <BookNavigatorPage

@@ -6,6 +6,7 @@ import { TranslationLanguageProvider } from '@/context/book-master-english-with-
 import { BookNavigatorProvider } from '@/context/book-navigator/Context';
 import { InitialPageIdProvider } from '@/context/initial-page-id/Context';
 import { InitialScrollToPageStateProvider } from '@/context/initial-scroll-to-page/Context';
+import { IsScrollingToPageProvider } from '@/context/is-scrolling-to-page/Context';
 import { PendingUrlUpdatesProvider } from '@/context/pending-url-updates/Context';
 import { TranslationTooltipProvider } from '@/context/translation-tooltip/Context';
 import { ReactElement, ReactNode } from 'react';
@@ -27,7 +28,9 @@ function ProvidersMasterEnglishWithSherlockHolmes({
             <TranslationTooltipProvider>
               <TranslationLanguageProvider>
                 <BookNavigatorProvider>
-                  <ActivePageProvider>{children}</ActivePageProvider>
+                  <IsScrollingToPageProvider>
+                    <ActivePageProvider>{children}</ActivePageProvider>
+                  </IsScrollingToPageProvider>
                 </BookNavigatorProvider>
               </TranslationLanguageProvider>
             </TranslationTooltipProvider>

@@ -14,6 +14,7 @@ import {
 } from '@/context/active-page/Context';
 import { useBookNavigatorDispatch } from '@/context/book-navigator/Context';
 import { useBookVersion } from '@/context/book-version/Context';
+import { useIsScrollingToPageRef } from '@/context/is-scrolling-to-page/Context';
 import { merriweather } from '@/fonts';
 import { BookVersion } from '@/types/book-version';
 import { updateUrl } from '@/utils/update-url';
@@ -33,6 +34,7 @@ function BookNavigatorPage({
   const { setBookNavigatorIsOpened } = useBookNavigatorDispatch();
   const { activePage } = useActivePage();
   const { setActivePage } = useActivePageDispatch();
+  const isScrollingToPageRef = useIsScrollingToPageRef();
 
   const pageNumberClasses = classNames(
     'text-[13px]  mt-1  cursor-pointer  inline-block',
@@ -63,13 +65,17 @@ function BookNavigatorPage({
     setBookNavigatorIsOpened(false);
     const page = document.getElementById(`page-${pageNumber}`);
     setTimeout(() => {
+      isScrollingToPageRef.current = true;
       page?.scrollIntoView({
         behavior: 'instant',
       });
+
+      updateUrl({ page: pageNumber, basePath });
+      setActivePage(pageNumber);
+
       setTimeout(() => {
-        updateUrl({ page: pageNumber, basePath });
-        setActivePage(pageNumber);
-      }, 50);
+        isScrollingToPageRef.current = false;
+      }, 1000);
     }, 200);
   }
 

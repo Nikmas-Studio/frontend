@@ -1,5 +1,6 @@
 import { useActivePageDispatch } from '@/context/active-page/Context';
 import { useInitialScrollToPageState } from '@/context/initial-scroll-to-page/Context';
+import { useIsScrollingToPageRef } from '@/context/is-scrolling-to-page/Context';
 import { updateUrl } from '@/utils/update-url';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -41,6 +42,7 @@ export function useUrlUpdate({
   const { gsapShouldUpdate } = useGsapResizeUpdate();
   const { initialScrollToPageIsCompleted } = useInitialScrollToPageState();
   const { setActivePage } = useActivePageDispatch();
+  const isScrollingToPageRef = useIsScrollingToPageRef();
 
   useGSAP(
     () => {
@@ -51,6 +53,10 @@ export function useUrlUpdate({
             start: `top ${offset ?? '280px'}`,
             end: '+=0',
             onEnter: () => {
+              if (isScrollingToPageRef.current) {
+                return;
+              }
+
               const pageBottom =
                 pageRef.current?.getBoundingClientRect().bottom;
               if (pageBottom && pageBottom < 0) {
@@ -67,6 +73,10 @@ export function useUrlUpdate({
               setActivePage(currentPage);
             },
             onEnterBack: () => {
+              if (isScrollingToPageRef.current) {
+                return;
+              }
+
               if (end) {
                 updateUrl({ page: end.previousPage, basePath });
                 setActivePage(end.previousPage);

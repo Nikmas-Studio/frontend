@@ -45,6 +45,13 @@ import Page6 from './pages/a-study-in-scarlet/Page6';
 import Page7 from './pages/a-study-in-scarlet/Page7';
 import Page8 from './pages/a-study-in-scarlet/Page8';
 import Page9 from './pages/a-study-in-scarlet/Page9';
+import Page63 from './pages/the-adventures-of-sherlock-holmes/a-scandal-in-bohemia/Page63';
+import Page64 from './pages/the-adventures-of-sherlock-holmes/a-scandal-in-bohemia/Page64';
+import Page65 from './pages/the-adventures-of-sherlock-holmes/a-scandal-in-bohemia/Page65';
+import Page66 from './pages/the-adventures-of-sherlock-holmes/a-scandal-in-bohemia/Page66';
+import Page67 from './pages/the-adventures-of-sherlock-holmes/a-scandal-in-bohemia/Page67';
+import Page68 from './pages/the-adventures-of-sherlock-holmes/a-scandal-in-bohemia/Page68';
+import Page69 from './pages/the-adventures-of-sherlock-holmes/a-scandal-in-bohemia/Page69';
 import Page36 from './pages/the-sign-of-the-four/Page36';
 import Page37 from './pages/the-sign-of-the-four/Page37';
 import Page38 from './pages/the-sign-of-the-four/Page38';
@@ -65,6 +72,13 @@ import Page52 from './pages/the-sign-of-the-four/Page52';
 import Page53 from './pages/the-sign-of-the-four/Page53';
 import Page54 from './pages/the-sign-of-the-four/Page54';
 import Page55 from './pages/the-sign-of-the-four/Page55';
+import Page56 from './pages/the-sign-of-the-four/Page56';
+import Page57 from './pages/the-sign-of-the-four/Page57';
+import Page58 from './pages/the-sign-of-the-four/Page58';
+import Page59 from './pages/the-sign-of-the-four/Page59';
+import Page60 from './pages/the-sign-of-the-four/Page60';
+import Page61 from './pages/the-sign-of-the-four/Page61';
+import Page62 from './pages/the-sign-of-the-four/Page62';
 
 interface BookReadProps {
   initialPageId?: string;
@@ -132,6 +146,20 @@ function BookRead({ initialPageId }: BookReadProps): ReactElement {
             Page53,
             Page54,
             Page55,
+            Page56,
+            Page57,
+            Page58,
+            Page59,
+            Page60,
+            Page61,
+            Page62,
+            Page63,
+            Page64,
+            Page65,
+            Page66,
+            Page67,
+            Page68,
+            Page69,
           ].map((PageComponent, index) => {
             return (
               <PageComponent

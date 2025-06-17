@@ -43,7 +43,10 @@ function Controls({
         </div>
       </div>
       {title && (
-        <div className='absolute  left-[8.4vw]  top-6  max-md:left-[4.2vw]  max-md:top-5'>
+        <div
+          className='absolute  left-[8.4vw]  top-6  max-w-[70vw]  
+                     max-md:left-[4.2vw]  max-md:top-5'
+        >
           <BasicTextNode className={`${libreBaskerville.className}  text-base`}>
             {title}
           </BasicTextNode>

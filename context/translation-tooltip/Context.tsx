@@ -54,7 +54,7 @@ export function TranslationTooltipProvider({
       scrollY: 0,
       scrollX: 0,
     });
-    
+
   const ref = useRef<HTMLDivElement | null>(null);
 
   return (

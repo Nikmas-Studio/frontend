@@ -30,7 +30,7 @@ export function ActivePageProvider({
   const [activePage, setActivePage] = useState<ActivePage>('');
 
   return (
-    <ActivePageContext.Provider value={{ activePage: activePage }}>
+    <ActivePageContext.Provider value={{ activePage }}>
       <ActivePageDispatchContext.Provider value={{ setActivePage }}>
         {children}
       </ActivePageDispatchContext.Provider>
