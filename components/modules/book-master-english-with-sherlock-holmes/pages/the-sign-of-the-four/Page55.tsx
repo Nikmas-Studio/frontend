@@ -67,10 +67,11 @@ function Page55({
               though he had made a special study of it. His bright humor marked
               the reaction from his black depression of the preceding days.
               Athelney Jones proved to be a sociable soul in his hours of
-              relaxation, and face his dinner with the air of a bon vivant. For
-              myself, I felt elated at the thought that we were nearing the end
-              of our task, and I caught something of Holmes's gaiety. None of us
-              alluded during dinner to the cause which had brought us together.
+              relaxation, and face his dinner with the air of a&nbsp;
+              <span className='italic'>bon vivant</span>. For myself, I felt
+              elated at the thought that we were nearing the end of our task,
+              and I caught something of Holmes's gaiety. None of us alluded
+              during dinner to the cause which had brought us together.
             </TextNode>
 
             <TextNode>
@@ -130,9 +131,10 @@ function Page55({
             </TextNode>
 
             <TextNode>
-              “We shall have to catch the Aurora, and she has a name for being a
-              clipper. I will tell you how the land lies, Watson. You recollect
-              how annoyed I was at being balked by so small a thing?”
+              “We shall have to catch the&nbsp;
+              <span className='italic'>Aurora</span>, and she has a name for
+              being a clipper. I will tell you how the land lies, Watson. You
+              recollect how annoyed I was at being balked by so small a thing?”
             </TextNode>
 
             <TextNode>“Yes.”</TextNode>
@@ -214,17 +216,18 @@ function Page55({
               be overlooked. However, I determined to act on the idea. I started
               at once in this harmless seaman's rig and inquired at all the
               yards down the river. I drew blank at fifteen, but at the
-              sixteenth—Jacobson's—I learned that the Aurora had been handed
-              over to them two days ago by a wooden-legged man, with some
-              trivial directions as to her rudder. ‘There ain't naught amiss
-              with her rudder,’ said the foreman. ‘There she lies, with the red
-              streaks.’ At that moment who should come down but Mordecai Smith,
-              the missing owner? He was rather the worse for liquor. I should
-              not, of course, have known him, but he bellowed out his name and
-              the name of his launch. ‘I want her to-night at eight o'clock,’
-              said he,—‘eight o'clock sharp, mind, for I have two gentlemen who
-              won't be kept waiting.’ They had evidently paid him well, for he
-              was very flush of money, chucking shillings about to the men. I
+              sixteenth—Jacobson's—I learned that the&nbsp;
+              <span className='italic'>Aurora</span> had been handed over to
+              them two days ago by a wooden-legged man, with some trivial
+              directions as to her rudder. ‘There ain't naught amiss with her
+              rudder,’ said the foreman. ‘There she lies, with the red streaks.’
+              At that moment who should come down but Mordecai Smith, the
+              missing owner? He was rather the worse for liquor. I should not,
+              of course, have known him, but he bellowed out his name and the
+              name of his launch. ‘I want her to-night at eight o'clock,’ said
+              he,—‘eight o'clock sharp, mind, for I have two gentlemen who won't
+              be kept waiting.’ They had evidently paid him well, for he was
+              very flush of money, chucking shillings about to the men. I
               followed him some distance, but he subsided into an ale-house: so
               I went back to the yard, and, happening to pick up one of my boys
               on the way, I stationed him as a sentry over the launch. He is to

@@ -137,8 +137,11 @@ function Page17({
               “Oh, bless you, it doesn't matter in the least. If the man is
               caught, it will be on account of their exertions; if he escapes,
               it will be in spite of their exertions. It's heads I win and tails
-              you lose. Whatever they do, they will have followers. ‘Un sot
-              trouve toujours un plus sot qui l'admire.’”
+              you lose. Whatever they do, they will have followers.{' '}
+              <span className='italic'>
+                ‘Un sot trouve toujours un plus sot qui l'admire.’
+              </span>
+              ”
             </TextNode>
             <TextNode>
               “What on earth is this?” I cried, for at this moment there came

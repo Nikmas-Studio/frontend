@@ -242,10 +242,11 @@ function Page15({
             <TextNode>
               “Yes. He will probably be here in a few minutes. Open the door
               slightly. That will do. Now put the key on the inside. Thank you!
-              This is a queer old book I picked up at a stall yesterday—De Jure
-              inter Gentes—published in Latin at Liege in the Lowlands, in 1642.
-              Charles' head was still firm on his shoulders when this little
-              brown-backed volume was struck off.”
+              This is a queer old book I picked up at a stall yesterday—
+              <span className='italic'>De Jure inter Gentes</span>—published in
+              Latin at Liege in the Lowlands, in 1642. Charles' head was still
+              firm on his shoulders when this little brown-backed volume was
+              struck off.”
             </TextNode>
 
             <TextNode>“Who is the printer?”</TextNode>

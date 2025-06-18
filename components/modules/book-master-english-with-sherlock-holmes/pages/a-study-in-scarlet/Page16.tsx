@@ -124,8 +124,9 @@ function Page16({
             <TextNode>
               It was close upon nine when he set out. I had no idea how long he
               might be, but I sat stolidly puffing at my pipe and skipping over
-              the pages of Henri Murger's Vie de Bohème. Ten o'clock passed, and
-              I heard the footsteps of the maid as they pattered off to bed.
+              the pages of Henri Murger's{' '}
+              <span className='italic'>Vie de Bohème</span>. Ten o'clock passed,
+              and I heard the footsteps of the maid as they pattered off to bed.
               Eleven, and the more stately tread of the landlady passed my door,
               bound for the same destination. It was close upon twelve before I
               heard the sharp sound of his latch-key. The instant he entered I

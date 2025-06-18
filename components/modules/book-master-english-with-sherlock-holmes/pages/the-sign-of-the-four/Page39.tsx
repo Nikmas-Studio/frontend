@@ -321,8 +321,9 @@ function Page39({
               however illegibly they may write. There is vacillation in his k's
               and self-esteem in his capitals. I am going out now. I have some
               few references to make. Let me recommend this book,—one of the
-              most remarkable ever penned. It is Winwood Reade's Martyrdom of
-              Man. I shall be back in an hour.”
+              most remarkable ever penned. It is Winwood Reade's{' '}
+              <span className='italic'>Martyrdom of Man</span>. I shall be back
+              in an hour.”
             </TextNode>
 
             <TextNode>

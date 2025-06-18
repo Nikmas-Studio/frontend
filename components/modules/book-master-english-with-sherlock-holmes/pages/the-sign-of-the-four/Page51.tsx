@@ -54,8 +54,9 @@ function Page51({
             <TextNode noIndent>“What would you do, then?”</TextNode>
 
             <TextNode>
-              “I would engage a launch and go down the river on the track of the
-              Aurora.”
+              “I would engage a launch and go down the river on the track of
+              the&nbsp;
+              <span className='italic'>Aurora</span>.”
             </TextNode>
 
             <TextNode>
@@ -162,38 +163,38 @@ function Page51({
             </TextNode>
 
             <TextNode>
-              “About twelve o'clock last night,” said the Standard, “Mr.
-              Bartholomew Sholto, of Pondicherry Lodge, Upper Norwood, was found
-              dead in his room under circumstances which point to foul play. As
-              far as we can learn, no actual traces of violence were found upon
-              Mr. Sholto's person, but a valuable collection of Indian gems
-              which the deceased gentleman had inherited from his father has
-              been carried off. The discovery was first made by Mr. Sherlock
-              Holmes and Dr. Watson, who had called at the house with Mr.
-              Thaddeus Sholto, brother of the deceased. By a singular piece of
-              good fortune, Mr. Athelney Jones, the well-known member of the
-              detective police force, happened to be at the Norwood Police
-              Station, and was on the ground within half an hour of the first
-              alarm. His trained and experienced faculties were at once directed
-              towards the detection of the criminals, with the gratifying result
-              that the brother, Thaddeus Sholto, has already been arrested,
-              together with the housekeeper, Mrs. Bernstone, an Indian butler
-              named Lal Rao, and a porter, or gatekeeper, named McMurdo. It is
-              quite certain that the thief or thieves were well acquainted with
-              the house, for Mr. Jones's well-known technical knowledge and his
-              powers of minute observation have enabled him to prove
-              conclusively that the miscreants could not have entered by the
-              door or by the window, but must have made their way across the
-              roof of the building, and so through a trap-door into a room which
-              communicated with that in which the body was found. This fact,
-              which has been very clearly made out, proves conclusively that it
-              was no mere haphazard burglary. The prompt and energetic action of
-              the officers of the law shows the great advantage of the presence
-              on such occasions of a single vigorous and masterful mind. We
-              cannot but think that it supplies an argument to those who would
-              wish to see our detectives more decentralized, and so brought into
-              closer and more effective touch with the cases which it is their
-              duty to investigate.”
+              “About twelve o'clock last night,” said the&nbsp;
+              <span className='italic'>Standard</span>, “Mr. Bartholomew Sholto,
+              of Pondicherry Lodge, Upper Norwood, was found dead in his room
+              under circumstances which point to foul play. As far as we can
+              learn, no actual traces of violence were found upon Mr. Sholto's
+              person, but a valuable collection of Indian gems which the
+              deceased gentleman had inherited from his father has been carried
+              off. The discovery was first made by Mr. Sherlock Holmes and Dr.
+              Watson, who had called at the house with Mr. Thaddeus Sholto,
+              brother of the deceased. By a singular piece of good fortune, Mr.
+              Athelney Jones, the well-known member of the detective police
+              force, happened to be at the Norwood Police Station, and was on
+              the ground within half an hour of the first alarm. His trained and
+              experienced faculties were at once directed towards the detection
+              of the criminals, with the gratifying result that the brother,
+              Thaddeus Sholto, has already been arrested, together with the
+              housekeeper, Mrs. Bernstone, an Indian butler named Lal Rao, and a
+              porter, or gatekeeper, named McMurdo. It is quite certain that the
+              thief or thieves were well acquainted with the house, for Mr.
+              Jones's well-known technical knowledge and his powers of minute
+              observation have enabled him to prove conclusively that the
+              miscreants could not have entered by the door or by the window,
+              but must have made their way across the roof of the building, and
+              so through a trap-door into a room which communicated with that in
+              which the body was found. This fact, which has been very clearly
+              made out, proves conclusively that it was no mere haphazard
+              burglary. The prompt and energetic action of the officers of the
+              law shows the great advantage of the presence on such occasions of
+              a single vigorous and masterful mind. We cannot but think that it
+              supplies an argument to those who would wish to see our detectives
+              more decentralized, and so brought into closer and more effective
+              touch with the cases which it is their duty to investigate.”
             </TextNode>
 
             <TextNode>
@@ -249,9 +250,10 @@ function Page51({
               they can report to you, Wiggins, and you to me. I cannot have the
               house invaded in this way. However, it is just as well that you
               should all hear the instructions. I want to find the whereabouts
-              of a steam launch called the Aurora, owner Mordecai Smith, black
-              with two red streaks, funnel black with a white band. She is down
-              the river somewhere. I want one boy to be at Mordecai Smith's
+              of a steam launch called the&nbsp;
+              <span className='italic'>Aurora</span>, owner Mordecai Smith,
+              black with two red streaks, funnel black with a white band. She is
+              down the river somewhere. I want one boy to be at Mordecai Smith's
               landing-stage opposite Millbank to say if the boat comes back. You
               must divide it out among yourselves, and do both banks thoroughly.
               Let me know the moment you have news. Is that all clear?”
@@ -272,7 +274,8 @@ function Page51({
               see everything, overhear every one. I expect to hear before
               evening that they have spotted her. In the mean while, we can do
               nothing but await results. We cannot pick up the broken trail
-              until we find either the Aurora or Mr. Mordecai Smith.”
+              until we find either the&nbsp;
+              <span className='italic'>Aurora</span> or Mr. Mordecai Smith.”
             </TextNode>
 
             <TextNode>

@@ -56,10 +56,11 @@ function Page56({
             </TextNode>
 
             <TextNode>
-              “And there is the Aurora,” exclaimed Holmes, “and going like the
-              devil! Full speed ahead, engineer. Make after that launch with the
-              yellow light. By heaven, I shall never forgive myself if she
-              proves to have the heels of us!”
+              “And there is the&nbsp;<span className='italic'>Aurora</span>,”
+              exclaimed Holmes, “and going like the devil! Full speed ahead,
+              engineer. Make after that launch with the yellow light. By heaven,
+              I shall never forgive myself if she proves to have the heels of
+              us!”
             </TextNode>
 
             <TextNode>
@@ -88,12 +89,13 @@ function Page56({
               engines we sprang and quivered like a living thing. One great
               yellow lantern in our bows threw a long, flickering funnel of
               light in front of us. Right ahead a dark blur upon the water
-              showed where the Aurora lay, and the swirl of white foam behind
-              her spoke of the pace at which she was going. We flashed past
-              barges, steamers, merchant-vessels, in and out, behind this one
-              and round the other. Voices hailed us out of the darkness, but
-              still the Aurora thundered on, and still we followed close upon
-              her track.
+              showed where the&nbsp;<span className='italic'>Aurora</span> lay,
+              and the swirl of white foam behind her spoke of the pace at which
+              she was going. We flashed past barges, steamers, merchant-vessels,
+              in and out, behind this one and round the other. Voices hailed us
+              out of the darkness, but still the&nbsp;
+              <span className='italic'>Aurora</span> thundered on, and still we
+              followed close upon her track.
             </TextNode>
 
             <TextNode>
@@ -103,8 +105,8 @@ function Page56({
             </TextNode>
 
             <TextNode>
-              “I think we gain a little,” said Jones, with his eyes on the
-              Aurora.
+              “I think we gain a little,” said Jones, with his eyes on the&nbsp;
+              <span className='italic'>Aurora</span>.
             </TextNode>
 
             <TextNode>
@@ -116,34 +118,35 @@ function Page56({
               At that moment, however, as our evil fate would have it, a tug
               with three barges in tow blundered in between us. It was only by
               putting our helm hard down that we avoided a collision, and before
-              we could round them and recover our way the Aurora had gained a
-              good two hundred yards. She was still, however, well in view, and
-              the murky uncertain twilight was setting into a clear starlit
-              night. Our boilers were strained to their utmost, and the frail
-              shell vibrated and creaked with the fierce energy which was
-              driving us along. We had shot through the Pool, past the West
-              India Docks, down the long Deptford Reach, and up again after
-              rounding the Isle of Dogs. The dull blur in front of us resolved
-              itself now clearly enough into the dainty Aurora. Jones turned our
-              search-light upon her, so that we could plainly see the figures
-              upon her deck. One man sat by the stern, with something black
-              between his knees over which he stooped. Beside him lay a dark
-              mass which looked like a Newfoundland dog. The boy held the
-              tiller, while against the red glare of the furnace I could see old
-              Smith, stripped to the waist, and shovelling coals for dear life.
-              They may have had some doubt at first as to whether we were really
-              pursuing them, but now as we followed every winding and turning
-              which they took there could no longer be any question about it. At
-              Greenwich we were about three hundred paces behind them. At
-              Blackwall we could not have been more than two hundred and fifty.
-              I have coursed many creatures in many countries during my
-              checkered career, but never did sport give me such a wild thrill
-              as this mad, flying man-hunt down the Thames. Steadily we drew in
-              upon them, yard by yard. In the silence of the night we could hear
-              the panting and clanking of their machinery. The man in the stern
-              still crouched upon the deck, and his arms were moving as though
-              he were busy, while every now and then he would look up and
-              measure with a glance the distance which still separated us.
+              we could round them and recover our way the&nbsp;
+              <span className='italic'>Aurora</span> had gained a good two
+              hundred yards. She was still, however, well in view, and the murky
+              uncertain twilight was setting into a clear starlit night. Our
+              boilers were strained to their utmost, and the frail shell
+              vibrated and creaked with the fierce energy which was driving us
+              along. We had shot through the Pool, past the West India Docks,
+              down the long Deptford Reach, and up again after rounding the Isle
+              of Dogs. The dull blur in front of us resolved itself now clearly
+              enough into the dainty <span className='italic'>Aurora</span>.
+              Jones turned our search-light upon her, so that we could plainly
+              see the figures upon her deck. One man sat by the stern, with
+              something black between his knees over which he stooped. Beside
+              him lay a dark mass which looked like a Newfoundland dog. The boy
+              held the tiller, while against the red glare of the furnace I
+              could see old Smith, stripped to the waist, and shovelling coals
+              for dear life. They may have had some doubt at first as to whether
+              we were really pursuing them, but now as we followed every winding
+              and turning which they took there could no longer be any question
+              about it. At Greenwich we were about three hundred paces behind
+              them. At Blackwall we could not have been more than two hundred
+              and fifty. I have coursed many creatures in many countries during
+              my checkered career, but never did sport give me such a wild
+              thrill as this mad, flying man-hunt down the Thames. Steadily we
+              drew in upon them, yard by yard. In the silence of the night we
+              could hear the panting and clanking of their machinery. The man in
+              the stern still crouched upon the deck, and his arms were moving
+              as though he were busy, while every now and then he would look up
+              and measure with a glance the distance which still separated us.
               Nearer we came and nearer. Jones yelled to them to stop. We were
               not more than four boat's lengths behind them, both boats flying
               at a tremendous pace. It was a clear reach of the river, with
@@ -203,7 +206,8 @@ function Page56({
               a rope over his shoulders that we were able to haul him out, and
               to drag him, like some evil fish, over our side. The two Smiths,
               father and son, sat sullenly in their launch, but came aboard
-              meekly enough when commanded. The Aurora herself we hauled off and
+              meekly enough when commanded. The&nbsp;
+              <span className='italic'>Aurora</span> herself we hauled off and
               made fast to our stern. A solid iron chest of Indian workmanship
               stood upon the deck. This, there could be no question, was the
               same that had contained the ill-omened treasure of the Sholtos.

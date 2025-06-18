@@ -144,8 +144,11 @@ function Page46({
 
             <TextNode>
               “He can find something,” remarked Holmes, shrugging his shoulders.
-              “He has occasional glimmerings of reason. Il n'y a pas des sots si
-              incommodes que ceux qui ont de l'esprit!”
+              “He has occasional glimmerings of reason.{' '}
+              <span className='italic'>
+                Il n'y a pas des sots si incommodes que ceux qui ont de
+                l'esprit!”
+              </span>
             </TextNode>
 
             <TextNode>
@@ -271,8 +274,11 @@ function Page46({
               “And I,” said Holmes, “shall see what I can learn from Mrs.
               Bernstone, and from the Indian servant, who, Mr. Thaddeus tell me,
               sleeps in the next garret. Then I shall study the great Jones's
-              methods and listen to his not too delicate sarcasms. ‘Wir sind
-              gewohnt, daß die Menschen verhöhnen was sie nicht verstehen.’
+              methods and listen to his not too delicate sarcasms.{' '}
+              <span className='italic'>
+                ‘Wir sind gewohnt, daß die Menschen verhöhnen was sie nicht
+                verstehen.’
+              </span>{' '}
               Goethe is always pithy.”
             </TextNode>
           </BookRightPartContainer>

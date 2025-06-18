@@ -17,7 +17,8 @@ function BookNavigatorIcon({
   const circleClasses = classNames({
     'stroke-black  group-hover:stroke-orange  dark:stroke-smooth-white':
       !alwaysWhite,
-    'stroke-smooth-white  group-hover:stroke-orange': alwaysWhite,
+    'stroke-white  group-hover:stroke-orange  dark:stroke-smooth-white':
+      alwaysWhite,
   });
 
   const rectClasses = classNames({

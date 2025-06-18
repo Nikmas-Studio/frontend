@@ -215,9 +215,11 @@ function Page37({
               solution. Here is the letter which I had this morning
               acknowledging my assistance.” He tossed over, as he spoke, a
               crumpled sheet of foreign notepaper. I glanced my eyes down it,
-              catching a profusion of notes of admiration, with stray
-              magnifiques, coup-de-maîtres and tours-de-force, all testifying to
-              the ardent admiration of the Frenchman.
+              catching a profusion of notes of admiration, with stray{' '}
+              <span className='italic'>
+                magnifiques, coup-de-maîtres and tours-de-force
+              </span>
+              , all testifying to the ardent admiration of the Frenchman.
             </TextNode>
 
             <TextNode>“He speaks as a pupil to his master,” said I.</TextNode>
@@ -236,17 +238,20 @@ function Page37({
             <TextNode>
               “Oh, didn't you know?” he cried, laughing. “Yes, I have been
               guilty of several monographs. They are all upon technical
-              subjects. Here, for example, is one ‘Upon the Distinction between
-              the Ashes of the Various Tobaccoes.’ In it I enumerate a hundred
-              and forty forms of cigar-, cigarette-, and pipe-tobacco, with
-              colored plates illustrating the difference in the ash. It is a
-              point which is continually turning up in criminal trials, and
-              which is sometimes of supreme importance as a clue. If you can say
-              definitely, for example, that some murder has been done by a man
-              who was smoking an Indian lunkah, it obviously narrows your field
-              of search. To the trained eye there is as much difference between
-              the black ash of a Trichinopoly and the white fluff of bird's-eye
-              as there is between a cabbage and a potato.”
+              subjects. Here, for example, is one{' '}
+              <span className='italic'>
+                ‘Upon the Distinction between the Ashes of the Various
+                Tobaccoes.’
+              </span>{' '}
+              In it I enumerate a hundred and forty forms of cigar-, cigarette-,
+              and pipe-tobacco, with colored plates illustrating the difference
+              in the ash. It is a point which is continually turning up in
+              criminal trials, and which is sometimes of supreme importance as a
+              clue. If you can say definitely, for example, that some murder has
+              been done by a man who was smoking an Indian lunkah, it obviously
+              narrows your field of search. To the trained eye there is as much
+              difference between the black ash of a Trichinopoly and the white
+              fluff of bird's-eye as there is between a cabbage and a potato.”
             </TextNode>
 
             <TextNode>

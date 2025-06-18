@@ -1415,6 +1415,76 @@ function BookNavigator(): ReactElement {
                 })}
               </ul>
             </div>
+            <div
+              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.THE_RED_HEADED_LEAGUE.replaceAll(' ', '_')}`}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                The Red-Headed League
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES
+                    .THE_ADVENTURES_OF_SHERLOCK_HOLMES.THE_RED_HEADED_LEAGUE,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.A_CASE_OF_IDENTITY.replaceAll(' ', '_')}`}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                A Case of Identity
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES
+                    .THE_ADVENTURES_OF_SHERLOCK_HOLMES.A_CASE_OF_IDENTITY,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.THE_BOSCOMBE_VALLEY_MYSTERY.replaceAll(' ', '_')}`}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                The Boscombe Valley Mystery
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES
+                    .THE_ADVENTURES_OF_SHERLOCK_HOLMES
+                    .THE_BOSCOMBE_VALLEY_MYSTERY,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

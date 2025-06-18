@@ -277,9 +277,9 @@ function Page45({
             <TextNode>
               “Quite so. They are in a state of extreme contraction, far
               exceeding the usual rigor mortis. Coupled with this distortion of
-              the face, this Hippocratic smile, or ‘risus sardonicus,’ as the
-              old writers called it, what conclusion would it suggest to your
-              mind?”
+              the face, this Hippocratic smile, or{' '}
+              <span className='italic'>‘risus sardonicus,’</span> as the old
+              writers called it, what conclusion would it suggest to your mind?”
             </TextNode>
             <TextNode>
               “Death from some powerful vegetable alkaloid,” I answered,—“some

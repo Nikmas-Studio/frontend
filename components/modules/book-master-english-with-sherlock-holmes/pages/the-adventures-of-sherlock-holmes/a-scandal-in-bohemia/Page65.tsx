@@ -54,8 +54,9 @@ function Page65({
         <div className='flex  max-2md:flex-col'>
           <BookLeftPartContainer>
             <TextNode noIndent>
-              To Sherlock Holmes she is always the woman. I have seldom heard
-              him mention her under any other name. In his eyes she eclipses and
+              To Sherlock Holmes she is always{' '}
+              <span className='italic'>the</span> woman. I have seldom heard him
+              mention her under any other name. In his eyes she eclipses and
               predominates the whole of her sex. It was not that he felt any
               emotion akin to love for Irene Adler. All emotions, and that one
               particularly, were abhorrent to his cold, precise but admirably

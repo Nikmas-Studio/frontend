@@ -52,9 +52,9 @@ function Page53({
         <div className='flex  max-2md:flex-col'>
           <BookLeftPartContainer>
             <TextNode noIndent>
-              I had heard nothing of him by breakfast-time. On opening the
-              Standard, however, I found that there was a fresh allusion to the
-              business.
+              I had heard nothing of him by breakfast-time. On opening the&nbsp;
+              <span className='italic'>Standard</span>, however, I found that
+              there was a fresh allusion to the business.
             </TextNode>
 
             <TextNode>
@@ -85,11 +85,12 @@ function Page53({
             <TextNode>
               “Lost.—Whereas Mordecai Smith, boatman, and his son, Jim, left
               Smith's Wharf at or about three o'clock last Tuesday morning in
-              the steam launch Aurora, black with two red stripes, funnel black
-              with a white band, the sum of five pounds will be paid to any one
-              who can give information to Mrs. Smith, at Smith's Wharf, or at
-              221b Baker Street, as to the whereabouts of the said Mordecai
-              Smith and the launch Aurora.”
+              the steam launch <span className='italic'>Aurora</span>, black
+              with two red stripes, funnel black with a white band, the sum of
+              five pounds will be paid to any one who can give information to
+              Mrs. Smith, at Smith's Wharf, or at 221b Baker Street, as to the
+              whereabouts of the said Mordecai Smith and the launch{' '}
+              <span className='italic'>Aurora</span>.”
             </TextNode>
 
             <TextNode>

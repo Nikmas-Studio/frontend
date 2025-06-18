@@ -45,6 +45,10 @@ import Page6 from './pages/a-study-in-scarlet/Page6';
 import Page7 from './pages/a-study-in-scarlet/Page7';
 import Page8 from './pages/a-study-in-scarlet/Page8';
 import Page9 from './pages/a-study-in-scarlet/Page9';
+import Page76 from './pages/the-adventures-of-sherlock-holmes/a-case-of-identity/Page76';
+import Page77 from './pages/the-adventures-of-sherlock-holmes/a-case-of-identity/Page77';
+import Page78 from './pages/the-adventures-of-sherlock-holmes/a-case-of-identity/Page78';
+import Page79 from './pages/the-adventures-of-sherlock-holmes/a-case-of-identity/Page79';
 import Page63 from './pages/the-adventures-of-sherlock-holmes/a-scandal-in-bohemia/Page63';
 import Page64 from './pages/the-adventures-of-sherlock-holmes/a-scandal-in-bohemia/Page64';
 import Page65 from './pages/the-adventures-of-sherlock-holmes/a-scandal-in-bohemia/Page65';
@@ -52,6 +56,16 @@ import Page66 from './pages/the-adventures-of-sherlock-holmes/a-scandal-in-bohem
 import Page67 from './pages/the-adventures-of-sherlock-holmes/a-scandal-in-bohemia/Page67';
 import Page68 from './pages/the-adventures-of-sherlock-holmes/a-scandal-in-bohemia/Page68';
 import Page69 from './pages/the-adventures-of-sherlock-holmes/a-scandal-in-bohemia/Page69';
+import Page80 from './pages/the-adventures-of-sherlock-holmes/the-boscombe-valley-mystery/Page80';
+import Page81 from './pages/the-adventures-of-sherlock-holmes/the-boscombe-valley-mystery/Page81';
+import Page82 from './pages/the-adventures-of-sherlock-holmes/the-boscombe-valley-mystery/Page82';
+import Page83 from './pages/the-adventures-of-sherlock-holmes/the-boscombe-valley-mystery/Page83';
+import Page70 from './pages/the-adventures-of-sherlock-holmes/the-red-headed-league/Page70';
+import Page71 from './pages/the-adventures-of-sherlock-holmes/the-red-headed-league/Page71';
+import Page72 from './pages/the-adventures-of-sherlock-holmes/the-red-headed-league/Page72';
+import Page73 from './pages/the-adventures-of-sherlock-holmes/the-red-headed-league/Page73';
+import Page74 from './pages/the-adventures-of-sherlock-holmes/the-red-headed-league/Page74';
+import Page75 from './pages/the-adventures-of-sherlock-holmes/the-red-headed-league/Page75';
 import Page36 from './pages/the-sign-of-the-four/Page36';
 import Page37 from './pages/the-sign-of-the-four/Page37';
 import Page38 from './pages/the-sign-of-the-four/Page38';
@@ -160,6 +174,20 @@ function BookRead({ initialPageId }: BookReadProps): ReactElement {
             Page67,
             Page68,
             Page69,
+            Page70,
+            Page71,
+            Page72,
+            Page73,
+            Page74,
+            Page75,
+            Page76,
+            Page77,
+            Page78,
+            Page79,
+            Page80,
+            Page81,
+            Page82,
+            Page83,
           ].map((PageComponent, index) => {
             return (
               <PageComponent

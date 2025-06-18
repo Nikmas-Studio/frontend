@@ -243,7 +243,9 @@ function Page50({
               heard good reports of the—Let me see, what is her name?”
             </TextNode>
 
-            <TextNode>“The Aurora, sir.”</TextNode>
+            <TextNode>
+              “The&nbsp;<span className='italic'>Aurora</span>, sir.”
+            </TextNode>
 
             <TextNode>
               “Ah! She's not that old green launch with a yellow line, very
@@ -257,8 +259,9 @@ function Page50({
 
             <TextNode>
               “Thanks. I hope that you will hear soon from Mr. Smith. I am going
-              down the river; and if I should see anything of the Aurora I shall
-              let him know that you are uneasy. A black funnel, you say?”
+              down the river; and if I should see anything of the&nbsp;
+              <span className='italic'>Aurora</span> I shall let him know that
+              you are uneasy. A black funnel, you say?”
             </TextNode>
 
             <TextNode>“No, sir. Black with a white band.”</TextNode>

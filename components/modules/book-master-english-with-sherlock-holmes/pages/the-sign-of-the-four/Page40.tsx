@@ -75,9 +75,9 @@ function Page40({
               “Well, that would be too much to say. I have discovered a
               suggestive fact, that is all. It is, however, very suggestive. The
               details are still to be added. I have just found, on consulting
-              the back files of the Times, that Major Sholto, of Upper Norword,
-              late of the 34th Bombay Infantry, died upon the 28th of April,
-              1882.”
+              the back files of the <span className='italic'>Times</span>, that
+              Major Sholto, of Upper Norword, late of the 34th Bombay Infantry,
+              died upon the 28th of April, 1882.”
             </TextNode>
 
             <TextNode>
@@ -295,8 +295,9 @@ function Page40({
 
             <TextNode>
               “The Sahib awaits you,” said he, and even as he spoke there came a
-              high piping voice from some inner room. “Show them in to me,
-              khitmutgar,” it cried. “Show them straight in to me.”
+              high piping voice from some inner room. “Show them in to me,{' '}
+              <span className='italic'>khitmutgar</span>,” it cried. “Show them
+              straight in to me.”
             </TextNode>
           </BookRightPartContainer>
         </div>

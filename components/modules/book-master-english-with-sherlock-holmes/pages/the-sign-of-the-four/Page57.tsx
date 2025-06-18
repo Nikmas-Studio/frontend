@@ -164,8 +164,8 @@ function Page57({
               “Neither he did,” cried our prisoner,—“not a word. I chose his
               launch because I heard that she was a flier. We told him nothing,
               but we paid him well, and he was to get something handsome if we
-              reached our vessel, the Esmeralda, at Gravesend, outward bound for
-              the Brazils.”
+              reached our vessel, the <span className='italic'>Esmeralda</span>,
+              at Gravesend, outward bound for the Brazils.”
             </TextNode>
 
             <TextNode>
@@ -279,12 +279,13 @@ function Page57({
 
             <TextNode>
               I narrated briefly what had occurred since I had seen her
-              last,—Holmes's new method of search, the discovery of the Aurora,
-              the appearance of Athelney Jones, our expedition in the evening,
-              and the wild chase down the Thames. She listened with parted lips
-              and shining eyes to my recital of our adventures. When I spoke of
-              the dart which had so narrowly missed us, she turned so white that
-              I feared that she was about to faint.
+              last,—Holmes's new method of search, the discovery of the&nbsp;
+              <span className='italic'>Aurora</span>, the appearance of Athelney
+              Jones, our expedition in the evening, and the wild chase down the
+              Thames. She listened with parted lips and shining eyes to my
+              recital of our adventures. When I spoke of the dart which had so
+              narrowly missed us, she turned so white that I feared that she was
+              about to faint.
             </TextNode>
 
             <TextNode>
