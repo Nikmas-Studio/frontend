@@ -97,11 +97,14 @@ function BookNavigator(): ReactElement {
   }, []);
 
   const cardsComponentClasses = classNames(
-    `h-[calc(100vh-60px)]  flex-1  overflow-y-scroll  px-12  
+    `bg-[#F3F3F3]  dark:bg-[#0F151D]  flex-1  overflow-y-scroll  px-12  
      pb-[3.72rem]  pt-[1.6rem]  max-1.5lg:px-[4.2vw]  max-1.5lg:w-full
-     max-1.5lg:h-[calc(100vh-4rem)]`,
+     max-1.5lg:h-[calc(100vh-5rem)]`,
     {
       'max-1.5lg:hidden': activeTab !== BookNavigatorTab.CARDS,
+      'h-screen  border-b  border-b-[#E0E0E0]  dark:border-b-[#212932]':
+        isTouchDevice,
+      'h-[calc(100vh-60px)]': !isTouchDevice,
     },
   );
 
@@ -123,11 +126,14 @@ function BookNavigator(): ReactElement {
   );
 
   const contentsComponentClasses = classNames(
-    `h-[calc(100vh-60px)]  overflow-y-scroll  border-r  border-[#E0E0E0]  
+    `bg-[#F3F3F3]  dark:bg-[#0F151D]  overflow-y-scroll  border-r  border-[#E0E0E0]  
      py-6  dark:border-[#212932]  max-1.5lg:w-full  max-1.5lg:h-[calc(100vh-5rem)]
-     max-1.5lg:border-none`,
+     max-1.5lg:border-r-none`,
     {
       'max-1.5lg:hidden': activeTab !== BookNavigatorTab.CONTENTS,
+      'h-screen  border-b  border-b-[#E0E0E0]  dark:border-b-[#212932]':
+        isTouchDevice,
+      'h-[calc(100vh-60px)]': !isTouchDevice,
     },
   );
 
@@ -161,11 +167,14 @@ function BookNavigator(): ReactElement {
   const containerClasses = classNames(
     ` 
       h-[calc(100vh-60px)]]  fixed  bottom-0  left-[80px]  top-[60px]
-      z-[9999]  w-[calc(100vw-160px)]  rounded-t-[20px]  bg-[#F3F3F3]
-      dark:bg-[#0F151D]  transition-transform  duration-[400ms]  overflow-hidden
+      z-[9999]  w-[calc(100vw-160px)]  rounded-t-[20px]  bg-white
+      dark:bg-black  transition-transform  duration-[400ms]  overflow-hidden
       max-1.5lg:w-screen  max-1.5lg:h-[150vh]  max-1.5lg:left-0
       max-1.5lg:top-0  max-1.5lg:rounded-none
   `,
+    {
+      '!h-[150vh]  !top-0  !left-0  !w-screen  !rounded-none': isTouchDevice,
+    },
   );
 
   useOutsideClick([containerRef, tooltipRef], () => {
@@ -372,6 +381,14 @@ function BookNavigator(): ReactElement {
     }
   }
 
+  const crossClasses = classNames(
+    'absolute  right-5  top-4  size-[21px]  cursor-pointer  max-1.5lg:hidden',
+    {
+      block: isTouchDevice,
+      hidden: !isTouchDevice,
+    },
+  );
+
   return (
     <div>
       <div className={overlayClasses}></div>
@@ -384,6 +401,21 @@ function BookNavigator(): ReactElement {
         }}
         className={containerClasses}
       >
+        <div
+          onClick={() => {
+            setBookNavigatorIsOpened(false);
+          }}
+          className={crossClasses}
+        >
+          <div
+            className='absolute  left-1/2  top-1/2  h-[2px]  w-[27px]  -translate-x-1/2
+                       -translate-y-1/2  rotate-45  bg-black  dark:bg-smooth-white'
+          ></div>
+          <div
+            className='absolute  left-1/2  top-1/2  h-[2px]  w-[27px]  -translate-x-1/2
+                       -translate-y-1/2  -rotate-45  bg-black  dark:bg-smooth-white'
+          ></div>
+        </div>
         <div
           className='hidden  h-20  w-full  items-center  justify-between  border-b  
                    border-[#E0E0E0]  bg-white  px-[4.2vw]  max-1.5lg:flex  
