@@ -425,6 +425,8 @@ function Page83({
               approached by the farm or by the estate, where strangers could
               hardly wander.”
             </TextNode>
+
+            <TextNode>“Quite so.”</TextNode>
           </BookRightPartContainer>
         </div>
       </BookMainContainer>

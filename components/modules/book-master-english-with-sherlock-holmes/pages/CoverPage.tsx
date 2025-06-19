@@ -184,7 +184,7 @@ function Page1(): ReactElement {
             opacity: showAiCircle ? 1 : 0,
           }}
           className='absolute  right-[-32px]  z-[-2]  transition-opacity
-                     duration-1000  max-2md:right-1/2  max-2md:translate-x-1/2'
+                     duration-[3000ms]  max-2md:right-1/2  max-2md:translate-x-1/2'
         >
           <Image
             ref={aiCircleRef}

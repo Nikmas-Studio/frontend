@@ -75,7 +75,7 @@ function Page40({
               “Well, that would be too much to say. I have discovered a
               suggestive fact, that is all. It is, however, very suggestive. The
               details are still to be added. I have just found, on consulting
-              the back files of the <span className='italic'>Times</span>, that
+              the back files of <span className='italic'>The Times</span>, that
               Major Sholto, of Upper Norword, late of the 34th Bombay Infantry,
               died upon the 28th of April, 1882.”
             </TextNode>

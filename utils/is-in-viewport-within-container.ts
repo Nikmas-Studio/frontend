@@ -6,9 +6,9 @@ export function isInViewportWithinContainer(
   const containerRect = container.getBoundingClientRect();
 
   return (
-    elementRect.bottom > containerRect.top &&
-    elementRect.top < containerRect.bottom &&
-    elementRect.right > containerRect.left &&
-    elementRect.left < containerRect.right
+    elementRect.top >= containerRect.top &&
+    elementRect.bottom <= containerRect.bottom &&
+    elementRect.left >= containerRect.left &&
+    elementRect.right <= containerRect.right
   );
 }

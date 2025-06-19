@@ -96,6 +96,21 @@ function BookNavigator(): ReactElement {
     };
   }, []);
 
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent): void {
+      if (event.key === 'Escape') {
+        if (bookNavigatorIsOpened) {
+          setBookNavigatorIsOpened(false);
+        }
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [bookNavigatorIsOpened, setBookNavigatorIsOpened]);
+
   const cardsComponentClasses = classNames(
     `bg-[#F3F3F3]  dark:bg-[#0F151D]  flex-1  overflow-y-scroll  px-12  
      pb-[3.72rem]  pt-[1.6rem]  max-1.5lg:px-[4.2vw]  max-1.5lg:w-full
@@ -181,6 +196,7 @@ function BookNavigator(): ReactElement {
     setBookNavigatorIsOpened(false);
   });
 
+  // keep active page card in viewport when opening book navigator
   useEffect(() => {
     const activePageCard = document.getElementById(
       `${NAVIGATOR_PAGE_CARD_ID_PREFIX}${activePage}`,
@@ -219,6 +235,7 @@ function BookNavigator(): ReactElement {
     basePath,
   ]);
 
+  // select story based on activePage when opening book navigator
   useEffect(() => {
     try {
       let activeStory: Story;
@@ -243,7 +260,8 @@ function BookNavigator(): ReactElement {
 
         activeStory = BOOK_PARTS.find((part) => {
           return (
-            part.replaceAll(' ', '_').toLowerCase() === bookPart.toLowerCase()
+            part.replaceAll(' ', '_').replaceAll('’', '').toLowerCase() ===
+            bookPart.toLowerCase()
           );
         })!;
       }
@@ -261,6 +279,7 @@ function BookNavigator(): ReactElement {
     } catch (error) {}
   }, [activePage, activeTab, bookNavigatorIsOpened]);
 
+  // keep active story in viewport when scrolling
   useGSAP(
     () => {
       if (window.innerWidth > 1120) {
@@ -294,7 +313,7 @@ function BookNavigator(): ReactElement {
               }
 
               setSelectedStory(previousStory);
-              updateStoryTitleVisibility(story);
+              updateStoryTitleVisibility(previousStory);
             },
           });
 
@@ -307,6 +326,7 @@ function BookNavigator(): ReactElement {
               storyTitleComponent !== null &&
               contentsComponentRef.current !== null
             ) {
+              console.log('storyTitleComponent', storyTitleComponent);
               if (
                 !isInViewportWithinContainer(
                   storyTitleComponent,
@@ -1475,6 +1495,125 @@ function BookNavigator(): ReactElement {
                   DETAILED_BOOK_PART_PAGE_RANGES
                     .THE_ADVENTURES_OF_SHERLOCK_HOLMES
                     .THE_BOSCOMBE_VALLEY_MYSTERY,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.THE_FIVE_ORANGE_PIPS.replaceAll(' ', '_')}`}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                The Five Orange Pips
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES
+                    .THE_ADVENTURES_OF_SHERLOCK_HOLMES.THE_FIVE_ORANGE_PIPS,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.THE_MAN_WITH_THE_TWISTED_LIP.replaceAll(' ', '_')}`}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                The Man with the Twisted Lip
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES
+                    .THE_ADVENTURES_OF_SHERLOCK_HOLMES
+                    .THE_MAN_WITH_THE_TWISTED_LIP,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.THE_ADVENTURE_OF_THE_BLUE_CARBUNCLE.replaceAll(' ', '_')}`}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                The Adventure of the Blue Carbuncle
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES
+                    .THE_ADVENTURES_OF_SHERLOCK_HOLMES
+                    .THE_ADVENTURE_OF_THE_BLUE_CARBUNCLE,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.THE_ADVENTURE_OF_THE_SPECKLED_BAND.replaceAll(' ', '_')}`}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                The Adventure of the Speckled Band
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES
+                    .THE_ADVENTURES_OF_SHERLOCK_HOLMES
+                    .THE_ADVENTURE_OF_THE_SPECKLED_BAND,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.THE_ADVENTURE_OF_THE_ENGINEERS_THUMB.replaceAll(' ', '_')}`}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                The Adventure of the Engineer's Thumb
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES
+                    .THE_ADVENTURES_OF_SHERLOCK_HOLMES
+                    .THE_ADVENTURE_OF_THE_ENGINEERS_THUMB,
                 ).map((pageNumber) => {
                   return (
                     <BookNavigatorPage

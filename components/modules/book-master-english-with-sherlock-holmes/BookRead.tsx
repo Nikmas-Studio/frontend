@@ -56,10 +56,33 @@ import Page66 from './pages/the-adventures-of-sherlock-holmes/a-scandal-in-bohem
 import Page67 from './pages/the-adventures-of-sherlock-holmes/a-scandal-in-bohemia/Page67';
 import Page68 from './pages/the-adventures-of-sherlock-holmes/a-scandal-in-bohemia/Page68';
 import Page69 from './pages/the-adventures-of-sherlock-holmes/a-scandal-in-bohemia/Page69';
+import Page94 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-blue-carbuncle/Page94';
+import Page95 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-blue-carbuncle/Page95';
+import Page96 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-blue-carbuncle/Page96';
+import Page97 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-blue-carbuncle/Page97';
+import Page103 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-engineers-thumb/Page103';
+import Page104 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-engineers-thumb/Page104';
+import Page105 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-engineers-thumb/Page105';
+import Page106 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-engineers-thumb/Page106';
+import Page100 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-speckled-band/Page100';
+import Page101 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-speckled-band/Page101';
+import Page102 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-speckled-band/Page102';
+import Page98 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-speckled-band/Page98';
+import Page99 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-speckled-band/Page99';
 import Page80 from './pages/the-adventures-of-sherlock-holmes/the-boscombe-valley-mystery/Page80';
 import Page81 from './pages/the-adventures-of-sherlock-holmes/the-boscombe-valley-mystery/Page81';
 import Page82 from './pages/the-adventures-of-sherlock-holmes/the-boscombe-valley-mystery/Page82';
 import Page83 from './pages/the-adventures-of-sherlock-holmes/the-boscombe-valley-mystery/Page83';
+import Page84 from './pages/the-adventures-of-sherlock-holmes/the-boscombe-valley-mystery/Page84';
+import Page85 from './pages/the-adventures-of-sherlock-holmes/the-five-orange-pips/Page85';
+import Page86 from './pages/the-adventures-of-sherlock-holmes/the-five-orange-pips/Page86';
+import Page87 from './pages/the-adventures-of-sherlock-holmes/the-five-orange-pips/Page87';
+import Page88 from './pages/the-adventures-of-sherlock-holmes/the-five-orange-pips/Page88';
+import Page89 from './pages/the-adventures-of-sherlock-holmes/the-man-with-the-twisted-lip/Page89';
+import Page90 from './pages/the-adventures-of-sherlock-holmes/the-man-with-the-twisted-lip/Page90';
+import Page91 from './pages/the-adventures-of-sherlock-holmes/the-man-with-the-twisted-lip/Page91';
+import Page92 from './pages/the-adventures-of-sherlock-holmes/the-man-with-the-twisted-lip/Page92';
+import Page93 from './pages/the-adventures-of-sherlock-holmes/the-man-with-the-twisted-lip/Page93';
 import Page70 from './pages/the-adventures-of-sherlock-holmes/the-red-headed-league/Page70';
 import Page71 from './pages/the-adventures-of-sherlock-holmes/the-red-headed-league/Page71';
 import Page72 from './pages/the-adventures-of-sherlock-holmes/the-red-headed-league/Page72';
@@ -188,6 +211,29 @@ function BookRead({ initialPageId }: BookReadProps): ReactElement {
             Page81,
             Page82,
             Page83,
+            Page84,
+            Page85,
+            Page86,
+            Page87,
+            Page88,
+            Page89,
+            Page90,
+            Page91,
+            Page92,
+            Page93,
+            Page94,
+            Page95,
+            Page96,
+            Page97,
+            Page98,
+            Page99,
+            Page100,
+            Page101,
+            Page102,
+            Page103,
+            Page104,
+            Page105,
+            Page106,
           ].map((PageComponent, index) => {
             return (
               <PageComponent

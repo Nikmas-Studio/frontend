@@ -21,7 +21,7 @@ function collectFromValues(node: unknown, bucket: number[]): void {
  * Returns `null` if the story is not found.
  */
 export function getFirstPageOfStory(story: Story): number | null {
-  const targetKey = story.replace(/ /g, '_').toUpperCase(); // "A_SCANDAL_IN_BOHEMIA"
+  const targetKey = story.replace(/ /g, '_').replaceAll('’', '').toUpperCase(); // "A_SCANDAL_IN_BOHEMIA"
 
   const fromValues: number[] = [];
 
