@@ -3,6 +3,7 @@
 import BookLeftPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookLeftPartContainer';
 import BookMainContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookMainContainer';
 import BookRightPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookRightPartContainer';
+import Indent from '@/components/elements/book-master-english-with-sherlock-holmes/Indent';
 import Page from '@/components/elements/book-master-english-with-sherlock-holmes/Page';
 import TextNode from '@/components/elements/book-master-english-with-sherlock-holmes/TextNode';
 import {
@@ -117,7 +118,7 @@ function Page92({
               writing, and yet I know it well.”
             </TextNode>
 
-            <div className='pl-14'>
+            <Indent>
               <TextNode noIndent>
                 “Dearest do not be frightened. All will come well. There is a
                 huge error which it may take some little time to rectify. Wait
@@ -126,7 +127,7 @@ function Page92({
               <TextNode className='italic' noIndent>
                 “Neville.
               </TextNode>
-            </div>
+            </Indent>
 
             <TextNode noIndent>
               Written in pencil upon the fly-leaf of a book, octavo size, no

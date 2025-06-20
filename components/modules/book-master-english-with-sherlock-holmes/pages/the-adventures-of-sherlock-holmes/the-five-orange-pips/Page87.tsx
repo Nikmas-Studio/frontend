@@ -3,6 +3,7 @@
 import BookLeftPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookLeftPartContainer';
 import BookMainContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookMainContainer';
 import BookRightPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookRightPartContainer';
+import Indent from '@/components/elements/book-master-english-with-sherlock-holmes/Indent';
 import Page from '@/components/elements/book-master-english-with-sherlock-holmes/Page';
 import TextNode from '@/components/elements/book-master-english-with-sherlock-holmes/TextNode';
 import {
@@ -301,18 +302,20 @@ function Page87({
               following enigmatical notices:
             </TextNode>
 
-            <TextNode className='pl-14' noIndent>
-              4th. Hudson came. Same old platform.
-              <br />
-              7th. Set the pips on McCauley, Paramore, and John Swain, of St
-              Augustine.
-              <br />
-              9th. McCauley cleared.
-              <br />
-              10th. John Swain cleared.
-              <br />
-              12th. Visited Paramore. All well.
-            </TextNode>
+            <Indent>
+              <TextNode noIndent>
+                4th. Hudson came. Same old platform.
+                <br />
+                7th. Set the pips on McCauley, Paramore, and John Swain, of St
+                Augustine.
+                <br />
+                9th. McCauley cleared.
+                <br />
+                10th. John Swain cleared.
+                <br />
+                12th. Visited Paramore. All well.
+              </TextNode>
+            </Indent>
 
             <TextNode noIndent>
               “Thank you!” said Holmes, folding up the paper and returning it to

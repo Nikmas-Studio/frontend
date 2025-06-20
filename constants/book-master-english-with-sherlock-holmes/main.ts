@@ -164,6 +164,28 @@ export const DETAILED_BOOK_PART_PAGE_RANGES = {
       from: 103,
       to: 106,
     },
+    THE_ADVENTURE_OF_THE_NOBLE_BACHELOR: {
+      from: 107,
+      to: 111,
+    },
+    THE_ADVENTURE_OF_THE_BERYL_CORONET: {
+      from: 112,
+      to: 117,
+    },
+    THE_ADVENTURE_OF_THE_COPPER_BEECHES: {
+      from: 118,
+      to: 122,
+    },
+  },
+  THE_MEMOIRS_OF_SHERLOCK_HOLMES: {
+    SILVER_BLAZE: {
+      from: 123,
+      to: 128,
+    },
+    THE_YELLOW_FACE: {
+      from: 129,
+      to: 132,
+    },
   },
 };
 
@@ -236,12 +258,14 @@ export const BOOK_PARTS = [
   Story.THE_ADVENTURE_OF_THE_RETIRED_COLOURMAN,
 ];
 
-export const PAGES_WITHOUT_CONTROLS = [
-  1, 2, 3, 22, 36, 63, 64, 70, 76, 80, 85, 89, 94, 98, 103,
+export const PAGES_WITHOUT_NUMBER = [
+  1, 2, 3, 22, 36, 63, 64, 70, 76, 80, 85, 89, 94, 98, 103, 107, 112, 118, 123,
+  124, 129,
 ];
 
 export const PAGES_WITH_VIEWPORT_HEIGHT = [
-  1, 2, 3, 22, 36, 63, 64, 70, 76, 80, 85, 89, 94, 98, 103,
+  1, 2, 3, 22, 36, 63, 64, 70, 76, 80, 85, 89, 94, 98, 103, 107, 112, 118, 123,
+  124, 129,
 ];
 
 export const LIGHT_PAGE_PLACEHOLDER =

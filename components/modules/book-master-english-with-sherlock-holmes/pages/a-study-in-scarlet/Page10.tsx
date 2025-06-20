@@ -4,6 +4,7 @@ import BookLeftPartContainer from '@/components/elements/book-master-english-wit
 import BookMainContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookMainContainer';
 import BookRightPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookRightPartContainer';
 import H4 from '@/components/elements/book-master-english-with-sherlock-holmes/H4';
+import Indent from '@/components/elements/book-master-english-with-sherlock-holmes/Indent';
 import Page from '@/components/elements/book-master-english-with-sherlock-holmes/Page';
 import TextNode from '@/components/elements/book-master-english-with-sherlock-holmes/TextNode';
 import {
@@ -123,31 +124,33 @@ function Page10({
 
             <TextNode>This is the letter which I read to him—</TextNode>
 
-            <TextNode className='pl-14' noIndent>
-              <span className='italic'>“My dear Mr. Sherlock Holmes:</span>
-              <br /> “There has been a bad business during the night at 3,
-              Lauriston Gardens, off the Brixton Road. Our man on the beat saw a
-              light there about two in the morning, and as the house was an
-              empty one, suspected that something was amiss. He found the door
-              open, and in the front room, which is bare of furniture,
-              discovered the body of a gentleman, well dressed, and having cards
-              in his pocket bearing the name of ‘Enoch J. Drebber, Cleveland,
-              Ohio, U.S.A.’ There had been no robbery, nor is there any evidence
-              as to how the man met his death. There are marks of blood in the
-              room, but there is no wound upon his person. We are at a loss as
-              to how he came into the empty house; indeed, the whole affair is a
-              puzzler. If you can come round to the house any time before
-              twelve, you will find me there. I have left everything in statu
-              quo until I hear from you. If you are unable to come I shall give
-              you fuller details, and would esteem it a great kindness if you
-              would favour me with your opinion.
-              <br />
-              <span className='italic'>
-                “Yours faithfully,
+            <Indent>
+              <TextNode noIndent>
+                <span className='italic'>“My dear Mr. Sherlock Holmes:</span>
+                <br /> “There has been a bad business during the night at 3,
+                Lauriston Gardens, off the Brixton Road. Our man on the beat saw
+                a light there about two in the morning, and as the house was an
+                empty one, suspected that something was amiss. He found the door
+                open, and in the front room, which is bare of furniture,
+                discovered the body of a gentleman, well dressed, and having
+                cards in his pocket bearing the name of ‘Enoch J. Drebber,
+                Cleveland, Ohio, U.S.A.’ There had been no robbery, nor is there
+                any evidence as to how the man met his death. There are marks of
+                blood in the room, but there is no wound upon his person. We are
+                at a loss as to how he came into the empty house; indeed, the
+                whole affair is a puzzler. If you can come round to the house
+                any time before twelve, you will find me there. I have left
+                everything in statu quo until I hear from you. If you are unable
+                to come I shall give you fuller details, and would esteem it a
+                great kindness if you would favour me with your opinion.
                 <br />
-                “Tobias Gregson.”
-              </span>
-            </TextNode>
+                <span className='italic'>
+                  “Yours faithfully,
+                  <br />
+                  “Tobias Gregson.”
+                </span>
+              </TextNode>
+            </Indent>
 
             <TextNode noIndent>
               “Gregson is the smartest of the Scotland Yarders,” my friend

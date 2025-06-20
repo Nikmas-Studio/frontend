@@ -1624,6 +1624,129 @@ function BookNavigator(): ReactElement {
                 })}
               </ul>
             </div>
+            <div
+              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.THE_ADVENTURE_OF_THE_NOBLE_BACHELOR.replaceAll(' ', '_')}`}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                The Adventure of the Noble Bachelor
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES
+                    .THE_ADVENTURES_OF_SHERLOCK_HOLMES
+                    .THE_ADVENTURE_OF_THE_NOBLE_BACHELOR,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.THE_ADVENTURE_OF_THE_BERYL_CORONET.replaceAll(' ', '_')}`}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                The Adventure of the Beryl Coronet
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES
+                    .THE_ADVENTURES_OF_SHERLOCK_HOLMES
+                    .THE_ADVENTURE_OF_THE_BERYL_CORONET,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.THE_ADVENTURE_OF_THE_COPPER_BEECHES.replaceAll(' ', '_')}`}
+              className='mb-12'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                The Adventure of the Copper Beeches
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES
+                    .THE_ADVENTURES_OF_SHERLOCK_HOLMES
+                    .THE_ADVENTURE_OF_THE_COPPER_BEECHES,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.SILVER_BLAZE.replaceAll(' ', '_')}`}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-1.5  text-xl  font-bold  ${libreBaskerville.className}`}
+              >
+                The Memoirs of Sherlock Holmes
+              </BasicTextNode>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Silver Blaze
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.THE_MEMOIRS_OF_SHERLOCK_HOLMES
+                    .SILVER_BLAZE,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.THE_YELLOW_FACE.replaceAll(' ', '_')}`}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                The Yellow Face
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.THE_MEMOIRS_OF_SHERLOCK_HOLMES
+                    .THE_YELLOW_FACE,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

@@ -34,7 +34,7 @@ function Controls({
         </BasicTextNode>
       )}
       <div className='absolute  right-[3vw]  top-5  z-50  max-md:right-[4.2vw]  max-md:top-4'>
-        <div className='flex  gap-1'>
+        <div className='flex  gap-0'>
           <BookNavigatorIcon
             alwaysWhite={alwaysWhite}
             className='translate-y-[0.48rem]'

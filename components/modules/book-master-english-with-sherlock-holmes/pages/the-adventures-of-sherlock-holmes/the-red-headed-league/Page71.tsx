@@ -3,6 +3,7 @@
 import BookLeftPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookLeftPartContainer';
 import BookMainContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookMainContainer';
 import BookRightPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookRightPartContainer';
+import Indent from '@/components/elements/book-master-english-with-sherlock-holmes/Indent';
 import Page from '@/components/elements/book-master-english-with-sherlock-holmes/Page';
 import TextNode from '@/components/elements/book-master-english-with-sherlock-holmes/TextNode';
 import {
@@ -242,16 +243,20 @@ function Page71({
 
             <TextNode>I took the paper from him and read as follows:</TextNode>
 
-            <TextNode className='pl-14' noIndent>
-              <span className='italic'>“To the Red-headed League:</span> On
-              account of the bequest of the late Ezekiah Hopkins, of Lebanon,
-              Pennsylvania, U.&nbsp;S.&nbsp;A., there is now another vacancy
-              open which entitles a member of the League to a salary of £4 a
-              week for purely nominal services. All red-headed men who are sound
-              in body and mind and above the age of twenty-one years, are
-              eligible. Apply in person on Monday, at eleven o'clock, to Duncan
-              Ross, at the offices of the League, 7 Pope's Court, Fleet Street.”
-            </TextNode>
+            <Indent>
+              <TextNode noIndent>
+                <span className='italic'>“To the Red-headed League:</span> On
+                account of the bequest of the late Ezekiah Hopkins, of Lebanon,
+                Pennsylvania, U.&nbsp;S.&nbsp;A., there is now another vacancy
+                open which entitles a member of the League to a salary of £4 a
+                week for purely nominal services. All red-headed men who are
+                sound in body and mind and above the age of twenty-one years,
+                are eligible. Apply in person on Monday, at eleven o'clock, to
+                Duncan Ross, at the offices of the League, 7 Pope's Court, Fleet
+                Street.”
+              </TextNode>
+            </Indent>
+
             <TextNode noIndent>
               “What on earth does this mean?” I ejaculated after I had twice
               read over the extraordinary announcement.

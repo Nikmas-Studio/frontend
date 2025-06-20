@@ -4,6 +4,7 @@ import BookLeftPartContainer from '@/components/elements/book-master-english-wit
 import BookMainContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookMainContainer';
 import BookRightPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookRightPartContainer';
 import H4 from '@/components/elements/book-master-english-with-sherlock-holmes/H4';
+import Indent from '@/components/elements/book-master-english-with-sherlock-holmes/Indent';
 import Page from '@/components/elements/book-master-english-with-sherlock-holmes/Page';
 import TextNode from '@/components/elements/book-master-english-with-sherlock-holmes/TextNode';
 import {
@@ -155,7 +156,7 @@ function Page68({
               preceding night and ran in this way:
             </TextNode>
 
-            <div className='pl-14'>
+            <Indent>
               <TextNode className='italic' noIndent>
                 “My dear Mr. Sherlock Holmes:
               </TextNode>
@@ -199,7 +200,8 @@ function Page68({
                 “Very truly yours,
                 <br /> “Irene Norton, née Adler.”
               </TextNode>
-            </div>
+            </Indent>
+
             <TextNode noIndent>
               “What a woman—oh, what a woman!” cried the King of Bohemia, when
               we had all three read this epistle. “Did I not tell you how quick

@@ -3,6 +3,7 @@
 import BookLeftPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookLeftPartContainer';
 import BookMainContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookMainContainer';
 import BookRightPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookRightPartContainer';
+import Indent from '@/components/elements/book-master-english-with-sherlock-holmes/Indent';
 import Page from '@/components/elements/book-master-english-with-sherlock-holmes/Page';
 import TextNode from '@/components/elements/book-master-english-with-sherlock-holmes/TextNode';
 import {
@@ -261,11 +262,13 @@ function Page106({
               appeared in all the papers about a year ago. Listen to this:
             </TextNode>
 
-            <TextNode className='pl-14' noIndent>
-              “‘Lost, on the 9th inst., Mr. Jeremiah Hayling, aged twenty-six, a
-              hydraulic engineer. Left his lodgings at ten o'clock at night, and
-              has not been heard of since. Was dressed in—’
-            </TextNode>
+            <Indent>
+              <TextNode noIndent>
+                “‘Lost, on the 9th inst., Mr. Jeremiah Hayling, aged twenty-six,
+                a hydraulic engineer. Left his lodgings at ten o'clock at night,
+                and has not been heard of since. Was dressed in—’
+              </TextNode>
+            </Indent>
 
             <TextNode noIndent>
               etc., etc. Ha! That represents the last time that the colonel

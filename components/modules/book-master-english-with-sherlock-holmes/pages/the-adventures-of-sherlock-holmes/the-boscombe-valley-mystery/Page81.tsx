@@ -3,6 +3,7 @@
 import BookLeftPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookLeftPartContainer';
 import BookMainContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookMainContainer';
 import BookRightPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookRightPartContainer';
+import Indent from '@/components/elements/book-master-english-with-sherlock-holmes/Indent';
 import Page from '@/components/elements/book-master-english-with-sherlock-holmes/Page';
 import TextNode from '@/components/elements/book-master-english-with-sherlock-holmes/TextNode';
 import {
@@ -57,12 +58,14 @@ function Page81({
               this way:
             </TextNode>
 
-            <TextNode className='pl-14' noIndent>
-              “Have you a couple of days to spare? Have just been wired for from
-              the west of England in connection with Boscombe Valley tragedy.
-              Shall be glad if you will come with me. Air and scenery perfect.
-              Leave Paddington by the 11.15.”
-            </TextNode>
+            <Indent>
+              <TextNode noIndent>
+                “Have you a couple of days to spare? Have just been wired for
+                from the west of England in connection with Boscombe Valley
+                tragedy. Shall be glad if you will come with me. Air and scenery
+                perfect. Leave Paddington by the 11.15.”
+              </TextNode>
+            </Indent>
 
             <TextNode noIndent>
               “What do you say, dear?” said my wife, looking across at me. “Will

@@ -2,7 +2,7 @@ import TranslationTooltip from '@/components/elements/book-master-english-with-s
 import BookMasterEnglishWithSherlockHolmesLayout from '@/components/layouts/BookMasterEnglishWithSherlockHolmes';
 import {
   PAGES_WITH_VIEWPORT_HEIGHT,
-  PAGES_WITHOUT_CONTROLS,
+  PAGES_WITHOUT_NUMBER,
 } from '@/constants/book-master-english-with-sherlock-holmes/main';
 import { BookVersionProvider } from '@/context/book-version/Context';
 import { BookVersion } from '@/types/book-version';
@@ -56,14 +56,30 @@ import Page66 from './pages/the-adventures-of-sherlock-holmes/a-scandal-in-bohem
 import Page67 from './pages/the-adventures-of-sherlock-holmes/a-scandal-in-bohemia/Page67';
 import Page68 from './pages/the-adventures-of-sherlock-holmes/a-scandal-in-bohemia/Page68';
 import Page69 from './pages/the-adventures-of-sherlock-holmes/a-scandal-in-bohemia/Page69';
+import Page112 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-beryl-coronet/Page112';
+import Page113 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-beryl-coronet/Page113';
+import Page114 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-beryl-coronet/Page114';
+import Page115 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-beryl-coronet/Page115';
+import Page116 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-beryl-coronet/Page116';
+import Page117 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-beryl-coronet/Page117';
 import Page94 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-blue-carbuncle/Page94';
 import Page95 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-blue-carbuncle/Page95';
 import Page96 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-blue-carbuncle/Page96';
 import Page97 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-blue-carbuncle/Page97';
+import Page118 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-copper-beeches/Page118';
+import Page119 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-copper-beeches/Page119';
+import Page120 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-copper-beeches/Page120';
+import Page121 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-copper-beeches/Page121';
+import Page122 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-copper-beeches/Page122';
 import Page103 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-engineers-thumb/Page103';
 import Page104 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-engineers-thumb/Page104';
 import Page105 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-engineers-thumb/Page105';
 import Page106 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-engineers-thumb/Page106';
+import Page107 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-noble-bachelor/Page107';
+import Page108 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-noble-bachelor/Page108';
+import Page109 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-noble-bachelor/Page109';
+import Page110 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-noble-bachelor/Page110';
+import Page111 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-noble-bachelor/Page111';
 import Page100 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-speckled-band/Page100';
 import Page101 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-speckled-band/Page101';
 import Page102 from './pages/the-adventures-of-sherlock-holmes/the-adventure-of-the-speckled-band/Page102';
@@ -89,6 +105,16 @@ import Page72 from './pages/the-adventures-of-sherlock-holmes/the-red-headed-lea
 import Page73 from './pages/the-adventures-of-sherlock-holmes/the-red-headed-league/Page73';
 import Page74 from './pages/the-adventures-of-sherlock-holmes/the-red-headed-league/Page74';
 import Page75 from './pages/the-adventures-of-sherlock-holmes/the-red-headed-league/Page75';
+import Page123 from './pages/the-momoirs-of-sherlock-holmes/silver-blaze/Page123';
+import Page124 from './pages/the-momoirs-of-sherlock-holmes/silver-blaze/Page124';
+import Page125 from './pages/the-momoirs-of-sherlock-holmes/silver-blaze/Page125';
+import Page126 from './pages/the-momoirs-of-sherlock-holmes/silver-blaze/Page126';
+import Page127 from './pages/the-momoirs-of-sherlock-holmes/silver-blaze/Page127';
+import Page128 from './pages/the-momoirs-of-sherlock-holmes/silver-blaze/Page128';
+import Page129 from './pages/the-momoirs-of-sherlock-holmes/the-yellow-face/Page129';
+import Page130 from './pages/the-momoirs-of-sherlock-holmes/the-yellow-face/Page130';
+import Page131 from './pages/the-momoirs-of-sherlock-holmes/the-yellow-face/Page131';
+import Page132 from './pages/the-momoirs-of-sherlock-holmes/the-yellow-face/Page132';
 import Page36 from './pages/the-sign-of-the-four/Page36';
 import Page37 from './pages/the-sign-of-the-four/Page37';
 import Page38 from './pages/the-sign-of-the-four/Page38';
@@ -234,10 +260,36 @@ function BookRead({ initialPageId }: BookReadProps): ReactElement {
             Page104,
             Page105,
             Page106,
+            Page107,
+            Page108,
+            Page109,
+            Page110,
+            Page111,
+            Page112,
+            Page113,
+            Page114,
+            Page115,
+            Page116,
+            Page117,
+            Page118,
+            Page119,
+            Page120,
+            Page121,
+            Page122,
+            Page123,
+            Page124,
+            Page125,
+            Page126,
+            Page127,
+            Page128,
+            Page129,
+            Page130,
+            Page131,
+            Page132,
           ].map((PageComponent, index) => {
             return (
               <PageComponent
-                hidePageNumber={PAGES_WITHOUT_CONTROLS.includes(index + 1)}
+                hidePageNumber={PAGES_WITHOUT_NUMBER.includes(index + 1)}
                 viewportHeight={PAGES_WITH_VIEWPORT_HEIGHT.includes(index + 1)}
                 pageNumber={index + 1}
                 key={index}

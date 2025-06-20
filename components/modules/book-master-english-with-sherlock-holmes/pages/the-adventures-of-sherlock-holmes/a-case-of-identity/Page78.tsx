@@ -3,6 +3,7 @@
 import BookLeftPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookLeftPartContainer';
 import BookMainContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookMainContainer';
 import BookRightPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookRightPartContainer';
+import Indent from '@/components/elements/book-master-english-with-sherlock-holmes/Indent';
 import Page from '@/components/elements/book-master-english-with-sherlock-holmes/Page';
 import TextNode from '@/components/elements/book-master-english-with-sherlock-holmes/TextNode';
 import {
@@ -320,17 +321,19 @@ function Page78({
 
             <TextNode>I held the little printed slip to the light.</TextNode>
 
-            <TextNode className='pl-14' noIndent>
-              “Missing,” it said, “on the morning of the fourteenth, a gentleman
-              named Hosmer Angel. About five ft. seven in. in height; strongly
-              built, sallow complexion, black hair, a little bald in the centre,
-              bushy, black side-whiskers and moustache; tinted glasses, slight
-              infirmity of speech. Was dressed, when last seen, in black
-              frock-coat faced with silk, black waistcoat, gold Albert chain,
-              and grey Harris tweed trousers, with brown gaiters over
-              elastic-sided boots. Known to have been employed in an office in
-              Leadenhall Street. Anybody bringing—”
-            </TextNode>
+            <Indent>
+              <TextNode noIndent>
+                “Missing,” it said, “on the morning of the fourteenth, a
+                gentleman named Hosmer Angel. About five ft. seven in. in
+                height; strongly built, sallow complexion, black hair, a little
+                bald in the centre, bushy, black side-whiskers and moustache;
+                tinted glasses, slight infirmity of speech. Was dressed, when
+                last seen, in black frock-coat faced with silk, black waistcoat,
+                gold Albert chain, and grey Harris tweed trousers, with brown
+                gaiters over elastic-sided boots. Known to have been employed in
+                an office in Leadenhall Street. Anybody bringing—”
+              </TextNode>
+            </Indent>
 
             <TextNode noIndent>
               “That will do,” said Holmes. “As to the letters,” he continued,
