@@ -119,11 +119,12 @@ function InstructionsPage({
               />
             </svg>
             ) in the top right corner of the page, explore the book’s structure
-            and find the pages you need.
+            and find the pages you need; on desktop, click&nbsp;outside or press
+            Escape to hide the navigator.
           </TextNode>
           <TextNode className='mb-4' noIndent>
             Highlight any text fragment to see the context-aware AI translation;
-            click&nbsp;away to hide the translation block:
+            click&nbsp;outside or press Escape to hide the translation block:
           </TextNode>
           <video
             className='w-[365px]  max-w-full  rounded-[14px]  border
