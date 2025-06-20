@@ -9,7 +9,7 @@ import { merriweather } from '@/fonts';
 import useOutsideClick from '@/hooks/use-outside-click';
 import { CircularProgress } from '@mui/material';
 import classNames from 'classnames';
-import { ReactElement, useState } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 
 function TranslationTooltip(): ReactElement {
   const {
@@ -57,6 +57,25 @@ function TranslationTooltip(): ReactElement {
 
     setIsShown(false);
   });
+
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent): void {
+      if (event.key === 'Escape') {
+        if (isShown) {
+          setIsShown(false);
+          const selection = window.getSelection();
+          if (selection !== null) {
+            selection.removeAllRanges();
+          }
+        }
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isShown, setIsShown]);
 
   setTimeout(() => {
     if (!tooltipRef.current) {
