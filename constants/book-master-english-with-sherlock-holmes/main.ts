@@ -186,6 +186,10 @@ export const DETAILED_BOOK_PART_PAGE_RANGES = {
       from: 129,
       to: 132,
     },
+    THE_STOCK_BROKERS_CLERK: {
+      from: 133,
+      to: 138,
+    },
   },
 };
 
@@ -260,12 +264,12 @@ export const BOOK_PARTS = [
 
 export const PAGES_WITHOUT_NUMBER = [
   1, 2, 3, 22, 36, 63, 64, 70, 76, 80, 85, 89, 94, 98, 103, 107, 112, 118, 123,
-  124, 129,
+  124, 129, 133,
 ];
 
 export const PAGES_WITH_VIEWPORT_HEIGHT = [
   1, 2, 3, 22, 36, 63, 64, 70, 76, 80, 85, 89, 94, 98, 103, 107, 112, 118, 123,
-  124, 129,
+  124, 129, 133,
 ];
 
 export const LIGHT_PAGE_PLACEHOLDER =

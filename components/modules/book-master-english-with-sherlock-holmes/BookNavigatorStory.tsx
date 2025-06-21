@@ -1,7 +1,7 @@
 import BasicTextNode from '@/components/elements/book-master-english-with-sherlock-holmes/BasicTextNode';
-import { NAVIGATOR_TITLE_ID_PREFIX } from '@/constants/general';
 import { libreBaskerville } from '@/fonts';
 import { Story } from '@/types/master-english-with-sherlock-holmes/book-navigator';
+import { storyToTitleId } from '@/utils/book-master-english-with-sherlock-holmes/story-to-title-id';
 import classNames from 'classnames';
 import { ReactElement } from 'react';
 
@@ -29,7 +29,7 @@ function BookNavigatorStory({
 
   return (
     <li
-      id={`${NAVIGATOR_TITLE_ID_PREFIX}${title.replaceAll(' ', '_')}`}
+      id={storyToTitleId(title)}
       onClick={() => setSelectedStory(title)}
       className={classes}
     >

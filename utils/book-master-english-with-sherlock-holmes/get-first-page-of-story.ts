@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { DETAILED_BOOK_PART_PAGE_RANGES } from '@/constants/book-master-english-with-sherlock-holmes/main';
 import { Story } from '@/types/master-english-with-sherlock-holmes/book-navigator';
+import { storyToObjectKey } from './story-to-object-key';
 
 /** Recursively collect all `from` values */
 function collectFromValues(node: unknown, bucket: number[]): void {
@@ -21,7 +22,7 @@ function collectFromValues(node: unknown, bucket: number[]): void {
  * Returns `null` if the story is not found.
  */
 export function getFirstPageOfStory(story: Story): number | null {
-  const targetKey = story.replace(/ /g, '_').replaceAll('’', '').toUpperCase(); // "A_SCANDAL_IN_BOHEMIA"
+  const targetKey = storyToObjectKey(story);
 
   const fromValues: number[] = [];
 

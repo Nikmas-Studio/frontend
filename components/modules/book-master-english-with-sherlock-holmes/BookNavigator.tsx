@@ -11,7 +11,6 @@ import {
 import {
   NAVIGATOR_PAGE_CARD_ID_PREFIX,
   NAVIGATOR_PART_ID_PREFIX,
-  NAVIGATOR_TITLE_ID_PREFIX,
   RESIZE_THRESHOLD,
 } from '@/constants/general';
 import {
@@ -23,6 +22,7 @@ import {
   useBookNavigatorDispatch,
 } from '@/context/book-navigator/Context';
 import { useBookVersion } from '@/context/book-version/Context';
+import { useIsScrollingToPageRef } from '@/context/is-scrolling-to-page/Context';
 import { useTouchDevice } from '@/context/touch-device/Context';
 import { useTranslationTooltip } from '@/context/translation-tooltip/Context';
 import { libreBaskerville } from '@/fonts';
@@ -33,8 +33,13 @@ import { Story } from '@/types/master-english-with-sherlock-holmes/book-navigato
 import { getBookPartByPage } from '@/utils/book-master-english-with-sherlock-holmes/get-book-part-by-page';
 import { getFirstPageOfStory } from '@/utils/book-master-english-with-sherlock-holmes/get-first-page-of-story';
 import { getPreviousStory } from '@/utils/book-master-english-with-sherlock-holmes/get-previous-story';
+import { partIdToStory } from '@/utils/book-master-english-with-sherlock-holmes/part-id-to-story';
+import { storyToObjectKey } from '@/utils/book-master-english-with-sherlock-holmes/story-to-object-key';
+import { storyToPartId } from '@/utils/book-master-english-with-sherlock-holmes/story-to-part-id';
+import { storyToTitleId } from '@/utils/book-master-english-with-sherlock-holmes/story-to-title-id';
 import { generateRangeArray } from '@/utils/generate-range-array';
 import { isInViewportWithinContainer } from '@/utils/is-in-viewport-within-container';
+import { updateUrl } from '@/utils/update-url';
 import { useGSAP } from '@gsap/react';
 import classNames from 'classnames';
 import gsap from 'gsap';
@@ -68,6 +73,7 @@ function BookNavigator(): ReactElement {
   const basePath =
     bookVersion === BookVersion.DEMO ? BASE_PATH_DEMO : BASE_PATH_READ;
   const isScrollingToStory = useRef(false);
+  const isScrollingToPageRef = useIsScrollingToPageRef();
 
   useEffect(() => {
     let initialHeight = window.innerHeight;
@@ -259,16 +265,13 @@ function BookNavigator(): ReactElement {
         }
 
         activeStory = BOOK_PARTS.find((part) => {
-          return (
-            part.replaceAll(' ', '_').replaceAll('’', '').toLowerCase() ===
-            bookPart.toLowerCase()
-          );
+          return storyToObjectKey(part) === bookPart;
         })!;
       }
 
       setSelectedStory(activeStory);
       const storyTitleComponent = document.getElementById(
-        `${NAVIGATOR_TITLE_ID_PREFIX}${activeStory.replaceAll(' ', '_')}`,
+        storyToTitleId(activeStory),
       );
       if (bookNavigatorIsOpened) {
         storyTitleComponent?.scrollIntoView({
@@ -287,9 +290,7 @@ function BookNavigator(): ReactElement {
           `[id^="${NAVIGATOR_PART_ID_PREFIX}"]`,
         );
         for (const storyBoundary of storyBoundaries) {
-          const story = storyBoundary.id
-            .replace(`${NAVIGATOR_PART_ID_PREFIX}`, '')
-            .replaceAll('_', ' ') as Story;
+          const story = partIdToStory(storyBoundary.id);
 
           const previousStory =
             getPreviousStory(story as Story) ?? Story.A_STUDY_IN_SCARLET;
@@ -319,7 +320,7 @@ function BookNavigator(): ReactElement {
 
           function updateStoryTitleVisibility(activeStory: Story): void {
             const storyTitleComponent = document.getElementById(
-              `${NAVIGATOR_TITLE_ID_PREFIX}${activeStory.replaceAll(' ', '_')}`,
+              storyToTitleId(activeStory),
             );
 
             if (
@@ -353,7 +354,7 @@ function BookNavigator(): ReactElement {
     setSelectedStory(newStory);
     if (window.innerWidth > 1120) {
       const storyCardComponent = document.getElementById(
-        `${NAVIGATOR_PART_ID_PREFIX}${newStory.replaceAll(' ', '_')}`,
+        storyToPartId(newStory),
       );
       storyCardComponent?.scrollIntoView({
         behavior: 'smooth',
@@ -394,9 +395,17 @@ function BookNavigator(): ReactElement {
 
       const page = document.getElementById(`page-${storyFirstPage}`);
       setTimeout(() => {
+        isScrollingToPageRef.current = true;
         page?.scrollIntoView({
           behavior: 'instant',
         });
+
+        updateUrl({ page: storyFirstPage, basePath });
+        setActivePage(storyFirstPage);
+
+        setTimeout(() => {
+          isScrollingToPageRef.current = false;
+        }, 1000);
       }, 200);
     }
   }
@@ -812,14 +821,11 @@ function BookNavigator(): ReactElement {
             </BookNavigatorPart>
           </ul>
           <div ref={cardsComponentRef} className={cardsComponentClasses}>
-            <div
-              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.A_STUDY_IN_SCARLET.replaceAll(' ', '_')}`}
-              className='mb-7'
-            >
+            <div id={storyToPartId(Story.A_STUDY_IN_SCARLET)} className='mb-7'>
               <BasicTextNode
                 className={`mb-1.5  text-xl  font-bold  ${libreBaskerville.className}`}
               >
-                A Study in Scarlet
+                {Story.A_STUDY_IN_SCARLET}
               </BasicTextNode>
               <BasicTextNode
                 className={`mb-1.5  text-xl  ${libreBaskerville.className}`}
@@ -1112,13 +1118,13 @@ function BookNavigator(): ReactElement {
               </ul>
             </div>
             <div
-              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.THE_SIGN_OF_THE_FOUR.replaceAll(' ', '_')}`}
+              id={storyToPartId(Story.THE_SIGN_OF_THE_FOUR)}
               className='mb-7'
             >
               <BasicTextNode
                 className={`mb-1.5  text-xl  font-bold  ${libreBaskerville.className}`}
               >
-                The Sign of the Four
+                {Story.THE_SIGN_OF_THE_FOUR}
               </BasicTextNode>
               <BasicTextNode
                 className={`mb-5  text-xl  ${libreBaskerville.className}`}
@@ -1360,7 +1366,7 @@ function BookNavigator(): ReactElement {
               </ul>
             </div>
             <div
-              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.A_SCANDAL_IN_BOHEMIA.replaceAll(' ', '_')}`}
+              id={storyToPartId(Story.A_SCANDAL_IN_BOHEMIA)}
               className='mb-7'
             >
               <BasicTextNode
@@ -1371,7 +1377,7 @@ function BookNavigator(): ReactElement {
               <BasicTextNode
                 className={`mb-1.5  text-xl  ${libreBaskerville.className}`}
               >
-                A Scandal in Bohemia
+                {Story.A_SCANDAL_IN_BOHEMIA}
               </BasicTextNode>
               <BasicTextNode
                 className={`mb-5  text-xl  ${libreBaskerville.className}`}
@@ -1436,13 +1442,13 @@ function BookNavigator(): ReactElement {
               </ul>
             </div>
             <div
-              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.THE_RED_HEADED_LEAGUE.replaceAll(' ', '_')}`}
+              id={storyToPartId(Story.THE_RED_HEADED_LEAGUE)}
               className='mb-7'
             >
               <BasicTextNode
                 className={`mb-5  text-xl  ${libreBaskerville.className}`}
               >
-                The Red-Headed League
+                {Story.THE_RED_HEADED_LEAGUE}
               </BasicTextNode>
               <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
                 {generateRangeArray(
@@ -1458,14 +1464,11 @@ function BookNavigator(): ReactElement {
                 })}
               </ul>
             </div>
-            <div
-              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.A_CASE_OF_IDENTITY.replaceAll(' ', '_')}`}
-              className='mb-7'
-            >
+            <div id={storyToPartId(Story.A_CASE_OF_IDENTITY)} className='mb-7'>
               <BasicTextNode
                 className={`mb-5  text-xl  ${libreBaskerville.className}`}
               >
-                A Case of Identity
+                {Story.A_CASE_OF_IDENTITY}
               </BasicTextNode>
               <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
                 {generateRangeArray(
@@ -1482,13 +1485,13 @@ function BookNavigator(): ReactElement {
               </ul>
             </div>
             <div
-              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.THE_BOSCOMBE_VALLEY_MYSTERY.replaceAll(' ', '_')}`}
+              id={storyToPartId(Story.THE_BOSCOMBE_VALLEY_MYSTERY)}
               className='mb-7'
             >
               <BasicTextNode
                 className={`mb-5  text-xl  ${libreBaskerville.className}`}
               >
-                The Boscombe Valley Mystery
+                {Story.THE_BOSCOMBE_VALLEY_MYSTERY}
               </BasicTextNode>
               <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
                 {generateRangeArray(
@@ -1506,13 +1509,13 @@ function BookNavigator(): ReactElement {
               </ul>
             </div>
             <div
-              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.THE_FIVE_ORANGE_PIPS.replaceAll(' ', '_')}`}
+              id={storyToPartId(Story.THE_FIVE_ORANGE_PIPS)}
               className='mb-7'
             >
               <BasicTextNode
                 className={`mb-5  text-xl  ${libreBaskerville.className}`}
               >
-                The Five Orange Pips
+                {Story.THE_FIVE_ORANGE_PIPS}
               </BasicTextNode>
               <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
                 {generateRangeArray(
@@ -1529,13 +1532,13 @@ function BookNavigator(): ReactElement {
               </ul>
             </div>
             <div
-              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.THE_MAN_WITH_THE_TWISTED_LIP.replaceAll(' ', '_')}`}
+              id={storyToPartId(Story.THE_MAN_WITH_THE_TWISTED_LIP)}
               className='mb-7'
             >
               <BasicTextNode
                 className={`mb-5  text-xl  ${libreBaskerville.className}`}
               >
-                The Man with the Twisted Lip
+                {Story.THE_MAN_WITH_THE_TWISTED_LIP}
               </BasicTextNode>
               <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
                 {generateRangeArray(
@@ -1553,13 +1556,13 @@ function BookNavigator(): ReactElement {
               </ul>
             </div>
             <div
-              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.THE_ADVENTURE_OF_THE_BLUE_CARBUNCLE.replaceAll(' ', '_')}`}
+              id={storyToPartId(Story.THE_ADVENTURE_OF_THE_BLUE_CARBUNCLE)}
               className='mb-7'
             >
               <BasicTextNode
                 className={`mb-5  text-xl  ${libreBaskerville.className}`}
               >
-                The Adventure of the Blue Carbuncle
+                {Story.THE_ADVENTURE_OF_THE_BLUE_CARBUNCLE}
               </BasicTextNode>
               <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
                 {generateRangeArray(
@@ -1577,13 +1580,13 @@ function BookNavigator(): ReactElement {
               </ul>
             </div>
             <div
-              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.THE_ADVENTURE_OF_THE_SPECKLED_BAND.replaceAll(' ', '_')}`}
+              id={storyToPartId(Story.THE_ADVENTURE_OF_THE_SPECKLED_BAND)}
               className='mb-7'
             >
               <BasicTextNode
                 className={`mb-5  text-xl  ${libreBaskerville.className}`}
               >
-                The Adventure of the Speckled Band
+                {Story.THE_ADVENTURE_OF_THE_SPECKLED_BAND}
               </BasicTextNode>
               <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
                 {generateRangeArray(
@@ -1601,13 +1604,13 @@ function BookNavigator(): ReactElement {
               </ul>
             </div>
             <div
-              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.THE_ADVENTURE_OF_THE_ENGINEERS_THUMB.replaceAll(' ', '_')}`}
+              id={storyToPartId(Story.THE_ADVENTURE_OF_THE_ENGINEERS_THUMB)}
               className='mb-7'
             >
               <BasicTextNode
                 className={`mb-5  text-xl  ${libreBaskerville.className}`}
               >
-                The Adventure of the Engineer's Thumb
+                {Story.THE_ADVENTURE_OF_THE_ENGINEERS_THUMB}
               </BasicTextNode>
               <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
                 {generateRangeArray(
@@ -1625,13 +1628,13 @@ function BookNavigator(): ReactElement {
               </ul>
             </div>
             <div
-              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.THE_ADVENTURE_OF_THE_NOBLE_BACHELOR.replaceAll(' ', '_')}`}
+              id={storyToPartId(Story.THE_ADVENTURE_OF_THE_NOBLE_BACHELOR)}
               className='mb-7'
             >
               <BasicTextNode
                 className={`mb-5  text-xl  ${libreBaskerville.className}`}
               >
-                The Adventure of the Noble Bachelor
+                {Story.THE_ADVENTURE_OF_THE_NOBLE_BACHELOR}
               </BasicTextNode>
               <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
                 {generateRangeArray(
@@ -1649,13 +1652,13 @@ function BookNavigator(): ReactElement {
               </ul>
             </div>
             <div
-              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.THE_ADVENTURE_OF_THE_BERYL_CORONET.replaceAll(' ', '_')}`}
+              id={storyToPartId(Story.THE_ADVENTURE_OF_THE_BERYL_CORONET)}
               className='mb-7'
             >
               <BasicTextNode
                 className={`mb-5  text-xl  ${libreBaskerville.className}`}
               >
-                The Adventure of the Beryl Coronet
+                {Story.THE_ADVENTURE_OF_THE_BERYL_CORONET}
               </BasicTextNode>
               <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
                 {generateRangeArray(
@@ -1673,13 +1676,13 @@ function BookNavigator(): ReactElement {
               </ul>
             </div>
             <div
-              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.THE_ADVENTURE_OF_THE_COPPER_BEECHES.replaceAll(' ', '_')}`}
+              id={storyToPartId(Story.THE_ADVENTURE_OF_THE_COPPER_BEECHES)}
               className='mb-12'
             >
               <BasicTextNode
                 className={`mb-5  text-xl  ${libreBaskerville.className}`}
               >
-                The Adventure of the Copper Beeches
+                {Story.THE_ADVENTURE_OF_THE_COPPER_BEECHES}
               </BasicTextNode>
               <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
                 {generateRangeArray(
@@ -1696,10 +1699,7 @@ function BookNavigator(): ReactElement {
                 })}
               </ul>
             </div>
-            <div
-              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.SILVER_BLAZE.replaceAll(' ', '_')}`}
-              className='mb-7'
-            >
+            <div id={storyToPartId(Story.SILVER_BLAZE)} className='mb-7'>
               <BasicTextNode
                 className={`mb-1.5  text-xl  font-bold  ${libreBaskerville.className}`}
               >
@@ -1708,7 +1708,7 @@ function BookNavigator(): ReactElement {
               <BasicTextNode
                 className={`mb-5  text-xl  ${libreBaskerville.className}`}
               >
-                Silver Blaze
+                {Story.SILVER_BLAZE}
               </BasicTextNode>
               <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
                 {generateRangeArray(
@@ -1724,19 +1724,39 @@ function BookNavigator(): ReactElement {
                 })}
               </ul>
             </div>
-            <div
-              id={`${NAVIGATOR_PART_ID_PREFIX}${Story.THE_YELLOW_FACE.replaceAll(' ', '_')}`}
-              className='mb-7'
-            >
+            <div id={storyToPartId(Story.THE_YELLOW_FACE)} className='mb-7'>
               <BasicTextNode
                 className={`mb-5  text-xl  ${libreBaskerville.className}`}
               >
-                The Yellow Face
+                {Story.THE_YELLOW_FACE}
               </BasicTextNode>
               <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
                 {generateRangeArray(
                   DETAILED_BOOK_PART_PAGE_RANGES.THE_MEMOIRS_OF_SHERLOCK_HOLMES
                     .THE_YELLOW_FACE,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={storyToPartId(Story.THE_STOCK_BROKERS_CLERK)}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                {Story.THE_STOCK_BROKERS_CLERK}
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.THE_MEMOIRS_OF_SHERLOCK_HOLMES
+                    .THE_STOCK_BROKERS_CLERK,
                 ).map((pageNumber) => {
                   return (
                     <BookNavigatorPage

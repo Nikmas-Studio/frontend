@@ -111,6 +111,8 @@ import Page125 from './pages/the-momoirs-of-sherlock-holmes/silver-blaze/Page125
 import Page126 from './pages/the-momoirs-of-sherlock-holmes/silver-blaze/Page126';
 import Page127 from './pages/the-momoirs-of-sherlock-holmes/silver-blaze/Page127';
 import Page128 from './pages/the-momoirs-of-sherlock-holmes/silver-blaze/Page128';
+import Page133 from './pages/the-momoirs-of-sherlock-holmes/the-stock-brokers-clerk/Page133';
+import Page134 from './pages/the-momoirs-of-sherlock-holmes/the-stock-brokers-clerk/Page134';
 import Page129 from './pages/the-momoirs-of-sherlock-holmes/the-yellow-face/Page129';
 import Page130 from './pages/the-momoirs-of-sherlock-holmes/the-yellow-face/Page130';
 import Page131 from './pages/the-momoirs-of-sherlock-holmes/the-yellow-face/Page131';
@@ -286,6 +288,8 @@ function BookRead({ initialPageId }: BookReadProps): ReactElement {
             Page130,
             Page131,
             Page132,
+            Page133,
+            Page134,
           ].map((PageComponent, index) => {
             return (
               <PageComponent
