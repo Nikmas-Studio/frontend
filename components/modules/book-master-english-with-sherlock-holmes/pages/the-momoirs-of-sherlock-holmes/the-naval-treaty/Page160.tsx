@@ -420,7 +420,7 @@ function Page160({
               alt='chart'
             />
             <Image
-              className='h-[20.25rem]  w-auto  hidden dark:block'
+              className='hidden  h-[20.25rem]  w-auto dark:block'
               src={chartDark}
               alt='chart'
             />

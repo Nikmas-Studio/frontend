@@ -301,13 +301,13 @@ function Page147({
               Sherlock Holmes placed the subjoined paper before us:
             </TextNode>
             <Image
-              className='h-[20.25rem]  max-2md:h-auto  w-auto  dark:hidden'
+              className='h-[20.25rem]  w-auto  max-2md:h-auto  dark:hidden'
               src={scrapOfPaperLight}
               alt='The scrap of paper'
               quality={100}
             />
             <Image
-              className='h-[20.25rem]  max-2md:h-auto  w-auto  hidden  dark:block'
+              className='hidden  h-[20.25rem]  w-auto  max-2md:h-auto  dark:block'
               src={scrapOfPaperDark}
               alt='The scrap of paper'
               quality={100}

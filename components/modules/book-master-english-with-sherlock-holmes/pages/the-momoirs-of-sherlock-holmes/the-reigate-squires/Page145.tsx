@@ -376,13 +376,13 @@ function Page145({
               reproduced:
             </TextNode>
             <Image
-              className='h-[15rem]  max-2md:h-auto  w-auto  mx-auto  dark:hidden'
+              className='mx-auto  h-60  w-auto  max-2md:h-auto  dark:hidden'
               alt='the scrap of paper'
               src={scrapOfPaperLight}
               quality={100}
             />
             <Image
-              className='h-[15rem]  max-2md:h-auto  w-auto  mx-auto  hidden  dark:block'
+              className='mx-auto  hidden  h-60  w-auto  max-2md:h-auto  dark:block'
               alt='the scrap of paper'
               src={scrapOfPaperDark}
               quality={100}
