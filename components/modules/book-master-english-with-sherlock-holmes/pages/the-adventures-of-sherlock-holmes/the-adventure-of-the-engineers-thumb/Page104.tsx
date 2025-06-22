@@ -363,10 +363,10 @@ function Page104({
             </TextNode>
 
             <TextNode>
-              “‘Mr. Hatherley?’ said he, with something of a German accent. ‘You
-              have been recommended to me, Mr. Hatherley, as being a man who is
-              not only proficient in his profession but is also discreet and
-              capable of preserving a secret.’
+              “ ‘Mr. Hatherley?’ said he, with something of a German accent.
+              ‘You have been recommended to me, Mr. Hatherley, as being a man
+              who is not only proficient in his profession but is also discreet
+              and capable of preserving a secret.’
             </TextNode>
 
             <TextNode>
@@ -375,20 +375,20 @@ function Page104({
             </TextNode>
 
             <TextNode>
-              “‘Well, perhaps it is better that I should not tell you that just
+              “ ‘Well, perhaps it is better that I should not tell you that just
               at this moment. I have it from the same source that you are both
               an orphan and a bachelor and are residing alone in London.’
             </TextNode>
 
             <TextNode>
-              “‘That is quite correct,’ I answered; ‘but you will excuse me if I
-              say that I cannot see how all this bears upon my professional
+              “ ‘That is quite correct,’ I answered; ‘but you will excuse me if
+              I say that I cannot see how all this bears upon my professional
               qualifications. I understand that it was on a professional matter
               that you wished to speak to me?’
             </TextNode>
 
             <TextNode>
-              “‘Undoubtedly so. But you will find that all I say is really to
+              “ ‘Undoubtedly so. But you will find that all I say is really to
               the point. I have a professional commission for you, but absolute
               secrecy is quite essential—absolute secrecy, you understand, and
               of course we may expect that more from a man who is alone than
@@ -396,7 +396,7 @@ function Page104({
             </TextNode>
 
             <TextNode>
-              “‘If I promise to keep a secret,’ said I, ‘you may absolutely
+              “ ‘If I promise to keep a secret,’ said I, ‘you may absolutely
               depend upon my doing so.’
             </TextNode>
 
@@ -405,12 +405,12 @@ function Page104({
               had never seen so suspicious and questioning an eye.
             </TextNode>
 
-            <TextNode>“‘Do you promise, then?’ said he at last.</TextNode>
+            <TextNode>“ ‘Do you promise, then?’ said he at last.</TextNode>
 
-            <TextNode>“‘Yes, I promise.’</TextNode>
+            <TextNode>“ ‘Yes, I promise.’</TextNode>
 
             <TextNode>
-              “‘Absolute and complete silence before, during, and after? No
+              “ ‘Absolute and complete silence before, during, and after? No
               reference to the matter at all, either in word or writing?’
             </TextNode>
           </BookRightPartContainer>

@@ -51,19 +51,20 @@ function Page105({
       <BookMainContainer biggerTopPadding>
         <div className='flex  max-2md:flex-col'>
           <BookLeftPartContainer>
-            <TextNode noIndent>“‘I have already given you my word.’</TextNode>
+            <TextNode noIndent>“ ‘I have already given you my word.’</TextNode>
 
             <TextNode>
-              “‘Very good.’ He suddenly sprang up, and darting like lightning
+              “ ‘Very good.’ He suddenly sprang up, and darting like lightning
               across the room he flung open the door. The passage outside was
               empty.
             </TextNode>
 
             <TextNode>
-              “‘That's all right,’ said he, coming back. ‘I know that clerks are
-              sometimes curious as to their master's affairs. Now we can talk in
-              safety.’ He drew up his chair very close to mine and began to
-              stare at me again with the same questioning and thoughtful look.
+              “ ‘That's all right,’ said he, coming back. ‘I know that clerks
+              are sometimes curious as to their master's affairs. Now we can
+              talk in safety.’ He drew up his chair very close to mine and began
+              to stare at me again with the same questioning and thoughtful
+              look.
             </TextNode>
 
             <TextNode>
@@ -74,19 +75,19 @@ function Page105({
             </TextNode>
 
             <TextNode>
-              “‘I beg that you will state your business, sir,’ said I; ‘my time
+              “ ‘I beg that you will state your business, sir,’ said I; ‘my time
               is of value.’ Heaven forgive me for that last sentence, but the
               words came to my lips.
             </TextNode>
 
             <TextNode>
-              “‘How would fifty guineas for a night's work suit you?’ he asked.
+              “ ‘How would fifty guineas for a night's work suit you?’ he asked.
             </TextNode>
 
-            <TextNode>“‘Most admirably.’</TextNode>
+            <TextNode>“ ‘Most admirably.’</TextNode>
 
             <TextNode>
-              “‘I say a night's work, but an hour's would be nearer the mark. I
+              “ ‘I say a night's work, but an hour's would be nearer the mark. I
               simply want your opinion about a hydraulic stamping machine which
               has got out of gear. If you show us what is wrong we shall soon
               set it right ourselves. What do you think of such a commission as
@@ -94,48 +95,50 @@ function Page105({
             </TextNode>
 
             <TextNode>
-              “‘The work appears to be light and the pay munificent.’
+              “ ‘The work appears to be light and the pay munificent.’
             </TextNode>
 
             <TextNode>
-              “‘Precisely so. We shall want you to come to-night by the last
+              “ ‘Precisely so. We shall want you to come to-night by the last
               train.’
             </TextNode>
 
-            <TextNode>“‘Where to?’</TextNode>
+            <TextNode>“ ‘Where to?’</TextNode>
 
             <TextNode>
-              “‘To Eyford, in Berkshire. It is a little place near the borders
+              “ ‘To Eyford, in Berkshire. It is a little place near the borders
               of Oxfordshire, and within seven miles of Reading. There is a
               train from Paddington which would bring you there at about 11.15.’
             </TextNode>
 
-            <TextNode>“‘Very good.’</TextNode>
-
-            <TextNode>“‘I shall come down in a carriage to meet you.’</TextNode>
-
-            <TextNode>“‘There is a drive, then?’</TextNode>
+            <TextNode>“ ‘Very good.’</TextNode>
 
             <TextNode>
-              “‘Yes, our little place is quite out in the country. It is a good
+              “ ‘I shall come down in a carriage to meet you.’
+            </TextNode>
+
+            <TextNode>“ ‘There is a drive, then?’</TextNode>
+
+            <TextNode>
+              “ ‘Yes, our little place is quite out in the country. It is a good
               seven miles from Eyford Station.’
             </TextNode>
 
             <TextNode>
-              “‘Then we can hardly get there before midnight. I suppose there
+              “ ‘Then we can hardly get there before midnight. I suppose there
               would be no chance of a train back. I should be compelled to stop
               the night.’
             </TextNode>
 
-            <TextNode>“‘Yes, we could easily give you a shake-down.’</TextNode>
+            <TextNode>“ ‘Yes, we could easily give you a shake-down.’</TextNode>
 
             <TextNode>
-              “‘That is very awkward. Could I not come at some more convenient
+              “ ‘That is very awkward. Could I not come at some more convenient
               hour?’
             </TextNode>
 
             <TextNode>
-              “‘We have judged it best that you should come late. It is to
+              “ ‘We have judged it best that you should come late. It is to
               recompense you for any inconvenience that we are paying to you, a
               young and unknown man, a fee which would buy an opinion from the
               very heads of your profession. Still, of course, if you would like
@@ -151,25 +154,25 @@ function Page105({
             </TextNode>
 
             <TextNode>
-              “‘Quite so. It is very natural that the pledge of secrecy which we
-              have exacted from you should have aroused your curiosity. I have
-              no wish to commit you to anything without your having it all laid
-              before you. I suppose that we are absolutely safe from
+              “ ‘Quite so. It is very natural that the pledge of secrecy which
+              we have exacted from you should have aroused your curiosity. I
+              have no wish to commit you to anything without your having it all
+              laid before you. I suppose that we are absolutely safe from
               eavesdroppers?’
             </TextNode>
 
-            <TextNode>“‘Entirely.’</TextNode>
+            <TextNode>“ ‘Entirely.’</TextNode>
 
             <TextNode>
-              “‘Then the matter stands thus. You are probably aware that
+              “ ‘Then the matter stands thus. You are probably aware that
               fuller's-earth is a valuable product, and that it is only found in
               one or two places in England?’
             </TextNode>
 
-            <TextNode>“‘I have heard so.’</TextNode>
+            <TextNode>“ ‘I have heard so.’</TextNode>
 
             <TextNode>
-              “‘Some little time ago I bought a small place—a very small
+              “ ‘Some little time ago I bought a small place—a very small
               place—within ten miles of Reading. I was fortunate enough to
               discover that there was a deposit of fuller's-earth in one of my
               fields. On examining it, however, I found that this deposit was a
@@ -197,14 +200,14 @@ function Page105({
             </TextNode>
 
             <TextNode>
-              “‘I quite follow you,’ said I. ‘The only point which I could not
+              “ ‘I quite follow you,’ said I. ‘The only point which I could not
               quite understand was what use you could make of a hydraulic press
               in excavating fuller's-earth, which, as I understand, is dug out
               like gravel from a pit.’
             </TextNode>
 
             <TextNode>
-              “‘Ah!’ said he carelessly, ‘we have our own process. We compress
+              “ ‘Ah!’ said he carelessly, ‘we have our own process. We compress
               the earth into bricks, so as to remove them without revealing what
               they are. But that is a mere detail. I have taken you fully into
               my confidence now, Mr. Hatherley, and I have shown you how I trust
@@ -212,10 +215,10 @@ function Page105({
               11.15.’
             </TextNode>
 
-            <TextNode>“‘I shall certainly be there.’</TextNode>
+            <TextNode>“ ‘I shall certainly be there.’</TextNode>
 
             <TextNode>
-              “‘And not a word to a soul.’ He looked at me with a last long,
+              “ ‘And not a word to a soul.’ He looked at me with a last long,
               questioning gaze, and then, pressing my hand in a cold, dank
               grasp, he hurried from the room.
             </TextNode>
@@ -314,7 +317,7 @@ function Page105({
             </TextNode>
 
             <TextNode>
-              “‘Perhaps you will have the kindness to wait in this room for a
+              “ ‘Perhaps you will have the kindness to wait in this room for a
               few minutes,’ said he, throwing open another door. It was a quiet,
               little, plainly furnished room, with a round table in the centre,
               on which several German books were scattered. Colonel Stark laid
@@ -357,18 +360,18 @@ function Page105({
             </TextNode>
 
             <TextNode>
-              “‘I would go,’ said she, trying hard, as it seemed to me, to speak
-              calmly; ‘I would go. I should not stay here. There is no good for
-              you to do.’
+              “ ‘I would go,’ said she, trying hard, as it seemed to me, to
+              speak calmly; ‘I would go. I should not stay here. There is no
+              good for you to do.’
             </TextNode>
 
             <TextNode>
-              “‘But, madam,’ said I, ‘I have not yet done what I came for. I
+              “ ‘But, madam,’ said I, ‘I have not yet done what I came for. I
               cannot possibly leave until I have seen the machine.’
             </TextNode>
 
             <TextNode>
-              “‘It is not worth your while to wait,’ she went on. ‘You can pass
+              “ ‘It is not worth your while to wait,’ she went on. ‘You can pass
               through the door; no one hinders.’ And then, seeing that I smiled
               and shook my head, she suddenly threw aside her constraint and
               made a step forward, with her hands wrung together. ‘For the love
@@ -400,13 +403,13 @@ function Page105({
             </TextNode>
 
             <TextNode>
-              “‘This is my secretary and manager,’ said the colonel. ‘By the
+              “ ‘This is my secretary and manager,’ said the colonel. ‘By the
               way, I was under the impression that I left this door shut just
               now. I fear that you have felt the draught.’
             </TextNode>
 
             <TextNode>
-              “‘On the contrary,’ said I, ‘I opened the door myself because I
+              “ ‘On the contrary,’ said I, ‘I opened the door myself because I
               felt the room to be a little close.’
             </TextNode>
 
@@ -416,14 +419,14 @@ function Page105({
               you up to see the machine.’
             </TextNode>
 
-            <TextNode>“‘I had better put my hat on, I suppose.’</TextNode>
+            <TextNode>“ ‘I had better put my hat on, I suppose.’</TextNode>
 
-            <TextNode>“‘Oh, no, it is in the house.’</TextNode>
+            <TextNode>“ ‘Oh, no, it is in the house.’</TextNode>
 
-            <TextNode>“‘What, you dig fuller's-earth in the house?’</TextNode>
+            <TextNode>“ ‘What, you dig fuller's-earth in the house?’</TextNode>
 
             <TextNode>
-              “‘No, no. This is only where we compress it. But never mind that.
+              “ ‘No, no. This is only where we compress it. But never mind that.
               All we wish you to do is to examine the machine and to let us know
               what is wrong with it.’
             </TextNode>

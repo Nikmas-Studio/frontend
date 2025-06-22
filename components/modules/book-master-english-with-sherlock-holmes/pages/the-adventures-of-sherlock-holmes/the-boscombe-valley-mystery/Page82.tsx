@@ -102,20 +102,20 @@ function Page82({
               from my father I looked round for it, but it was gone.
             </TextNode>
             <TextNode>
-              “‘Do you mean that it disappeared before you went for help?’
+              “ ‘Do you mean that it disappeared before you went for help?’
             </TextNode>
-            <TextNode>“‘Yes, it was gone.’</TextNode>
-            <TextNode>“‘You cannot say what it was?’</TextNode>
-            <TextNode>“‘No, I had a feeling something was there.’</TextNode>
-            <TextNode>“‘How far from the body?’</TextNode>
-            <TextNode>“‘A dozen yards or so.’</TextNode>
-            <TextNode>“‘And how far from the edge of the wood?’</TextNode>
-            <TextNode>“‘About the same.’</TextNode>
+            <TextNode>“ ‘Yes, it was gone.’</TextNode>
+            <TextNode>“ ‘You cannot say what it was?’</TextNode>
+            <TextNode>“ ‘No, I had a feeling something was there.’</TextNode>
+            <TextNode>“ ‘How far from the body?’</TextNode>
+            <TextNode>“ ‘A dozen yards or so.’</TextNode>
+            <TextNode>“ ‘And how far from the edge of the wood?’</TextNode>
+            <TextNode>“ ‘About the same.’</TextNode>
             <TextNode>
-              “‘Then if it was removed it was while you were within a dozen
+              “ ‘Then if it was removed it was while you were within a dozen
               yards of it?’
             </TextNode>
-            <TextNode>“‘Yes, but with my back towards it.’</TextNode>
+            <TextNode>“ ‘Yes, but with my back towards it.’</TextNode>
             <TextNode>
               “This concluded the examination of the witness.”
             </TextNode>

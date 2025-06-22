@@ -124,12 +124,12 @@ function Page61({
             </TextNode>
 
             <TextNode>
-              “‘It's all up, Morstan,’ he was saying, as they passed my hut. ‘I
+              “ ‘It's all up, Morstan,’ he was saying, as they passed my hut. ‘I
               shall have to send in my papers. I am a ruined man.’
             </TextNode>
 
             <TextNode>
-              “‘Nonsense, old chap!’ said the other, slapping him upon the
+              “ ‘Nonsense, old chap!’ said the other, slapping him upon the
               shoulder. ‘I've had a nasty facer myself, but—’ That was all I
               could hear, but it was enough to set me thinking.
             </TextNode>
@@ -139,15 +139,15 @@ function Page61({
               I took the chance of speaking to him.
             </TextNode>
 
-            <TextNode>“‘I wish to have your advice, major,’ said I.</TextNode>
+            <TextNode>“ ‘I wish to have your advice, major,’ said I.</TextNode>
 
             <TextNode>
-              “‘Well, Small, what is it?’ he asked, taking his cheroot from his
+              “ ‘Well, Small, what is it?’ he asked, taking his cheroot from his
               lips.
             </TextNode>
 
             <TextNode>
-              “‘I wanted to ask you, sir,’ said I, ‘who is the proper person to
+              “ ‘I wanted to ask you, sir,’ said I, ‘who is the proper person to
               whom hidden treasure should be handed over. I know where half a
               million worth lies, and, as I cannot use it myself, I thought
               perhaps the best thing that I could do would be to hand it over to
@@ -156,30 +156,30 @@ function Page61({
             </TextNode>
 
             <TextNode>
-              “‘Half a million, Small?’ he gasped, looking hard at me to see if
+              “ ‘Half a million, Small?’ he gasped, looking hard at me to see if
               I was in earnest.
             </TextNode>
 
             <TextNode>
-              “‘Quite that, sir,—in jewels and pearls. It lies there ready for
+              “ ‘Quite that, sir,—in jewels and pearls. It lies there ready for
               anyone. And the queer thing about it is that the real owner is
               outlawed and cannot hold property, so that it belongs to the first
               comer.’
             </TextNode>
 
             <TextNode>
-              “‘To government, Small,’ he stammered,—‘to government.’ But he
+              “ ‘To government, Small,’ he stammered,—‘to government.’ But he
               said it in a halting fashion, and I knew in my heart that I had
               got him.
             </TextNode>
 
             <TextNode>
-              “‘You think, then, sir, that I should give the information to the
+              “ ‘You think, then, sir, that I should give the information to the
               Governor-General?’ said I, quietly.
             </TextNode>
 
             <TextNode>
-              “‘Well, well, you must not do anything rash, or that you might
+              “ ‘Well, well, you must not do anything rash, or that you might
               repent. Let me hear all about it, Small. Give me the facts.’
             </TextNode>
 
@@ -191,7 +191,7 @@ function Page61({
             </TextNode>
 
             <TextNode>
-              “‘This is a very important matter, Small,’ he said, at last. ‘You
+              “ ‘This is a very important matter, Small,’ he said, at last. ‘You
               must not say a word to any one about it, and I shall see you again
               soon.’
             </TextNode>
@@ -203,20 +203,20 @@ function Page61({
             </TextNode>
 
             <TextNode>
-              “‘I want you just to let Captain Morstan hear that story from your
-              own lips, Small,’ said he.
+              “ ‘I want you just to let Captain Morstan hear that story from
+              your own lips, Small,’ said he.
             </TextNode>
 
             <TextNode>“I repeated it as I had told it before.</TextNode>
 
             <TextNode>
-              “‘It rings true, eh?’ said he. ‘It's good enough to act upon?’
+              “ ‘It rings true, eh?’ said he. ‘It's good enough to act upon?’
             </TextNode>
 
             <TextNode>“Captain Morstan nodded.</TextNode>
 
             <TextNode>
-              “‘Look here, Small,’ said the major. ‘We have been talking it
+              “ ‘Look here, Small,’ said the major. ‘We have been talking it
               over, my friend here and I, and we have come to the conclusion
               that this secret of yours is hardly a government matter, after
               all, but is a private concern of your own, which of course you
@@ -228,29 +228,29 @@ function Page61({
             </TextNode>
 
             <TextNode>
-              “‘Why, as to that, gentlemen,’ I answered, trying also to be cool,
-              but feeling as excited as he did, ‘there is only one bargain which
-              a man in my position can make. I shall want you to help me to my
-              freedom, and to help my three companions to theirs. We shall then
-              take yo into partnership, and give you a fifth share to divide
-              between you.’
+              “ ‘Why, as to that, gentlemen,’ I answered, trying also to be
+              cool, but feeling as excited as he did, ‘there is only one bargain
+              which a man in my position can make. I shall want you to help me
+              to my freedom, and to help my three companions to theirs. We shall
+              then take yo into partnership, and give you a fifth share to
+              divide between you.’
             </TextNode>
 
             <TextNode>
-              “‘Hum!’ said he. ‘A fifth share! That is not very tempting.’
+              “ ‘Hum!’ said he. ‘A fifth share! That is not very tempting.’
             </TextNode>
 
             <TextNode>
-              “‘It would come to fifty thousand apiece,’ said I.
+              “ ‘It would come to fifty thousand apiece,’ said I.
             </TextNode>
 
             <TextNode>
-              “‘But how can we gain your freedom? You know very well that you
+              “ ‘But how can we gain your freedom? You know very well that you
               ask an impossibility.’
             </TextNode>
 
             <TextNode>
-              “‘Nothing of the sort,’ I answered. ‘I have thought it all out to
+              “ ‘Nothing of the sort,’ I answered. ‘I have thought it all out to
               the last detail. The only bar to our escape is that we can get no
               boat fit for the voyage, and no provisions to last us for so long
               a time. There are plenty of little yachts and yawls at Calcutta or
@@ -260,25 +260,26 @@ function Page61({
               the bargain.’
             </TextNode>
 
-            <TextNode>“‘If there were only one,’ he said.</TextNode>
+            <TextNode>“ ‘If there were only one,’ he said.</TextNode>
 
             <TextNode>
-              “‘None or all,’ I answered. ‘We have sworn it. The four of us must
-              always act together.’
+              “ ‘None or all,’ I answered. ‘We have sworn it. The four of us
+              must always act together.’
             </TextNode>
 
             <TextNode>
-              “‘You see, Morstan,’ said he, ‘Small is a man of his word. He does
-              not flinch from his friend. I think we may very well trust him.’
+              “ ‘You see, Morstan,’ said he, ‘Small is a man of his word. He
+              does not flinch from his friend. I think we may very well trust
+              him.’
             </TextNode>
 
             <TextNode>
-              “‘It's a dirty business,’ the other answered. ‘Yet, as you say,
+              “ ‘It's a dirty business,’ the other answered. ‘Yet, as you say,
               the money would save our commissions handsomely.’
             </TextNode>
 
             <TextNode>
-              “‘Well, Small,’ said the major, ‘we must, I suppose, try and meet
+              “ ‘Well, Small,’ said the major, ‘we must, I suppose, try and meet
               you. We must first, of course, test the truth of your story. Tell
               me where the box is hid, and I shall get leave of absence and go
               back to India in the monthly relief-boat to inquire into the
@@ -286,18 +287,18 @@ function Page61({
             </TextNode>
 
             <TextNode>
-              “‘Not so fast,’ said I, growing colder as he got hot. ‘I must have
-              the consent of my three comrades. I tell you that it is four or
-              none with us.’
+              “ ‘Not so fast,’ said I, growing colder as he got hot. ‘I must
+              have the consent of my three comrades. I tell you that it is four
+              or none with us.’
             </TextNode>
 
             <TextNode>
-              “‘Nonsense!’ he broke in. ‘What have three black fellows to do
+              “ ‘Nonsense!’ he broke in. ‘What have three black fellows to do
               with our agreement?’
             </TextNode>
 
             <TextNode>
-              “‘Black or blue,’ said I, ‘they are in with me, and we all go
+              “ ‘Black or blue,’ said I, ‘they are in with me, and we all go
               together.’
             </TextNode>
 

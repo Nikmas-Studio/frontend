@@ -60,27 +60,27 @@ function Page120({
             </TextNode>
 
             <TextNode>
-              “‘I am afraid that that is quite impossible,’ said I. He had been
+              “ ‘I am afraid that that is quite impossible,’ said I. He had been
               watching me eagerly out of his small eyes, and I could see a
               shadow pass over his face as I spoke.
             </TextNode>
 
             <TextNode>
-              “‘I am afraid that it is quite essential,’ said he. ‘It is a
+              “ ‘I am afraid that it is quite essential,’ said he. ‘It is a
               little fancy of my wife's, and ladies' fancies, you know, madam,
               ladies' fancies must be consulted. And so you won't cut your
               hair?’
             </TextNode>
 
             <TextNode>
-              “‘No, sir, I really could not,’ I answered firmly.
+              “ ‘No, sir, I really could not,’ I answered firmly.
             </TextNode>
 
             <TextNode>
-              “‘Ah, very well; then that quite settles the matter. It is a pity,
-              because in other respects you would really have done very nicely.
-              In that case, Miss Stoper, I had best inspect a few more of your
-              young ladies.’
+              “ ‘Ah, very well; then that quite settles the matter. It is a
+              pity, because in other respects you would really have done very
+              nicely. In that case, Miss Stoper, I had best inspect a few more
+              of your young ladies.’
             </TextNode>
 
             <TextNode>
@@ -91,14 +91,14 @@ function Page120({
             </TextNode>
 
             <TextNode>
-              “‘Do you desire your name to be kept upon the books?’ she asked.
+              “ ‘Do you desire your name to be kept upon the books?’ she asked.
             </TextNode>
 
-            <TextNode>“‘If you please, Miss Stoper.’</TextNode>
+            <TextNode>“ ‘If you please, Miss Stoper.’</TextNode>
 
             <TextNode>
-              “‘Well, really, it seems rather useless, since you refuse the most
-              excellent offers in this fashion,’ said she sharply. ‘You can
+              “ ‘Well, really, it seems rather useless, since you refuse the
+              most excellent offers in this fashion,’ said she sharply. ‘You can
               hardly expect us to exert ourselves to find another such opening
               for you. Good-day to you, Miss Hunter.’ She struck a gong upon the
               table, and I was shown out by the page.
@@ -122,14 +122,14 @@ function Page120({
 
             <Indent>
               <TextNode className='italic' noIndent>
-                “‘The Copper Beeches, near Winchester.
+                “ ‘The Copper Beeches, near Winchester.
               </TextNode>
               <TextNode className='italic' noIndent>
-                “‘Dear Miss Hunter:
+                “ ‘Dear Miss Hunter:
               </TextNode>
               <TextNode noIndent>
-                “‘Miss Stoper has very kindly given me your address, and I write
-                from here to ask you whether you have reconsidered your
+                “ ‘Miss Stoper has very kindly given me your address, and I
+                write from here to ask you whether you have reconsidered your
                 decision. My wife is very anxious that you should come, for she
                 has been much attracted by my description of you. We are willing
                 to give £30 a quarter, or £120 a year, so as to recompense you
@@ -150,10 +150,10 @@ function Page120({
                 you with the dog-cart at Winchester. Let me know your train.
               </TextNode>
               <TextNode className='italic' noIndent>
-                “‘Yours faithfully,
+                “ ‘Yours faithfully,
               </TextNode>
               <TextNode className='italic' noIndent>
-                “‘Jephro Rucastle.’
+                “ ‘Jephro Rucastle.’
               </TextNode>
             </Indent>
             <TextNode noIndent>
@@ -510,7 +510,7 @@ function Page120({
             </TextNode>
 
             <TextNode>
-              “‘Oh, yes,’ said he, turning to me, ‘we are very much obliged to
+              “ ‘Oh, yes,’ said he, turning to me, ‘we are very much obliged to
               you, Miss Hunter, for falling in with our whims so far as to cut
               your hair. I assure you that it has not detracted in the tiniest
               iota from your appearance. We shall now see how the electric-blue

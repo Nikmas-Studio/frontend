@@ -320,7 +320,7 @@ function Page35({
             </TextNode>
 
             <TextNode className='text-center  italic'>
-              “‘Populus me sibilat, at mihi plaudo
+              “ ‘Populus me sibilat, at mihi plaudo
               <br /> Ipse domi simul ac nummos contemplar in arca.’”
             </TextNode>
           </BookRightPartContainer>

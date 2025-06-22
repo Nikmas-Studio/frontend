@@ -52,19 +52,19 @@ function Page100({
         <div className='flex  max-2md:flex-col'>
           <BookLeftPartContainer>
             <TextNode noIndent>
-              “‘No, I have not. It must be those wretched gipsies in the
+              “ ‘No, I have not. It must be those wretched gipsies in the
               plantation.’
             </TextNode>
 
             <TextNode>
-              “‘Very likely. And yet if it were on the lawn, I wonder that you
+              “ ‘Very likely. And yet if it were on the lawn, I wonder that you
               did not hear it also.’
             </TextNode>
 
-            <TextNode>“‘Ah, but I sleep more heavily than you.’</TextNode>
+            <TextNode>“ ‘Ah, but I sleep more heavily than you.’</TextNode>
 
             <TextNode>
-              “‘Well, it is of no great consequence, at any rate.’ She smiled
+              “ ‘Well, it is of no great consequence, at any rate.’ She smiled
               back at me, closed my door, and a few moments later I heard her
               key turn in the lock.”
             </TextNode>

@@ -253,7 +253,7 @@ function Page119({
             </TextNode>
 
             <TextNode>
-              “‘That will do,’ said he; ‘I could not ask for anything better.
+              “ ‘That will do,’ said he; ‘I could not ask for anything better.
               Capital! capital!’ He seemed quite enthusiastic and rubbed his
               hands together in the most genial fashion. He was such a
               comfortable-looking man that it was quite a pleasure to look at
@@ -261,37 +261,37 @@ function Page119({
             </TextNode>
 
             <TextNode>
-              “‘You are looking for a situation, miss?’ he asked.
+              “ ‘You are looking for a situation, miss?’ he asked.
             </TextNode>
 
-            <TextNode>“‘Yes, sir.’</TextNode>
+            <TextNode>“ ‘Yes, sir.’</TextNode>
 
-            <TextNode>“‘As governess?’</TextNode>
+            <TextNode>“ ‘As governess?’</TextNode>
 
-            <TextNode>“‘Yes, sir.’</TextNode>
+            <TextNode>“ ‘Yes, sir.’</TextNode>
 
-            <TextNode>“‘And what salary do you ask?’</TextNode>
+            <TextNode>“ ‘And what salary do you ask?’</TextNode>
 
             <TextNode>
-              “‘I had £4 a month in my last place with Colonel Spence Munro.’
+              “ ‘I had £4 a month in my last place with Colonel Spence Munro.’
             </TextNode>
 
             <TextNode>
-              “‘Oh, tut, tut! sweating—rank sweating!’ he cried, throwing his
+              “ ‘Oh, tut, tut! sweating—rank sweating!’ he cried, throwing his
               fat hands out into the air like a man who is in a boiling passion.
               ‘How could anyone offer so pitiful a sum to a lady with such
               attractions and accomplishments?’
             </TextNode>
 
             <TextNode>
-              “‘My accomplishments, sir, may be less than you imagine,’ said I.
+              “ ‘My accomplishments, sir, may be less than you imagine,’ said I.
               ‘A little French, a little German, music, and drawing—’
             </TextNode>
 
             <TextNode>
-              “‘Tut, tut!’ he cried. ‘This is all quite beside the question. The
-              point is, have you or have you not the bearing and deportment of a
-              lady? There it is in a nutshell. If you have not, you are not
+              “ ‘Tut, tut!’ he cried. ‘This is all quite beside the question.
+              The point is, have you or have you not the bearing and deportment
+              of a lady? There it is in a nutshell. If you have not, you are not
               fitted for the rearing of a child who may some day play a
               considerable part in the history of the country. But if you have
               why, then, how could any gentleman ask you to condescend to accept
@@ -307,7 +307,7 @@ function Page119({
             </TextNode>
 
             <TextNode>
-              “‘It is also my custom,’ said he, smiling in the most pleasant
+              “ ‘It is also my custom,’ said he, smiling in the most pleasant
               fashion until his eyes were just two little shining slits amid the
               white creases of his face, ‘to advance to my young ladies half
               their salary beforehand, so that they may meet any little expenses
@@ -322,21 +322,21 @@ function Page119({
               little more before I quite committed myself.
             </TextNode>
 
-            <TextNode>“‘May I ask where you live, sir?’ said I.</TextNode>
+            <TextNode>“ ‘May I ask where you live, sir?’ said I.</TextNode>
 
             <TextNode>
-              “‘Hampshire. Charming rural place. The Copper Beeches, five miles
+              “ ‘Hampshire. Charming rural place. The Copper Beeches, five miles
               on the far side of Winchester. It is the most lovely country, my
               dear young lady, and the dearest old country-house.’
             </TextNode>
 
             <TextNode>
-              “‘And my duties, sir? I should be glad to know what they would
+              “ ‘And my duties, sir? I should be glad to know what they would
               be.’
             </TextNode>
 
             <TextNode>
-              “‘One child—one dear little romper just six years old. Oh, if you
+              “ ‘One child—one dear little romper just six years old. Oh, if you
               could see him killing cockroaches with a slipper! Smack! smack!
               smack! Three gone before you could wink!’ He leaned back in his
               chair and laughed his eyes into his head again.
@@ -349,40 +349,40 @@ function Page119({
             </TextNode>
 
             <TextNode>
-              “‘My sole duties, then,’ I asked, ‘are to take charge of a single
+              “ ‘My sole duties, then,’ I asked, ‘are to take charge of a single
               child?’
             </TextNode>
 
             <TextNode>
-              “‘No, no, not the sole, not the sole, my dear young lady,’ he
+              “ ‘No, no, not the sole, not the sole, my dear young lady,’ he
               cried. ‘Your duty would be, as I am sure your good sense would
               suggest, to obey any little commands my wife might give, provided
               always that they were such commands as a lady might with propriety
               obey. You see no difficulty, heh?’
             </TextNode>
 
-            <TextNode>“‘I should be happy to make myself useful.’</TextNode>
+            <TextNode>“ ‘I should be happy to make myself useful.’</TextNode>
 
             <TextNode>
-              “‘Quite so. In dress now, for example. We are faddy people, you
+              “ ‘Quite so. In dress now, for example. We are faddy people, you
               know—faddy but kind-hearted. If you were asked to wear any dress
               which we might give you, you would not object to our little whim.
               Heh?’
             </TextNode>
 
             <TextNode>
-              “‘No,’ said I, considerably astonished at his words.
+              “ ‘No,’ said I, considerably astonished at his words.
             </TextNode>
 
             <TextNode>
-              “‘Or to sit here, or sit there, that would not be offensive to
+              “ ‘Or to sit here, or sit there, that would not be offensive to
               you?’
             </TextNode>
 
-            <TextNode>“‘Oh, no.’</TextNode>
+            <TextNode>“ ‘Oh, no.’</TextNode>
 
             <TextNode>
-              “‘Or to cut your hair quite short before you come to us?’
+              “ ‘Or to cut your hair quite short before you come to us?’
             </TextNode>
           </BookRightPartContainer>
         </div>

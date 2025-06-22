@@ -67,10 +67,10 @@ function Page60({
               appeared again coming slowly in our direction.
             </TextNode>
 
-            <TextNode>“‘Here they are!’ I exclaimed.</TextNode>
+            <TextNode>“ ‘Here they are!’ I exclaimed.</TextNode>
 
             <TextNode>
-              “‘You will challenge him, Sahib, as usual,’ whispered Abdullah.
+              “ ‘You will challenge him, Sahib, as usual,’ whispered Abdullah.
               ‘Give him no cause for fear. Send us in with him, and we shall do
               the rest while you stay here on guard. Have the lantern ready to
               uncover, that we may be sure that it is indeed the man.’
@@ -84,10 +84,10 @@ function Page60({
               them.
             </TextNode>
 
-            <TextNode>“‘Who goes there?’ said I, in a subdued voice.</TextNode>
+            <TextNode>“ ‘Who goes there?’ said I, in a subdued voice.</TextNode>
 
             <TextNode>
-              “‘Friends,’ came the answer. I uncovered my lantern and threw a
+              “ ‘Friends,’ came the answer. I uncovered my lantern and threw a
               flood of light upon them. The first was an enormous Sikh, with a
               black beard which swept nearly down to his cummerbund. Outside of
               a show I have never seen so tall a man. The other was a little,
@@ -103,7 +103,7 @@ function Page60({
             </TextNode>
 
             <TextNode>
-              “‘Your protection, Sahib,’ he panted,—‘your protection for the
+              “ ‘Your protection, Sahib,’ he panted,—‘your protection for the
               unhappy merchant Achmet. I have travelled across Rajpootana that I
               might seek the shelter of the fort at Agra. I have been robbed and
               beaten and abused because I have been the friend of the Company.
@@ -111,10 +111,10 @@ function Page60({
               poor possessions.’
             </TextNode>
 
-            <TextNode>“‘What have you in the bundle?’ I asked.</TextNode>
+            <TextNode>“ ‘What have you in the bundle?’ I asked.</TextNode>
 
             <TextNode>
-              “‘An iron box,’ he answered, ‘which contains one or two little
+              “ ‘An iron box,’ he answered, ‘which contains one or two little
               family matters which are of no value to others, but which I should
               be sorry to lose. Yet I am not a beggar; and I shall reward you,
               young Sahib, and your governor also, if he will give me the
@@ -128,7 +128,7 @@ function Page60({
             </TextNode>
 
             <TextNode>
-              “‘Take him to the main guard,’ said I. The two Sikhs closed in
+              “ ‘Take him to the main guard,’ said I. The two Sikhs closed in
               upon him on each side, and the giant walked behind, while they
               marched in through the dark gate-way. Never was a man so compassed
               round with death. I remained at the gate-way with the lantern.

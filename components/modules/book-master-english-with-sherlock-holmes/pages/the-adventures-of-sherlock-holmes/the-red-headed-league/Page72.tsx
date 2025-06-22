@@ -52,21 +52,21 @@ function Page72({
         <div className='flex  max-2md:flex-col'>
           <BookLeftPartContainer>
             <TextNode noIndent>
-              “‘Have you never heard of the League of the Red-headed Men?’ he
+              “ ‘Have you never heard of the League of the Red-headed Men?’ he
               asked with his eyes open.
             </TextNode>
 
-            <TextNode>“‘Never.’</TextNode>
+            <TextNode>“ ‘Never.’</TextNode>
 
             <TextNode>
-              “‘Why, I wonder at that, for you are eligible yourself for one of
+              “ ‘Why, I wonder at that, for you are eligible yourself for one of
               the vacancies.’
             </TextNode>
 
-            <TextNode>“‘And what are they worth?’ I asked.</TextNode>
+            <TextNode>“ ‘And what are they worth?’ I asked.</TextNode>
 
             <TextNode>
-              “‘Oh, merely a couple of hundred a year, but the work is slight,
+              “ ‘Oh, merely a couple of hundred a year, but the work is slight,
               and it need not interfere very much with one's other occupations.’
             </TextNode>
 
@@ -76,10 +76,10 @@ function Page72({
               extra couple of hundred would have been very handy.
             </TextNode>
 
-            <TextNode>“‘Tell me all about it,’ said I.</TextNode>
+            <TextNode>“ ‘Tell me all about it,’ said I.</TextNode>
 
             <TextNode>
-              “‘Well,’ said he, showing me the advertisement, ‘you can see for
+              “ ‘Well,’ said he, showing me the advertisement, ‘you can see for
               yourself that the League has a vacancy, and there is the address
               where you should apply for particulars. As far as I can make out,
               the League was founded by an American millionaire, Ezekiah
@@ -92,12 +92,12 @@ function Page72({
             </TextNode>
 
             <TextNode>
-              “‘But,’ said I, ‘there would be millions of red-headed men who
+              “ ‘But,’ said I, ‘there would be millions of red-headed men who
               would apply.’
             </TextNode>
 
             <TextNode>
-              “‘Not so many as you might think,’ he answered. ‘You see it is
+              “ ‘Not so many as you might think,’ he answered. ‘You see it is
               really confined to Londoners, and to grown men. This American had
               started from London when he was young, and he wanted to do the old
               town a good turn. Then, again, I have heard it is no use your
@@ -159,12 +159,12 @@ function Page72({
             </TextNode>
 
             <TextNode>
-              “‘This is Mr. Jabez Wilson,’ said my assistant, ‘and he is willing
-              to fill a vacancy in the League.’
+              “ ‘This is Mr. Jabez Wilson,’ said my assistant, ‘and he is
+              willing to fill a vacancy in the League.’
             </TextNode>
 
             <TextNode>
-              “‘And he is admirably suited for it,’ the other answered. ‘He has
+              “ ‘And he is admirably suited for it,’ the other answered. ‘He has
               every requirement. I cannot recall when I have seen anything so
               fine.’ He took a step backward, cocked his head on one side, and
               gazed at my hair until I felt quite bashful. Then suddenly he
@@ -173,10 +173,10 @@ function Page72({
             </TextNode>
 
             <TextNode>
-              “‘It would be injustice to hesitate,’ said he. ‘You will, however,
-              I am sure, excuse me for taking an obvious precaution.’ With that
-              he seized my hair in both his hands, and tugged until I yelled
-              with the pain. ‘There is water in your eyes,’ said he as he
+              “ ‘It would be injustice to hesitate,’ said he. ‘You will,
+              however, I am sure, excuse me for taking an obvious precaution.’
+              With that he seized my hair in both his hands, and tugged until I
+              yelled with the pain. ‘There is water in your eyes,’ said he as he
               released me. ‘I perceive that all is as it should be. But we have
               to be careful, for we have twice been deceived by wigs and once by
               paint. I could tell you tales of cobbler's wax which would disgust
@@ -188,7 +188,7 @@ function Page72({
             </TextNode>
 
             <TextNode>
-              “‘My name,’ said he, ‘is Mr. Duncan Ross, and I am myself one of
+              “ ‘My name,’ said he, ‘is Mr. Duncan Ross, and I am myself one of
               the pensioners upon the fund left by our noble benefactor. Are you
               a married man, Mr. Wilson? Have you a family?’
             </TextNode>
@@ -198,7 +198,7 @@ function Page72({
             <TextNode>“His face fell immediately.</TextNode>
 
             <TextNode>
-              “‘Dear me!’ he said gravely, ‘that is very serious indeed! I am
+              “ ‘Dear me!’ he said gravely, ‘that is very serious indeed! I am
               sorry to hear you say that. The fund was, of course, for the
               propagation and spread of the red-heads as well as for their
               maintenance. It is exceedingly unfortunate that you should be a
@@ -213,25 +213,25 @@ function Page72({
           </BookLeftPartContainer>
           <BookRightPartContainer>
             <TextNode noIndent>
-              “‘In the case of another,’ said he, ‘the objection might be fatal,
-              but we must stretch a point in favour of a man with such a head of
-              hair as yours. When shall you be able to enter upon your new
-              duties?’
+              “ ‘In the case of another,’ said he, ‘the objection might be
+              fatal, but we must stretch a point in favour of a man with such a
+              head of hair as yours. When shall you be able to enter upon your
+              new duties?’
             </TextNode>
 
             <TextNode>
-              “‘Well, it is a little awkward, for I have a business already,’
+              “ ‘Well, it is a little awkward, for I have a business already,’
               said&nbsp;I.
             </TextNode>
 
             <TextNode>
-              “‘Oh, never mind about that, Mr. Wilson!’ said Vincent Spaulding.
+              “ ‘Oh, never mind about that, Mr. Wilson!’ said Vincent Spaulding.
               ‘I should be able to look after that for you.’
             </TextNode>
 
-            <TextNode>“‘What would be the hours?’ I asked.</TextNode>
+            <TextNode>“ ‘What would be the hours?’ I asked.</TextNode>
 
-            <TextNode>“‘Ten to two.’</TextNode>
+            <TextNode>“ ‘Ten to two.’</TextNode>
 
             <TextNode>
               “Now a pawnbroker's business is mostly done of an evening, Mr.
@@ -242,49 +242,49 @@ function Page72({
             </TextNode>
 
             <TextNode>
-              “‘That would suit me very well,’ said I. ‘And the pay?’
+              “ ‘That would suit me very well,’ said I. ‘And the pay?’
             </TextNode>
 
-            <TextNode>“‘Is £4 a week.’</TextNode>
+            <TextNode>“ ‘Is £4 a week.’</TextNode>
 
-            <TextNode>“‘And the work?’</TextNode>
+            <TextNode>“ ‘And the work?’</TextNode>
 
-            <TextNode>“‘Is purely nominal.’</TextNode>
+            <TextNode>“ ‘Is purely nominal.’</TextNode>
 
-            <TextNode>“‘What do you call purely nominal?’</TextNode>
+            <TextNode>“ ‘What do you call purely nominal?’</TextNode>
 
             <TextNode>
-              “‘Well, you have to be in the office, or at least in the building,
-              the whole time. If you leave, you forfeit your whole position
-              forever. The will is very clear upon that point. You don't comply
-              with the conditions if you budge from the office during that
-              time.’
+              “ ‘Well, you have to be in the office, or at least in the
+              building, the whole time. If you leave, you forfeit your whole
+              position forever. The will is very clear upon that point. You
+              don't comply with the conditions if you budge from the office
+              during that time.’
             </TextNode>
 
             <TextNode>
-              “‘It's only four hours a day, and I should not think of leaving,’
+              “ ‘It's only four hours a day, and I should not think of leaving,’
               said I.
             </TextNode>
 
             <TextNode>
-              “‘No excuse will avail,’ said Mr. Duncan Ross; ‘neither sickness
+              “ ‘No excuse will avail,’ said Mr. Duncan Ross; ‘neither sickness
               nor business nor anything else. There you must stay, or you lose
               your billet.’
             </TextNode>
 
-            <TextNode>“‘And the work?’</TextNode>
+            <TextNode>“ ‘And the work?’</TextNode>
 
             <TextNode>
-              “‘Is to copy out the “Encyclopaedia Britannica.” There is the
+              “ ‘Is to copy out the “Encyclopaedia Britannica.” There is the
               first volume of it in that press. You must find your own ink,
               pens, and blotting-paper, but we provide this table and chair.
               Will you be ready to-morrow?’
             </TextNode>
 
-            <TextNode>“‘Certainly,’ I answered.</TextNode>
+            <TextNode>“ ‘Certainly,’ I answered.</TextNode>
 
             <TextNode>
-              “‘Then, good-bye, Mr. Jabez Wilson, and let me congratulate you
+              “ ‘Then, good-bye, Mr. Jabez Wilson, and let me congratulate you
               once more on the important position which you have been fortunate
               enough to gain.’ He bowed me out of the room and I went home with
               my assistant, hardly knowing what to say or do, I was so pleased
@@ -392,14 +392,14 @@ function Page72({
               answered that the name was new to him.
             </TextNode>
 
-            <TextNode>“‘Well,’ said I, ‘the gentleman at No. 4.’</TextNode>
+            <TextNode>“ ‘Well,’ said I, ‘the gentleman at No. 4.’</TextNode>
 
-            <TextNode>“‘What, the red-headed man?’</TextNode>
+            <TextNode>“ ‘What, the red-headed man?’</TextNode>
 
-            <TextNode>“‘Yes.’</TextNode>
+            <TextNode>“ ‘Yes.’</TextNode>
 
             <TextNode>
-              “‘Oh,’ said he, ‘his name was William Morris. He was a solicitor
+              “ ‘Oh,’ said he, ‘his name was William Morris. He was a solicitor
               and was using my room as a temporary convenience until his new
               premises were ready. He moved out yesterday.’
             </TextNode>

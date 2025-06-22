@@ -52,28 +52,29 @@ function Page114({
         <div className='flex  max-2md:flex-col'>
           <BookLeftPartContainer>
             <TextNode noIndent>
-              “‘Tell me, dad,’ said she, looking, I thought, a little disturbed,
-              ‘did you give Lucy, the maid, leave to go out to-night?’
+              “ ‘Tell me, dad,’ said she, looking, I thought, a little
+              disturbed, ‘did you give Lucy, the maid, leave to go out
+              to-night?’
             </TextNode>
 
-            <TextNode>“‘Certainly not.’</TextNode>
+            <TextNode>“ ‘Certainly not.’</TextNode>
 
             <TextNode>
-              “‘She came in just now by the back door. I have no doubt that she
+              “ ‘She came in just now by the back door. I have no doubt that she
               has only been to the side gate to see someone, but I think that it
               is hardly safe and should be stopped.’
             </TextNode>
 
             <TextNode>
-              “‘You must speak to her in the morning, or I will if you prefer
+              “ ‘You must speak to her in the morning, or I will if you prefer
               it. Are you sure that everything is fastened?’
             </TextNode>
 
-            <TextNode>“‘Quite sure, dad.’</TextNode>
+            <TextNode>“ ‘Quite sure, dad.’</TextNode>
 
             <TextNode>
-              “‘Then, good-night.’ I kissed her and went up to my bedroom again,
-              where I was soon asleep.
+              “ ‘Then, good-night.’ I kissed her and went up to my bedroom
+              again, where I was soon asleep.
             </TextNode>
 
             <TextNode>
@@ -100,8 +101,8 @@ function Page114({
             </TextNode>
 
             <TextNode>
-              “‘Arthur!’ I screamed, ‘you villain! you thief! How dare you touch
-              that coronet?’
+              “ ‘Arthur!’ I screamed, ‘you villain! you thief! How dare you
+              touch that coronet?’
             </TextNode>
 
             <TextNode>
@@ -115,43 +116,43 @@ function Page114({
             </TextNode>
 
             <TextNode>
-              “‘You blackguard!’ I shouted, beside myself with rage. ‘You have
+              “ ‘You blackguard!’ I shouted, beside myself with rage. ‘You have
               destroyed it! You have dishonoured me forever! Where are the
               jewels which you have stolen?’
             </TextNode>
 
-            <TextNode>“‘Stolen!’ he cried.</TextNode>
+            <TextNode>“ ‘Stolen!’ he cried.</TextNode>
 
             <TextNode>
-              “‘Yes, thief!’ I roared, shaking him by the shoulder.
+              “ ‘Yes, thief!’ I roared, shaking him by the shoulder.
             </TextNode>
 
             <TextNode>
-              “‘There are none missing. There cannot be any missing,’ said he.
+              “ ‘There are none missing. There cannot be any missing,’ said he.
             </TextNode>
 
             <TextNode>
-              “‘There are three missing. And you know where they are. Must I
+              “ ‘There are three missing. And you know where they are. Must I
               call you a liar as well as a thief? Did I not see you trying to
               tear off another piece?’
             </TextNode>
 
             <TextNode>
-              “‘You have called me names enough,’ said he, ‘I will not stand it
+              “ ‘You have called me names enough,’ said he, ‘I will not stand it
               any longer. I shall not say another word about this business,
               since you have chosen to insult me. I will leave your house in the
               morning and make my own way in the world.’
             </TextNode>
 
             <TextNode>
-              “‘You shall leave it in the hands of the police!’ I cried half-mad
-              with grief and rage. ‘I shall have this matter probed to the
-              bottom.’
+              “ ‘You shall leave it in the hands of the police!’ I cried
+              half-mad with grief and rage. ‘I shall have this matter probed to
+              the bottom.’
             </TextNode>
 
             <TextNode>
-              “‘You shall learn nothing from me,’ said he with a passion such as
-              I should not have thought was in his nature. ‘If you choose to
+              “ ‘You shall learn nothing from me,’ said he with a passion such
+              as I should not have thought was in his nature. ‘If you choose to
               call the police, let the police find what they can.’
             </TextNode>
 
@@ -170,13 +171,13 @@ function Page114({
             </TextNode>
 
             <TextNode>
-              “‘At least,’ said he, ‘you will not have me arrested at once. It
+              “ ‘At least,’ said he, ‘you will not have me arrested at once. It
               would be to your advantage as well as mine if I might leave the
               house for five minutes.’
             </TextNode>
 
             <TextNode>
-              “‘That you may get away, or perhaps that you may conceal what you
+              “ ‘That you may get away, or perhaps that you may conceal what you
               have stolen,’ said I. And then, realising the dreadful position in
               which I was placed, I implored him to remember that not only my
               honour but that of one who was far greater than I was at stake;
@@ -186,14 +187,14 @@ function Page114({
             </TextNode>
 
             <TextNode>
-              “‘You may as well face the matter,’ said I; ‘you have been caught
+              “ ‘You may as well face the matter,’ said I; ‘you have been caught
               in the act, and no confession could make your guilt more heinous.
               If you but make such reparation as is in your power, by telling us
               where the beryls are, all shall be forgiven and forgotten.’
             </TextNode>
 
             <TextNode>
-              “‘Keep your forgiveness for those who ask for it,’ he answered,
+              “ ‘Keep your forgiveness for those who ask for it,’ he answered,
               turning away from me with a sneer. I saw that he was too hardened
               for any words of mine to influence him. There was but one way for
               it. I called in the inspector and gave him into custody. A search

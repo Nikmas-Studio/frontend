@@ -52,17 +52,17 @@ function Page131({
         <div className='flex  max-2md:flex-col'>
           <BookLeftPartContainer>
             <TextNode noIndent>
-              “‘What may you be wantin'?’ she asked, in a Northern accent.
+              “ ‘What may you be wantin'?’ she asked, in a Northern accent.
             </TextNode>
 
             <TextNode>
-              “‘I am your neighbor over yonder,’ said I, nodding towards my
+              “ ‘I am your neighbor over yonder,’ said I, nodding towards my
               house. ‘I see that you have only just moved in, so I thought that
               if I could be of any help to you in any—’
             </TextNode>
 
             <TextNode>
-              “‘Ay, we'll just ask ye when we want ye,’ said she, and shut the
+              “ ‘Ay, we'll just ask ye when we want ye,’ said she, and shut the
               door in my face. Annoyed at the churlish rebuff, I turned my back
               and walked home. All evening, though I tried to think of other
               things, my mind would still turn to the apparition at the window
@@ -108,7 +108,7 @@ function Page131({
             </TextNode>
 
             <TextNode>
-              “‘Where in the world have you been, Effie?’ I asked as she
+              “ ‘Where in the world have you been, Effie?’ I asked as she
               entered.
             </TextNode>
 
@@ -122,14 +122,14 @@ function Page131({
             </TextNode>
 
             <TextNode>
-              “‘You awake, Jack!’ she cried, with a nervous laugh. ‘Why, I
+              “ ‘You awake, Jack!’ she cried, with a nervous laugh. ‘Why, I
               thought that nothing could awake you.’
             </TextNode>
 
-            <TextNode>“‘Where have you been?’ I asked, more sternly.</TextNode>
+            <TextNode>“ ‘Where have you been?’ I asked, more sternly.</TextNode>
 
             <TextNode>
-              “‘I don't wonder that you are surprised,’ said she, and I could
+              “ ‘I don't wonder that you are surprised,’ said she, and I could
               see that her fingers were trembling as she undid the fastenings of
               her mantle. ‘Why, I never remember having done such a thing in my
               life before. The fact is that I felt as though I were choking, and
@@ -183,46 +183,46 @@ function Page131({
             </TextNode>
 
             <TextNode>
-              “‘Ah, Jack,’ she said, ‘I have just been in to see if I can be of
+              “ ‘Ah, Jack,’ she said, ‘I have just been in to see if I can be of
               any assistance to our new neighbors. Why do you look at me like
               that, Jack? You are not angry with me?’
             </TextNode>
 
             <TextNode>
-              “‘So,’ said I, ‘this is where you went during the night.’
+              “ ‘So,’ said I, ‘this is where you went during the night.’
             </TextNode>
 
-            <TextNode>“‘What do you mean?’ she cried.</TextNode>
+            <TextNode>“ ‘What do you mean?’ she cried.</TextNode>
 
             <TextNode>
-              “‘You came here. I am sure of it. Who are these people, that you
+              “ ‘You came here. I am sure of it. Who are these people, that you
               should visit them at such an hour?’
             </TextNode>
 
-            <TextNode>“‘I have not been here before.’</TextNode>
+            <TextNode>“ ‘I have not been here before.’</TextNode>
 
             <TextNode>
-              “‘How can you tell me what you know is false?’ I cried. ‘Your very
-              voice changes as you speak. When have I ever had a secret from
-              you? I shall enter that cottage, and I shall probe the matter to
-              the bottom.’
+              “ ‘How can you tell me what you know is false?’ I cried. ‘Your
+              very voice changes as you speak. When have I ever had a secret
+              from you? I shall enter that cottage, and I shall probe the matter
+              to the bottom.’
             </TextNode>
 
             <TextNode>
-              “‘No, no, Jack, for God's sake!’ she gasped, in uncontrollable
+              “ ‘No, no, Jack, for God's sake!’ she gasped, in uncontrollable
               emotion. Then, as I approached the door, she seized my sleeve and
               pulled me back with convulsive strength.
             </TextNode>
 
             <TextNode>
-              “‘I implore you not to do this, Jack,’ she cried. ‘I swear that I
+              “ ‘I implore you not to do this, Jack,’ she cried. ‘I swear that I
               will tell you everything some day, but nothing but misery can come
               of it if you enter that cottage.’ Then, as I tried to shake her
               off, she clung to me in a frenzy of entreaty.
             </TextNode>
 
             <TextNode>
-              “‘Trust me, Jack!’ she cried. ‘Trust me only this once. You will
+              “ ‘Trust me, Jack!’ she cried. ‘Trust me only this once. You will
               never have cause to regret it. You know that I would not have a
               secret from you if it were not for your own sake. Our whole lives
               are at stake in this. If you come home with me, all will be well.
@@ -236,7 +236,7 @@ function Page131({
             </TextNode>
 
             <TextNode>
-              “‘I will trust you on one condition, and on one condition only,’
+              “ ‘I will trust you on one condition, and on one condition only,’
               said I at last. ‘It is that this mystery comes to an end from now.
               You are at liberty to preserve your secret, but you must promise
               me that there shall be no more nightly visits, no more doings
@@ -246,7 +246,7 @@ function Page131({
             </TextNode>
 
             <TextNode>
-              “‘I was sure that you would trust me,’ she cried, with a great
+              “ ‘I was sure that you would trust me,’ she cried, with a great
               sigh of relief. ‘It shall be just as you wish. Come away—oh, come
               away up to the house.’
             </TextNode>
@@ -276,10 +276,10 @@ function Page131({
               house the maid ran into the hall with a startled face.
             </TextNode>
 
-            <TextNode>“‘Where is your mistress?’ I asked.</TextNode>
+            <TextNode>“ ‘Where is your mistress?’ I asked.</TextNode>
 
             <TextNode>
-              “‘I think that she has gone out for a walk,’ she answered.
+              “ ‘I think that she has gone out for a walk,’ she answered.
             </TextNode>
 
             <TextNode>
@@ -324,16 +324,17 @@ function Page131({
             </TextNode>
 
             <TextNode>
-              “‘I am sorry that I broke my promise, Jack,’ said she; ‘but if you
-              knew all the circumstances I am sure that you would forgive me.’
+              “ ‘I am sorry that I broke my promise, Jack,’ said she; ‘but if
+              you knew all the circumstances I am sure that you would forgive
+              me.’
             </TextNode>
 
-            <TextNode>“‘Tell me everything, then,’ said I.</TextNode>
+            <TextNode>“ ‘Tell me everything, then,’ said I.</TextNode>
 
-            <TextNode>“‘I cannot, Jack, I cannot,’ she cried.</TextNode>
+            <TextNode>“ ‘I cannot, Jack, I cannot,’ she cried.</TextNode>
 
             <TextNode>
-              “‘Until you tell me who it is that has been living in that
+              “ ‘Until you tell me who it is that has been living in that
               cottage, and who it is to whom you have given that photograph,
               there can never be any confidence between us,’ said I, and
               breaking away from her, I left the house. That was yesterday, Mr.

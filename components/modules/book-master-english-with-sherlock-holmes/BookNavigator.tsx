@@ -74,6 +74,7 @@ function BookNavigator(): ReactElement {
     bookVersion === BookVersion.DEMO ? BASE_PATH_DEMO : BASE_PATH_READ;
   const isScrollingToStory = useRef(false);
   const isScrollingToPageRef = useIsScrollingToPageRef();
+  const isScrollingToCard = useRef(false);
 
   useEffect(() => {
     let initialHeight = window.innerHeight;
@@ -218,10 +219,14 @@ function BookNavigator(): ReactElement {
         container.scrollTop + (targetRect.top - containerRect.top) - offset;
 
       if (bookNavigatorIsOpened) {
+        isScrollingToCard.current = true;
         container.scrollTo({
           top: scrollTop,
           behavior: 'instant',
         });
+        setTimeout(() => {
+          isScrollingToCard.current = false;
+        }, 1000);
       }
     }
   }, [activePage, bookNavigatorIsOpened, activeTab]);
@@ -301,7 +306,7 @@ function BookNavigator(): ReactElement {
             start: `top 120px`,
             end: '+=0',
             onEnter: () => {
-              if (isScrollingToStory.current) {
+              if (isScrollingToStory.current || isScrollingToCard.current) {
                 return;
               }
 
@@ -309,7 +314,7 @@ function BookNavigator(): ReactElement {
               updateStoryTitleVisibility(story);
             },
             onEnterBack: () => {
-              if (isScrollingToStory.current) {
+              if (isScrollingToStory.current || isScrollingToCard.current) {
                 return;
               }
 
@@ -327,7 +332,6 @@ function BookNavigator(): ReactElement {
               storyTitleComponent !== null &&
               contentsComponentRef.current !== null
             ) {
-              console.log('storyTitleComponent', storyTitleComponent);
               if (
                 !isInViewportWithinContainer(
                   storyTitleComponent,
@@ -1757,6 +1761,152 @@ function BookNavigator(): ReactElement {
                 {generateRangeArray(
                   DETAILED_BOOK_PART_PAGE_RANGES.THE_MEMOIRS_OF_SHERLOCK_HOLMES
                     .THE_STOCK_BROKERS_CLERK,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div id={storyToPartId(Story.THE_GLORIA_SCOTT)} className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                {Story.THE_GLORIA_SCOTT}
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.THE_MEMOIRS_OF_SHERLOCK_HOLMES
+                    .THE_GLORIA_SCOTT,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div id={storyToPartId(Story.THE_MUSGRAVE_RITUAL)} className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                {Story.THE_MUSGRAVE_RITUAL}
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.THE_MEMOIRS_OF_SHERLOCK_HOLMES
+                    .THE_MUSGRAVE_RITUAL,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div id={storyToPartId(Story.THE_REIGATE_SQUIRES)} className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                {Story.THE_REIGATE_SQUIRES}
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.THE_MEMOIRS_OF_SHERLOCK_HOLMES
+                    .THE_REIGATE_SQUIRES,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div id={storyToPartId(Story.THE_CROOKED_MAN)} className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                {Story.THE_CROOKED_MAN}
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.THE_MEMOIRS_OF_SHERLOCK_HOLMES
+                    .THE_CROOKED_MAN,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={storyToPartId(Story.THE_RESIDENT_PATIENT)}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                {Story.THE_RESIDENT_PATIENT}
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.THE_MEMOIRS_OF_SHERLOCK_HOLMES
+                    .THE_RESIDENT_PATIENT,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={storyToPartId(Story.THE_GREEK_INTERPRETER)}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                {Story.THE_GREEK_INTERPRETER}
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.THE_MEMOIRS_OF_SHERLOCK_HOLMES
+                    .THE_GREEK_INTERPRETER,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div id={storyToPartId(Story.THE_NAVAL_TREATY)} className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                {Story.THE_NAVAL_TREATY}
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.THE_MEMOIRS_OF_SHERLOCK_HOLMES
+                    .THE_NAVAL_TREATY,
                 ).map((pageNumber) => {
                   return (
                     <BookNavigatorPage

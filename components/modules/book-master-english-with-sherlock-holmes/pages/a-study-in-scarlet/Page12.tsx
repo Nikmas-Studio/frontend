@@ -220,7 +220,7 @@ function Page12({
 
             <TextNode>
               “Poison,” said Sherlock Holmes curtly, and strode off. “One other
-              thing, Lestrade,” he added, turning round at the door: “‘Rache,’
+              thing, Lestrade,” he added, turning round at the door: “ ‘Rache,’
               is the German for ‘revenge;’ so don't lose your time looking for
               Miss Rachel.”
             </TextNode>

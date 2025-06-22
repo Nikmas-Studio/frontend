@@ -196,11 +196,11 @@ function Page116({
             </TextNode>
             <Indent>
               <TextNode className='italic' noIndent>
-                “‘My dearest Uncle:
+                “ ‘My dearest Uncle:
               </TextNode>
               <TextNode noIndent>
-                “‘I feel that I have brought trouble upon you, and that if I had
-                acted differently this terrible misfortune might never have
+                “ ‘I feel that I have brought trouble upon you, and that if I
+                had acted differently this terrible misfortune might never have
                 occurred. I cannot, with this thought in my mind, ever again be
                 happy under your roof, and I feel that I must leave you forever.
                 Do not worry about my future, for that is provided for; and,
@@ -208,10 +208,10 @@ function Page116({
                 and an ill-service to me. In life or in death, I am ever
               </TextNode>
               <TextNode className='italic' noIndent>
-                “‘Your loving
+                “ ‘Your loving
               </TextNode>
               <TextNode className='italic' noIndent>
-                “‘Mary.’
+                “ ‘Mary.’
               </TextNode>
             </Indent>
             <TextNode noIndent>

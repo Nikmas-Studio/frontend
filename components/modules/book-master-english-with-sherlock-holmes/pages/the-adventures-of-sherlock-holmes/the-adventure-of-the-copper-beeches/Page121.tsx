@@ -111,23 +111,25 @@ function Page121({
             </TextNode>
 
             <TextNode>
-              “‘Jephro,’ said she, ‘there is an impertinent fellow upon the road
-              there who stares up at Miss Hunter.’
+              “ ‘Jephro,’ said she, ‘there is an impertinent fellow upon the
+              road there who stares up at Miss Hunter.’
             </TextNode>
 
-            <TextNode>“‘No friend of yours, Miss Hunter?’ he asked.</TextNode>
+            <TextNode>“ ‘No friend of yours, Miss Hunter?’ he asked.</TextNode>
 
-            <TextNode>“‘No, I know no one in these parts.’</TextNode>
+            <TextNode>“ ‘No, I know no one in these parts.’</TextNode>
 
             <TextNode>
-              “‘Dear me! How very impertinent! Kindly turn round and motion to
+              “ ‘Dear me! How very impertinent! Kindly turn round and motion to
               him to go away.’
             </TextNode>
 
-            <TextNode>“‘Surely it would be better to take no notice.’</TextNode>
+            <TextNode>
+              “ ‘Surely it would be better to take no notice.’
+            </TextNode>
 
             <TextNode>
-              “‘No, no, we should have him loitering here always. Kindly turn
+              “ ‘No, no, we should have him loitering here always. Kindly turn
               round and wave him away like that.’
             </TextNode>
 
@@ -153,7 +155,7 @@ function Page121({
             </TextNode>
 
             <TextNode>
-              “‘Look in here!’ said Mr. Rucastle, showing me a slit between two
+              “ ‘Look in here!’ said Mr. Rucastle, showing me a slit between two
               planks. ‘Is he not a beauty?’
             </TextNode>
 
@@ -163,7 +165,7 @@ function Page121({
             </TextNode>
 
             <TextNode>
-              “‘Don't be frightened,’ said my employer, laughing at the start
+              “ ‘Don't be frightened,’ said my employer, laughing at the start
               which I had given. ‘It's only Carlo, my mastiff. I call him mine,
               but really old Toller, my groom, is the only man who can do
               anything with him. We feed him once a day, and not too much then,
@@ -246,7 +248,7 @@ function Page121({
             </TextNode>
 
             <TextNode>
-              “‘Ah!’ said he, ‘you must not think me rude if I passed you
+              “ ‘Ah!’ said he, ‘you must not think me rude if I passed you
               without a word, my dear young lady. I was preoccupied with
               business matters.’
             </TextNode>
@@ -263,9 +265,9 @@ function Page121({
             </TextNode>
 
             <TextNode>
-              “‘Photography is one of my hobbies,’ said he. ‘I have made my dark
-              room up there. But, dear me! what an observant young lady we have
-              come upon. Who would have believed it? Who would have ever
+              “ ‘Photography is one of my hobbies,’ said he. ‘I have made my
+              dark room up there. But, dear me! what an observant young lady we
+              have come upon. Who would have believed it? Who would have ever
               believed it?’ He spoke in a jesting tone, but there was no jest in
               his eyes as he looked at me. I read suspicion there and annoyance,
               but no jest.
@@ -323,14 +325,14 @@ function Page121({
             </TextNode>
 
             <TextNode>
-              “‘So,’ said he, smiling, ‘it was you, then. I thought that it must
-              be when I saw the door open.’
+              “ ‘So,’ said he, smiling, ‘it was you, then. I thought that it
+              must be when I saw the door open.’
             </TextNode>
 
-            <TextNode>“‘Oh, I am so frightened!’ I panted.</TextNode>
+            <TextNode>“ ‘Oh, I am so frightened!’ I panted.</TextNode>
 
             <TextNode>
-              “‘My dear young lady! my dear young lady!’—you cannot think how
+              “ ‘My dear young lady! my dear young lady!’—you cannot think how
               caressing and soothing his manner was—‘and what has frightened
               you, my dear young lady?’
             </TextNode>
@@ -341,29 +343,29 @@ function Page121({
             </TextNode>
 
             <TextNode>
-              “‘I was foolish enough to go into the empty wing,’ I answered.
+              “ ‘I was foolish enough to go into the empty wing,’ I answered.
               ‘But it is so lonely and eerie in this dim light that I was
               frightened and ran out again. Oh, it is so dreadfully still in
               there!’
             </TextNode>
 
-            <TextNode>“‘Only that?’ said he, looking at me keenly.</TextNode>
+            <TextNode>“ ‘Only that?’ said he, looking at me keenly.</TextNode>
 
-            <TextNode>“‘Why, what did you think?’ I asked.</TextNode>
+            <TextNode>“ ‘Why, what did you think?’ I asked.</TextNode>
 
-            <TextNode>“‘Why do you think that I lock this door?’</TextNode>
+            <TextNode>“ ‘Why do you think that I lock this door?’</TextNode>
 
-            <TextNode>“‘I am sure that I do not know.’</TextNode>
+            <TextNode>“ ‘I am sure that I do not know.’</TextNode>
 
             <TextNode>
-              “‘It is to keep people out who have no business there. Do you
+              “ ‘It is to keep people out who have no business there. Do you
               see?’ He was still smiling in the most amiable manner.
             </TextNode>
 
-            <TextNode>“‘I am sure if I had known—’</TextNode>
+            <TextNode>“ ‘I am sure if I had known—’</TextNode>
 
             <TextNode>
-              “‘Well, then, you know now. And if you ever put your foot over
+              “ ‘Well, then, you know now. And if you ever put your foot over
               that threshold again’—here in an instant the smile hardened into a
               grin of rage, and he glared down at me with the face of a
               demon—‘I'll throw you to the mastiff.’

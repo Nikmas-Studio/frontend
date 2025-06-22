@@ -78,7 +78,7 @@ function Page106({
               looking down at me.
             </TextNode>
 
-            <TextNode>“‘What are you doing there?’ he asked.</TextNode>
+            <TextNode>“ ‘What are you doing there?’ he asked.</TextNode>
 
             <TextNode>
               “I felt angry at having been tricked by so elaborate a story as
@@ -95,7 +95,7 @@ function Page106({
             </TextNode>
 
             <TextNode>
-              “‘Very well,’ said he, ‘you shall know all about the machine.’ He
+              “ ‘Very well,’ said he, ‘you shall know all about the machine.’ He
               took a step backward, slammed the little door, and turned the key
               in the lock. I rushed towards it and pulled at the handle, but it
               was quite secure, and did not give in the least to my kicks and
@@ -146,7 +146,7 @@ function Page106({
             </TextNode>
 
             <TextNode>
-              “‘Come! come!’ she cried breathlessly. ‘They will be here in a
+              “ ‘Come! come!’ she cried breathlessly. ‘They will be here in a
               moment. They will see that you are not there. Oh, do not waste the
               so-precious time, but come!’
             </TextNode>
@@ -164,7 +164,7 @@ function Page106({
             </TextNode>
 
             <TextNode>
-              “‘It is your only chance,’ said she. ‘It is high, but it may be
+              “ ‘It is your only chance,’ said she. ‘It is high, but it may be
               that you can jump it.’
             </TextNode>
 
@@ -185,13 +185,13 @@ function Page106({
             </TextNode>
 
             <TextNode>
-              “‘Fritz! Fritz!’ she cried in English, ‘remember your promise
+              “ ‘Fritz! Fritz!’ she cried in English, ‘remember your promise
               after the last time. You said it should not be again. He will be
               silent! Oh, he will be silent!’
             </TextNode>
 
             <TextNode>
-              “‘You are mad, Elise!’ he shouted, struggling to break away from
+              “ ‘You are mad, Elise!’ he shouted, struggling to break away from
               her. ‘You will be the ruin of us. He has seen too much. Let me
               pass, I say!’ He dashed her to one side, and, rushing to the
               window, cut at me with his heavy weapon. I had let myself go, and
@@ -264,9 +264,10 @@ function Page106({
 
             <Indent>
               <TextNode noIndent>
-                “‘Lost, on the 9th inst., Mr. Jeremiah Hayling, aged twenty-six,
-                a hydraulic engineer. Left his lodgings at ten o'clock at night,
-                and has not been heard of since. Was dressed in—’
+                “ ‘Lost, on the 9th inst., Mr. Jeremiah Hayling, aged
+                twenty-six, a hydraulic engineer. Left his lodgings at ten
+                o'clock at night, and has not been heard of since. Was dressed
+                in—’
               </TextNode>
             </Indent>
 

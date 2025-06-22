@@ -279,10 +279,10 @@ function Page110({
 
             <Indent>
               <TextNode noIndent>
-                “‘You will see me when all is ready. Come at once.
+                “ ‘You will see me when all is ready. Come at once.
               </TextNode>
               <TextNode className='italic' noIndent>
-                “‘F.H.M.’
+                “ ‘F.H.M.’
               </TextNode>
             </Indent>
 
@@ -328,7 +328,7 @@ function Page110({
 
             <Indent>
               <TextNode noIndent>
-                “‘Oct. 4th, rooms 8s., breakfast 2s. 6d., cocktail 1s., lunch
+                “ ‘Oct. 4th, rooms 8s., breakfast 2s. 6d., cocktail 1s., lunch
                 2s. 6d., glass sherry, 8d.’ I see nothing in that.”
               </TextNode>
             </Indent>

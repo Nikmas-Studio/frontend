@@ -123,7 +123,7 @@ function Page59({
             </TextNode>
 
             <TextNode>
-              “‘Listen to me, Sahib,’ said the taller and fiercer of the pair,
+              “ ‘Listen to me, Sahib,’ said the taller and fiercer of the pair,
               the one whom they called Abdullah Khan. ‘You must either be with
               us now or you must be silenced forever. The thing is too great a
               one for us to hesitate. Either you are heart and soul with us on
@@ -136,16 +136,16 @@ function Page59({
             </TextNode>
 
             <TextNode>
-              “‘How can I decide?’ said I. ‘You have not told me what you want
+              “ ‘How can I decide?’ said I. ‘You have not told me what you want
               of me. But I tell you now that if it is anything against the
               safety of the fort I will have no truck with it, so you can drive
               home your knife and welcome.’
             </TextNode>
 
             <TextNode>
-              “‘It is nothing against the fort,’ said he. ‘We only ask you to do
-              that which your countrymen come to this land for. We ask you to be
-              rich. If you will be one of us this night, we will swear to you
+              “ ‘It is nothing against the fort,’ said he. ‘We only ask you to
+              do that which your countrymen come to this land for. We ask you to
+              be rich. If you will be one of us this night, we will swear to you
               upon the naked knife, and by the threefold oath which no Sikh was
               ever known to break, that you shall have your fair share of the
               loot. A quarter of the treasure shall be yours. We can say no
@@ -154,31 +154,31 @@ function Page59({
           </BookLeftPartContainer>
           <BookRightPartContainer>
             <TextNode noIndent>
-              “‘But what is the treasure, then?’ I asked. ‘I am as ready to be
+              “ ‘But what is the treasure, then?’ I asked. ‘I am as ready to be
               rich as you can be, if you will but show me how it can be done.’
             </TextNode>
 
             <TextNode>
-              “‘You will swear, then,’ said he, ‘by the bones of your father, by
-              the honor of your mother, by the cross of your faith, to raise no
-              hand and speak no word against us, either now or afterwards?’
+              “ ‘You will swear, then,’ said he, ‘by the bones of your father,
+              by the honor of your mother, by the cross of your faith, to raise
+              no hand and speak no word against us, either now or afterwards?’
             </TextNode>
 
             <TextNode>
-              “‘I will swear it,’ I answered, ‘provided that the fort is not
+              “ ‘I will swear it,’ I answered, ‘provided that the fort is not
               endangered.’
             </TextNode>
 
             <TextNode>
-              “‘Then my comrade and I will swear that you shall have a quarter
+              “ ‘Then my comrade and I will swear that you shall have a quarter
               of the treasure which shall be equally divided among the four of
               us.’
             </TextNode>
 
-            <TextNode>“‘There are but three,’ said I.</TextNode>
+            <TextNode>“ ‘There are but three,’ said I.</TextNode>
 
             <TextNode>
-              “‘No; Dost Akbar must have his share. We can tell the tale to you
+              “ ‘No; Dost Akbar must have his share. We can tell the tale to you
               while we await them. Do you stand at the gate, Mahomet Singh, and
               give notice of their coming. The thing stands thus, Sahib, and I
               tell it to you because I know that an oath is binding upon a
@@ -190,7 +190,7 @@ function Page59({
             </TextNode>
 
             <TextNode>
-              “‘There is a rajah in the northern provinces who has much wealth,
+              “ ‘There is a rajah in the northern provinces who has much wealth,
               though his lands are small. Much has come to him from his father,
               and more still he has set by himself, for he is of a low nature
               and hoards his gold rather than spend it. When the troubles broke
@@ -213,7 +213,7 @@ function Page59({
             </TextNode>
 
             <TextNode>
-              “‘This pretended merchant, who travels under the name of Achmet,
+              “ ‘This pretended merchant, who travels under the name of Achmet,
               is now in the city of Agra, and desires to gain his way into the
               fort. He has with him as travelling-companion my foster-brother
               Dost Akbar, who knows his secret. Dost Akbar has promised this
@@ -239,7 +239,7 @@ function Page59({
             </TextNode>
 
             <TextNode>
-              “‘Consider, Sahib,’ said he, ‘that if this man is taken by the
+              “ ‘Consider, Sahib,’ said he, ‘that if this man is taken by the
               commandant he will be hung or shot, and his jewels taken by the
               government, so that no man will be a rupee the better for them.
               Now, since we do the taking of him, why should we not do the rest
@@ -251,20 +251,20 @@ function Page59({
               upon you as an enemy.’
             </TextNode>
 
-            <TextNode>“‘I am with you heart and soul,’ said I.</TextNode>
+            <TextNode>“ ‘I am with you heart and soul,’ said I.</TextNode>
 
             <TextNode>
-              “‘It is well,’ he answered, handing me back my firelock. ‘You see
+              “ ‘It is well,’ he answered, handing me back my firelock. ‘You see
               that we trust you, for your word, like ours, is not to be broken.
               We have now only to wait for my brother and the merchant.’
             </TextNode>
 
             <TextNode>
-              “‘Does your brother know, then, of what you will do?’ I asked.
+              “ ‘Does your brother know, then, of what you will do?’ I asked.
             </TextNode>
 
             <TextNode>
-              “‘The plan is his. He has devised it. We will go to the gate and
+              “ ‘The plan is his. He has devised it. We will go to the gate and
               share the watch with Mahomet Singh.’
             </TextNode>
           </BookRightPartContainer>

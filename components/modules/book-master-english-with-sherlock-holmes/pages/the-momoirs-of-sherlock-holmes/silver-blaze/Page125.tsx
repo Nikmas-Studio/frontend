@@ -246,22 +246,22 @@ function Page125({
             </TextNode>
 
             <TextNode>
-              “‘Can you tell me where I am?’ he asked. ‘I had almost made up my
+              “ ‘Can you tell me where I am?’ he asked. ‘I had almost made up my
               mind to sleep on the moor, when I saw the light of your lantern.’
             </TextNode>
 
             <TextNode>
-              “‘You are close to the King's Pyland training-stables,’ said she.
+              “ ‘You are close to the King's Pyland training-stables,’ said she.
             </TextNode>
 
             <TextNode>
-              “‘Oh, indeed! What a stroke of luck!’ he cried. ‘I understand that
-              a stable-boy sleeps there alone every night. Perhaps that is his
-              supper which you are carrying to him. Now I am sure that you would
-              not be too proud to earn the price of a new dress, would you?’ He
-              took a piece of white paper folded up out of his waistcoat pocket.
-              ‘See that the boy has this to-night, and you shall have the
-              prettiest frock that money can buy.’
+              “ ‘Oh, indeed! What a stroke of luck!’ he cried. ‘I understand
+              that a stable-boy sleeps there alone every night. Perhaps that is
+              his supper which you are carrying to him. Now I am sure that you
+              would not be too proud to earn the price of a new dress, would
+              you?’ He took a piece of white paper folded up out of his
+              waistcoat pocket. ‘See that the boy has this to-night, and you
+              shall have the prettiest frock that money can buy.’
             </TextNode>
 
             <TextNode>
@@ -273,34 +273,34 @@ function Page125({
             </TextNode>
 
             <TextNode>
-              “‘Good-evening,’ said he, looking through the window. ‘I wanted to
-              have a word with you.’ The girl has sworn that as he spoke she
+              “ ‘Good-evening,’ said he, looking through the window. ‘I wanted
+              to have a word with you.’ The girl has sworn that as he spoke she
               noticed the corner of the little paper packet protruding from his
               closed hand.
             </TextNode>
           </BookLeftPartContainer>
           <BookRightPartContainer>
             <TextNode noIndent>
-              “‘What business have you here?’ asked the lad.
+              “ ‘What business have you here?’ asked the lad.
             </TextNode>
 
             <TextNode>
-              “‘It's business that may put something into your pocket,’ said the
-              other. ‘You've two horses in for the Wessex Cup—Silver Blaze and
-              Bayard. Let me have the straight tip and you won't be a loser. Is
-              it a fact that at the weights Bayard could give the other a
+              “ ‘It's business that may put something into your pocket,’ said
+              the other. ‘You've two horses in for the Wessex Cup—Silver Blaze
+              and Bayard. Let me have the straight tip and you won't be a loser.
+              Is it a fact that at the weights Bayard could give the other a
               hundred yards in five furlongs, and that the stable have put their
               money on him?’
             </TextNode>
 
             <TextNode>
-              “‘So, you're one of those damned touts!’ cried the lad. ‘I'll show
-              you how we serve them in King's Pyland.’ He sprang up and rushed
-              across the stable to unloose the dog. The girl fled away to the
-              house, but as she ran she looked back and saw that the stranger
-              was leaning through the window. A minute later, however, when
-              Hunter rushed out with the hound he was gone, and though he ran
-              all round the buildings he failed to find any trace of him.”
+              “ ‘So, you're one of those damned touts!’ cried the lad. ‘I'll
+              show you how we serve them in King's Pyland.’ He sprang up and
+              rushed across the stable to unloose the dog. The girl fled away to
+              the house, but as she ran she looked back and saw that the
+              stranger was leaning through the window. A minute later, however,
+              when Hunter rushed out with the hound he was gone, and though he
+              ran all round the buildings he failed to find any trace of him.”
             </TextNode>
 
             <TextNode>

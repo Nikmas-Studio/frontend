@@ -99,7 +99,7 @@ function Page87({
             </TextNode>
 
             <TextNode>
-              “‘Why, what on earth does this mean, John?’ he stammered.
+              “ ‘Why, what on earth does this mean, John?’ he stammered.
             </TextNode>
 
             <TextNode>
@@ -112,45 +112,46 @@ function Page87({
             </TextNode>
 
             <TextNode>
-              “‘Put the papers on the sundial,’ I read, peeping over his
+              “ ‘Put the papers on the sundial,’ I read, peeping over his
               shoulder.
             </TextNode>
 
-            <TextNode>“‘What papers? What sundial?’ he asked.</TextNode>
+            <TextNode>“ ‘What papers? What sundial?’ he asked.</TextNode>
 
             <TextNode>
-              “‘The sundial in the garden. There is no other,’ said I; ‘but the
+              “ ‘The sundial in the garden. There is no other,’ said I; ‘but the
               papers must be those that are destroyed.’
             </TextNode>
 
             <TextNode>
-              “‘Pooh!’ said he, gripping hard at his courage. ‘We are in a
+              “ ‘Pooh!’ said he, gripping hard at his courage. ‘We are in a
               civilised land here, and we can't have tomfoolery of this kind.
               Where does the thing come from?’
             </TextNode>
 
             <TextNode>
-              “‘From Dundee,’ I answered, glancing at the postmark.
+              “ ‘From Dundee,’ I answered, glancing at the postmark.
             </TextNode>
 
             <TextNode>
-              “‘Some preposterous practical joke,’ said he. ‘What have I to do
+              “ ‘Some preposterous practical joke,’ said he. ‘What have I to do
               with sundials and papers? I shall take no notice of such
               nonsense.’
             </TextNode>
 
             <TextNode>
-              “‘I should certainly speak to the police,’ I said.
+              “ ‘I should certainly speak to the police,’ I said.
             </TextNode>
 
             <TextNode>
-              “‘And be laughed at for my pains. Nothing of the sort.’
+              “ ‘And be laughed at for my pains. Nothing of the sort.’
             </TextNode>
 
-            <TextNode>“‘Then let me do so?’</TextNode>
+            <TextNode>“ ‘Then let me do so?’</TextNode>
 
             <TextNode>
-              “‘No, I forbid you. I won't have a fuss made about such nonsense.’
+              “ ‘No, I forbid you. I won't have a fuss made about such
+              nonsense.’
             </TextNode>
 
             <TextNode>

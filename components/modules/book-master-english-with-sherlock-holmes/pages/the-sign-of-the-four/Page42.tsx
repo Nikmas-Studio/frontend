@@ -52,7 +52,7 @@ function Page42({
         <div className='flex  max-2md:flex-col'>
           <BookLeftPartContainer>
             <TextNode noIndent>
-              “‘I have only one thing,’ he said, ‘which weighs upon my mind at
+              “ ‘I have only one thing,’ he said, ‘which weighs upon my mind at
               this supreme moment. It is my treatment of poor Morstan's orphan.
               The cursed greed which has been my besetting sin through life has
               withheld from her the treasure, half at least of which should have
@@ -68,7 +68,7 @@ function Page42({
             </TextNode>
 
             <TextNode>
-              “‘I will tell you how Morstan died,’ he continued. ‘He had
+              “ ‘I will tell you how Morstan died,’ he continued. ‘He had
               suffered for years from a weak heart, but he concealed it from
               every one. I alone knew it. When in India, he and I, through a
               remarkable chain of circumstances, came into possession of a
@@ -85,7 +85,7 @@ function Page42({
             </TextNode>
 
             <TextNode>
-              “‘For a long time I sat half distracted, wondering what I should
+              “ ‘For a long time I sat half distracted, wondering what I should
               do. My first impulse was, of course, to call for assistance; but I
               could not but recognize that there was every chance that I would
               be accused of his murder. His death at the moment of a quarrel,
@@ -98,7 +98,7 @@ function Page42({
             </TextNode>
 
             <TextNode>
-              “‘I was still pondering over the matter, when, looking up, I saw
+              “ ‘I was still pondering over the matter, when, looking up, I saw
               my servant, Lal Chowdar, in the doorway. He stole in and bolted
               the door behind him. “Do not fear, Sahib,” he said. “No one need
               know that you have killed him. Let us hide him away, and who is

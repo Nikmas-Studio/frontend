@@ -334,13 +334,13 @@ function Page71({
             </TextNode>
 
             <TextNode>
-              “‘I wish to the Lord, Mr. Wilson, that I was a red-headed man.’
+              “ ‘I wish to the Lord, Mr. Wilson, that I was a red-headed man.’
             </TextNode>
 
-            <TextNode>“‘Why that?’ I asks.</TextNode>
+            <TextNode>“ ‘Why that?’ I asks.</TextNode>
 
             <TextNode>
-              “‘Why,’ says he, ‘here's another vacancy on the League of the
+              “ ‘Why,’ says he, ‘here's another vacancy on the League of the
               Red-headed Men. It's worth quite a little fortune to any man who
               gets it, and I understand that there are more vacancies than there
               are men, so that the trustees are at their wits' end what to do
@@ -349,7 +349,7 @@ function Page71({
             </TextNode>
 
             <TextNode>
-              “‘Why, what is it, then?’ I asked. You see, Mr. Holmes, I am a
+              “ ‘Why, what is it, then?’ I asked. You see, Mr. Holmes, I am a
               very stay-at-home man, and as my business came to me instead of my
               having to go to it, I was often weeks on end without putting my
               foot over the door-mat. In that way I didn't know much of what was

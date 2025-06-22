@@ -51,11 +51,11 @@ function Page73({
       <BookMainContainer>
         <div className='flex  max-2md:flex-col'>
           <BookLeftPartContainer>
-            <TextNode noIndent>“‘Where could I find him?’</TextNode>
+            <TextNode noIndent>“ ‘Where could I find him?’</TextNode>
 
             <TextNode>
-              “‘Oh, at his new offices. He did tell me the address. Yes, 17 King
-              Edward Street, near St. Paul's.’
+              “ ‘Oh, at his new offices. He did tell me the address. Yes, 17
+              King Edward Street, near St. Paul's.’
             </TextNode>
 
             <TextNode>

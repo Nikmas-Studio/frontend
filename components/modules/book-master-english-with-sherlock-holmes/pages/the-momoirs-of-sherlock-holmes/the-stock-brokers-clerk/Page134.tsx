@@ -310,22 +310,22 @@ function Page134({
               with him and spoke sharply, like a man who knew the value of time.
             </TextNode>
 
-            <TextNode>“‘Mr. Hall Pycroft, I believe?’ said he.</TextNode>
+            <TextNode>“ ‘Mr. Hall Pycroft, I believe?’ said he.</TextNode>
 
             <TextNode>
-              “‘Yes, sir,’ I answered, pushing a chair towards him.
+              “ ‘Yes, sir,’ I answered, pushing a chair towards him.
             </TextNode>
 
-            <TextNode>“‘Lately engaged at Coxon & Woodhouse's?’</TextNode>
+            <TextNode>“ ‘Lately engaged at Coxon & Woodhouse's?’</TextNode>
 
-            <TextNode>“‘Yes, sir.’</TextNode>
+            <TextNode>“ ‘Yes, sir.’</TextNode>
 
-            <TextNode>“‘And now on the staff of Mawson's.’</TextNode>
+            <TextNode>“ ‘And now on the staff of Mawson's.’</TextNode>
 
-            <TextNode>“‘Quite so.’</TextNode>
+            <TextNode>“ ‘Quite so.’</TextNode>
 
             <TextNode>
-              “‘Well,’ said he, ‘the fact is that I have heard some really
+              “ ‘Well,’ said he, ‘the fact is that I have heard some really
               extraordinary stories about your financial ability. You remember
               Parker, who used to be Coxon's manager? He can never say enough
               about it.’
@@ -337,40 +337,40 @@ function Page134({
               about in the City in this fashion.
             </TextNode>
 
-            <TextNode>“‘You have a good memory?’ said he.</TextNode>
+            <TextNode>“ ‘You have a good memory?’ said he.</TextNode>
 
-            <TextNode>“‘Pretty fair,’ I answered, modestly.</TextNode>
+            <TextNode>“ ‘Pretty fair,’ I answered, modestly.</TextNode>
 
             <TextNode>
-              “‘Have you kept in touch with the market while you have been out
+              “ ‘Have you kept in touch with the market while you have been out
               of work?’ he asked.
             </TextNode>
 
             <TextNode>
-              “‘Yes. I read the stock exchange list every morning.’
+              “ ‘Yes. I read the stock exchange list every morning.’
             </TextNode>
 
             <TextNode>
-              “‘Now that shows real application!’ he cried. ‘That is the way to
+              “ ‘Now that shows real application!’ he cried. ‘That is the way to
               prosper! You won't mind my testing you, will you? Let me see. How
               are Ayrshires?’
             </TextNode>
 
             <TextNode>
-              “‘A hundred and six and a quarter to a hundred and five and
+              “ ‘A hundred and six and a quarter to a hundred and five and
               seven-eighths.’
             </TextNode>
 
-            <TextNode>“‘And New Zealand consolidated?’</TextNode>
+            <TextNode>“ ‘And New Zealand consolidated?’</TextNode>
 
-            <TextNode>“‘A hundred and four.’</TextNode>
+            <TextNode>“ ‘A hundred and four.’</TextNode>
 
-            <TextNode>“‘And British Broken Hills?’</TextNode>
+            <TextNode>“ ‘And British Broken Hills?’</TextNode>
 
-            <TextNode>“‘Seven to seven-and-six.’</TextNode>
+            <TextNode>“ ‘Seven to seven-and-six.’</TextNode>
 
             <TextNode>
-              “‘Wonderful!’ he cried, with his hands up. ‘This quite fits in
+              “ ‘Wonderful!’ he cried, with his hands up. ‘This quite fits in
               with all that I had heard. My boy, my boy, you are very much too
               good to be a clerk at Mawson's!’
             </TextNode>
@@ -383,24 +383,24 @@ function Page134({
             </TextNode>
 
             <TextNode>
-              “‘Pooh, man; you should soar above it. You are not in your true
+              “ ‘Pooh, man; you should soar above it. You are not in your true
               sphere. Now, I'll tell you how it stands with me. What I have to
               offer is little enough when measured by your ability, but when
               compared with Mawson's, it's light to dark. Let me see. When do
               you go to Mawson's?’
             </TextNode>
 
-            <TextNode>“‘On Monday.’</TextNode>
+            <TextNode>“ ‘On Monday.’</TextNode>
 
             <TextNode>
-              “‘Ha, ha! I think I would risk a little sporting flutter that you
+              “ ‘Ha, ha! I think I would risk a little sporting flutter that you
               don't go there at all.’
             </TextNode>
 
-            <TextNode>“‘Not go to Mawson's?’</TextNode>
+            <TextNode>“ ‘Not go to Mawson's?’</TextNode>
 
             <TextNode>
-              “‘No, sir. By that day you will be the business manager of the
+              “ ‘No, sir. By that day you will be the business manager of the
               Franco-Midland Hardware Company, Limited, with a hundred and
               thirty-four branches in the towns and villages of France, not
               counting one in Brussels and one in San Remo.’
@@ -411,7 +411,7 @@ function Page134({
             </TextNode>
 
             <TextNode>
-              “‘Very likely not. It has been kept very quiet, for the capital
+              “ ‘Very likely not. It has been kept very quiet, for the capital
               was all privately subscribed, and it's too good a thing to let the
               public into. My brother, Harry Pinner, is promoter, and joins the
               board after allotment as managing director. He knew I was in the
@@ -421,18 +421,18 @@ function Page134({
               five hundred to start with.’
             </TextNode>
 
-            <TextNode>“‘Five hundred a year!’ I shouted.</TextNode>
+            <TextNode>“ ‘Five hundred a year!’ I shouted.</TextNode>
 
             <TextNode>
-              “‘Only that at the beginning; but you are to have an overriding
+              “ ‘Only that at the beginning; but you are to have an overriding
               commission of one per cent on all business done by your agents,
               and you may take my word for it that this will come to more than
               your salary.’
             </TextNode>
 
-            <TextNode>“‘But I know nothing about hardware.’</TextNode>
+            <TextNode>“ ‘But I know nothing about hardware.’</TextNode>
 
-            <TextNode>“‘Tut, my boy; you know about figures.’</TextNode>
+            <TextNode>“ ‘Tut, my boy; you know about figures.’</TextNode>
 
             <TextNode>
               “My head buzzed, and I could hardly sit still in my chair. But
@@ -440,13 +440,13 @@ function Page134({
             </TextNode>
 
             <TextNode>
-              “‘I must be frank with you,’ said I. ‘Mawson only gives me two
+              “ ‘I must be frank with you,’ said I. ‘Mawson only gives me two
               hundred, but Mawson is safe. Now, really, I know so little about
               your company that—’
             </TextNode>
 
             <TextNode>
-              “‘Ah, smart, smart!’ he cried, in a kind of ecstasy of delight.
+              “ ‘Ah, smart, smart!’ he cried, in a kind of ecstasy of delight.
               ‘You are the very man for us. You are not to be talked over, and
               quite right, too. Now, here's a note for a hundred pounds, and if
               you think that we can do business you may just slip it into your
@@ -454,12 +454,12 @@ function Page134({
             </TextNode>
 
             <TextNode>
-              “‘That is very handsome,’ said I. ‘When should I take over my new
+              “ ‘That is very handsome,’ said I. ‘When should I take over my new
               duties?’
             </TextNode>
 
             <TextNode>
-              “‘Be in Birmingham to-morrow at one,’ said he. ‘I have a note in
+              “ ‘Be in Birmingham to-morrow at one,’ said he. ‘I have a note in
               my pocket here which you will take to my brother. You will find
               him at 126b Corporation Street, where the temporary offices of the
               company are situated. Of course he must confirm your engagement,
@@ -467,12 +467,12 @@ function Page134({
             </TextNode>
 
             <TextNode>
-              “‘Really, I hardly know how to express my gratitude, Mr. Pinner,’
+              “ ‘Really, I hardly know how to express my gratitude, Mr. Pinner,’
               said I.
             </TextNode>
 
             <TextNode>
-              “‘Not at all, my boy. You have only got your desserts. There are
+              “ ‘Not at all, my boy. You have only got your desserts. There are
               one or two small things—mere formalities—which I must arrange with
               you. You have a bit of paper beside you there. Kindly write upon
               it “I am perfectly willing to act as business manager to the
@@ -485,7 +485,7 @@ function Page134({
             </TextNode>
 
             <TextNode>
-              “‘There is one other detail,’ said he. ‘What do you intend to do
+              “ ‘There is one other detail,’ said he. ‘What do you intend to do
               about Mawson's?’
             </TextNode>
 
@@ -495,36 +495,37 @@ function Page134({
             </TextNode>
 
             <TextNode>
-              “‘Precisely what I don't want you to do. I had a row over you with
-              Mawson's manager. I had gone up to ask him about you, and he was
-              very offensive; accused me of coaxing you away from the service of
-              the firm, and that sort of thing. At last I fairly lost my temper.
-              “If you want good men you should pay them a good price,” said I.
+              “ ‘Precisely what I don't want you to do. I had a row over you
+              with Mawson's manager. I had gone up to ask him about you, and he
+              was very offensive; accused me of coaxing you away from the
+              service of the firm, and that sort of thing. At last I fairly lost
+              my temper. “If you want good men you should pay them a good
+              price,” said I.
             </TextNode>
 
             <TextNode>
-              “‘“He would rather have our small price than your big one,” said
+              “ ‘ “He would rather have our small price than your big one,” said
               he.
             </TextNode>
 
             <TextNode>
-              “‘“I'll lay you a fiver,” said I, “that when he has my offer
+              “ ‘ “I'll lay you a fiver,” said I, “that when he has my offer
               you'll never so much as hear from him again.”
             </TextNode>
 
             <TextNode>
-              “‘“Done!” said he. “We picked him out of the gutter, and he won't
-              leave us so easily.” Those were his very words.’
+              “ ‘ “Done!” said he. “We picked him out of the gutter, and he
+              won't leave us so easily.” Those were his very words.’
             </TextNode>
 
             <TextNode>
-              “‘The impudent scoundrel!’ I cried. ‘I've never so much as seen
+              “ ‘The impudent scoundrel!’ I cried. ‘I've never so much as seen
               him in my life. Why should I consider him in any way? I shall
               certainly not write if you would rather I didn't.’
             </TextNode>
 
             <TextNode>
-              “‘Good! That's a promise,’ said he, rising from his chair. ‘Well,
+              “ ‘Good! That's a promise,’ said he, rising from his chair. ‘Well,
               I'm delighted to have got so good a man for my brother. Here's
               your advance of a hundred pounds, and here is the letter. Make a
               note of the address, 126b Corporation Street, and remember that

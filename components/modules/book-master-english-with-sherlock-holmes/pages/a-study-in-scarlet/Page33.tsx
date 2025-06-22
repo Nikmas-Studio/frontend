@@ -163,7 +163,7 @@ function Page33({
               the arm, ‘It's time to get out,’ I said.
             </TextNode>
 
-            <TextNode>“‘All right, cabby,’ said he.</TextNode>
+            <TextNode>“ ‘All right, cabby,’ said he.</TextNode>
 
             <TextNode>
               “I suppose he thought we had come to the hotel that he had
@@ -176,11 +176,11 @@ function Page33({
             </TextNode>
 
             <TextNode>
-              “‘It's infernally dark,’ said he, stamping about.
+              “ ‘It's infernally dark,’ said he, stamping about.
             </TextNode>
 
             <TextNode>
-              “‘We'll soon have a light,’ I said, striking a match and putting
+              “ ‘We'll soon have a light,’ I said, striking a match and putting
               it to a wax candle which I had brought with me. ‘Now, Enoch
               Drebber,’ I continued, turning to him, and holding the light to my
               own face, ‘who am I?’
@@ -198,7 +198,7 @@ function Page33({
             </TextNode>
 
             <TextNode>
-              “‘You dog!’ I said; ‘I have hunted you from Salt Lake City to St.
+              “ ‘You dog!’ I said; ‘I have hunted you from Salt Lake City to St.
               Petersburg, and you have always escaped me. Now, at last your
               wanderings have come to an end, for either you or I shall never
               see to-morrow's sun rise.’ He shrunk still further away as I
@@ -209,28 +209,28 @@ function Page33({
             </TextNode>
 
             <TextNode>
-              “‘What do you think of Lucy Ferrier now?’ I cried, locking the
+              “ ‘What do you think of Lucy Ferrier now?’ I cried, locking the
               door, and shaking the key in his face. ‘Punishment has been slow
               in coming, but it has overtaken you at last.’ I saw his coward
               lips tremble as I spoke. He would have begged for his life, but he
               knew well that it was useless.
             </TextNode>
 
-            <TextNode>“‘Would you murder me?’ he stammered.</TextNode>
+            <TextNode>“ ‘Would you murder me?’ he stammered.</TextNode>
 
             <TextNode>
-              “‘There is no murder,’ I answered. ‘Who talks of murdering a mad
+              “ ‘There is no murder,’ I answered. ‘Who talks of murdering a mad
               dog? What mercy had you upon my poor darling, when you dragged her
               from her slaughtered father, and bore her away to your accursed
               and shameless harem.’
             </TextNode>
 
             <TextNode>
-              “‘It was not I who killed her father,’ he cried.
+              “ ‘It was not I who killed her father,’ he cried.
             </TextNode>
 
             <TextNode>
-              “‘But it was you who broke her innocent heart,’ I shrieked,
+              “ ‘But it was you who broke her innocent heart,’ I shrieked,
               thrusting the box before him. ‘Let the high God judge between us.
               Choose and eat. There is death in one and life in the other. I
               shall take what you leave. Let us see if there is justice upon the

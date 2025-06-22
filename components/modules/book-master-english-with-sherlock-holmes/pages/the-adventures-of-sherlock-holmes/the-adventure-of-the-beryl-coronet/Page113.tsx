@@ -205,16 +205,16 @@ function Page113({
             </TextNode>
 
             <TextNode>
-              “‘Mr. Holder,’ said he, ‘I have been informed that you are in the
+              “ ‘Mr. Holder,’ said he, ‘I have been informed that you are in the
               habit of advancing money.’
             </TextNode>
 
             <TextNode>
-              “‘The firm does so when the security is good.’ I answered.
+              “ ‘The firm does so when the security is good.’ I answered.
             </TextNode>
 
             <TextNode>
-              “‘It is absolutely essential to me,’ said he, ‘that I should have
+              “ ‘It is absolutely essential to me,’ said he, ‘that I should have
               £50,000 at once. I could, of course, borrow so trifling a sum ten
               times over from my friends, but I much prefer to make it a matter
               of business and to carry out that business myself. In my position
@@ -223,18 +223,18 @@ function Page113({
             </TextNode>
 
             <TextNode>
-              “‘For how long, may I ask, do you want this sum?’ I asked.
+              “ ‘For how long, may I ask, do you want this sum?’ I asked.
             </TextNode>
 
             <TextNode>
-              “‘Next Monday I have a large sum due to me, and I shall then most
+              “ ‘Next Monday I have a large sum due to me, and I shall then most
               certainly repay what you advance, with whatever interest you think
               it right to charge. But it is very essential to me that the money
               should be paid at once.’
             </TextNode>
 
             <TextNode>
-              “‘I should be happy to advance it without further parley from my
+              “ ‘I should be happy to advance it without further parley from my
               own private purse,’ said I, ‘were it not that the strain would be
               rather more than it could bear. If, on the other hand, I am to do
               it in the name of the firm, then in justice to my partner I must
@@ -243,18 +243,18 @@ function Page113({
             </TextNode>
 
             <TextNode>
-              “‘I should much prefer to have it so,’ said he, raising up a
+              “ ‘I should much prefer to have it so,’ said he, raising up a
               square, black morocco case which he had laid beside his chair.
               ‘You have doubtless heard of the Beryl Coronet?’
             </TextNode>
 
             <TextNode>
-              “‘One of the most precious public possessions of the empire,’ said
-              I.
+              “ ‘One of the most precious public possessions of the empire,’
+              said I.
             </TextNode>
 
             <TextNode>
-              “‘Precisely.’ He opened the case, and there, imbedded in soft,
+              “ ‘Precisely.’ He opened the case, and there, imbedded in soft,
               flesh-coloured velvet, lay the magnificent piece of jewellery
               which he had named. ‘There are thirty-nine enormous beryls,’ said
               he, ‘and the price of the gold chasing is incalculable. The lowest
@@ -269,21 +269,21 @@ function Page113({
               perplexity from it to my illustrious client.
             </TextNode>
 
-            <TextNode>“‘You doubt its value?’ he asked.</TextNode>
+            <TextNode>“ ‘You doubt its value?’ he asked.</TextNode>
 
-            <TextNode>“‘Not at all. I only doubt—’</TextNode>
+            <TextNode>“ ‘Not at all. I only doubt—’</TextNode>
 
             <TextNode>
-              “‘The propriety of my leaving it. You may set your mind at rest
+              “ ‘The propriety of my leaving it. You may set your mind at rest
               about that. I should not dream of doing so were it not absolutely
               certain that I should be able in four days to reclaim it. It is a
               pure matter of form. Is the security sufficient?’
             </TextNode>
 
-            <TextNode>“‘Ample.’</TextNode>
+            <TextNode>“ ‘Ample.’</TextNode>
 
             <TextNode>
-              “‘You understand, Mr. Holder, that I am giving you a strong proof
+              “ ‘You understand, Mr. Holder, that I am giving you a strong proof
               of the confidence which I have in you, founded upon all that I
               have heard of you. I rely upon you not only to be discreet and to
               refrain from all gossip upon the matter but, above all, to
@@ -411,19 +411,19 @@ function Page113({
               coronet, but I thought it better not to disturb it.
             </TextNode>
 
-            <TextNode>“‘Where have you put it?’ asked Arthur.</TextNode>
+            <TextNode>“ ‘Where have you put it?’ asked Arthur.</TextNode>
 
-            <TextNode>“‘In my own bureau.’</TextNode>
+            <TextNode>“ ‘In my own bureau.’</TextNode>
 
             <TextNode>
-              “‘Well, I hope to goodness the house won't be burgled during the
+              “ ‘Well, I hope to goodness the house won't be burgled during the
               night.’ said he.
             </TextNode>
 
-            <TextNode>“‘It is locked up,’ I answered.</TextNode>
+            <TextNode>“ ‘It is locked up,’ I answered.</TextNode>
 
             <TextNode>
-              “‘Oh, any old key will fit that bureau. When I was a youngster I
+              “ ‘Oh, any old key will fit that bureau. When I was a youngster I
               have opened it myself with the key of the box-room cupboard.’
             </TextNode>
 
@@ -434,27 +434,27 @@ function Page113({
             </TextNode>
 
             <TextNode>
-              “‘Look here, dad,’ said he with his eyes cast down, ‘can you let
+              “ ‘Look here, dad,’ said he with his eyes cast down, ‘can you let
               me have £200?’
             </TextNode>
 
             <TextNode>
-              “‘No, I cannot!’ I answered sharply. ‘I have been far too generous
-              with you in money matters.’
+              “ ‘No, I cannot!’ I answered sharply. ‘I have been far too
+              generous with you in money matters.’
             </TextNode>
 
             <TextNode>
-              “‘You have been very kind,’ said he, ‘but I must have this money,
+              “ ‘You have been very kind,’ said he, ‘but I must have this money,
               or else I can never show my face inside the club again.’
             </TextNode>
 
-            <TextNode>“‘And a very good thing, too!’ I cried.</TextNode>
+            <TextNode>“ ‘And a very good thing, too!’ I cried.</TextNode>
 
             <TextNode>
-              “‘Yes, but you would not have me leave it a dishonoured man,’ said
-              he. ‘I could not bear the disgrace. I must raise the money in some
-              way, and if you will not let me have it, then I must try other
-              means.’
+              “ ‘Yes, but you would not have me leave it a dishonoured man,’
+              said he. ‘I could not bear the disgrace. I must raise the money in
+              some way, and if you will not let me have it, then I must try
+              other means.’
             </TextNode>
 
             <TextNode>

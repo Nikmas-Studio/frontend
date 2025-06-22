@@ -251,46 +251,48 @@ function Page97({
             </TextNode>
 
             <TextNode>
-              “‘Whatever were you doing with that bird, Jem?’ says she.
+              “ ‘Whatever were you doing with that bird, Jem?’ says she.
             </TextNode>
 
             <TextNode>
-              “‘Well,’ said I, ‘you said you'd give me one for Christmas, and I
+              “ ‘Well,’ said I, ‘you said you'd give me one for Christmas, and I
               was feeling which was the fattest.’
             </TextNode>
 
             <TextNode>
-              “‘Oh,’ says she, ‘we've set yours aside for you—Jem's bird, we
+              “ ‘Oh,’ says she, ‘we've set yours aside for you—Jem's bird, we
               call it. It's the big white one over yonder. There's twenty-six of
               them, which makes one for you, and one for us, and two dozen for
               the market.’
             </TextNode>
 
             <TextNode>
-              “‘Thank you, Maggie,’ says I; ‘but if it is all the same to you,
+              “ ‘Thank you, Maggie,’ says I; ‘but if it is all the same to you,
               I'd rather have that one I was handling just now.’
             </TextNode>
 
             <TextNode>
-              “‘The other is a good three pound heavier,’ said she, ‘and we
+              “ ‘The other is a good three pound heavier,’ said she, ‘and we
               fattened it expressly for you.’
             </TextNode>
 
             <TextNode>
-              “‘Never mind. I'll have the other, and I'll take it now,’ said I.
+              “ ‘Never mind. I'll have the other, and I'll take it now,’ said I.
             </TextNode>
 
             <TextNode>
-              “‘Oh, just as you like,’ said she, a little huffed. ‘Which is it
+              “ ‘Oh, just as you like,’ said she, a little huffed. ‘Which is it
               you want, then?’
             </TextNode>
 
             <TextNode>
-              “‘That white one with the barred tail, right in the middle of the
+              “ ‘That white one with the barred tail, right in the middle of the
               flock.’
             </TextNode>
 
-            <TextNode>“‘Oh, very well. Kill it and take it with you.’</TextNode>
+            <TextNode>
+              “ ‘Oh, very well. Kill it and take it with you.’
+            </TextNode>
 
             <TextNode>
               “Well, I did what she said, Mr. Holmes, and I carried the bird all
@@ -303,21 +305,21 @@ function Page97({
               a bird to be seen there.
             </TextNode>
 
-            <TextNode>“‘Where are they all, Maggie?’ I cried.</TextNode>
+            <TextNode>“ ‘Where are they all, Maggie?’ I cried.</TextNode>
 
-            <TextNode>“‘Gone to the dealer's, Jem.’</TextNode>
+            <TextNode>“ ‘Gone to the dealer's, Jem.’</TextNode>
 
-            <TextNode>“‘Which dealer's?’</TextNode>
+            <TextNode>“ ‘Which dealer's?’</TextNode>
 
-            <TextNode>“‘Breckinridge, of Covent Garden.’</TextNode>
+            <TextNode>“ ‘Breckinridge, of Covent Garden.’</TextNode>
 
             <TextNode>
-              “‘But was there another with a barred tail?’ I asked, ‘the same as
-              the one I chose?’
+              “ ‘But was there another with a barred tail?’ I asked, ‘the same
+              as the one I chose?’
             </TextNode>
 
             <TextNode>
-              “‘Yes, Jem; there were two barred-tailed ones, and I could never
+              “ ‘Yes, Jem; there were two barred-tailed ones, and I could never
               tell them apart.’
             </TextNode>
 

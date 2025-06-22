@@ -51,9 +51,9 @@ function Page19({
       <BookMainContainer>
         <div className='flex  max-2md:flex-col'>
           <BookLeftPartContainer>
-            <TextNode noIndent>“‘Well?’</TextNode>
+            <TextNode noIndent>“ ‘Well?’</TextNode>
             <TextNode>
-              “‘My heart grew light when I saw him drive away. My son is on
+              “ ‘My heart grew light when I saw him drive away. My son is on
               leave just now, but I did not tell him anything of all this, for
               his temper is violent, and he is passionately fond of his sister.
               When I closed the door behind them a load seemed to be lifted from
@@ -94,22 +94,22 @@ function Page19({
               a way which I always found effective with women, I asked her at
               what hour her son returned.
             </TextNode>
-            <TextNode>“‘I do not know,’ she answered.</TextNode>
-            <TextNode>“‘Not know?’</TextNode>
+            <TextNode>“ ‘I do not know,’ she answered.</TextNode>
+            <TextNode>“ ‘Not know?’</TextNode>
             <TextNode>
-              “‘No; he has a latch-key, and he let himself in.’
+              “ ‘No; he has a latch-key, and he let himself in.’
             </TextNode>
-            <TextNode>“‘After you went to bed?’</TextNode>
-            <TextNode>“‘Yes.’</TextNode>
-            <TextNode>“‘When did you go to bed?’</TextNode>
-            <TextNode>“‘About eleven.’</TextNode>
-            <TextNode>“‘So your son was gone at least two hours?’</TextNode>
-            <TextNode>“‘Yes.’</TextNode>
-            <TextNode>“‘Possibly four or five?’</TextNode>
-            <TextNode>“‘Yes.’</TextNode>
-            <TextNode>“‘What was he doing during that time?’</TextNode>
+            <TextNode>“ ‘After you went to bed?’</TextNode>
+            <TextNode>“ ‘Yes.’</TextNode>
+            <TextNode>“ ‘When did you go to bed?’</TextNode>
+            <TextNode>“ ‘About eleven.’</TextNode>
+            <TextNode>“ ‘So your son was gone at least two hours?’</TextNode>
+            <TextNode>“ ‘Yes.’</TextNode>
+            <TextNode>“ ‘Possibly four or five?’</TextNode>
+            <TextNode>“ ‘Yes.’</TextNode>
+            <TextNode>“ ‘What was he doing during that time?’</TextNode>
             <TextNode>
-              “‘I do not know,’ she answered, turning white to her very lips.
+              “ ‘I do not know,’ she answered, turning white to her very lips.
             </TextNode>
             <TextNode>
               “Of course after that there was nothing more to be done. I found

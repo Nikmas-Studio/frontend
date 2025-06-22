@@ -171,7 +171,7 @@ function Page88({
             </TextNode>
 
             <TextNode>
-              “‘Ku Klux Klan. A name derived from the fanciful resemblance to
+              “ ‘Ku Klux Klan. A name derived from the fanciful resemblance to
               the sound produced by cocking a rifle. This terrible secret
               society was formed by some ex-Confederate soldiers in the Southern
               states after the Civil War, and it rapidly formed local branches

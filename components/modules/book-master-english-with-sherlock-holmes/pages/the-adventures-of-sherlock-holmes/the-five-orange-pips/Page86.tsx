@@ -308,10 +308,10 @@ function Page86({
               my God, my sins have overtaken me!’
             </TextNode>
 
-            <TextNode>“‘What is it, uncle?’ I cried.</TextNode>
+            <TextNode>“ ‘What is it, uncle?’ I cried.</TextNode>
 
             <TextNode>
-              “‘Death,’ said he, and rising from the table he retired to his
+              “ ‘Death,’ said he, and rising from the table he retired to his
               room, leaving me palpitating with horror. I took up the envelope
               and saw scrawled in red ink upon the inner flap, just above the
               gum, the letter K three times repeated. There was nothing else
@@ -323,9 +323,9 @@ function Page86({
             </TextNode>
 
             <TextNode>
-              “‘They may do what they like, but I'll checkmate them still,’ said
-              he with an oath. ‘Tell Mary that I shall want a fire in my room
-              to-day, and send down to Fordham, the Horsham lawyer.’
+              “ ‘They may do what they like, but I'll checkmate them still,’
+              said he with an oath. ‘Tell Mary that I shall want a fire in my
+              room to-day, and send down to Fordham, the Horsham lawyer.’
             </TextNode>
 
             <TextNode>
@@ -338,7 +338,7 @@ function Page86({
             </TextNode>
 
             <TextNode>
-              “‘I wish you, John,’ said my uncle, ‘to witness my will. I leave
+              “ ‘I wish you, John,’ said my uncle, ‘to witness my will. I leave
               my estate, with all its advantages and all its disadvantages, to
               my brother, your father, whence it will, no doubt, descend to you.
               If you can enjoy it in peace, well and good! If you find you

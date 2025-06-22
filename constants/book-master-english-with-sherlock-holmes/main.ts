@@ -188,7 +188,35 @@ export const DETAILED_BOOK_PART_PAGE_RANGES = {
     },
     THE_STOCK_BROKERS_CLERK: {
       from: 133,
-      to: 138,
+      to: 135,
+    },
+    THE_GLORIA_SCOTT: {
+      from: 136,
+      to: 139,
+    },
+    THE_MUSGRAVE_RITUAL: {
+      from: 140,
+      to: 143,
+    },
+    THE_REIGATE_SQUIRES: {
+      from: 144,
+      to: 147,
+    },
+    THE_CROOKED_MAN: {
+      from: 148,
+      to: 151,
+    },
+    THE_RESIDENT_PATIENT: {
+      from: 152,
+      to: 154,
+    },
+    THE_GREEK_INTERPRETER: {
+      from: 155,
+      to: 158,
+    },
+    THE_NAVAL_TREATY: {
+      from: 159,
+      to: 165,
     },
   },
 };
@@ -264,12 +292,12 @@ export const BOOK_PARTS = [
 
 export const PAGES_WITHOUT_NUMBER = [
   1, 2, 3, 22, 36, 63, 64, 70, 76, 80, 85, 89, 94, 98, 103, 107, 112, 118, 123,
-  124, 129, 133,
+  124, 129, 133, 136, 140, 144, 148, 152, 155, 159,
 ];
 
 export const PAGES_WITH_VIEWPORT_HEIGHT = [
   1, 2, 3, 22, 36, 63, 64, 70, 76, 80, 85, 89, 94, 98, 103, 107, 112, 118, 123,
-  124, 129, 133,
+  124, 129, 133, 136, 140, 144, 148, 152, 155, 159,
 ];
 
 export const LIGHT_PAGE_PLACEHOLDER =

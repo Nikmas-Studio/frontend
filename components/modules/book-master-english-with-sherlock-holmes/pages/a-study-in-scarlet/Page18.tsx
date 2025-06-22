@@ -104,18 +104,18 @@ function Page18({
             </TextNode>
 
             <TextNode>
-              “‘At what o'clock did Mr. Drebber leave your house for the train?’
-              I asked.
+              “ ‘At what o'clock did Mr. Drebber leave your house for the
+              train?’ I asked.
             </TextNode>
 
             <TextNode>
-              “‘At eight o'clock,’ she said, gulping in her throat to keep down
+              “ ‘At eight o'clock,’ she said, gulping in her throat to keep down
               her agitation. ‘His secretary, Mr. Stangerson, said that there
               were two trains—one at 9.15 and one at 11. He was to catch the
               first.’
             </TextNode>
 
-            <TextNode>“‘And was that the last which you saw of him?’</TextNode>
+            <TextNode>“ ‘And was that the last which you saw of him?’</TextNode>
 
             <TextNode>
               “A terrible change came over the woman's face as I asked the
@@ -130,30 +130,30 @@ function Page18({
             </TextNode>
 
             <TextNode>
-              “‘No good can ever come of falsehood, mother,’ she said. ‘Let us
+              “ ‘No good can ever come of falsehood, mother,’ she said. ‘Let us
               be frank with this gentleman. We did see Mr. Drebber again.’
             </TextNode>
 
             <TextNode>
-              “‘God forgive you!’ cried Madame Charpentier, throwing up her
+              “ ‘God forgive you!’ cried Madame Charpentier, throwing up her
               hands and sinking back in her chair. ‘You have murdered your
               brother.’
             </TextNode>
           </BookLeftPartContainer>
           <BookRightPartContainer>
             <TextNode noIndent>
-              “‘Arthur would rather that we spoke the truth,’ the girl answered
+              “ ‘Arthur would rather that we spoke the truth,’ the girl answered
               firmly.
             </TextNode>
 
             <TextNode>
-              “‘You had best tell me all about it now,’ I said.
+              “ ‘You had best tell me all about it now,’ I said.
               ‘Half-confidences are worse than none. Besides, you do not know
               how much we know of it.’
             </TextNode>
 
             <TextNode>
-              “‘On your head be it, Alice!’ cried her mother; and then, turning
+              “ ‘On your head be it, Alice!’ cried her mother; and then, turning
               to me, ‘I will tell you all, sir. Do not imagine that my agitation
               on behalf of my son arises from any fear lest he should have had a
               hand in this terrible affair. He is utterly innocent of it. My
@@ -164,21 +164,21 @@ function Page18({
             </TextNode>
 
             <TextNode>
-              “‘Your best way is to make a clean breast of the facts,’ I
+              “ ‘Your best way is to make a clean breast of the facts,’ I
               answered. ‘Depend upon it, if your son is innocent he will be none
               the worse.’
             </TextNode>
             <TextNode>
-              “‘Perhaps, Alice, you had better leave us together,’ she said, and
-              her daughter withdrew. ‘Now, sir,’ she continued, ‘I had no
+              “ ‘Perhaps, Alice, you had better leave us together,’ she said,
+              and her daughter withdrew. ‘Now, sir,’ she continued, ‘I had no
               intention of telling you all this, but since my poor daughter has
               disclosed it I have no alternative. Having once decided to speak,
               I will tell you all without omitting any particular.’
             </TextNode>
 
-            <TextNode>“‘It is your wisest course,’ said I.</TextNode>
+            <TextNode>“ ‘It is your wisest course,’ said I.</TextNode>
             <TextNode>
-              “‘Mr. Drebber has been with us nearly three weeks. He and his
+              “ ‘Mr. Drebber has been with us nearly three weeks. He and his
               secretary, Mr. Stangerson, had been travelling on the Continent. I
               noticed a “Copenhagen” label upon each of their trunks, showing
               that that had been their last stopping place. Stangerson was a
@@ -196,7 +196,7 @@ function Page18({
             </TextNode>
 
             <TextNode>
-              “‘But why did you stand all this,’ I asked. ‘I suppose that you
+              “ ‘But why did you stand all this,’ I asked. ‘I suppose that you
               can get rid of your boarders when you wish.’
             </TextNode>
 

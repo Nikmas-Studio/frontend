@@ -111,8 +111,35 @@ import Page125 from './pages/the-momoirs-of-sherlock-holmes/silver-blaze/Page125
 import Page126 from './pages/the-momoirs-of-sherlock-holmes/silver-blaze/Page126';
 import Page127 from './pages/the-momoirs-of-sherlock-holmes/silver-blaze/Page127';
 import Page128 from './pages/the-momoirs-of-sherlock-holmes/silver-blaze/Page128';
+import Page148 from './pages/the-momoirs-of-sherlock-holmes/the-crooked-man/Page148';
+import Page149 from './pages/the-momoirs-of-sherlock-holmes/the-crooked-man/Page149';
+import Page150 from './pages/the-momoirs-of-sherlock-holmes/the-crooked-man/Page150';
+import Page151 from './pages/the-momoirs-of-sherlock-holmes/the-crooked-man/Page151';
+import Page136 from './pages/the-momoirs-of-sherlock-holmes/the-gloria-scott/Page136';
+import Page137 from './pages/the-momoirs-of-sherlock-holmes/the-gloria-scott/Page137';
+import Page138 from './pages/the-momoirs-of-sherlock-holmes/the-gloria-scott/Page138';
+import Page139 from './pages/the-momoirs-of-sherlock-holmes/the-gloria-scott/Page139';
+import Page155 from './pages/the-momoirs-of-sherlock-holmes/the-greek-interpreter/Page155';
+import Page156 from './pages/the-momoirs-of-sherlock-holmes/the-greek-interpreter/Page156';
+import Page157 from './pages/the-momoirs-of-sherlock-holmes/the-greek-interpreter/Page157';
+import Page158 from './pages/the-momoirs-of-sherlock-holmes/the-greek-interpreter/Page158';
+import Page140 from './pages/the-momoirs-of-sherlock-holmes/the-musgrave-ritual/Page140';
+import Page141 from './pages/the-momoirs-of-sherlock-holmes/the-musgrave-ritual/Page141';
+import Page142 from './pages/the-momoirs-of-sherlock-holmes/the-musgrave-ritual/Page142';
+import Page143 from './pages/the-momoirs-of-sherlock-holmes/the-musgrave-ritual/Page143';
+import Page159 from './pages/the-momoirs-of-sherlock-holmes/the-naval-treaty/Page159';
+import Page160 from './pages/the-momoirs-of-sherlock-holmes/the-naval-treaty/Page160';
+import Page161 from './pages/the-momoirs-of-sherlock-holmes/the-naval-treaty/Page161';
+import Page144 from './pages/the-momoirs-of-sherlock-holmes/the-reigate-squires/Page144';
+import Page145 from './pages/the-momoirs-of-sherlock-holmes/the-reigate-squires/Page145';
+import Page146 from './pages/the-momoirs-of-sherlock-holmes/the-reigate-squires/Page146';
+import Page147 from './pages/the-momoirs-of-sherlock-holmes/the-reigate-squires/Page147';
+import Page152 from './pages/the-momoirs-of-sherlock-holmes/the-resident-patient/Page152';
+import Page153 from './pages/the-momoirs-of-sherlock-holmes/the-resident-patient/Page153';
+import Page154 from './pages/the-momoirs-of-sherlock-holmes/the-resident-patient/Page154';
 import Page133 from './pages/the-momoirs-of-sherlock-holmes/the-stock-brokers-clerk/Page133';
 import Page134 from './pages/the-momoirs-of-sherlock-holmes/the-stock-brokers-clerk/Page134';
+import Page135 from './pages/the-momoirs-of-sherlock-holmes/the-stock-brokers-clerk/Page135';
 import Page129 from './pages/the-momoirs-of-sherlock-holmes/the-yellow-face/Page129';
 import Page130 from './pages/the-momoirs-of-sherlock-holmes/the-yellow-face/Page130';
 import Page131 from './pages/the-momoirs-of-sherlock-holmes/the-yellow-face/Page131';
@@ -290,6 +317,33 @@ function BookRead({ initialPageId }: BookReadProps): ReactElement {
             Page132,
             Page133,
             Page134,
+            Page135,
+            Page136,
+            Page137,
+            Page138,
+            Page139,
+            Page140,
+            Page141,
+            Page142,
+            Page143,
+            Page144,
+            Page145,
+            Page146,
+            Page147,
+            Page148,
+            Page149,
+            Page150,
+            Page151,
+            Page152,
+            Page153,
+            Page154,
+            Page155,
+            Page156,
+            Page157,
+            Page158,
+            Page159,
+            Page160,
+            Page161,
           ].map((PageComponent, index) => {
             return (
               <PageComponent

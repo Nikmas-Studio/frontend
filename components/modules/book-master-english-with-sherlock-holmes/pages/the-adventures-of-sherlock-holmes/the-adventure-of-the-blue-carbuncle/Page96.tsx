@@ -440,11 +440,15 @@ function Page96({
 
             <TextNode>“Now, then, what's the last entry?”</TextNode>
 
-            <TextNode>“‘December 22nd. Twenty-four geese at 7s. 6d.’”</TextNode>
+            <TextNode>
+              “ ‘December 22nd. Twenty-four geese at 7s. 6d.’”
+            </TextNode>
 
             <TextNode>“Quite so. There you are. And underneath?”</TextNode>
 
-            <TextNode>“‘Sold to Mr. Windigate of the Alpha, at 12s.’”</TextNode>
+            <TextNode>
+              “ ‘Sold to Mr. Windigate of the Alpha, at 12s.’”
+            </TextNode>
 
             <TextNode>“What have you to say now?”</TextNode>
 

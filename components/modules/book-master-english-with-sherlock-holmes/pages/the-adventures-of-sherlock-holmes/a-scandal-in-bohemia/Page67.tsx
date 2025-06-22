@@ -197,7 +197,7 @@ function Page67({
             </TextNode>
 
             <TextNode>
-              “‘The Church of St. Monica, John,’ she cried, ‘and half a
+              “ ‘The Church of St. Monica, John,’ she cried, ‘and half a
               sovereign if you reach it in twenty minutes.’
             </TextNode>
 
@@ -225,13 +225,13 @@ function Page67({
             </TextNode>
 
             <TextNode>
-              “‘Thank God,’ he cried. ‘You'll do. Come! Come!’
+              “ ‘Thank God,’ he cried. ‘You'll do. Come! Come!’
             </TextNode>
 
-            <TextNode>“‘What then?’ I asked.</TextNode>
+            <TextNode>“ ‘What then?’ I asked.</TextNode>
 
             <TextNode>
-              “‘Come, man, come, only three minutes, or it won't be legal.’
+              “ ‘Come, man, come, only three minutes, or it won't be legal.’
             </TextNode>
 
             <TextNode>

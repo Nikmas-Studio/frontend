@@ -360,25 +360,25 @@ function Page99({
             </TextNode>
 
             <TextNode>
-              “‘Tell me, Helen,’ said she, ‘have you ever heard anyone whistle
+              “ ‘Tell me, Helen,’ said she, ‘have you ever heard anyone whistle
               in the dead of the night?’
             </TextNode>
 
-            <TextNode>“‘Never,’ said I.</TextNode>
+            <TextNode>“ ‘Never,’ said I.</TextNode>
 
             <TextNode>
-              “‘I suppose that you could not possibly whistle, yourself, in your
-              sleep?’
+              “ ‘I suppose that you could not possibly whistle, yourself, in
+              your sleep?’
             </TextNode>
 
-            <TextNode>“‘Certainly not. But why?’</TextNode>
+            <TextNode>“ ‘Certainly not. But why?’</TextNode>
 
             <TextNode>
-              “‘Because during the last few nights I have always, about three in
-              the morning, heard a low, clear whistle. I am a light sleeper, and
-              it has awakened me. I cannot tell where it came from—perhaps from
-              the next room, perhaps from the lawn. I thought that I would just
-              ask you whether you had heard it.’
+              “ ‘Because during the last few nights I have always, about three
+              in the morning, heard a low, clear whistle. I am a light sleeper,
+              and it has awakened me. I cannot tell where it came from—perhaps
+              from the next room, perhaps from the lawn. I thought that I would
+              just ask you whether you had heard it.’
             </TextNode>
           </BookRightPartContainer>
         </div>

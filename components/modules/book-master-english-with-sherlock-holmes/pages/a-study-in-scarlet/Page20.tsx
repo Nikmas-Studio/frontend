@@ -124,17 +124,17 @@ function Page20({
             </TextNode>
 
             <TextNode>
-              “‘No doubt you are the gentleman whom he was expecting,’ they
+              “ ‘No doubt you are the gentleman whom he was expecting,’ they
               said. ‘He has been waiting for a gentleman for two days.’
             </TextNode>
 
-            <TextNode>“‘Where is he now?’ I asked.</TextNode>
+            <TextNode>“ ‘Where is he now?’ I asked.</TextNode>
 
             <TextNode>
-              “‘He is upstairs in bed. He wished to be called at nine.’
+              “ ‘He is upstairs in bed. He wished to be called at nine.’
             </TextNode>
 
-            <TextNode>“‘I will go up and see him at once,’ I said.</TextNode>
+            <TextNode>“ ‘I will go up and see him at once,’ I said.</TextNode>
 
             <TextNode>
               “It seemed to me that my sudden appearance might shake his nerves

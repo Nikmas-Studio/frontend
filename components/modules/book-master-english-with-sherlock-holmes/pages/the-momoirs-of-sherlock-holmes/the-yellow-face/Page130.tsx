@@ -350,37 +350,37 @@ function Page130({
             </TextNode>
 
             <TextNode>
-              “‘Jack,’ said she, ‘when you took my money you said that if ever I
-              wanted any I was to ask you for it.’
+              “ ‘Jack,’ said she, ‘when you took my money you said that if ever
+              I wanted any I was to ask you for it.’
             </TextNode>
 
-            <TextNode>“‘Certainly,’ said I. ‘It's all your own.’</TextNode>
+            <TextNode>“ ‘Certainly,’ said I. ‘It's all your own.’</TextNode>
 
-            <TextNode>“‘Well,’ said she, ‘I want a hundred pounds.’</TextNode>
+            <TextNode>“ ‘Well,’ said she, ‘I want a hundred pounds.’</TextNode>
 
             <TextNode>
               “I was a bit staggered at this, for I had imagined it was simply a
               new dress or something of the kind that she was after.
             </TextNode>
 
-            <TextNode>“‘What on earth for?’ I asked.</TextNode>
+            <TextNode>“ ‘What on earth for?’ I asked.</TextNode>
 
             <TextNode>
-              “‘Oh,’ said she, in her playful way, ‘you said that you were only
+              “ ‘Oh,’ said she, in her playful way, ‘you said that you were only
               my banker, and bankers never ask questions, you know.’
             </TextNode>
 
             <TextNode>
-              “‘If you really mean it, of course you shall have the money,’ said
-              I.
+              “ ‘If you really mean it, of course you shall have the money,’
+              said I.
             </TextNode>
 
-            <TextNode>“‘Oh, yes, I really mean it.’</TextNode>
+            <TextNode>“ ‘Oh, yes, I really mean it.’</TextNode>
 
-            <TextNode>“‘And you won't tell me what you want it for?’</TextNode>
+            <TextNode>“ ‘And you won't tell me what you want it for?’</TextNode>
 
             <TextNode>
-              “‘Some day, perhaps, but not just at present, Jack.’
+              “ ‘Some day, perhaps, but not just at present, Jack.’
             </TextNode>
 
             <TextNode>

@@ -142,8 +142,8 @@ function Page108({
             </TextNode>
 
             <TextNode className='pl-14' noIndent>
-              <span className='italic'>“‘My dear Mr. Sherlock Holmes:</span>
-              <br /> “‘Lord Backwater tells me that I may place implicit
+              <span className='italic'>“ ‘My dear Mr. Sherlock Holmes:</span>
+              <br /> “ ‘Lord Backwater tells me that I may place implicit
               reliance upon your judgment and discretion. I have determined,
               therefore, to call upon you and to consult you in reference to the
               very painful event which has occurred in connection with my
@@ -155,8 +155,8 @@ function Page108({
               will postpone it, as this matter is of paramount importance.
               <br />
               <span className='italic'>
-                “‘Yours faithfully,
-                <br /> “‘St. Simon.’
+                “ ‘Yours faithfully,
+                <br /> “ ‘St. Simon.’
               </span>
             </TextNode>
 
@@ -178,16 +178,16 @@ function Page108({
               their order of time, while I take a glance as to who our client
               is.” He picked a red-covered volume from a line of books of
               reference beside the mantelpiece. “Here he is,” said he, sitting
-              down and flattening it out upon his knee. “‘Lord Robert Walsingham
-              de Vere St. Simon, second son of the Duke of Balmoral.’ Hum!
-              ‘Arms: Azure, three caltrops in chief over a fess sable. Born in
-              1846.’ He's forty-one years of age, which is mature for marriage.
-              Was Under-Secretary for the colonies in a late administration. The
-              Duke, his father, was at one time Secretary for Foreign Affairs.
-              They inherit Plantagenet blood by direct descent, and Tudor on the
-              distaff side. Ha! Well, there is nothing very instructive in all
-              this. I think that I must turn to you Watson, for something more
-              solid.”
+              down and flattening it out upon his knee. “ ‘Lord Robert
+              Walsingham de Vere St. Simon, second son of the Duke of Balmoral.’
+              Hum! ‘Arms: Azure, three caltrops in chief over a fess sable. Born
+              in 1846.’ He's forty-one years of age, which is mature for
+              marriage. Was Under-Secretary for the colonies in a late
+              administration. The Duke, his father, was at one time Secretary
+              for Foreign Affairs. They inherit Plantagenet blood by direct
+              descent, and Tudor on the distaff side. Ha! Well, there is nothing
+              very instructive in all this. I think that I must turn to you
+              Watson, for something more solid.”
             </TextNode>
 
             <TextNode>
@@ -212,7 +212,7 @@ function Page108({
             </TextNode>
 
             <TextNode className='pl-14' noIndent>
-              “‘A marriage has been arranged [it says] and will, if rumour is
+              “ ‘A marriage has been arranged [it says] and will, if rumour is
               correct, very shortly take place, between Lord Robert St. Simon,
               second son of the Duke of Balmoral, and Miss Hatty Doran, the only
               daughter of Aloysius Doran. Esq., of San Francisco, Cal., U.S.A.’
@@ -232,15 +232,15 @@ function Page108({
             </TextNode>
 
             <TextNode className='pl-14' noIndent>
-              “‘There will soon be a call for protection in the marriage market,
-              for the present free-trade principle appears to tell heavily
-              against our home product. One by one the management of the noble
-              houses of Great Britain is passing into the hands of our fair
-              cousins from across the Atlantic. An important addition has been
-              made during the last week to the list of the prizes which have
-              been borne away by these charming invaders. Lord St. Simon, who
-              has shown himself for over twenty years proof against the little
-              god's arrows, has now definitely announced his approaching
+              “ ‘There will soon be a call for protection in the marriage
+              market, for the present free-trade principle appears to tell
+              heavily against our home product. One by one the management of the
+              noble houses of Great Britain is passing into the hands of our
+              fair cousins from across the Atlantic. An important addition has
+              been made during the last week to the list of the prizes which
+              have been borne away by these charming invaders. Lord St. Simon,
+              who has shown himself for over twenty years proof against the
+              little god's arrows, has now definitely announced his approaching
               marriage with Miss Hatty Doran, the fascinating daughter of a
               California millionaire. Miss Doran, whose graceful figure and
               striking face attracted much attention at the Westbury House
@@ -307,7 +307,7 @@ function Page108({
 
             <div className='pl-14'>
               <TextNode noIndent>
-                “‘The family of Lord Robert St. Simon has been thrown into the
+                “ ‘The family of Lord Robert St. Simon has been thrown into the
                 greatest consternation by the strange and painful episodes which
                 have taken place in connection with his wedding. The ceremony,
                 as shortly announced in the papers of yesterday, occurred on the
@@ -319,7 +319,7 @@ function Page108({
                 what is a common subject for conversation.
               </TextNode>
               <TextNode>
-                “‘The ceremony, which was performed at St. George's, Hanover
+                “ ‘The ceremony, which was performed at St. George's, Hanover
                 Square, was a very quiet one, no one being present save the
                 father of the bride, Mr. Aloysius Doran, the Duchess of
                 Balmoral, Lord Backwater, Lord Eustace and Lady Clara St. Simon
