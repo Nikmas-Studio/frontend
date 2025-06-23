@@ -1,18 +1,9 @@
-'use client';
-
 import BookMainContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookMainContainer';
 import H2 from '@/components/elements/book-master-english-with-sherlock-holmes/H2';
-import Page from '@/components/elements/book-master-english-with-sherlock-holmes/Page';
+import PageWrapper from '@/components/elements/book-master-english-with-sherlock-holmes/PageWrapper';
 import TextNode from '@/components/elements/book-master-english-with-sherlock-holmes/TextNode';
-import {
-  BASE_PATH_DEMO,
-  BASE_PATH_READ,
-} from '@/constants/book-master-english-with-sherlock-holmes/main';
-import { useBookVersion } from '@/context/book-version/Context';
-import { useUrlUpdate } from '@/hooks/use-url-update';
-import { BookVersion } from '@/types/book-version';
 import classNames from 'classnames';
-import { ReactElement, useRef } from 'react';
+import { ReactElement } from 'react';
 import Controls from '../Controls';
 
 interface PageProps {
@@ -24,24 +15,13 @@ function InstructionsPage({
   pageNumber,
   hidePageNumber = false,
 }: PageProps): ReactElement {
-  const sectionRef = useRef<HTMLElement | null>(null);
-  const bookVersion = useBookVersion();
-  const basePath =
-    bookVersion === BookVersion.DEMO ? BASE_PATH_DEMO : BASE_PATH_READ;
-
-  useUrlUpdate({
-    pageRef: sectionRef,
-    currentPage: pageNumber,
-    basePath,
-  });
-
   const iconClasses = classNames(
     `fill-none  [stroke-linecap:round]  [stroke-linejoin:round]
     stroke-orange`,
   );
 
   return (
-    <Page id={`page-${pageNumber}`} className='mb-5' ref={sectionRef}>
+    <PageWrapper pageNumber={pageNumber}>
       <Controls pageNumber={hidePageNumber ? undefined : pageNumber} />
       <BookMainContainer>
         <H2 className='mb-10  max-sm:mb-7'>How to Use the Book</H2>
@@ -162,7 +142,7 @@ function InstructionsPage({
           </video>
         </div>
       </BookMainContainer>
-    </Page>
+    </PageWrapper>
   );
 }
 

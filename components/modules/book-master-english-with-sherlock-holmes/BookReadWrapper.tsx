@@ -12,14 +12,13 @@ import { verifyOrder } from '@/utils/verify-order';
 import { CircularProgress } from '@mui/material';
 import axios from 'axios';
 import { useSearchParams } from 'next/navigation';
-import { ReactElement, useEffect, useRef, useState } from 'react';
-import BookRead from './BookRead';
+import { ReactElement, ReactNode, useEffect, useRef, useState } from 'react';
 
 interface BookReadProps {
-  initialPageId?: string;
+  children: ReactNode;
 }
 
-function BookReadWrapper({ initialPageId }: BookReadProps): ReactElement {
+function BookReadWrapper({ children }: BookReadProps): ReactElement {
   const [bookState, setBookState] = useState<BookState>(BookState.LOADING);
   const reloadTokenIsValid = useRef(false);
   const searchParams = useSearchParams();
@@ -105,7 +104,8 @@ function BookReadWrapper({ initialPageId }: BookReadProps): ReactElement {
     return <div className='flex  h-screen  w-screen  justify-center'></div>;
   }
 
-  return <BookRead initialPageId={initialPageId} />;
+  // return <BookRead initialPageId={initialPageId} />;
+  return <>{children}</>;
 }
 
 export default BookReadWrapper;

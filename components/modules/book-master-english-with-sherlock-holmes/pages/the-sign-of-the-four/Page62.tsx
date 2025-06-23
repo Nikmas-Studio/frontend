@@ -1,18 +1,9 @@
-'use client';
-
 import BookLeftPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookLeftPartContainer';
 import BookMainContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookMainContainer';
 import BookRightPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookRightPartContainer';
-import Page from '@/components/elements/book-master-english-with-sherlock-holmes/Page';
+import PageWrapper from '@/components/elements/book-master-english-with-sherlock-holmes/PageWrapper';
 import TextNode from '@/components/elements/book-master-english-with-sherlock-holmes/TextNode';
-import {
-  BASE_PATH_DEMO,
-  BASE_PATH_READ,
-} from '@/constants/book-master-english-with-sherlock-holmes/main';
-import { useBookVersion } from '@/context/book-version/Context';
-import { useUrlUpdate } from '@/hooks/use-url-update';
-import { BookVersion } from '@/types/book-version';
-import { ReactElement, useRef } from 'react';
+import { ReactElement } from 'react';
 import Controls from '../../Controls';
 
 interface PageProps {
@@ -23,27 +14,11 @@ interface PageProps {
 
 function Page62({
   pageNumber,
-  hidePageNumber,
-  viewportHeight,
+  hidePageNumber = false,
+  viewportHeight = false,
 }: PageProps): ReactElement {
-  const sectionRef = useRef<HTMLElement | null>(null);
-  const bookVersion = useBookVersion();
-  const basePath =
-    bookVersion === BookVersion.DEMO ? BASE_PATH_DEMO : BASE_PATH_READ;
-
-  useUrlUpdate({
-    pageRef: sectionRef,
-    currentPage: pageNumber,
-    basePath,
-  });
-
   return (
-    <Page
-      id={`page-${pageNumber}`}
-      viewportHeight={viewportHeight}
-      className='mb-5'
-      ref={sectionRef}
-    >
+    <PageWrapper pageNumber={pageNumber} viewportHeight={viewportHeight}>
       <Controls
         pageNumber={hidePageNumber ? undefined : pageNumber}
         title='THE SIGN OF THE FOUR'
@@ -298,7 +273,7 @@ function Page62({
           </BookRightPartContainer>
         </div>
       </BookMainContainer>
-    </Page>
+    </PageWrapper>
   );
 }
 

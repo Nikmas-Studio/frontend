@@ -199,6 +199,20 @@ function BookNavigator(): ReactElement {
     },
   );
 
+  const outerWrapperRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (bookNavigatorIsOpened && outerWrapperRef.current !== null) {
+      outerWrapperRef.current.style.visibility = 'visible';
+    } else {
+      setTimeout(() => {
+        if (outerWrapperRef.current !== null) {
+          outerWrapperRef.current.style.visibility = 'hidden';
+        }
+      }, 500);
+    }
+  }, [bookNavigatorIsOpened]);
+
   useOutsideClick([containerRef, tooltipRef], () => {
     setBookNavigatorIsOpened(false);
   });
@@ -423,7 +437,7 @@ function BookNavigator(): ReactElement {
   );
 
   return (
-    <div>
+    <div ref={outerWrapperRef}>
       <div className={overlayClasses}></div>
       <div
         ref={containerRef}

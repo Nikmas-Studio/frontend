@@ -1,3 +1,4 @@
+import BookRead from '@/components/modules/book-master-english-with-sherlock-holmes/BookRead';
 import BookReadWrapper from '@/components/modules/book-master-english-with-sherlock-holmes/BookReadWrapper';
 import { Metadata } from 'next';
 import { ReactElement } from 'react';
@@ -46,7 +47,12 @@ export const metadata: Metadata = {
 function BookMasterEnglishWithSherlockHolmesRead({
   params: { pageId },
 }: BookReadProps): ReactElement {
-  return <BookReadWrapper initialPageId={pageId} />;
+  // return <BookReadWrapper initialPageId={pageId} />;
+  return (
+    <BookReadWrapper>
+      <BookRead initialPageId={pageId} />
+    </BookReadWrapper>
+  );
 }
 
 export default BookMasterEnglishWithSherlockHolmesRead;

@@ -1,22 +1,13 @@
-'use client';
-
 import BookLeftPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookLeftPartContainer';
 import BookMainContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookMainContainer';
 import BookRightPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookRightPartContainer';
 import Indent from '@/components/elements/book-master-english-with-sherlock-holmes/Indent';
-import Page from '@/components/elements/book-master-english-with-sherlock-holmes/Page';
+import PageWrapper from '@/components/elements/book-master-english-with-sherlock-holmes/PageWrapper';
 import TextNode from '@/components/elements/book-master-english-with-sherlock-holmes/TextNode';
-import {
-  BASE_PATH_DEMO,
-  BASE_PATH_READ,
-} from '@/constants/book-master-english-with-sherlock-holmes/main';
-import { useBookVersion } from '@/context/book-version/Context';
-import { useUrlUpdate } from '@/hooks/use-url-update';
 import chartDark from '@/public/images/sherlock-nava-1-dark.png';
 import chartLight from '@/public/images/sherlock-nava-1-light.png';
-import { BookVersion } from '@/types/book-version';
 import Image from 'next/image';
-import { ReactElement, useRef } from 'react';
+import { ReactElement } from 'react';
 import Controls from '../../../Controls';
 
 interface PageProps {
@@ -27,27 +18,11 @@ interface PageProps {
 
 function Page160({
   pageNumber,
-  hidePageNumber,
-  viewportHeight,
+  hidePageNumber = false,
+  viewportHeight = false,
 }: PageProps): ReactElement {
-  const sectionRef = useRef<HTMLElement | null>(null);
-  const bookVersion = useBookVersion();
-  const basePath =
-    bookVersion === BookVersion.DEMO ? BASE_PATH_DEMO : BASE_PATH_READ;
-
-  useUrlUpdate({
-    pageRef: sectionRef,
-    currentPage: pageNumber,
-    basePath,
-  });
-
   return (
-    <Page
-      id={`page-${pageNumber}`}
-      viewportHeight={viewportHeight}
-      className='mb-5'
-      ref={sectionRef}
-    >
+    <PageWrapper pageNumber={pageNumber} viewportHeight={viewportHeight}>
       <Controls
         pageNumber={hidePageNumber ? undefined : pageNumber}
         title='THE NAVAL TREATY'
@@ -415,12 +390,12 @@ function Page160({
             </TextNode>
 
             <Image
-              className='h-[20.25rem]  w-auto  dark:hidden'
+              className='h-[20.25rem]  w-auto  max-2md:h-auto  dark:hidden'
               src={chartLight}
               alt='chart'
             />
             <Image
-              className='hidden  h-[20.25rem]  w-auto dark:block'
+              className='hidden  h-[20.25rem]  w-auto  max-2md:h-auto  dark:block'
               src={chartDark}
               alt='chart'
             />
@@ -726,7 +701,7 @@ function Page160({
           </BookRightPartContainer>
         </div>
       </BookMainContainer>
-    </Page>
+    </PageWrapper>
   );
 }
 
