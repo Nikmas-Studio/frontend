@@ -26,10 +26,12 @@ function TranslationTooltip(): ReactElement {
     top?: string | number;
     left?: string | number;
     right?: string | number;
+    maxHeight?: string | number;
   }>({
     top: '',
     left: '',
     right: '',
+    maxHeight: '',
   });
 
   const [innerIsShown, setInnerIsShown] = useState(false);
@@ -37,7 +39,7 @@ function TranslationTooltip(): ReactElement {
   const tooltipClasses = classNames(
     merriweather.className,
 
-    `text-black  absolute  
+    `text-black  fixed 
      rounded-[7px]  z-[9999999]  dark:border-gray-dark  text-lg  
      [-webkit-font-smoothing:subpixel-antialiased]  max-w-[30vw]
      bg-[#FFEAC5]  pt-2  pb-[0.65rem]  px-4  lining-nums  min-h-[2.9rem]
@@ -77,41 +79,115 @@ function TranslationTooltip(): ReactElement {
     };
   }, [isShown, setIsShown]);
 
-  setTimeout(() => {
-    if (!tooltipRef.current) {
-      return;
-    }
+  // useEffect(() => {
+  //   if (!isLoading) {
+  //     setInnerIsShown(false);
+  //   }
+  // }, [isLoading]);
 
-    const tooltipWidth = tooltipRef.current.offsetWidth;
-    const tooltipHeight = tooltipRef.current.offsetHeight;
+  useEffect(() => {
+    setTimeout(() => {
+      if (!tooltipRef.current) {
+        return;
+      }
 
-    let top =
-      fragmentPosition.scrollY + fragmentPosition.rect.top - tooltipHeight - 8;
+      const previousMaxHeight = tooltipPosition.maxHeight;
+      tooltipRef.current.style.maxHeight = '';
+      requestAnimationFrame(() => {
+        const tooltipWidth = tooltipRef.current!.offsetWidth;
+        const tooltipHeight = tooltipRef.current!.offsetHeight;
+        tooltipRef.current!.style.maxHeight = previousMaxHeight
+          ? `${previousMaxHeight}px`
+          : '';
 
-    let left: number | string =
-      fragmentPosition.scrollX + fragmentPosition.rect.left;
+        const margin = 8;
 
-    let right: string | number | undefined;
+        let placement = 'top';
 
-    const viewportWidth = window.innerWidth;
+        let top = fragmentPosition.firstLineRect.top - tooltipHeight - margin;
 
-    if (left + tooltipWidth > viewportWidth - 17.388) {
-      left = '';
-      right = window.innerWidth < 640 ? '17.388px' : '100px';
-    }
+        if (isTouchDevice) {
+          top -= 70;
+        }
 
-    if (isTouchDevice) {
-      top -= 70;
-    }
+        if (top < margin) {
+          placement = 'bottom';
 
-    setTooltipPosition({
-      top,
-      left,
-      right,
-    });
+          top = fragmentPosition.lastLineRect.bottom + margin;
 
-    setInnerIsShown(isShown);
-  }, 10);
+          if (isTouchDevice) {
+            if (fragmentPosition.firstLineRect.top < 70) {
+              top += 70;
+            }
+          }
+        }
+
+        let left: number | string =
+          fragmentPosition.scrollX + fragmentPosition.firstLineRect.left;
+
+        let right: string | number | undefined;
+
+        const viewportWidth = window.innerWidth;
+
+        if (left + tooltipWidth > viewportWidth - 17.388) {
+          left = '';
+          right = window.innerWidth < 640 ? '17.388px' : '100px';
+        }
+
+        let constrainedHeight: string | number | undefined;
+
+        if (placement === 'bottom') {
+          const availableHeightBelow = window.innerHeight - top - margin;
+          let availableHeightAbove =
+            fragmentPosition.firstLineRect.top - margin;
+
+          if (isTouchDevice) {
+            availableHeightAbove -= 70;
+          }
+
+          let availableHeight = availableHeightBelow;
+
+          if (availableHeightBelow < availableHeightAbove) {
+            top = fragmentPosition.firstLineRect.top - availableHeightAbove;
+
+            if (isTouchDevice) {
+              top -= 70;
+            }
+
+            availableHeight = availableHeightAbove;
+            placement = 'top';
+          }
+
+          if (
+            (tooltipPosition.maxHeight !== undefined && innerIsShown) ||
+            !isShown
+          ) {
+            constrainedHeight = tooltipPosition.maxHeight;
+          } else if (tooltipHeight > availableHeight) {
+            constrainedHeight = availableHeight - margin;
+          }
+        }
+
+        const position = {
+          top,
+          left,
+          right,
+          maxHeight: constrainedHeight,
+        };
+
+        setTooltipPosition(position);
+        setInnerIsShown(isShown);
+      });
+    }, 10);
+  }, [
+    fragmentPosition,
+    innerIsShown,
+    isShown,
+    isTouchDevice,
+    tooltipPosition.maxHeight,
+    tooltipRef,
+    isLoading,
+  ]);
 
   let width: string | undefined;
   if (isLoading) {
@@ -128,6 +204,8 @@ function TranslationTooltip(): ReactElement {
         left: tooltipPosition.left,
         right: tooltipPosition.right,
         width,
+        maxHeight: tooltipPosition.maxHeight,
+        overflowY: tooltipPosition.maxHeight ? 'scroll' : undefined,
       }}
       id='translation-tooltip'
       className={tooltipClasses}

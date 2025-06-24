@@ -1,3 +1,5 @@
+'use client';
+
 import { merriweather } from '@/fonts';
 import { TranslationLanguage } from '@/types/translation-laguage';
 import classNames from 'classnames';

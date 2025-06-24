@@ -160,7 +160,7 @@ export const PAGES_SCREENSHOTS = [
   { light: 'https://nikmas-studio-media.s3.eu-north-1.amazonaws.com/book-master-english-with-sherlock-holmes/Screenshot+2025-06-22+at+16.50.53.png', dark: 'https://nikmas-studio-media.s3.eu-north-1.amazonaws.com/book-master-english-with-sherlock-holmes/Screenshot+2025-06-22+at+16.51.01.png' },
   { light: 'https://nikmas-studio-media.s3.eu-north-1.amazonaws.com/book-master-english-with-sherlock-holmes/Screenshot+2025-06-22+at+16.59.27.png', dark: 'https://nikmas-studio-media.s3.eu-north-1.amazonaws.com/book-master-english-with-sherlock-holmes/Screenshot+2025-06-22+at+16.59.36.png' },
   { light: 'https://nikmas-studio-media.s3.eu-north-1.amazonaws.com/book-master-english-with-sherlock-holmes/Screenshot+2025-06-22+at+21.39.25.png', dark: 'https://nikmas-studio-media.s3.eu-north-1.amazonaws.com/book-master-english-with-sherlock-holmes/Screenshot+2025-06-22+at+21.39.40.png' },
-  { light: '', dark: '' },
+  { light: 'https://nikmas-studio-media.s3.eu-north-1.amazonaws.com/book-master-english-with-sherlock-holmes/Screenshot+2025-06-22+at+21.39.25.png', dark: 'https://nikmas-studio-media.s3.eu-north-1.amazonaws.com/book-master-english-with-sherlock-holmes/Screenshot+2025-06-22+at+21.39.40.png' },
   { light: '', dark: '' },
   { light: '', dark: '' },
   { light: '', dark: '' },

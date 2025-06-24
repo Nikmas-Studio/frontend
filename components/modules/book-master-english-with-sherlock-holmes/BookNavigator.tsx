@@ -190,7 +190,7 @@ function BookNavigator(): ReactElement {
     ` 
       h-[calc(100vh-60px)]]  fixed  bottom-0  left-[80px]  top-[60px]
       z-[9999]  w-[calc(100vw-160px)]  rounded-t-[20px]  bg-white
-      dark:bg-black  transition-transform  duration-[400ms]  overflow-hidden
+      dark:bg-[#171E27]  transition-transform  duration-[400ms]  overflow-hidden
       max-1.5lg:w-screen  max-1.5lg:h-[150vh]  max-1.5lg:left-0
       max-1.5lg:top-0  max-1.5lg:rounded-none
   `,

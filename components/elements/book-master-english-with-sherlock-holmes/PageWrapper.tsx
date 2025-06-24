@@ -54,7 +54,6 @@ function PageWrapper({
   useEffect(() => {
     if (measuredHeight !== null) {
       setShouldRenderChildren(inView);
-      console.log('shouldRenderChildren');
     }
   }, [inView, measuredHeight]);
 

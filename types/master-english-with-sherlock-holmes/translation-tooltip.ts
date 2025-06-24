@@ -1,6 +1,6 @@
 export interface TranslationTooltipFragmentPosition {
-  rect: DOMRect;
-  scrollY: number;
+  firstLineRect: DOMRect;
+  lastLineRect: DOMRect;
   scrollX: number;
 }
 

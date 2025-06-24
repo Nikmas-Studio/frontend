@@ -50,8 +50,8 @@ export function TranslationTooltipProvider({
   });
   const [fragmentPosition, setFragmentPosition] =
     useState<TranslationTooltipFragmentPosition>({
-      rect: new DOMRect(),
-      scrollY: 0,
+      firstLineRect: new DOMRect(),
+      lastLineRect: new DOMRect(),
       scrollX: 0,
     });
 

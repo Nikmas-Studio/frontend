@@ -9,8 +9,6 @@ import { BookVersion } from '@/types/book-version';
 import { ReactElement } from 'react';
 import BookNavigator from './BookNavigator';
 import GlobalEffects from './GlobalEffects';
-import CoverPage from './pages/CoverPage';
-import InstructionsPage from './pages/InstructionsPage';
 import Page10 from './pages/a-study-in-scarlet/Page10';
 import Page11 from './pages/a-study-in-scarlet/Page11';
 import Page12 from './pages/a-study-in-scarlet/Page12';
@@ -45,6 +43,8 @@ import Page6 from './pages/a-study-in-scarlet/Page6';
 import Page7 from './pages/a-study-in-scarlet/Page7';
 import Page8 from './pages/a-study-in-scarlet/Page8';
 import Page9 from './pages/a-study-in-scarlet/Page9';
+import CoverPage from './pages/CoverPage';
+import InstructionsPage from './pages/InstructionsPage';
 import Page76 from './pages/the-adventures-of-sherlock-holmes/a-case-of-identity/Page76';
 import Page77 from './pages/the-adventures-of-sherlock-holmes/a-case-of-identity/Page77';
 import Page78 from './pages/the-adventures-of-sherlock-holmes/a-case-of-identity/Page78';
@@ -171,6 +171,7 @@ import Page59 from './pages/the-sign-of-the-four/Page59';
 import Page60 from './pages/the-sign-of-the-four/Page60';
 import Page61 from './pages/the-sign-of-the-four/Page61';
 import Page62 from './pages/the-sign-of-the-four/Page62';
+import SettingsDropdown from './SettingsDropdown';
 
 interface BookReadProps {
   initialPageId?: string;
@@ -355,6 +356,7 @@ function BookRead({ initialPageId }: BookReadProps): ReactElement {
             );
           })}
           <TranslationTooltip />
+          <SettingsDropdown />
           <BookNavigator />
         </GlobalEffects>
       </BookVersionProvider>

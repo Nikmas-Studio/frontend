@@ -99,7 +99,8 @@ export function useSelectTranslation(): void {
           if (rects.length === 0) {
             return;
           }
-          const rect = rects[0];
+          const firstLineRect = rects[0];
+          const lastLineRect = rects[rects.length - 1];
 
           const tooltip = document.getElementById('translation-tooltip');
           if (!tooltip) return;
@@ -116,8 +117,8 @@ export function useSelectTranslation(): void {
 
           setIsShown(true);
           setFragmentPosition({
-            rect,
-            scrollY: window.scrollY,
+            firstLineRect,
+            lastLineRect,
             scrollX: window.scrollX,
           });
         }
