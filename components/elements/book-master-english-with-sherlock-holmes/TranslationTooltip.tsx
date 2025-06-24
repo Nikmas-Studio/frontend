@@ -79,12 +79,6 @@ function TranslationTooltip(): ReactElement {
     };
   }, [isShown, setIsShown]);
 
-  // useEffect(() => {
-  //   if (!isLoading) {
-  //     setInnerIsShown(false);
-  //   }
-  // }, [isLoading]);
-
   useEffect(() => {
     setTimeout(() => {
       if (!tooltipRef.current) {
