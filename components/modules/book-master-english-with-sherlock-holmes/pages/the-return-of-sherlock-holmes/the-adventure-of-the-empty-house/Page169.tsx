@@ -1,0 +1,502 @@
+import BookLeftPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookLeftPartContainer';
+import BookMainContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookMainContainer';
+import BookRightPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookRightPartContainer';
+import PageWrapper from '@/components/elements/book-master-english-with-sherlock-holmes/PageWrapper';
+import TextNode from '@/components/elements/book-master-english-with-sherlock-holmes/TextNode';
+import { ReactElement } from 'react';
+import Controls from '../../../Controls';
+
+interface PageProps {
+  pageNumber: number;
+  hidePageNumber?: boolean;
+  viewportHeight?: boolean;
+}
+
+function Page169({
+  pageNumber,
+  hidePageNumber = false,
+  viewportHeight = false,
+}: PageProps): ReactElement {
+  return (
+    <PageWrapper pageNumber={pageNumber} viewportHeight={viewportHeight}>
+      <Controls
+        pageNumber={hidePageNumber ? undefined : pageNumber}
+        title='THE&nbsp;ADVENTURE OF&nbsp;THE&nbsp;EMPTY&nbsp;HOUSE'
+      />
+      <BookMainContainer biggerTopPadding>
+        <div className='flex  max-2md:flex-col'>
+          <BookLeftPartContainer>
+            <TextNode noIndent>
+              It was in the spring of the year 1894 that all London was
+              interested, and the fashionable world dismayed, by the murder of
+              the Honourable Ronald Adair under most unusual and inexplicable
+              circumstances. The public has already learned those particulars of
+              the crime which came out in the police investigation; but a good
+              deal was suppressed upon that occasion, since the case for the
+              prosecution was so overwhelmingly strong that it was not necessary
+              to bring forward all the facts. Only now, at the end of nearly ten
+              years, am I allowed to supply those missing links which make up
+              the whole of that remarkable chain. The crime was of interest in
+              itself, but that interest was as nothing to me compared to the
+              inconceivable sequel, which afforded me the greatest shock and
+              surprise of any event in my adventurous life. Even now, after this
+              long interval, I find myself thrilling as I think of it, and
+              feeling once more that sudden flood of joy, amazement, and
+              incredulity which utterly submerged my mind. Let me say to that
+              public which has shown some interest in those glimpses which I
+              have occasionally given them of the thoughts and actions of a very
+              remarkable man that they are not to blame me if I have not shared
+              my knowledge with them, for I should have considered it my first
+              duty to have done so had I not been barred by a positive
+              prohibition from his own lips, which was only withdrawn upon the
+              third of last month.
+            </TextNode>
+
+            <TextNode>
+              It can be imagined that my close intimacy with Sherlock Holmes had
+              interested me deeply in crime, and that after his disappearance I
+              never failed to read with care the various problems which came
+              before the public, and I even attempted more than once for my own
+              private satisfaction to employ his methods in their solution,
+              though with indifferent success. There was none, however, which
+              appealed to me like this tragedy of Ronald Adair. As I read the
+              evidence at the inquest, which led up to a verdict of wilful
+              murder against some person or persons unknown, I realized more
+              clearly than I had ever done the loss which the community had
+              sustained by the death of Sherlock Holmes. There were points about
+              this strange business which would, I was sure, have specially
+              appealed to him, and the efforts of the police would have been
+              supplemented, or more probably anticipated, by the trained
+              observation and the alert mind of the first criminal agent in
+              Europe. All day as I drove upon my round I turned over the case in
+              my mind, and found no explanation which appeared to me to be
+              adequate. At the risk of telling a twice-told tale I will
+              recapitulate the facts as they were known to the public at the
+              conclusion of the inquest.
+            </TextNode>
+
+            <TextNode>
+              The Honourable Ronald Adair was the second son of the Earl of
+              Maynooth, at that time Governor of one of the Australian Colonies.
+              Adair's mother had returned from Australia to undergo the
+              operation for cataract, and she, her son Ronald, and her daughter
+              Hilda were living together at 427, Park Lane. The youth moved in
+              the best society, had, so far as was known, no enemies, and no
+              particular vices. He had been engaged to Miss Edith Woodley, of
+              Carstairs, but the engagement had been broken off by mutual
+              consent some months before, and there was no sign that it had left
+              any very profound feeling behind it. For the rest the man's life
+              moved in a narrow and conventional circle, for his habits were
+              quiet and his nature unemotional. Yet it was upon this easy-going
+              young aristocrat that death came in most strange and unexpected
+              form between the hours of ten and eleven-twenty on the night of
+              March 30, 1894.
+            </TextNode>
+
+            <TextNode>
+              Ronald Adair was fond of cards, playing continually, but never for
+              such stakes as would hurt him. He was a member of the Baldwin, the
+              Cavendish, and the Bagatelle card clubs. It was shown that after
+              dinner on the day of his death he had played a rubber of whist at
+              the latter club. He had also played there in the afternoon. The
+              evidence of those who had played with him—Mr. Murray, Sir John
+              Hardy, and Colonel Moran—showed that the game was whist, and that
+              there was a fairly equal fall of the cards. Adair might have lost
+              five pounds, but not more. His fortune was a considerable one, and
+              such a loss could not in any way affect him. He had played nearly
+              every day at one club or other, but he was a cautious player, and
+              usually rose a winner. It came out in evidence that in partnership
+              with Colonel Moran he had actually won as much as four hundred and
+              twenty pounds in a sitting some weeks before from Godfrey Milner
+              and Lord Balmoral. So much for his recent history, as it came out
+              at the inquest.
+            </TextNode>
+
+            <TextNode>
+              On the evening of the crime he returned from the club exactly at
+              ten. His mother and sister were out spending the evening with a
+              relation. The servant deposed that she heard him enter the front
+              room on the second floor, generally used as his sitting-room. She
+              had lit a fire there, and as it smoked she had opened the window.
+              No sound was heard from the room until eleven-twenty, the hour of
+              the return of Lady Maynooth and her daughter. Desiring to say
+              good-night, she had attempted to enter her son's room. The door
+              was locked on the inside, and no answer could be got to their
+              cries and knocking. Help was obtained and the door forced. The
+              unfortunate young man was found lying near the table. His head had
+              been horribly mutilated by an expanding revolver bullet, but no
+              weapon of any sort was to be found in the room. On the table lay
+              two bank-notes for ten pounds each and seventeen pounds ten in
+              silver and gold, the money arranged in little piles of varying
+              amount. There were some figures also upon a sheet of paper with
+              the names of some club friends opposite to them, from which it was
+              conjectured that before his death he was endeavouring to make out
+              his losses or winnings at cards.
+            </TextNode>
+
+            <TextNode>
+              A minute examination of the circumstances served only to make the
+              case more complex. In the first place, no reason could be given
+              why the young man should have fastened the door upon the inside.
+              There was the possibility that the murderer had done this and had
+              afterwards escaped by the window. The drop was at least twenty
+              feet, however, and a bed of crocuses in full bloom lay beneath.
+              Neither the flowers nor the earth showed any sign of having been
+              disturbed, nor were there any marks upon the narrow strip of grass
+              which separated the house from the road. Apparently, therefore, it
+              was the young man himself who had fastened the door. But how did
+              he come by his death? No one could have climbed up to the window
+              without leaving traces. Suppose a man had fired through the
+              window, it would indeed be a remarkable shot who could with a
+              revolver inflict so deadly a wound. Again, Park Lane is a
+              frequented thoroughfare, and there is a cab-stand within a hundred
+              yards of the house. No one had heard a shot. And yet there was the
+              dead man, and there the revolver bullet, which had mushroomed out,
+              as soft-nosed bullets will, and so inflicted a wound which must
+              have caused instantaneous death. Such were the circumstances of
+              the Park Lane Mystery, which were further complicated by entire
+              absence of motive, since, as I have said, young Adair was not
+              known to have any enemy, and no attempt had been made to remove
+              the money or valuables in the room.
+            </TextNode>
+
+            <TextNode>
+              All day I turned these facts over in my mind, endeavouring to hit
+              upon some theory which could reconcile them all, and to find that
+              line of least resistance which my poor friend had declared to be
+              the starting-point of every investigation. I confess that I made
+              little progress. In the evening I strolled across the Park, and
+              found myself about six o'clock at the Oxford Street end of Park
+              Lane. A group of loafers upon the pavements, all staring up at a
+              particular window, directed me to the house which I had come to
+              see. A tall, thin man with coloured glasses, whom I strongly
+              suspected of being a plain-clothes detective, was pointing out
+              some theory of his own, while the others crowded round to listen
+              to what he said. I got as near him as I could, but his
+              observations seemed to me to be absurd, so I withdrew again in
+              some disgust. As I did so I struck against an elderly deformed
+              man, who had been behind me, and I knocked down several books
+              which he was carrying. I remember that as I picked them up I
+              observed the title of one of them,{' '}
+              <span className='italic'>The Origin of Tree Worship</span>, and it
+              struck me that the fellow must be some poor bibliophile who,
+              either as a trade or as a hobby, was a collector of obscure
+              volumes. I endeavoured to apologize for the accident, but it was
+              evident that these books which I had so unfortunately maltreated
+              were very precious objects in the eyes of their owner. With a
+              snarl of contempt he turned upon his heel, and I saw his curved
+              back and white side-whiskers disappear among the throng.
+            </TextNode>
+
+            <TextNode>
+              My observations of No. 427, Park Lane did little to clear up the
+              problem in which I was interested. The house was separated from
+              the street by a low wall and railing, the whole not more than five
+              feet high. It was perfectly easy, therefore, for anyone to get
+              into the garden, but the window was entirely inaccessible, since
+              there was no water-pipe or anything which could help the most
+              active man to climb it. More puzzled than ever I retraced my steps
+              to Kensington. I had not been in my study five minutes when the
+              maid entered to say that a person desired to see me. To my
+              astonishment it was none other than my strange old book-collector,
+              his sharp, wizened face peering out from a frame of white hair,
+              and his precious volumes, a dozen of them at least, wedged under
+              his right arm.
+            </TextNode>
+
+            <TextNode>
+              “You're surprised to see me, sir,” said he, in a strange, croaking
+              voice.
+            </TextNode>
+
+            <TextNode>I acknowledged that I was.</TextNode>
+
+            <TextNode>
+              “Well, I've a conscience, sir, and when I chanced to see you go
+              into this house, as I came hobbling after you, I thought to
+              myself, I'll just step in and see that kind gentleman, and tell
+              him that if I was a bit gruff in my manner there was not any harm
+              meant, and that I am much obliged to him for picking up my books.”
+            </TextNode>
+
+            <TextNode>
+              “You make too much of a trifle,” said I. “May I ask how you knew
+              who I was?”
+            </TextNode>
+
+            <TextNode>
+              “Well, sir, if it isn't too great a liberty, I am a neighbour of
+              yours, for you'll find my little bookshop at the corner of Church
+              Street, and very happy to see you, I am sure. Maybe you collect
+              yourself, sir; here's{' '}
+              <span className='italic'>British Birds</span>, and&nbsp;
+              <span className='italic'>Catullus</span>, and&nbsp;
+              <span className='italic'>The Holy War</span>—a bargain every one
+              of them. With five volumes you could just fill that gap on that
+              second shelf. It looks untidy, does it not, sir?”
+            </TextNode>
+
+            <TextNode>
+              I moved my head to look at the cabinet behind me. When I turned
+              again Sherlock Holmes was standing smiling at me across my study
+              table. I rose to my feet, stared at him for some seconds in utter
+              amazement, and then it appears that I must have fainted for the
+              first and the last time in my life. Certainly a grey mist swirled
+              before my eyes, and when it cleared I found my collar-ends undone
+              and the tingling after-taste of brandy upon my lips. Holmes was
+              bending over my chair, his flask in his hand.
+            </TextNode>
+
+            <TextNode>
+              “My dear Watson,” said the well-remembered voice, “I owe you a
+              thousand apologies. I had no idea that you would be so affected.”
+            </TextNode>
+
+            <TextNode>I gripped him by the arm.</TextNode>
+          </BookLeftPartContainer>
+          <BookRightPartContainer>
+            <TextNode noIndent>
+              “Holmes!” I cried. “Is it really you? Can it indeed be that you
+              are alive? Is it possible that you succeeded in climbing out of
+              that awful abyss?”
+            </TextNode>
+
+            <TextNode>
+              “Wait a moment,” said he. “Are you sure that you are really fit to
+              discuss things? I have given you a serious shock by my
+              unnecessarily dramatic reappearance.”
+            </TextNode>
+
+            <TextNode>
+              “I am all right, but indeed, Holmes, I can hardly believe my eyes.
+              Good heavens, to think that you—you of all men—should be standing
+              in my study!” Again I gripped him by the sleeve and felt the thin,
+              sinewy arm beneath it. “Well, you're not a spirit, anyhow,” said
+              I. “My dear chap, I am overjoyed to see you. Sit down and tell me
+              how you came alive out of that dreadful chasm.”
+            </TextNode>
+
+            <TextNode>
+              He sat opposite to me and lit a cigarette in his old nonchalant
+              manner. He was dressed in the seedy frock-coat of the book
+              merchant, but the rest of that individual lay in a pile of white
+              hair and old books upon the table. Holmes looked even thinner and
+              keener than of old, but there was a dead-white tinge in his
+              aquiline face which told me that his life recently had not been a
+              healthy one.
+            </TextNode>
+
+            <TextNode>
+              “I am glad to stretch myself, Watson,” said he. “It is no joke
+              when a tall man has to take a foot off his stature for several
+              hours on end. Now, my dear fellow, in the matter of these
+              explanations we have, if I may ask for your co-operation, a hard
+              and dangerous night's work in front of us. Perhaps it would be
+              better if I gave you an account of the whole situation when that
+              work is finished.”
+            </TextNode>
+
+            <TextNode>
+              “I am full of curiosity. I should much prefer to hear now.”
+            </TextNode>
+
+            <TextNode>“You'll come with me to-night?”</TextNode>
+
+            <TextNode>“When you like and where you like.”</TextNode>
+
+            <TextNode>
+              “This is indeed like the old days. We shall have time for a
+              mouthful of dinner before we need go. Well, then, about that
+              chasm. I had no serious difficulty in getting out of it, for the
+              very simple reason that I never was in it.”
+            </TextNode>
+
+            <TextNode>“You never were in it?”</TextNode>
+
+            <TextNode>
+              “No, Watson, I never was in it. My note to you was absolutely
+              genuine. I had little doubt that I had come to the end of my
+              career when I perceived the somewhat sinister figure of the late
+              Professor Moriarty standing upon the narrow pathway which led to
+              safety. I read an inexorable purpose in his grey eyes. I exchanged
+              some remarks with him, therefore, and obtained his courteous
+              permission to write the short note which you afterwards received.
+              I left it with my cigarette-box and my stick and I walked along
+              the pathway, Moriarty still at my heels. When I reached the end I
+              stood at bay. He drew no weapon, but he rushed at me and threw his
+              long arms around me. He knew that his own game was up, and was
+              only anxious to revenge himself upon me. We tottered together upon
+              the brink of the fall. I have some knowledge, however, of baritsu,
+              or the Japanese system of wrestling, which has more than once been
+              very useful to me. I slipped through his grip, and he with a
+              horrible scream kicked madly for a few seconds and clawed the air
+              with both his hands. But for all his efforts he could not get his
+              balance, and over he went. With my face over the brink I saw him
+              fall for a long way. Then he struck a rock, bounded off, and
+              splashed into the water.”
+            </TextNode>
+
+            <TextNode>
+              I listened with amazement to this explanation, which Holmes
+              delivered between the puffs of his cigarette.
+            </TextNode>
+
+            <TextNode>
+              “But the tracks!” I cried. “I saw with my own eyes that two went
+              down the path and none returned.”
+            </TextNode>
+
+            <TextNode>
+              “It came about in this way. The instant that the Professor had
+              disappeared it struck me what a really extraordinarily lucky
+              chance Fate had placed in my way. I knew that Moriarty was not the
+              only man who had sworn my death. There were at least three others
+              whose desire for vengeance upon me would only be increased by the
+              death of their leader. They were all most dangerous men. One or
+              other would certainly get me. On the other hand, if all the world
+              was convinced that I was dead they would take liberties, these
+              men, they would lay themselves open, and sooner or later I could
+              destroy them. Then it would be time for me to announce that I was
+              still in the land of the living. So rapidly does the brain act
+              that I believe I had thought this all out before Professor
+              Moriarty had reached the bottom of the Reichenbach Fall.
+            </TextNode>
+
+            <TextNode>
+              “I stood up and examined the rocky wall behind me. In your
+              picturesque account of the matter, which I read with great
+              interest some months later, you assert that the wall was sheer.
+              This was not literally true. A few small footholds presented
+              themselves, and there was some indication of a ledge. The cliff is
+              so high that to climb it all was an obvious impossibility, and it
+              was equally impossible to make my way along the wet path without
+              leaving some tracks. I might, it is true, have reversed my boots,
+              as I have done on similar occasions, but the sight of three sets
+              of tracks in one direction would certainly have suggested a
+              deception. On the whole, then, it was best that I should risk the
+              climb. It was not a pleasant business, Watson. The fall roared
+              beneath me. I am not a fanciful person, but I give you my word
+              that I seemed to hear Moriarty's voice screaming at me out of the
+              abyss. A mistake would have been fatal. More than once, as tufts
+              of grass came out in my hand or my foot slipped in the wet notches
+              of the rock, I thought that I was gone. But I struggled upwards,
+              and at last I reached a ledge several feet deep and covered with
+              soft green moss, where I could lie unseen in the most perfect
+              comfort. There I was stretched when you, my dear Watson, and all
+              your following were investigating in the most sympathetic and
+              inefficient manner the circumstances of my death.
+            </TextNode>
+
+            <TextNode>
+              “At last, when you had all formed your inevitable and totally
+              erroneous conclusions, you departed for the hotel and I was left
+              alone. I had imagined that I had reached the end of my adventures,
+              but a very unexpected occurrence showed me that there were
+              surprises still in store for me. A huge rock, falling from above,
+              boomed past me, struck the path, and bounded over into the chasm.
+              For an instant I thought that it was an accident; but a moment
+              later, looking up, I saw a man's head against the darkening sky,
+              and another stone struck the very ledge upon which I was
+              stretched, within a foot of my head. Of course, the meaning of
+              this was obvious. Moriarty had not been alone. A confederate—and
+              even that one glance had told me how dangerous a man that
+              confederate was—had kept guard while the Professor had attacked
+              me. From a distance, unseen by me, he had been a witness of his
+              friend's death and of my escape. He had waited, and then, making
+              his way round to the top of the cliff, he had endeavoured to
+              succeed where his comrade had failed.
+            </TextNode>
+
+            <TextNode>
+              “I did not take long to think about it, Watson. Again I saw that
+              grim face look over the cliff, and I knew that it was the
+              precursor of another stone. I scrambled down on to the path. I
+              don't think I could have done it in cold blood. It was a hundred
+              times more difficult than getting up. But I had no time to think
+              of the danger, for another stone sang past me as I hung by my
+              hands from the edge of the ledge. Halfway down I slipped, but by
+              the blessing of God I landed, torn and bleeding, upon the path. I
+              took to my heels, did ten miles over the mountains in the
+              darkness, and a week later I found myself in Florence with the
+              certainty that no one in the world knew what had become of me.
+            </TextNode>
+
+            <TextNode>
+              “I had only one confidant—my brother Mycroft. I owe you many
+              apologies, my dear Watson, but it was all-important that it should
+              be thought I was dead, and it is quite certain that you would not
+              have written so convincing an account of my unhappy end had you
+              not yourself thought that it was true. Several times during the
+              last three years I have taken up my pen to write to you, but
+              always I feared lest your affectionate regard for me should tempt
+              you to some indiscretion which would betray my secret. For that
+              reason I turned away from you this evening when you upset my
+              books, for I was in danger at the time, and any show of surprise
+              and emotion upon your part might have drawn attention to my
+              identity and led to the most deplorable and irreparable results.
+              As to Mycroft, I had to confide in him in order to obtain the
+              money which I needed. The course of events in London did not run
+              so well as I had hoped, for the trial of the Moriarty gang left
+              two of its most dangerous members, my own most vindictive enemies,
+              at liberty. I travelled for two years in Tibet, therefore, and
+              amused myself by visiting Lhassa and spending some days with the
+              head Llama. You may have read of the remarkable explorations of a
+              Norwegian named Sigerson, but I am sure that it never occurred to
+              you that you were receiving news of your friend. I then passed
+              through Persia, looked in at Mecca, and paid a short but
+              interesting visit to the Khalifa at Khartoum, the results of which
+              I have communicated to the Foreign Office. Returning to France I
+              spent some months in a research into the coal-tar derivatives,
+              which I conducted in a laboratory at Montpelier, in the South of
+              France. Having concluded this to my satisfaction, and learning
+              that only one of my enemies was now left in London, I was about to
+              return when my movements were hastened by the news of this very
+              remarkable Park Lane Mystery, which not only appealed to me by its
+              own merits, but which seemed to offer some most peculiar personal
+              opportunities. I came over at once to London, called in my own
+              person at Baker Street, threw Mrs. Hudson into violent hysterics,
+              and found that Mycroft had preserved my rooms and my papers
+              exactly as they had always been. So it was, my dear Watson, that
+              at two o'clock to-day I found myself in my old arm-chair in my own
+              old room, and only wishing that I could have seen my old friend
+              Watson in the other chair which he has so often adorned.”
+            </TextNode>
+
+            <TextNode>
+              Such was the remarkable narrative to which I listened on that
+              April evening—a narrative which would have been utterly incredible
+              to me had it not been confirmed by the actual sight of the tall,
+              spare figure and the keen, eager face, which I had never thought
+              to see again. In some manner he had learned of my own sad
+              bereavement, and his sympathy was shown in his manner rather than
+              in his words. “Work is the best antidote to sorrow, my dear
+              Watson,” said he, “and I have a piece of work for us both to-night
+              which, if we can bring it to a successful conclusion, will in
+              itself justify a man's life on this planet.” In vain I begged him
+              to tell me more. “You will hear and see enough before morning,” he
+              answered. “We have three years of the past to discuss. Let that
+              suffice until half-past nine, when we start upon the notable
+              adventure of the empty house.”
+            </TextNode>
+
+            <TextNode>
+              It was indeed like old times when, at that hour, I found myself
+              seated beside him in a hansom, my revolver in my pocket and the
+              thrill of adventure in my heart. Holmes was cold and stern and
+              silent. As the gleam of the street-lamps flashed upon his austere
+              features I saw that his brows were drawn down in thought and his
+              thin lips compressed. I knew not what wild beast we were about to
+              hunt down in the dark jungle of criminal London, but I was well
+              assured from the bearing of this master huntsman that the
+              adventure was a most grave one, while the sardonic smile which
+              occasionally broke through his ascetic gloom boded little good for
+              the object of our&nbsp;quest.
+            </TextNode>
+          </BookRightPartContainer>
+        </div>
+      </BookMainContainer>
+    </PageWrapper>
+  );
+}
+
+export default Page169;

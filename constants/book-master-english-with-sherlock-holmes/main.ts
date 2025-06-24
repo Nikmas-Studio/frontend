@@ -216,7 +216,17 @@ export const DETAILED_BOOK_PART_PAGE_RANGES = {
     },
     THE_NAVAL_TREATY: {
       from: 159,
-      to: 165,
+      to: 163,
+    },
+    THE_FINAL_PROBLEM: {
+      from: 164,
+      to: 166,
+    },
+  },
+  THE_RETURN_OF_SHERLOCK_HOLMES: {
+    THE_ADVENTURE_OF_THE_EMPTY_HOUSE: {
+      from: 167,
+      to: 175,
     },
   },
 };
@@ -292,12 +302,12 @@ export const BOOK_PARTS = [
 
 export const PAGES_WITHOUT_NUMBER = [
   1, 2, 3, 22, 36, 63, 64, 70, 76, 80, 85, 89, 94, 98, 103, 107, 112, 118, 123,
-  124, 129, 133, 136, 140, 144, 148, 152, 155, 159,
+  124, 129, 133, 136, 140, 144, 148, 152, 155, 159, 164, 167, 168,
 ];
 
 export const PAGES_WITH_VIEWPORT_HEIGHT = [
   1, 2, 3, 22, 36, 63, 64, 70, 76, 80, 85, 89, 94, 98, 103, 107, 112, 118, 123,
-  124, 129, 133, 136, 140, 144, 148, 152, 155, 159,
+  124, 129, 133, 136, 140, 144, 148, 152, 155, 159, 164, 167, 168,
 ];
 
 export const LIGHT_PAGE_PLACEHOLDER =

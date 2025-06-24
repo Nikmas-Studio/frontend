@@ -1931,6 +1931,54 @@ function BookNavigator(): ReactElement {
                 })}
               </ul>
             </div>
+            <div id={storyToPartId(Story.THE_FINAL_PROBLEM)} className='mb-12'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                {Story.THE_FINAL_PROBLEM}
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.THE_MEMOIRS_OF_SHERLOCK_HOLMES
+                    .THE_FINAL_PROBLEM,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={storyToPartId(Story.THE_ADVENTURE_OF_THE_EMPTY_HOUSE)}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-1.5  text-xl  font-bold  ${libreBaskerville.className}`}
+              >
+                The Return of Sherlock Holmes
+              </BasicTextNode>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                {Story.THE_ADVENTURE_OF_THE_EMPTY_HOUSE}
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.THE_RETURN_OF_SHERLOCK_HOLMES
+                    .THE_ADVENTURE_OF_THE_EMPTY_HOUSE,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

@@ -60,7 +60,12 @@ function GlobalEffects({
       updateUrl({ page: Number(initialPageId), basePath });
       setActivePage(Number(initialPageId));
       setInitialScrollToPageIsCompleted(true);
-      showBook();
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          showBook();
+        });
+      });
     }
 
     scrollToPage(initialPageId);
