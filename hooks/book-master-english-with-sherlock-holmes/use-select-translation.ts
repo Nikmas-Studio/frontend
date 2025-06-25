@@ -38,6 +38,7 @@ export function useSelectTranslation(): void {
               range: selectionData.range,
               content:
                 'Selected text is too long. Please highlight a\u00A0shorter fragment.',
+              error: true,
             });
           }, 700);
 
