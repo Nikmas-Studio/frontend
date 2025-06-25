@@ -9,7 +9,7 @@ import { merriweather } from '@/fonts';
 import useOutsideClick from '@/hooks/use-outside-click';
 import { CircularProgress } from '@mui/material';
 import classNames from 'classnames';
-import { ReactElement, useEffect, useState } from 'react';
+import { ReactElement, useEffect, useRef, useState } from 'react';
 
 function TranslationTooltip(): ReactElement {
   const {
@@ -21,6 +21,7 @@ function TranslationTooltip(): ReactElement {
   } = useTranslationTooltip();
   const { setIsShown } = useTranslationTooltipDispatch();
   const { isTouchDevice } = useTouchDevice();
+  const testingTooltipRef = useRef<HTMLDivElement | null>(null);
 
   const [tooltipPosition, setTooltipPosition] = useState<{
     top?: string | number;
@@ -48,17 +49,20 @@ function TranslationTooltip(): ReactElement {
      `,
 
     {
-      invisible:
-        !innerIsShown || (content.translation !== innerContent && !isLoading),
+      invisible: !innerIsShown,
       'text-red-600': content.error,
     },
   );
 
-  console.log(
-    'innerContent vs content.translation:',
-    innerContent,
-    '|||',
-    content.translation,
+  const testingTooltipClasses = classNames(
+    merriweather.className,
+
+    `text-black  fixed  left-[-9999px]
+     rounded-[7px]  z-[999999]  dark:border-gray-dark  text-lg  
+     [-webkit-font-smoothing:subpixel-antialiased]  max-w-[30vw]
+     bg-[#FFEAC5]  pt-2  pb-[0.65rem]  px-4  lining-nums  min-h-[2.9rem]
+     max-sm:max-w-[70vw] invisible  duration-500
+     `,
   );
 
   useOutsideClick([tooltipRef], () => {
@@ -94,103 +98,99 @@ function TranslationTooltip(): ReactElement {
         return;
       }
 
-      const previousMaxHeight = tooltipPosition.maxHeight;
-      tooltipRef.current.style.maxHeight = '';
-      requestAnimationFrame(() => {
-        const tooltipWidth = tooltipRef.current!.offsetWidth;
-        const tooltipHeight = tooltipRef.current!.offsetHeight;
-        tooltipRef.current!.style.maxHeight = previousMaxHeight
-          ? `${previousMaxHeight}px`
-          : '';
+      // const previousMaxHeight = tooltipPosition.maxHeight;
+      // tooltipRef.current.style.maxHeight = '';
+      // requestAnimationFrame(() => {
+      const tooltipWidth = testingTooltipRef.current!.offsetWidth;
+      const tooltipHeight = testingTooltipRef.current!.offsetHeight;
+      // tooltipRef.current!.style.maxHeight = previousMaxHeight
+      //   ? `${previousMaxHeight}px`
+      //   : '';
 
-        const margin = 8;
+      const margin = 8;
 
-        let placement = 'top';
+      let placement = 'top';
 
-        let top = fragmentPosition.firstLineRect.top - tooltipHeight - margin;
+      let top = fragmentPosition.firstLineRect.top - tooltipHeight - margin;
+
+      if (isTouchDevice) {
+        top -= 70;
+      }
+
+      if (top < margin) {
+        placement = 'bottom';
+
+        top = fragmentPosition.lastLineRect.bottom + margin;
 
         if (isTouchDevice) {
-          top -= 70;
+          if (fragmentPosition.firstLineRect.top < 70) {
+            top += 70;
+          }
+        }
+      }
+
+      let left: number | string =
+        fragmentPosition.scrollX + fragmentPosition.firstLineRect.left;
+
+      let right: string | number | undefined;
+
+      const viewportWidth = window.innerWidth;
+
+      if (left + tooltipWidth > viewportWidth - 17.388) {
+        left = '';
+        right = window.innerWidth < 640 ? '17.388px' : '100px';
+      }
+
+      let constrainedHeight: string | number | undefined;
+
+      if (placement === 'bottom') {
+        const availableHeightBelow = window.innerHeight - top - margin;
+        let availableHeightAbove = fragmentPosition.firstLineRect.top - margin;
+
+        if (isTouchDevice) {
+          availableHeightAbove -= 70;
         }
 
-        if (top < margin) {
-          placement = 'bottom';
+        let availableHeight = availableHeightBelow;
 
-          top = fragmentPosition.lastLineRect.bottom + margin;
+        if (availableHeightBelow < availableHeightAbove) {
+          top = fragmentPosition.firstLineRect.top - availableHeightAbove;
 
           if (isTouchDevice) {
-            if (fragmentPosition.firstLineRect.top < 70) {
-              top += 70;
-            }
-          }
-        }
-
-        let left: number | string =
-          fragmentPosition.scrollX + fragmentPosition.firstLineRect.left;
-
-        let right: string | number | undefined;
-
-        const viewportWidth = window.innerWidth;
-
-        if (left + tooltipWidth > viewportWidth - 17.388) {
-          left = '';
-          right = window.innerWidth < 640 ? '17.388px' : '100px';
-        }
-
-        let constrainedHeight: string | number | undefined;
-
-        if (placement === 'bottom') {
-          const availableHeightBelow = window.innerHeight - top - margin;
-          let availableHeightAbove =
-            fragmentPosition.firstLineRect.top - margin;
-
-          if (isTouchDevice) {
-            availableHeightAbove -= 70;
+            top -= 70;
           }
 
-          let availableHeight = availableHeightBelow;
-
-          if (availableHeightBelow < availableHeightAbove) {
-            top = fragmentPosition.firstLineRect.top - availableHeightAbove;
-
-            if (isTouchDevice) {
-              top -= 70;
-            }
-
-            availableHeight = availableHeightAbove;
-            placement = 'top';
-          }
-
-          if (
-            (tooltipPosition.maxHeight !== undefined && innerIsShown) ||
-            !isShown
-          ) {
-            constrainedHeight = tooltipPosition.maxHeight;
-          } else if (tooltipHeight > availableHeight) {
-            constrainedHeight = availableHeight - margin;
-          }
+          availableHeight = availableHeightAbove;
+          placement = 'top';
         }
 
-        const position = {
-          top,
-          left,
-          right,
-          maxHeight: constrainedHeight,
-        };
-
-        console.log('Setting tooltip position:', position);
-        console.log('Is loading:', isLoading);
-
-        setTooltipPosition(position);
-
-        if (!isShown || isLoading) {
-          setInnerContent('11nothing11');
-        } else {
-          setInnerContent(content.translation);
+        if (
+          (tooltipPosition.maxHeight !== undefined && innerIsShown) ||
+          !isShown
+        ) {
+          constrainedHeight = tooltipPosition.maxHeight;
+        } else if (tooltipHeight > availableHeight) {
+          constrainedHeight = availableHeight - margin;
         }
+      }
 
-        setInnerIsShown(isShown);
-      });
+      const position = {
+        top,
+        left,
+        right,
+        maxHeight: constrainedHeight,
+      };
+
+      setTooltipPosition(position);
+
+      if (!isShown || isLoading) {
+        setInnerContent('11nothing11');
+      } else {
+        setInnerContent(content.translation);
+      }
+
+      setInnerIsShown(isShown);
+      // });
     }, 10);
   }, [
     fragmentPosition,
@@ -224,7 +224,20 @@ function TranslationTooltip(): ReactElement {
       id='translation-tooltip'
       className={tooltipClasses}
     >
-      {isLoading ? (
+      <div
+        style={{ width }}
+        ref={testingTooltipRef}
+        className={testingTooltipClasses}
+      >
+        {isLoading ? (
+          <div className='flex  items-center  justify-center'>
+            <CircularProgress size={20} className='!mt-[4px]  !text-black' />
+          </div>
+        ) : (
+          content.translation
+        )}
+      </div>
+      {isLoading || content.translation !== innerContent ? (
         <div className='flex  items-center  justify-center'>
           <CircularProgress size={20} className='!mt-[4px]  !text-black' />
         </div>

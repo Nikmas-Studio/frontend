@@ -1,6 +1,7 @@
 import BookLeftPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookLeftPartContainer';
 import BookMainContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookMainContainer';
 import BookRightPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookRightPartContainer';
+import Indent from '@/components/elements/book-master-english-with-sherlock-holmes/Indent';
 import PageWrapper from '@/components/elements/book-master-english-with-sherlock-holmes/PageWrapper';
 import TextNode from '@/components/elements/book-master-english-with-sherlock-holmes/TextNode';
 import { ReactElement } from 'react';
@@ -26,7 +27,7 @@ function Page170({
       <BookMainContainer biggerTopPadding>
         <div className='flex  max-2md:flex-col'>
           <BookLeftPartContainer>
-            <TextNode>
+            <TextNode noIndent>
               I had imagined that we were bound for Baker Street, but Holmes
               stopped the cab at the corner of Cavendish Square. I observed that
               as he stepped out he gave a most searching glance to right and
@@ -270,7 +271,319 @@ function Page170({
               into the room.
             </TextNode>
           </BookLeftPartContainer>
-          <BookRightPartContainer></BookRightPartContainer>
+          <BookRightPartContainer>
+            <TextNode noIndent>“That you, Lestrade?” said Holmes.</TextNode>
+
+            <TextNode>
+              “Yes, Mr. Holmes. I took the job myself. It's good to see you back
+              in London, sir.”
+            </TextNode>
+
+            <TextNode>
+              “I think you want a little unofficial help. Three undetected
+              murders in one year won't do, Lestrade. But you handled the
+              Molesey Mystery with less than your usual—that's to say, you
+              handled it fairly well.”
+            </TextNode>
+
+            <TextNode>
+              We had all risen to our feet, our prisoner breathing hard, with a
+              stalwart constable on each side of him. Already a few loiterers
+              had begun to collect in the street. Holmes stepped up to the
+              window, closed it, and dropped the blinds. Lestrade had produced
+              two candles and the policemen had uncovered their lanterns. I was
+              able at last to have a good look at our prisoner.
+            </TextNode>
+
+            <TextNode>
+              It was a tremendously virile and yet sinister face which was
+              turned towards us. With the brow of a philosopher above and the
+              jaw of a sensualist below, the man must have started with great
+              capacities for good or for evil. But one could not look upon his
+              cruel blue eyes, with their drooping, cynical lids, or upon the
+              fierce, aggressive nose and the threatening, deep-lined brow,
+              without reading Nature's plainest danger-signals. He took no heed
+              of any of us, but his eyes were fixed upon Holmes's face with an
+              expression in which hatred and amazement were equally blended.
+              “You fiend!” he kept on muttering. “You clever, clever fiend!”
+            </TextNode>
+
+            <TextNode>
+              “Ah, Colonel!” said Holmes, arranging his rumpled collar;
+              “‘journeys end in lovers' meetings,’ as the old play says. I don't
+              think I have had the pleasure of seeing you since you favoured me
+              with those attentions as I lay on the ledge above the Reichenbach
+              Fall.”
+            </TextNode>
+
+            <TextNode>
+              The Colonel still stared at my friend like a man in a trance. “You
+              cunning, cunning fiend!” was all that he could say.
+            </TextNode>
+
+            <TextNode>
+              “I have not introduced you yet,” said Holmes. “This, gentlemen, is
+              Colonel Sebastian Moran, once of Her Majesty's Indian Army, and
+              the best heavy game shot that our Eastern Empire has ever
+              produced. I believe I am correct, Colonel, in saying that your bag
+              of tigers still remains unrivalled?”
+            </TextNode>
+
+            <TextNode>
+              The fierce old man said nothing, but still glared at my companion;
+              with his savage eyes and bristling moustache he was wonderfully
+              like a tiger himself.
+            </TextNode>
+
+            <TextNode>
+              “I wonder that my very simple stratagem could deceive so old a
+              <span className='italic'>shikari</span>,” said Holmes. “It must be
+              very familiar to you. Have you not tethered a young kid under a
+              tree, lain above it with your rifle, and waited for the bait to
+              bring up your tiger? This empty house is my tree and you are my
+              tiger. You have possibly had other guns in reserve in case there
+              should be several tigers, or in the unlikely supposition of your
+              own aim failing you. These,” he pointed around, “are my other
+              guns. The parallel is exact.”
+            </TextNode>
+
+            <TextNode>
+              Colonel Moran sprang forward, with a snarl of rage, but the
+              constables dragged him back. The fury upon his face was terrible
+              to look at.
+            </TextNode>
+
+            <TextNode>
+              “I confess that you had one small surprise for me,” said Holmes.
+              “I did not anticipate that you would yourself make use of this
+              empty house and this convenient front window. I had imagined you
+              as operating from the street, where my friend Lestrade and his
+              merry men were awaiting you. With that exception all has gone as I
+              expected.”
+            </TextNode>
+
+            <TextNode>Colonel Moran turned to the official detective.</TextNode>
+
+            <TextNode>
+              “You may or may not have just cause for arresting me,” said he,
+              “but at least there can be no reason why I should submit to the
+              gibes of this person. If I am in the hands of the law let things
+              be done in a legal way.”
+            </TextNode>
+
+            <TextNode>
+              “Well, that's reasonable enough,” said Lestrade. “Nothing further
+              you have to say, Mr. Holmes, before we go?”
+            </TextNode>
+
+            <TextNode>
+              Holmes had picked up the powerful air-gun from the floor and was
+              examining its mechanism.
+            </TextNode>
+
+            <TextNode>
+              “An admirable and unique weapon,” said he, “noiseless and of
+              tremendous power. I knew Von Herder, the blind German mechanic,
+              who constructed it to the order of the late Professor Moriarty.
+              For years I have been aware of its existence, though I have never
+              before had the opportunity of handling it. I commend it very
+              specially to your attention, Lestrade, and also the bullets which
+              fit it.”
+            </TextNode>
+
+            <TextNode>
+              “You can trust us to look after that, Mr. Holmes,” said Lestrade,
+              as the whole party moved towards the door. “Anything further to
+              say?”
+            </TextNode>
+
+            <TextNode>“Only to ask what charge you intend to prefer?”</TextNode>
+
+            <TextNode>
+              “What charge, sir? Why, of course, the attempted murder of Mr.
+              Sherlock Holmes.”
+            </TextNode>
+
+            <TextNode>
+              “Not so, Lestrade. I do not propose to appear in the matter at
+              all. To you, and to you only, belongs the credit of the remarkable
+              arrest which you have effected. Yes, Lestrade, I congratulate you!
+              With your usual happy mixture of cunning and audacity you have got
+              him.”
+            </TextNode>
+
+            <TextNode>“Got him! Got whom, Mr. Holmes?”</TextNode>
+
+            <TextNode>
+              “The man that the whole force has been seeking in vain—Colonel
+              Sebastian Moran, who shot the Honourable Ronald Adair with an
+              expanding bullet from an air-gun through the open window of the
+              second-floor front of No. 427, Park Lane, upon the 30th of last
+              month. That's the charge, Lestrade. And now, Watson, if you can
+              endure the draught from a broken window, I think that half an hour
+              in my study over a cigar may afford you some profitable
+              amusement.”
+            </TextNode>
+
+            <TextNode>
+              Our old chambers had been left unchanged through the supervision
+              of Mycroft Holmes and the immediate care of Mrs. Hudson. As I
+              entered I saw, it is true, an unwonted tidiness, but the old
+              landmarks were all in their place. There were the chemical corner
+              and the acid-stained, deal-topped table. There upon a shelf was
+              the row of formidable scrap-books and books of reference which
+              many of our fellow-citizens would have been so glad to burn. The
+              diagrams, the violin-case, and the pipe-rack—even the Persian
+              slipper which contained the tobacco—all met my eyes as I glanced
+              round me. There were two occupants of the room—one Mrs. Hudson,
+              who beamed upon us both as we entered; the other the strange dummy
+              which had played so important a part in the evening's adventures.
+              It was a wax-coloured model of my friend, so admirably done that
+              it was a perfect facsimile. It stood on a small pedestal table
+              with an old dressing-gown of Holmes's so draped round it that the
+              illusion from the street was absolutely perfect.
+            </TextNode>
+
+            <TextNode>
+              “I hope you preserved all precautions, Mrs. Hudson?” said Holmes.
+            </TextNode>
+
+            <TextNode>
+              “I went to it on my knees, sir, just as you told me.”
+            </TextNode>
+
+            <TextNode>
+              “Excellent. You carried the thing out very well. Did you observe
+              where the bullet went?”
+            </TextNode>
+
+            <TextNode>
+              “Yes, sir. I'm afraid it has spoilt your beautiful bust, for it
+              passed right through the head and flattened itself on the wall. I
+              picked it up from the carpet. Here it is!”
+            </TextNode>
+
+            <TextNode>
+              Holmes held it out to me. “A soft revolver bullet, as you
+              perceive, Watson. There's genius in that, for who would expect to
+              find such a thing fired from an air-gun. All right, Mrs. Hudson, I
+              am much obliged for your assistance. And now, Watson, let me see
+              you in your old seat once more, for there are several points which
+              I should like to discuss with you.”
+            </TextNode>
+
+            <TextNode>
+              He had thrown off the seedy frock-coat, and now he was the Holmes
+              of old in the mouse-coloured dressing-gown which he took from his
+              effigy.
+            </TextNode>
+
+            <TextNode>
+              “The old <span className='italic'>shikari's</span> nerves have not
+              lost their steadiness nor his eyes their keenness,” said he, with
+              a laugh, as he inspected the shattered forehead of his bust.
+            </TextNode>
+
+            <TextNode>
+              “Plumb in the middle of the back of the head and smack through the
+              brain. He was the best shot in India, and I expect that there are
+              few better in London. Have you heard the name?”
+            </TextNode>
+
+            <TextNode>“No, I have not.”</TextNode>
+
+            <TextNode>
+              “Well, well, such is fame! But, then, if I remember aright, you
+              had not heard the name of Professor James Moriarty, who had one of
+              the great brains of the century. Just give me down my index of
+              biographies from the shelf.”
+            </TextNode>
+
+            <TextNode>
+              He turned over the pages lazily, leaning back in his chair and
+              blowing great clouds from his cigar.
+            </TextNode>
+
+            <TextNode>
+              “My collection of M's is a fine one,” said he. “Moriarty himself
+              is enough to make any letter illustrious, and here is Morgan the
+              poisoner, and Merridew of abominable memory, and Mathews, who
+              knocked out my left canine in the waiting-room at Charing Cross,
+              and, finally, here is our friend of to-night.”
+            </TextNode>
+
+            <TextNode>He handed over the book, and I read:</TextNode>
+
+            <Indent>
+              <TextNode noIndent>
+                <span className='italic'>Moran</span>,{' '}
+                <span className='italic'>Sebastian</span>,{' '}
+                <span className='italic'>Colonel</span>. Unemployed. Formerly
+                1st Bengalore Pioneers. Born London, 1840. Son of Sir Augustus
+                Moran, C.B., once British Minister to Persia. Educated Eton and
+                Oxford. Served in Jowaki Campaign, Afghan Campaign, Charasiab
+                (despatches), Sherpur, and Cabul. Author of{' '}
+                <span className='italic'>
+                  Heavy Game of the Western Himalayas
+                </span>
+                , 1881;{' '}
+                <span className='italic'>Three Months in the Jungle</span>,
+                1884. Address: Conduit Street. Clubs: The Anglo-Indian, the
+                Tankerville, the Bagatelle Card Club.
+              </TextNode>
+            </Indent>
+            <TextNode noIndent>
+              On the margin was written, in Holmes's precise hand:
+            </TextNode>
+
+            <Indent>
+              <TextNode className='italic' noIndent>
+                The second most dangerous man in London.
+              </TextNode>
+            </Indent>
+            <TextNode noIndent>
+              “This is astonishing,” said I, as I handed back the volume. “The
+              man's career is that of an honourable soldier.”
+            </TextNode>
+
+            <TextNode>
+              “It is true,” Holmes answered. “Up to a certain point he did well.
+              He was always a man of iron nerve, and the story is still told in
+              India how he crawled down a drain after a wounded man-eating
+              tiger. There are some trees, Watson, which grow to a certain
+              height and then suddenly develop some unsightly eccentricity. You
+              will see it often in humans. I have a theory that the individual
+              represents in his development the whole procession of his
+              ancestors, and that such a sudden turn to good or evil stands for
+              some strong influence which came into the line of his pedigree.
+              The person becomes, as it were, the epitome of the history of his
+              own family.”
+            </TextNode>
+
+            <TextNode>“It is surely rather fanciful.”</TextNode>
+
+            <TextNode>
+              “Well, I don't insist upon it. Whatever the cause, Colonel Moran
+              began to go wrong. Without any open scandal he still made India
+              too hot to hold him. He retired, came to London, and again
+              acquired an evil name. It was at this time that he was sought out
+              by Professor Moriarty, to whom for a time he was chief of the
+              staff. Moriarty supplied him liberally with money and used him
+              only in one or two very high-class jobs which no ordinary criminal
+              could have undertaken. You may have some recollection of the death
+              of Mrs. Stewart, of Lauder, in 1887. Not? Well, I am sure Moran
+              was at the bottom of it; but nothing could be proved. So cleverly
+              was the Colonel concealed that even when the Moriarty gang was
+              broken up we could not incriminate him. You remember at that date,
+              when I called upon you in your rooms, how I put up the shutters
+              for fear of air-guns? No doubt you thought me fanciful. I knew
+              exactly what I was doing, for I knew of the existence of this
+              remarkable gun, and I knew also that one of the best shots in the
+              world would be behind it. When we were in Switzerland he followed
+              us with Moriarty, and it was undoubtedly he who gave me that evil
+              five minutes on the Reichenbach ledge.
+            </TextNode>
+          </BookRightPartContainer>
         </div>
       </BookMainContainer>
     </PageWrapper>

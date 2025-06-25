@@ -153,6 +153,7 @@ import Page167 from './pages/the-return-of-sherlock-holmes/the-adventure-of-the-
 import Page168 from './pages/the-return-of-sherlock-holmes/the-adventure-of-the-empty-house/Page168';
 import Page169 from './pages/the-return-of-sherlock-holmes/the-adventure-of-the-empty-house/Page169';
 import Page170 from './pages/the-return-of-sherlock-holmes/the-adventure-of-the-empty-house/Page170';
+import Page171 from './pages/the-return-of-sherlock-holmes/the-adventure-of-the-empty-house/Page171';
 import Page36 from './pages/the-sign-of-the-four/Page36';
 import Page37 from './pages/the-sign-of-the-four/Page37';
 import Page38 from './pages/the-sign-of-the-four/Page38';
@@ -363,6 +364,7 @@ function BookRead({ initialPageId }: BookReadProps): ReactElement {
             Page168,
             Page169,
             Page170,
+            Page171,
           ].map((PageComponent, index) => {
             return (
               <PageComponent
