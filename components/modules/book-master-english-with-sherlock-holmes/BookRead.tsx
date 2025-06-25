@@ -149,11 +149,19 @@ import Page129 from './pages/the-momoirs-of-sherlock-holmes/the-yellow-face/Page
 import Page130 from './pages/the-momoirs-of-sherlock-holmes/the-yellow-face/Page130';
 import Page131 from './pages/the-momoirs-of-sherlock-holmes/the-yellow-face/Page131';
 import Page132 from './pages/the-momoirs-of-sherlock-holmes/the-yellow-face/Page132';
+import Page176 from './pages/the-return-of-sherlock-holmes/the-adventure-of-the-dancing-men/Page176';
+import Page177 from './pages/the-return-of-sherlock-holmes/the-adventure-of-the-dancing-men/Page177';
+import Page178 from './pages/the-return-of-sherlock-holmes/the-adventure-of-the-dancing-men/Page178';
+import Page179 from './pages/the-return-of-sherlock-holmes/the-adventure-of-the-dancing-men/Page179';
 import Page167 from './pages/the-return-of-sherlock-holmes/the-adventure-of-the-empty-house/Page167';
 import Page168 from './pages/the-return-of-sherlock-holmes/the-adventure-of-the-empty-house/Page168';
 import Page169 from './pages/the-return-of-sherlock-holmes/the-adventure-of-the-empty-house/Page169';
 import Page170 from './pages/the-return-of-sherlock-holmes/the-adventure-of-the-empty-house/Page170';
 import Page171 from './pages/the-return-of-sherlock-holmes/the-adventure-of-the-empty-house/Page171';
+import Page172 from './pages/the-return-of-sherlock-holmes/the-adventure-of-the-norwood-builder/Page172';
+import Page173 from './pages/the-return-of-sherlock-holmes/the-adventure-of-the-norwood-builder/Page173';
+import Page174 from './pages/the-return-of-sherlock-holmes/the-adventure-of-the-norwood-builder/Page174';
+import Page175 from './pages/the-return-of-sherlock-holmes/the-adventure-of-the-norwood-builder/Page175';
 import Page36 from './pages/the-sign-of-the-four/Page36';
 import Page37 from './pages/the-sign-of-the-four/Page37';
 import Page38 from './pages/the-sign-of-the-four/Page38';
@@ -365,6 +373,14 @@ function BookRead({ initialPageId }: BookReadProps): ReactElement {
             Page169,
             Page170,
             Page171,
+            Page172,
+            Page173,
+            Page174,
+            Page175,
+            Page176,
+            Page177,
+            Page178,
+            Page179,
           ].map((PageComponent, index) => {
             return (
               <PageComponent

@@ -26,7 +26,9 @@ function Page98({
                    justify-center  max-sm:justify-start'
       >
         <H3 className='mb-20  text-center  max-sm:text-start'>
-          The Adventure of the Speckled Band
+          The Adventure of the Speckled
+          <span className='max-md:hidden'>&nbsp;</span>
+          <span className='hidden  max-md:inline'> </span>Band
         </H3>
       </BookMainContainer>
     </PageWrapper>

@@ -10,7 +10,7 @@ interface PageProps {
   viewportHeight?: boolean;
 }
 
-function Page124({
+function Page168({
   pageNumber,
   hidePageNumber = false,
   viewportHeight = false,
@@ -26,11 +26,11 @@ function Page124({
                    justify-center  max-sm:justify-start'
       >
         <H3 className='mb-20  text-center  max-sm:text-start'>
-          The Adventure of the Empty House
+          The&nbsp;Adventure of&nbsp;the&nbsp;Empty House
         </H3>
       </BookMainContainer>
     </PageWrapper>
   );
 }
 
-export default Page124;
+export default Page168;

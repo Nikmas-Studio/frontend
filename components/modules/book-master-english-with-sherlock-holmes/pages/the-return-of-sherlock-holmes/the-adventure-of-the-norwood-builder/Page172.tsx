@@ -1,5 +1,5 @@
 import BookMainContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookMainContainer';
-import H2 from '@/components/elements/book-master-english-with-sherlock-holmes/H2';
+import H3 from '@/components/elements/book-master-english-with-sherlock-holmes/H3';
 import PageWrapper from '@/components/elements/book-master-english-with-sherlock-holmes/PageWrapper';
 import { ReactElement } from 'react';
 import Controls from '../../../Controls';
@@ -10,26 +10,29 @@ interface PageProps {
   viewportHeight?: boolean;
 }
 
-function Page123({
+function Page172({
   pageNumber,
   hidePageNumber = false,
   viewportHeight = false,
 }: PageProps): ReactElement {
   return (
     <PageWrapper pageNumber={pageNumber} viewportHeight={viewportHeight}>
-      <Controls pageNumber={hidePageNumber ? undefined : pageNumber} />
+      <Controls
+        pageNumber={hidePageNumber ? undefined : pageNumber}
+        title='THE&nbsp;RETURN OF&nbsp;SHERLOCK&nbsp;HOLMES'
+      />
       <BookMainContainer
-        className='grid  h-full  place-content-center
-                   max-sm:flex  max-sm:items-center  max-sm:justify-start'
+        className='flex  h-full  items-center  
+                   justify-center  max-sm:justify-start'
       >
-        <H2 className='mb-20  text-center  max-sm:text-start'>
-          The Memoirs of Sherlock
+        <H3 className='mb-20  text-center  max-sm:text-start'>
+          The Adventure of the Norwood
           <span className='max-md:hidden'>&nbsp;</span>
-          <span className='hidden  max-md:inline'> </span>Holmes
-        </H2>
+          <span className='hidden  max-md:inline'> </span>Builder
+        </H3>
       </BookMainContainer>
     </PageWrapper>
   );
 }
 
-export default Page123;
+export default Page172;

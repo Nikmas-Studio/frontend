@@ -1979,6 +1979,52 @@ function BookNavigator(): ReactElement {
                 })}
               </ul>
             </div>
+            <div
+              id={storyToPartId(Story.THE_ADVENTURE_OF_THE_NORWOOD_BUILDER)}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                {Story.THE_ADVENTURE_OF_THE_NORWOOD_BUILDER}
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.THE_RETURN_OF_SHERLOCK_HOLMES
+                    .THE_ADVENTURE_OF_THE_NORWOOD_BUILDER,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={storyToPartId(Story.THE_ADVENTURE_OF_THE_DANCING_MEN)}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                {Story.THE_ADVENTURE_OF_THE_DANCING_MEN}
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.THE_RETURN_OF_SHERLOCK_HOLMES
+                    .THE_ADVENTURE_OF_THE_DANCING_MEN,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

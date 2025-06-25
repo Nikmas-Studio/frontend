@@ -126,6 +126,7 @@ function SettingsDropdown(): ReactElement {
             className='size-6  translate-y-[-0.031rem]
                        select-none  dark:hidden'
             quality={100}
+            priority
           />
           <Image
             src={iconsSources.lightModeWhiteIcon}
@@ -135,6 +136,7 @@ function SettingsDropdown(): ReactElement {
             className='hidden  size-6  translate-y-[-0.031rem]
                        select-none  dark:inline-block'
             quality={100}
+            priority
           />
           <p className={textClasses}>Light</p>
         </ThemeToggleDropdownItem>
@@ -154,6 +156,7 @@ function SettingsDropdown(): ReactElement {
                        translate-y-[-0.031rem]  select-none
                        dark:hidden'
             quality={100}
+            priority
           />
           <Image
             src={iconsSources.darkModeWhiteIcon}
@@ -164,6 +167,7 @@ function SettingsDropdown(): ReactElement {
                        translate-y-[-0.031rem]  select-none
                        dark:inline-block'
             quality={100}
+            priority
           />
           <p className={textClasses}>Dark</p>
         </ThemeToggleDropdownItem>
@@ -182,6 +186,7 @@ function SettingsDropdown(): ReactElement {
             className='size-[1.3rem]  translate-x-[0.13rem]  translate-y-[-0.031rem]
                        select-none  dark:hidden'
             quality={100}
+            priority
           />
           <Image
             src={iconsSources.systemModeWhiteIcon}
@@ -191,6 +196,7 @@ function SettingsDropdown(): ReactElement {
             className='hidden  size-[1.3rem]  translate-x-[0.13rem]  translate-y-[-0.031rem]
                        select-none  dark:inline-block'
             quality={100}
+            priority
           />
           <p className={textClasses}>System</p>
         </ThemeToggleDropdownItem>

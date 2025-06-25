@@ -26,7 +26,9 @@ function Page112({
                    justify-center  max-sm:justify-start'
       >
         <H3 className='mb-20  text-center  max-sm:text-start'>
-          The Adventure of the Beryl Coronet
+          The Adventure of the Beryl
+          <span className='max-md:hidden'>&nbsp;</span>
+          <span className='hidden  max-md:inline'> </span>Coronet
         </H3>
       </BookMainContainer>
     </PageWrapper>

@@ -26,7 +26,9 @@ function Page94({
                    justify-center  max-sm:justify-start'
       >
         <H3 className='mb-20  text-center  max-sm:text-start'>
-          The Adventure of the Blue Carbuncle
+          The Adventure of the Blue
+          <span className='max-md:hidden'>&nbsp;</span>
+          <span className='hidden  max-md:inline'> </span>Carbuncle
         </H3>
       </BookMainContainer>
     </PageWrapper>

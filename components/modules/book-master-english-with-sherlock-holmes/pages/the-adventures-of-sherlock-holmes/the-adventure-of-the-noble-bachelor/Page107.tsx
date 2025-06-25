@@ -26,7 +26,9 @@ function Page107({
                    justify-center  max-sm:justify-start'
       >
         <H3 className='mb-20  text-center  max-sm:text-start'>
-          The Adventure of the Noble Bachelor
+          The Adventure of the Noble
+          <span className='max-md:hidden'>&nbsp;</span>
+          <span className='hidden  max-md:inline'> </span>Bachelor
         </H3>
       </BookMainContainer>
     </PageWrapper>

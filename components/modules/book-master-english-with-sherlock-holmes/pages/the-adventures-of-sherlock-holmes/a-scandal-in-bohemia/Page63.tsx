@@ -24,8 +24,8 @@ function Page63({
       >
         <H2 className='mb-20  text-center  max-sm:text-start'>
           The Adventures of Sherlock
-          <span className='max-sm:hidden'>&nbsp;</span>
-          <span className='hidden  max-sm:inline'> </span>Holmes
+          <span className='max-md:hidden'>&nbsp;</span>
+          <span className='hidden  max-md:inline'> </span>Holmes
         </H2>
       </BookMainContainer>
     </PageWrapper>
