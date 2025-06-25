@@ -35,6 +35,7 @@ function TranslationTooltip(): ReactElement {
   });
 
   const [innerIsShown, setInnerIsShown] = useState(false);
+  const [innerContent, setInnerContent] = useState('11nothing11');
 
   const tooltipClasses = classNames(
     merriweather.className,
@@ -43,13 +44,21 @@ function TranslationTooltip(): ReactElement {
      rounded-[7px]  z-[9999999]  dark:border-gray-dark  text-lg  
      [-webkit-font-smoothing:subpixel-antialiased]  max-w-[30vw]
      bg-[#FFEAC5]  pt-2  pb-[0.65rem]  px-4  lining-nums  min-h-[2.9rem]
-     max-sm:max-w-[70vw]
+     max-sm:max-w-[70vw]  transition-opacity  duration-500
      `,
 
     {
-      invisible: !innerIsShown,
+      invisible:
+        !innerIsShown || (content.translation !== innerContent && !isLoading),
       'text-red-600': content.error,
     },
+  );
+
+  console.log(
+    'innerContent vs content.translation:',
+    innerContent,
+    '|||',
+    content.translation,
   );
 
   useOutsideClick([tooltipRef], () => {
@@ -169,7 +178,17 @@ function TranslationTooltip(): ReactElement {
           maxHeight: constrainedHeight,
         };
 
+        console.log('Setting tooltip position:', position);
+        console.log('Is loading:', isLoading);
+
         setTooltipPosition(position);
+
+        if (!isShown || isLoading) {
+          setInnerContent('11nothing11');
+        } else {
+          setInnerContent(content.translation);
+        }
+
         setInnerIsShown(isShown);
       });
     }, 10);
@@ -179,6 +198,7 @@ function TranslationTooltip(): ReactElement {
     isShown,
     isTouchDevice,
     tooltipPosition.maxHeight,
+    content.translation,
     tooltipRef,
     isLoading,
   ]);
