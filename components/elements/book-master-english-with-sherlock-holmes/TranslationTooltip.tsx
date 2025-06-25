@@ -98,14 +98,8 @@ function TranslationTooltip(): ReactElement {
         return;
       }
 
-      // const previousMaxHeight = tooltipPosition.maxHeight;
-      // tooltipRef.current.style.maxHeight = '';
-      // requestAnimationFrame(() => {
       const tooltipWidth = testingTooltipRef.current!.offsetWidth;
       const tooltipHeight = testingTooltipRef.current!.offsetHeight;
-      // tooltipRef.current!.style.maxHeight = previousMaxHeight
-      //   ? `${previousMaxHeight}px`
-      //   : '';
 
       const margin = 8;
 
@@ -190,7 +184,6 @@ function TranslationTooltip(): ReactElement {
       }
 
       setInnerIsShown(isShown);
-      // });
     }, 10);
   }, [
     fragmentPosition,
@@ -204,7 +197,7 @@ function TranslationTooltip(): ReactElement {
   ]);
 
   let width: string | undefined;
-  if (isLoading) {
+  if (isLoading || content.translation !== innerContent) {
     width = '7rem';
   } else {
     width = '';
@@ -225,7 +218,7 @@ function TranslationTooltip(): ReactElement {
       className={tooltipClasses}
     >
       <div
-        style={{ width }}
+        style={{ width: isLoading ? '7rem' : undefined }}
         ref={testingTooltipRef}
         className={testingTooltipClasses}
       >
