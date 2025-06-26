@@ -11,7 +11,7 @@ import { Theme } from '@/types/theme';
 import { TranslationLanguage } from '@/types/translation-laguage';
 import classNames from 'classnames';
 import Image from 'next/image';
-import { ReactElement } from 'react';
+import { ReactElement, useEffect } from 'react';
 
 import {
   useTranslationLanguage,
@@ -86,6 +86,21 @@ function SettingsDropdown(): ReactElement {
     systemModeBlackIcon: gearIconBlack,
     systemModeWhiteIcon: gearIconWhite,
   };
+
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent): void {
+      if (event.key === 'Escape') {
+        if (settingsDropdownIsOpened) {
+          setSettingsDropdownIsOpened(false);
+        }
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [settingsDropdownIsOpened, setSettingsDropdownIsOpened]);
 
   useOutsideClick([dropdownElementRef], () => {
     if (settingsDropdownIsOpened) {

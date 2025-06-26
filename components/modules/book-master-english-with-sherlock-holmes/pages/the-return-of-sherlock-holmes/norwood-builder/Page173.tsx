@@ -157,9 +157,8 @@ function Page173({
 
             <TextNode>
               Our visitor stretched forward a quivering hand and picked up
-              the&nbsp;
-              <span className='italic'>Daily Telegraph</span>, which still lay
-              upon Holmes's knee.
+              <span className='italic'>The Daily Telegraph</span>, which still
+              lay upon Holmes's knee.
             </TextNode>
 
             <TextNode>

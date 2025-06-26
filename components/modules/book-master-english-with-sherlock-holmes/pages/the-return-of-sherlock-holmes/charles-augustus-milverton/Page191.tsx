@@ -10,7 +10,7 @@ interface PageProps {
   viewportHeight?: boolean;
 }
 
-function Page118({
+function Page191({
   pageNumber,
   hidePageNumber = false,
   viewportHeight = false,
@@ -19,20 +19,22 @@ function Page118({
     <PageWrapper pageNumber={pageNumber} viewportHeight={viewportHeight}>
       <Controls
         pageNumber={hidePageNumber ? undefined : pageNumber}
-        title='THE&nbsp;ADVENTURES OF&nbsp;SHERLOCK&nbsp;HOLMES'
+        title='THE&nbsp;RETURN OF&nbsp;SHERLOCK&nbsp;HOLMES'
       />
       <BookMainContainer
         className='flex  h-full  items-center  
                    justify-center  max-sm:justify-start'
       >
         <H3 className='mb-20  text-center  max-sm:text-start'>
-          The Adventure of the Copper
-          <span className='max-md:hidden'>&nbsp;</span>
-          <span className='hidden  max-md:inline'> </span>Beeches
+          The Adventure of Charles
+          <span className='max-2md:hidden'>&nbsp;</span>
+          <span className='hidden  max-2md:inline'> </span>Augustus
+          <span className='max-2md:hidden'>&nbsp;</span>
+          <span className='hidden  max-2md:inline'> </span>Milverton
         </H3>
       </BookMainContainer>
     </PageWrapper>
   );
 }
 
-export default Page118;
+export default Page191;

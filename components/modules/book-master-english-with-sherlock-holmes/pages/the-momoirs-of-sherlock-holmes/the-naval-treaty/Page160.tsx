@@ -390,12 +390,14 @@ function Page160({
             </TextNode>
 
             <Image
-              className='h-[20.25rem]  w-auto  max-2md:h-auto  dark:hidden'
+              className='h-[20.25rem]  w-auto  translate-x-[-4px]  max-2md:h-auto
+                         dark:hidden'
               src={chartLight}
               alt='chart'
             />
             <Image
-              className='hidden  h-[20.25rem]  w-auto  max-2md:h-auto  dark:block'
+              className='hidden  h-[20.25rem]  w-auto  translate-x-[-4px]
+                         max-2md:h-auto  dark:block'
               src={chartDark}
               alt='chart'
             />

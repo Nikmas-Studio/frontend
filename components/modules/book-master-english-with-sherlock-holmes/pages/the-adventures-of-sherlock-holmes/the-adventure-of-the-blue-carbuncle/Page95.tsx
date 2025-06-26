@@ -484,7 +484,7 @@ function Page95({
             <TextNode>“In which, sir?”</TextNode>
 
             <TextNode>
-              “Oh, in the <span className='italic'>Globe</span>,{' '}
+              “Oh, in <span className='italic'>The Globe</span>,{' '}
               <span className='italic'>Star</span>,{' '}
               <span className='italic'>Pall Mall</span>,{' '}
               <span className='italic'>St. James's, Evening News</span>,{' '}

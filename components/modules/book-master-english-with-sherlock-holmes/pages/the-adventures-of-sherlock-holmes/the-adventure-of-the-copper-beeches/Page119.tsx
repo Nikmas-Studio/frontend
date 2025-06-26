@@ -29,10 +29,10 @@ function Page119({
           <BookLeftPartContainer>
             <TextNode noIndent>
               “To the man who loves art for its own sake,” remarked Sherlock
-              Holmes, tossing aside the advertisement sheet of the&nbsp;
-              <span className='italic'>Daily Telegraph</span>, “it is frequently
-              in its least important and lowliest manifestations that the
-              keenest pleasure is to be derived. It is pleasant to me to
+              Holmes, tossing aside the advertisement sheet of
+              <span className='italic'>The Daily Telegraph</span>, “it is
+              frequently in its least important and lowliest manifestations that
+              the keenest pleasure is to be derived. It is pleasant to me to
               observe, Watson, that you have so far grasped this truth that in
               these little records of our cases which you have been good enough
               to draw up, and, I am bound to say, occasionally to embellish, you

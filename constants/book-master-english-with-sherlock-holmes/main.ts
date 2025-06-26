@@ -236,6 +236,46 @@ export const DETAILED_BOOK_PART_PAGE_RANGES = {
       from: 176,
       to: 179,
     },
+    THE_ADVENTURE_OF_THE_SOLITARY_CYCLIST: {
+      from: 180,
+      to: 182,
+    },
+    THE_ADVENTURE_OF_THE_PRIORY_SCHOOL: {
+      from: 183,
+      to: 187,
+    },
+    THE_ADVENTURE_OF_BLACK_PETER: {
+      from: 188,
+      to: 190,
+    },
+    THE_ADVENTURE_OF_CHARLES_AUGUSTUS_MILVERTON: {
+      from: 191,
+      to: 193,
+    },
+    THE_ADVENTURE_OF_THE_SIX_NAPOLEONS: {
+      from: 194,
+      to: 196,
+    },
+    THE_ADVENTURE_OF_THE_THREE_STUDENTS: {
+      from: 197,
+      to: 199,
+    },
+    THE_ADVENTURE_OF_THE_GOLDEN_PINCE_NEZ: {
+      from: 200,
+      to: 203,
+    },
+    THE_ADVENTURE_OF_THE_MISSING_THREE_QUARTER: {
+      from: 204,
+      to: 206,
+    },
+    THE_ADVENTURE_OF_THE_ABBEY_GRANGE: {
+      from: 207,
+      to: 209,
+    },
+    THE_ADVENTURE_OF_THE_SECOND_STAIN: {
+      from: 210,
+      to: 215,
+    },
   },
 };
 
@@ -311,11 +351,13 @@ export const BOOK_PARTS = [
 export const PAGES_WITHOUT_NUMBER = [
   1, 2, 3, 22, 36, 63, 64, 70, 76, 80, 85, 89, 94, 98, 103, 107, 112, 118, 123,
   124, 129, 133, 136, 140, 144, 148, 152, 155, 159, 164, 167, 168, 172, 176,
+  180, 183, 188, 191, 194, 197, 200, 204, 207, 210,
 ];
 
 export const PAGES_WITH_VIEWPORT_HEIGHT = [
   1, 2, 3, 22, 36, 63, 64, 70, 76, 80, 85, 89, 94, 98, 103, 107, 112, 118, 123,
   124, 129, 133, 136, 140, 144, 148, 152, 155, 159, 164, 167, 168, 172, 176,
+  180, 183, 188, 191, 194, 197, 200, 204, 207, 210,
 ];
 
 export const LIGHT_PAGE_PLACEHOLDER =

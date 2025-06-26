@@ -26,7 +26,7 @@ function Page103({
                    justify-center  max-sm:justify-start'
       >
         <H3 className='mb-20  text-center  max-sm:text-start'>
-          The Adventure of the Engineer's 
+          The Adventure of the Engineer's
           <span className='max-md:hidden'>&nbsp;</span>
           <span className='hidden  max-md:inline'> </span>Thumb
         </H3>

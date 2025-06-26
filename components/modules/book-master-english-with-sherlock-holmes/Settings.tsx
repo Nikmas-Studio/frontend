@@ -90,7 +90,8 @@ const Settings = forwardRef<HTMLDivElement, SettingsProps>(
       <div ref={ref} className={settingsWrapperClasses}>
         <button
           ref={toggleButtonRef}
-          className='group  relative  size-[35px]  translate-x-[7px]  cursor-pointer'
+          className='group  relative  size-[35px]  translate-x-[7px]  cursor-pointer 
+                     !border-0  !outline-none  !ring-0'
           onClick={handleToggleDropdown}
         >
           <svg
