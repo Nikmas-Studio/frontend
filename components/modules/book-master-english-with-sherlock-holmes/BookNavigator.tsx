@@ -2869,7 +2869,7 @@ function BookNavigator(): ReactElement {
                 })}
               </ul>
             </div>
-            <div className='mb-7'>
+            <div className='mb-12'>
               <BasicTextNode
                 className={`mb-5  text-xl  ${libreBaskerville.className}`}
               >
@@ -2879,6 +2879,180 @@ function BookNavigator(): ReactElement {
                 {generateRangeArray(
                   DETAILED_BOOK_PART_PAGE_RANGES.THE_VALLEY_OF_FEAR.PART_2
                     .CHAPTER_8_EPILOGUE,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={storyToPartId(Story.THE_ADVENTURE_OF_WISTERIA_LODGE)}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-1.5  text-xl  font-bold  ${libreBaskerville.className}`}
+              >
+                {Story.HIS_LAST_BOW}
+              </BasicTextNode>
+              <BasicTextNode
+                className={`mb-1.5  text-xl  ${libreBaskerville.className}`}
+              >
+                {Story.THE_ADVENTURE_OF_WISTERIA_LODGE}
+              </BasicTextNode>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter I. The Singular Experience of Mr. John Scott Eccles
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.HIS_LAST_BOW
+                    .THE_ADVENTURE_OF_WISTERIA_LODGE
+                    .CHAPTER_1_THE_SINGULAR_EXPERIENCE_OF_MR_JOHN_SCOTT_ECCLES,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter II. The Tiger of San Pedro
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.HIS_LAST_BOW
+                    .THE_ADVENTURE_OF_WISTERIA_LODGE
+                    .CHAPTER_2_THE_TIGER_OF_SAN_PEDRO,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={storyToPartId(Story.THE_ADVENTURE_OF_THE_CARDBOARD_BOX)}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                {Story.THE_ADVENTURE_OF_THE_CARDBOARD_BOX}
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.HIS_LAST_BOW
+                    .THE_ADVENTURE_OF_THE_CARDBOARD_BOX,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={storyToPartId(Story.THE_ADVENTURE_OF_THE_RED_CIRCLE)}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-1.5  text-xl  ${libreBaskerville.className}`}
+              >
+                {Story.THE_ADVENTURE_OF_THE_RED_CIRCLE}
+              </BasicTextNode>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter I
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.HIS_LAST_BOW
+                    .THE_ADVENTURE_OF_THE_RED_CIRCLE.CHAPTER_1,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='mb-7'>
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                Chapter II
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.HIS_LAST_BOW
+                    .THE_ADVENTURE_OF_THE_RED_CIRCLE.CHAPTER_2,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={storyToPartId(
+                Story.THE_ADVENTURE_OF_THE_BRUCE_PARTINGTON_PLANS,
+              )}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                {Story.THE_ADVENTURE_OF_THE_BRUCE_PARTINGTON_PLANS}
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.HIS_LAST_BOW
+                    .THE_ADVENTURE_OF_THE_BRUCE_PARTINGTON_PLANS,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={storyToPartId(Story.THE_ADVENTURE_OF_THE_DYING_DETECTIVE)}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                {Story.THE_ADVENTURE_OF_THE_DYING_DETECTIVE}
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES.HIS_LAST_BOW
+                    .THE_ADVENTURE_OF_THE_DYING_DETECTIVE,
                 ).map((pageNumber) => {
                   return (
                     <BookNavigatorPage

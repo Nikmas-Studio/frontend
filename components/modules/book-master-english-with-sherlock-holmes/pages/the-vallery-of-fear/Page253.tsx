@@ -23,7 +23,7 @@ function Page253({
         pageNumber={hidePageNumber ? undefined : pageNumber}
         title='THE&nbsp;VALLEY&nbsp;OF&nbsp;FEAR'
       />
-      <BookMainContainer biggerTopPadding>
+      <BookMainContainer>
         <div className='flex  max-2md:flex-col'>
           <BookLeftPartContainer>
             <TextNode noIndent>

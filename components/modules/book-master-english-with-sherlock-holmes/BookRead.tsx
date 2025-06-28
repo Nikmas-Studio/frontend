@@ -44,6 +44,29 @@ import Page7 from './pages/a-study-in-scarlet/Page7';
 import Page8 from './pages/a-study-in-scarlet/Page8';
 import Page9 from './pages/a-study-in-scarlet/Page9';
 import CoverPage from './pages/CoverPage';
+import Page270 from './pages/his-last-bow/Page270';
+import Page271 from './pages/his-last-bow/Page271';
+import Page272 from './pages/his-last-bow/Page272';
+import Page273 from './pages/his-last-bow/Page273';
+import Page274 from './pages/his-last-bow/Page274';
+import Page275 from './pages/his-last-bow/Page275';
+import Page276 from './pages/his-last-bow/Page276';
+import Page277 from './pages/his-last-bow/Page277';
+import Page278 from './pages/his-last-bow/Page278';
+import Page279 from './pages/his-last-bow/Page279';
+import Page280 from './pages/his-last-bow/Page280';
+import Page281 from './pages/his-last-bow/Page281';
+import Page282 from './pages/his-last-bow/Page282';
+import Page283 from './pages/his-last-bow/Page283';
+import Page284 from './pages/his-last-bow/Page284';
+import Page285 from './pages/his-last-bow/Page285';
+import Page286 from './pages/his-last-bow/Page286';
+import Page287 from './pages/his-last-bow/Page287';
+import Page288 from './pages/his-last-bow/Page288';
+import Page289 from './pages/his-last-bow/Page289';
+import Page290 from './pages/his-last-bow/Page290';
+import Page291 from './pages/his-last-bow/Page291';
+import Page292 from './pages/his-last-bow/Page292';
 import InstructionsPage from './pages/InstructionsPage';
 import Page76 from './pages/the-adventures-of-sherlock-holmes/a-case-of-identity/Page76';
 import Page77 from './pages/the-adventures-of-sherlock-holmes/a-case-of-identity/Page77';
@@ -561,6 +584,29 @@ function BookRead({ initialPageId }: BookReadProps): ReactElement {
             Page267,
             Page268,
             Page269,
+            Page270,
+            Page271,
+            Page272,
+            Page273,
+            Page274,
+            Page275,
+            Page276,
+            Page277,
+            Page278,
+            Page279,
+            Page280,
+            Page281,
+            Page282,
+            Page283,
+            Page284,
+            Page285,
+            Page286,
+            Page287,
+            Page288,
+            Page289,
+            Page290,
+            Page291,
+            Page292,
           ].map((PageComponent, index) => {
             return (
               <PageComponent

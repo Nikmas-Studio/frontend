@@ -25,7 +25,7 @@ function Page252({
         pageNumber={hidePageNumber ? undefined : pageNumber}
         title='THE&nbsp;VALLEY&nbsp;OF&nbsp;FEAR'
       />
-      <BookMainContainer biggerTopPadding>
+      <BookMainContainer>
         <H4>
           Chapter VII.
           <br />

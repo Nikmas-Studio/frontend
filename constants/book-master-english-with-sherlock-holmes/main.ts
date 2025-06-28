@@ -405,6 +405,40 @@ export const DETAILED_BOOK_PART_PAGE_RANGES = {
       },
     },
   },
+  HIS_LAST_BOW: {
+    THE_ADVENTURE_OF_WISTERIA_LODGE: {
+      CHAPTER_1_THE_SINGULAR_EXPERIENCE_OF_MR_JOHN_SCOTT_ECCLES: {
+        from: 270,
+        to: 274,
+      },
+      CHAPTER_2_THE_TIGER_OF_SAN_PEDRO: {
+        from: 275,
+        to: 276,
+      },
+    },
+    THE_ADVENTURE_OF_THE_CARDBOARD_BOX: {
+      from: 277,
+      to: 280,
+    },
+    THE_ADVENTURE_OF_THE_RED_CIRCLE: {
+      CHAPTER_1: {
+        from: 281,
+        to: 283,
+      },
+      CHAPTER_2: {
+        from: 284,
+        to: 285,
+      },
+    },
+    THE_ADVENTURE_OF_THE_BRUCE_PARTINGTON_PLANS: {
+      from: 286,
+      to: 290,
+    },
+    THE_ADVENTURE_OF_THE_DYING_DETECTIVE: {
+      from: 291,
+      to: 295,
+    },
+  },
 };
 
 export const BOOK_PARTS = [
@@ -479,13 +513,15 @@ export const BOOK_PARTS = [
 export const PAGES_WITHOUT_NUMBER = [
   1, 2, 3, 22, 36, 63, 64, 70, 76, 80, 85, 89, 94, 98, 103, 107, 112, 118, 123,
   124, 129, 133, 136, 140, 144, 148, 152, 155, 159, 164, 167, 168, 172, 176,
-  180, 183, 188, 191, 194, 197, 200, 204, 207, 210, 214, 239, 240, 254,
+  180, 183, 188, 191, 194, 197, 200, 204, 207, 210, 214, 239, 240, 254, 270,
+  271, 272, 277, 281, 286, 291,
 ];
 
 export const PAGES_WITH_VIEWPORT_HEIGHT = [
   1, 2, 3, 22, 36, 63, 64, 70, 76, 80, 85, 89, 94, 98, 103, 107, 112, 118, 123,
   124, 129, 133, 136, 140, 144, 148, 152, 155, 159, 164, 167, 168, 172, 176,
-  180, 183, 188, 191, 194, 197, 200, 204, 207, 210, 214, 239, 240, 254,
+  180, 183, 188, 191, 194, 197, 200, 204, 207, 210, 214, 239, 240, 254, 270,
+  272, 277, 281, 286, 291,
 ];
 
 export const LIGHT_PAGE_PLACEHOLDER =
