@@ -105,6 +105,31 @@ import Page72 from './pages/the-adventures-of-sherlock-holmes/the-red-headed-lea
 import Page73 from './pages/the-adventures-of-sherlock-holmes/the-red-headed-league/Page73';
 import Page74 from './pages/the-adventures-of-sherlock-holmes/the-red-headed-league/Page74';
 import Page75 from './pages/the-adventures-of-sherlock-holmes/the-red-headed-league/Page75';
+import Page214 from './pages/the-hound-of-the-baskervilles/Page214';
+import Page215 from './pages/the-hound-of-the-baskervilles/Page215';
+import Page216 from './pages/the-hound-of-the-baskervilles/Page216';
+import Page217 from './pages/the-hound-of-the-baskervilles/Page217';
+import Page218 from './pages/the-hound-of-the-baskervilles/Page218';
+import Page219 from './pages/the-hound-of-the-baskervilles/Page219';
+import Page220 from './pages/the-hound-of-the-baskervilles/Page220';
+import Page221 from './pages/the-hound-of-the-baskervilles/Page221';
+import Page222 from './pages/the-hound-of-the-baskervilles/Page222';
+import Page223 from './pages/the-hound-of-the-baskervilles/Page223';
+import Page224 from './pages/the-hound-of-the-baskervilles/Page224';
+import Page225 from './pages/the-hound-of-the-baskervilles/Page225';
+import Page226 from './pages/the-hound-of-the-baskervilles/Page226';
+import Page227 from './pages/the-hound-of-the-baskervilles/Page227';
+import Page228 from './pages/the-hound-of-the-baskervilles/Page228';
+import Page229 from './pages/the-hound-of-the-baskervilles/Page229';
+import Page230 from './pages/the-hound-of-the-baskervilles/Page230';
+import Page231 from './pages/the-hound-of-the-baskervilles/Page231';
+import Page232 from './pages/the-hound-of-the-baskervilles/Page232';
+import Page233 from './pages/the-hound-of-the-baskervilles/Page233';
+import Page234 from './pages/the-hound-of-the-baskervilles/Page234';
+import Page235 from './pages/the-hound-of-the-baskervilles/Page235';
+import Page236 from './pages/the-hound-of-the-baskervilles/Page236';
+import Page237 from './pages/the-hound-of-the-baskervilles/Page237';
+import Page238 from './pages/the-hound-of-the-baskervilles/Page238';
 import Page123 from './pages/the-momoirs-of-sherlock-holmes/silver-blaze/Page123';
 import Page124 from './pages/the-momoirs-of-sherlock-holmes/silver-blaze/Page124';
 import Page125 from './pages/the-momoirs-of-sherlock-holmes/silver-blaze/Page125';
@@ -223,6 +248,37 @@ import Page59 from './pages/the-sign-of-the-four/Page59';
 import Page60 from './pages/the-sign-of-the-four/Page60';
 import Page61 from './pages/the-sign-of-the-four/Page61';
 import Page62 from './pages/the-sign-of-the-four/Page62';
+import Page239 from './pages/the-vallery-of-fear/Page239';
+import Page240 from './pages/the-vallery-of-fear/Page240';
+import Page241 from './pages/the-vallery-of-fear/Page241';
+import Page242 from './pages/the-vallery-of-fear/Page242';
+import Page243 from './pages/the-vallery-of-fear/Page243';
+import Page244 from './pages/the-vallery-of-fear/Page244';
+import Page245 from './pages/the-vallery-of-fear/Page245';
+import Page246 from './pages/the-vallery-of-fear/Page246';
+import Page247 from './pages/the-vallery-of-fear/Page247';
+import Page248 from './pages/the-vallery-of-fear/Page248';
+import Page249 from './pages/the-vallery-of-fear/Page249';
+import Page250 from './pages/the-vallery-of-fear/Page250';
+import Page251 from './pages/the-vallery-of-fear/Page251';
+import Page252 from './pages/the-vallery-of-fear/Page252';
+import Page253 from './pages/the-vallery-of-fear/Page253';
+import Page254 from './pages/the-vallery-of-fear/Page254';
+import Page255 from './pages/the-vallery-of-fear/Page255';
+import Page256 from './pages/the-vallery-of-fear/Page256';
+import Page257 from './pages/the-vallery-of-fear/Page257';
+import Page258 from './pages/the-vallery-of-fear/Page258';
+import Page259 from './pages/the-vallery-of-fear/Page259';
+import Page260 from './pages/the-vallery-of-fear/Page260';
+import Page261 from './pages/the-vallery-of-fear/Page261';
+import Page262 from './pages/the-vallery-of-fear/Page262';
+import Page263 from './pages/the-vallery-of-fear/Page263';
+import Page264 from './pages/the-vallery-of-fear/Page264';
+import Page265 from './pages/the-vallery-of-fear/Page265';
+import Page266 from './pages/the-vallery-of-fear/Page266';
+import Page267 from './pages/the-vallery-of-fear/Page267';
+import Page268 from './pages/the-vallery-of-fear/Page268';
+import Page269 from './pages/the-vallery-of-fear/Page269';
 import SettingsDropdown from './SettingsDropdown';
 
 interface BookReadProps {
@@ -449,6 +505,62 @@ function BookRead({ initialPageId }: BookReadProps): ReactElement {
             Page211,
             Page212,
             Page213,
+            Page214,
+            Page215,
+            Page216,
+            Page217,
+            Page218,
+            Page219,
+            Page220,
+            Page221,
+            Page222,
+            Page223,
+            Page224,
+            Page225,
+            Page226,
+            Page227,
+            Page228,
+            Page229,
+            Page230,
+            Page231,
+            Page232,
+            Page233,
+            Page234,
+            Page235,
+            Page236,
+            Page237,
+            Page238,
+            Page239,
+            Page240,
+            Page241,
+            Page242,
+            Page243,
+            Page244,
+            Page245,
+            Page246,
+            Page247,
+            Page248,
+            Page249,
+            Page250,
+            Page251,
+            Page252,
+            Page253,
+            Page254,
+            Page255,
+            Page256,
+            Page257,
+            Page258,
+            Page259,
+            Page260,
+            Page261,
+            Page262,
+            Page263,
+            Page264,
+            Page265,
+            Page266,
+            Page267,
+            Page268,
+            Page269,
           ].map((PageComponent, index) => {
             return (
               <PageComponent

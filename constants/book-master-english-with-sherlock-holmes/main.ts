@@ -274,7 +274,135 @@ export const DETAILED_BOOK_PART_PAGE_RANGES = {
     },
     THE_ADVENTURE_OF_THE_SECOND_STAIN: {
       from: 210,
+      to: 213,
+    },
+  },
+  THE_HOUND_OF_THE_BASKERVILLES: {
+    CHAPTER_1_MR_SHERLOCK_HOLMES: {
+      from: 214,
       to: 215,
+    },
+    CHAPTER_2_THE_CURSE_OF_THE_BASKERVILLES: {
+      from: 216,
+      to: 217,
+    },
+    CHAPTER_3_THE_PROBLEM: {
+      from: 218,
+      to: 218,
+    },
+    CHAPTER_4_SIR_HENRY_BASKERVILLE: {
+      from: 219,
+      to: 220,
+    },
+    CHAPTER_5_THREE_BROKEN_THREADS: {
+      from: 221,
+      to: 222,
+    },
+    CHAPTER_6_BASKERVILLE_HALL: {
+      from: 223,
+      to: 223,
+    },
+    CHAPTER_7_THE_STAPLETONS_OF_MERRIPIT_HOUSE: {
+      from: 224,
+      to: 225,
+    },
+    CHAPTER_8_FIRST_REPORT_OF_DR_WATSON: {
+      from: 226,
+      to: 226,
+    },
+    CHAPTER_9_SECOND_REPORT_OF_DR_WATSON: {
+      from: 227,
+      to: 228,
+    },
+    CHAPTER_10_EXTRACT_FROM_THE_DIARY_OF_DR_WATSON: {
+      from: 229,
+      to: 229,
+    },
+    CHAPTER_11_THE_MAN_ON_THE_TOR: {
+      from: 230,
+      to: 231,
+    },
+    CHAPTER_12_DEATH_ON_THE_MOOR: {
+      from: 232,
+      to: 233,
+    },
+    CHAPTER_13_FIXING_THE_NETS: {
+      from: 234,
+      to: 235,
+    },
+    CHAPTER_14_THE_HOUND_OF_THE_BASKERVILLES: {
+      from: 236,
+      to: 237,
+    },
+    CHAPTER_15_A_RETROSPECTION: {
+      from: 238,
+      to: 238,
+    },
+  },
+  THE_VALLEY_OF_FEAR: {
+    PART_1: {
+      CHAPTER_1_THE_WARNING: {
+        from: 239,
+        to: 242,
+      },
+      CHAPTER_2_SHERLOCK_HOLMES_DISCOURSES: {
+        from: 243,
+        to: 243,
+      },
+      CHAPTER_3_THE_TRAGEDY_OF_BIRLSTONE: {
+        from: 244,
+        to: 245,
+      },
+      CHAPTER_4_DARKNESS: {
+        from: 246,
+        to: 247,
+      },
+      CHAPTER_5_THE_PEOPLE_OF_THE_DRAMA: {
+        from: 248,
+        to: 249,
+      },
+      CHAPTER_6_A_DAWNING_LIGHT: {
+        from: 250,
+        to: 251,
+      },
+      CHAPTER_7_THE_SOLUTION: {
+        from: 252,
+        to: 253,
+      },
+    },
+    PART_2: {
+      CHAPTER_1_THE_MAN: {
+        from: 254,
+        to: 256,
+      },
+      CHAPTER_2_THE_BODYMASTER: {
+        from: 257,
+        to: 258,
+      },
+      CHAPTER_3_LODGE_341_VERMISSA: {
+        from: 259,
+        to: 260,
+      },
+      CHAPTER_4_THE_VALLEY_OF_FEAR: {
+        from: 261,
+        to: 262,
+      },
+      CHAPTER_5_THE_DARKEST_HOUR: {
+        from: 263,
+        to: 264,
+      },
+      CHAPTER_6_DANGER: {
+        from: 265,
+        to: 266,
+      },
+      CHAPTER_7_THE_TRAPPING_OF_BIRDY_EDWARDS: {
+        from: 267,
+        to: 268,
+      },
+      CHAPTER_8_EPILOGUE: {
+        from: 269,
+        to: 269,
+      },
     },
   },
 };
@@ -351,13 +479,13 @@ export const BOOK_PARTS = [
 export const PAGES_WITHOUT_NUMBER = [
   1, 2, 3, 22, 36, 63, 64, 70, 76, 80, 85, 89, 94, 98, 103, 107, 112, 118, 123,
   124, 129, 133, 136, 140, 144, 148, 152, 155, 159, 164, 167, 168, 172, 176,
-  180, 183, 188, 191, 194, 197, 200, 204, 207, 210,
+  180, 183, 188, 191, 194, 197, 200, 204, 207, 210, 214, 239, 240, 254,
 ];
 
 export const PAGES_WITH_VIEWPORT_HEIGHT = [
   1, 2, 3, 22, 36, 63, 64, 70, 76, 80, 85, 89, 94, 98, 103, 107, 112, 118, 123,
   124, 129, 133, 136, 140, 144, 148, 152, 155, 159, 164, 167, 168, 172, 176,
-  180, 183, 188, 191, 194, 197, 200, 204, 207, 210,
+  180, 183, 188, 191, 194, 197, 200, 204, 207, 210, 214, 239, 240, 254,
 ];
 
 export const LIGHT_PAGE_PLACEHOLDER =
