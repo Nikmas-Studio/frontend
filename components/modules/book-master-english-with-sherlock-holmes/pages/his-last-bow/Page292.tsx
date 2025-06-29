@@ -23,7 +23,7 @@ function Page292({
         pageNumber={hidePageNumber ? undefined : pageNumber}
         title='THE&nbsp;ADVENTURE OF&nbsp;THE&nbsp;DYING&nbsp;DETECTIVE'
       />
-      <BookMainContainer biggestTopPadding>
+      <BookMainContainer biggerTopPadding>
         <div className='flex  max-2md:flex-col'>
           <BookLeftPartContainer>
             <TextNode noIndent>

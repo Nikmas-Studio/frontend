@@ -67,6 +67,17 @@ import Page289 from './pages/his-last-bow/Page289';
 import Page290 from './pages/his-last-bow/Page290';
 import Page291 from './pages/his-last-bow/Page291';
 import Page292 from './pages/his-last-bow/Page292';
+import Page293 from './pages/his-last-bow/Page293';
+import Page294 from './pages/his-last-bow/Page294';
+import Page295 from './pages/his-last-bow/Page295';
+import Page296 from './pages/his-last-bow/Page296';
+import Page297 from './pages/his-last-bow/Page297';
+import Page298 from './pages/his-last-bow/Page298';
+import Page299 from './pages/his-last-bow/Page299';
+import Page300 from './pages/his-last-bow/Page300';
+import Page301 from './pages/his-last-bow/Page301';
+import Page302 from './pages/his-last-bow/Page302';
+import Page303 from './pages/his-last-bow/Page303';
 import InstructionsPage from './pages/InstructionsPage';
 import Page76 from './pages/the-adventures-of-sherlock-holmes/a-case-of-identity/Page76';
 import Page77 from './pages/the-adventures-of-sherlock-holmes/a-case-of-identity/Page77';
@@ -128,6 +139,21 @@ import Page72 from './pages/the-adventures-of-sherlock-holmes/the-red-headed-lea
 import Page73 from './pages/the-adventures-of-sherlock-holmes/the-red-headed-league/Page73';
 import Page74 from './pages/the-adventures-of-sherlock-holmes/the-red-headed-league/Page74';
 import Page75 from './pages/the-adventures-of-sherlock-holmes/the-red-headed-league/Page75';
+import Page304 from './pages/the-case-book-of-sherlock-holmes/Page304';
+import Page305 from './pages/the-case-book-of-sherlock-holmes/Page305';
+import Page306 from './pages/the-case-book-of-sherlock-holmes/Page306';
+import Page307 from './pages/the-case-book-of-sherlock-holmes/Page307';
+import Page308 from './pages/the-case-book-of-sherlock-holmes/Page308';
+import Page309 from './pages/the-case-book-of-sherlock-holmes/Page309';
+import Page310 from './pages/the-case-book-of-sherlock-holmes/Page310';
+import Page311 from './pages/the-case-book-of-sherlock-holmes/Page311';
+import Page312 from './pages/the-case-book-of-sherlock-holmes/Page312';
+import Page313 from './pages/the-case-book-of-sherlock-holmes/Page313';
+import Page314 from './pages/the-case-book-of-sherlock-holmes/Page314';
+import Page315 from './pages/the-case-book-of-sherlock-holmes/Page315';
+import Page316 from './pages/the-case-book-of-sherlock-holmes/Page316';
+import Page317 from './pages/the-case-book-of-sherlock-holmes/Page317';
+import Page318 from './pages/the-case-book-of-sherlock-holmes/Page318';
 import Page214 from './pages/the-hound-of-the-baskervilles/Page214';
 import Page215 from './pages/the-hound-of-the-baskervilles/Page215';
 import Page216 from './pages/the-hound-of-the-baskervilles/Page216';
@@ -607,6 +633,32 @@ function BookRead({ initialPageId }: BookReadProps): ReactElement {
             Page290,
             Page291,
             Page292,
+            Page293,
+            Page294,
+            Page295,
+            Page296,
+            Page297,
+            Page298,
+            Page299,
+            Page300,
+            Page301,
+            Page302,
+            Page303,
+            Page304,
+            Page305,
+            Page306,
+            Page307,
+            Page308,
+            Page309,
+            Page310,
+            Page311,
+            Page312,
+            Page313,
+            Page314,
+            Page315,
+            Page316,
+            Page317,
+            Page318,
           ].map((PageComponent, index) => {
             return (
               <PageComponent
