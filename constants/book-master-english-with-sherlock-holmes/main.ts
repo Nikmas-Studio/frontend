@@ -468,6 +468,38 @@ export const DETAILED_BOOK_PART_PAGE_RANGES = {
       from: 316,
       to: 318,
     },
+    THE_ADVENTURE_OF_THE_SUSSEX_VAMPIRE: {
+      from: 319,
+      to: 321,
+    },
+    THE_ADVENTURE_OF_THE_THREE_GARRIDEBS: {
+      from: 322,
+      to: 324,
+    },
+    THE_PROBLEM_OF_THOR_BRIDGE: {
+      from: 325,
+      to: 328,
+    },
+    THE_ADVENTURE_OF_THE_CREEPING_MAN: {
+      from: 329,
+      to: 331,
+    },
+    THE_ADVENTURE_OF_THE_LIONS_MANE: {
+      from: 332,
+      to: 334,
+    },
+    THE_ADVENTURE_OF_THE_VEILED_LODGER: {
+      from: 335,
+      to: 336,
+    },
+    THE_ADVENTURE_OF_SHOSCOMBE_OLD_PLACE: {
+      from: 337,
+      to: 339,
+    },
+    THE_ADVENTURE_OF_THE_RETIRED_COLOURMAN: {
+      from: 340,
+      to: 343,
+    },
   },
 };
 
@@ -545,13 +577,15 @@ export const PAGES_WITHOUT_NUMBER = [
   124, 129, 133, 136, 140, 144, 148, 152, 155, 159, 164, 167, 168, 172, 176,
   180, 183, 188, 191, 194, 197, 200, 204, 207, 210, 214, 239, 240, 254, 270,
   271, 272, 277, 281, 286, 291, 294, 297, 301, 304, 305, 306, 310, 313, 316,
+  319, 322, 325, 329, 332, 335, 337, 340, 343,
 ];
 
 export const PAGES_WITH_VIEWPORT_HEIGHT = [
   1, 2, 3, 22, 36, 63, 64, 70, 76, 80, 85, 89, 94, 98, 103, 107, 112, 118, 123,
   124, 129, 133, 136, 140, 144, 148, 152, 155, 159, 164, 167, 168, 172, 176,
   180, 183, 188, 191, 194, 197, 200, 204, 207, 210, 214, 239, 240, 254, 270,
-  272, 277, 281, 286, 291, 294, 297, 301, 304, 306, 310, 313, 316,
+  272, 277, 281, 286, 291, 294, 297, 301, 304, 306, 310, 313, 316, 319, 322,
+  325, 329, 332, 335, 337, 340, 343,
 ];
 
 export const LIGHT_PAGE_PLACEHOLDER =

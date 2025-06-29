@@ -3227,6 +3227,198 @@ function BookNavigator(): ReactElement {
                 })}
               </ul>
             </div>
+            <div
+              id={storyToPartId(Story.THE_ADVENTURE_OF_THE_SUSSEX_VAMPIRE)}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                {Story.THE_ADVENTURE_OF_THE_SUSSEX_VAMPIRE}
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES
+                    .THE_CASE_BOOK_OF_SHERLOCK_HOLMES
+                    .THE_ADVENTURE_OF_THE_SUSSEX_VAMPIRE,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={storyToPartId(Story.THE_ADVENTURE_OF_THE_THREE_GARRIDEBS)}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                {Story.THE_ADVENTURE_OF_THE_THREE_GARRIDEBS}
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES
+                    .THE_CASE_BOOK_OF_SHERLOCK_HOLMES
+                    .THE_ADVENTURE_OF_THE_THREE_GARRIDEBS,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={storyToPartId(Story.THE_PROBLEM_OF_THOR_BRIDGE)}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                {Story.THE_PROBLEM_OF_THOR_BRIDGE}
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES
+                    .THE_CASE_BOOK_OF_SHERLOCK_HOLMES
+                    .THE_PROBLEM_OF_THOR_BRIDGE,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={storyToPartId(Story.THE_ADVENTURE_OF_THE_CREEPING_MAN)}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                {Story.THE_ADVENTURE_OF_THE_CREEPING_MAN}
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES
+                    .THE_CASE_BOOK_OF_SHERLOCK_HOLMES
+                    .THE_ADVENTURE_OF_THE_CREEPING_MAN,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={storyToPartId(Story.THE_ADVENTURE_OF_THE_LIONS_MANE)}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                {Story.THE_ADVENTURE_OF_THE_LIONS_MANE}
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES
+                    .THE_CASE_BOOK_OF_SHERLOCK_HOLMES
+                    .THE_ADVENTURE_OF_THE_LIONS_MANE,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={storyToPartId(Story.THE_ADVENTURE_OF_THE_VEILED_LODGER)}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                {Story.THE_ADVENTURE_OF_THE_VEILED_LODGER}
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES
+                    .THE_CASE_BOOK_OF_SHERLOCK_HOLMES
+                    .THE_ADVENTURE_OF_THE_VEILED_LODGER,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={storyToPartId(Story.THE_ADVENTURE_OF_SHOSCOMBE_OLD_PLACE)}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                {Story.THE_ADVENTURE_OF_SHOSCOMBE_OLD_PLACE}
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES
+                    .THE_CASE_BOOK_OF_SHERLOCK_HOLMES
+                    .THE_ADVENTURE_OF_SHOSCOMBE_OLD_PLACE,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              id={storyToPartId(Story.THE_ADVENTURE_OF_THE_RETIRED_COLOURMAN)}
+              className='mb-7'
+            >
+              <BasicTextNode
+                className={`mb-5  text-xl  ${libreBaskerville.className}`}
+              >
+                {Story.THE_ADVENTURE_OF_THE_RETIRED_COLOURMAN}
+              </BasicTextNode>
+              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                {generateRangeArray(
+                  DETAILED_BOOK_PART_PAGE_RANGES
+                    .THE_CASE_BOOK_OF_SHERLOCK_HOLMES
+                    .THE_ADVENTURE_OF_THE_RETIRED_COLOURMAN,
+                ).map((pageNumber) => {
+                  return (
+                    <BookNavigatorPage
+                      pageNumber={pageNumber}
+                      key={pageNumber}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

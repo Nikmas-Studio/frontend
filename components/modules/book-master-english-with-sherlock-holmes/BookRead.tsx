@@ -154,6 +154,31 @@ import Page315 from './pages/the-case-book-of-sherlock-holmes/Page315';
 import Page316 from './pages/the-case-book-of-sherlock-holmes/Page316';
 import Page317 from './pages/the-case-book-of-sherlock-holmes/Page317';
 import Page318 from './pages/the-case-book-of-sherlock-holmes/Page318';
+import Page319 from './pages/the-case-book-of-sherlock-holmes/Page319';
+import Page320 from './pages/the-case-book-of-sherlock-holmes/Page320';
+import Page321 from './pages/the-case-book-of-sherlock-holmes/Page321';
+import Page322 from './pages/the-case-book-of-sherlock-holmes/Page322';
+import Page323 from './pages/the-case-book-of-sherlock-holmes/Page323';
+import Page324 from './pages/the-case-book-of-sherlock-holmes/Page324';
+import Page325 from './pages/the-case-book-of-sherlock-holmes/Page325';
+import Page326 from './pages/the-case-book-of-sherlock-holmes/Page326';
+import Page327 from './pages/the-case-book-of-sherlock-holmes/Page327';
+import Page328 from './pages/the-case-book-of-sherlock-holmes/Page328';
+import Page329 from './pages/the-case-book-of-sherlock-holmes/Page329';
+import Page330 from './pages/the-case-book-of-sherlock-holmes/Page330';
+import Page331 from './pages/the-case-book-of-sherlock-holmes/Page331';
+import Page332 from './pages/the-case-book-of-sherlock-holmes/Page332';
+import Page333 from './pages/the-case-book-of-sherlock-holmes/Page333';
+import Page334 from './pages/the-case-book-of-sherlock-holmes/Page334';
+import Page335 from './pages/the-case-book-of-sherlock-holmes/Page335';
+import Page336 from './pages/the-case-book-of-sherlock-holmes/Page336';
+import Page337 from './pages/the-case-book-of-sherlock-holmes/Page337';
+import Page338 from './pages/the-case-book-of-sherlock-holmes/Page338';
+import Page339 from './pages/the-case-book-of-sherlock-holmes/Page339';
+import Page340 from './pages/the-case-book-of-sherlock-holmes/Page340';
+import Page341 from './pages/the-case-book-of-sherlock-holmes/Page341';
+import Page342 from './pages/the-case-book-of-sherlock-holmes/Page342';
+import Page343 from './pages/the-case-book-of-sherlock-holmes/Page343';
 import Page214 from './pages/the-hound-of-the-baskervilles/Page214';
 import Page215 from './pages/the-hound-of-the-baskervilles/Page215';
 import Page216 from './pages/the-hound-of-the-baskervilles/Page216';
@@ -659,6 +684,31 @@ function BookRead({ initialPageId }: BookReadProps): ReactElement {
             Page316,
             Page317,
             Page318,
+            Page319,
+            Page320,
+            Page321,
+            Page322,
+            Page323,
+            Page324,
+            Page325,
+            Page326,
+            Page327,
+            Page328,
+            Page329,
+            Page330,
+            Page331,
+            Page332,
+            Page333,
+            Page334,
+            Page335,
+            Page336,
+            Page337,
+            Page338,
+            Page339,
+            Page340,
+            Page341,
+            Page342,
+            Page343,
           ].map((PageComponent, index) => {
             return (
               <PageComponent
