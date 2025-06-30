@@ -81,7 +81,10 @@ function Page1(): ReactElement {
   const [aiCircleBottom, setAiCircleBottom] = useState<number | null>(null);
 
   const [showSherlock, setShowSherlock] = useState(false);
+  const [sherlockIsLoaded, setSherlockIsLoaded] = useState(false);
+
   const [showAiCircle, setShowAiCircle] = useState(false);
+  const [aiCircleIsLoaded, setAiCircleIsLoaded] = useState(false);
 
   useGSAP(() => {
     gsap.to(aiCircleRef.current, {
@@ -170,18 +173,21 @@ function Page1(): ReactElement {
           src={sherlock}
           alt='Sherlock Holmes'
           style={{
-            opacity: showSherlock ? 1 : 0,
+            opacity: showSherlock && sherlockIsLoaded ? 1 : 0,
           }}
           height={sherlockHeight ?? undefined}
           className='absolute  bottom-0  right-[20px] z-[-1]  transition-opacity
                      duration-1000  max-2md:right-1/2  max-2md:translate-x-1/2'
+          onLoad={() => {
+            setSherlockIsLoaded(true);
+          }}
         />
         <div
           style={{
             bottom: aiCircleBottom ?? undefined,
             height: aiCircleHeight ?? undefined,
             width: aiCircleHeight ?? undefined,
-            opacity: showAiCircle ? 1 : 0,
+            opacity: showAiCircle && aiCircleIsLoaded ? 1 : 0,
           }}
           className='absolute  right-[-32px]  z-[-2]  transition-opacity
                      duration-[3000ms]  will-change-transform  max-2md:right-1/2
@@ -192,6 +198,9 @@ function Page1(): ReactElement {
             src={aiCircle}
             alt='Sherlock Holmes'
             height={aiCircleHeight ?? undefined}
+            onLoad={() => {
+              setAiCircleIsLoaded(true);
+            }}
           />
         </div>
         <ScrollHintMouse
