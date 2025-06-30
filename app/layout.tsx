@@ -1,7 +1,6 @@
 import Script from 'next/script';
 import './globals.css';
 
-import EscapeInAppBrowser from '@/components/modules/EscapeInAppBrowser';
 import RecaptchaSettings from '@/components/modules/RecaptchaSettings';
 import { SessionProvider } from '@/context/session/Context';
 import Image from 'next/image';
@@ -101,7 +100,7 @@ export default function RootLayout({
       <body className='invisible'>
         <SessionProvider>
           {children}
-          <EscapeInAppBrowser />
+          {/* <EscapeInAppBrowser /> */}
           <RecaptchaSettings />
         </SessionProvider>
       </body>
