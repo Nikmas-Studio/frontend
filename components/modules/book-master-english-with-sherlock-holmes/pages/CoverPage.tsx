@@ -98,7 +98,7 @@ function Page1(): ReactElement {
   useEffect(() => {
     let initialHeight = window.innerHeight;
     let initialWidth = window.innerWidth;
-    const initialDPR = window.devicePixelRatio;
+    let initialOuterWidth = window.outerWidth;
 
     function recalculateSizes(): void {
       setSherlockHeight(calcSherlockHeight);
@@ -109,12 +109,13 @@ function Page1(): ReactElement {
     function handleResize(): void {
       const currentHeight = window.innerHeight;
       const currentWidth = window.innerWidth;
-      const currentDPR = window.devicePixelRatio;
+      const currentOuterWidth = window.outerWidth;
 
-      const dprChanged = currentDPR !== initialDPR;
+      const initialZoomRatio = initialOuterWidth / initialWidth;
+      const currentZoomRatio = currentOuterWidth / currentWidth;
+      const zoomChanged = Math.abs(initialZoomRatio - currentZoomRatio) > 0.05;
 
-      if (dprChanged) {
-        // Probably zoom — skip updating minHeight
+      if (zoomChanged) {
         return;
       }
 
@@ -124,6 +125,7 @@ function Page1(): ReactElement {
         Math.abs(currentWidth - initialWidth) > RESIZE_THRESHOLD;
 
       if (heightChanged || widthChanged) {
+        initialOuterWidth = currentOuterWidth;
         initialHeight = currentHeight;
         initialWidth = currentWidth;
 

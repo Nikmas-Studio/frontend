@@ -7,17 +7,18 @@ function useGsapResizeUpdate(): { gsapShouldUpdate: boolean } {
   useEffect(() => {
     let initialHeight = window.innerHeight;
     let initialWidth = window.innerWidth;
-    const initialDPR = window.devicePixelRatio;
+    let initialOuterWidth = window.outerWidth;
 
     function handleResize(): void {
       const currentHeight = window.innerHeight;
       const currentWidth = window.innerWidth;
-      const currentDPR = window.devicePixelRatio;
+      const currentOuterWidth = window.outerWidth;
 
-      const dprChanged = currentDPR !== initialDPR;
+      const initialZoomRatio = initialOuterWidth / initialWidth;
+      const currentZoomRatio = currentOuterWidth / currentWidth;
+      const zoomChanged = Math.abs(initialZoomRatio - currentZoomRatio) > 0.05;
 
-      if (dprChanged) {
-        // Probably zoom — skip updating minHeight
+      if (zoomChanged) {
         return;
       }
 
@@ -30,6 +31,7 @@ function useGsapResizeUpdate(): { gsapShouldUpdate: boolean } {
         setGsapShouldUpdate((prev) => !prev);
         initialHeight = currentHeight;
         initialWidth = currentWidth;
+        initialOuterWidth = currentOuterWidth;
       }
     }
 
