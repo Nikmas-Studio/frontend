@@ -182,6 +182,7 @@ function Page1(): ReactElement {
             setSherlockIsLoaded(true);
           }}
           priority
+          quality={100}
         />
         <div
           style={{
@@ -203,6 +204,7 @@ function Page1(): ReactElement {
               setAiCircleIsLoaded(true);
             }}
             priority
+            quality={100}
           />
         </div>
         <ScrollHintMouse
