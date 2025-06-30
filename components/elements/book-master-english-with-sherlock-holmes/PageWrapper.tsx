@@ -60,10 +60,19 @@ function PageWrapper({
   useEffect(() => {
     let initialHeight = window.innerHeight;
     let initialWidth = window.innerWidth;
+    const initialDPR = window.devicePixelRatio;
 
     function handleResize(): void {
       const currentHeight = window.innerHeight;
       const currentWidth = window.innerWidth;
+      const currentDPR = window.devicePixelRatio;
+
+      const dprChanged = currentDPR !== initialDPR;
+
+      if (dprChanged) {
+        // Probably zoom — skip updating minHeight
+        return;
+      }
 
       const heightChanged =
         Math.abs(currentHeight - initialHeight) > RESIZE_THRESHOLD;
