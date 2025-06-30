@@ -274,7 +274,7 @@ function Page165({
             </TextNode>
 
             <TextNode>
-              “‘You have less frontal development that I should have expected,’
+              “ ‘You have less frontal development that I should have expected,’
               said he, at last. ‘It is a dangerous habit to finger loaded
               firearms in the pocket of one's dressing-gown.’
             </TextNode>
@@ -290,25 +290,25 @@ function Page165({
               very glad that I had it there.
             </TextNode>
 
-            <TextNode>“‘You evidently don't know me,’ said he.</TextNode>
+            <TextNode>“ ‘You evidently don't know me,’ said he.</TextNode>
 
             <TextNode>
-              “‘On the contrary,’ I answered, ‘I think it is fairly evident that
-              I do. Pray take a chair. I can spare you five minutes if you have
-              anything to say.’
+              “ ‘On the contrary,’ I answered, ‘I think it is fairly evident
+              that I do. Pray take a chair. I can spare you five minutes if you
+              have anything to say.’
             </TextNode>
 
             <TextNode>
-              “‘All that I have to say has already crossed your mind,’ said he.
+              “ ‘All that I have to say has already crossed your mind,’ said he.
             </TextNode>
 
             <TextNode>
-              “‘Then possibly my answer has crossed yours,’ I replied.
+              “ ‘Then possibly my answer has crossed yours,’ I replied.
             </TextNode>
 
-            <TextNode>“‘You stand fast?’</TextNode>
+            <TextNode>“ ‘You stand fast?’</TextNode>
 
-            <TextNode>“‘Absolutely.’</TextNode>
+            <TextNode>“ ‘Absolutely.’</TextNode>
 
             <TextNode>
               “He clapped his hand into his pocket, and I raised the pistol from
@@ -317,8 +317,8 @@ function Page165({
             </TextNode>
 
             <TextNode>
-              “‘You crossed my path on the 4th of January,’ said he. ‘On the 23d
-              you incommoded me; by the middle of February I was seriously
+              “ ‘You crossed my path on the 4th of January,’ said he. ‘On the
+              23d you incommoded me; by the middle of February I was seriously
               inconvenienced by you; at the end of March I was absolutely
               hampered in my plans; and now, at the close of April, I find
               myself placed in such a position through your continual
@@ -326,17 +326,17 @@ function Page165({
               situation is becoming an impossible one.’
             </TextNode>
 
-            <TextNode>“‘Have you any suggestion to make?’ I asked.</TextNode>
+            <TextNode>“ ‘Have you any suggestion to make?’ I asked.</TextNode>
 
             <TextNode>
-              “‘You must drop it, Mr. Holmes,’ said he, swaying his face about.
+              “ ‘You must drop it, Mr. Holmes,’ said he, swaying his face about.
               ‘You really must, you know.’
             </TextNode>
 
-            <TextNode>“‘After Monday,’ said I.</TextNode>
+            <TextNode>“ ‘After Monday,’ said I.</TextNode>
 
             <TextNode>
-              “‘Tut, tut,’ said he. ‘I am quite sure that a man of your
+              “ ‘Tut, tut,’ said he. ‘I am quite sure that a man of your
               intelligence will see that there can be but one outcome to this
               affair. It is necessary that you should withdraw. You have worked
               things in such a fashion that we have only one resource left. It
@@ -346,18 +346,18 @@ function Page165({
               You smile, sir, but I assure you that it really would.’
             </TextNode>
 
-            <TextNode>“‘Danger is part of my trade,’ I remarked.</TextNode>
+            <TextNode>“ ‘Danger is part of my trade,’ I remarked.</TextNode>
 
             <TextNode>
-              “‘That is not danger,’ said he. ‘It is inevitable destruction. You
-              stand in the way not merely of an individual, but of a mighty
+              “ ‘That is not danger,’ said he. ‘It is inevitable destruction.
+              You stand in the way not merely of an individual, but of a mighty
               organization, the full extent of which you, with all your
               cleverness, have been unable to realize. You must stand clear, Mr.
               Holmes, or be trodden under foot.’
             </TextNode>
 
             <TextNode>
-              “‘I am afraid,’ said I, rising, ‘that in the pleasure of this
+              “ ‘I am afraid,’ said I, rising, ‘that in the pleasure of this
               conversation I am neglecting business of importance which awaits
               me elsewhere.’
             </TextNode>
@@ -367,24 +367,24 @@ function Page165({
             </TextNode>
 
             <TextNode>
-              “‘Well, well,’ said he, at last. ‘It seems a pity, but I have done
-              what I could. I know every move of your game. You can do nothing
-              before Monday. It has been a duel between you and me, Mr. Holmes.
-              You hope to place me in the dock. I tell you that I will never
-              stand in the dock. You hope to beat me. I tell you that you will
-              never beat me. If you are clever enough to bring destruction upon
-              me, rest assured that I shall do as much to you.’
+              “ ‘Well, well,’ said he, at last. ‘It seems a pity, but I have
+              done what I could. I know every move of your game. You can do
+              nothing before Monday. It has been a duel between you and me, Mr.
+              Holmes. You hope to place me in the dock. I tell you that I will
+              never stand in the dock. You hope to beat me. I tell you that you
+              will never beat me. If you are clever enough to bring destruction
+              upon me, rest assured that I shall do as much to you.’
             </TextNode>
 
             <TextNode>
-              “‘You have paid me several compliments, Mr. Moriarty,’ said I.
+              “ ‘You have paid me several compliments, Mr. Moriarty,’ said I.
               ‘Let me pay you one in return when I say that if I were assured of
               the former eventuality I would, in the interests of the public,
               cheerfully accept the latter.’
             </TextNode>
 
             <TextNode>
-              “‘I can promise you the one, but not the other,’ he snarled, and
+              “ ‘I can promise you the one, but not the other,’ he snarled, and
               so turned his rounded back upon me, and went peering and blinking
               out of the room.
             </TextNode>

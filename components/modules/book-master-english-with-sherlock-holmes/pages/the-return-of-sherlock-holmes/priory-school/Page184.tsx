@@ -119,7 +119,7 @@ function Page184({
             </TextNode>
 
             <TextNode>
-              “‘Holdernesse, 6th Duke, K.G., P.C.’—half the alphabet! ‘Baron
+              “ ‘Holdernesse, 6th Duke, K.G., P.C.’—half the alphabet! ‘Baron
               Beverley, Earl of Carston’—dear me, what a list! ‘Lord Lieutenant
               of Hallamshire since 1900. Married Edith, daughter of Sir Charles
               Appledore, 1888. Heir and only child, Lord Saltire. Owns about two

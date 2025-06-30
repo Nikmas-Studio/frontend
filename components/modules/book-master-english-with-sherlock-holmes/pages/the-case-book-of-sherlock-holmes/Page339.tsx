@@ -291,8 +291,8 @@ function Page339({
             </TextNode>
 
             <TextNode>
-              “‘Fore God, Mr. Holmes, it's all right,” said he. “Appearances are
-              against me, I'll admit, but I could act no otherwise.”
+              “ ‘Fore God, Mr. Holmes, it's all right,” said he. “Appearances
+              are against me, I'll admit, but I could act no otherwise.”
             </TextNode>
 
             <TextNode>

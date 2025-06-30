@@ -429,14 +429,14 @@ function Page307({
             </TextNode>
             <TextNode>“I acquiesced.</TextNode>
             <TextNode>
-              “‘My dear man,’ said he, ‘you will only ruin your own
+              “ ‘My dear man,’ said he, ‘you will only ruin your own
               well-deserved reputation. It is not a case in which you can
               possibly succeed. You will have barren work, to say nothing of
               incurring some danger. Let me very strongly advise you to draw off
               at once.’
             </TextNode>
             <TextNode>
-              “‘It is curious,’ I answered, ‘but that was the very advice which
+              “ ‘It is curious,’ I answered, ‘but that was the very advice which
               I had intended to give you. I have a respect for your brains,
               Baron, and the little which I have seen of your personality has
               not lessened it. Let me put it to you as man to man. No one wants
@@ -454,15 +454,15 @@ function Page307({
               listened, and he finally broke into a gentle chuckle.
             </TextNode>
             <TextNode>
-              “‘Excuse my amusement, Mr. Holmes,’ said he, ‘but it is really
+              “ ‘Excuse my amusement, Mr. Holmes,’ said he, ‘but it is really
               funny to see you trying to play a hand with no cards in it. I
               don't think anyone could do it better, but it is rather pathetic,
               all the same. Not a colour card there, Mr. Holmes, nothing but the
               smallest of the small.’
             </TextNode>
-            <TextNode>“‘So you think.’</TextNode>
+            <TextNode>“ ‘So you think.’</TextNode>
             <TextNode>
-              “‘So I know. Let me make the thing clear to you, for my own hand
+              “ ‘So I know. Let me make the thing clear to you, for my own hand
               is so strong that I can afford to show it. I have been fortunate
               enough to win the entire affection of this lady. This was given to
               me in spite of the fact that I told her very clearly of all the
@@ -482,17 +482,17 @@ function Page307({
               my hand on the door-handle, he stopped me.
             </TextNode>
             <TextNode>
-              “‘By the way, Mr. Holmes,’ said he, ‘did you know Le Brun, the
+              “ ‘By the way, Mr. Holmes,’ said he, ‘did you know Le Brun, the
               French agent?’
             </TextNode>
-            <TextNode>“‘Yes,’ said I.</TextNode>
-            <TextNode>“‘Do you know what befell him?’</TextNode>
+            <TextNode>“ ‘Yes,’ said I.</TextNode>
+            <TextNode>“ ‘Do you know what befell him?’</TextNode>
             <TextNode>
-              “‘I heard that he was beaten by some Apaches in the Montmartre
+              “ ‘I heard that he was beaten by some Apaches in the Montmartre
               district and crippled for life.’
             </TextNode>
             <TextNode>
-              “‘Quite true, Mr. Holmes. By a curious coincidence he had been
+              “ ‘Quite true, Mr. Holmes. By a curious coincidence he had been
               inquiring into my affairs only a week before. Don't do it, Mr.
               Holmes; it's not a lucky thing to do. Several have found that out.
               My last word to you is, go your own way and let me go mine.

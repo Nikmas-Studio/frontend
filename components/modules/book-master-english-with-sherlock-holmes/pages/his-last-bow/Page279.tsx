@@ -392,7 +392,7 @@ function Page279({
 
             <Indent>
               <TextNode noIndent>
-                “‘Have I anything to say? Yes, I have a deal to say. I have to
+                “ ‘Have I anything to say? Yes, I have a deal to say. I have to
                 make a clean breast of it all. You can hang me, or you can leave
                 me alone. I don't care a plug which you do. I tell you I've not
                 shut an eye in sleep since I did it, and I don't believe I ever
@@ -405,7 +405,7 @@ function Page279({
               </TextNode>
 
               <TextNode>
-                “‘But it was Sarah's fault, and may the curse of a broken man
+                “ ‘But it was Sarah's fault, and may the curse of a broken man
                 put a blight on her and set the blood rotting in her veins! It's
                 not that I want to clear myself. I know that I went back to
                 drink, like the beast that I was. But she would have forgiven
@@ -418,7 +418,7 @@ function Page279({
               </TextNode>
 
               <TextNode>
-                “‘There were three sisters altogether. The old one was just a
+                “ ‘There were three sisters altogether. The old one was just a
                 good woman, the second was a devil, and the third was an angel.
                 Sarah was thirty-three, and Mary was twenty-nine when I married.
                 We were just as happy as the day was long when we set up house
@@ -429,14 +429,14 @@ function Page279({
               </TextNode>
 
               <TextNode>
-                “‘I was blue ribbon at that time, and we were putting a little
+                “ ‘I was blue ribbon at that time, and we were putting a little
                 money by, and all was as bright as a new dollar. My God, whoever
                 would have thought that it could have come to this? Whoever
                 would have dreamed it?
               </TextNode>
 
               <TextNode>
-                “‘I used to be home for the week-ends very often, and sometimes
+                “ ‘I used to be home for the week-ends very often, and sometimes
                 if the ship were held back for cargo I would have a whole week
                 at a time, and in this way I saw a deal of my sister-in-law,
                 Sarah. She was a fine tall woman, black and quick and fierce,

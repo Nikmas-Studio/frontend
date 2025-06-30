@@ -40,43 +40,43 @@ function Page157({
             </TextNode>
 
             <TextNode>
-              “‘You can do no good by this obstinacy. Who are you?’
+              “ ‘You can do no good by this obstinacy. Who are you?’
             </TextNode>
 
-            <TextNode>“‘I care not. I am a stranger in London.’</TextNode>
+            <TextNode>“ ‘I care not. I am a stranger in London.’</TextNode>
 
             <TextNode>
-              “‘Your fate will be upon your own head. How long have you been
+              “ ‘Your fate will be upon your own head. How long have you been
               here?’
             </TextNode>
 
-            <TextNode>“‘Let it be so. Three weeks.’</TextNode>
+            <TextNode>“ ‘Let it be so. Three weeks.’</TextNode>
 
             <TextNode>
-              “‘The property can never be yours. What ails you?’
+              “ ‘The property can never be yours. What ails you?’
             </TextNode>
 
             <TextNode>
-              “‘It shall not go to villains. They are starving me.’
+              “ ‘It shall not go to villains. They are starving me.’
             </TextNode>
 
             <TextNode>
-              “‘You shall go free if you sign. What house is this?’
+              “ ‘You shall go free if you sign. What house is this?’
             </TextNode>
 
-            <TextNode>“‘I will never sign. I do not know.’</TextNode>
+            <TextNode>“ ‘I will never sign. I do not know.’</TextNode>
 
             <TextNode>
-              “‘You are not doing her any service. What is your name?’
+              “ ‘You are not doing her any service. What is your name?’
             </TextNode>
 
-            <TextNode>“‘Let me hear her say so. Kratides.’</TextNode>
+            <TextNode>“ ‘Let me hear her say so. Kratides.’</TextNode>
 
             <TextNode>
-              “‘You shall see her if you sign. Where are you from?’
+              “ ‘You shall see her if you sign. Where are you from?’
             </TextNode>
 
-            <TextNode>“‘Then I shall never see her. Athens.’</TextNode>
+            <TextNode>“ ‘Then I shall never see her. Athens.’</TextNode>
 
             <TextNode>
               “Another five minutes, Mr. Holmes, and I should have wormed out
@@ -88,7 +88,7 @@ function Page157({
             </TextNode>
 
             <TextNode>
-              “‘Harold,’ said she, speaking English with a broken accent. ‘I
+              “ ‘Harold,’ said she, speaking English with a broken accent. ‘I
               could not stay away longer. It is so lonely up there with only—Oh,
               my God, it is Paul!’
             </TextNode>
@@ -109,7 +109,7 @@ function Page157({
             </TextNode>
 
             <TextNode>
-              “‘That will do, Mr. Melas,’ said he. ‘You perceive that we have
+              “ ‘That will do, Mr. Melas,’ said he. ‘You perceive that we have
               taken you into our confidence over some very private business. We
               should not have troubled you, only that our friend who speaks
               Greek and who began these negotiations has been forced to return
@@ -120,7 +120,7 @@ function Page157({
             <TextNode>“I bowed.</TextNode>
 
             <TextNode>
-              “‘There are five sovereigns here,’ said he, walking up to me,
+              “ ‘There are five sovereigns here,’ said he, walking up to me,
               ‘which will, I hope, be a sufficient fee. But remember,’ he added,
               tapping me lightly on the chest and giggling, ‘if you speak to a
               human soul about this—one human soul, mind—well, may God have
@@ -141,7 +141,7 @@ function Page157({
             </TextNode>
 
             <TextNode>
-              “‘We shall know if you speak of this,’ said he. ‘We have our own
+              “ ‘We shall know if you speak of this,’ said he. ‘We have our own
               means of information. Now you will find the carriage waiting, and
               my friend will see you on your way.’
             </TextNode>
@@ -156,7 +156,7 @@ function Page157({
             </TextNode>
 
             <TextNode>
-              “‘You will get down here, Mr. Melas,’ said my companion. ‘I am
+              “ ‘You will get down here, Mr. Melas,’ said my companion. ‘I am
               sorry to leave you so far from your house, but there is no
               alternative. Any attempt upon your part to follow the carriage can
               only end in injury to yourself.’
@@ -179,14 +179,16 @@ function Page157({
               me I made out that he was a railway porter.
             </TextNode>
 
-            <TextNode>“‘Can you tell me what place this is?’ I asked.</TextNode>
+            <TextNode>
+              “ ‘Can you tell me what place this is?’ I asked.
+            </TextNode>
 
-            <TextNode>“‘Wandsworth Common,’ said he.</TextNode>
+            <TextNode>“ ‘Wandsworth Common,’ said he.</TextNode>
 
-            <TextNode>“‘Can I get a train into town?’</TextNode>
+            <TextNode>“ ‘Can I get a train into town?’</TextNode>
 
             <TextNode>
-              “‘If you walk on a mile or so to Clapham Junction,’ said he,
+              “ ‘If you walk on a mile or so to Clapham Junction,’ said he,
               ‘you'll just be in time for the last to Victoria.’
             </TextNode>
 

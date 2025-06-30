@@ -315,10 +315,25 @@ function BookNavigator(): ReactElement {
           const previousStory =
             getPreviousStory(story as Story) ?? Story.A_STUDY_IN_SCARLET;
 
+          let start;
+          switch (story) {
+            case Story.THE_ADVENTURE_OF_THE_VEILED_LODGER:
+              start = 'top 200px';
+              break;
+            case Story.THE_ADVENTURE_OF_SHOSCOMBE_OLD_PLACE:
+              start = 'top 340px';
+              break;
+            case Story.THE_ADVENTURE_OF_THE_RETIRED_COLOURMAN:
+              start = 'top 510px';
+              break;
+            default:
+              start = 'top 120px';
+          }
+
           ScrollTrigger.create({
             trigger: storyBoundary,
             scroller: cardsComponentRef.current,
-            start: `top 120px`,
+            start,
             end: '+=0',
             onEnter: () => {
               if (isScrollingToStory.current || isScrollingToCard.current) {

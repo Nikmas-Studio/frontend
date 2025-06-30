@@ -430,7 +430,7 @@ function Page241({
               store for us. Number thirteen is ‘There,’ which is much more
               promising. Number one hundred and twenty-seven is ‘is’—‘There
               is’”—Holmes's eyes were gleaming with excitement, and his thin,
-              nervous fingers twitched as he counted the words—“‘danger.’ Ha!
+              nervous fingers twitched as he counted the words—“ ‘danger.’ Ha!
               Ha! Capital! Put that down, Watson. ‘There is
               danger—may—come—very—soon—one.’ Then we have the name
               ‘Douglas’—‘rich—country—now—at—Birlstone—House—Birlstone—confidence—is—pressing.’

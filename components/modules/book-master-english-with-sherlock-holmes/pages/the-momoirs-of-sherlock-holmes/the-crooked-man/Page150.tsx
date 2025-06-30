@@ -168,16 +168,16 @@ function Page150({
             </TextNode>
 
             <TextNode>
-              “‘I promised my friend that I would say nothing of the matter, and
-              a promise is a promise,’ said she; ‘but if I can really help her
-              when so serious a charge is laid against her, and when her own
+              “ ‘I promised my friend that I would say nothing of the matter,
+              and a promise is a promise,’ said she; ‘but if I can really help
+              her when so serious a charge is laid against her, and when her own
               mouth, poor darling, is closed by illness, then I think I am
               absolved from my promise. I will tell you exactly what happened
               upon Monday evening.
             </TextNode>
 
             <TextNode>
-              “‘We were returning from the Watt Street Mission about a quarter
+              “ ‘We were returning from the Watt Street Mission about a quarter
               to nine o'clock. On our way we had to pass through Hudson Street,
               which is a very quiet thoroughfare. There is only one lamp in it,
               upon the left-hand side, and as we approached this lamp I saw a
@@ -194,27 +194,27 @@ function Page150({
             </TextNode>
 
             <TextNode>
-              “‘“I thought you had been dead this thirty years, Henry,” said
+              “ ‘ “I thought you had been dead this thirty years, Henry,” said
               she, in a shaking voice.
             </TextNode>
 
             <TextNode>
-              “‘“So I have,” said he, and it was awful to hear the tones that he
-              said it in. He had a very dark, fearsome face, and a gleam in his
-              eyes that comes back to me in my dreams. His hair and whiskers
+              “ ‘ “So I have,” said he, and it was awful to hear the tones that
+              he said it in. He had a very dark, fearsome face, and a gleam in
+              his eyes that comes back to me in my dreams. His hair and whiskers
               were shot with gray, and his face was all crinkled and puckered
               like a withered apple.
             </TextNode>
 
             <TextNode>
-              “‘“Just walk on a little way, dear,” said Mrs. Barclay; “I want to
-              have a word with this man. There is nothing to be afraid of.” She
-              tried to speak boldly, but she was still deadly pale and could
+              “ ‘ “Just walk on a little way, dear,” said Mrs. Barclay; “I want
+              to have a word with this man. There is nothing to be afraid of.”
+              She tried to speak boldly, but she was still deadly pale and could
               hardly get her words out for the trembling of her lips.
             </TextNode>
 
             <TextNode>
-              “‘I did as she asked me, and they talked together for a few
+              “ ‘I did as she asked me, and they talked together for a few
               minutes. Then she came down the street with her eyes blazing, and
               I saw the crippled wretch standing by the lamp-post and shaking
               his clenched fists in the air as if he were mad with rage. She
@@ -223,7 +223,7 @@ function Page150({
             </TextNode>
 
             <TextNode>
-              “‘“It's an old acquaintance of mine who has come down in the
+              “ ‘ “It's an old acquaintance of mine who has come down in the
               world,” said she. When I promised her I would say nothing she
               kissed me, and I have never seen her since. I have told you now
               the whole truth, and if I withheld it from the police it is

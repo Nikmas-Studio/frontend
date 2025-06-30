@@ -399,7 +399,7 @@ function Page330({
               wondrous strength-giving serum, tabooed by the profession because
               he refused to reveal its source. In a few words I said what I
               remembered. Bennett had taken a manual of zoology from the
-              shelves. “‘Langur,’” he read, “‘the great black-faced monkey of
+              shelves. “ ‘Langur,’” he read, “ ‘the great black-faced monkey of
               the Himalayan slopes, biggest and most human of climbing monkeys.’
               Many details are added. Well, thanks to you, Mr. Holmes, it is
               very clear that we have traced the evil to its source.”

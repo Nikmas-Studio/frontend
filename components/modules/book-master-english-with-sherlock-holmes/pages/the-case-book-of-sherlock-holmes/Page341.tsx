@@ -306,8 +306,8 @@ function Page341({
             </TextNode>
 
             <TextNode>
-              “‘One must do something to ease an aching heart.’ That was his own
-              explanation. It was eccentric, no doubt, but he is clearly an
+              “ ‘One must do something to ease an aching heart.’ That was his
+              own explanation. It was eccentric, no doubt, but he is clearly an
               eccentric man. He tore up one of his wife's photographs in my
               presence—tore it up furiously in a tempest of passion. ‘I never
               wish to see her damned face again,’ he shrieked.”

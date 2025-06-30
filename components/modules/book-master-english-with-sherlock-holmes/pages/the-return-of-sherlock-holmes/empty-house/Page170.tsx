@@ -309,8 +309,8 @@ function Page170({
             </TextNode>
 
             <TextNode>
-              “Ah, Colonel!” said Holmes, arranging his rumpled collar;
-              “‘journeys end in lovers' meetings,’ as the old play says. I don't
+              “Ah, Colonel!” said Holmes, arranging his rumpled collar; “
+              ‘journeys end in lovers' meetings,’ as the old play says. I don't
               think I have had the pleasure of seeing you since you favoured me
               with those attentions as I lay on the ledge above the Reichenbach
               Fall.”

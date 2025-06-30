@@ -229,14 +229,14 @@ function Page153({
             </TextNode>
 
             <TextNode>
-              “‘You are the same Percy Trevelyan who has had so distinguished a
+              “ ‘You are the same Percy Trevelyan who has had so distinguished a
               career and won a great prize lately?’ said he.
             </TextNode>
 
             <TextNode>“I bowed.</TextNode>
 
             <TextNode>
-              “‘Answer me frankly,’ he continued, ‘for you will find it to your
+              “ ‘Answer me frankly,’ he continued, ‘for you will find it to your
               interest to do so. You have all the cleverness which makes a
               successful man. Have you the tact?’
             </TextNode>
@@ -245,21 +245,23 @@ function Page153({
               “I could not help smiling at the abruptness of the question.
             </TextNode>
 
-            <TextNode>“‘I trust that I have my share,’ I said.</TextNode>
-
-            <TextNode>“‘Any bad habits? Not drawn towards drink, eh?’</TextNode>
-
-            <TextNode>“‘Really, sir!’ I cried.</TextNode>
+            <TextNode>“ ‘I trust that I have my share,’ I said.</TextNode>
 
             <TextNode>
-              “‘Quite right! That's all right! But I was bound to ask. With all
+              “ ‘Any bad habits? Not drawn towards drink, eh?’
+            </TextNode>
+
+            <TextNode>“ ‘Really, sir!’ I cried.</TextNode>
+
+            <TextNode>
+              “ ‘Quite right! That's all right! But I was bound to ask. With all
               these qualities, why are you not in practice?’
             </TextNode>
 
             <TextNode>“I shrugged my shoulders.</TextNode>
 
             <TextNode>
-              “‘Come, come!’ said he, in his bustling way. ‘It's the old story.
+              “ ‘Come, come!’ said he, in his bustling way. ‘It's the old story.
               More in your brains than in your pocket, eh? What would you say if
               I were to start you in Brook Street?’
             </TextNode>
@@ -267,23 +269,23 @@ function Page153({
             <TextNode>“I stared at him in astonishment.</TextNode>
 
             <TextNode>
-              “‘Oh, it's for my sake, not for yours,’ he cried. ‘I'll be
+              “ ‘Oh, it's for my sake, not for yours,’ he cried. ‘I'll be
               perfectly frank with you, and if it suits you it will suit me very
               well. I have a few thousands to invest, d'ye see, and I think I'll
               sink them in you.’
             </TextNode>
 
-            <TextNode>“‘But why?’ I gasped.</TextNode>
+            <TextNode>“ ‘But why?’ I gasped.</TextNode>
 
             <TextNode>
-              “‘Well, it's just like any other speculation, and safer than
+              “ ‘Well, it's just like any other speculation, and safer than
               most.’
             </TextNode>
 
-            <TextNode>“‘What am I to do, then?’</TextNode>
+            <TextNode>“ ‘What am I to do, then?’</TextNode>
 
             <TextNode>
-              “‘I'll tell you. I'll take the house, furnish it, pay the maids,
+              “ ‘I'll tell you. I'll take the house, furnish it, pay the maids,
               and run the whole place. All you have to do is just to wear out
               your chair in the consulting-room. I'll let you have pocket-money
               and everything. Then you hand over to me three quarters of what
@@ -347,7 +349,7 @@ function Page153({
 
             <Indent>
               <TextNode noIndent>
-                “‘A Russian nobleman who is now resident in England,’ it runs,
+                “ ‘A Russian nobleman who is now resident in England,’ it runs,
                 ‘would be glad to avail himself of the professional assistance
                 of Dr. Percy Trevelyan. He has been for some years a victim to
                 cataleptic attacks, on which, as is well known, Dr. Trevelyan is
@@ -375,7 +377,7 @@ function Page153({
             </TextNode>
 
             <TextNode>
-              “‘You will excuse my coming in, doctor,’ said he to me, speaking
+              “ ‘You will excuse my coming in, doctor,’ said he to me, speaking
               English with a slight lisp. ‘This is my father, and his health is
               a matter of the most overwhelming importance to me.’
             </TextNode>
@@ -386,7 +388,7 @@ function Page153({
             </TextNode>
 
             <TextNode>
-              “‘Not for the world,’ he cried with a gesture of horror. ‘It is
+              “ ‘Not for the world,’ he cried with a gesture of horror. ‘It is
               more painful to me than I can express. If I were to see my father
               in one of these dreadful seizures I am convinced that I should
               never survive it. My own nervous system is an exceptionally
@@ -443,31 +445,31 @@ function Page153({
             </TextNode>
 
             <TextNode>
-              “‘I feel that I owe you a great many apologies for my abrupt
+              “ ‘I feel that I owe you a great many apologies for my abrupt
               departure yesterday, doctor,’ said my patient.
             </TextNode>
 
             <TextNode>
-              “‘I confess that I was very much surprised at it,’ said I.
+              “ ‘I confess that I was very much surprised at it,’ said I.
             </TextNode>
 
             <TextNode>
-              “‘Well, the fact is,’ he remarked, ‘that when I recover from these
-              attacks my mind is always very clouded as to all that has gone
-              before. I woke up in a strange room, as it seemed to me, and made
-              my way out into the street in a sort of dazed way when you were
-              absent.’
+              “ ‘Well, the fact is,’ he remarked, ‘that when I recover from
+              these attacks my mind is always very clouded as to all that has
+              gone before. I woke up in a strange room, as it seemed to me, and
+              made my way out into the street in a sort of dazed way when you
+              were absent.’
             </TextNode>
 
             <TextNode>
-              “‘And I,’ said the son, ‘seeing my father pass the door of the
+              “ ‘And I,’ said the son, ‘seeing my father pass the door of the
               waiting-room, naturally thought that the consultation had come to
               an end. It was not until we had reached home that I began to
               realize the true state of affairs.’
             </TextNode>
 
             <TextNode>
-              “‘Well,’ said I, laughing, ‘there is no harm done except that you
+              “ ‘Well,’ said I, laughing, ‘there is no harm done except that you
               puzzled me terribly; so if you, sir, would kindly step into the
               waiting-room I shall be happy to continue our consultation which
               was brought to so abrupt an ending.’
@@ -486,11 +488,11 @@ function Page153({
               into my consulting-room like a man who is mad with panic.
             </TextNode>
 
-            <TextNode>“‘Who has been in my room?’ he cried.</TextNode>
+            <TextNode>“ ‘Who has been in my room?’ he cried.</TextNode>
 
-            <TextNode>“‘No one,’ said I.</TextNode>
+            <TextNode>“ ‘No one,’ said I.</TextNode>
 
-            <TextNode>“‘It's a lie!’ He yelled. ‘Come up and look!’</TextNode>
+            <TextNode>“ ‘It's a lie!’ He yelled. ‘Come up and look!’</TextNode>
 
             <TextNode>
               “I passed over the grossness of his language, as he seemed half
@@ -498,7 +500,7 @@ function Page153({
               pointed to several footprints upon the light carpet.
             </TextNode>
 
-            <TextNode>“‘D'you mean to say those are mine?’ he cried.</TextNode>
+            <TextNode>“ ‘D'you mean to say those are mine?’ he cried.</TextNode>
 
             <TextNode>
               “They were certainly very much larger than any which he could have

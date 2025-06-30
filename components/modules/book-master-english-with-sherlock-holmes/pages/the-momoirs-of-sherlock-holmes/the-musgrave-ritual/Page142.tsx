@@ -27,17 +27,17 @@ function Page142({
         <div className='flex  max-2md:flex-col'>
           <BookLeftPartContainer>
             <TextNode noIndent>
-              “‘“We will see what the doctor says,” I answered. “You must stop
+              “ ‘ “We will see what the doctor says,” I answered. “You must stop
               work now, and when you go downstairs just say that I wish to see
               Brunton.”
             </TextNode>
 
-            <TextNode>“‘“The butler is gone,” said she.</TextNode>
+            <TextNode>“ ‘ “The butler is gone,” said she.</TextNode>
 
-            <TextNode>“‘“Gone! Gone where?”</TextNode>
+            <TextNode>“ ‘ “Gone! Gone where?”</TextNode>
 
             <TextNode>
-              “‘“He is gone. No one has seen him. He is not in his room. Oh,
+              “ ‘ “He is gone. No one has seen him. He is not in his room. Oh,
               yes, he is gone, he is gone!” She fell back against the wall with
               shriek after shriek of laughter, while I, horrified at this sudden
               hysterical attack, rushed to the bell to summon help. The girl was
@@ -55,21 +55,21 @@ function Page142({
             </TextNode>
 
             <TextNode>
-              “‘Of course we searched the house from cellar to garret, but there
-              was no trace of him. It is, as I have said, a labyrinth of an old
-              house, especially the original wing, which is now practically
-              uninhabited; but we ransacked every room and cellar without
-              discovering the least sign of the missing man. It was incredible
-              to me that he could have gone away leaving all his property behind
-              him, and yet where could he be? I called in the local police, but
-              without success. Rain had fallen on the night before and we
-              examined the lawn and the paths all round the house, but in vain.
-              Matters were in this state, when a new development quite drew our
-              attention away from the original mystery.
+              “ ‘Of course we searched the house from cellar to garret, but
+              there was no trace of him. It is, as I have said, a labyrinth of
+              an old house, especially the original wing, which is now
+              practically uninhabited; but we ransacked every room and cellar
+              without discovering the least sign of the missing man. It was
+              incredible to me that he could have gone away leaving all his
+              property behind him, and yet where could he be? I called in the
+              local police, but without success. Rain had fallen on the night
+              before and we examined the lawn and the paths all round the house,
+              but in vain. Matters were in this state, when a new development
+              quite drew our attention away from the original mystery.
             </TextNode>
 
             <TextNode>
-              “‘For two days Rachel Howells had been so ill, sometimes
+              “ ‘For two days Rachel Howells had been so ill, sometimes
               delirious, sometimes hysterical, that a nurse had been employed to
               sit up with her at night. On the third night after Brunton's
               disappearance, the nurse, finding her patient sleeping nicely, had
@@ -87,7 +87,7 @@ function Page142({
             </TextNode>
 
             <TextNode>
-              “‘Of course, we had the drags at once, and set to work to recover
+              “ ‘Of course, we had the drags at once, and set to work to recover
               the remains, but no trace of the body could we find. On the other
               hand, we brought to the surface an object of a most unexpected
               kind. It was a linen bag which contained within it a mass of old
@@ -115,13 +115,13 @@ function Page142({
             </TextNode>
 
             <TextNode>
-              “‘I must see that paper, Musgrave,’ said I, ‘which this butler of
+              “ ‘I must see that paper, Musgrave,’ said I, ‘which this butler of
               your thought it worth his while to consult, even at the risk of
               the loss of his place.’
             </TextNode>
 
             <TextNode>
-              “‘It is rather an absurd business, this ritual of ours,’ he
+              “ ‘It is rather an absurd business, this ritual of ours,’ he
               answered. ‘But it has at least the saving grace of antiquity to
               excuse it. I have a copy of the questions and answers here if you
               care to run your eye over them.’
@@ -134,50 +134,50 @@ function Page142({
               as they stand.
             </TextNode>
 
-            <TextNode>“‘Whose was it?’</TextNode>
+            <TextNode>“ ‘Whose was it?’</TextNode>
 
-            <TextNode>“‘His who is gone.’</TextNode>
+            <TextNode>“ ‘His who is gone.’</TextNode>
 
-            <TextNode>“‘Who shall have it?’</TextNode>
+            <TextNode>“ ‘Who shall have it?’</TextNode>
 
-            <TextNode>“‘He who will come.’</TextNode>
+            <TextNode>“ ‘He who will come.’</TextNode>
 
-            <TextNode>“‘What was the month?’</TextNode>
+            <TextNode>“ ‘What was the month?’</TextNode>
 
-            <TextNode>“‘The sixth from the first.’</TextNode>
+            <TextNode>“ ‘The sixth from the first.’</TextNode>
 
-            <TextNode>“‘Where was the sun?’</TextNode>
+            <TextNode>“ ‘Where was the sun?’</TextNode>
 
-            <TextNode>“‘Over the oak.’</TextNode>
+            <TextNode>“ ‘Over the oak.’</TextNode>
 
-            <TextNode>“‘Where was the shadow?’</TextNode>
+            <TextNode>“ ‘Where was the shadow?’</TextNode>
 
-            <TextNode>“‘Under the elm.’</TextNode>
+            <TextNode>“ ‘Under the elm.’</TextNode>
 
-            <TextNode>“‘How was it stepped?’</TextNode>
+            <TextNode>“ ‘How was it stepped?’</TextNode>
 
             <TextNode>
-              “‘North by ten and by ten, east by five and by five, south by two
+              “ ‘North by ten and by ten, east by five and by five, south by two
               and by two, west by one and by one, and so under.’
             </TextNode>
 
-            <TextNode>“‘What shall we give for it?’</TextNode>
+            <TextNode>“ ‘What shall we give for it?’</TextNode>
 
-            <TextNode>“‘All that is ours.’</TextNode>
+            <TextNode>“ ‘All that is ours.’</TextNode>
 
-            <TextNode>“‘Why should we give it?’</TextNode>
+            <TextNode>“ ‘Why should we give it?’</TextNode>
 
-            <TextNode>“‘For the sake of the trust.’</TextNode>
+            <TextNode>“ ‘For the sake of the trust.’</TextNode>
 
             <TextNode>
-              “‘The original has no date, but is in the spelling of the middle
+              “ ‘The original has no date, but is in the spelling of the middle
               of the seventeenth century,’ remarked Musgrave. ‘I am afraid,
               however, that it can be of little help to you in solving this
               mystery.’
             </TextNode>
 
             <TextNode>
-              “‘At least,’ said I, ‘it gives us another mystery, and one which
+              “ ‘At least,’ said I, ‘it gives us another mystery, and one which
               is even more interesting than the first. It may be that the
               solution of the one may prove to be the solution of the other. You
               will excuse me, Musgrave, if I say that your butler appears to me
@@ -186,37 +186,37 @@ function Page142({
             </TextNode>
 
             <TextNode>
-              “‘I hardly follow you,’ said Musgrave. ‘The paper seems to me to
+              “ ‘I hardly follow you,’ said Musgrave. ‘The paper seems to me to
               be of no practical importance.’
             </TextNode>
 
             <TextNode>
-              “‘But to me it seems immensely practical, and I fancy that Brunton
-              took the same view. He had probably seen it before that night on
-              which you caught him.’
+              “ ‘But to me it seems immensely practical, and I fancy that
+              Brunton took the same view. He had probably seen it before that
+              night on which you caught him.’
             </TextNode>
 
             <TextNode>
-              “‘It is very possible. We took no pains to hide it.’
+              “ ‘It is very possible. We took no pains to hide it.’
             </TextNode>
 
             <TextNode>
-              “‘He simply wished, I should imagine, to refresh his memory upon
+              “ ‘He simply wished, I should imagine, to refresh his memory upon
               that last occasion. He had, as I understand, some sort of map or
               chart which he was comparing with the manuscript, and which he
               thrust into his pocket when you appeared.’
             </TextNode>
 
             <TextNode>
-              “‘That is true. But what could he have to do with this old family
+              “ ‘That is true. But what could he have to do with this old family
               custom of ours, and what does this rigmarole mean?’
             </TextNode>
 
             <TextNode>
-              “‘I don't think that we should have much difficulty in determining
-              that,’ said I; ‘with your permission we will take the first train
-              down to Sussex, and go a little more deeply into the matter upon
-              the spot.’
+              “ ‘I don't think that we should have much difficulty in
+              determining that,’ said I; ‘with your permission we will take the
+              first train down to Sussex, and go a little more deeply into the
+              matter upon the spot.’
             </TextNode>
 
             <TextNode>
@@ -263,33 +263,33 @@ function Page142({
             </TextNode>
 
             <TextNode>
-              “‘That was there when your ritual was drawn up,’ said I, as we
+              “ ‘That was there when your ritual was drawn up,’ said I, as we
               drove past it.
             </TextNode>
 
             <TextNode>
-              “‘It was there at the Norman Conquest in all probability,’ he
+              “ ‘It was there at the Norman Conquest in all probability,’ he
               answered. ‘It has a girth of twenty-three feet.’
             </TextNode>
 
             <TextNode>“Here was one of my fixed points secured.</TextNode>
 
-            <TextNode>“‘Have you any old elms?’ I asked.</TextNode>
+            <TextNode>“ ‘Have you any old elms?’ I asked.</TextNode>
 
             <TextNode>
-              “‘There used to be a very old one over yonder but it was struck by
-              lightning ten years ago, and we cut down the stump,’
+              “ ‘There used to be a very old one over yonder but it was struck
+              by lightning ten years ago, and we cut down the stump,’
             </TextNode>
 
-            <TextNode>“‘You can see where it used to be?’</TextNode>
+            <TextNode>“ ‘You can see where it used to be?’</TextNode>
 
-            <TextNode>“‘Oh, yes.’</TextNode>
+            <TextNode>“ ‘Oh, yes.’</TextNode>
 
-            <TextNode>“‘There are no other elms?’</TextNode>
+            <TextNode>“ ‘There are no other elms?’</TextNode>
 
-            <TextNode>“‘No old ones, but plenty of beeches.’</TextNode>
+            <TextNode>“ ‘No old ones, but plenty of beeches.’</TextNode>
 
-            <TextNode>“‘I should like to see where it grew.’</TextNode>
+            <TextNode>“ ‘I should like to see where it grew.’</TextNode>
 
             <TextNode>
               “We had driven up in a dogcart, and my client led me away at once,
@@ -300,20 +300,20 @@ function Page142({
           </BookLeftPartContainer>
           <BookRightPartContainer>
             <TextNode noIndent>
-              “‘I suppose it is impossible to find out how high the elm was?’ I
+              “ ‘I suppose it is impossible to find out how high the elm was?’ I
               asked.
             </TextNode>
 
             <TextNode>
-              “‘I can give you it at once. It was sixty-four feet.’
+              “ ‘I can give you it at once. It was sixty-four feet.’
             </TextNode>
 
             <TextNode>
-              “‘How do you come to know it?’ I asked, in surprise.
+              “ ‘How do you come to know it?’ I asked, in surprise.
             </TextNode>
 
             <TextNode>
-              “‘When my old tutor used to give me an exercise in trigonometry,
+              “ ‘When my old tutor used to give me an exercise in trigonometry,
               it always took the shape of measuring heights. When I was a lad I
               worked out every tree and building in the estate.’
             </TextNode>
@@ -324,7 +324,7 @@ function Page142({
             </TextNode>
 
             <TextNode>
-              “‘Tell me,’ I asked, ‘did your butler ever ask you such a
+              “ ‘Tell me,’ I asked, ‘did your butler ever ask you such a
               question?’
             </TextNode>
 
@@ -400,7 +400,7 @@ function Page142({
             </TextNode>
 
             <TextNode>
-              “‘And under,’ he cried. ‘You have omitted the “and under.”’
+              “ ‘And under,’ he cried. ‘You have omitted the “and under.”’
             </TextNode>
 
             <TextNode>
@@ -410,7 +410,7 @@ function Page142({
             </TextNode>
 
             <TextNode>
-              “‘Yes, and as old as the house. Down here, through this door.’
+              “ ‘Yes, and as old as the house. Down here, through this door.’
             </TextNode>
 
             <TextNode>
@@ -430,7 +430,7 @@ function Page142({
             </TextNode>
 
             <TextNode>
-              “‘By Jove!’ cried my client. ‘That's Brunton's muffler. I have
+              “ ‘By Jove!’ cried my client. ‘That's Brunton's muffler. I have
               seen it on him, and could swear to it. What has the villain been
               doing here?’
             </TextNode>

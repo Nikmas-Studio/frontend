@@ -470,17 +470,17 @@ function Page177({
             </TextNode>
 
             <TextNode>
-              “‘If it really annoys you, Hilton, we might go and travel, you and
-              I, and so avoid this nuisance.’
+              “ ‘If it really annoys you, Hilton, we might go and travel, you
+              and I, and so avoid this nuisance.’
             </TextNode>
 
             <TextNode>
-              “‘What, be driven out of our own house by a practical joker?’ said
-              I. ‘Why, we should have the whole county laughing at us.’
+              “ ‘What, be driven out of our own house by a practical joker?’
+              said I. ‘Why, we should have the whole county laughing at us.’
             </TextNode>
 
             <TextNode>
-              “‘Well, come to bed,’ said she, ‘and we can discuss it in the
+              “ ‘Well, come to bed,’ said she, ‘and we can discuss it in the
               morning.’
             </TextNode>
 

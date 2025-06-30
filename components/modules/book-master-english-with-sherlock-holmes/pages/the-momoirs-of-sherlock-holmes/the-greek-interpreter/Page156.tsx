@@ -379,7 +379,7 @@ function Page156({
             </TextNode>
 
             <TextNode>
-              “‘I am sorry to cut off your view, Mr. Melas,’ said he. ‘The fact
+              “ ‘I am sorry to cut off your view, Mr. Melas,’ said he. ‘The fact
               is that I have no intention that you should see what the place is
               to which we are driving. It might possibly be inconvenient to me
               if you could find your way there again.’
@@ -393,18 +393,18 @@ function Page156({
             </TextNode>
 
             <TextNode>
-              “‘This is very extraordinary conduct, Mr. Latimer,’ I stammered.
+              “ ‘This is very extraordinary conduct, Mr. Latimer,’ I stammered.
               ‘You must be aware that what you are doing is quite illegal.’
             </TextNode>
 
             <TextNode>
-              “‘It is somewhat of a liberty, no doubt,’ said he, ‘but we'll make
-              it up to you. I must warn you, however, Mr. Melas, that if at any
-              time to-night you attempt to raise an alarm or do anything which
-              is against my interests, you will find it a very serious thing. I
-              beg you to remember that no one knows where you are, and that,
-              whether you are in this carriage or in my house, you are equally
-              in my power.’
+              “ ‘It is somewhat of a liberty, no doubt,’ said he, ‘but we'll
+              make it up to you. I must warn you, however, Mr. Melas, that if at
+              any time to-night you attempt to raise an alarm or do anything
+              which is against my interests, you will find it a very serious
+              thing. I beg you to remember that no one knows where you are, and
+              that, whether you are in this carriage or in my house, you are
+              equally in my power.’
             </TextNode>
 
             <TextNode>
@@ -444,12 +444,12 @@ function Page156({
               light showed me that he was wearing glasses.
             </TextNode>
 
-            <TextNode>“‘Is this Mr. Melas, Harold?’ said he.</TextNode>
+            <TextNode>“ ‘Is this Mr. Melas, Harold?’ said he.</TextNode>
 
-            <TextNode>“‘Yes.’</TextNode>
+            <TextNode>“ ‘Yes.’</TextNode>
 
             <TextNode>
-              “‘Well done, well done! No ill-will, Mr. Melas, I hope, but we
+              “ ‘Well done, well done! No ill-will, Mr. Melas, I hope, but we
               could not get on without you. If you deal fair with us you'll not
               regret it, but if you try any tricks, God help you!’ He spoke in a
               nervous, jerky fashion, and with little giggling laughs in
@@ -457,13 +457,13 @@ function Page156({
               other.
             </TextNode>
 
-            <TextNode>“‘What do you want with me?’ I asked.</TextNode>
+            <TextNode>“ ‘What do you want with me?’ I asked.</TextNode>
 
             <TextNode>
-              “‘Only to ask a few questions of a Greek gentleman who is visiting
-              us, and to let us have the answers. But say no more than you are
-              told to say, or—’ here came the nervous giggle again—‘you had
-              better never have been born.’
+              “ ‘Only to ask a few questions of a Greek gentleman who is
+              visiting us, and to let us have the answers. But say no more than
+              you are told to say, or—’ here came the nervous giggle again—‘you
+              had better never have been born.’
             </TextNode>
 
             <TextNode>
@@ -489,7 +489,7 @@ function Page156({
             </TextNode>
 
             <TextNode>
-              “‘Have you the slate, Harold?’ cried the older man, as this
+              “ ‘Have you the slate, Harold?’ cried the older man, as this
               strange being fell rather than sat down into a chair. ‘Are his
               hands loose? Now, then, give him the pencil. You are to ask the
               questions, Mr. Melas, and he will write the answers. Ask him first
@@ -498,22 +498,22 @@ function Page156({
 
             <TextNode>“The man's eyes flashed fire.</TextNode>
 
-            <TextNode>“‘Never!’ he wrote in Greek upon the slate.</TextNode>
+            <TextNode>“ ‘Never!’ he wrote in Greek upon the slate.</TextNode>
 
             <TextNode>
-              “‘On no condition?’ I asked, at the bidding of our tyrant.
+              “ ‘On no condition?’ I asked, at the bidding of our tyrant.
             </TextNode>
 
             <TextNode>
-              “‘Only if I see her married in my presence by a Greek priest whom
+              “ ‘Only if I see her married in my presence by a Greek priest whom
               I know.’
             </TextNode>
 
             <TextNode>“The man giggled in his venomous way.</TextNode>
 
-            <TextNode>“‘You know what awaits you, then?’</TextNode>
+            <TextNode>“ ‘You know what awaits you, then?’</TextNode>
 
-            <TextNode>“‘I care nothing for myself.’</TextNode>
+            <TextNode>“ ‘I care nothing for myself.’</TextNode>
           </BookRightPartContainer>
         </div>
       </BookMainContainer>

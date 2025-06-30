@@ -229,7 +229,7 @@ function Page311({
             </TextNode>
 
             <TextNode>
-              “‘Well, sir,’ said he in a rasping voice, ‘I should be interested
+              “ ‘Well, sir,’ said he in a rasping voice, ‘I should be interested
               to know the real reasons for this visit.’
             </TextNode>
 
@@ -238,29 +238,29 @@ function Page311({
             </TextNode>
 
             <TextNode>
-              “‘Yes, yes, you said that you had known Godfrey in Africa. We
+              “ ‘Yes, yes, you said that you had known Godfrey in Africa. We
               have, of course, only your word for that.’
             </TextNode>
 
-            <TextNode>“‘I have his letters to me in my pocket.’</TextNode>
+            <TextNode>“ ‘I have his letters to me in my pocket.’</TextNode>
 
-            <TextNode>“‘Kindly let me see them.’</TextNode>
+            <TextNode>“ ‘Kindly let me see them.’</TextNode>
 
             <TextNode>
               “He glanced at the two which I handed him, and then he tossed them
               back.
             </TextNode>
 
-            <TextNode>“‘Well, what then?’ he asked.</TextNode>
+            <TextNode>“ ‘Well, what then?’ he asked.</TextNode>
 
             <TextNode>
-              “‘I was fond of your son Godfrey, sir. Many ties and memories
+              “ ‘I was fond of your son Godfrey, sir. Many ties and memories
               united us. Is it not natural that I should wonder at his sudden
               silence and should wish to know what has become of him?’
             </TextNode>
 
             <TextNode>
-              “‘I have some recollections, sir, that I had already corresponded
+              “ ‘I have some recollections, sir, that I had already corresponded
               with you and had told you what had become of him. He has gone upon
               a voyage round the world. His health was in a poor way after his
               African experiences, and both his mother and I were of opinion
@@ -270,10 +270,10 @@ function Page311({
             </TextNode>
 
             <TextNode>
-              “‘Certainly,’ I answered. ‘But perhaps you would have the goodness
-              to let me have the name of the steamer and of the line by which he
-              sailed, together with the date. I have no doubt that I should be
-              able to get a letter through to him.’
+              “ ‘Certainly,’ I answered. ‘But perhaps you would have the
+              goodness to let me have the name of the steamer and of the line by
+              which he sailed, together with the date. I have no doubt that I
+              should be able to get a letter through to him.’
             </TextNode>
 
             <TextNode>
@@ -285,17 +285,17 @@ function Page311({
             </TextNode>
 
             <TextNode>
-              “‘Many people, Mr. Dodd,’ said he, ‘would take offence at your
+              “ ‘Many people, Mr. Dodd,’ said he, ‘would take offence at your
               infernal pertinacity and would think that this insistence had
               reached the point of damned impertinence.’
             </TextNode>
 
             <TextNode>
-              “‘You must put it down, sir, to my real love for your son.’
+              “ ‘You must put it down, sir, to my real love for your son.’
             </TextNode>
 
             <TextNode>
-              “‘Exactly. I have already made every allowance upon that score. I
+              “ ‘Exactly. I have already made every allowance upon that score. I
               must ask you, however, to drop these inquiries. Every family has
               its own inner knowledge and its own motives, which cannot always
               be made clear to outsiders, however well-intentioned. My wife is
@@ -326,7 +326,7 @@ function Page311({
           </BookLeftPartContainer>
           <BookRightPartContainer>
             <TextNode noIndent>
-              “‘I thought you might run short in the night-time, sir. It is
+              “ ‘I thought you might run short in the night-time, sir. It is
               bitter weather and these rooms are cold.’
             </TextNode>
 
@@ -336,15 +336,15 @@ function Page311({
             </TextNode>
 
             <TextNode>
-              “‘Beg your pardon, sir, but I could not help hearing what you said
-              of young Master Godfrey at dinner. You know, sir, that my wife
-              nursed him, and so I may say I am his foster-father. It's natural
-              we should take an interest. And you say he carried himself well,
-              sir?’
+              “ ‘Beg your pardon, sir, but I could not help hearing what you
+              said of young Master Godfrey at dinner. You know, sir, that my
+              wife nursed him, and so I may say I am his foster-father. It's
+              natural we should take an interest. And you say he carried himself
+              well, sir?’
             </TextNode>
 
             <TextNode>
-              “‘There was no braver man in the regiment. He pulled me out once
+              “ ‘There was no braver man in the regiment. He pulled me out once
               from under the rifles of the Boers, or maybe I should not be
               here.’
             </TextNode>
@@ -352,7 +352,7 @@ function Page311({
             <TextNode>“The old butler rubbed his skinny hands.</TextNode>
 
             <TextNode>
-              “‘Yes, sir, yes, that is Master Godfrey all over. He was always
+              “ ‘Yes, sir, yes, that is Master Godfrey all over. He was always
               courageous. There's not a tree in the park, sir, that he has not
               climbed. Nothing would stop him. He was a fine boy—and oh, sir, he
               was a fine man.’
@@ -361,7 +361,7 @@ function Page311({
             <TextNode>“I sprang to my feet.</TextNode>
 
             <TextNode>
-              “‘Look here!’ I cried. ‘You say he was. You speak as if he were
+              “ ‘Look here!’ I cried. ‘You say he was. You speak as if he were
               dead. What is all this mystery? What has become of Godfrey
               Emsworth?’
             </TextNode>
@@ -371,14 +371,14 @@ function Page311({
             </TextNode>
 
             <TextNode>
-              “‘I don't know what you mean, sir. Ask the master about Master
+              “ ‘I don't know what you mean, sir. Ask the master about Master
               Godfrey. He knows. It is not for me to interfere.’
             </TextNode>
 
             <TextNode>“He was leaving the room, but I held his arm.</TextNode>
 
             <TextNode>
-              “‘Listen,’ I said. ‘You are going to answer one question before
+              “ ‘Listen,’ I said. ‘You are going to answer one question before
               you leave if I have to hold you all night. Is Godfrey dead?’
             </TextNode>
 
@@ -389,7 +389,7 @@ function Page311({
             </TextNode>
 
             <TextNode>
-              “‘I wish to God he was!’ he cried, and, tearing himself free, he
+              “ ‘I wish to God he was!’ he cried, and, tearing himself free, he
               dashed from the room.
             </TextNode>
 
@@ -494,19 +494,19 @@ function Page311({
               his pocket. Then he looked at me with some surprise on his face.
             </TextNode>
 
-            <TextNode>“‘Are you a visitor here?’ he asked.</TextNode>
+            <TextNode>“ ‘Are you a visitor here?’ he asked.</TextNode>
 
             <TextNode>
               “I explained that I was and that I was a friend of Godfrey’s.
             </TextNode>
 
             <TextNode>
-              “‘What a pity that he should be away on his travels, for he would
+              “ ‘What a pity that he should be away on his travels, for he would
               have so liked to see me,’ I continued.
             </TextNode>
 
             <TextNode>
-              “‘Quite so. Exactly,’ said he with a rather guilty air. ‘No doubt
+              “ ‘Quite so. Exactly,’ said he with a rather guilty air. ‘No doubt
               you will renew your visit at some more propitious time.’ He passed
               on, but when I turned I observed that he was standing watching me,
               half-concealed by the laurels at the far end of the garden.
@@ -565,13 +565,13 @@ function Page311({
             </TextNode>
 
             <TextNode>
-              “‘This way, sir!’ said he in a low voice. He walked in silence to
+              “ ‘This way, sir!’ said he in a low voice. He walked in silence to
               the house, and I followed him into my own bedroom. He had picked
               up a time-table in the hall.
             </TextNode>
 
             <TextNode>
-              “‘There is a train to London at 8.30,’ said he. ‘The trap will be
+              “ ‘There is a train to London at 8.30,’ said he. ‘The trap will be
               at the door at eight.’
             </TextNode>
 
@@ -583,7 +583,7 @@ function Page311({
             </TextNode>
 
             <TextNode>
-              “‘The matter will not bear discussion,’ said he abruptly. ‘You
+              “ ‘The matter will not bear discussion,’ said he abruptly. ‘You
               have made a most damnable intrusion into the privacy of our
               family. You were here as a guest and you have become a spy. I have
               nothing more to say, sir, save that I have no wish ever to see you
@@ -596,8 +596,8 @@ function Page311({
             </TextNode>
 
             <TextNode>
-              “‘I have seen your son, and I am convinced that for some reason of
-              your own you are concealing him from the world. I have no idea
+              “ ‘I have seen your son, and I am convinced that for some reason
+              of your own you are concealing him from the world. I have no idea
               what your motives are in cutting him off in this fashion, but I am
               sure that he is no longer a free agent. I warn you, Colonel
               Emsworth, that until I am assured as to the safety and well-being

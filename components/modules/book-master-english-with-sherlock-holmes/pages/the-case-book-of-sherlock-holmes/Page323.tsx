@@ -80,7 +80,7 @@ function Page321({
             <TextNode>Holmes took the book from my hand.</TextNode>
 
             <TextNode>
-              “‘Garrideb, N.,’ ” he read, “‘136 Little Ryder Street, W.’ Sorry
+              “ ‘Garrideb, N.,’ ” he read, “ ‘136 Little Ryder Street, W.’ Sorry
               to disappoint you, my dear Watson, but this is the man himself.
               That is the address upon his letter. We want another to match
               him.”

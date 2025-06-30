@@ -353,7 +353,7 @@ function Page173({
             </TextNode>
 
             <TextNode>
-              “‘Here is my will,’ said he. ‘I want you, Mr. McFarlane, to cast
+              “ ‘Here is my will,’ said he. ‘I want you, Mr. McFarlane, to cast
               it into proper legal shape. I will sit here while you do so.’
             </TextNode>
 

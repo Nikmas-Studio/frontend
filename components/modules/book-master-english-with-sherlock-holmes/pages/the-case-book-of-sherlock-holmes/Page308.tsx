@@ -188,7 +188,7 @@ function Page308({
             </TextNode>
 
             <TextNode>
-              “‘Well, sir,’ said she in a voice like the wind from an iceberg,
+              “ ‘Well, sir,’ said she in a voice like the wind from an iceberg,
               ‘your name is familiar to me. You have called, as I understand, to
               malign my fiancé, Baron Gruner. It is only by my father's request
               that I see you at all, and I warn you in advance that anything you
@@ -214,7 +214,7 @@ function Page308({
             </TextNode>
 
             <TextNode>
-              “‘I have listened to you with patience, Mr. Holmes,’ said she.
+              “ ‘I have listened to you with patience, Mr. Holmes,’ said she.
               ‘The effect upon my mind is exactly as predicted. I am aware that
               Adelbert, that my fiancé, has had a stormy life in which he has
               incurred bitter hatreds and most unjust aspersions. You are only
@@ -236,7 +236,7 @@ function Page308({
             </TextNode>
 
             <TextNode>
-              “‘I'll tell you who I am,’ she cried, springing out of her chair,
+              “ ‘I'll tell you who I am,’ she cried, springing out of her chair,
               her mouth all twisted with passion—‘I am his last mistress. I am
               one of a hundred that he has tempted and used and ruined and
               thrown into the refuse heap, as he will you also. Your refuse heap
@@ -252,7 +252,7 @@ function Page308({
             </TextNode>
 
             <TextNode>
-              “‘I should prefer not to discuss such matters,’ said Miss de
+              “ ‘I should prefer not to discuss such matters,’ said Miss de
               Merville coldly. ‘Let me say once for all that I am aware of three
               passages in my fiancé's life in which he became entangled with
               designing women, and that I am assured of his hearty repentance
@@ -260,14 +260,15 @@ function Page308({
             </TextNode>
 
             <TextNode>
-              “‘Three passages!’ screamed my companion. ‘You fool! You
+              “ ‘Three passages!’ screamed my companion. ‘You fool! You
               unutterable fool!’
             </TextNode>
 
             <TextNode>
-              “‘Mr. Holmes, I beg that you will bring this interview to an end,’
-              said the icy voice. ‘I have obeyed my father's wish in seeing you,
-              but I am not compelled to listen to the ravings of this person.’
+              “ ‘Mr. Holmes, I beg that you will bring this interview to an
+              end,’ said the icy voice. ‘I have obeyed my father's wish in
+              seeing you, but I am not compelled to listen to the ravings of
+              this person.’
             </TextNode>
 
             <TextNode>

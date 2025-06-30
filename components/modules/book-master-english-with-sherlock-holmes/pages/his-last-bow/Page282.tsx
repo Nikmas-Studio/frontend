@@ -478,7 +478,7 @@ function Page282({
             </TextNode>
 
             <TextNode>
-              “See, Watson!” said he. “‘High red house with stone facings.’
+              “See, Watson!” said he. “ ‘High red house with stone facings.’
               There is the signal station all right. We know the place, and we
               know the code; so surely our task should be simple. There's a ‘to
               let’ card in that window. It is evidently an empty flat to which

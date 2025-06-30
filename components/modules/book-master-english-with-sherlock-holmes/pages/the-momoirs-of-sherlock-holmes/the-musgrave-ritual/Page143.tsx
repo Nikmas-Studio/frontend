@@ -42,13 +42,13 @@ function Page143({
             </TextNode>
 
             <TextNode>
-              “‘These are coins of Charles the First,’ said he, holding out the
+              “ ‘These are coins of Charles the First,’ said he, holding out the
               few which had been in the box; ‘you see we were right in fixing
               our date for the Ritual.’
             </TextNode>
 
             <TextNode>
-              “‘We may find something else of Charles the First,’ I cried, as
+              “ ‘We may find something else of Charles the First,’ I cried, as
               the probable meaning of the first two question of the Ritual broke
               suddenly upon me. ‘Let me see the contents of the bag which you
               fished from the mere.’
@@ -65,7 +65,7 @@ function Page143({
             </TextNode>
 
             <TextNode>
-              “‘You must bear in mind,’ said I, ‘that the royal party made head
+              “ ‘You must bear in mind,’ said I, ‘that the royal party made head
               in England even after the death of the King, and that when they at
               last fled they probably left many of their most precious
               possessions buried behind them, with the intention of returning
@@ -73,31 +73,33 @@ function Page143({
             </TextNode>
 
             <TextNode>
-              “‘My ancestor, Sir Ralph Musgrave, was a prominent Cavalier and
+              “ ‘My ancestor, Sir Ralph Musgrave, was a prominent Cavalier and
               the right-hand man of Charles the Second in his wanderings,’ said
               my friend.
             </TextNode>
 
             <TextNode>
-              “‘Ah, indeed!’ I answered. ‘Well now, I think that really should
+              “ ‘Ah, indeed!’ I answered. ‘Well now, I think that really should
               give us the last link that we wanted. I must congratulate you on
               coming into the possession, though in rather a tragic manner, of a
               relic which is of great intrinsic value, but of even greater
               importance as an historical curiosity.’
             </TextNode>
 
-            <TextNode>“‘What is it, then?’ he gasped in astonishment.</TextNode>
+            <TextNode>
+              “ ‘What is it, then?’ he gasped in astonishment.
+            </TextNode>
 
             <TextNode>
-              “‘It is nothing less than the ancient crown of the kings of
+              “ ‘It is nothing less than the ancient crown of the kings of
               England.’
             </TextNode>
 
-            <TextNode>“‘The crown!’</TextNode>
+            <TextNode>“ ‘The crown!’</TextNode>
           </BookLeftPartContainer>
           <BookRightPartContainer>
             <TextNode noIndent>
-              “‘Precisely. Consider what the Ritual says: How does it run?
+              “ ‘Precisely. Consider what the Ritual says: How does it run?
               “Whose was it?” “His who is gone.” That was after the execution of
               Charles. Then, “Who shall have it?” “He who will come.” That was
               Charles the Second, whose advent was already foreseen. There can,
@@ -105,10 +107,10 @@ function Page143({
               encircled the brows of the royal Stuarts.’
             </TextNode>
 
-            <TextNode>“‘And how came it in the pond?’</TextNode>
+            <TextNode>“ ‘And how came it in the pond?’</TextNode>
 
             <TextNode>
-              “‘Ah, that is a question that will take some time to answer.’ And
+              “ ‘Ah, that is a question that will take some time to answer.’ And
               with that I sketched out to him the whole long chain of surmise
               and of proof which I had constructed. The twilight had closed in
               and the moon was shining brightly in the sky before my narrative
@@ -116,13 +118,13 @@ function Page143({
             </TextNode>
 
             <TextNode>
-              “‘And how was it then that Charles did not get his crown when he
+              “ ‘And how was it then that Charles did not get his crown when he
               returned?’ asked Musgrave, pushing back the relic into its linen
               bag.
             </TextNode>
 
             <TextNode>
-              “‘Ah, there you lay your finger upon the one point which we shall
+              “ ‘Ah, there you lay your finger upon the one point which we shall
               probably never be able to clear up. It is likely that the Musgrave
               who held the secret died in the interval, and by some oversight
               left this guide to his descendant without explaining the meaning

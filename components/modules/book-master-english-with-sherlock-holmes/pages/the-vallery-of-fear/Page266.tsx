@@ -223,7 +223,7 @@ function Page266({
             </TextNode>
 
             <TextNode>
-              “‘See here,’ said the operator after he'd gone out, ‘I guess we
+              “ ‘See here,’ said the operator after he'd gone out, ‘I guess we
               should charge double rates for this.’—‘I guess you should,’ said
               I. He had filled the form with stuff that might have been Chinese,
               for all we could make of it. ‘He fires a sheet of this off every

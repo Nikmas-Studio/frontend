@@ -29,7 +29,7 @@ function Page280({
           <BookLeftPartContainer>
             <Indent>
               <TextNode noIndent>
-                “‘It had seemed to me sometimes that she liked to be alone with
+                “ ‘It had seemed to me sometimes that she liked to be alone with
                 me, or to coax me out for a walk with her, but I had never
                 thought anything of that. But one evening my eyes were opened. I
                 had come up from the ship and found my wife out, but Sarah at
@@ -49,7 +49,7 @@ function Page280({
               </TextNode>
 
               <TextNode>
-                “‘Well, from that time Sarah hated me with her whole heart and
+                “ ‘Well, from that time Sarah hated me with her whole heart and
                 soul, and she is a woman who can hate, too. I was a fool to let
                 her go on biding with us—a besotted fool—but I never said a word
                 to Mary, for I knew it would grieve her. Things went on much as
@@ -72,7 +72,7 @@ function Page280({
               </TextNode>
 
               <TextNode>
-                “‘It was to see Sarah that he came to my house first, but soon
+                “ ‘It was to see Sarah that he came to my house first, but soon
                 it was to see us, for he was a man with winning ways, and he
                 made friends wherever he went. He was a dashing, swaggering
                 chap, smart and curled, who had seen half the world and could
@@ -86,7 +86,7 @@ function Page280({
               </TextNode>
 
               <TextNode>
-                “‘It was only a little thing, too. I had come into the parlour
+                “ ‘It was only a little thing, too. I had come into the parlour
                 unexpected, and as I walked in at the door I saw a light of
                 welcome on my wife's face. But as she saw who it was it faded
                 again, and she turned away with a look of disappointment. That
@@ -107,9 +107,9 @@ function Page280({
               </TextNode>
 
               <TextNode>
-                “‘Well, I don't know now whether it was pure devilry on the part
-                of this woman, or whether she thought that she could turn me
-                against my wife by encouraging her to misbehave. Anyway, she
+                “ ‘Well, I don't know now whether it was pure devilry on the
+                part of this woman, or whether she thought that she could turn
+                me against my wife by encouraging her to misbehave. Anyway, she
                 took a house just two streets off and let lodgings to sailors.
                 Fairbairn used to stay there, and Mary would go round to have
                 tea with her sister and him. How often she went I don't know,
@@ -127,14 +127,14 @@ function Page280({
           <BookRightPartContainer>
             <Indent>
               <TextNode noIndent>
-                “‘Well, Sarah found that she could not make a living in
+                “ ‘Well, Sarah found that she could not make a living in
                 Liverpool, so she went back, as I understand, to live with her
                 sister in Croydon, and things jogged on much the same as ever at
                 home. And then came this week and all the misery and ruin.
               </TextNode>
 
               <TextNode>
-                “‘It was in this way. We had gone on the&nbsp;
+                “ ‘It was in this way. We had gone on the&nbsp;
                 <span className='italic'>May Day</span> for a round voyage of
                 seven days, but a hogshead got loose and started one of our
                 plates, so that we had to put back into port for twelve hours. I
@@ -147,7 +147,7 @@ function Page280({
                 footpath.
               </TextNode>
               <TextNode noIndent>
-                “‘I tell you, and I give you my word for it, that from that
+                “ ‘I tell you, and I give you my word for it, that from that
                 moment I was not my own master, and it is all like a dim dream
                 when I look back on it. I had been drinking hard of late, and
                 the two things together fairly turned my brain. There's
@@ -157,7 +157,7 @@ function Page280({
               </TextNode>
 
               <TextNode>
-                “‘Well, I took to my heels, and I ran after the cab. I had a
+                “ ‘Well, I took to my heels, and I ran after the cab. I had a
                 heavy oak stick in my hand, and I tell you I saw red from the
                 first; but as I ran I got cunning, too, and hung back a little
                 to see them without being seen. They pulled up soon at the
@@ -172,26 +172,26 @@ function Page280({
               </TextNode>
 
               <TextNode>
-                “‘It was just as if they had been given into my hands. There was
-                a bit of a haze, and you could not see more than a few hundred
-                yards. I hired a boat for myself, and I pulled after them. I
-                could see the blur of their craft, but they were going nearly as
-                fast as I, and they must have been a long mile from the shore
-                before I caught them up. The haze was like a curtain all round
-                us, and there were we three in the middle of it. My God, shall I
-                ever forget their faces when they saw who was in the boat that
-                was closing in upon them? She screamed out. He swore like a
-                madman and jabbed at me with an oar, for he must have seen death
-                in my eyes. I got past it and got one in with my stick that
-                crushed his head like an egg. I would have spared her, perhaps,
-                for all my madness, but she threw her arms round him, crying out
-                to him, and calling him “Alec.” I struck again, and she lay
-                stretched beside him. I was like a wild beast then that had
-                tasted blood. If Sarah had been there, by the Lord, she should
-                have joined them. I pulled out my knife, and—well, there! I've
-                said enough. It gave me a kind of savage joy when I thought how
-                Sarah would feel when she had such signs as these of what her
-                meddling had brought about. Then I tied the bodies into the
+                “ ‘It was just as if they had been given into my hands. There
+                was a bit of a haze, and you could not see more than a few
+                hundred yards. I hired a boat for myself, and I pulled after
+                them. I could see the blur of their craft, but they were going
+                nearly as fast as I, and they must have been a long mile from
+                the shore before I caught them up. The haze was like a curtain
+                all round us, and there were we three in the middle of it. My
+                God, shall I ever forget their faces when they saw who was in
+                the boat that was closing in upon them? She screamed out. He
+                swore like a madman and jabbed at me with an oar, for he must
+                have seen death in my eyes. I got past it and got one in with my
+                stick that crushed his head like an egg. I would have spared
+                her, perhaps, for all my madness, but she threw her arms round
+                him, crying out to him, and calling him “Alec.” I struck again,
+                and she lay stretched beside him. I was like a wild beast then
+                that had tasted blood. If Sarah had been there, by the Lord, she
+                should have joined them. I pulled out my knife, and—well, there!
+                I've said enough. It gave me a kind of savage joy when I thought
+                how Sarah would feel when she had such signs as these of what
+                her meddling had brought about. Then I tied the bodies into the
                 boat, stove a plank, and stood by until they had sunk. I knew
                 very well that the owner would think that they had lost their
                 bearings in the haze, and had drifted off out to sea. I cleaned
@@ -201,7 +201,7 @@ function Page280({
               </TextNode>
 
               <TextNode>
-                “‘There you have the whole truth of it. You can hang me, or do
+                “ ‘There you have the whole truth of it. You can hang me, or do
                 what you like with me, but you cannot punish me as I have been
                 punished already. I cannot shut my eyes but I see those two
                 faces staring at me—staring at me as they stared when my boat

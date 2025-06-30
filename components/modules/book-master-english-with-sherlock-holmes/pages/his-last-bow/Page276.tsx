@@ -483,7 +483,7 @@ function Page276({
 
             <Indent>
               <TextNode noIndent>
-                “‘The true voodoo-worshipper attempts nothing of importance
+                “ ‘The true voodoo-worshipper attempts nothing of importance
                 without certain sacrifices which are intended to propitiate his
                 unclean gods. In extreme cases these rites take the form of
                 human sacrifices followed by cannibalism. The more usual victims

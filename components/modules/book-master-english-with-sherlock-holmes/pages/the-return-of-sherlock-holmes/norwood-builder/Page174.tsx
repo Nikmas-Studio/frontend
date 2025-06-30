@@ -165,10 +165,10 @@ function Page174({
               young man.’
             </TextNode>
 
-            <TextNode>“‘You knew him at that time?’ said I.</TextNode>
+            <TextNode>“ ‘You knew him at that time?’ said I.</TextNode>
 
             <TextNode>
-              “‘Yes, I knew him well; in fact, he was an old suitor of mine.
+              “ ‘Yes, I knew him well; in fact, he was an old suitor of mine.
               Thank Heaven that I had the sense to turn away from him and to
               marry a better, if a poorer, man. I was engaged to him, Mr.
               Holmes, when I heard a shocking story of how he had turned a cat
@@ -181,12 +181,12 @@ function Page174({
             </TextNode>
 
             <TextNode>
-              “‘Well,’ said I, ‘at least he has forgiven you now, since he has
+              “ ‘Well,’ said I, ‘at least he has forgiven you now, since he has
               left all his property to your son.’
             </TextNode>
 
             <TextNode>
-              “‘Neither my son nor I want anything from Jonas Oldacre, dead or
+              “ ‘Neither my son nor I want anything from Jonas Oldacre, dead or
               alive,’ she cried, with a proper spirit. ‘There is a God in
               Heaven, Mr. Holmes, and that same God who has punished that wicked
               man will show in His own good time that my son's hands are

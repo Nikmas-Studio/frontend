@@ -398,7 +398,7 @@ function Page206({
             <TextNode>“Yes; I opened it. Here it is:</TextNode>
 
             <TextNode>
-              “‘Ask for Pompey from Jeremy Dixon, Trinity College.’
+              “ ‘Ask for Pompey from Jeremy Dixon, Trinity College.’
             </TextNode>
 
             <TextNode>“I don't understand it.”</TextNode>
@@ -417,7 +417,7 @@ function Page206({
             </TextNode>
 
             <TextNode>
-              “‘The defeat of the Light Blues may be entirely attributed to the
+              “ ‘The defeat of the Light Blues may be entirely attributed to the
               unfortunate absence of the crack International, Godfrey Staunton,
               whose want was felt at every instant of the game. The lack of
               combination in the three-quarter line and their weakness both in

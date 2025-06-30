@@ -294,20 +294,21 @@ function Page317({
               only to sell the furniture.
             </TextNode>
 
-            <TextNode>“‘No, no, everything,’ said he.</TextNode>
+            <TextNode>“ ‘No, no, everything,’ said he.</TextNode>
 
-            <TextNode>“‘But my clothes? My jewels?’</TextNode>
+            <TextNode>“ ‘But my clothes? My jewels?’</TextNode>
 
             <TextNode>
-              “‘Well, well, some concession might be made for your personal
+              “ ‘Well, well, some concession might be made for your personal
               effects. But nothing shall go out of the house unchecked. My
               client is a very liberal man, but he has his fads and his own way
               of doing things. It is everything or nothing with him.’
             </TextNode>
 
             <TextNode>
-              “‘Then it must be nothing,’ said I. And there the matter was left,
-              but the whole thing seemed to me to be so unusual that I thought—”
+              “ ‘Then it must be nothing,’ said I. And there the matter was
+              left, but the whole thing seemed to me to be so unusual that I
+              thought—”
             </TextNode>
 
             <TextNode>Here we had a very extraordinary interruption.</TextNode>
@@ -536,7 +537,7 @@ function Page317({
               corner. The labels shone out upon them.
             </TextNode>
 
-            <TextNode>“‘Milano.’ ‘Lucerne.’ These are from Italy.”</TextNode>
+            <TextNode>“ ‘Milano.’ ‘Lucerne.’ These are from Italy.”</TextNode>
 
             <TextNode>“They are poor Douglas's things.”</TextNode>
 

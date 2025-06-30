@@ -281,9 +281,9 @@ function Page160({
             </TextNode>
 
             <TextNode>
-              “‘This,’ said he, taking a gray roll of paper from his bureau, ‘is
-              the original of that secret treaty between England and Italy of
-              which, I regret to say, some rumors have already got into the
+              “ ‘This,’ said he, taking a gray roll of paper from his bureau,
+              ‘is the original of that secret treaty between England and Italy
+              of which, I regret to say, some rumors have already got into the
               public press. It is of enormous importance that nothing further
               should leak out. The French or the Russian embassy would pay an
               immense sum to learn the contents of these papers. They should not
@@ -291,10 +291,10 @@ function Page160({
               have them copied. You have a desk in your office?’
             </TextNode>
 
-            <TextNode>“‘Yes, sir.’</TextNode>
+            <TextNode>“ ‘Yes, sir.’</TextNode>
 
             <TextNode>
-              “‘Then take the treaty and lock it up there. I shall give
+              “ ‘Then take the treaty and lock it up there. I shall give
               directions that you may remain behind when the others go, so that
               you may copy it at your leisure without fear of being overlooked.
               When you have finished, relock both the original and the draft in
@@ -419,25 +419,25 @@ function Page160({
             </TextNode>
 
             <TextNode>
-              “‘Mr. Phelps, sir!’ said he, looking at me in bewilderment.
+              “ ‘Mr. Phelps, sir!’ said he, looking at me in bewilderment.
             </TextNode>
 
-            <TextNode>“‘I came down to see if my coffee was ready.’</TextNode>
+            <TextNode>“ ‘I came down to see if my coffee was ready.’</TextNode>
 
             <TextNode>
-              “‘I was boiling the kettle when I fell asleep, sir.’ He looked at
+              “ ‘I was boiling the kettle when I fell asleep, sir.’ He looked at
               me and then up at the still quivering bell with an ever-growing
               astonishment upon his face.
             </TextNode>
 
             <TextNode>
-              “‘If you was here, sir, then who rang the bell?’ he asked.
+              “ ‘If you was here, sir, then who rang the bell?’ he asked.
             </TextNode>
 
-            <TextNode>“‘The bell!’ I cried. ‘What bell is it?’</TextNode>
+            <TextNode>“ ‘The bell!’ I cried. ‘What bell is it?’</TextNode>
 
             <TextNode>
-              “‘It's the bell of the room you were working in.’
+              “ ‘It's the bell of the room you were working in.’
             </TextNode>
 
             <TextNode>
@@ -498,26 +498,26 @@ function Page160({
             </TextNode>
 
             <TextNode>
-              “‘A robbery has been committed,’ I gasped. ‘A document of immense
+              “ ‘A robbery has been committed,’ I gasped. ‘A document of immense
               value has been stolen from the Foreign Office. Has any one passed
               this way?’
             </TextNode>
 
             <TextNode>
-              “‘I have been standing here for a quarter of an hour, sir,’ said
+              “ ‘I have been standing here for a quarter of an hour, sir,’ said
               he; ‘only one person has passed during that time—a woman, tall and
               elderly, with a Paisley shawl.’
             </TextNode>
 
             <TextNode>
-              “‘Ah, that is only my wife,’ cried the commissionaire; ‘has no one
-              else passed?’
+              “ ‘Ah, that is only my wife,’ cried the commissionaire; ‘has no
+              one else passed?’
             </TextNode>
 
-            <TextNode>“‘No one.’</TextNode>
+            <TextNode>“ ‘No one.’</TextNode>
 
             <TextNode>
-              “‘Then it must be the other way that the thief took,’ cried the
+              “ ‘Then it must be the other way that the thief took,’ cried the
               fellow, tugging at my sleeve.
             </TextNode>
 
@@ -526,23 +526,23 @@ function Page160({
               me away increased my suspicions.
             </TextNode>
 
-            <TextNode>“‘Which way did the woman go?’ I cried.</TextNode>
+            <TextNode>“ ‘Which way did the woman go?’ I cried.</TextNode>
 
             <TextNode>
-              “‘I don't know, sir. I noticed her pass, but I had no special
+              “ ‘I don't know, sir. I noticed her pass, but I had no special
               reason for watching her. She seemed to be in a hurry.’
             </TextNode>
 
-            <TextNode>“‘How long ago was it?’</TextNode>
+            <TextNode>“ ‘How long ago was it?’</TextNode>
 
-            <TextNode>“‘Oh, not very many minutes.’</TextNode>
+            <TextNode>“ ‘Oh, not very many minutes.’</TextNode>
 
-            <TextNode>“‘Within the last five?’</TextNode>
+            <TextNode>“ ‘Within the last five?’</TextNode>
 
-            <TextNode>“‘Well, it could not be more than five.’</TextNode>
+            <TextNode>“ ‘Well, it could not be more than five.’</TextNode>
 
             <TextNode>
-              “‘You're only wasting your time, sir, and every minute now is of
+              “ ‘You're only wasting your time, sir, and every minute now is of
               importance,’ cried the commissionaire; ‘take my word for it that
               my old woman has nothing to do with it, and come down to the other
               end of the street. Well, if you won't, I will.’ And with that he
@@ -553,10 +553,10 @@ function Page160({
               “But I was after him in an instant and caught him by the sleeve.
             </TextNode>
 
-            <TextNode>“‘Where do you live?’ said I.</TextNode>
+            <TextNode>“ ‘Where do you live?’ said I.</TextNode>
 
             <TextNode>
-              “‘16 Ivy Lane, Brixton,’ he answered. ‘But don't let yourself be
+              “ ‘16 Ivy Lane, Brixton,’ he answered. ‘But don't let yourself be
               drawn away upon a false scent, Mr. Phelps. Come to the other end
               of the street and let us see if we can hear of anything.’
             </TextNode>
@@ -669,21 +669,21 @@ function Page160({
             </TextNode>
 
             <TextNode>
-              “‘Why, if it isn't Mr. Phelps, of the office!’ she cried.
+              “ ‘Why, if it isn't Mr. Phelps, of the office!’ she cried.
             </TextNode>
 
             <TextNode>
-              “‘Come, come, who did you think we were when you ran away from
+              “ ‘Come, come, who did you think we were when you ran away from
               us?’ asked my companion.
             </TextNode>
 
             <TextNode>
-              “‘I thought you were the brokers,’ said she, ‘we have had some
+              “ ‘I thought you were the brokers,’ said she, ‘we have had some
               trouble with a tradesman.’
             </TextNode>
 
             <TextNode>
-              “‘That's not quite good enough,’ answered Forbes. ‘We have reason
+              “ ‘That's not quite good enough,’ answered Forbes. ‘We have reason
               to believe that you have taken a paper of importance from the
               Foreign Office, and that you ran in here to dispose of it. You
               must come back with us to Scotland Yard to be searched.’

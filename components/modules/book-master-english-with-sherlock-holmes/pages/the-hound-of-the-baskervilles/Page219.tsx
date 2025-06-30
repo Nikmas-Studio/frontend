@@ -150,9 +150,9 @@ function Page219({
             </TextNode>
 
             <TextNode>
-              “‘You may be cajoled into imagining that your own special trade or
-              your own industry will be encouraged by a protective tariff, but
-              it stands to reason that such legislation must in the long run
+              “ ‘You may be cajoled into imagining that your own special trade
+              or your own industry will be encouraged by a protective tariff,
+              but it stands to reason that such legislation must in the long run
               keep away wealth from the country, diminish the value of our
               imports, and lower the general conditions of life in this island.’
             </TextNode>
