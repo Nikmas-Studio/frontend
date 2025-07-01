@@ -62,7 +62,7 @@ function Page279({
             </TextNode>
 
             <TextNode>
-              There was a cab passing as we came out, and Holmes hailed it.
+              There was a cab passing as we came out, and Holmes hailed&nbsp;it.
             </TextNode>
 
             <TextNode>“How far to Wallington?” he asked.</TextNode>
