@@ -18,61 +18,61 @@ function Page1(): ReactElement {
   const aiCircleRef = useRef<HTMLImageElement | null>(null);
 
   function calcSherlockHeight(): number {
-    if (innerWidth <= 460) {
-      return innerWidth * 1.2;
+    if (outerWidth <= 460) {
+      return outerWidth * 1.2;
     }
 
-    if (innerWidth <= 640) {
-      return innerWidth;
+    if (outerWidth <= 640) {
+      return outerWidth;
     }
 
-    if (innerWidth <= 768) {
-      return window.innerWidth * 0.8;
+    if (outerWidth <= 768) {
+      return window.outerWidth * 0.8;
     }
 
-    if (window.innerWidth <= 1120) {
-      return window.innerWidth * 0.64;
+    if (window.outerWidth <= 1120) {
+      return window.outerWidth * 0.64;
     }
-    return window.innerHeight * 0.92;
+    return window.outerHeight * 0.92;
   }
 
   function calcAiCircleHeight(): number {
-    if (innerWidth <= 460) {
-      return innerWidth * 0.9;
+    if (outerWidth <= 460) {
+      return outerWidth * 0.9;
     }
 
-    if (innerWidth <= 640) {
-      return innerWidth * 0.77;
+    if (outerWidth <= 640) {
+      return outerWidth * 0.77;
     }
 
-    if (innerWidth <= 768) {
-      return innerWidth * 0.62;
+    if (outerWidth <= 768) {
+      return outerWidth * 0.62;
     }
 
-    if (window.innerWidth <= 1120) {
-      return window.innerWidth * 0.49;
+    if (window.outerWidth <= 1120) {
+      return window.outerWidth * 0.49;
     }
-    return window.innerHeight * 0.7;
+    return window.outerHeight * 0.7;
   }
 
   function calcAiCircleBottom(): number {
-    if (innerWidth <= 460) {
-      return innerWidth * 0.27;
+    if (outerWidth <= 460) {
+      return outerWidth * 0.27;
     }
 
-    if (innerWidth <= 640) {
-      return innerWidth * 0.2;
+    if (outerWidth <= 640) {
+      return outerWidth * 0.2;
     }
 
-    if (innerWidth <= 768) {
-      return innerWidth * 0.16;
+    if (outerWidth <= 768) {
+      return outerWidth * 0.16;
     }
 
-    if (window.innerWidth <= 1120) {
-      return window.innerWidth * 0.13;
+    if (window.outerWidth <= 1120) {
+      return window.outerWidth * 0.13;
     }
 
-    return window.innerHeight * 0.19;
+    return window.outerHeight * 0.19;
   }
 
   const [sherlockHeight, setSherlockHeight] = useState<number | null>(null);
@@ -95,8 +95,8 @@ function Page1(): ReactElement {
   }, []);
 
   useEffect(() => {
-    // let initialHeight = window.innerHeight;
-    // let initialWidth = window.innerWidth;
+    // let initialHeight = window.outerHeight;
+    // let initialWidth = window.outerWidth;
     // let initialOuterWidth = window.outerWidth;
 
     function recalculateSizes(): void {
@@ -106,8 +106,8 @@ function Page1(): ReactElement {
     }
 
     // function handleResize(): void {
-    //   const currentHeight = window.innerHeight;
-    //   const currentWidth = window.innerWidth;
+    //   const currentHeight = window.outerHeight;
+    //   const currentWidth = window.outerWidth;
     //   const currentOuterWidth = window.outerWidth;
 
     //   const initialZoomRatio = initialOuterWidth / initialWidth;
