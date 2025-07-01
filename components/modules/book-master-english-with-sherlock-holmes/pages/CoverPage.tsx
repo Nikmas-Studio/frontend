@@ -98,6 +98,7 @@ function Page1(): ReactElement {
     // let initialHeight = window.outerHeight;
     // let initialWidth = window.outerWidth;
     // let initialOuterWidth = window.outerWidth;
+    // test
 
     function recalculateSizes(): void {
       setSherlockHeight(calcSherlockHeight);
