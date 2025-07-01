@@ -7,10 +7,11 @@ import {
 import { useActivePageDispatch } from '@/context/active-page/Context';
 import { useBookVersion } from '@/context/book-version/Context';
 import { useInitialScrollToPageStateDispatch } from '@/context/initial-scroll-to-page/Context';
+import { useTouchDevice } from '@/context/touch-device/Context';
 import { useSelectTranslation } from '@/hooks/book-master-english-with-sherlock-holmes/use-select-translation';
 import { BookVersion } from '@/types/book-version';
 import { updateUrl } from '@/utils/update-url';
-import { ReactElement, ReactNode, useEffect } from 'react';
+import { ReactElement, ReactNode, useEffect, useRef, useState } from 'react';
 
 interface GlobalEffectsProps {
   initialPageId?: string;
@@ -25,6 +26,7 @@ function GlobalEffects({
   const basePath =
     bookVersion === BookVersion.DEMO ? BASE_PATH_DEMO : BASE_PATH_READ;
   const { setActivePage } = useActivePageDispatch();
+  const { isTouchDevice } = useTouchDevice();
 
   const { setInitialScrollToPageIsCompleted } =
     useInitialScrollToPageStateDispatch();
@@ -78,7 +80,61 @@ function GlobalEffects({
 
   useSelectTranslation();
 
-  return <>{children}</>;
+  const [isResizing, setIsResizing] = useState(false);
+  const resizeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    const handleResize = (): void => {
+      if (!isTouchDevice) {
+        setIsResizing(true);
+
+        if (resizeTimeoutRef.current) {
+          clearTimeout(resizeTimeoutRef.current);
+        }
+
+        resizeTimeoutRef.current = setTimeout(() => {
+          window.location.reload();
+        }, 200);
+      }
+    };
+
+    if (!isTouchDevice) {
+      window.addEventListener('resize', handleResize);
+    }
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isTouchDevice]);
+
+  useEffect(() => {
+    const handleOrientationChange = (): void => {
+      setIsResizing(true);
+
+      if (resizeTimeoutRef.current) {
+        clearTimeout(resizeTimeoutRef.current);
+      }
+
+      resizeTimeoutRef.current = setTimeout(() => {
+        window.location.reload();
+      }, 200);
+    };
+
+    screen.orientation.addEventListener('change', handleOrientationChange);
+
+    return () => {
+      screen.orientation.removeEventListener('change', handleOrientationChange);
+    };
+  }, []);
+
+  return (
+    <>
+      {isResizing && (
+        <div
+          className='fixed  inset-0  z-[999999999]
+                   bg-white  dark:bg-black'
+        ></div>
+      )}
+      {children}
+    </>
+  );
 }
 
 export default GlobalEffects;
