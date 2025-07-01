@@ -19,7 +19,7 @@ const Page = forwardRef<HTMLElement, PageProps>(function Page(
   ref,
 ): ReactElement {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [minHeight, setMinHeight] = useState(window.innerHeight);
+  const [minHeight, setMinHeight] = useState(window.outerHeight);
 
   // useEffect(() => {
   //   let initialHeight = window.innerHeight;
@@ -68,8 +68,8 @@ const Page = forwardRef<HTMLElement, PageProps>(function Page(
     <section
       style={
         {
-          minHeight: `${minHeight}px`,
-          height: viewportHeight ? `${minHeight}px` : '',
+          minHeight: `${window.innerHeight}px`,
+          height: viewportHeight ? `${window.outerHeight}px` : '',
         } as CSSProperties
       }
       id={id}

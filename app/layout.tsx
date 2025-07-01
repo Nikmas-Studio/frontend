@@ -28,7 +28,6 @@ export default function RootLayout({
         `}
         </Script>
         <meta name='format-detection' content='email=no' />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
         <Script id='early-theme-setup' strategy='beforeInteractive'>{`
               try {
                 if (localStorage.theme === 'dark' || (!('theme' in localStorage) &&

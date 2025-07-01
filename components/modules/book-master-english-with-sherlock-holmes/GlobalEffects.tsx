@@ -93,20 +93,7 @@ function GlobalEffects({
         }
 
         resizeTimeoutRef.current = setTimeout(() => {
-          document
-            .querySelector('meta[name="viewport"]')
-            ?.setAttribute(
-              'content',
-              'width=device-width, initial-scale=1, maximum-scale=1',
-            );
-
-          document.body.style.zoom = '1';
-
-          requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-              window.location.reload();
-            });
-          });
+          window.location.reload();
         }, 200);
       }
     };
@@ -126,20 +113,7 @@ function GlobalEffects({
       }
 
       resizeTimeoutRef.current = setTimeout(() => {
-        document
-          .querySelector('meta[name="viewport"]')
-          ?.setAttribute(
-            'content',
-            'width=device-width, initial-scale=1, maximum-scale=1',
-          );
-
-        document.body.style.zoom = '1';
-
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            window.location.reload();
-          });
-        });
+        window.location.reload();
       }, 200);
     };
 
