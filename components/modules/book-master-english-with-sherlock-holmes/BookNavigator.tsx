@@ -135,7 +135,7 @@ function BookNavigator(): ReactElement {
      max-1.5lg:h-[calc(100dvh-5rem)]`,
     {
       'max-1.5lg:hidden': activeTab !== BookNavigatorTab.CARDS,
-      'h-[100dvh]  border-b  border-b-[#E0E0E0]  dark:border-b-[#212932]':
+      'h-[100dvh]':
         isTouchDevice,
       'h-[calc(100dvh-60px)]': !isTouchDevice,
     },
@@ -164,7 +164,7 @@ function BookNavigator(): ReactElement {
      max-1.5lg:border-r-none`,
     {
       'max-1.5lg:hidden': activeTab !== BookNavigatorTab.CONTENTS,
-      'h-[100dvh] border-b  border-b-[#E0E0E0]  dark:border-b-[#212932]':
+      'h-[100dvh]':
         isTouchDevice,
       'h-[calc(100dvh-60px)]': !isTouchDevice,
     },
