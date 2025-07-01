@@ -132,12 +132,12 @@ function BookNavigator(): ReactElement {
   const cardsComponentClasses = classNames(
     `bg-[#F3F3F3]  dark:bg-[#0F151D]  flex-1  overflow-y-scroll  px-12  
      pb-[3.72rem]  pt-[1.6rem]  max-1.5lg:px-[4.2vw]  max-1.5lg:w-full
-     max-1.5lg:h-[calc(100vh-5rem)]`,
+     max-1.5lg:h-[calc(100dvh-5rem)]`,
     {
       'max-1.5lg:hidden': activeTab !== BookNavigatorTab.CARDS,
-      'h-screen  border-b  border-b-[#E0E0E0]  dark:border-b-[#212932]':
+      'h-[100dvh]  border-b  border-b-[#E0E0E0]  dark:border-b-[#212932]':
         isTouchDevice,
-      'h-[calc(100vh-60px)]': !isTouchDevice,
+      'h-[calc(100dvh-60px)]': !isTouchDevice,
     },
   );
 
@@ -160,13 +160,13 @@ function BookNavigator(): ReactElement {
 
   const contentsComponentClasses = classNames(
     `bg-[#F3F3F3]  dark:bg-[#0F151D]  overflow-y-scroll  border-r  border-[#E0E0E0]  
-     py-6  dark:border-[#212932]  max-1.5lg:w-full  max-1.5lg:h-[calc(100vh-5rem)]
+     py-6  dark:border-[#212932]  max-1.5lg:w-full  max-1.5lg:h-[calc(100dvh-5rem)]
      max-1.5lg:border-r-none`,
     {
       'max-1.5lg:hidden': activeTab !== BookNavigatorTab.CONTENTS,
-      'h-screen  border-b  border-b-[#E0E0E0]  dark:border-b-[#212932]':
+      'h-[100dvh] border-b  border-b-[#E0E0E0]  dark:border-b-[#212932]':
         isTouchDevice,
-      'h-[calc(100vh-60px)]': !isTouchDevice,
+      'h-[calc(100dvh-60px)]': !isTouchDevice,
     },
   );
 
@@ -3423,7 +3423,6 @@ function BookNavigator(): ReactElement {
             </div>
             <div
               id={storyToPartId(Story.THE_ADVENTURE_OF_THE_RETIRED_COLOURMAN)}
-              className='mb-7'
             >
               <BasicTextNode
                 className={`mb-5  text-xl  ${libreBaskerville.className}`}
