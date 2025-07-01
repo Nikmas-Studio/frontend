@@ -11,7 +11,6 @@ import {
 import {
   NAVIGATOR_PAGE_CARD_ID_PREFIX,
   NAVIGATOR_PART_ID_PREFIX,
-  RESIZE_THRESHOLD,
 } from '@/constants/general';
 import {
   useActivePage,
@@ -65,6 +64,7 @@ function BookNavigator(): ReactElement {
   const [selectedStory, setSelectedStory] = useState(Story.A_STUDY_IN_SCARLET);
   const { ref: tooltipRef } = useTranslationTooltip();
   const [activeTab, setActiveTab] = useState(BookNavigatorTab.CONTENTS);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
   const { activePage } = useActivePage();
   const { setActivePage } = useActivePageDispatch();
@@ -76,43 +76,43 @@ function BookNavigator(): ReactElement {
   const isScrollingToPageRef = useIsScrollingToPageRef();
   const isScrollingToCard = useRef(false);
 
-  useEffect(() => {
-    let initialHeight = window.innerHeight;
-    let initialWidth = window.innerWidth;
-    let initialOuterWidth = window.outerWidth;
+  // useEffect(() => {
+  //   let initialHeight = window.innerHeight;
+  //   let initialWidth = window.innerWidth;
+  //   let initialOuterWidth = window.outerWidth;
 
-    function handleResize(): void {
-      const currentHeight = window.innerHeight;
-      const currentWidth = window.innerWidth;
-      const currentOuterWidth = window.outerWidth;
+  //   function handleResize(): void {
+  //     const currentHeight = window.innerHeight;
+  //     const currentWidth = window.innerWidth;
+  //     const currentOuterWidth = window.outerWidth;
 
-      const initialZoomRatio = initialOuterWidth / initialWidth;
-      const currentZoomRatio = currentOuterWidth / currentWidth;
-      const zoomChanged = Math.abs(initialZoomRatio - currentZoomRatio) > 0.05;
+  //     const initialZoomRatio = initialOuterWidth / initialWidth;
+  //     const currentZoomRatio = currentOuterWidth / currentWidth;
+  //     const zoomChanged = Math.abs(initialZoomRatio - currentZoomRatio) > 0.05;
 
-      if (zoomChanged) {
-        return;
-      }
+  //     if (zoomChanged) {
+  //       return;
+  //     }
 
-      const heightChanged =
-        Math.abs(currentHeight - initialHeight) > RESIZE_THRESHOLD;
-      const widthChanged =
-        Math.abs(currentWidth - initialWidth) > RESIZE_THRESHOLD;
+  //     const heightChanged =
+  //       Math.abs(currentHeight - initialHeight) > RESIZE_THRESHOLD;
+  //     const widthChanged =
+  //       Math.abs(currentWidth - initialWidth) > RESIZE_THRESHOLD;
 
-      if (heightChanged || widthChanged) {
-        initialHeight = currentHeight;
-        initialWidth = currentWidth;
-        initialOuterWidth = currentOuterWidth;
-        setViewportHeight(window.innerHeight);
-      }
-    }
+  //     if (heightChanged || widthChanged) {
+  //       initialHeight = currentHeight;
+  //       initialWidth = currentWidth;
+  //       initialOuterWidth = currentOuterWidth;
+  //       setViewportHeight(window.innerHeight);
+  //     }
+  //   }
 
-    window.addEventListener('resize', handleResize);
+  //   window.addEventListener('resize', handleResize);
 
-    return (): void => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  //   return (): void => {
+  //     window.removeEventListener('resize', handleResize);
+  //   };
+  // }, []);
 
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent): void {

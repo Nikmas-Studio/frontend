@@ -1,54 +1,54 @@
 'use client';
 
-import { RESIZE_THRESHOLD } from '@/constants/general';
 import { useTouchDevice } from '@/context/touch-device/Context';
 import classNames from 'classnames';
-import { ReactElement, ReactNode, useEffect, useRef, useState } from 'react';
+import { ReactElement, ReactNode, useRef, useState } from 'react';
 
 function Background({ children }: { children: ReactNode }): ReactElement {
   const backgroundElementRef = useRef<HTMLDivElement | null>(null);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [height, setHeight] = useState(window.innerHeight);
 
   const { isTouchDevice } = useTouchDevice();
 
-  useEffect(() => {
-    let initialHeight = window.innerHeight;
-    let initialWidth = window.innerWidth;
-    let initialOuterWidth = window.outerWidth;
+  // useEffect(() => {
+  //   let initialHeight = window.innerHeight;
+  //   let initialWidth = window.innerWidth;
+  //   let initialOuterWidth = window.outerWidth;
 
-    function handleResize(): void {
-      const currentHeight = window.innerHeight;
-      const currentWidth = window.innerWidth;
-      const currentOuterWidth = window.outerWidth;
+  //   function handleResize(): void {
+  //     const currentHeight = window.innerHeight;
+  //     const currentWidth = window.innerWidth;
+  //     const currentOuterWidth = window.outerWidth;
 
-      const initialZoomRatio = initialOuterWidth / initialWidth;
-      const currentZoomRatio = currentOuterWidth / currentWidth;
-      const zoomChanged = Math.abs(initialZoomRatio - currentZoomRatio) > 0.05;
+  //     const initialZoomRatio = initialOuterWidth / initialWidth;
+  //     const currentZoomRatio = currentOuterWidth / currentWidth;
+  //     const zoomChanged = Math.abs(initialZoomRatio - currentZoomRatio) > 0.05;
 
-      if (zoomChanged) {
-        return;
-      }
+  //     if (zoomChanged) {
+  //       return;
+  //     }
 
-      const heightChanged =
-        Math.abs(currentHeight - initialHeight) > RESIZE_THRESHOLD;
-      const widthChanged =
-        Math.abs(currentWidth - initialWidth) > RESIZE_THRESHOLD;
+  //     const heightChanged =
+  //       Math.abs(currentHeight - initialHeight) > RESIZE_THRESHOLD;
+  //     const widthChanged =
+  //       Math.abs(currentWidth - initialWidth) > RESIZE_THRESHOLD;
 
-      if (heightChanged || widthChanged) {
-        initialHeight = currentHeight;
-        initialWidth = currentWidth;
-        initialOuterWidth = currentOuterWidth;
-        setHeight(window.innerHeight);
-      }
-    }
+  //     if (heightChanged || widthChanged) {
+  //       initialHeight = currentHeight;
+  //       initialWidth = currentWidth;
+  //       initialOuterWidth = currentOuterWidth;
+  //       setHeight(window.innerHeight);
+  //     }
+  //   }
 
-    window.addEventListener('resize', handleResize);
+  //   window.addEventListener('resize', handleResize);
 
-    return (): void => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  //   return (): void => {
+  //     window.removeEventListener('resize', handleResize);
+  //   };
+  // }, []);
 
   const backgroundClasses = classNames(
     `fixed  z-0  bg-center  bg-repeat-y  w-screen

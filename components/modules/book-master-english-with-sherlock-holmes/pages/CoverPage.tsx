@@ -4,7 +4,6 @@ import BookMainContainer from '@/components/elements/book-master-english-with-sh
 import H1 from '@/components/elements/book-master-english-with-sherlock-holmes/H1';
 import Page from '@/components/elements/book-master-english-with-sherlock-holmes/Page';
 import ScrollHintMouse from '@/components/elements/ScrollHintMouse';
-import { RESIZE_THRESHOLD } from '@/constants/general';
 import { libreBaskerville } from '@/fonts';
 import aiCircle from '@/public/images/ai-circle.png';
 import sherlock from '@/public/images/sherlock.png';
@@ -96,9 +95,9 @@ function Page1(): ReactElement {
   }, []);
 
   useEffect(() => {
-    let initialHeight = window.innerHeight;
-    let initialWidth = window.innerWidth;
-    let initialOuterWidth = window.outerWidth;
+    // let initialHeight = window.innerHeight;
+    // let initialWidth = window.innerWidth;
+    // let initialOuterWidth = window.outerWidth;
 
     function recalculateSizes(): void {
       setSherlockHeight(calcSherlockHeight);
@@ -106,32 +105,32 @@ function Page1(): ReactElement {
       setAiCircleBottom(calcAiCircleBottom);
     }
 
-    function handleResize(): void {
-      const currentHeight = window.innerHeight;
-      const currentWidth = window.innerWidth;
-      const currentOuterWidth = window.outerWidth;
+    // function handleResize(): void {
+    //   const currentHeight = window.innerHeight;
+    //   const currentWidth = window.innerWidth;
+    //   const currentOuterWidth = window.outerWidth;
 
-      const initialZoomRatio = initialOuterWidth / initialWidth;
-      const currentZoomRatio = currentOuterWidth / currentWidth;
-      const zoomChanged = Math.abs(initialZoomRatio - currentZoomRatio) > 0.05;
+    //   const initialZoomRatio = initialOuterWidth / initialWidth;
+    //   const currentZoomRatio = currentOuterWidth / currentWidth;
+    //   const zoomChanged = Math.abs(initialZoomRatio - currentZoomRatio) > 0.05;
 
-      if (zoomChanged) {
-        return;
-      }
+    //   if (zoomChanged) {
+    //     return;
+    //   }
 
-      const heightChanged =
-        Math.abs(currentHeight - initialHeight) > RESIZE_THRESHOLD;
-      const widthChanged =
-        Math.abs(currentWidth - initialWidth) > RESIZE_THRESHOLD;
+    //   const heightChanged =
+    //     Math.abs(currentHeight - initialHeight) > RESIZE_THRESHOLD;
+    //   const widthChanged =
+    //     Math.abs(currentWidth - initialWidth) > RESIZE_THRESHOLD;
 
-      if (heightChanged || widthChanged) {
-        initialOuterWidth = currentOuterWidth;
-        initialHeight = currentHeight;
-        initialWidth = currentWidth;
+    //   if (heightChanged || widthChanged) {
+    //     initialOuterWidth = currentOuterWidth;
+    //     initialHeight = currentHeight;
+    //     initialWidth = currentWidth;
 
-        recalculateSizes();
-      }
-    }
+    //     recalculateSizes();
+    //   }
+    // }
 
     recalculateSizes();
 
@@ -144,11 +143,11 @@ function Page1(): ReactElement {
       });
     });
 
-    window.addEventListener('resize', handleResize);
+    // window.addEventListener('resize', handleResize);
 
-    return (): void => {
-      window.removeEventListener('resize', handleResize);
-    };
+    // return (): void => {
+    //   window.removeEventListener('resize', handleResize);
+    // };
   }, []);
 
   return (
