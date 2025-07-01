@@ -199,14 +199,14 @@ function BookNavigator(): ReactElement {
 
   const containerClasses = classNames(
     ` 
-      h-[calc(100vh-60px)]]  fixed  bottom-0  left-[80px]  top-[60px]
+      h-[calc(100dvh-60px)]]  fixed  bottom-0  left-[80px]  top-[60px]
       z-[9999]  w-[calc(100vw-160px)]  rounded-t-[20px]  bg-white
       dark:bg-[#171E27]  transition-transform  duration-[400ms]  overflow-hidden
-      max-1.5lg:w-screen  max-1.5lg:h-[150vh]  max-1.5lg:left-0
+      max-1.5lg:w-screen  max-1.5lg:h-[100dvh]  max-1.5lg:left-0
       max-1.5lg:top-0  max-1.5lg:rounded-none
   `,
     {
-      '!h-[150vh]  !top-0  !left-0  !w-screen  !rounded-none': isTouchDevice,
+      '!h-[100dvh]  !top-0  !left-0  !w-screen  !rounded-none': isTouchDevice,
     },
   );
 
