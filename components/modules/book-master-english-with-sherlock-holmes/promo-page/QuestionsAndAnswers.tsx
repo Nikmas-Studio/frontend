@@ -35,14 +35,15 @@ function QuestionsAndAnswers(): ReactElement {
           <TextNode>
             Click the «Subscription» button in the bottom right corner of the
             current page. A panel will open at the bottom of the page.{' '}
-            <span className='italic'>If you’re not logged in,</span> we’ll ask
-            you to enter your email address, and we’ll send you a payment link.
-            After successful payment, you’ll be able to access your account on
-            nikmas.studio using the same email you provided, and the full
-            version of the book will be available to you.{' '}
-            <span className='italic'>If you’re already logged in,</span> simply
-            click the «Proceed to payment» button in the panel that opens, and
-            once the payment is successful, you’ll get full access to the book.
+            <span className='italic'>If&nbsp;you’re not logged in,</span> we’ll
+            ask you to enter your email address, and we’ll send you a payment
+            link. After successful payment, you’ll be able to access your
+            account on nikmas.studio using the same email you provided, and the
+            full version of the book will be available to you.{' '}
+            <span className='italic'>If&nbsp;you’re already logged in,</span>{' '}
+            simply click the «Proceed to payment» button in the panel that
+            opens, and once the payment is successful, you’ll get full access to
+            the book.
           </TextNode>
           <TextNode>
             While you’re subscribed to the book, your access will automatically
