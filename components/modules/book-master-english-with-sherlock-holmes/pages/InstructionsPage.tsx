@@ -118,7 +118,7 @@ function InstructionsPage({
             preload='none'
           >
             <source
-              src='/videos/translation-feature-light.mp4'
+              src='https://9lqg3ssfq5ex47ks.public.blob.vercel-storage.com/translation-feature-light-5kZAiqZdEizozLEXaSmu6vxK19Omhs.mp4'
               type='video/mp4'
             />
             Your browser does not support the video tag.
@@ -135,7 +135,7 @@ function InstructionsPage({
             preload='none'
           >
             <source
-              src='/videos/translation-feature-dark.mp4'
+              src='https://9lqg3ssfq5ex47ks.public.blob.vercel-storage.com/translation-feature-dark-dN8P9F4XITNbXThTyW7gcmbTGLFV0k.mp4'
               type='video/mp4'
             />
             Your browser does not support the video tag.
