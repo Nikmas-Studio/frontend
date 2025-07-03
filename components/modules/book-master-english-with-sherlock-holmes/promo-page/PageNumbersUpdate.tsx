@@ -1,7 +1,9 @@
 import H2 from '@/components/elements/H2';
 import TextNode from '@/components/elements/TextNode';
 import {
+  PAGE_NUMBERS_UPDATE_VIDEO_DESKTOP_POSTER_SRC,
   PAGE_NUMBERS_UPDATE_VIDEO_DESKTOP_SRC,
+  PAGE_NUMBERS_UPDATE_VIDEO_MOBILE_POSTER_SRC,
   PAGE_NUMBERS_UPDATE_VIDEO_MOBILE_SRC,
 } from '@/constants/book-master-english-with-sherlock-holmes/videos';
 import { libreBaskerville } from '@/fonts';
@@ -27,6 +29,7 @@ function PageNumbersUpdate(): ReactElement {
         playsInline
         loop
         preload='none'
+        poster={PAGE_NUMBERS_UPDATE_VIDEO_DESKTOP_POSTER_SRC}
       >
         <source src={PAGE_NUMBERS_UPDATE_VIDEO_DESKTOP_SRC} type='video/mp4' />
         Your browser does not support the video tag.
@@ -40,6 +43,7 @@ function PageNumbersUpdate(): ReactElement {
         playsInline
         loop
         preload='none'
+        poster={PAGE_NUMBERS_UPDATE_VIDEO_MOBILE_POSTER_SRC}
       >
         <source src={PAGE_NUMBERS_UPDATE_VIDEO_MOBILE_SRC} type='video/mp4' />
         Your browser does not support the video tag.

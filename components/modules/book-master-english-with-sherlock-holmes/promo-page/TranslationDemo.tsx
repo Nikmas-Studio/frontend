@@ -2,9 +2,13 @@ import H2 from '@/components/elements/H2';
 import MainContainer from '@/components/elements/MainContainer';
 import TextNode from '@/components/elements/TextNode';
 import {
+  TRANSLATION_DEMO_VIDEO_DESKTOP_DARK_POSTER_SRC,
   TRANSLATION_DEMO_VIDEO_DESKTOP_DARK_SRC,
+  TRANSLATION_DEMO_VIDEO_DESKTOP_LIGHT_POSTER_SRC,
   TRANSLATION_DEMO_VIDEO_DESKTOP_LIGHT_SRC,
+  TRANSLATION_DEMO_VIDEO_MOBILE_DARK_POSTER_SRC,
   TRANSLATION_DEMO_VIDEO_MOBILE_DARK_SRC,
+  TRANSLATION_DEMO_VIDEO_MOBILE_LIGHT_POSTER_SRC,
   TRANSLATION_DEMO_VIDEO_MOBILE_LIGHT_SRC,
 } from '@/constants/book-master-english-with-sherlock-holmes/videos';
 import { libreBaskerville } from '@/fonts';
@@ -36,6 +40,7 @@ function TranslationDemo(): ReactElement {
           width={886}
           height={1526}
           preload='none'
+          poster={TRANSLATION_DEMO_VIDEO_MOBILE_LIGHT_POSTER_SRC}
         >
           <source
             src={TRANSLATION_DEMO_VIDEO_MOBILE_LIGHT_SRC}
@@ -54,6 +59,7 @@ function TranslationDemo(): ReactElement {
           width={886}
           height={1526}
           preload='none'
+          poster={TRANSLATION_DEMO_VIDEO_MOBILE_DARK_POSTER_SRC}
         >
           <source
             src={TRANSLATION_DEMO_VIDEO_MOBILE_DARK_SRC}
@@ -72,6 +78,7 @@ function TranslationDemo(): ReactElement {
           width={2992}
           height={1620}
           preload='none'
+          poster={TRANSLATION_DEMO_VIDEO_DESKTOP_LIGHT_POSTER_SRC}
         >
           <source
             src={TRANSLATION_DEMO_VIDEO_DESKTOP_LIGHT_SRC}
@@ -89,6 +96,7 @@ function TranslationDemo(): ReactElement {
           width={2992}
           height={1620}
           preload='none'
+          poster={TRANSLATION_DEMO_VIDEO_DESKTOP_DARK_POSTER_SRC}
         >
           <source
             src={TRANSLATION_DEMO_VIDEO_DESKTOP_DARK_SRC}
