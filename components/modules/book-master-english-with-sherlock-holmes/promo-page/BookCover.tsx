@@ -23,7 +23,7 @@ function BookCover(): ReactElement {
           setShowSherlock(true);
           setTimeout(() => {
             setShowAiCircle(true);
-          }, 300);
+          }, 1000);
         });
       });
     }
