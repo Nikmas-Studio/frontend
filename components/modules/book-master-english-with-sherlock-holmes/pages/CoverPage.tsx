@@ -135,21 +135,21 @@ function Page1(): ReactElement {
 
     recalculateSizes();
 
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        setShowSherlock(true);
-        setTimeout(() => {
-          setShowAiCircle(true);
-        }, 300);
-      });
-    });
-
     // window.addEventListener('resize', handleResize);
 
     // return (): void => {
     //   window.removeEventListener('resize', handleResize);
     // };
   }, []);
+
+  useEffect(() => {
+    if (sherlockIsLoaded && aiCircleIsLoaded) {
+      setShowSherlock(true);
+      setTimeout(() => {
+        setShowAiCircle(true);
+      }, 300);
+    }
+  }, [sherlockIsLoaded, aiCircleIsLoaded]);
 
   return (
     <Page

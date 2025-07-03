@@ -103,10 +103,6 @@ function Intro(): ReactElement {
                       With auto-renewal
                     </TextNode>
                   </div>
-                  {/* <SubscriptionButton
-                    className='translate-y-[-0.4rem]  self-end
-                               lg:mt-5  lg:translate-y-0'
-                  /> */}
                   <SubscriptionButtonPromo />
                 </div>
                 <TextNode className='!mb-0  mt-2  !text-base  lg:hidden'>
