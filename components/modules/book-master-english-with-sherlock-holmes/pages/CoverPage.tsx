@@ -147,7 +147,7 @@ function Page1(): ReactElement {
       setShowSherlock(true);
       setTimeout(() => {
         setShowAiCircle(true);
-      }, 500);
+      }, 1000);
     }
   }, [sherlockIsLoaded, aiCircleIsLoaded]);
 
