@@ -72,7 +72,7 @@ function Page12({
 
             <TextNode className='text-center  italic'>RACHE.</TextNode>
 
-            <TextNode>
+            <TextNode noIndent>
               “What do you think of that?” cried the detective, with the air of
               a showman exhibiting his show. “This was overlooked because it was
               in the darkest corner of the room, and no one thought of looking

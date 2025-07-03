@@ -23,7 +23,7 @@ function BookNavigator(): ReactElement {
             Soon
           </span> */}
         </H2>
-        <TextNode className='lg:mb-6'>
+        <TextNode className='max-w-[45rem]  lg:mb-6'>
           Explore the&nbsp;book&apos;s structure, and&nbsp;use search,
           illustrated contents, or&nbsp;bookmarks to&nbsp;find the&nbsp;pages
           you need:

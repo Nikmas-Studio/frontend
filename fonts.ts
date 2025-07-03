@@ -48,7 +48,7 @@ export const merriweather = Merriweather({
 
 export const libreBaskerville = LibreBaskerville({
   weight: ['400', '700'],
-  style: 'normal',
+  style: ['normal', 'italic'],
   subsets: ['latin'],
   variable: '--font-libre-baskerville',
 });

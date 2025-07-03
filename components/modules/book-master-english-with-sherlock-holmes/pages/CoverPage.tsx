@@ -184,11 +184,12 @@ function Page1(): ReactElement {
           src={sherlock}
           alt='Sherlock Holmes'
           style={{
-            opacity: showSherlock && sherlockIsLoaded ? 1 : 0,
+            opacity:
+              showSherlock && sherlockIsLoaded && aiCircleIsLoaded ? 1 : 0,
           }}
           height={sherlockHeight ?? undefined}
           className='absolute  bottom-0  right-[20px] z-[-1]  transition-opacity
-                     duration-1000  max-2md:right-1/2  max-2md:translate-x-1/2'
+                     duration-[2000ms]  max-2md:right-1/2  max-2md:translate-x-1/2'
           onLoad={() => {
             setSherlockIsLoaded(true);
           }}
@@ -200,7 +201,8 @@ function Page1(): ReactElement {
             bottom: aiCircleBottom ?? undefined,
             height: aiCircleHeight ?? undefined,
             width: aiCircleHeight ?? undefined,
-            opacity: showAiCircle && aiCircleIsLoaded ? 1 : 0,
+            opacity:
+              showAiCircle && aiCircleIsLoaded && sherlockIsLoaded ? 1 : 0,
           }}
           className='absolute  right-[-32px]  z-[-2]  transition-opacity
                      duration-[3000ms]  will-change-transform  max-2md:right-1/2
