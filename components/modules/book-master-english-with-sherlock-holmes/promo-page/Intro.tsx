@@ -5,7 +5,8 @@ import ExternalLink from '@/components/elements/ExternalLink';
 import MainContainer from '@/components/elements/MainContainer';
 import TextNode from '@/components/elements/TextNode';
 import { libreBaskerville } from '@/fonts';
-import linkedInLogo from '@/public/images/linkedin-black-and-white-logo.png';
+import linkedInLogoDark from '@/public/images/linkedin-logo-dark.png';
+import linkedInLogoLight from '@/public/images/linkedin-logo-light.png';
 import publisherPhoto from '@/public/images/Nick_Maslov_black_and_white.jpg';
 import authorPhoto from '@/public/images/Sir_Arthur_Conan_Doyle.jpg';
 import Image from 'next/image';
@@ -153,8 +154,15 @@ function Intro(): ReactElement {
                       <Image
                         className='inline  size-6  translate-x-1.5  
                                    translate-y-[-0.1875rem]  transition-transform
-                                   hover:scale-[1.15]'
-                        src={linkedInLogo}
+                                   hover:scale-[1.15]  dark:hidden'
+                        src={linkedInLogoLight}
+                        alt="Nick Maslov's LinkedIn"
+                      />
+                      <Image
+                        className='hidden  size-6  translate-x-1.5  
+                                   translate-y-[-0.1875rem]  transition-transform
+                                   hover:scale-[1.15]  dark:inline'
+                        src={linkedInLogoDark}
                         alt="Nick Maslov's LinkedIn"
                       />
                     </ExternalLink>

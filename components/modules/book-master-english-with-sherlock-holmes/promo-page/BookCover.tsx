@@ -53,8 +53,8 @@ function BookCover(): ReactElement {
       <Image
         alt='Sherlock Holmes'
         src={sherlock}
-        className='absolute  bottom-0  left-1/2  z-20  w-[58%]  -translate-x-1/2
-                   opacity-0  transition-opacity  duration-[2000ms]'
+        className='absolute  bottom-0  left-1/2  z-20  w-[58%]  -translate-x-1/2  opacity-0
+                   transition-opacity  duration-[2000ms]  dark:translate-y-px'
         sizes='(max-width: 639px) 58vw, (max-width: 1023px) 232px, (max-width: 1279px) 18vw, 232px'
         style={{
           opacity: showSherlock ? 1 : 0,
