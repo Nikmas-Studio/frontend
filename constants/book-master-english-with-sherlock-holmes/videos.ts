@@ -1,11 +1,11 @@
 export const TRANSLATION_DEMO_VIDEO_MOBILE_LIGHT_SRC =
-  'https://9lqg3ssfq5ex47ks.public.blob.vercel-storage.com/faststart-sherlock-translation-demo-mobile-light-GBmYVF2CBRVpYBJl81NDxlcLfa83Zx.mp4';
+  'https://9lqg3ssfq5ex47ks.public.blob.vercel-storage.com/faststart-sherlock-translation-demo-mobile-light-agkRWrUjMGT6u2vEUhv9CQmffQSmfF.mp4';
 
 export const TRANSLATION_DEMO_VIDEO_MOBILE_LIGHT_POSTER_SRC =
   'https://9lqg3ssfq5ex47ks.public.blob.vercel-storage.com/sherlock-translation-demo-mobile-light-poster-min-av0nl6GGolyajFgZGGf4NpLTqxpkqu.jpg';
 
 export const TRANSLATION_DEMO_VIDEO_MOBILE_DARK_SRC =
-  'https://9lqg3ssfq5ex47ks.public.blob.vercel-storage.com/faststart-sherlock-translation-demo-mobile-dark-nK1zZLfGcICFvabkCTTNN7TfAvZHAq.mp4';
+  'https://9lqg3ssfq5ex47ks.public.blob.vercel-storage.com/faststart-sherlock-translation-demo-mobile-dark-hecAsGQJd1m2KkTfYyBHCrnGGUePaT.mp4';
 
 export const TRANSLATION_DEMO_VIDEO_MOBILE_DARK_POSTER_SRC =
   'https://9lqg3ssfq5ex47ks.public.blob.vercel-storage.com/sherlock-translation-demo-mobile-dark-poster-min-Q6Us9aH3nfrvCxoXx1NBvbZmMci7sU.jpg';
