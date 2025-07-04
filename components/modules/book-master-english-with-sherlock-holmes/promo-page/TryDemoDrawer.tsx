@@ -17,16 +17,21 @@ import EmailForm from '../../EmailForm';
 function TryDemoDrawer(): ReactElement {
   const { drawerIsOpened } = useTryDemoDrawer();
   const { setDrawerIsOpened } = useTryDemoDrawerDispatch();
-  const outerWrapperRef = useRef<HTMLDivElement | null>(null);
-  const mainContainerRef = useRef<HTMLDivElement | null>(null);
+  const overlayRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (drawerIsOpened) {
-      if (outerWrapperRef.current !== null) {
-        outerWrapperRef.current.style.visibility = 'visible';
+      if (containerRef.current !== null) {
+        containerRef.current.style.visibility = 'visible';
       }
       document.body.style.top = `-${window.scrollY}px`;
       document.body.style.position = 'fixed';
+
+      if (overlayRef.current) {
+        overlayRef.current.style.visibility = '';
+        overlayRef.current.style.opacity = '1';
+      }
     } else {
       const scrollY = document.body.style.top;
       document.body.style.position = '';
@@ -37,30 +42,25 @@ function TryDemoDrawer(): ReactElement {
 
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
-            const globalWrapper = document.getElementById(
-              'sherlock-promo-global-wrapper',
-            );
-            if (globalWrapper) {
-              globalWrapper.style.visibility = '';
-              globalWrapper.style.opacity = '1';
+            if (overlayRef.current) {
+              overlayRef.current.style.opacity = '0';
             }
           });
         });
       }, 300);
 
       setTimeout(() => {
-        if (outerWrapperRef.current !== null) {
-          outerWrapperRef.current.style.visibility = 'hidden';
+        if (containerRef.current !== null) {
+          containerRef.current.style.visibility = 'hidden';
         }
       }, 500);
     }
   }, [drawerIsOpened]);
 
   const overlayClasses = classNames(
-    'fixed  inset-0  z-[9999]  bg-black  transition-opacity  duration-[400ms]',
+    'fixed  inset-0  z-[9999]  bg-white  dark:bg-black  transition-opacity  duration-[400ms]',
     {
-      'opacity-60': drawerIsOpened,
-      'opacity-0  pointer-events-none': !drawerIsOpened,
+      'pointer-events-none': !drawerIsOpened,
     },
   );
 
@@ -74,23 +74,18 @@ function TryDemoDrawer(): ReactElement {
   );
 
   return (
-    <div
-      style={{
-        visibility: 'hidden',
-      }}
-      ref={outerWrapperRef}
-    >
-      <div className={overlayClasses}></div>
-      <div className={containerClasses}>
+    <div>
+      <div
+        style={{
+          visibility: 'hidden',
+          opacity: '0',
+        }}
+        ref={overlayRef}
+        className={overlayClasses}
+      ></div>
+      <div ref={containerRef} className={containerClasses}>
         <div
           onClick={() => {
-            const globalWrapper = document.getElementById(
-              'sherlock-promo-global-wrapper',
-            );
-            if (globalWrapper) {
-              globalWrapper.style.visibility = 'hidden';
-              globalWrapper.style.opacity = '0';
-            }
             setDrawerIsOpened(false);
           }}
           className='absolute  right-5  top-4  size-[21px]  cursor-pointer
@@ -105,9 +100,9 @@ function TryDemoDrawer(): ReactElement {
                        -translate-y-1/2  -rotate-45  bg-black  dark:bg-white'
           ></div>
         </div>
-        <MainContainer ref={mainContainerRef} className='pt-16'>
+        <MainContainer className='pt-16'>
           <Image
-            className='mx-auto  w-1/2  rounded-t-xl'
+            className='mx-auto  w-1/2  rounded-t-lg'
             alt='Master English with Sherlock Holmes cover'
             src={bookCover}
           />

@@ -26,30 +26,25 @@ function BookPromoMasterEnglishWithSherlockHolmes(): ReactElement {
         <TryDemoDrawerProvider>
           <SubscriptionDrawerProvider>
             <div className='pt-[4.5rem]'>
-              <div
-                className='transition-opacity  duration-500'
-                id='sherlock-promo-global-wrapper'
-              >
-                <HeaderDefault />
-                <Intro />
-                <Contents />
-                <TranslationDemo />
-                <MainContainer
-                  className='lg:flex  lg:flex-row  lg:justify-between
+              <HeaderDefault />
+              <Intro />
+              <Contents />
+              <TranslationDemo />
+              <MainContainer
+                className='lg:flex  lg:flex-row  lg:justify-between
                                     lg:gap-20'
-                >
-                  <ReadOnAnyDevice />
-                  <PageNumbersUpdate />
-                </MainContainer>
-                <DarkMode />
-                <BookNavigator />
-                <QuestionsAndAnswers />
-                <DemoOrSubscription />
-                <ThreeDots />
-                <Footer />
-              </div>
-              <TryDemoDrawer />
+              >
+                <ReadOnAnyDevice />
+                <PageNumbersUpdate />
+              </MainContainer>
+              <DarkMode />
+              <BookNavigator />
+              <QuestionsAndAnswers />
+              <DemoOrSubscription />
+              <ThreeDots />
+              <Footer />
             </div>
+            <TryDemoDrawer />
           </SubscriptionDrawerProvider>
         </TryDemoDrawerProvider>
       </BookStateProvider>
