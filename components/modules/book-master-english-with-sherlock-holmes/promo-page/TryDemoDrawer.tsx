@@ -47,7 +47,7 @@ function TryDemoDrawer(): ReactElement {
             }
           });
         });
-      }, 300);
+      }, 200);
 
       setTimeout(() => {
         if (containerRef.current !== null) {
