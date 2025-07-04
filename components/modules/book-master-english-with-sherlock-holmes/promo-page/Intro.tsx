@@ -133,7 +133,7 @@ function Intro(): ReactElement {
                     A&nbsp;British writer and&nbsp;physician
                   </TextNode>
                 </div>
-                <div className='mt-9'>
+                <div className='mt-10  lg:mt-9'>
                   <Image
                     src={publisherPhoto}
                     alt='Publisher: Nick Maslov'

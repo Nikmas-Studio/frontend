@@ -1,11 +1,11 @@
 export const TRANSLATION_DEMO_VIDEO_MOBILE_LIGHT_SRC =
-  'https://9lqg3ssfq5ex47ks.public.blob.vercel-storage.com/sherlock-faststart-translation-demo-mobile-light-f0ulfFhajuwca8Xr7XWwoWhmHOVXMW.mp4';
+  'https://9lqg3ssfq5ex47ks.public.blob.vercel-storage.com/faststart-sherlock-translation-demo-mobile-light-GBmYVF2CBRVpYBJl81NDxlcLfa83Zx.mp4';
 
 export const TRANSLATION_DEMO_VIDEO_MOBILE_LIGHT_POSTER_SRC =
   'https://9lqg3ssfq5ex47ks.public.blob.vercel-storage.com/sherlock-translation-demo-mobile-light-poster-min-av0nl6GGolyajFgZGGf4NpLTqxpkqu.jpg';
 
 export const TRANSLATION_DEMO_VIDEO_MOBILE_DARK_SRC =
-  'https://9lqg3ssfq5ex47ks.public.blob.vercel-storage.com/sherlock-faststart-translation-demo-mobile-dark-VrlyQLpF2P0d5U2gDq3ueFddvYNcuJ.mp4';
+  'https://9lqg3ssfq5ex47ks.public.blob.vercel-storage.com/faststart-sherlock-translation-demo-mobile-dark-nK1zZLfGcICFvabkCTTNN7TfAvZHAq.mp4';
 
 export const TRANSLATION_DEMO_VIDEO_MOBILE_DARK_POSTER_SRC =
   'https://9lqg3ssfq5ex47ks.public.blob.vercel-storage.com/sherlock-translation-demo-mobile-dark-poster-min-Q6Us9aH3nfrvCxoXx1NBvbZmMci7sU.jpg';
@@ -23,13 +23,13 @@ export const TRANSLATION_DEMO_VIDEO_DESKTOP_DARK_POSTER_SRC =
   'https://9lqg3ssfq5ex47ks.public.blob.vercel-storage.com/sherlock-translation-demo-desktop-dark-poster-min-fIENQ9yyPiYtOdgn4JZ1cYAhqWdRhW.jpg';
 
 export const NAVIGATOR_DEMO_VIDEO_MOBILE_LIGHT_SRC =
-  'https://9lqg3ssfq5ex47ks.public.blob.vercel-storage.com/sherlock-faststart-navigation-demo-mobile-light-ZWkWCGjoUrMR1BbUtS5GczPeDH2i2v.mp4';
+  'https://9lqg3ssfq5ex47ks.public.blob.vercel-storage.com/faststart-sherlock-navigation-demo-mobile-light-lNEq03fLMSNsOaTyaQJ0v90gHQcXdb.mp4';
 
 export const NAVIGATOR_DEMO_VIDEO_MOBILE_LIGHT_POSTER_SRC =
   'https://9lqg3ssfq5ex47ks.public.blob.vercel-storage.com/sherlock-navigation-demo-mobile-light-poster-min-wIiAYa2vLCVPz6P9EwyRvxhiuMW4To.jpg';
 
 export const NAVIGATOR_DEMO_VIDEO_MOBILE_DARK_SRC =
-  'https://9lqg3ssfq5ex47ks.public.blob.vercel-storage.com/sherlock-faststart-navigation-demo-mobile-dark-xvZoiU9DYM0DWs7Lqh81Vcr3VhvQBC.mp4';
+  'https://9lqg3ssfq5ex47ks.public.blob.vercel-storage.com/faststart-sherlock-navigation-demo-mobile-dark-aaIQ80Qkk9OXeZfQV83f9t075TOOzF.mp4';
 
 export const NAVIGATOR_DEMO_VIDEO_MOBILE_DARK_POSTER_SRC =
   'https://9lqg3ssfq5ex47ks.public.blob.vercel-storage.com/sherlock-navigation-demo-mobile-dark-poster-min-bmg5TygJUu345Iq7RBmKMjn7bFBPDr.jpg';
