@@ -1,11 +1,16 @@
+'use client';
+
 import BasicTextNode from '@/components/elements/BasicTextNode';
 import H2 from '@/components/elements/H2';
 import MainContainer from '@/components/elements/MainContainer';
 import TextNode from '@/components/elements/TextNode';
+import { useTryDemoDrawerDispatch } from '@/context/book-master-english-with-sherlock-holmes/try-demo-drawer/Context';
 import { libreBaskerville } from '@/fonts';
 import { ReactElement } from 'react';
 
 function DemoOrSubscription(): ReactElement {
+  const { setDrawerIsOpened } = useTryDemoDrawerDispatch();
+
   return (
     <section className='mt-[4.5rem]  lg:mt-24'>
       <MainContainer className='lg:flex  lg:border-y  lg:border-gray-light  dark:lg:border-gray-dark'>
@@ -18,6 +23,7 @@ function DemoOrSubscription(): ReactElement {
             <br /> for free
           </H2>
           <button
+            onClick={() => setDrawerIsOpened(true)}
             className='button  bg-black  text-white
                      hover:bg-blue  dark:bg-white
                      dark:text-black dark:hover:text-white'

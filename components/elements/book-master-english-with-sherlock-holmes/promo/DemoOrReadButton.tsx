@@ -1,6 +1,7 @@
 'use client';
 
 import { BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI } from '@/constants/general';
+import { useTryDemoDrawerDispatch } from '@/context/book-master-english-with-sherlock-holmes/try-demo-drawer/Context';
 import { useBookState } from '@/context/book-state/Context';
 import { BookState } from '@/types/book-state';
 import { CircularProgress } from '@mui/material';
@@ -9,6 +10,7 @@ import { ReactElement } from 'react';
 
 function DemoOrReadButton(): ReactElement {
   const { bookState } = useBookState();
+  const { setDrawerIsOpened } = useTryDemoDrawerDispatch();
 
   const classes = classNames(
     `
@@ -25,8 +27,18 @@ function DemoOrReadButton(): ReactElement {
 
   const href = `/${BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI}/read`;
 
+  function handleClick(): void {
+    if (bookState === BookState.UNBOUGHT) {
+      setDrawerIsOpened(true);
+    }
+  }
+
   return (
-    <a {...(bookState === BookState.BOUGHT && { href })} className={classes}>
+    <a
+      onClick={handleClick}
+      {...(bookState === BookState.BOUGHT && { href })}
+      className={classes}
+    >
       {bookState === BookState.LOADING && (
         <span className='inline-block  size-[20px]  translate-y-[3px]'>
           <CircularProgress className='!size-[20px]  !text-white  dark:!text-black' />
