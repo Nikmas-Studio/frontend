@@ -66,36 +66,38 @@ function TranslationDemoVideo(): ReactElement {
   }, [inView, selectedTheme]);
 
   useEffect(() => {
-    const mobileLightVideo = mobileLightVideoRef.current;
-    const mobileDarkVideo = mobileDarkVideoRef.current;
-    const desktopLightVideo = desktopLightVideoRef.current;
-    const desktopDarkVideo = desktopDarkVideoRef.current;
+    if (inView) {
+      const mobileLightVideo = mobileLightVideoRef.current;
+      const mobileDarkVideo = mobileDarkVideoRef.current;
+      const desktopLightVideo = desktopLightVideoRef.current;
+      const desktopDarkVideo = desktopDarkVideoRef.current;
 
-    if (mobileLightVideo) {
-      if (window.innerWidth < 1024) {
-        mobileLightVideo.load();
-        mobileLightVideo.play().catch(() => {});
+      if (mobileLightVideo) {
+        if (window.innerWidth < 1024) {
+          mobileLightVideo.load();
+          mobileLightVideo.play().catch(() => {});
+        }
+      }
+      if (mobileDarkVideo) {
+        if (window.innerWidth < 1024) {
+          mobileDarkVideo.load();
+          mobileDarkVideo.play().catch(() => {});
+        }
+      }
+      if (desktopLightVideo) {
+        if (window.innerWidth >= 1024) {
+          desktopLightVideo.load();
+          desktopLightVideo.play().catch(() => {});
+        }
+      }
+      if (desktopDarkVideo) {
+        if (window.innerWidth >= 1024) {
+          desktopDarkVideo.load();
+          desktopDarkVideo.play().catch(() => {});
+        }
       }
     }
-    if (mobileDarkVideo) {
-      if (window.innerWidth < 1024) {
-        mobileDarkVideo.load();
-        mobileDarkVideo.play().catch(() => {});
-      }
-    }
-    if (desktopLightVideo) {
-      if (window.innerWidth >= 1024) {
-        desktopLightVideo.load();
-        desktopLightVideo.play().catch(() => {});
-      }
-    }
-    if (desktopDarkVideo) {
-      if (window.innerWidth >= 1024) {
-        desktopDarkVideo.load();
-        desktopDarkVideo.play().catch(() => {});
-      }
-    }
-  }, []);
+  }, [inView]);
 
   const mobileLightVideoRef = useRef<HTMLVideoElement | null>(null);
   const mobileDarkVideoRef = useRef<HTMLVideoElement | null>(null);
