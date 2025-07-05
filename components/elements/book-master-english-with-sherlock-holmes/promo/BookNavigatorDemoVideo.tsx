@@ -11,32 +11,32 @@ import {
 } from '@/constants/book-master-english-with-sherlock-holmes/videos';
 import { useTheme } from '@/context/theme/Context';
 import { lightThemeIsSelected } from '@/utils/check-selected-theme';
-import { ReactElement } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 
 function BookNavigatorDemoVideo(): ReactElement {
   const { selectedTheme } = useTheme();
+  const [videoSrc, setVideoSrc] = useState('');
+  const [posterSrc, setPosterSrc] = useState('');
 
-  let videoSrc = '';
-  let posterSrc = '';
-  if (typeof window !== 'undefined') {
+  useEffect(() => {
     if (lightThemeIsSelected(selectedTheme)) {
       if (window.innerWidth < 1024) {
-        videoSrc = NAVIGATOR_DEMO_VIDEO_MOBILE_LIGHT_SRC;
-        posterSrc = NAVIGATOR_DEMO_VIDEO_MOBILE_LIGHT_POSTER_SRC;
+        setVideoSrc(NAVIGATOR_DEMO_VIDEO_MOBILE_LIGHT_SRC);
+        setPosterSrc(NAVIGATOR_DEMO_VIDEO_MOBILE_LIGHT_POSTER_SRC);
       } else {
-        videoSrc = NAVIGATOR_DEMO_VIDEO_DESKTOP_LIGHT_SRC;
-        posterSrc = NAVIGATOR_DEMO_VIDEO_DESKTOP_LIGHT_POSTER_SRC;
+        setVideoSrc(NAVIGATOR_DEMO_VIDEO_DESKTOP_LIGHT_SRC);
+        setPosterSrc(NAVIGATOR_DEMO_VIDEO_DESKTOP_LIGHT_POSTER_SRC);
       }
     } else {
       if (window.innerWidth < 1024) {
-        videoSrc = NAVIGATOR_DEMO_VIDEO_MOBILE_DARK_SRC;
-        posterSrc = NAVIGATOR_DEMO_VIDEO_MOBILE_DARK_POSTER_SRC;
+        setVideoSrc(NAVIGATOR_DEMO_VIDEO_MOBILE_DARK_SRC);
+        setPosterSrc(NAVIGATOR_DEMO_VIDEO_MOBILE_DARK_POSTER_SRC);
       } else {
-        videoSrc = NAVIGATOR_DEMO_VIDEO_DESKTOP_DARK_SRC;
-        posterSrc = NAVIGATOR_DEMO_VIDEO_DESKTOP_DARK_POSTER_SRC;
+        setVideoSrc(NAVIGATOR_DEMO_VIDEO_DESKTOP_DARK_SRC);
+        setPosterSrc(NAVIGATOR_DEMO_VIDEO_DESKTOP_DARK_POSTER_SRC);
       }
     }
-  }
+  }, [selectedTheme]);
 
   return (
     <>
