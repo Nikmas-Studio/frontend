@@ -70,6 +70,28 @@ function BookNavigatorDemoVideo(): ReactElement {
   const desktopLightVideoRef = useRef<HTMLVideoElement | null>(null);
   const desktopDarkVideoRef = useRef<HTMLVideoElement | null>(null);
 
+  useEffect(() => {
+    if (inView) {
+      const mobileLightVideo = mobileLightVideoRef.current;
+      const mobileDarkVideo = mobileDarkVideoRef.current;
+      const desktopLightVideo = desktopLightVideoRef.current;
+      const desktopDarkVideo = desktopDarkVideoRef.current;
+
+      if (mobileLightVideo) {
+        mobileLightVideo.play().catch(() => {});
+      }
+      if (mobileDarkVideo) {
+        mobileDarkVideo.play().catch(() => {});
+      }
+      if (desktopLightVideo) {
+        desktopLightVideo.play().catch(() => {});
+      }
+      if (desktopDarkVideo) {
+        desktopDarkVideo.play().catch(() => {});
+      }
+    }
+  }, [inView]);
+
   return (
     <div ref={ref}>
       <video
