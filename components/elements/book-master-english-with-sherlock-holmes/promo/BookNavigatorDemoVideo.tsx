@@ -18,7 +18,7 @@ function BookNavigatorDemoVideo(): ReactElement {
   const { selectedTheme } = useTheme();
   const { ref, inView } = useInView({
     triggerOnce: true,
-    rootMargin: '1000px 0px',
+    rootMargin: '2000px 0px',
     threshold: 0.1,
   });
 
@@ -65,39 +65,39 @@ function BookNavigatorDemoVideo(): ReactElement {
     };
   }, [inView, selectedTheme]);
 
-  useEffect(() => {
-    if (inView) {
-      const mobileLightVideo = mobileLightVideoRef.current;
-      const mobileDarkVideo = mobileDarkVideoRef.current;
-      const desktopLightVideo = desktopLightVideoRef.current;
-      const desktopDarkVideo = desktopDarkVideoRef.current;
+  // useEffect(() => {
+  //   if (inView) {
+  //     const mobileLightVideo = mobileLightVideoRef.current;
+  //     const mobileDarkVideo = mobileDarkVideoRef.current;
+  //     const desktopLightVideo = desktopLightVideoRef.current;
+  //     const desktopDarkVideo = desktopDarkVideoRef.current;
 
-      if (mobileLightVideo) {
-        if (window.innerWidth < 1024) {
-          mobileLightVideo.load();
-          mobileLightVideo.play().catch(() => {});
-        }
-      }
-      if (mobileDarkVideo) {
-        if (window.innerWidth < 1024) {
-          mobileDarkVideo.load();
-          mobileDarkVideo.play().catch(() => {});
-        }
-      }
-      if (desktopLightVideo) {
-        if (window.innerWidth >= 1024) {
-          desktopLightVideo.load();
-          desktopLightVideo.play().catch(() => {});
-        }
-      }
-      if (desktopDarkVideo) {
-        if (window.innerWidth >= 1024) {
-          desktopDarkVideo.load();
-          desktopDarkVideo.play().catch(() => {});
-        }
-      }
-    }
-  }, [inView]);
+  //     if (mobileLightVideo) {
+  //       if (window.innerWidth < 1024) {
+  //         mobileLightVideo.load();
+  //         mobileLightVideo.play().catch(() => {});
+  //       }
+  //     }
+  //     if (mobileDarkVideo) {
+  //       if (window.innerWidth < 1024) {
+  //         mobileDarkVideo.load();
+  //         mobileDarkVideo.play().catch(() => {});
+  //       }
+  //     }
+  //     if (desktopLightVideo) {
+  //       if (window.innerWidth >= 1024) {
+  //         desktopLightVideo.load();
+  //         desktopLightVideo.play().catch(() => {});
+  //       }
+  //     }
+  //     if (desktopDarkVideo) {
+  //       if (window.innerWidth >= 1024) {
+  //         desktopDarkVideo.load();
+  //         desktopDarkVideo.play().catch(() => {});
+  //       }
+  //     }
+  //   }
+  // }, [inView]);
 
   const mobileLightVideoRef = useRef<HTMLVideoElement | null>(null);
   const mobileDarkVideoRef = useRef<HTMLVideoElement | null>(null);
@@ -115,7 +115,7 @@ function BookNavigatorDemoVideo(): ReactElement {
         loop
         width={886}
         height={1526}
-        preload='none'
+        preload='metadata'
         poster={NAVIGATOR_DEMO_VIDEO_MOBILE_LIGHT_POSTER_SRC}
       >
         <source src={NAVIGATOR_DEMO_VIDEO_MOBILE_LIGHT_SRC} type='video/mp4' />
@@ -131,7 +131,7 @@ function BookNavigatorDemoVideo(): ReactElement {
         loop
         width={886}
         height={1526}
-        preload='none'
+        preload='metadata'
         poster={NAVIGATOR_DEMO_VIDEO_MOBILE_DARK_POSTER_SRC}
       >
         <source src={NAVIGATOR_DEMO_VIDEO_MOBILE_DARK_SRC} type='video/mp4' />
@@ -147,7 +147,7 @@ function BookNavigatorDemoVideo(): ReactElement {
         loop
         width={2992}
         height={1620}
-        preload='none'
+        preload='metadata'
         poster={NAVIGATOR_DEMO_VIDEO_DESKTOP_LIGHT_POSTER_SRC}
       >
         <source src={NAVIGATOR_DEMO_VIDEO_DESKTOP_LIGHT_SRC} type='video/mp4' />
@@ -162,7 +162,7 @@ function BookNavigatorDemoVideo(): ReactElement {
         loop
         width={2992}
         height={1620}
-        preload='none'
+        preload='metadata'
         poster={NAVIGATOR_DEMO_VIDEO_DESKTOP_DARK_POSTER_SRC}
       >
         <source src={NAVIGATOR_DEMO_VIDEO_DESKTOP_DARK_SRC} type='video/mp4' />
