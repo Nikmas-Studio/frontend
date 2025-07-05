@@ -18,7 +18,7 @@ function TranslationDemoVideo(): ReactElement {
   const { selectedTheme } = useTheme();
   const { ref, inView } = useInView({
     triggerOnce: true,
-    rootMargin: '1000px 0px',
+    rootMargin: '300px 0px',
   });
 
   useEffect(() => {
