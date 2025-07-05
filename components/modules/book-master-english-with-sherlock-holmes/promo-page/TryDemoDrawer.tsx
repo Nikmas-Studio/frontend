@@ -7,6 +7,7 @@ import {
   useTryDemoDrawerDispatch,
 } from '@/context/book-master-english-with-sherlock-holmes/try-demo-drawer/Context';
 import { libreBaskerville, merriweather } from '@/fonts';
+import useOutsideClick from '@/hooks/use-outside-click';
 import bookCover from '@/public/images/book-cover-master-english-with-sherlock-holmes.jpg';
 import classNames from 'classnames';
 import Image from 'next/image';
@@ -25,25 +26,42 @@ function TryDemoDrawer(): ReactElement {
       if (containerRef.current !== null) {
         containerRef.current.style.visibility = 'visible';
       }
-      document.body.style.top = `-${window.scrollY}px`;
-      document.body.style.position = 'fixed';
+
+      if (window.innerWidth < 1024) {
+        document.body.style.top = `-${window.scrollY}px`;
+        document.body.style.position = 'fixed';
+      }
 
       if (overlayRef.current) {
-        overlayRef.current.style.visibility = '';
-        overlayRef.current.style.opacity = '1';
+        if (window.innerWidth < 1024) {
+          overlayRef.current.style.visibility = '';
+          overlayRef.current.style.opacity = '1';
+        } else {
+          overlayRef.current.style.visibility = '';
+          overlayRef.current.style.opacity = '';
+        }
       }
     } else {
-      const scrollY = document.body.style.top;
-      document.body.style.position = '';
-      document.body.style.top = '';
+      let scrollY = '';
+      if (window.innerWidth < 1024) {
+        scrollY = document.body.style.top;
+        document.body.style.position = '';
+        document.body.style.top = '';
+      }
 
       setTimeout(() => {
-        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+        if (window.innerWidth < 1024) {
+          window.scrollTo(0, parseInt(scrollY || '0') * -1);
+        }
 
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
             if (overlayRef.current) {
-              overlayRef.current.style.opacity = '0';
+              if (window.innerWidth < 1024) {
+                overlayRef.current.style.opacity = '0';
+              } else {
+                overlayRef.current.style.opacity = '';
+              }
             }
           });
         });
@@ -57,16 +75,61 @@ function TryDemoDrawer(): ReactElement {
     }
   }, [drawerIsOpened]);
 
+  useEffect(() => {
+    function handleResize(): void {
+      if (drawerIsOpened) {
+        if (window.innerWidth >= 1024) {
+          if (overlayRef.current) {
+            overlayRef.current.style.opacity = '';
+          }
+
+          if (document.body.style.position === 'fixed') {
+            const scrollY = document.body.style.top;
+            document.body.style.position = '';
+            document.body.style.top = '';
+            window.scrollTo(0, parseInt(scrollY || '0') * -1);
+          }
+        } else {
+          if (document.body.style.position !== 'fixed') {
+            document.body.style.top = `-${window.scrollY}px`;
+            document.body.style.position = 'fixed';
+          }
+        }
+      } else {
+        if (window.innerWidth < 1024) {
+          if (overlayRef.current) {
+            overlayRef.current.style.opacity = '0';
+          }
+        }
+      }
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [drawerIsOpened]);
+
+  useOutsideClick([containerRef], () => {
+    if (drawerIsOpened) {
+      setDrawerIsOpened(false);
+    }
+  });
+
   const overlayClasses = classNames(
-    'fixed  inset-0  z-[9999]  bg-white  dark:bg-black  transition-opacity  duration-[400ms]',
+    `fixed  inset-0  z-[9999]  bg-white  dark:bg-black  lg:bg-black  
+     dark:lg:bg-black  transition-opacity  duration-[400ms]`,
     {
-      'pointer-events-none': !drawerIsOpened,
+      'lg:opacity-20': drawerIsOpened,
+      'lg:opacity-0  pointer-events-none': !drawerIsOpened,
     },
   );
 
   const containerClasses = classNames(
-    `fixed  h-dvh  inset-0  z-[99999]  w-screen  
-     transition-all  duration-[400ms]  bg-white  dark:bg-black`,
+    `fixed  h-dvh  inset-0  z-[99999]  w-screen  overflow-y-scroll  overflow-x-hidden
+     transition-all  duration-[400ms]  bg-white  lg:h-auto  lg:inset-auto
+     lg:bottom-0  lg:left-0  lg:right-0  dark:lg:border-t  dark:lg:border-gray-dark  dark:bg-black`,
     {
       'translate-y-0': drawerIsOpened,
       'translate-y-[110dvh]': !drawerIsOpened,
@@ -89,7 +152,7 @@ function TryDemoDrawer(): ReactElement {
             setDrawerIsOpened(false);
           }}
           className='absolute  right-5  top-4  size-[21px]  cursor-pointer
-                     sm:hidden'
+                     lg:hidden'
         >
           <div
             className='absolute  left-1/2  top-1/2  h-[2px]  w-[27px]  -translate-x-1/2
@@ -100,45 +163,57 @@ function TryDemoDrawer(): ReactElement {
                        -translate-y-1/2  -rotate-45  bg-black  dark:bg-white'
           ></div>
         </div>
-        <MainContainer className='pt-16'>
-          <Image
-            className='mx-auto  w-1/2  rounded-t-lg'
-            alt='Master English with Sherlock Holmes cover'
-            src={bookCover}
-          />
-          <hr
-            className='w-full  border-t  border-gray-light
+        <MainContainer
+          className='pb-24  pt-16  lg:flex  lg:flex-row-reverse  
+                     lg:justify-between  lg:pb-14  lg:pt-7'
+        >
+          <div>
+            <Image
+              className='mx-auto  w-1/2  max-w-64  rounded-t-lg  
+                         lg:w-44  lg:rounded-b-lg'
+              alt='Master English with Sherlock Holmes cover'
+              src={bookCover}
+            />
+            <hr
+              className='w-full  border-t  border-gray-light  lg:hidden
                      dark:border-gray-dark'
-          />
-          <H2
-            className={`mb-6  mt-7  ${libreBaskerville.className}  !leading-snug`}
-          >
-            Try demo of the book
-            <br /> for free
-          </H2>
+            />
+          </div>
 
-          <EmailForm
-            requestCallback={async (email: string, token: string) => {
-              // await axios.post(LOGIN_ROUTE, {
-              //   email,
-              //   captchaToken: token,
-              //   readerName: process.env.NEXT_PUBLIC_HONEYPOT_KEY,
-              // });
-              console.log(email, token);
-            }}
-            label='Get link to demo by email:'
-            inputId='demo-email'
-            inputName='email'
-            labelClasses={`${merriweather.className}  !font-normal`}
-            inputClasses={`border-[#CFCFCF]  dark:border-gray-dark-lighter2  ${merriweather.className}`}
-            buttonClasses='border-[#CFCFCF]  dark:border-gray-dark-lighter2'
-            inputFocusedClasses='!border-[#000000]  dark:!border-[#FFFFFF]'
-            buttonInputFocusedClasses='!border-[#000000]  dark:!border-[#FFFFFF]'
-            buttonInputFilledClasses='bg-black  dark:bg-white'
-            buttonInputEmptyClasses='bg-[#CFCFCF]  dark:bg-gray-dark-lighter2'
-            changeArrowColorInDarkMode
-            spinnerIconsClasses='dark:!text-black'
-          />
+          <div>
+            <H2
+              className={`mb-6  mt-7  ${libreBaskerville.className}  !leading-snug
+                          lg:mt-0`}
+            >
+              Try demo of the book
+              <br /> for free
+            </H2>
+
+            <div className='max-w-[400px]'>
+              <EmailForm
+                requestCallback={async (email: string, token: string) => {
+                  // await axios.post(LOGIN_ROUTE, {
+                  //   email,
+                  //   captchaToken: token,
+                  //   readerName: process.env.NEXT_PUBLIC_HONEYPOT_KEY,
+                  // });
+                  console.log(email, token);
+                }}
+                label='Get the demo link by email:'
+                inputId='demo-email'
+                inputName='email'
+                labelClasses={`${merriweather.className}  !font-normal`}
+                inputClasses={`border-[#CFCFCF]  dark:border-gray-dark-lighter2  ${merriweather.className}`}
+                buttonClasses='border-[#CFCFCF]  dark:border-gray-dark-lighter2'
+                inputFocusedClasses='!border-[#000000]  dark:!border-[#FFFFFF]'
+                buttonInputFocusedClasses='!border-[#000000]  dark:!border-[#FFFFFF]'
+                buttonInputFilledClasses='bg-black  dark:bg-white'
+                buttonInputEmptyClasses='bg-[#CFCFCF]  dark:bg-gray-dark-lighter2'
+                changeArrowColorInDarkMode
+                spinnerIconsClasses='dark:!text-black'
+              />
+            </div>
+          </div>
         </MainContainer>
       </div>
     </div>
