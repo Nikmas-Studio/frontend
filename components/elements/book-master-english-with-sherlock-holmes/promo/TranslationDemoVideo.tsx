@@ -19,21 +19,24 @@ function TranslationDemoVideo(): ReactElement {
 
   let videoSrc = '';
   let posterSrc = '';
-  if (lightThemeIsSelected(selectedTheme)) {
-    if (window.innerWidth < 1024) {
-      videoSrc = TRANSLATION_DEMO_VIDEO_MOBILE_LIGHT_SRC;
-      posterSrc = TRANSLATION_DEMO_VIDEO_MOBILE_LIGHT_POSTER_SRC;
+
+  if (typeof window !== 'undefined') {
+    if (lightThemeIsSelected(selectedTheme)) {
+      if (window.innerWidth < 1024) {
+        videoSrc = TRANSLATION_DEMO_VIDEO_MOBILE_LIGHT_SRC;
+        posterSrc = TRANSLATION_DEMO_VIDEO_MOBILE_LIGHT_POSTER_SRC;
+      } else {
+        videoSrc = TRANSLATION_DEMO_VIDEO_DESKTOP_LIGHT_SRC;
+        posterSrc = TRANSLATION_DEMO_VIDEO_DESKTOP_LIGHT_POSTER_SRC;
+      }
     } else {
-      videoSrc = TRANSLATION_DEMO_VIDEO_DESKTOP_LIGHT_SRC;
-      posterSrc = TRANSLATION_DEMO_VIDEO_DESKTOP_LIGHT_POSTER_SRC;
-    }
-  } else {
-    if (window.innerWidth < 1024) {
-      videoSrc = TRANSLATION_DEMO_VIDEO_MOBILE_DARK_SRC;
-      posterSrc = TRANSLATION_DEMO_VIDEO_MOBILE_DARK_POSTER_SRC;
-    } else {
-      videoSrc = TRANSLATION_DEMO_VIDEO_DESKTOP_DARK_SRC;
-      posterSrc = TRANSLATION_DEMO_VIDEO_DESKTOP_DARK_POSTER_SRC;
+      if (window.innerWidth < 1024) {
+        videoSrc = TRANSLATION_DEMO_VIDEO_MOBILE_DARK_SRC;
+        posterSrc = TRANSLATION_DEMO_VIDEO_MOBILE_DARK_POSTER_SRC;
+      } else {
+        videoSrc = TRANSLATION_DEMO_VIDEO_DESKTOP_DARK_SRC;
+        posterSrc = TRANSLATION_DEMO_VIDEO_DESKTOP_DARK_POSTER_SRC;
+      }
     }
   }
 
