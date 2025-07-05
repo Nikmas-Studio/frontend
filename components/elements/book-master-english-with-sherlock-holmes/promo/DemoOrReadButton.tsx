@@ -1,7 +1,7 @@
 'use client';
 
 import { BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI } from '@/constants/general';
-import { useTryDemoDrawerDispatch } from '@/context/book-master-english-with-sherlock-holmes/try-demo-drawer/Context';
+import { usePromoDrawerDispatch } from '@/context/book-master-english-with-sherlock-holmes/promo-drawer/Context';
 import { useBookState } from '@/context/book-state/Context';
 import { BookState } from '@/types/book-state';
 import { CircularProgress } from '@mui/material';
@@ -10,7 +10,7 @@ import { ReactElement } from 'react';
 
 function DemoOrReadButton(): ReactElement {
   const { bookState } = useBookState();
-  const { setDrawerIsOpened } = useTryDemoDrawerDispatch();
+  const { setDrawerIsOpened } = usePromoDrawerDispatch();
 
   const classes = classNames(
     `
@@ -29,7 +29,7 @@ function DemoOrReadButton(): ReactElement {
 
   function handleClick(): void {
     if (bookState === BookState.UNBOUGHT) {
-      setDrawerIsOpened(true);
+      setDrawerIsOpened('demo');
     }
   }
 

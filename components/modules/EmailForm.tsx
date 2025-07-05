@@ -196,6 +196,7 @@ function EmailForm({
     reloadIconClasses,
     {
       'scale-0': formState !== FormState.RELEASED,
+      'group-hover:rotate-90': formState === FormState.RELEASED,
     },
   );
 

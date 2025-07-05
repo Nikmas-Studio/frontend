@@ -4,12 +4,12 @@ import BasicTextNode from '@/components/elements/BasicTextNode';
 import H2 from '@/components/elements/H2';
 import MainContainer from '@/components/elements/MainContainer';
 import TextNode from '@/components/elements/TextNode';
-import { useTryDemoDrawerDispatch } from '@/context/book-master-english-with-sherlock-holmes/try-demo-drawer/Context';
+import { usePromoDrawerDispatch } from '@/context/book-master-english-with-sherlock-holmes/promo-drawer/Context';
 import { libreBaskerville } from '@/fonts';
 import { ReactElement } from 'react';
 
 function DemoOrSubscription(): ReactElement {
-  const { setDrawerIsOpened } = useTryDemoDrawerDispatch();
+  const { setDrawerIsOpened } = usePromoDrawerDispatch();
 
   return (
     <section className='mt-[4.5rem]  lg:mt-24'>
@@ -23,7 +23,7 @@ function DemoOrSubscription(): ReactElement {
             <br /> for free
           </H2>
           <button
-            onClick={() => setDrawerIsOpened(true)}
+            onClick={() => setDrawerIsOpened('demo')}
             className='button  bg-black  text-white
                      hover:bg-blue  dark:bg-white
                      dark:text-black dark:hover:text-white'

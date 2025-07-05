@@ -1,5 +1,6 @@
 'use client';
 
+import { usePromoDrawerDispatch } from '@/context/book-master-english-with-sherlock-holmes/promo-drawer/Context';
 import classNames from 'classnames';
 import { ReactElement } from 'react';
 
@@ -10,7 +11,7 @@ interface SubscriptionButtonProps {
 function SubscriptionButton({
   className,
 }: SubscriptionButtonProps): ReactElement {
-  // const { setSubscriptionModalIsOpened } = useSubscriptionModalDispatch();
+  const { setDrawerIsOpened } = usePromoDrawerDispatch();
 
   const classes = classNames(
     `button  bg-subscription  text-white
@@ -20,7 +21,7 @@ function SubscriptionButton({
 
   return (
     <button
-      // onClick={() => setSubscriptionModalIsOpened(true)}
+      onClick={() => setDrawerIsOpened('subscription')}
       className={classes}
     >
       Subscription
