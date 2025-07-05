@@ -1,16 +1,7 @@
+import TranslationDemoVideo from '@/components/elements/book-master-english-with-sherlock-holmes/promo/TranslationDemoVideo';
 import H2 from '@/components/elements/H2';
 import MainContainer from '@/components/elements/MainContainer';
 import TextNode from '@/components/elements/TextNode';
-import {
-  TRANSLATION_DEMO_VIDEO_DESKTOP_DARK_POSTER_SRC,
-  TRANSLATION_DEMO_VIDEO_DESKTOP_DARK_SRC,
-  TRANSLATION_DEMO_VIDEO_DESKTOP_LIGHT_POSTER_SRC,
-  TRANSLATION_DEMO_VIDEO_DESKTOP_LIGHT_SRC,
-  TRANSLATION_DEMO_VIDEO_MOBILE_DARK_POSTER_SRC,
-  TRANSLATION_DEMO_VIDEO_MOBILE_DARK_SRC,
-  TRANSLATION_DEMO_VIDEO_MOBILE_LIGHT_POSTER_SRC,
-  TRANSLATION_DEMO_VIDEO_MOBILE_LIGHT_SRC,
-} from '@/constants/book-master-english-with-sherlock-holmes/videos';
 import { libreBaskerville } from '@/fonts';
 import { ReactElement } from 'react';
 
@@ -30,7 +21,8 @@ function TranslationDemo(): ReactElement {
           text&nbsp;fragment&nbsp;— and see the instant pop&#8209;up with the
           meaning:
         </TextNode>
-        <video
+        <TranslationDemoVideo />
+        {/* <video
           className='pointer-events-none  w-full  max-w-[500px]  rounded-[14px]  border  
                      border-gray-light  lg:hidden  lg:rounded-[20px]  dark:hidden'
           autoPlay
@@ -103,7 +95,7 @@ function TranslationDemo(): ReactElement {
             type='video/mp4'
           />
           Your browser does not support the video tag.
-        </video>
+        </video> */}
       </MainContainer>
     </section>
   );
