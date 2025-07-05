@@ -1,5 +1,3 @@
-'use client';
-
 import {
   NAVIGATOR_DEMO_VIDEO_DESKTOP_DARK_POSTER_SRC,
   NAVIGATOR_DEMO_VIDEO_DESKTOP_DARK_SRC,
@@ -13,83 +11,6 @@ import {
 import { ReactElement } from 'react';
 
 function BookNavigatorDemoVideo(): ReactElement {
-  // const { selectedTheme } = useTheme();
-  // const { ref, inView } = useInView({
-  //   triggerOnce: true,
-  //   rootMargin: '2000px 0px',
-  //   threshold: 0.1,
-  // });
-
-  // useEffect(() => {
-  //   function playActiveVideo(): void {
-  //     if (inView) {
-  //       const mobileLightVideo = mobileLightVideoRef.current;
-  //       const mobileDarkVideo = mobileDarkVideoRef.current;
-  //       const desktopLightVideo = desktopLightVideoRef.current;
-  //       const desktopDarkVideo = desktopDarkVideoRef.current;
-
-  //       if (mobileLightVideo) {
-  //         const style = window.getComputedStyle(mobileLightVideo);
-  //         if (style.display !== 'none') {
-  //           mobileLightVideo.play().catch(() => {});
-  //         }
-  //       }
-  //       if (mobileDarkVideo) {
-  //         const style = window.getComputedStyle(mobileDarkVideo);
-  //         if (style.display !== 'none') {
-  //           mobileDarkVideo.play().catch(() => {});
-  //         }
-  //       }
-  //       if (desktopLightVideo) {
-  //         const style = window.getComputedStyle(desktopLightVideo);
-  //         if (style.display !== 'none') {
-  //           desktopLightVideo.play().catch(() => {});
-  //         }
-  //       }
-  //       if (desktopDarkVideo) {
-  //         const style = window.getComputedStyle(desktopDarkVideo);
-  //         if (style.display !== 'none') {
-  //           desktopDarkVideo.play().catch(() => {});
-  //         }
-  //       }
-  //     }
-  //   }
-
-  //   playActiveVideo();
-
-  //   window.addEventListener('resize', playActiveVideo);
-  //   return () => {
-  //     window.removeEventListener('resize', playActiveVideo);
-  //   };
-  // }, [inView, selectedTheme]);
-
-  // const mobileLightVideoRef = useRef<HTMLVideoElement | null>(null);
-  // const mobileDarkVideoRef = useRef<HTMLVideoElement | null>(null);
-  // const desktopLightVideoRef = useRef<HTMLVideoElement | null>(null);
-  // const desktopDarkVideoRef = useRef<HTMLVideoElement | null>(null);
-
-  // useEffect(() => {
-  //   if (inView) {
-  //     const mobileLightVideo = mobileLightVideoRef.current;
-  //     const mobileDarkVideo = mobileDarkVideoRef.current;
-  //     const desktopLightVideo = desktopLightVideoRef.current;
-  //     const desktopDarkVideo = desktopDarkVideoRef.current;
-
-  //     if (mobileLightVideo) {
-  //       mobileLightVideo.play().catch(() => {});
-  //     }
-  //     if (mobileDarkVideo) {
-  //       mobileDarkVideo.play().catch(() => {});
-  //     }
-  //     if (desktopLightVideo) {
-  //       desktopLightVideo.play().catch(() => {});
-  //     }
-  //     if (desktopDarkVideo) {
-  //       desktopDarkVideo.play().catch(() => {});
-  //     }
-  //   }
-  // }, [inView]);
-
   return (
     <div>
       <video
