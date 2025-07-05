@@ -1,7 +1,16 @@
-import BookNavigatorDemoVideo from '@/components/elements/book-master-english-with-sherlock-holmes/promo/BookNavigatorDemoVideo';
 import H2 from '@/components/elements/H2';
 import MainContainer from '@/components/elements/MainContainer';
 import TextNode from '@/components/elements/TextNode';
+import {
+  NAVIGATOR_DEMO_VIDEO_DESKTOP_DARK_POSTER_SRC,
+  NAVIGATOR_DEMO_VIDEO_DESKTOP_DARK_SRC,
+  NAVIGATOR_DEMO_VIDEO_DESKTOP_LIGHT_POSTER_SRC,
+  NAVIGATOR_DEMO_VIDEO_DESKTOP_LIGHT_SRC,
+  NAVIGATOR_DEMO_VIDEO_MOBILE_DARK_POSTER_SRC,
+  NAVIGATOR_DEMO_VIDEO_MOBILE_DARK_SRC,
+  NAVIGATOR_DEMO_VIDEO_MOBILE_LIGHT_POSTER_SRC,
+  NAVIGATOR_DEMO_VIDEO_MOBILE_LIGHT_SRC,
+} from '@/constants/book-master-english-with-sherlock-holmes/videos';
 import { libreBaskerville } from '@/fonts';
 import { ReactElement } from 'react';
 
@@ -17,8 +26,7 @@ function BookNavigator(): ReactElement {
         <TextNode className='lg:mb-6'>
           Explore the book’s structure and find the pages you need:
         </TextNode>
-        <BookNavigatorDemoVideo />
-        {/* <video
+        <video
           className='pointer-events-none  w-full  max-w-[500px]  rounded-[14px]  border  
                      border-gray-light  lg:hidden  lg:rounded-[20px]  dark:hidden'
           autoPlay
@@ -88,7 +96,7 @@ function BookNavigator(): ReactElement {
             type='video/mp4'
           />
           Your browser does not support the video tag.
-        </video> */}
+        </video>
       </MainContainer>
     </section>
   );
