@@ -79,6 +79,10 @@ function TranslationDemoVideo(): ReactElement {
 
   useEffect(() => {
     function handleVideoPlay(): void {
+      if (!videoIsInView) {
+        return;
+      }
+
       if (translationDemoVideoMobileLightRef.current) {
         translationDemoVideoMobileLightRef.current.play().catch(() => {});
       }
@@ -101,10 +105,14 @@ function TranslationDemoVideo(): ReactElement {
     return () => {
       window.removeEventListener('resize', handleVideoPlay);
     };
-  }, []);
+  }, [videoIsInView]);
 
   useEffect(() => {
     function handleVideoPlay(): void {
+      if (!videoIsInView) {
+        return;
+      }
+
       if (translationDemoVideoMobileLightRef.current) {
         translationDemoVideoMobileLightRef.current.play().catch(() => {});
       }
@@ -123,7 +131,7 @@ function TranslationDemoVideo(): ReactElement {
     }
 
     handleVideoPlay();
-  }, [selectedTheme]);
+  }, [selectedTheme, videoIsInView]);
 
   return (
     <div ref={observerRef}>

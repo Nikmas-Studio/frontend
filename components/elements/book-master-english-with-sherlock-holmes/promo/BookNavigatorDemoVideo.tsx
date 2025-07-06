@@ -76,6 +76,10 @@ function BookNavigatorDemoVideo(): ReactElement {
 
   useEffect(() => {
     function handleVideoPlay(): void {
+      if (!videoIsInView) {
+        return;
+      }
+
       if (navigatorDemoVideoMobileLightRef.current) {
         navigatorDemoVideoMobileLightRef.current.play().catch(() => {});
       }
@@ -98,10 +102,14 @@ function BookNavigatorDemoVideo(): ReactElement {
     return () => {
       window.removeEventListener('resize', handleVideoPlay);
     };
-  }, []);
+  }, [videoIsInView]);
 
   useEffect(() => {
     function handleVideoPlay(): void {
+      if (!videoIsInView) {
+        return;
+      }
+
       if (navigatorDemoVideoMobileLightRef.current) {
         navigatorDemoVideoMobileLightRef.current.play().catch(() => {});
       }
@@ -120,7 +128,7 @@ function BookNavigatorDemoVideo(): ReactElement {
     }
 
     handleVideoPlay();
-  }, [selectedTheme]);
+  }, [selectedTheme, videoIsInView]);
   return (
     <div ref={observerRef}>
       <div
