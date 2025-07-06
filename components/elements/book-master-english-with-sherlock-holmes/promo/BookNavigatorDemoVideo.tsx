@@ -21,7 +21,7 @@ function BookNavigatorDemoVideo(): ReactElement {
 
   const [observerRef, videoIsInView] = useInView({
     triggerOnce: true,
-    rootMargin: '12000px 0px',
+    rootMargin: '2000px 0px',
   });
 
   const [
