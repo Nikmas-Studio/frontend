@@ -16,7 +16,7 @@ import {
   useSubscriptionModalDispatch,
 } from '@/context/subscription-modal/Context';
 import useOutsideClick from '@/hooks/use-outside-click';
-import { BookState } from '@/types/book-state';
+import { bookIsBought, BookState } from '@/types/book-state';
 import { CircularProgress } from '@mui/material';
 import axios from 'axios';
 import classNames from 'classnames';
@@ -192,11 +192,11 @@ function SubscriptionModal({
         {bookState !== BookState.LOADING && sessionWasLoaded.current && (
           <>
             <H2 className='mb-8  !text-subscription'>
-              {bookState === BookState.BOUGHT
+              {bookIsBought(bookState)
                 ? 'You have lifetime access'
                 : 'Premium Preorder'}
             </H2>
-            {bookState !== BookState.BOUGHT && (
+            {bookIsBought(bookState) && (
               <TextNode className='max-w-[25.4rem]'>
                 The&nbsp;book is&nbsp;in&nbsp;the&nbsp;early stages, and this is
                 the&nbsp;opportunity for&nbsp;you to&nbsp;both benefit
@@ -234,7 +234,7 @@ function SubscriptionModal({
               <li>
                 <TextNode className='!mb-0  max-w-[27rem]'>
                   <strong className='font-black'>Investor badge.</strong>{' '}
-                  {bookState === BookState.BOUGHT && (
+                  {bookIsBought(bookState) && (
                     <span>
                       You provided the&nbsp;essential initial boost, directly
                       accelerating the&nbsp;release of&nbsp;new book sections
@@ -244,7 +244,7 @@ function SubscriptionModal({
                       books.
                     </span>
                   )}
-                  {bookState !== BookState.BOUGHT && (
+                  {bookIsBought(bookState) && (
                     <span>
                       By&nbsp;preordering the&nbsp;book, you&nbsp;become
                       the&nbsp;essential driving force, directly accelerating
@@ -265,7 +265,7 @@ function SubscriptionModal({
                 </TextUl> */}
               </li>
             </ul>
-            {bookState === BookState.BOUGHT && (
+            {bookIsBought(bookState) && (
               <BuddhaSvg
                 className='buddha-firefox-shadow  mx-auto  mb-20  mt-11  w-[70%]  
                            max-w-[270px]  
@@ -280,7 +280,7 @@ function SubscriptionModal({
                            dark:md:[filter:drop-shadow(0_0_250px_rgba(255,255,255,0.68))]'
               />
             )}
-            {bookState !== BookState.BOUGHT && (
+            {bookIsBought(bookState) && (
               <>
                 <BasicTextNode
                   className='mt-9  text-center  text-4xl 

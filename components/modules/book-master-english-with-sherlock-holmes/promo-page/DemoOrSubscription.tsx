@@ -24,8 +24,9 @@ function DemoOrSubscription(): ReactElement {
           </H2>
           <button
             onClick={() => setDrawerIsOpened('demo')}
-            className='button  bg-black  text-white
-                     hover:bg-blue  dark:bg-white
+            className='button  !border-0  bg-black
+                     text-white  !outline-none
+                      !ring-0  hover:bg-blue  dark:bg-white
                      dark:text-black dark:hover:text-white'
           >
             Try demo

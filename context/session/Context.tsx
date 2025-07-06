@@ -66,10 +66,10 @@ export function useSession(): SessionContextProps {
 
 export function useSessionDispatch(): SessionDispatchContextProps {
   const context = useContext(SessionDispatchContext);
-  
+
   if (!context) {
     throw new Error('useSessionDispatch must be used within a SessionProvider');
   }
-  
+
   return context;
 }

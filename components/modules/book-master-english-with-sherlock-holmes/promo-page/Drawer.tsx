@@ -4,16 +4,22 @@ import BasicTextNode from '@/components/elements/BasicTextNode';
 import H2 from '@/components/elements/H2';
 import MainContainer from '@/components/elements/MainContainer';
 import TextNode from '@/components/elements/TextNode';
+import { BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI } from '@/constants/general';
 import {
   usePromoDrawer,
   usePromoDrawerDispatch,
 } from '@/context/book-master-english-with-sherlock-holmes/promo-drawer/Context';
+import { useBookState } from '@/context/book-state/Context';
+import { useSession } from '@/context/session/Context';
 import { libreBaskerville, merriweather } from '@/fonts';
 import useOutsideClick from '@/hooks/use-outside-click';
 import bookCover from '@/public/images/book-cover-master-english-with-sherlock-holmes.jpg';
+import { BookState } from '@/types/book-state';
+import { purchaseBook } from '@/utils/purchase-book-route';
+import CircularProgress from '@mui/material/CircularProgress';
 import classNames from 'classnames';
 import Image from 'next/image';
-import { ReactElement, useEffect, useRef } from 'react';
+import { ReactElement, useEffect, useRef, useState } from 'react';
 import { setTimeout } from 'timers';
 import EmailForm from '../../EmailForm';
 
@@ -23,6 +29,15 @@ function PromoDrawer(): ReactElement {
   const { setDrawerIsOpened } = usePromoDrawerDispatch();
   const overlayRef = useRef<HTMLDivElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
+
+  const { session, loading: sessionStateIsLoading } = useSession();
+  // const session = 'loaded';
+  // const sessionStateIsLoading = false;
+
+  const { bookState } = useBookState();
+  const [paymentPageIsGenerating, setPaymentPageIsGenerating] = useState(false);
+  const [paymentPageGenerationError, setPaymentPageGenerationError] =
+    useState(false);
 
   useEffect(() => {
     if (drawerIsOpened !== null) {
@@ -77,6 +92,21 @@ function PromoDrawer(): ReactElement {
       }, 500);
     }
   }, [drawerIsOpened]);
+
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent): void {
+      if (event.key === 'Escape') {
+        if (drawerIsOpened !== null) {
+          setDrawerIsOpened(null);
+        }
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [drawerIsOpened, setDrawerIsOpened]);
 
   useEffect(() => {
     if (drawerIsOpened !== null) {
@@ -148,13 +178,52 @@ function PromoDrawer(): ReactElement {
   const imageClasses = classNames(
     `mx-auto  w-1/2  max-w-64  rounded-t-lg    lg:rounded-b-lg`,
     {
-      'lg:w-44':
-        drawerIsOpened === 'demo' ||
-        (drawerIsOpened === null && lastOpenedDrawer.current === 'demo'),
-      'lg:w-48':
-        drawerIsOpened === 'subscription' ||
-        (drawerIsOpened === null &&
-          lastOpenedDrawer.current === 'subscription'),
+      'lg:w-44': isDemoDrawer(),
+      'lg:w-48': isSubscriptionDrawer() && session === null,
+      'lg:w-40': isSubscriptionDrawer() && session !== null,
+    },
+  );
+
+  function isDemoDrawer(): boolean {
+    return (
+      drawerIsOpened === 'demo' ||
+      (drawerIsOpened === null && lastOpenedDrawer.current === 'demo')
+    );
+  }
+
+  function isSubscriptionDrawer(): boolean {
+    return (
+      drawerIsOpened === 'subscription' ||
+      (drawerIsOpened === null && lastOpenedDrawer.current === 'subscription')
+    );
+  }
+
+  function stateIsLoading(): boolean {
+    return bookState === BookState.LOADING || sessionStateIsLoading;
+  }
+
+  async function handlePurchaseBookAuthenticated(): Promise<void> {
+    setPaymentPageIsGenerating(true);
+
+    try {
+      const { paymentLink } = await purchaseBook(
+        BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI,
+      );
+
+      setPaymentPageGenerationError(false);
+
+      window.location.href = paymentLink;
+    } catch (error) {
+      setPaymentPageGenerationError(true);
+    }
+
+    setPaymentPageIsGenerating(false);
+  }
+
+  const paymentPageIsGeneratingSpinnerWrapperClasses = classNames(
+    'mt-3  self-center',
+    {
+      hidden: !paymentPageIsGenerating,
     },
   );
 
@@ -202,94 +271,123 @@ function PromoDrawer(): ReactElement {
           </div>
 
           <div>
-            {(drawerIsOpened === 'demo' ||
-              (drawerIsOpened === null &&
-                lastOpenedDrawer.current === 'demo')) && (
-              <H2
-                className={`my-5  ${libreBaskerville.className}  !leading-snug
+            {isDemoDrawer() && (
+              <>
+                <H2
+                  className={`my-5  ${libreBaskerville.className}  !leading-snug
                           lg:-mt-1`}
-              >
-                Try demo of the book
-                <br /> for free
-              </H2>
+                >
+                  Try demo of the book
+                  <br /> for free
+                </H2>
+                <div className='max-w-[400px]'>
+                  <EmailForm
+                    requestCallback={async (email: string, token: string) => {
+                      // await axios.post(LOGIN_ROUTE, {
+                      //   email,
+                      //   captchaToken: token,
+                      //   readerName: process.env.NEXT_PUBLIC_HONEYPOT_KEY,
+                      // });
+                      console.log(email, token);
+                    }}
+                    label='Get the demo link by email:'
+                    inputId='demo-email'
+                    inputName='email'
+                    labelClasses={`${merriweather.className}  !font-normal`}
+                    inputClasses={`border-[#CFCFCF]  !font-bold  dark:border-gray-dark-lighter2  ${merriweather.className}`}
+                    buttonClasses='border-[#CFCFCF]  dark:border-gray-dark-lighter2'
+                    inputFocusedClasses='!border-[#000000]  dark:!border-[#FFFFFF]'
+                    buttonInputFocusedClasses='!border-[#000000]  dark:!border-[#FFFFFF]'
+                    buttonInputFilledClasses='bg-black  dark:bg-white'
+                    buttonInputEmptyClasses='bg-[#CFCFCF]  dark:bg-gray-dark-lighter2'
+                    changeArrowColorInDarkMode
+                    spinnerIconsClasses='dark:!text-black'
+                  />
+                </div>
+              </>
             )}
 
-            {(drawerIsOpened === 'subscription' ||
-              (drawerIsOpened === null &&
-                lastOpenedDrawer.current === 'subscription')) && (
-              <div className='mb-6  mt-10  lg:mt-4'>
-                <BasicTextNode
-                  className={`${libreBaskerville.className}  text-xl`}
-                >
-                  <span className='text-[3.43rem]'>$23</span>
-                  /year
-                </BasicTextNode>
-                <TextNode
-                  id='sherlock-promo-subs-price'
-                  className='!mb-0  mt-2  !text-base'
-                >
-                  With auto-renewal
-                </TextNode>
-              </div>
-            )}
+            {isSubscriptionDrawer() && (
+              <>
+                {stateIsLoading() && (
+                  <div className='mt-20  flex  justify-center  lg:w-[25rem]'>
+                    <CircularProgress className='!text-subscription' />
+                  </div>
+                )}
 
-            <div className='max-w-[400px]'>
-              {(drawerIsOpened === 'demo' ||
-                (drawerIsOpened === null &&
-                  lastOpenedDrawer.current === 'demo')) && (
-                <EmailForm
-                  requestCallback={async (email: string, token: string) => {
-                    // await axios.post(LOGIN_ROUTE, {
-                    //   email,
-                    //   captchaToken: token,
-                    //   readerName: process.env.NEXT_PUBLIC_HONEYPOT_KEY,
-                    // });
-                    console.log(email, token);
-                  }}
-                  label='Get the demo link by email:'
-                  inputId='demo-email'
-                  inputName='email'
-                  labelClasses={`${merriweather.className}  !font-normal`}
-                  inputClasses={`border-[#CFCFCF]  !font-bold  dark:border-gray-dark-lighter2  ${merriweather.className}`}
-                  buttonClasses='border-[#CFCFCF]  dark:border-gray-dark-lighter2'
-                  inputFocusedClasses='!border-[#000000]  dark:!border-[#FFFFFF]'
-                  buttonInputFocusedClasses='!border-[#000000]  dark:!border-[#FFFFFF]'
-                  buttonInputFilledClasses='bg-black  dark:bg-white'
-                  buttonInputEmptyClasses='bg-[#CFCFCF]  dark:bg-gray-dark-lighter2'
-                  changeArrowColorInDarkMode
-                  spinnerIconsClasses='dark:!text-black'
-                />
-              )}
-              {(drawerIsOpened === 'subscription' ||
-                (drawerIsOpened === null &&
-                  lastOpenedDrawer.current === 'subscription')) && (
-                <EmailForm
-                  requestCallback={async (email, token) => {
-                    // await axios.post(PAYMENT_ROUTE_GUEST, {
-                    //   email,
-                    //   bookURI: BOOK_MASTER_GIT_AND_GITHUB_URI,
-                    //   captchaToken: token,
-                    //   readerName: process.env.NEXT_PUBLIC_HONEYPOT_KEY,
-                    // });
-                    console.log(email, token);
-                  }}
-                  label='Get the payment link by&nbsp;email:'
-                  caption='This&nbsp;email will&nbsp;be&nbsp;used as&nbsp;a&nbsp;key to&nbsp;your&nbsp;library'
-                  inputId='sherlock-payment-email'
-                  inputName='email'
-                  inputClasses={`border-subscription  ${merriweather.className}  !font-bold`}
-                  buttonClasses='border-subscription'
-                  labelClasses={`${merriweather.className}  !font-normal`}
-                  inputFocusedClasses='[box-shadow:0_0_0_2px_#29AD04]'
-                  buttonInputFocusedClasses='[box-shadow:0_0_0_2px_#29AD04]'
-                  buttonInputFilledClasses='bg-subscription'
-                  buttonInputEmptyClasses='bg-[#CFCFCF]  dark:bg-gray-dark-lighter2'
-                  tickIconClasses='!fill-white'
-                  reloadIconClasses='!fill-white'
-                  spinnerIconsClasses='dark:!text-white'
-                />
-              )}
-            </div>
+                {!stateIsLoading() && (
+                  <>
+                    <div className='mb-6  mt-10  lg:mt-4'>
+                      <BasicTextNode
+                        className={`${libreBaskerville.className}  text-xl`}
+                      >
+                        <span className='text-[3.43rem]'>$23</span>
+                        /year
+                      </BasicTextNode>
+                      <TextNode
+                        id='sherlock-promo-subs-price'
+                        className='!mb-0  mt-2  !text-base'
+                      >
+                        With auto-renewal
+                      </TextNode>
+                    </div>
+
+                    <div className='max-w-[400px]'>
+                      {session === null && (
+                        <EmailForm
+                          requestCallback={async (email, token) => {
+                            // await axios.post(PAYMENT_ROUTE_GUEST, {
+                            //   email,
+                            //   bookURI: BOOK_MASTER_GIT_AND_GITHUB_URI,
+                            //   captchaToken: token,
+                            //   readerName: process.env.NEXT_PUBLIC_HONEYPOT_KEY,
+                            // });
+                            console.log(email, token);
+                          }}
+                          label='Get the payment link by&nbsp;email:'
+                          caption='This&nbsp;email will&nbsp;be&nbsp;used as&nbsp;a&nbsp;key to&nbsp;your&nbsp;library'
+                          inputId='sherlock-payment-email'
+                          inputName='email'
+                          inputClasses={`border-subscription  ${merriweather.className}  !font-bold`}
+                          buttonClasses='border-subscription'
+                          labelClasses={`${merriweather.className}  !font-normal`}
+                          inputFocusedClasses='[box-shadow:0_0_0_2px_#29AD04]'
+                          buttonInputFocusedClasses='[box-shadow:0_0_0_2px_#29AD04]'
+                          buttonInputFilledClasses='bg-subscription'
+                          buttonInputEmptyClasses='bg-[#CFCFCF]  dark:bg-gray-dark-lighter2'
+                          tickIconClasses='!fill-white'
+                          reloadIconClasses='!fill-white'
+                          spinnerIconsClasses='dark:!text-white'
+                        />
+                      )}
+                      {session !== null && (
+                        <div className='flex  w-[220px]  flex-col  items-start'>
+                          <button
+                            onClick={handlePurchaseBookAuthenticated}
+                            className='button  w-full  bg-subscription  text-white  
+                              hover:bg-subscription-darker'
+                          >
+                            Proceed to payment
+                          </button>
+                          <div
+                            className={
+                              paymentPageIsGeneratingSpinnerWrapperClasses
+                            }
+                          >
+                            <CircularProgress className='!size-[20px]  !text-subscription' />
+                          </div>
+                          {paymentPageGenerationError && (
+                            <BasicTextNode className='mt-3  text-red-600'>
+                              An error occurred. Please try again.
+                            </BasicTextNode>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  </>
+                )}
+              </>
+            )}
           </div>
         </MainContainer>
       </div>

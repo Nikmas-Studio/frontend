@@ -15,6 +15,7 @@ function SubscriptionButton({
 
   const classes = classNames(
     `button  bg-subscription  text-white
+     !border-0  !outline-none  !ring-0
      hover:bg-subscription-darker`,
     className,
   );

@@ -3,7 +3,7 @@
 import { BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI } from '@/constants/general';
 import { usePromoDrawerDispatch } from '@/context/book-master-english-with-sherlock-holmes/promo-drawer/Context';
 import { useBookState } from '@/context/book-state/Context';
-import { BookState } from '@/types/book-state';
+import { bookIsBought, BookState } from '@/types/book-state';
 import { CircularProgress } from '@mui/material';
 import classNames from 'classnames';
 import { ReactElement } from 'react';
@@ -36,7 +36,7 @@ function DemoOrReadButton(): ReactElement {
   return (
     <a
       onClick={handleClick}
-      {...(bookState === BookState.BOUGHT && { href })}
+      {...(bookIsBought(bookState) && { href })}
       className={classes}
     >
       {bookState === BookState.LOADING && (
@@ -45,7 +45,7 @@ function DemoOrReadButton(): ReactElement {
         </span>
       )}
       {bookState === BookState.UNBOUGHT && 'Try demo'}
-      {bookState === BookState.BOUGHT && 'Read'}
+      {bookIsBought(bookState) && 'Read'}
     </a>
   );
 }

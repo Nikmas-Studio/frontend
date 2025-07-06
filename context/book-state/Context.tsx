@@ -1,6 +1,6 @@
 'use client';
 
-import { BookState } from '@/types/book-state';
+import { BookState, DetailedBookState } from '@/types/book-state';
 import { buildBookAccessRoute } from '@/utils/build-book-access-route';
 import axios from 'axios';
 import {
@@ -13,7 +13,7 @@ import {
 } from 'react';
 
 interface BookStateContextProps {
-  bookState: BookState;
+  bookState: DetailedBookState;
 }
 
 const BookStateContext = createContext<BookStateContextProps | null>(null);
@@ -27,14 +27,14 @@ export function BookStateProvider({
   bookURI,
   children,
 }: BookStateProviderProps): ReactElement {
-  const [bookState, setBookState] = useState<BookState>(BookState.LOADING);
+  const [bookState, setBookState] = useState<DetailedBookState>(BookState.LOADING);
 
   useEffect(() => {
     async function defineBookState(): Promise<void> {
       try {
         const res = await axios.get(buildBookAccessRoute(bookURI));
         if (res.data.accessGranted) {
-          setBookState(BookState.BOUGHT);
+          setBookState({paidTill: res.data.paidTill});
         } else {
           setBookState(BookState.UNBOUGHT);
         }
