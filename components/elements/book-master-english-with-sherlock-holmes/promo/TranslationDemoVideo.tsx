@@ -142,7 +142,7 @@ function TranslationDemoVideo(): ReactElement {
       >
         <Image
           className={classNames(
-            'absolute  inset-0  transition-opacity  z-20  size-full  object-cover',
+            'absolute  inset-0  transition-opacity  duration-[400ms]  z-20  size-full  object-cover',
             {
               'opacity-0': translationDemoVideoMobileLightIsLoaded,
             },
@@ -153,7 +153,7 @@ function TranslationDemoVideo(): ReactElement {
         <video
           ref={translationDemoVideoMobileLightRef}
           className={classNames(
-            'absolute  transition-opacity  inset-0  z-10  size-full  object-cover',
+            'absolute  transition-opacity  duration-[400ms]  inset-0  z-10  size-full  object-cover',
             {
               'opacity-0': !translationDemoVideoMobileLightIsLoaded,
               'opacity-100': translationDemoVideoMobileLightIsLoaded,
@@ -185,7 +185,7 @@ function TranslationDemoVideo(): ReactElement {
       >
         <Image
           className={classNames(
-            'absolute  inset-0  transition-opacity  z-20  size-full  object-cover',
+            'absolute  inset-0  transition-opacity  duration-[400ms]  z-20  size-full  object-cover',
             {
               'opacity-0': translationDemoVideoMobileDarkIsLoaded,
             },
@@ -196,7 +196,7 @@ function TranslationDemoVideo(): ReactElement {
         <video
           ref={translationDemoVideoMobileDarkRef}
           className={classNames(
-            'absolute  transition-opacity  inset-0  z-10  size-full  object-cover',
+            'absolute  transition-opacity  duration-[400ms]  inset-0  z-10  size-full  object-cover',
             {
               'opacity-0': !translationDemoVideoMobileDarkIsLoaded,
               'opacity-100': translationDemoVideoMobileDarkIsLoaded,
@@ -227,7 +227,7 @@ function TranslationDemoVideo(): ReactElement {
       >
         <Image
           className={classNames(
-            'absolute  inset-0  transition-opacity  z-20  size-full  object-cover',
+            'absolute  inset-0  transition-opacity  duration-[400ms]  z-20  size-full  object-cover',
             {
               'opacity-0': translationDemoVideoDesktopLightIsLoaded,
             },
@@ -238,7 +238,7 @@ function TranslationDemoVideo(): ReactElement {
         <video
           ref={translationDemoVideoDesktopLightRef}
           className={classNames(
-            'absolute  transition-opacity  inset-0  z-10  size-full  object-cover',
+            'absolute  transition-opacity  duration-[400ms]  inset-0  z-10  size-full  object-cover',
             {
               'opacity-0': !translationDemoVideoDesktopLightIsLoaded,
               'opacity-100': translationDemoVideoDesktopLightIsLoaded,
@@ -268,7 +268,7 @@ function TranslationDemoVideo(): ReactElement {
       >
         <Image
           className={classNames(
-            'absolute  inset-0  transition-opacity  z-20  size-full  object-cover',
+            'absolute  inset-0  transition-opacity  duration-[400ms]  z-20  size-full  object-cover',
             {
               'opacity-0': translationDemoVideoDesktopDarkIsLoaded,
             },
@@ -279,7 +279,7 @@ function TranslationDemoVideo(): ReactElement {
         <video
           ref={translationDemoVideoDesktopDarkRef}
           className={classNames(
-            'absolute  transition-opacity  inset-0  z-10  size-full  object-cover',
+            'absolute  transition-opacity  duration-[400ms]  inset-0  z-10  size-full  object-cover',
             {
               'opacity-0': !translationDemoVideoDesktopDarkIsLoaded,
               'opacity-100': translationDemoVideoDesktopDarkIsLoaded,

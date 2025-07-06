@@ -138,7 +138,7 @@ function BookNavigatorDemoVideo(): ReactElement {
       >
         <Image
           className={classNames(
-            'absolute  inset-0  transition-opacity  z-20  size-full  object-cover',
+            'absolute  inset-0  transition-opacity  duration-[400ms]  z-20  size-full  object-cover',
             {
               'opacity-0': navigatorDemoVideoMobileLightIsLoaded,
             },
@@ -149,7 +149,7 @@ function BookNavigatorDemoVideo(): ReactElement {
         <video
           ref={navigatorDemoVideoMobileLightRef}
           className={classNames(
-            'absolute  transition-opacity  inset-0  z-10  size-full  object-cover',
+            'absolute  transition-opacity  duration-[400ms]  inset-0  z-10  size-full  object-cover',
             {
               'opacity-0': !navigatorDemoVideoMobileLightIsLoaded,
               'opacity-100': navigatorDemoVideoMobileLightIsLoaded,
@@ -180,7 +180,7 @@ function BookNavigatorDemoVideo(): ReactElement {
       >
         <Image
           className={classNames(
-            'absolute  inset-0  transition-opacity  z-20  size-full  object-cover',
+            'absolute  inset-0  transition-opacity  duration-[400ms]  z-20  size-full  object-cover',
             {
               'opacity-0': navigatorDemoVideoMobileDarkIsLoaded,
             },
@@ -191,7 +191,7 @@ function BookNavigatorDemoVideo(): ReactElement {
         <video
           ref={navigatorDemoVideoMobileDarkRef}
           className={classNames(
-            'absolute  transition-opacity  inset-0  z-10  size-full  object-cover',
+            'absolute  transition-opacity  duration-[400ms]  inset-0  z-10  size-full  object-cover',
             {
               'opacity-0': !navigatorDemoVideoMobileDarkIsLoaded,
               'opacity-100': navigatorDemoVideoMobileDarkIsLoaded,
@@ -219,7 +219,7 @@ function BookNavigatorDemoVideo(): ReactElement {
       >
         <Image
           className={classNames(
-            'absolute  inset-0  transition-opacity  z-20  size-full  object-cover',
+            'absolute  inset-0  transition-opacity  duration-[400ms]  z-20  size-full  object-cover',
             {
               'opacity-0': navigatorDemoVideoDesktopLightIsLoaded,
             },
@@ -230,7 +230,7 @@ function BookNavigatorDemoVideo(): ReactElement {
         <video
           ref={navigatorDemoVideoDesktopLightRef}
           className={classNames(
-            'absolute  transition-opacity  inset-0  z-10  size-full  object-cover',
+            'absolute  transition-opacity  duration-[400ms]  inset-0  z-10  size-full  object-cover',
             {
               'opacity-0': !navigatorDemoVideoDesktopLightIsLoaded,
               'opacity-100': navigatorDemoVideoDesktopLightIsLoaded,
@@ -260,7 +260,7 @@ function BookNavigatorDemoVideo(): ReactElement {
       >
         <Image
           className={classNames(
-            'absolute  inset-0  transition-opacity  z-20  size-full  object-cover',
+            'absolute  inset-0  transition-opacity  duration-[400ms]  z-20  size-full  object-cover',
             {
               'opacity-0': navigatorDemoVideoDesktopDarkIsLoaded,
             },
@@ -271,7 +271,7 @@ function BookNavigatorDemoVideo(): ReactElement {
         <video
           ref={navigatorDemoVideoDesktopDarkRef}
           className={classNames(
-            'absolute  transition-opacity  inset-0  z-10  size-full  object-cover',
+            'absolute  transition-opacity  duration-[400ms]  inset-0  z-10  size-full  object-cover',
             {
               'opacity-0': !navigatorDemoVideoDesktopDarkIsLoaded,
               'opacity-100': navigatorDemoVideoDesktopDarkIsLoaded,
