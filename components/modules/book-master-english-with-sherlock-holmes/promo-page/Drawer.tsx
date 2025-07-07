@@ -282,7 +282,7 @@ function PromoDrawer(): ReactElement {
                   className={`my-5  ${libreBaskerville.className}  !leading-snug
                           lg:-mt-1`}
                 >
-                  Try demo of the book
+                  Try the book demo
                   <br /> for free
                 </H2>
                 <div className='max-w-[400px]'>

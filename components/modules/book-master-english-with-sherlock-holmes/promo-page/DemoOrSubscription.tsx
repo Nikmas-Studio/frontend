@@ -19,7 +19,7 @@ function DemoOrSubscription(): ReactElement {
                      lg:border-none  lg:pb-20  lg:pt-8 dark:border-gray-dark'
         >
           <H2 className={`mb-6  ${libreBaskerville.className}  !leading-snug`}>
-            Try demo of the book
+            Try the book demo
             <br /> for free
           </H2>
           <button
