@@ -36,7 +36,10 @@ export function BookStateProvider({
       try {
         const res = await axios.get(buildBookAccessRoute(bookURI));
         if (res.data.accessGranted) {
-          setBookState({ paidUntil: res.data.paidTill });
+          setBookState({
+            paidUntil: res.data.paidTill,
+            subscriptionIsActive: res.data.subscriptionIsActive,
+          });
         } else {
           setBookState(BookState.UNBOUGHT);
         }
