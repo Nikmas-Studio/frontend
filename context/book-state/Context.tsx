@@ -27,14 +27,16 @@ export function BookStateProvider({
   bookURI,
   children,
 }: BookStateProviderProps): ReactElement {
-  const [bookState, setBookState] = useState<DetailedBookState>(BookState.LOADING);
+  const [bookState, setBookState] = useState<DetailedBookState>(
+    BookState.LOADING,
+  );
 
   useEffect(() => {
     async function defineBookState(): Promise<void> {
       try {
         const res = await axios.get(buildBookAccessRoute(bookURI));
         if (res.data.accessGranted) {
-          setBookState({paidTill: res.data.paidTill});
+          setBookState({ paidUntil: res.data.paidTill });
         } else {
           setBookState(BookState.UNBOUGHT);
         }

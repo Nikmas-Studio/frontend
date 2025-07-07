@@ -10,9 +10,10 @@ function TranslationDemo(): ReactElement {
     <section className='mt-[4.5rem]  lg:mt-24'>
       <MainContainer>
         <H2
-          className={`mb-7  lg:mb-9  ${libreBaskerville.className}  !leading-snug`}
+          className={`mb-7  max-w-[60rem]  lg:mb-9  ${libreBaskerville.className}  !leading-snug`}
         >
-          Highlight-based AI translations are built right into the book
+          Highlight-based, context-aware AI translations are built right into
+          the book
         </H2>
         <TextNode className='max-w-[45rem]  lg:mb-6'>
           The highest-quality, highlight-based, context-aware AI translations

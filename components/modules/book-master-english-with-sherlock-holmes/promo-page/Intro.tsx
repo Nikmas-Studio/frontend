@@ -47,9 +47,10 @@ function Intro(): ReactElement {
               className={`mb-6  text-[1.375rem]  font-semibold
                            leading-snug  ${libreBaskerville.className}`}
             >
-              Learn English through story — with the highest&#8209;quality,
-              highlight&#8209;based, context&#8209;aware AI&nbsp;translations,
-              built right into the book and available in any language.
+              Advance your English through story — with the
+              highest&#8209;quality, highlight&#8209;based, context&#8209;aware
+              AI&nbsp;translations, built right into the book and available in
+              any language.
             </BasicTextNode>
             <TextNode>
               The Sherlock Holmes stories are not only some of the world’s most

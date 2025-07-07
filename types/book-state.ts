@@ -1,11 +1,7 @@
 export interface BoughtState {
-  paidTill: string;
+  paidUntil: string;
+  subscriptionIsActive: boolean;
 }
-
-export type DetailedBookState =
-  | BoughtState
-  | BookState.LOADING
-  | BookState.UNBOUGHT;
 
 export enum BookState {
   LOADING = 'LOADING',
@@ -13,11 +9,18 @@ export enum BookState {
   BOUGHT = 'BOUGHT',
 }
 
+export type DetailedBookState =
+  | BoughtState
+  | BookState.LOADING
+  | BookState.UNBOUGHT;
+
 export function bookIsBought(value: DetailedBookState): value is BoughtState {
   return (
     typeof value === 'object' &&
     value !== null &&
-    'paidTill' in value &&
-    typeof value.paidTill === 'string'
+    'paidUntil' in value &&
+    typeof value.paidUntil === 'string' &&
+    'subscriptionIsActive' in value &&
+    typeof value.subscriptionIsActive === 'boolean'
   );
 }
