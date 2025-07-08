@@ -3,6 +3,7 @@
 import { BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI } from '@/constants/general';
 import { usePromoDrawerDispatch } from '@/context/book-master-english-with-sherlock-holmes/promo-drawer/Context';
 import { useBookState } from '@/context/book-state/Context';
+import { merriweather } from '@/fonts';
 import { bookIsBought, BookState } from '@/types/book-state';
 import { CircularProgress } from '@mui/material';
 import classNames from 'classnames';
@@ -14,6 +15,7 @@ function DemoOrReadButton(): ReactElement {
 
   const classes = classNames(
     `
+    ${merriweather.className}
     button  mb-1.5  self-center 
     bg-black  text-white
     hover:bg-blue  dark:bg-white
