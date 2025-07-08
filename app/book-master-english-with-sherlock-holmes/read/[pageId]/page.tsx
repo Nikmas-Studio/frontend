@@ -47,7 +47,6 @@ export const metadata: Metadata = {
 function BookMasterEnglishWithSherlockHolmesRead({
   params: { pageId },
 }: BookReadProps): ReactElement {
-  // return <BookReadWrapper initialPageId={pageId} />;
   return (
     <BookReadWrapper>
       <BookRead initialPageId={pageId} />

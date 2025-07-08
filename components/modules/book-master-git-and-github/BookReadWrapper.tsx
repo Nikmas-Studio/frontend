@@ -3,13 +3,14 @@
 import {
   BOOK_MASTER_GIT_AND_GITHUB_URI,
   BOOK_PRICE,
+  LOG_ERROR_ROUTE,
   LOG_INFO_ROUTE,
 } from '@/constants/general';
 import { BookState } from '@/types/book-state';
 import { EventName } from '@/types/meta-pixel';
 import { buildBookAccessRoute } from '@/utils/build-book-access-route';
 import { decryptAndValidateBookReloadToken } from '@/utils/decrypt-and-validate-book-reload-token';
-import { verifyOrder } from '@/utils/verify-order';
+import { notifyMetaPixelOfPurchaseApi } from '@/utils/notify-meta-pixel-of-purchase';
 import { CircularProgress } from '@mui/material';
 import axios from 'axios';
 import { useSearchParams } from 'next/navigation';
@@ -58,31 +59,28 @@ function BookReadWrapper({ initialPageId }: BookReadProps): ReactElement {
 
   useEffect(() => {
     async function notifyMetaPixelOfPurchase(): Promise<void> {
-      const orderId = searchParams.get('order');
-      if (orderId === null) {
-        return;
-      }
+      try {
+        const { wasAlreadyNotified, orderId } =
+          await notifyMetaPixelOfPurchaseApi(BOOK_MASTER_GIT_AND_GITHUB_URI);
 
-      window.history.replaceState(
-        null,
-        '',
-        `/${BOOK_MASTER_GIT_AND_GITHUB_URI}/read`,
-      );
+        if (!wasAlreadyNotified) {
+          window.fbq(
+            'track',
+            EventName.PURCHASE,
+            { value: BOOK_PRICE, currency: 'USD' },
+            { eventID: orderId },
+          );
 
-      const { isValid } = await verifyOrder(orderId);
-      if (isValid) {
-        window.fbq(
-          'track',
-          EventName.PURCHASE,
-          { value: BOOK_PRICE, currency: 'USD' },
-          { eventID: orderId },
-        );
-
-        axios
-          .post(LOG_INFO_ROUTE, {
-            message: `Successfully notified MetaPixel of purchase with orderId: ${orderId}`,
-          })
-          .catch(() => {});
+          axios
+            .post(LOG_INFO_ROUTE, {
+              message: `Successfully notified MetaPixel of purchase with orderId: ${orderId}`,
+            })
+            .catch(() => {});
+        }
+      } catch (e) {
+        axios.post(LOG_ERROR_ROUTE, {
+          message: `Failed to notify MetaPixel of purchase for book ${BOOK_MASTER_GIT_AND_GITHUB_URI}: ${JSON.stringify(e)}`,
+        });
       }
     }
 
