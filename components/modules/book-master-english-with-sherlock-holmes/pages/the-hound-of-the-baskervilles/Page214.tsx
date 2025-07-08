@@ -23,7 +23,8 @@ function Page214({
                    max-sm:flex  max-sm:items-center  max-sm:justify-start'
       >
         <H2 className='mb-20  text-center  max-sm:text-start'>
-          The Hound of the
+          The Hound
+          <br className='hidden  max-md:inline' /> of the
           <span className='max-md:hidden'>&nbsp;</span>
           <span className='hidden  max-md:inline'> </span>Baskervilles
         </H2>

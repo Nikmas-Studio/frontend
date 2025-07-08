@@ -18,7 +18,7 @@ function PageNumbersUpdate(): ReactElement {
       <H2
         className={`mb-9  lg:mb-0  ${libreBaskerville.className}  !leading-snug`}
       >
-        Page numbers update as&nbsp;you scroll
+        Page number updates as&nbsp;you scroll
       </H2>
       <video
         className='mb-4  hidden  w-full  rounded-full  lg:block'

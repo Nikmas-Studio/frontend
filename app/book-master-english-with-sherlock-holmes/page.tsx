@@ -22,11 +22,11 @@ import { ReactElement } from 'react';
 export const metadata: Metadata = {
   title: 'Master English with Sherlock Holmes [Interactive e-book]',
   description:
-    'Learn English through story — with the highest‑quality, highlight‑based, context‑aware AI translations, built right into the book and available in any language.',
+    'Learn English through story — with the highest‑quality, highlight‑based, context‑aware AI translation, built right into the book and available in any language.',
   openGraph: {
     title: 'Master English with Sherlock Holmes [Interactive e-book]',
     description:
-      'Learn English through story — with the highest‑quality, highlight‑based, context‑aware AI translations, built right into the book and available in any language.',
+      'Learn English through story — with the highest‑quality, highlight‑based, context‑aware AI translation, built right into the book and available in any language.',
     url: 'https://nikmas.studio/book-master-english-with-sherlock-holmes',
     siteName: 'Nikmas Studio',
     images: [

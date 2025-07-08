@@ -49,7 +49,7 @@ function Intro(): ReactElement {
             >
               Advance your English through story — with the
               highest&#8209;quality, highlight&#8209;based, context&#8209;aware
-              AI&nbsp;translations, built right into the book and available in
+              AI&nbsp;translation, built right into the book and available in
               any language.
             </BasicTextNode>
             <TextNode>
@@ -70,7 +70,7 @@ function Intro(): ReactElement {
               whenever I highlighted any fragment. Eventually, I realized I’d
               rather create my own digital version of Sherlock Holmes and
               continue reading that way. Today, my edition of Sherlock Holmes
-              includes built-in, highest-quality, context-aware AI translations
+              includes built-in, highest-quality, context-aware AI translation
               into any language, a book navigator, and a light/dark theme
               switcher. I understand that this kind of interactive digital
               version of Sherlock Holmes will be useful to a huge number of
@@ -78,7 +78,7 @@ function Intro(): ReactElement {
             </TextNode>
             <TextNode className='!mb-0'>
               <span className='italic'>
-                The book supports translations into all major world languages:{' '}
+                The book supports translation into all major world languages:{' '}
               </span>
               French, Spanish, Portuguese (Portugal, Brazil), Italian, German,
               Dutch, Danish, Finnish, Norwegian (Bokmål), Swedish, Ukrainian,
