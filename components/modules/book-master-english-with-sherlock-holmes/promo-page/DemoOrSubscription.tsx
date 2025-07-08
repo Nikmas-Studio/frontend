@@ -5,7 +5,7 @@ import H2 from '@/components/elements/H2';
 import MainContainer from '@/components/elements/MainContainer';
 import TextNode from '@/components/elements/TextNode';
 import { usePromoDrawerDispatch } from '@/context/book-master-english-with-sherlock-holmes/promo-drawer/Context';
-import { libreBaskerville } from '@/fonts';
+import { libreBaskerville, merriweather } from '@/fonts';
 import { ReactElement } from 'react';
 
 function DemoOrSubscription(): ReactElement {
@@ -24,10 +24,10 @@ function DemoOrSubscription(): ReactElement {
           </H2>
           <button
             onClick={() => setDrawerIsOpened('demo')}
-            className='button  !border-0  bg-black
+            className={`${merriweather.className}  button  !border-0  bg-black
                      text-white  !outline-none
                       !ring-0  hover:bg-blue  dark:bg-white
-                     dark:text-black dark:hover:text-white'
+                     dark:text-black dark:hover:text-white`}
           >
             Try demo
           </button>
