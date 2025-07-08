@@ -385,6 +385,8 @@ function PromoDrawer(): ReactElement {
           }, 2000);
         }, 100);
       }, 400);
+    } else {
+      setCancelSubscriptionIsProcessing(false);
     }
   }
 
@@ -422,6 +424,8 @@ function PromoDrawer(): ReactElement {
           }, 2000);
         }, 100);
       }, 400);
+    } else {
+      setSubscribeAgainIsProcessing(false);
     }
   }
 
