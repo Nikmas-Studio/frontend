@@ -9,6 +9,7 @@ import { useBookVersion } from '@/context/book-version/Context';
 import { useTouchDevice } from '@/context/touch-device/Context';
 import { useUrlUpdate } from '@/hooks/use-url-update';
 import { BookVersion } from '@/types/book-version';
+import classNames from 'classnames';
 import { ReactElement, ReactNode, useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
@@ -16,12 +17,14 @@ interface PageProps {
   pageNumber: number;
   viewportHeight?: boolean;
   children: ReactNode;
+  lastPage?: boolean;
 }
 
 function PageWrapper({
   pageNumber,
   viewportHeight = false,
   children,
+  lastPage = false,
 }: PageProps): ReactElement {
   const bookVersion = useBookVersion();
   const basePath =
@@ -120,7 +123,9 @@ function PageWrapper({
     <Page
       id={`page-${pageNumber}`}
       viewportHeight={viewportHeight}
-      className='mb-5'
+      className={classNames({
+        'mb-5': !lastPage,
+      })}
       ref={combinedRef}
     >
       {showChildren ? children : <div style={{ height: measuredHeight }} />}

@@ -1,13 +1,16 @@
 import { MAX_TRANSLATION_FRAGMENT_LENGTH } from '@/constants/book-master-english-with-sherlock-holmes/main';
 import { BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI } from '@/constants/general';
 import { useTranslationLanguage } from '@/context/book-master-english-with-sherlock-holmes/translation-language/Context';
+import { useBookVersion } from '@/context/book-version/Context';
 import { useTranslationTooltipDispatch } from '@/context/translation-tooltip/Context';
 import { getBookPartByPage } from '@/utils/book-master-english-with-sherlock-holmes/get-book-part-by-page';
 import { getSelectionData } from '@/utils/get-selection-data';
 import { translate } from '@/utils/translate';
+import axios from 'axios';
 import { useEffect, useRef } from 'react';
 
 export function useSelectTranslation(): void {
+  const bookVersion = useBookVersion();
   const lastTranslationRequestId = useRef(0);
   const { selectedLanguage } = useTranslationLanguage();
   const { setIsShown, setIsLoading, setContent, setFragmentPosition } =
@@ -64,11 +67,17 @@ export function useSelectTranslation(): void {
             context: selectionData.context,
             fragment: selectionData.fragment,
             bookPart,
+            bookVersion,
           });
         } catch (e) {
           error = true;
-          translation =
-            'An error occurred while translating the text. Please try again after a pause.';
+          if (axios.isAxiosError(e) && e.response?.status === 400) {
+            translation =
+              'In the demo, there is a\u00A0technical restriction on\u00A0translating certain fragments. Please select a\u00A0different fragment or\u00A0subscribe to\u00A0the\u00A0full version.\u00A0';
+          } else {
+            translation =
+              'An\u00A0error occurred while\u00A0translating the\u00A0text. Please try again after\u00A0a\u00A0pause.';
+          }
         }
         const timeElapsed = Date.now() - start;
         const timeoutDuration = Math.max(700 - timeElapsed, 0);
@@ -137,5 +146,6 @@ export function useSelectTranslation(): void {
     setIsShown,
     setFragmentPosition,
     selectedLanguage,
+    bookVersion,
   ]);
 }

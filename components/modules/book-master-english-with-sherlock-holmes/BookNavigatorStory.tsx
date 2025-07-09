@@ -9,6 +9,7 @@ interface BookNavigatorStoryProps {
   title: Story;
   selectedStory: Story;
   udpateSelectedStory: (newStory: Story) => void;
+  demo?: boolean;
   className?: string;
 }
 
@@ -17,6 +18,7 @@ function BookNavigatorStory({
   udpateSelectedStory: setSelectedStory,
   title,
   className,
+  demo = false,
 }: BookNavigatorStoryProps): ReactElement {
   const classes = classNames(
     'text-lg  px-8  py-1  last:mb-7  cursor-pointer  max-1.5lg:px-[4.2vw]',
@@ -24,6 +26,7 @@ function BookNavigatorStory({
     className,
     {
       'bg-[#FFEAC5]  dark:bg-[#0E2640]': selectedStory === title,
+      'pointer-events-none': demo,
     },
   );
 
@@ -33,7 +36,13 @@ function BookNavigatorStory({
       onClick={() => setSelectedStory(title)}
       className={classes}
     >
-      <BasicTextNode>{title}</BasicTextNode>
+      <BasicTextNode
+        className={classNames({
+          '!text-gray-400  dark:!text-gray-500': demo,
+        })}
+      >
+        {title}
+      </BasicTextNode>
     </li>
   );
 }

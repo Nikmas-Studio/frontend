@@ -16,7 +16,11 @@ function Page343({
   viewportHeight = false,
 }: PageProps): ReactElement {
   return (
-    <PageWrapper pageNumber={pageNumber} viewportHeight={viewportHeight}>
+    <PageWrapper
+      lastPage
+      pageNumber={pageNumber}
+      viewportHeight={viewportHeight}
+    >
       <Controls pageNumber={hidePageNumber ? undefined : pageNumber} />
       <BookMainContainer
         className='grid  h-full  place-content-center

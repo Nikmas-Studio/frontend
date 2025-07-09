@@ -7,20 +7,29 @@ interface BookNavigatorPartProps {
   title: string;
   onClick?: () => void;
   children: ReactNode;
+  demo?: boolean;
 }
 
 function BookNavigatorPart({
   title,
   onClick,
   children,
+  demo = false,
 }: BookNavigatorPartProps): ReactElement {
   const classes = classNames(
     'text-lg  px-8  py-1  max-1.5lg:px-[4.2vw]',
     libreBaskerville.className,
+    {
+      '!text-gray-400  dark:!text-gray-500': demo,
+    },
   );
 
   return (
-    <li className='cursor-pointer'>
+    <li
+      className={classNames('cursor-pointer', {
+        'pointer-events-none': demo,
+      })}
+    >
       <BasicTextNode onClick={onClick} className={classes}>
         {title}
       </BasicTextNode>
