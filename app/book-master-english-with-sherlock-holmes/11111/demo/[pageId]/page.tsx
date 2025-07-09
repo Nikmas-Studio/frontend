@@ -1,6 +1,15 @@
-import BookDemo from '@/components/modules/book-master-english-with-sherlock-holmes/BookDemo';
 import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import { ReactElement } from 'react';
+const BookDemo = dynamic(
+  () =>
+    import(
+      '@/components/modules/book-master-english-with-sherlock-holmes/BookDemo'
+    ),
+  {
+    ssr: false,
+  },
+);
 
 interface BookReadProps {
   params: {
