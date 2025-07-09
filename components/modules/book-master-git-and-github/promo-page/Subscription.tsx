@@ -115,7 +115,7 @@ function Subscription(): ReactElement {
                   Unlike a&nbsp;paper book, a&nbsp;web book must always be
                   online and&nbsp;requires ongoing maintenance. The&nbsp;more
                   people read a&nbsp;web book, the&nbsp;more server resources
-                  are&nbsp;needed. That&apos;s&nbsp;why our&nbsp;books
+                  are&nbsp;needed. That’s&nbsp;why our&nbsp;books
                   are&nbsp;available through&nbsp;a&nbsp;subscription.
                 </TextNode>
                 <TextNode>
@@ -128,8 +128,8 @@ function Subscription(): ReactElement {
                 </TextNode>
                 <TextNode className='!mb-0'>
                   However, during the&nbsp;preorder period of&nbsp;our first
-                  tech book, we&apos;re making an&nbsp;exception: we&apos;re
-                  offering a&nbsp;lifetime subscription to&nbsp;the book with
+                  tech book, we’re making an&nbsp;exception: we’re offering
+                  a&nbsp;lifetime subscription to&nbsp;the book with
                   a&nbsp;one-time payment to&nbsp;our&nbsp;first readers
                   whom&nbsp;we&nbsp;consider our&nbsp;investors.
                   Their&nbsp;support gives us the&nbsp;essential initial boost,

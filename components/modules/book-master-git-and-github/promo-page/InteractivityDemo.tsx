@@ -12,7 +12,7 @@ function InteractivityDemo(): ReactElement {
     <section className='mt-[4.5rem]  lg:mt-24'>
       <MainContainer>
         <H2 className='mb-7  lg:mb-9'>
-          Interactivity that&apos;s based on&nbsp;scrolling
+          Interactivity that’s based on&nbsp;scrolling
         </H2>
         <TextNode className='lg:mb-6'>
           Illustrations appear, pin, transform, and&nbsp;disappear in&nbsp;sync

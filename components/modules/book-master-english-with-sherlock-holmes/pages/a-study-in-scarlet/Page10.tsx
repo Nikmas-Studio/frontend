@@ -35,12 +35,12 @@ function Page10({
           <BookLeftPartContainer>
             <TextNode noIndent>
               I confess that I was considerably startled by this fresh proof of
-              the practical nature of my companion&apos;s theories. My respect
-              for his powers of analysis increased wondrously. There still
-              remained some lurking suspicion in my mind, however, that the
-              whole thing was a pre-arranged episode, intended to dazzle me,
-              though what earthly object he could have in taking me in was past
-              my comprehension. When I looked at him he had finished reading the
+              the practical nature of my companion’s theories. My respect for
+              his powers of analysis increased wondrously. There still remained
+              some lurking suspicion in my mind, however, that the whole thing
+              was a pre-arranged episode, intended to dazzle me, though what
+              earthly object he could have in taking me in was past my
+              comprehension. When I looked at him he had finished reading the
               note, and his eyes had assumed the vacant, lack-lustre expression
               which showed mental abstraction.
             </TextNode>
@@ -69,7 +69,7 @@ function Page10({
               were asked to prove that two and two made four, you might find
               some difficulty, and yet you are quite sure of the fact. Even
               across the street I could see a great blue anchor tattooed on the
-              back of the fellow&apos;s hand. That smacked of the sea. He had a
+              back of the fellow’s hand. That smacked of the sea. He had a
               military carriage, however, and regulation side whiskers. There we
               have the marine. He was a man with some amount of self-importance
               and a certain air of command. You must have observed the way in
@@ -143,9 +143,9 @@ function Page10({
             </TextNode>
 
             <TextNode>
-              “I&apos;m not sure about whether I shall go. I am the most
-              incurably lazy devil that ever stood in shoe leather—that is, when
-              the fit is on me, for I can be spry enough at times.”
+              “I’m not sure about whether I shall go. I am the most incurably
+              lazy devil that ever stood in shoe leather—that is, when the fit
+              is on me, for I can be spry enough at times.”
             </TextNode>
           </BookLeftPartContainer>
           <BookRightPartContainer>
@@ -195,8 +195,8 @@ function Page10({
             </TextNode>
 
             <TextNode>
-              “You don&apos;t seem to give much thought to the matter in hand,”
-              I said at last, interrupting Holmes&apos; musical disquisition.
+              “You don’t seem to give much thought to the matter in hand,” I
+              said at last, interrupting Holmes’ musical disquisition.
             </TextNode>
 
             <TextNode>

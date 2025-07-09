@@ -216,8 +216,8 @@ function Page2(): ReactElement {
               className='!mb-0  max-w-[27.5rem]  !text-sm  opacity-0  transition-opacity  max-2md:hidden'
             >
               The&nbsp;Stack Overflow Survey abandoned asking
-              about&nbsp;preferred VCS after&nbsp;2018, as&nbsp;Git&apos;s
-              dominance had&nbsp;become indisputable.
+              about&nbsp;preferred VCS after&nbsp;2018, as&nbsp;Git’s dominance
+              had&nbsp;become indisputable.
             </TextNode>
           </BookLeftPartContainer>
           <BookRightPartContainer
@@ -225,18 +225,17 @@ function Page2(): ReactElement {
             className='flex  w-1/2  flex-col  justify-start opacity-0
                        transition-opacity  max-2md:w-full  max-2md:pl-0'
           >
-            <H3>You know what I&apos;m sayin&apos;?</H3>
+            <H3>You know what I’m sayin’?</H3>
             <TextNode>
               Copying directories and&nbsp;renaming them is a&nbsp;go-to version
-              control method for&nbsp;many people. It&apos;s so&nbsp;simple,
+              control method for&nbsp;many people. It’s so&nbsp;simple,
               and&nbsp;that makes it so&nbsp;appealing. But,
               this&nbsp;simplicity comes with&nbsp;its drawbacks:
             </TextNode>
             <TextUl>
               <TextLi>
-                It&apos;s easy to&nbsp;forget which&nbsp;directory
-                you&apos;re&nbsp;in and&nbsp;accidentally write
-                to&nbsp;the&nbsp;wrong file.
+                It’s easy to&nbsp;forget which&nbsp;directory you’re&nbsp;in
+                and&nbsp;accidentally write to&nbsp;the&nbsp;wrong file.
               </TextLi>
               <TextLi>
                 Multiple copies can quickly eat&nbsp;up disk space, especially
@@ -258,8 +257,8 @@ function Page2(): ReactElement {
                                     max-2md:block  max-sm:mt-10'
             >
               The&nbsp;Stack Overflow Survey abandoned asking
-              about&nbsp;preferred VCS after&nbsp;2018, as&nbsp;Git&apos;s
-              dominance had&nbsp;become indisputable.
+              about&nbsp;preferred VCS after&nbsp;2018, as&nbsp;Git’s dominance
+              had&nbsp;become indisputable.
             </TextNode>
           </BookRightPartContainer>
         </div>

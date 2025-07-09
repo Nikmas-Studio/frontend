@@ -40,8 +40,8 @@ function HowWeWorkWithAuthors(): ReactElement {
             editors, designers, illustrators, and&nbsp;developers collaborates
             with&nbsp;the&nbsp;author to&nbsp;create an&nbsp;interactive
             e&#8209;book, which&nbsp;is&nbsp;then published
-            on&nbsp;the&nbsp;studio&apos;s website. The&nbsp;marketing
-            department handles the&nbsp;promotion of&nbsp;the&nbsp;book.
+            on&nbsp;the&nbsp;studio’s website. The&nbsp;marketing department
+            handles the&nbsp;promotion of&nbsp;the&nbsp;book.
           </TextNode>
           <div className='mb-7'>
             <BasicTextNode className='text-4xl  leading-[0.5]'>.</BasicTextNode>
@@ -50,7 +50,7 @@ function HowWeWorkWithAuthors(): ReactElement {
           </div>
           <TextNode className='!mb-0'>
             The&nbsp;studio earns <strong className='font-black'>70%</strong>{' '}
-            of&nbsp;the book&apos;s sales, while&nbsp;the&nbsp;other{' '}
+            of&nbsp;the book’s sales, while&nbsp;the&nbsp;other{' '}
             <strong className='font-black'>30%</strong> goes
             to&nbsp;the&nbsp;author.
           </TextNode>

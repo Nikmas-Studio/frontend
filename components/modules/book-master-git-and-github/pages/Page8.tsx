@@ -100,7 +100,7 @@ function Page8(): ReactElement {
               <H4>Git</H4>
               <TextNode className='!mb-0'>
                 Git is a&nbsp;version control system that&nbsp;tracks changes
-                in&nbsp;files and&nbsp;helps developers collaborate. It&apos;s
+                in&nbsp;files and&nbsp;helps developers collaborate. It’s
                 a&nbsp;tool that&nbsp;you install locally
                 on&nbsp;your&nbsp;computer to&nbsp;manage and&nbsp;version
                 control your&nbsp;projects.

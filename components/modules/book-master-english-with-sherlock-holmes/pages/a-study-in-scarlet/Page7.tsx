@@ -99,18 +99,17 @@ function Page7({
 
             <TextNode>
               He was not studying medicine. He had himself, in reply to a
-              question, confirmed Stamford&apos;s opinion upon that point.
-              Neither did he appear to have pursued any course of reading which
-              might fit him for a degree in science or any other recognized
-              portal which would give him an entrance into the learned world.
-              Yet his zeal for certain studies was remarkable, and within
-              eccentric limits his knowledge was so extraordinarily ample and
-              minute that his observations have fairly astounded me. Surely no
-              man would work so hard or attain such precise information unless
-              he had some definite end in view. Desultory readers are seldom
-              remarkable for the exactness of their learning. No man burdens his
-              mind with small matters unless he has some very good reason for
-              doing so.
+              question, confirmed Stamford’s opinion upon that point. Neither
+              did he appear to have pursued any course of reading which might
+              fit him for a degree in science or any other recognized portal
+              which would give him an entrance into the learned world. Yet his
+              zeal for certain studies was remarkable, and within eccentric
+              limits his knowledge was so extraordinarily ample and minute that
+              his observations have fairly astounded me. Surely no man would
+              work so hard or attain such precise information unless he had some
+              definite end in view. Desultory readers are seldom remarkable for
+              the exactness of their learning. No man burdens his mind with
+              small matters unless he has some very good reason for doing so.
             </TextNode>
           </BookLeftPartContainer>
           <BookRightPartContainer>
@@ -136,14 +135,14 @@ function Page7({
             <TextNode>“To forget it!”</TextNode>
 
             <TextNode>
-              “You see,” he explained, “I consider that a man&apos;s brain
-              originally is like a little empty attic, and you have to stock it
-              with such furniture as you choose. A fool takes in all the lumber
-              of every sort that he comes across, so that the knowledge which
-              might be useful to him gets crowded out, or at best is jumbled up
-              with a lot of other things so that he has a difficulty in laying
-              his hands upon it. Now the skilful workman is very careful indeed
-              as to what he takes into his brain-attic. He will have nothing but
+              “You see,” he explained, “I consider that a man’s brain originally
+              is like a little empty attic, and you have to stock it with such
+              furniture as you choose. A fool takes in all the lumber of every
+              sort that he comes across, so that the knowledge which might be
+              useful to him gets crowded out, or at best is jumbled up with a
+              lot of other things so that he has a difficulty in laying his
+              hands upon it. Now the skilful workman is very careful indeed as
+              to what he takes into his brain-attic. He will have nothing but
               the tools which may help him in doing his work, but of these he
               has a large assortment, and all in the most perfect order. It is a
               mistake to think that that little room has elastic walls and can

@@ -45,7 +45,7 @@ function Page9({
 
             <TextNode>
               “It is simple enough as you explain it,” I said, smiling. “You
-              remind me of Edgar Allen Poe&apos;s Dupin. I had no idea that such
+              remind me of Edgar Allen Poe’s Dupin. I had no idea that such
               individuals did exist outside of stories.”
             </TextNode>
 
@@ -53,16 +53,15 @@ function Page9({
               Sherlock Holmes rose and lit his pipe. “No doubt you think that
               you are complimenting me in comparing me to Dupin,” he observed.
               “Now, in my opinion, Dupin was a very inferior fellow. That trick
-              of his of breaking in on his friends&apos; thoughts with an
-              apropos remark after a quarter of an hour&apos;s silence is really
-              very showy and superficial. He had some analytical genius, no
-              doubt; but he was by no means such a phenomenon as Poe appeared to
-              imagine.”
+              of his of breaking in on his friends’ thoughts with an apropos
+              remark after a quarter of an hour’s silence is really very showy
+              and superficial. He had some analytical genius, no doubt; but he
+              was by no means such a phenomenon as Poe appeared to imagine.”
             </TextNode>
 
             <TextNode>
-              “Have you read Gaboriau&apos;s works?” I asked. “Does Lecoq come
-              up to your idea of a detective?”
+              “Have you read Gaboriau’s works?” I asked. “Does Lecoq come up to
+              your idea of a detective?”
             </TextNode>
 
             <TextNode>

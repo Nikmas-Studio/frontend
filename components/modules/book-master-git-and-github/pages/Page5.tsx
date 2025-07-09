@@ -86,7 +86,7 @@ function Page5(): ReactElement {
             Previously, the&nbsp;team had relied on&nbsp;a&nbsp;proprietary
             version control tool called BitKeeper,
             but&nbsp;the&nbsp;relationship between the&nbsp;Linux community
-            and&nbsp;BitKeeper&apos;s creators eventually broke down.
+            and&nbsp;BitKeeper’s creators eventually broke down.
             As&nbsp;a&nbsp;result of&nbsp;this&nbsp;“divorce”, BitKeeper revoked
             its&nbsp;free licensing, leaving the&nbsp;Linux team without
             a&nbsp;version control system. This&nbsp;prompted Torvalds
@@ -95,10 +95,10 @@ function Page5(): ReactElement {
             on&nbsp;Linux.
           </TextNode>
           <TextNode className='!mb-10'>
-            Git&apos;s development was&nbsp;remarkably rapid: the&nbsp;first
-            version with&nbsp;core functionality was&nbsp;released
-            within&nbsp;weeks, and&nbsp;the&nbsp;first official launch followed
-            just a&nbsp;few&nbsp;months afterward. Two decades later,
+            Git’s development was&nbsp;remarkably rapid: the&nbsp;first version
+            with&nbsp;core functionality was&nbsp;released within&nbsp;weeks,
+            and&nbsp;the&nbsp;first official launch followed just
+            a&nbsp;few&nbsp;months afterward. Two decades later,
             Git&nbsp;is&nbsp;indispensable in&nbsp;software development,
             with&nbsp;over&nbsp;90% of&nbsp;developers worldwide
             using&nbsp;it&nbsp;daily!
@@ -106,11 +106,10 @@ function Page5(): ReactElement {
           <H4>Behind the Name</H4>
           <TextNode>
             Linus Torvalds described the name “git” as&nbsp;a&nbsp;reflection
-            of&nbsp;himself: &ldquo;I&apos;m an&nbsp;egotistical bastard, so I
-            name all my&nbsp;projects after&nbsp;myself. First
-            &lsquo;Linux&rsquo;, now &lsquo;Git&rsquo; (in British slang,
-            &lsquo;git&rsquo; refers to an unpleasant or contemptible
-            person)&rdquo;.
+            of&nbsp;himself: &ldquo;I’m an&nbsp;egotistical bastard, so I name
+            all my&nbsp;projects after&nbsp;myself. First &lsquo;Linux&rsquo;,
+            now &lsquo;Git&rsquo; (in British slang, &lsquo;git&rsquo; refers to
+            an unpleasant or contemptible person)&rdquo;.
           </TextNode>
           <TextNode>
             The&nbsp;man page describes Git as&nbsp;&ldquo;the stupid content
@@ -139,7 +138,7 @@ function Page5(): ReactElement {
               of&nbsp;slang.
             </TextLi>
             <TextLi>
-              &ldquo;Global information tracker&rdquo;: you&apos;re
+              &ldquo;Global information tracker&rdquo;: you’re
               in&nbsp;a&nbsp;good mood, and&nbsp;it actually works for&nbsp;you.
               Angels sing, and&nbsp;a&nbsp;light suddenly fills the&nbsp;room.
             </TextLi>

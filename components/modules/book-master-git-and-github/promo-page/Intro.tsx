@@ -42,7 +42,7 @@ function Intro(): ReactElement {
             >
               This is a&nbsp;next&#8209;gen, highly illustrative,
               and&nbsp;interactive e&#8209;book to&nbsp;master
-              Git&nbsp;and&nbsp;GitHub. We&apos;ll start
+              Git&nbsp;and&nbsp;GitHub. We’ll start
               from&nbsp;the&nbsp;essentials you need to&nbsp;know
               to&nbsp;complete everyday tasks seamlessly,
               and&nbsp;then&nbsp;dive deep into&nbsp;advanced topics
@@ -51,9 +51,9 @@ function Intro(): ReactElement {
             </BasicTextNode>
             <TextNode>
               Git and&nbsp;GitHub are&nbsp;the&nbsp;version control tools.
-              They&apos;re the&nbsp;tools that&nbsp;every software developer
-              should know. And&nbsp;they&apos;re the&nbsp;tools that&nbsp;every
-              person who&nbsp;works with&nbsp;files can benefit from.
+              They’re the&nbsp;tools that&nbsp;every software developer should
+              know. And&nbsp;they’re the&nbsp;tools that&nbsp;every person
+              who&nbsp;works with&nbsp;files can benefit from.
               And&nbsp;there&nbsp;are&nbsp;many resources to&nbsp;learn those
               things. But,&nbsp;the&nbsp;popular resources on&nbsp;Git
               and&nbsp;GitHub we know are&nbsp;either highly illustrative
@@ -74,9 +74,8 @@ function Intro(): ReactElement {
               to&nbsp;read.
             </TextNode>
             <TextNode>
-              And&nbsp;unlike video format, it&apos;ll&nbsp;be
-              very&nbsp;convenient to&nbsp;use this&nbsp;book
-              as&nbsp;a&nbsp;reference: you&apos;ll
+              And&nbsp;unlike video format, it’ll&nbsp;be very&nbsp;convenient
+              to&nbsp;use this&nbsp;book as&nbsp;a&nbsp;reference: you’ll
               be&nbsp;able&nbsp;to&nbsp;find the&nbsp;necessary piece
               of&nbsp;information instantly with&nbsp;special search tools
               integrated into&nbsp;the&nbsp;book navigator.

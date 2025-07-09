@@ -35,7 +35,7 @@ function Page6(): ReactElement {
       <BookMainContainer>
         <H2>Fundamental Concepts Overview</H2>
         <TextNode className='mt-32  max-w-[30rem]'>
-          In&nbsp;this section of&nbsp;the&nbsp;book, we&apos;ll get familiar
+          In&nbsp;this section of&nbsp;the&nbsp;book, we’ll get familiar
           with&nbsp;the&nbsp;main concepts around&nbsp;Git to&nbsp;start
           building a&nbsp;solid foundation for&nbsp;understanding how Git works
           and&nbsp;how its&nbsp;components connect.

@@ -50,7 +50,7 @@ function Page4(): ReactElement {
             <TextNode>
               From&nbsp;tech giants like&nbsp;Google and&nbsp;Facebook
               to&nbsp;yesterday&#8209;born startups and&nbsp;hobby projects,
-              developers across&nbsp;the&nbsp;globe use Git. If&nbsp;you&apos;re
+              developers across&nbsp;the&nbsp;globe use Git. If&nbsp;you’re
               a&nbsp;developer or&nbsp;plan to&nbsp;become one, Git
               is&nbsp;an&nbsp;absolute must for&nbsp;version control
               and&nbsp;team collaboration.
@@ -132,8 +132,7 @@ function Page4(): ReactElement {
               is&nbsp;maintained as&nbsp;an&nbsp;open-source project
               on&nbsp;GitHub, where&nbsp;multiple contributors, including
               its&nbsp;primary authors and&nbsp;the&nbsp;community, work
-              together to&nbsp;refine and&nbsp;expand the&nbsp;book&apos;s
-              content.
+              together to&nbsp;refine and&nbsp;expand the&nbsp;book’s content.
             </TextNode>
           </div>
           <div className='max-sm:hidden'></div>

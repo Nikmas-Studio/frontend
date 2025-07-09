@@ -24,9 +24,8 @@ function BookNavigator(): ReactElement {
           </span> */}
         </H2>
         <TextNode className='max-w-[45rem]  lg:mb-6'>
-          Explore the&nbsp;book&apos;s structure, and&nbsp;use search,
-          illustrated contents, or&nbsp;bookmarks to&nbsp;find the&nbsp;pages
-          you need:
+          Explore the&nbsp;book’s structure, and&nbsp;use search, illustrated
+          contents, or&nbsp;bookmarks to&nbsp;find the&nbsp;pages you need:
         </TextNode>
         <Image
           className='rounded-[14px]  lg:rounded-[20px]  dark:hidden'

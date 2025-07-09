@@ -790,7 +790,7 @@ function Page3Demo(): ReactElement {
               <TextLi>collaborate and&nbsp;share changes seamlessly.</TextLi>
             </TextUl>
             <TextNode>
-              Let&apos;s start by&nbsp;visualizing a&nbsp;basic Git workflow
+              Let’s start by&nbsp;visualizing a&nbsp;basic Git workflow
               from&nbsp;a&nbsp;high-level perspective.
             </TextNode>
           </BookLeftPartContainer>
@@ -1074,8 +1074,8 @@ function Page3Demo(): ReactElement {
                 className='absolute  inset-x-0  bottom-0  z-50  !mb-0  text-sm
                            leading-normal  transition-opacity  h-md:text-[1.5vh]'
               >
-                We&apos;ll be&nbsp;working on&nbsp;the&nbsp;studio website.
-                First, let&apos;s initialize our&nbsp;project and&nbsp;make
+                We’ll be&nbsp;working on&nbsp;the&nbsp;studio website. First,
+                let’s initialize our&nbsp;project and&nbsp;make
                 the&nbsp;corresponding commit
               </TextNode>
               <TextNode
@@ -1102,8 +1102,8 @@ function Page3Demo(): ReactElement {
               >
                 Now, we got the&nbsp;idea to&nbsp;animate the&nbsp;elements
                 in&nbsp;the&nbsp;intro section. But&nbsp;we see this rather
-                as&nbsp;an&nbsp;extra feature we&apos;d like to&nbsp;experiment
-                with, so&nbsp;instead&nbsp;of&nbsp;working on&nbsp;it
+                as&nbsp;an&nbsp;extra feature we’d like to&nbsp;experiment with,
+                so&nbsp;instead&nbsp;of&nbsp;working on&nbsp;it
                 on&nbsp;the&nbsp;main branch, we&nbsp;create a&nbsp;separate
                 branch. After&nbsp;switching to&nbsp;the&nbsp;new branch, we
                 start by&nbsp;animating the&nbsp;letters and&nbsp;make
@@ -1158,7 +1158,7 @@ function Page3Demo(): ReactElement {
                            '
               >
                 Now, we speed run the&nbsp;animation of&nbsp;the&nbsp;spine
-                and&nbsp;commit it. All that&apos;s left is to&nbsp;merge
+                and&nbsp;commit it. All that’s left is to&nbsp;merge
                 the&nbsp;animation feature into the&nbsp;main branch
                 to&nbsp;have the&nbsp;final combined version
                 of&nbsp;the&nbsp;project
@@ -1456,8 +1456,8 @@ function Page3Demo(): ReactElement {
                              leading-normal  transition-opacity
                              max-md:text-[1.9vw]  max-2sm:text-[2.5vw]'
                 >
-                  We&apos;ll be&nbsp;working on&nbsp;the&nbsp;studio website.
-                  First, let&apos;s initialize our&nbsp;project and&nbsp;make
+                  We’ll be&nbsp;working on&nbsp;the&nbsp;studio website. First,
+                  let’s initialize our&nbsp;project and&nbsp;make
                   the&nbsp;corresponding commit
                 </TextNode>
                 <TextNode
@@ -1484,13 +1484,12 @@ function Page3Demo(): ReactElement {
                 >
                   Now, we got the&nbsp;idea to&nbsp;animate the&nbsp;elements
                   in&nbsp;the&nbsp;intro section. But&nbsp;we see this rather
-                  as&nbsp;an&nbsp;extra feature we&apos;d like
-                  to&nbsp;experiment with, so&nbsp;instead&nbsp;of&nbsp;working
-                  on&nbsp;it on&nbsp;the&nbsp;main branch, we&nbsp;create
-                  a&nbsp;separate branch. After&nbsp;switching
-                  to&nbsp;the&nbsp;new branch, we start by&nbsp;animating
-                  the&nbsp;letters and&nbsp;make the&nbsp;first commit
-                  on&nbsp;our animation feature branch
+                  as&nbsp;an&nbsp;extra feature we’d like to&nbsp;experiment
+                  with, so&nbsp;instead&nbsp;of&nbsp;working on&nbsp;it
+                  on&nbsp;the&nbsp;main branch, we&nbsp;create a&nbsp;separate
+                  branch. After&nbsp;switching to&nbsp;the&nbsp;new branch, we
+                  start by&nbsp;animating the&nbsp;letters and&nbsp;make
+                  the&nbsp;first commit on&nbsp;our animation feature branch
                 </TextNode>
                 <TextNode
                   ref={step5TextNodeSmallRef}
@@ -1542,7 +1541,7 @@ function Page3Demo(): ReactElement {
                              max-md:text-[1.9vw]  max-2sm:text-[2.5vw]'
                 >
                   Now, we speed run the&nbsp;animation of&nbsp;the&nbsp;spine
-                  and&nbsp;commit it. All that&apos;s left is to&nbsp;merge
+                  and&nbsp;commit it. All that’s left is to&nbsp;merge
                   the&nbsp;animation feature into the&nbsp;main branch
                   to&nbsp;have the&nbsp;final combined version of&nbsp;the
                   project

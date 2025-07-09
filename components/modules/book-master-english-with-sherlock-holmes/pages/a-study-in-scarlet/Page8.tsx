@@ -39,8 +39,8 @@ function Page8({
               These were very remarkable, but as eccentric as all his other
               accomplishments. That he could play pieces, and difficult pieces,
               I knew well, because at my request he has played me some of
-              Mendelssohn&apos;s Lieder, and other favourites. When left to
-              himself, however, he would seldom produce any music or attempt any
+              Mendelssohn’s Lieder, and other favourites. When left to himself,
+              however, he would seldom produce any music or attempt any
               recognized air. Leaning back in his arm-chair of an evening, he
               would close his eyes and scrape carelessly at the fiddle which was
               thrown across his knee. Sometimes the chords were sonorous and
@@ -101,7 +101,7 @@ function Page8({
               absurdity. The reasoning was close and intense, but the deductions
               appeared to me to be far-fetched and exaggerated. The writer
               claimed by a momentary expression, a twitch of a muscle or a
-              glance of an eye, to fathom a man&apos;s inmost thoughts. Deceit,
+              glance of an eye, to fathom a man’s inmost thoughts. Deceit,
               according to him, was an impossibility in the case of one trained
               to observation and analysis. His conclusions were as infallible as
               so many propositions of Euclid. So startling would his results
@@ -126,12 +126,12 @@ function Page8({
               to distinguish the history of the man, and the trade or profession
               to which he belongs. Puerile as such an exercise may seem, it
               sharpens the faculties of observation, and teaches one where to
-              look and what to look for. By a man&apos;s finger nails, by his
+              look and what to look for. By a man’s finger nails, by his
               coat-sleeve, by his boot, by his trouser knees, by the callosities
               of his forefinger and thumb, by his expression, by his shirt
-              cuffs—by each of these things a man&apos;s calling is plainly
-              revealed. That all united should fail to enlighten the competent
-              enquirer in any case is almost inconceivable.”
+              cuffs—by each of these things a man’s calling is plainly revealed.
+              That all united should fail to enlighten the competent enquirer in
+              any case is almost inconceivable.”
             </TextNode>
             <TextNode>
               “What ineffable twaddle!” I cried, slapping the magazine down on
@@ -143,7 +143,7 @@ function Page8({
             <TextNode>
               “Why, this article,” I said, pointing at it with my egg spoon as I
               sat down to my breakfast. “I see that you have read it since you
-              have marked it. I don&apos;t deny that it is smartly written. It
+              have marked it. I don’t deny that it is smartly written. It
               irritates me though. It is evidently the theory of some arm-chair
               lounger who evolves all these neat little paradoxes in the
               seclusion of his own study. It is not practical. I should like to
@@ -170,17 +170,17 @@ function Page8({
 
             <TextNode>
               “Well, I have a trade of my own. I suppose I am the only one in
-              the world. I&apos;m a consulting detective, if you can understand
-              what that is. Here in London we have lots of Government detectives
-              and lots of private ones. When these fellows are at fault they
-              come to me, and I manage to put them on the right scent. They lay
-              all the evidence before me, and I am generally able, by the help
-              of my knowledge of the history of crime, to set them straight.
-              There is a strong family resemblance about misdeeds, and if you
-              have all the details of a thousand at your finger ends, it is odd
-              if you can&apos;t unravel the thousand and first. Lestrade is a
-              well-known detective. He got himself into a fog recently over a
-              forgery case, and that was what brought him here.”
+              the world. I’m a consulting detective, if you can understand what
+              that is. Here in London we have lots of Government detectives and
+              lots of private ones. When these fellows are at fault they come to
+              me, and I manage to put them on the right scent. They lay all the
+              evidence before me, and I am generally able, by the help of my
+              knowledge of the history of crime, to set them straight. There is
+              a strong family resemblance about misdeeds, and if you have all
+              the details of a thousand at your finger ends, it is odd if you
+              can’t unravel the thousand and first. Lestrade is a well-known
+              detective. He got himself into a fog recently over a forgery case,
+              and that was what brought him here.”
             </TextNode>
 
             <TextNode>“And these other people?”</TextNode>

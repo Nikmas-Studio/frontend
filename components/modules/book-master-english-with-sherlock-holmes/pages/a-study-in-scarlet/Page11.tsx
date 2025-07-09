@@ -29,9 +29,8 @@ function Page11({
             <TextNode noIndent>
               At the door of the house we were met by a tall, white-faced,
               flaxen-haired man, with a notebook in his hand, who rushed forward
-              and wrung my companion&apos;s hand with effusion. “It is indeed
-              kind of you to come,” he said, “I have had everything left
-              untouched.”
+              and wrung my companion’s hand with effusion. “It is indeed kind of
+              you to come,” he said, “I have had everything left untouched.”
             </TextNode>
 
             <TextNode>
@@ -55,7 +54,7 @@ function Page11({
 
             <TextNode>
               Gregson rubbed his hands in a self-satisfied way. “I think we have
-              done all that can be done,” he answered; “it&apos;s a queer case
+              done all that can be done,” he answered; “it’s a queer case
               though, and I knew your taste for such things.”
             </TextNode>
 
