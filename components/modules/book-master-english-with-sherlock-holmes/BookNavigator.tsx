@@ -543,390 +543,390 @@ function BookNavigator({ demo = false }: { demo?: boolean }): ReactElement {
               title={Story.A_STUDY_IN_SCARLET}
             />
             <BookNavigatorStory
-              demo
+              demo={demo}
               className='mb-7'
               selectedStory={selectedStory}
               udpateSelectedStory={updateSelectedStory}
               title={Story.THE_SIGN_OF_THE_FOUR}
             />
             <BookNavigatorPart
-              demo
+              demo={demo}
               onClick={() => updateSelectedStory(Story.A_SCANDAL_IN_BOHEMIA)}
               title='THE ADVENTURES OF SHERLOCK HOLMES'
             >
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.A_SCANDAL_IN_BOHEMIA}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_RED_HEADED_LEAGUE}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.A_CASE_OF_IDENTITY}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_BOSCOMBE_VALLEY_MYSTERY}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_FIVE_ORANGE_PIPS}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_MAN_WITH_THE_TWISTED_LIP}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_BLUE_CARBUNCLE}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_SPECKLED_BAND}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_ENGINEERS_THUMB}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_NOBLE_BACHELOR}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_BERYL_CORONET}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_COPPER_BEECHES}
               />
             </BookNavigatorPart>
             <BookNavigatorPart
-              demo
+              demo={demo}
               onClick={() => updateSelectedStory(Story.SILVER_BLAZE)}
               title='THE MEMOIRS OF SHERLOCK HOLMES'
             >
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.SILVER_BLAZE}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_YELLOW_FACE}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_STOCK_BROKERS_CLERK}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_GLORIA_SCOTT}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_MUSGRAVE_RITUAL}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_REIGATE_SQUIRES}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_CROOKED_MAN}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_RESIDENT_PATIENT}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_GREEK_INTERPRETER}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_NAVAL_TREATY}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_FINAL_PROBLEM}
               />
             </BookNavigatorPart>
             <BookNavigatorPart
-              demo
+              demo={demo}
               onClick={() =>
                 updateSelectedStory(Story.THE_ADVENTURE_OF_THE_EMPTY_HOUSE)
               }
               title='THE RETURN OF SHERLOCK HOLMES'
             >
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_EMPTY_HOUSE}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_NORWOOD_BUILDER}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_DANCING_MEN}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_SOLITARY_CYCLIST}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_PRIORY_SCHOOL}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_BLACK_PETER}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_CHARLES_AUGUSTUS_MILVERTON}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_SIX_NAPOLEONS}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_THREE_STUDENTS}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_GOLDEN_PINCE_NEZ}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_MISSING_THREE_QUARTER}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_ABBEY_GRANGE}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_SECOND_STAIN}
               />
             </BookNavigatorPart>
             <BookNavigatorStory
-              demo
+              demo={demo}
               selectedStory={selectedStory}
               udpateSelectedStory={updateSelectedStory}
               title={Story.THE_HOUND_OF_THE_BASKERVILLES}
             />
             <BookNavigatorStory
-              demo
+              demo={demo}
               className='mb-7'
               selectedStory={selectedStory}
               udpateSelectedStory={updateSelectedStory}
               title={Story.THE_VALLEY_OF_FEAR}
             />
             <BookNavigatorPart
-              demo
+              demo={demo}
               onClick={() =>
                 updateSelectedStory(Story.THE_ADVENTURE_OF_WISTERIA_LODGE)
               }
               title='HIS LAST BOW'
             >
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_WISTERIA_LODGE}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_CARDBOARD_BOX}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_RED_CIRCLE}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_BRUCE_PARTINGTON_PLANS}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_DYING_DETECTIVE}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_DISAPPEARANCE_OF_LADY_FRANCES_CARFAX}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_DEVILS_FOOT}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.HIS_LAST_BOW}
               />
             </BookNavigatorPart>
             <BookNavigatorPart
-              demo
+              demo={demo}
               onClick={() => updateSelectedStory(Story.THE_ILLUSTRIOUS_CLIENT)}
               title='THE CASE-BOOK OF SHERLOCK HOLMES'
             >
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ILLUSTRIOUS_CLIENT}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_BLANCHED_SOLDIER}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_MAZARIN_STONE}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_THREE_GABLES}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_SUSSEX_VAMPIRE}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_THREE_GARRIDEBS}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_PROBLEM_OF_THOR_BRIDGE}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_CREEPING_MAN}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_LIONS_MANE}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_VEILED_LODGER}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_SHOSCOMBE_OLD_PLACE}
               />
               <BookNavigatorStory
-                demo
+                demo={demo}
                 selectedStory={selectedStory}
                 udpateSelectedStory={updateSelectedStory}
                 title={Story.THE_ADVENTURE_OF_THE_RETIRED_COLOURMAN}
