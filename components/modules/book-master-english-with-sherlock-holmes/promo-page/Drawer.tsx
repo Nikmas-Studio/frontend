@@ -757,21 +757,33 @@ function PromoDrawer(): ReactElement {
                             >
                               <span className='font-bold'>Paid until:</span>
                               <br />
-                              {bookState.paidUntil}
+                              {bookState.paidUntil === undefined
+                                ? '∞'
+                                : bookState.paidUntil}
                             </BasicTextNode>
                           </div>
                         </div>
                         {bookState.subscriptionIsActive && (
                           <button
                             onClick={() => {
+                              if (bookState.paidUntil === undefined) {
+                                return;
+                              }
+
                               setNestedModalIsOpened(true);
                             }}
-                            className={`button  mt-5  border  border-gray-light
+                            className={classNames(
+                              `button  mt-5  border  border-gray-light
                                        bg-transparent  text-black  ${merriweather.className}
                                        !font-normal  !outline-none  !ring-0
                                        hover:bg-gray-light  dark:border-gray-dark
                                        dark:text-white 
-                                       dark:hover:bg-gray-dark`}
+                                       dark:hover:bg-gray-dark`,
+                              {
+                                '!pointer-events-none  !text-gray-400  dark:!text-gray-500':
+                                  bookState.paidUntil === undefined,
+                              },
+                            )}
                           >
                             Cancel subscription
                           </button>

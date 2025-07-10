@@ -1,5 +1,5 @@
 export interface BoughtState {
-  paidUntil: string;
+  paidUntil?: string;
   subscriptionIsActive: boolean;
 }
 
@@ -19,7 +19,8 @@ export function bookIsBought(value: DetailedBookState): value is BoughtState {
     typeof value === 'object' &&
     value !== null &&
     'paidUntil' in value &&
-    typeof value.paidUntil === 'string' &&
+    (typeof value.paidUntil === 'string' ||
+      typeof value.paidUntil === 'undefined') &&
     'subscriptionIsActive' in value &&
     typeof value.subscriptionIsActive === 'boolean'
   );
