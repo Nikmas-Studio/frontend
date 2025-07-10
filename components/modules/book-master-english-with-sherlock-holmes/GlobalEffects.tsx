@@ -4,7 +4,10 @@ import {
   BASE_PATH_DEMO,
   BASE_PATH_READ,
 } from '@/constants/book-master-english-with-sherlock-holmes/main';
-import { useActivePageDispatch } from '@/context/active-page/Context';
+import {
+  useActivePage,
+  useActivePageDispatch,
+} from '@/context/active-page/Context';
 import { useBookVersion } from '@/context/book-version/Context';
 import { useInitialScrollToPageStateDispatch } from '@/context/initial-scroll-to-page/Context';
 import { useTouchDevice } from '@/context/touch-device/Context';
@@ -26,6 +29,7 @@ function GlobalEffects({
   const basePath =
     bookVersion === BookVersion.DEMO ? BASE_PATH_DEMO : BASE_PATH_READ;
   const { setActivePage } = useActivePageDispatch();
+  const { activePage } = useActivePage();
   const { isTouchDevice } = useTouchDevice();
 
   const { setInitialScrollToPageIsCompleted } =
@@ -77,6 +81,13 @@ function GlobalEffects({
     setInitialScrollToPageIsCompleted,
     setActivePage,
   ]);
+
+  useEffect(() => {
+    localStorage.setItem(
+      `book-master-english-with-sherlock-holmes/${bookVersion}/last-visited-page`,
+      activePage.toString(),
+    );
+  }, [activePage, bookVersion]);
 
   useSelectTranslation();
 

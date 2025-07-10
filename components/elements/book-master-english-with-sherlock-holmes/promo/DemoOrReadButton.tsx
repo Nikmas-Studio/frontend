@@ -27,7 +27,10 @@ function DemoOrReadButton(): ReactElement {
     },
   );
 
-  const href = `/${BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI}/read`;
+  const lastVisitedPage = localStorage.getItem(
+    `book-master-english-with-sherlock-holmes/read/last-visited-page`,
+  );
+  const href = `/${BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI}/read/${lastVisitedPage}`;
 
   function handleClick(): void {
     if (bookState === BookState.UNBOUGHT) {
