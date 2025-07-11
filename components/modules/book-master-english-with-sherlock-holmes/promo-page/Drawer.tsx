@@ -16,8 +16,10 @@ import useOutsideClick from '@/hooks/use-outside-click';
 import bookCover from '@/public/images/book-cover-master-english-with-sherlock-holmes.jpg';
 import { bookIsBought, BookState } from '@/types/book-state';
 import { cancelSubscription } from '@/utils/cancel-subscription';
-import { purchaseBook } from '@/utils/purchase-book-route';
-import { subscribeAgain } from '@/utils/subscribe-again';
+import { getDemoLink } from '@/utils/get-demo-link-route';
+import { purchaseBookAuthenticated } from '@/utils/purchase-book-authenticated-route';
+import { purchaseBookGuest } from '@/utils/purchase-book-guest-route';
+import { resumeSubscription } from '@/utils/resume-subscription';
 import CircularProgress from '@mui/material/CircularProgress';
 import classNames from 'classnames';
 import Image from 'next/image';
@@ -336,7 +338,7 @@ function PromoDrawer(): ReactElement {
     setPaymentPageIsGenerating(true);
 
     try {
-      const { paymentLink } = await purchaseBook(
+      const { paymentLink } = await purchaseBookAuthenticated(
         BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI,
       );
 
@@ -395,7 +397,7 @@ function PromoDrawer(): ReactElement {
 
     let errorOccurred = false;
     try {
-      await subscribeAgain(BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI);
+      await resumeSubscription(BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI);
 
       setSubscribeAgainError(false);
     } catch (error) {
@@ -685,12 +687,11 @@ function PromoDrawer(): ReactElement {
                 <div className='max-w-[400px]'>
                   <EmailForm
                     requestCallback={async (email: string, token: string) => {
-                      // await axios.post(LOGIN_ROUTE, {
-                      //   email,
-                      //   captchaToken: token,
-                      //   readerName: process.env.NEXT_PUBLIC_HONEYPOT_KEY,
-                      // });
-                      console.log(email, token);
+                      await getDemoLink({
+                        bookURI: BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI,
+                        email,
+                        captchaToken: token,
+                      });
                     }}
                     label='Get the demo link by email:'
                     inputId='demo-email'
@@ -824,13 +825,12 @@ function PromoDrawer(): ReactElement {
                           {session === null && (
                             <EmailForm
                               requestCallback={async (email, token) => {
-                                // await axios.post(PAYMENT_ROUTE_GUEST, {
-                                //   email,
-                                //   bookURI: BOOK_MASTER_GIT_AND_GITHUB_URI,
-                                //   captchaToken: token,
-                                //   readerName: process.env.NEXT_PUBLIC_HONEYPOT_KEY,
-                                // });
-                                console.log(email, token);
+                                await purchaseBookGuest({
+                                  email,
+                                  captchaToken: token,
+                                  bookURI:
+                                    BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI,
+                                });
                               }}
                               label='Get the payment link by&nbsp;email:'
                               caption='This&nbsp;email will&nbsp;be&nbsp;used as&nbsp;a&nbsp;key to&nbsp;your&nbsp;library'

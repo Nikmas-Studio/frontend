@@ -4,11 +4,7 @@ import BasicTextNode from '@/components/elements/BasicTextNode';
 import BuddhaSvg from '@/components/elements/BuddhaSvg';
 import H2 from '@/components/elements/H2';
 import TextNode from '@/components/elements/TextNode';
-import {
-  BOOK_MASTER_GIT_AND_GITHUB_URI,
-  PAYMENT_ROUTE_AUTHENTICATED,
-  PAYMENT_ROUTE_GUEST,
-} from '@/constants/general';
+import { BOOK_MASTER_GIT_AND_GITHUB_URI } from '@/constants/general';
 import { useBookState } from '@/context/book-state/Context';
 import { useSession } from '@/context/session/Context';
 import {
@@ -17,8 +13,9 @@ import {
 } from '@/context/subscription-modal/Context';
 import useOutsideClick from '@/hooks/use-outside-click';
 import { bookIsBought, BookState } from '@/types/book-state';
+import { purchaseBookAuthenticated } from '@/utils/purchase-book-authenticated-route';
+import { purchaseBookGuest } from '@/utils/purchase-book-guest-route';
 import { CircularProgress } from '@mui/material';
-import axios from 'axios';
 import classNames from 'classnames';
 import { ReactElement, useEffect, useRef, useState } from 'react';
 import EmailForm from '../EmailForm';
@@ -128,13 +125,12 @@ function SubscriptionModal({
     setPaymentPageIsGenerating(true);
 
     try {
-      const res = await axios.post(PAYMENT_ROUTE_AUTHENTICATED, {
-        bookURI: BOOK_MASTER_GIT_AND_GITHUB_URI,
-      });
+      const { paymentLink } = await purchaseBookAuthenticated(
+        BOOK_MASTER_GIT_AND_GITHUB_URI,
+      );
 
       setPaymentPageGenerationError(false);
 
-      const paymentLink = res.data.paymentLink;
       window.location.href = paymentLink;
     } catch (error) {
       setPaymentPageGenerationError(true);
@@ -292,11 +288,10 @@ function SubscriptionModal({
                   {session === null && (
                     <EmailForm
                       requestCallback={async (email, token) => {
-                        await axios.post(PAYMENT_ROUTE_GUEST, {
-                          email,
+                        await purchaseBookGuest({
                           bookURI: BOOK_MASTER_GIT_AND_GITHUB_URI,
+                          email,
                           captchaToken: token,
-                          readerName: process.env.NEXT_PUBLIC_HONEYPOT_KEY,
                         });
                       }}
                       label='Get payment link by&nbsp;email'

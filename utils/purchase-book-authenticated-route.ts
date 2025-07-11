@@ -1,10 +1,9 @@
-import { PAYMENT_ROUTE_AUTHENTICATED } from '@/constants/general';
 import axios from 'axios';
 
-export async function purchaseBook(
+export async function purchaseBookAuthenticated(
   bookURI: string,
 ): Promise<{ paymentLink: string }> {
-  const res = await axios.post(PAYMENT_ROUTE_AUTHENTICATED, {
+  const res = await axios.post(`/api/books/${bookURI}/purchase-authenticated`, {
     bookURI,
   });
 
