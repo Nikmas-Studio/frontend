@@ -84,7 +84,9 @@ function BookReadWrapper({ initialPageId }: BookReadProps): ReactElement {
       }
     }
 
-    notifyMetaPixelOfPurchase();
+    if (process.env.NEXT_PUBLIC_ENV === 'production') {
+      notifyMetaPixelOfPurchase();
+    }
   }, [searchParams]);
 
   if (bookState === BookState.LOADING) {

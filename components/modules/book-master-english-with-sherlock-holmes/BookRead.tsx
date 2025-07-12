@@ -722,7 +722,6 @@ function BookRead({ initialPageId }: BookReadProps): ReactElement {
           <TranslationTooltip />
           <SettingsDropdown />
           <BookNavigator />
-          {/* </div> */}
         </GlobalEffects>
       </BookVersionProvider>
     </BookMasterEnglishWithSherlockHolmesLayout>
