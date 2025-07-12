@@ -52,7 +52,7 @@ export default function RootLayout({
             }
           `}
         </Script>
-        <Script
+        {/* <Script
           id='early-remove-invisible-body-class'
           strategy='beforeInteractive'
         >
@@ -63,8 +63,8 @@ export default function RootLayout({
                 document.body.classList.remove('invisible');
               }
           `}
-        </Script>
-        <Script id='later-remove-invisible-body-class'>
+        </Script> */}
+        {/* <Script id='later-remove-invisible-body-class'>
           {`
               const path = window.location.pathname;
               
@@ -72,7 +72,7 @@ export default function RootLayout({
                 document.body.classList.remove('invisible');
               }
           `}
-        </Script>
+        </Script> */}
         <Script id='meta-pixel'>
           {`
               !function(f,b,e,v,n,t,s)
@@ -97,7 +97,7 @@ export default function RootLayout({
           />
         </noscript>
       </head>
-      <body className='invisible'>
+      <body>
         <SessionProvider>
           {children}
           {/* <EscapeInAppBrowser /> */}

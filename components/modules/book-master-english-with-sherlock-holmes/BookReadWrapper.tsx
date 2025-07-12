@@ -9,12 +9,10 @@ import {
 import { BookState } from '@/types/book-state';
 import { EventName } from '@/types/meta-pixel';
 import { buildBookAccessRoute } from '@/utils/build-book-access-route';
-import { decryptAndValidateBookReloadToken } from '@/utils/decrypt-and-validate-book-reload-token';
 import { notifyMetaPixelOfPurchaseApi } from '@/utils/notify-meta-pixel-of-purchase';
 import { CircularProgress } from '@mui/material';
 import axios from 'axios';
-import { useSearchParams } from 'next/navigation';
-import { ReactElement, ReactNode, useEffect, useRef, useState } from 'react';
+import { ReactElement, ReactNode, useEffect, useState } from 'react';
 
 interface BookReadProps {
   children: ReactNode;
@@ -22,18 +20,9 @@ interface BookReadProps {
 
 function BookReadWrapper({ children }: BookReadProps): ReactElement {
   const [bookState, setBookState] = useState<BookState>(BookState.LOADING);
-  const reloadTokenIsValid = useRef(false);
-  const searchParams = useSearchParams();
 
   useEffect(() => {
     async function defineBookState(): Promise<void> {
-      const encryptedReloadToken = localStorage.getItem('reloadToken');
-      if (encryptedReloadToken !== null) {
-        const { isValid } =
-          decryptAndValidateBookReloadToken(encryptedReloadToken);
-        reloadTokenIsValid.current = isValid;
-      }
-
       try {
         const res = await axios.get(
           buildBookAccessRoute(BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI),
@@ -81,7 +70,7 @@ function BookReadWrapper({ children }: BookReadProps): ReactElement {
     }
 
     notifyMetaPixelOfPurchase();
-  }, [searchParams]);
+  }, []);
 
   if (bookState === BookState.LOADING) {
     return (

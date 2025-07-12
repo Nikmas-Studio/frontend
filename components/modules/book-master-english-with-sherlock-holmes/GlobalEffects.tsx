@@ -37,7 +37,10 @@ function GlobalEffects({
 
   useEffect(() => {
     function showBook(): void {
-      document.body.classList.remove('invisible');
+      const cover = document.getElementById('book-page-cover');
+      if (cover !== null) {
+        cover.classList.remove('invisible');
+      }
     }
 
     if (initialPageId === undefined) {
