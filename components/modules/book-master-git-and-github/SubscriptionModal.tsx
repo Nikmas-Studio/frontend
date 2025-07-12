@@ -313,8 +313,13 @@ function SubscriptionModal({
                     <div className='flex  flex-col  items-center'>
                       <button
                         onClick={handlePurchaseBookAuthenticated}
-                        className='button  bg-subscription  text-white  
-                             hover:bg-subscription-darker'
+                        className={classNames(
+                          `button  bg-subscription  text-white  
+                             hover:bg-subscription-darker`,
+                          {
+                            'pointer-events-none': paymentPageIsGenerating,
+                          },
+                        )}
                       >
                         Proceed to payment
                       </button>

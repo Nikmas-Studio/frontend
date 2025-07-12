@@ -544,8 +544,14 @@ function PromoDrawer(): ReactElement {
                       <div className='flex  w-[9.1rem]  flex-col'>
                         <button
                           onClick={handleCancelSubscription}
-                          className={`button  ${merriweather.className}  border  border-red-600  bg-transparent
-                                 text-red-600  hover:bg-red-600  hover:text-white`}
+                          className={classNames(
+                            `button  ${merriweather.className}  border  border-red-600  bg-transparent
+                                 text-red-600  hover:bg-red-600  hover:text-white`,
+                            {
+                              'pointer-events-none':
+                                cancelSubscriptionIsProcessing,
+                            },
+                          )}
                         >
                           Yes, cancel
                         </button>
@@ -599,9 +605,14 @@ function PromoDrawer(): ReactElement {
                     <div className='flex  w-[14.12rem]  flex-col'>
                       <button
                         onClick={handleSubscribeAgain}
-                        className={`button  bg-subscription  text-white  
+                        className={classNames(
+                          `button  bg-subscription  text-white  
                                   hover:bg-subscription-darker
-                                  ${merriweather.className}`}
+                                  ${merriweather.className}`,
+                          {
+                            'pointer-events-none': subscribeAgainIsProcessing,
+                          },
+                        )}
                       >
                         Yes, subscribe again
                       </button>
@@ -857,8 +868,14 @@ function PromoDrawer(): ReactElement {
                             <div className='flex  w-[220px]  flex-col  items-start'>
                               <button
                                 onClick={handlePurchaseBookAuthenticated}
-                                className={`button  w-full  bg-subscription  text-white  
-                              hover:bg-subscription-darker  ${merriweather.className}`}
+                                className={classNames(
+                                  `button  w-full  bg-subscription  text-white  
+                              hover:bg-subscription-darker  ${merriweather.className}`,
+                                  {
+                                    'pointer-events-none':
+                                      paymentPageIsGenerating,
+                                  },
+                                )}
                               >
                                 Proceed to payment
                               </button>
