@@ -39,7 +39,7 @@ function GlobalEffects({
     function showBook(): void {
       const cover = document.getElementById('book-page-cover');
       if (cover !== null) {
-        cover.classList.add('invisible');
+        cover.classList.add('!bg-transparent');
       }
     }
 
