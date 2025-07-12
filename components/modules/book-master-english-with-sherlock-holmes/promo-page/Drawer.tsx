@@ -865,7 +865,7 @@ function PromoDrawer(): ReactElement {
                             />
                           )}
                           {session !== null && (
-                            <div className='flex  w-[220px]  flex-col  items-start'>
+                            <div className='flex  w-[14.375rem]  flex-col  items-start'>
                               <button
                                 onClick={handlePurchaseBookAuthenticated}
                                 className={classNames(
