@@ -300,11 +300,10 @@ function PromoDrawer(): ReactElement {
      lg:max-w-[40rem]  lg:rounded-[20px]
      dark:lg:border  dark:lg:border-gray-dark  dark:bg-black`,
     {
-      'translate-y-0  lg:-translate-y-1/2  opacity-1': nestedModalIsOpened,
-      'translate-y-[110dvh]  lg:-translate-y-1/2  opacity-0':
-        !nestedModalIsOpened,
-      'lg:h-[25.125rem]': showSubscriptionIsCanceled,
-      'lg:h-[19.875rem]': showYouAreSubscribed,
+      'translate-y-0  opacity-1': nestedModalIsOpened,
+      'translate-y-[110dvh]  opacity-0': !nestedModalIsOpened,
+      'lg:!h-[25.125rem]': showSubscriptionIsCanceled,
+      'lg:!h-[19.875rem]': showYouAreSubscribed,
     },
   );
 
