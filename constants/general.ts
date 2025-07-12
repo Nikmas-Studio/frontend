@@ -1,8 +1,6 @@
 export const ROOT_FONT_SIZE = 16;
 export const RESIZE_THRESHOLD = 179;
 export const LOGIN_ROUTE = '/api/login';
-export const PAYMENT_ROUTE_AUTHENTICATED = '/api/purchase-book-authenticated';
-export const GET_DEMO_LINK_ROUTE = '/api/get-demo-link';
 export const LOG_ERROR_ROUTE = '/api/log-error';
 export const LOG_INFO_ROUTE = '/api/log-info';
 export const GET_SESSION_ROUTE = '/api/session';

@@ -1,4 +1,3 @@
-import { GET_DEMO_LINK_ROUTE } from '@/constants/general';
 import axios from 'axios';
 
 export async function getDemoLink({
@@ -10,9 +9,8 @@ export async function getDemoLink({
   email: string;
   captchaToken: string;
 }): Promise<void> {
-  await axios.post(GET_DEMO_LINK_ROUTE, {
+  await axios.post(`/api/books/${bookURI}/get-demo-link`, {
     email,
-    bookURI,
     captchaToken,
     readerName: process.env.NEXT_PUBLIC_HONEYPOT_KEY,
   });
