@@ -41,11 +41,10 @@ function BookMasterEnglishWithSherlockHolmesLayout({
             }}
           /> */}
           <div
-            className='fixed  z-[99999]  h-screen  w-screen  bg-white  dark:bg-black'
+            className='pointer-events-none  fixed  z-[99999]  h-screen  w-screen  bg-white  dark:bg-black'
             id='book-page-cover'
-          >
-            <Background>{children}</Background>
-          </div>
+          ></div>
+          <Background>{children}</Background>
         </div>
       </ProvidersBookMasterEnglishWithSherlockHolmes>
     </ProvidersDefault>
