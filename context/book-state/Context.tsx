@@ -35,7 +35,7 @@ export function BookStateProvider({
     async function defineBookState(): Promise<void> {
       try {
         const res = await axios.get(buildBookAccessRoute(bookURI));
-        console.log('Book access response:', res.data);
+
         if (res.data.accessGranted) {
           setBookState({
             paidUntil: res.data.paidUntil,

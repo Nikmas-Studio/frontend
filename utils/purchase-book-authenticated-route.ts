@@ -7,5 +7,5 @@ export async function purchaseBookAuthenticated(
 
   const paymentLink = res.data.paymentLink;
 
-  return paymentLink;
+  return { paymentLink };
 }
