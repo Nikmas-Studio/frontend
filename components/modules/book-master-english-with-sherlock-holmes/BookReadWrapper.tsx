@@ -8,6 +8,7 @@ import {
 } from '@/constants/general';
 import { BookState } from '@/types/book-state';
 import { EventName } from '@/types/meta-pixel';
+import { buildBookAccessRoute } from '@/utils/build-book-access-route';
 import { decryptAndValidateBookReloadToken } from '@/utils/decrypt-and-validate-book-reload-token';
 import { notifyMetaPixelOfPurchaseApi } from '@/utils/notify-meta-pixel-of-purchase';
 import { CircularProgress } from '@mui/material';
@@ -33,20 +34,18 @@ function BookReadWrapper({ children }: BookReadProps): ReactElement {
         reloadTokenIsValid.current = isValid;
       }
 
-      // try {
-      //   const res = await axios.get(
-      //     buildBookAccessRoute(BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI),
-      //   );
-      //   if (res.data.accessGranted) {
-      //     setBookState(BookState.BOUGHT);
-      //   } else {
-      //     setBookState(BookState.UNBOUGHT);
-      //   }
-      // } catch (error) {
-      //   setBookState(BookState.UNBOUGHT);
-      // }
-
-      setBookState(BookState.BOUGHT);
+      try {
+        const res = await axios.get(
+          buildBookAccessRoute(BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI),
+        );
+        if (res.data.accessGranted) {
+          setBookState(BookState.BOUGHT);
+        } else {
+          setBookState(BookState.UNBOUGHT);
+        }
+      } catch (error) {
+        setBookState(BookState.UNBOUGHT);
+      }
     }
 
     defineBookState();
