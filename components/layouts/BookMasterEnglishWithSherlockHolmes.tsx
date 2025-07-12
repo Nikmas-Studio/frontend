@@ -40,7 +40,12 @@ function BookMasterEnglishWithSherlockHolmesLayout({
               `,
             }}
           /> */}
-          <Background>{children}</Background>
+          <div
+            className='fixed  z-[99999]  h-screen  w-screen  bg-white  dark:bg-black'
+            id='book-page-cover'
+          >
+            <Background>{children}</Background>
+          </div>
         </div>
       </ProvidersBookMasterEnglishWithSherlockHolmes>
     </ProvidersDefault>
