@@ -364,7 +364,10 @@ function BookRead({ initialPageId }: BookReadProps): ReactElement {
     <BookMasterEnglishWithSherlockHolmesLayout initialPageId={initialPageId}>
       <BookVersionProvider version={BookVersion.READ}>
         <GlobalEffects initialPageId={initialPageId}>
-          <div className='invisible' id='book-page-cover'>
+          <div
+            className='fixed  z-[99999]  h-screen  w-screen  bg-white  dark:bg-black'
+            id='book-page-cover'
+          >
             <CoverPage />
             {[
               InstructionsPage,

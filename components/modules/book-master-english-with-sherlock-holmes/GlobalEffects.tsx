@@ -39,7 +39,7 @@ function GlobalEffects({
     function showBook(): void {
       const cover = document.getElementById('book-page-cover');
       if (cover !== null) {
-        cover.classList.remove('invisible');
+        cover.classList.add('invisible');
       }
     }
 
@@ -60,9 +60,11 @@ function GlobalEffects({
         setActivePage('end');
         setInitialScrollToPageIsCompleted(true);
 
-        setTimeout(() => {
-          showBook();
-        }, 2000);
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            showBook();
+          });
+        });
 
         return;
       }
@@ -75,9 +77,7 @@ function GlobalEffects({
 
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          setTimeout(() => {
-            showBook();
-          }, 2000);
+          showBook();
         });
       });
     }
