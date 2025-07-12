@@ -59,7 +59,10 @@ function GlobalEffects({
         updateUrl({ basePath: `${basePath}/end` });
         setActivePage('end');
         setInitialScrollToPageIsCompleted(true);
-        showBook();
+
+        setTimeout(() => {
+          showBook();
+        }, 2000);
 
         return;
       }
@@ -72,7 +75,9 @@ function GlobalEffects({
 
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          showBook();
+          setTimeout(() => {
+            showBook();
+          }, 2000);
         });
       });
     }
