@@ -74,6 +74,9 @@ export function useSelectTranslation(): void {
           if (axios.isAxiosError(e) && e.response?.status === 400) {
             translation =
               'In the demo, there is a\u00A0technical restriction on\u00A0translating certain fragments. Please select a\u00A0different fragment or\u00A0subscribe to\u00A0the\u00A0full version.\u00A0';
+          } else if (axios.isAxiosError(e) && e.response?.status === 402) {
+            translation =
+              "You've reached your\u00A0yearly translation credit limit. Please contact team@nikmas.studio to\u00A0request an\u00A0increase.";
           } else {
             translation =
               'An\u00A0error occurred while\u00A0translating the\u00A0text. Please try again after\u00A0a\u00A0pause.';
