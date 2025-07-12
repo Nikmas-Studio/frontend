@@ -192,7 +192,7 @@ function SubscriptionModal({
                 ? 'You have lifetime access'
                 : 'Premium Preorder'}
             </H2>
-            {bookIsBought(bookState) && (
+            {!bookIsBought(bookState) && (
               <TextNode className='max-w-[25.4rem]'>
                 The&nbsp;book is&nbsp;in&nbsp;the&nbsp;early stages, and this is
                 the&nbsp;opportunity for&nbsp;you to&nbsp;both benefit
@@ -240,7 +240,7 @@ function SubscriptionModal({
                       books.
                     </span>
                   )}
-                  {bookIsBought(bookState) && (
+                  {!bookIsBought(bookState) && (
                     <span>
                       By&nbsp;preordering the&nbsp;book, you&nbsp;become
                       the&nbsp;essential driving force, directly accelerating
@@ -276,7 +276,7 @@ function SubscriptionModal({
                            dark:md:[filter:drop-shadow(0_0_250px_rgba(255,255,255,0.68))]'
               />
             )}
-            {bookIsBought(bookState) && (
+            {!bookIsBought(bookState) && (
               <>
                 <BasicTextNode
                   className='mt-9  text-center  text-4xl 
