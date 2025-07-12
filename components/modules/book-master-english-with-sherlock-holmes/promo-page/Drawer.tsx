@@ -535,8 +535,10 @@ function PromoDrawer(): ReactElement {
                     </H2>
                     <TextNode className='mb-7'>
                       You’ll have access to the book until&nbsp;
-                      <span className='italic'>{bookState.paidUntil}</span>.
-                      Whenever you wish, you’ll be able to start your
+                      <span className='italic'>
+                        {formatDate(new Date(bookState.paidUntil!))}
+                      </span>
+                      . Whenever you wish, you’ll be able to start your
                       subscription again.
                     </TextNode>
                     <div className='flex  items-start  gap-6'>
@@ -588,8 +590,11 @@ function PromoDrawer(): ReactElement {
                   </H2>
                   <TextNode className='mb-7'>
                     You have a paid period until&nbsp;
-                    <span className='italic'>{bookState.paidUntil}</span>. Once
-                    it ends, the next payment will be charged automatically.
+                    <span className='italic'>
+                      {formatDate(new Date(bookState.paidUntil!))}
+                    </span>
+                    . Once it ends, the next payment will be charged
+                    automatically.
                   </TextNode>
                   <div className='flex  flex-wrap  items-start  gap-x-6  gap-y-5'>
                     <div className='flex  w-[14.12rem]  flex-col'>
