@@ -16,6 +16,7 @@ import useOutsideClick from '@/hooks/use-outside-click';
 import bookCover from '@/public/images/book-cover-master-english-with-sherlock-holmes.jpg';
 import { bookIsBought, BookState } from '@/types/book-state';
 import { cancelSubscription } from '@/utils/cancel-subscription';
+import { formatDate } from '@/utils/format-date';
 import { getDemoLink } from '@/utils/get-demo-link-route';
 import { purchaseBookAuthenticated } from '@/utils/purchase-book-authenticated-route';
 import { purchaseBookGuest } from '@/utils/purchase-book-guest-route';
@@ -760,7 +761,7 @@ function PromoDrawer(): ReactElement {
                               <br />
                               {bookState.paidUntil === undefined
                                 ? '∞'
-                                : bookState.paidUntil}
+                                : formatDate(new Date(bookState.paidUntil))}
                             </BasicTextNode>
                           </div>
                         </div>
