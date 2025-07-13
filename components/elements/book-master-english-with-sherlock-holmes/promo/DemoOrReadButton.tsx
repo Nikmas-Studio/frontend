@@ -1,9 +1,6 @@
 'use client';
 
-import {
-  BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI,
-  LAST_VISITED_PAGE_UPDATED_EVENT_NAME,
-} from '@/constants/general';
+import { BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI } from '@/constants/general';
 import { usePromoDrawerDispatch } from '@/context/book-master-english-with-sherlock-holmes/promo-drawer/Context';
 import { useBookState } from '@/context/book-state/Context';
 import { merriweather } from '@/fonts';
@@ -46,16 +43,9 @@ function DemoOrReadButton(): ReactElement {
 
     updateFromStorage();
 
-    window.addEventListener(
-      LAST_VISITED_PAGE_UPDATED_EVENT_NAME,
-      updateFromStorage,
-    );
+    window.addEventListener('pageshow', updateFromStorage);
 
-    return () =>
-      window.removeEventListener(
-        LAST_VISITED_PAGE_UPDATED_EVENT_NAME,
-        updateFromStorage,
-      );
+    return () => window.removeEventListener('pageshow', updateFromStorage);
   }, []);
 
   function handleClick(): void {
