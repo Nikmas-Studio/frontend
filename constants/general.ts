@@ -18,4 +18,3 @@ export const BOOK_PRICE = 23;
 export const NAVIGATOR_PART_ID_PREFIX = 'navigator-part-';
 export const NAVIGATOR_TITLE_ID_PREFIX = 'navigator-title-';
 export const NAVIGATOR_PAGE_CARD_ID_PREFIX = 'navigator-page-card-';
-export const LAST_VISITED_PAGE_UPDATED_EVENT_NAME = 'lastVisitedPageUpdated';

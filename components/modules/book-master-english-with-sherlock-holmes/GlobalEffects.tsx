@@ -4,7 +4,6 @@ import {
   BASE_PATH_DEMO,
   BASE_PATH_READ,
 } from '@/constants/book-master-english-with-sherlock-holmes/main';
-import { LAST_VISITED_PAGE_UPDATED_EVENT_NAME } from '@/constants/general';
 import {
   useActivePage,
   useActivePageDispatch,
@@ -96,8 +95,6 @@ function GlobalEffects({
       `book-master-english-with-sherlock-holmes/${bookVersion}/last-visited-page`,
       activePage.toString(),
     );
-
-    window.dispatchEvent(new Event(LAST_VISITED_PAGE_UPDATED_EVENT_NAME));
   }, [activePage, bookVersion]);
 
   useSelectTranslation();
