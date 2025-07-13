@@ -11,8 +11,8 @@ function BookNavigator(): ReactElement {
     <section className='mt-20  lg:mt-24'>
       <MainContainer>
         <H2 className='mb-9  lg:mb-11  2lg:mb-9'>
-          Book navigator with&nbsp;search and&nbsp;bookmarks is at&nbsp;your{' '}
-          disposal
+          Book navigator with&nbsp;search and&nbsp;bookmarks
+          is&nbsp;at&nbsp;your disposal
           {/* <br className='2lg:hidden' />
           <span
             className='mt-[1.2rem] inline-block  translate-y-[-0.26rem]  rounded-[10px]
