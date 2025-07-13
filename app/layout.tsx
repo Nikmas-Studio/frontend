@@ -14,6 +14,10 @@ export default function RootLayout({
   return (
     <html lang='en' className='bg-white dark:bg-black'>
       <head>
+        {process.env.NEXT_PUBLIC_ENV === 'staging' && (
+          <meta name='robots' content='noindex, nofollow' />
+        )}
+
         <Script
           async
           src='https://www.googletagmanager.com/gtag/js?id=G-0Z0LRD55BR'
@@ -52,27 +56,6 @@ export default function RootLayout({
             }
           `}
         </Script>
-        {/* <Script
-          id='early-remove-invisible-body-class'
-          strategy='beforeInteractive'
-        >
-          {`
-              const path = window.location.pathname;
-              
-              if (!path.includes('/read') && !path.includes('/demo')) {
-                document.body.classList.remove('invisible');
-              }
-          `}
-        </Script> */}
-        {/* <Script id='later-remove-invisible-body-class'>
-          {`
-              const path = window.location.pathname;
-              
-              if (!path.includes('/read') && !path.includes('/demo')) {
-                document.body.classList.remove('invisible');
-              }
-          `}
-        </Script> */}
         <Script id='meta-pixel'>
           {`
               !function(f,b,e,v,n,t,s)
