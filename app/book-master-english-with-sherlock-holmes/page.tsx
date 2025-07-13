@@ -22,32 +22,32 @@ import { ReactElement } from 'react';
 export const metadata: Metadata = {
   title: 'Master English with Sherlock Holmes [Interactive e-book]',
   description:
-    'Learn English through story — with the highest‑quality, highlight‑based, context‑aware AI translation, built right into the book and available in any language.',
+    'Advance your English through story — with the highest‑quality, highlight‑based, context‑aware AI translation, built right into the book and available in any language.',
   openGraph: {
     title: 'Master English with Sherlock Holmes [Interactive e-book]',
     description:
-      'Learn English through story — with the highest‑quality, highlight‑based, context‑aware AI translation, built right into the book and available in any language.',
+      'Advance your English through story — with the highest‑quality, highlight‑based, context‑aware AI translation, built right into the book and available in any language.',
     url: 'https://nikmas.studio/book-master-english-with-sherlock-holmes',
     siteName: 'Nikmas Studio',
     images: [
-      // {
-      //   url: 'https://nikmas.studio/images/git-book-og-primary.jpg',
-      //   width: 1200,
-      //   height: 630,
-      //   alt: 'Master Git & GitHub: From Everyday Tasks to Deep Waters',
-      // },
-      // {
-      //   url: 'https://nikmas.studio/images/git-book-og-high-res.jpg',
-      //   width: 1800,
-      //   height: 945,
-      //   alt: 'Master Git & GitHub: From Everyday Tasks to Deep Waters',
-      // },
-      // {
-      //   url: 'https://nikmas.studio/images/git-book-og-square.jpg',
-      //   width: 1080,
-      //   height: 1080,
-      //   alt: 'Master Git & GitHub: From Everyday Tasks to Deep Waters',
-      // },
+      {
+        url: 'https://nikmas.studio/images/sherlock-primary.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Master English with Sherlock Holmes [Interactive e-book]',
+      },
+      {
+        url: 'https://nikmas.studio/images/sherlock-og-high-res.jpg',
+        width: 1800,
+        height: 945,
+        alt: 'Master English with Sherlock Holmes [Interactive e-book]',
+      },
+      {
+        url: 'https://nikmas.studio/images/sherlock-og-square.jpg',
+        width: 1080,
+        height: 1080,
+        alt: 'Master English with Sherlock Holmes [Interactive e-book]',
+      },
     ],
     locale: 'en_US',
     type: 'website',
