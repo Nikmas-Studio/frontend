@@ -12,7 +12,7 @@ function BookNavigator(): ReactElement {
         <H2
           className={`mb-9  lg:mb-11  2lg:mb-9  ${libreBaskerville.className}  !leading-snug`}
         >
-          Book navigator at&nbsp;your disposal
+          Book navigator is&nbsp;at&nbsp;your disposal
         </H2>
         <TextNode className='lg:mb-6'>
           Explore the book’s structure and find the pages you need:
