@@ -7,7 +7,6 @@ import { merriweather } from '@/fonts';
 import { bookIsBought, BookState } from '@/types/book-state';
 import { CircularProgress } from '@mui/material';
 import classNames from 'classnames';
-import { usePathname } from 'next/navigation';
 import { ReactElement, useEffect, useState } from 'react';
 
 function DemoOrReadButton(): ReactElement {
@@ -16,7 +15,6 @@ function DemoOrReadButton(): ReactElement {
   const [href, setHref] = useState(
     `/${BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI}/read/`,
   );
-  const pathname = usePathname();
 
   const classes = classNames(
     `
@@ -44,7 +42,11 @@ function DemoOrReadButton(): ReactElement {
     };
 
     updateFromStorage();
-  }, [pathname]);
+
+    window.addEventListener('pageshow', updateFromStorage);
+
+    return () => window.removeEventListener('pageshow', updateFromStorage);
+  }, []);
 
   function handleClick(): void {
     if (bookState === BookState.UNBOUGHT) {
