@@ -35,7 +35,7 @@ function EscapeInAppBrowser(): ReactElement | null {
           <TextNode className='!mb-0'>
             Alternatively, you can manually copy and&nbsp;open this&nbsp;link
             in&nbsp;a&nbsp;modern, full&#8209;fledged browser, or&nbsp;use
-            your&nbsp;current browser&apos;s features to&nbsp;perform
+            your&nbsp;current browser’s features to&nbsp;perform
             the&nbsp;switch:
           </TextNode>
           <TextNode className='!mb-0'>
@@ -60,8 +60,8 @@ function EscapeInAppBrowser(): ReactElement | null {
         </TextNode>
         <TextNode className='!mb-0'>
           Manually copy and&nbsp;open this&nbsp;link in&nbsp;a&nbsp;modern,
-          full&#8209;fledged browser, or&nbsp;use your&nbsp;current
-          browser&apos;s features to&nbsp;perform the&nbsp;switch:
+          full&#8209;fledged browser, or&nbsp;use your&nbsp;current browser’s
+          features to&nbsp;perform the&nbsp;switch:
         </TextNode>
         <TextNode className='!mb-0'>
           <a

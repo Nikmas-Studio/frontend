@@ -17,6 +17,7 @@ interface EmailFormProps {
   requestCallback: (email: string, captchaToken: string) => Promise<void>;
   label?: ReactElement | string;
   caption?: ReactElement | string;
+  labelClasses?: string;
   inputClasses?: string;
   buttonClasses?: string;
   inputFocusedClasses?: string;
@@ -35,6 +36,7 @@ function EmailForm({
   inputId,
   inputName,
   requestCallback,
+  labelClasses,
   inputClasses,
   buttonClasses,
   inputFocusedClasses = '',
@@ -194,6 +196,7 @@ function EmailForm({
     reloadIconClasses,
     {
       'scale-0': formState !== FormState.RELEASED,
+      'group-hover:rotate-90': formState === FormState.RELEASED,
     },
   );
 
@@ -223,6 +226,11 @@ function EmailForm({
     },
   );
 
+  const labelClassNames = classNames(
+    '!inline-block  text-[1.375rem]  font-bold',
+    labelClasses,
+  );
+
   return (
     <form onSubmit={handleSubmit} autoComplete='on'>
       <ReCAPTCHA
@@ -239,9 +247,7 @@ function EmailForm({
       />
       {label && (
         <label htmlFor={inputId}>
-          <BasicTextNode className='!inline-block  text-[1.375rem]  font-bold'>
-            {label}
-          </BasicTextNode>
+          <BasicTextNode className={labelClassNames}>{label}</BasicTextNode>
         </label>
       )}
       <div className='mt-3  flex  flex-row'>
@@ -324,9 +330,9 @@ function EmailForm({
         </button>
       </div>
       {caption && (
-        <TextNode className='!mb-5  mt-2  !text-sm'>{caption}</TextNode>
+        <TextNode className='!mb-0  mt-2  !text-sm'>{caption}</TextNode>
       )}
-      <TextNode className='!mb-0  max-w-80  !text-xs  !text-[#B8B8B8]  dark:!text-gray-dark-lighter2'>
+      <TextNode className='!mb-0  mt-5  max-w-80  !text-xs  !text-[#B8B8B8]  dark:!text-gray-dark-lighter2'>
         This&nbsp;site is&nbsp;protected by&nbsp;reCAPTCHA
         and&nbsp;the&nbsp;Google{' '}
         <ExternalLink

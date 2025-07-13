@@ -1,0 +1,168 @@
+import BookLeftPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookLeftPartContainer';
+import BookMainContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookMainContainer';
+import BookRightPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookRightPartContainer';
+import PageWrapper from '@/components/elements/book-master-english-with-sherlock-holmes/PageWrapper';
+import TextNode from '@/components/elements/book-master-english-with-sherlock-holmes/TextNode';
+import { ReactElement } from 'react';
+import Controls from '../../Controls';
+
+interface PageProps {
+  pageNumber: number;
+  hidePageNumber?: boolean;
+  viewportHeight?: boolean;
+}
+
+function Page285({
+  pageNumber,
+  hidePageNumber = false,
+  viewportHeight = false,
+}: PageProps): ReactElement {
+  return (
+    <PageWrapper pageNumber={pageNumber} viewportHeight={viewportHeight}>
+      <Controls
+        pageNumber={hidePageNumber ? undefined : pageNumber}
+        title='THE&nbsp;ADVENTURE OF&nbsp;THE&nbsp;RED&nbsp;CIRCLE'
+      />
+      <BookMainContainer biggerTopPadding>
+        <div className='flex  max-2md:flex-col'>
+          <BookLeftPartContainer>
+            <TextNode noIndent>
+              “He came again and again. Yet I was aware that Gennaro was no more
+              happy than I was in his presence. My poor husband would sit pale
+              and listless, listening to the endless raving upon politics and
+              upon social questions which made up or visitor's conversation.
+              Gennaro said nothing, but I, who knew him so well, could read in
+              his face some emotion which I had never seen there before. At
+              first I thought that it was dislike. And then, gradually, I
+              understood that it was more than dislike. It was fear—a deep,
+              secret, shrinking fear. That night—the night that I read his
+              terror—I put my arms round him and I implored him by his love for
+              me and by all that he held dear to hold nothing from me, and to
+              tell me why this huge man overshadowed him so.
+            </TextNode>
+
+            <TextNode>
+              “He told me, and my own heart grew cold as ice as I listened. My
+              poor Gennaro, in his wild and fiery days, when all the world
+              seemed against him and his mind was driven half mad by the
+              injustices of life, had joined a Neapolitan society, the Red
+              Circle, which was allied to the old Carbonari. The oaths and
+              secrets of this brotherhood were frightful, but once within its
+              rule no escape was possible. When we had fled to America Gennaro
+              thought that he had cast it all off forever. What was his horror
+              one evening to meet in the streets the very man who had initiated
+              him in Naples, the giant Gorgiano, a man who had earned the name
+              of ‘Death’ in the south of Italy, for he was red to the elbow in
+              murder! He had come to New York to avoid the Italian police, and
+              he had already planted a branch of this dreadful society in his
+              new home. All this Gennaro told me and showed me a summons which
+              he had received that very day, a Red Circle drawn upon the head of
+              it telling him that a lodge would be held upon a certain date, and
+              that his presence at it was required and ordered.
+            </TextNode>
+
+            <TextNode>
+              “That was bad enough, but worse was to come. I had noticed for
+              some time that when Gorgiano came to us, as he constantly did, in
+              the evening, he spoke much to me; and even when his words were to
+              my husband those terrible, glaring, wild-beast eyes of his were
+              always turned upon me. One night his secret came out. I had
+              awakened what he called ‘love’ within him—the love of a brute—a
+              savage. Gennaro had not yet returned when he came. He pushed his
+              way in, seized me in his mighty arms, hugged me in his bear's
+              embrace, covered me with kisses, and implored me to come away with
+              him. I was struggling and screaming when Gennaro entered and
+              attacked him. He struck Gennaro senseless and fled from the house
+              which he was never more to enter. It was a deadly enemy that we
+              made that night.
+            </TextNode>
+
+            <TextNode>
+              “A few days later came the meeting. Gennaro returned from it with
+              a face which told me that something dreadful had occurred. It was
+              worse than we could have imagined possible. The funds of the
+              society were raised by blackmailing rich Italians and threatening
+              them with violence should they refuse the money. It seems that
+              Castalotte, our dear friend and benefactor, had been approached.
+              He had refused to yield to threats, and he had handed the notices
+              to the police. It was resolved now that such an example should be
+              made of them as would prevent any other victim from rebelling. At
+              the meeting it was arranged that he and his house should be blown
+              up with dynamite. There was a drawing of lots as to who should
+              carry out the deed. Gennaro saw our enemy's cruel face smiling at
+              him as he dipped his hand in the bag. No doubt it had been
+              prearranged in some fashion, for it was the fatal disc with the
+              Red Circle upon it, the mandate for murder, which lay upon his
+              palm. He was to kill his best friend, or he was to expose himself
+              and me to the vengeance of his comrades. It was part of their
+              fiendish system to punish those whom they feared or hated by
+              injuring not only their own persons but those whom they loved, and
+              it was the knowledge of this which hung as a terror over my poor
+              Gennaro's head and drove him nearly crazy with apprehension.
+            </TextNode>
+          </BookLeftPartContainer>
+          <BookRightPartContainer>
+            <TextNode noIndent>
+              “All that night we sat together, our arms round each other, each
+              strengthening each for the troubles that lay before us. The very
+              next evening had been fixed for the attempt. By midday my husband
+              and I were on our way to London, but not before he had given our
+              benefactor full warning of this danger, and had also left such
+              information for the police as would safeguard his life for the
+              future.
+            </TextNode>
+
+            <TextNode>
+              “The rest, gentlemen, you know for yourselves. We were sure that
+              our enemies would be behind us like our own shadows. Gorgiano had
+              his private reasons for vengeance, but in any case we knew how
+              ruthless, cunning, and untiring he could be. Both Italy and
+              America are full of stories of his dreadful powers. If ever they
+              were exerted it would be now. My darling made use of the few clear
+              days which our start had given us in arranging for a refuge for me
+              in such a fashion that no possible danger could reach me. For his
+              own part, he wished to be free that he might communicate both with
+              the American and with the Italian police. I do not myself know
+              where he lived, or how. All that I learned was through the columns
+              of a newspaper. But once as I looked through my window, I saw two
+              Italians watching the house, and I understood that in some way
+              Gorgiano had found our retreat. Finally Gennaro told me, through
+              the paper, that he would signal to me from a certain window, but
+              when the signals came they were nothing but warnings, which were
+              suddenly interrupted. It is very clear to me now that he knew
+              Gorgiano to be close upon him, and that, thank God! he was ready
+              for him when he came. And now, gentleman, I would ask you whether
+              we have anything to fear from the law, or whether any judge upon
+              earth would condemn my Gennaro for what he has done?”
+            </TextNode>
+
+            <TextNode>
+              “Well, Mr. Gregson,” said the American, looking across at the
+              official, “I don't know what your British point of view may be,
+              but I guess that in New York this lady's husband will receive a
+              pretty general vote of thanks.”
+            </TextNode>
+
+            <TextNode>
+              “She will have to come with me and see the chief,” Gregson
+              answered. “If what she says is corroborated, I do not think she or
+              her husband has much to fear. But what I can't make head or tail
+              of, Mr. Holmes, is how on earth you got yourself mixed up in the
+              matter.”
+            </TextNode>
+
+            <TextNode>
+              “Education, Gregson, education. Still seeking knowledge at the old
+              university. Well, Watson, you have one more specimen of the tragic
+              and grotesque to add to your collection. By the way, it is not
+              eight o'clock, and a Wagner night at Covent Garden! If we hurry,
+              we might be in time for the second act.”
+            </TextNode>
+          </BookRightPartContainer>
+        </div>
+      </BookMainContainer>
+    </PageWrapper>
+  );
+}
+
+export default Page285;

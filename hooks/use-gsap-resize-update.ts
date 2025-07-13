@@ -7,10 +7,20 @@ function useGsapResizeUpdate(): { gsapShouldUpdate: boolean } {
   useEffect(() => {
     let initialHeight = window.innerHeight;
     let initialWidth = window.innerWidth;
+    let initialOuterWidth = window.outerWidth;
 
     function handleResize(): void {
       const currentHeight = window.innerHeight;
       const currentWidth = window.innerWidth;
+      const currentOuterWidth = window.outerWidth;
+
+      const initialZoomRatio = initialOuterWidth / initialWidth;
+      const currentZoomRatio = currentOuterWidth / currentWidth;
+      const zoomChanged = Math.abs(initialZoomRatio - currentZoomRatio) > 0.05;
+
+      if (zoomChanged) {
+        return;
+      }
 
       const heightChanged =
         Math.abs(currentHeight - initialHeight) > RESIZE_THRESHOLD;
@@ -21,6 +31,7 @@ function useGsapResizeUpdate(): { gsapShouldUpdate: boolean } {
         setGsapShouldUpdate((prev) => !prev);
         initialHeight = currentHeight;
         initialWidth = currentWidth;
+        initialOuterWidth = currentOuterWidth;
       }
     }
 

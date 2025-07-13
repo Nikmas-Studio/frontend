@@ -6,10 +6,14 @@ import BasicTextNode from './BasicTextNode';
 interface TextNodeProps {
   children?: ReactNode;
   className?: string;
+  id?: string;
 }
 
 const TextNode = forwardRef<HTMLParagraphElement, TextNodeProps>(
-  function TextNode({ className, children }: TextNodeProps, ref): ReactElement {
+  function TextNode(
+    { className, children, id }: TextNodeProps,
+    ref,
+  ): ReactElement {
     const classes = classNames(
       `lining-nums  text-lg  mb-5  [-webkit-font-smoothing:subpixel-antialiased]`,
       merriweather.className,
@@ -17,7 +21,7 @@ const TextNode = forwardRef<HTMLParagraphElement, TextNodeProps>(
     );
 
     return (
-      <BasicTextNode ref={ref} className={classes}>
+      <BasicTextNode id={id} ref={ref} className={classes}>
         {children}
       </BasicTextNode>
     );

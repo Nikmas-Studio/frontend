@@ -1,4 +1,4 @@
-import BookDemo from '@/components/modules/master-git-and-github-book/BookDemo';
+import BookDemo from '@/components/modules/book-master-git-and-github/BookDemo';
 import { Metadata } from 'next';
 import { ReactElement } from 'react';
 

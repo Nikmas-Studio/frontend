@@ -1,7 +1,6 @@
 import Script from 'next/script';
 import './globals.css';
 
-import EscapeInAppBrowser from '@/components/modules/EscapeInAppBrowser';
 import RecaptchaSettings from '@/components/modules/RecaptchaSettings';
 import { SessionProvider } from '@/context/session/Context';
 import Image from 'next/image';
@@ -29,32 +28,63 @@ export default function RootLayout({
         `}
         </Script>
         <meta name='format-detection' content='email=no' />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+        <Script id='early-theme-setup' strategy='beforeInteractive'>{`
               try {
                 if (localStorage.theme === 'dark' || (!('theme' in localStorage) &&
                    window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                  document.documentElement.classList.add('dark')
+                    document.documentElement.classList.add('dark')
                 } else {
                   document.documentElement.classList.remove('dark')
                 }
-              } catch (_) {}
-            `,
-          }}
-        />
+              } catch (_) {
+              }
+        `}</Script>
+        <Script id='later-theme-setup'>
+          {`
+            try {
+              if (localStorage.theme === 'dark' || (!('theme' in localStorage) &&
+                 window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                  document.documentElement.classList.add('dark')
+              } else {
+                document.documentElement.classList.remove('dark')
+              }
+            } catch (_) {
+            }
+          `}
+        </Script>
+        {/* <Script
+          id='early-remove-invisible-body-class'
+          strategy='beforeInteractive'
+        >
+          {`
+              const path = window.location.pathname;
+              
+              if (!path.includes('/read') && !path.includes('/demo')) {
+                document.body.classList.remove('invisible');
+              }
+          `}
+        </Script> */}
+        {/* <Script id='later-remove-invisible-body-class'>
+          {`
+              const path = window.location.pathname;
+              
+              if (!path.includes('/read') && !path.includes('/demo')) {
+                document.body.classList.remove('invisible');
+              }
+          `}
+        </Script> */}
         <Script id='meta-pixel'>
           {`
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '3555681048062939');
-            fbq('track', 'PageView');
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '1174635817619006');
+              fbq('track', 'PageView');
           `}
         </Script>
         <noscript>
@@ -63,14 +93,14 @@ export default function RootLayout({
             height='1'
             width='1'
             style={{ display: 'none' }}
-            src='https://www.facebook.com/tr?id=3555681048062939&ev=PageView&noscript=1'
+            src='https://www.facebook.com/tr?id=1174635817619006&ev=PageView&noscript=1'
           />
         </noscript>
       </head>
       <body>
         <SessionProvider>
           {children}
-          <EscapeInAppBrowser />
+          {/* <EscapeInAppBrowser /> */}
           <RecaptchaSettings />
         </SessionProvider>
       </body>

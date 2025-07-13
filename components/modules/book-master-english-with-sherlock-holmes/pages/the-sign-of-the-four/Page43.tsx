@@ -1,0 +1,283 @@
+import BookLeftPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookLeftPartContainer';
+import BookMainContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookMainContainer';
+import BookRightPartContainer from '@/components/elements/book-master-english-with-sherlock-holmes/BookRightPartContainer';
+import H4 from '@/components/elements/book-master-english-with-sherlock-holmes/H4';
+import PageWrapper from '@/components/elements/book-master-english-with-sherlock-holmes/PageWrapper';
+import TextNode from '@/components/elements/book-master-english-with-sherlock-holmes/TextNode';
+import { ReactElement } from 'react';
+import Controls from '../../Controls';
+
+interface PageProps {
+  pageNumber: number;
+  hidePageNumber?: boolean;
+  viewportHeight?: boolean;
+}
+
+function Page43({
+  pageNumber,
+  hidePageNumber = false,
+  viewportHeight = false,
+}: PageProps): ReactElement {
+  return (
+    <PageWrapper pageNumber={pageNumber} viewportHeight={viewportHeight}>
+      <Controls
+        pageNumber={hidePageNumber ? undefined : pageNumber}
+        title='THE SIGN OF THE FOUR'
+      />
+      <BookMainContainer>
+        <H4>
+          Chapter V.
+          <br />
+          The Tragedy of Pondicherry Lodge
+        </H4>
+        <div className='flex  max-2md:flex-col'>
+          <BookLeftPartContainer>
+            <TextNode noIndent>
+              It was nearly eleven o'clock when we reached this final stage of
+              our night's adventures. We had left the damp fog of the great city
+              behind us, and the night was fairly fine. A warm wind blew from
+              the westward, and heavy clouds moved slowly across the sky, with
+              half a moon peeping occasionally through the rifts. It was clear
+              enough to see for some distance, but Thaddeus Sholto took down one
+              of the side-lamps from the carriage to give us a better light upon
+              our way.
+            </TextNode>
+
+            <TextNode>
+              Pondicherry Lodge stood in its own grounds, and was girt round
+              with a very high stone wall topped with broken glass. A single
+              narrow iron-clamped door formed the only means of entrance. On
+              this our guide knocked with a peculiar postman-like rat-tat.
+            </TextNode>
+
+            <TextNode>
+              “Who is there?” cried a gruff voice from within.
+            </TextNode>
+
+            <TextNode>
+              “It is I, McMurdo. You surely know my knock by this time.”
+            </TextNode>
+
+            <TextNode>
+              There was a grumbling sound and a clanking and jarring of keys.
+              The door swung heavily back, and a short, deep-chested man stood
+              in the opening, with the yellow light of the lantern shining upon
+              his protruded face and twinkling distrustful eyes.
+            </TextNode>
+
+            <TextNode>
+              “That you, Mr. Thaddeus? But who are the others? I had no orders
+              about them from the master.”
+            </TextNode>
+
+            <TextNode>
+              “No, McMurdo? You surprise me! I told my brother last night that I
+              should bring some friends.
+            </TextNode>
+
+            <TextNode>
+              “He ain't been out o' his room to-day, Mr. Thaddeus, and I have no
+              orders. You know very well that I must stick to regulations. I can
+              let you in, but your friends must just stop where they are.”
+            </TextNode>
+
+            <TextNode>
+              This was an unexpected obstacle. Thaddeus Sholto looked about him
+              in a perplexed and helpless manner. “This is too bad of you,
+              McMurdo!” he said. “If I guarantee them, that is enough for you.
+              There is the young lady, too. She cannot wait on the public road
+              at this hour.”
+            </TextNode>
+
+            <TextNode>
+              “Very sorry, Mr. Thaddeus,” said the porter, inexorably. “Folk may
+              be friends o' yours, and yet no friends o' the master's. He pays
+              me well to do my duty, and my duty I'll do. I don't know none o'
+              your friends.”
+            </TextNode>
+
+            <TextNode>
+              “Oh, yes you do, McMurdo,” cried Sherlock Holmes, genially. “I
+              don't think you can have forgotten me. Don't you remember the
+              amateur who fought three rounds with you at Alison's rooms on the
+              night of your benefit four years back?”
+            </TextNode>
+
+            <TextNode>
+              “Not Mr. Sherlock Holmes!” roared the prize-fighter. “God's truth!
+              how could I have mistook you? If instead o' standin' there so
+              quiet you had just stepped up and given me that cross-hit of yours
+              under the jaw, I'd ha' known you without a question. Ah, you're
+              one that has wasted your gifts, you have! You might have aimed
+              high, if you had joined the fancy.”
+            </TextNode>
+
+            <TextNode>
+              “You see, Watson, if all else fails me I have still one of the
+              scientific professions open to me,” said Holmes, laughing. “Our
+              friend won't keep us out in the cold now, I am sure.”
+            </TextNode>
+
+            <TextNode>
+              “In you come, sir, in you come,—you and your friends,” he
+              answered. “Very sorry, Mr. Thaddeus, but orders are very strict.
+              Had to be certain of your friends before I let them in.”
+            </TextNode>
+
+            <TextNode>
+              Inside, a gravel path wound through desolate grounds to a huge
+              clump of a house, square and prosaic, all plunged in shadow save
+              where a moonbeam struck one corner and glimmered in a garret
+              window. The vast size of the building, with its gloom and its
+              deathly silence, struck a chill to the heart. Even Thaddeus Sholto
+              seemed ill at ease, and the lantern quivered and rattled in his
+              hand.
+            </TextNode>
+
+            <TextNode>
+              “I cannot understand it,” he said. “There must be some mistake. I
+              distinctly told Bartholomew that we should be here, and yet there
+              is no light in his window. I do not know what to make of it.”
+            </TextNode>
+
+            <TextNode>
+              “Does he always guard the premises in this way?” asked Holmes.
+            </TextNode>
+
+            <TextNode>
+              “Yes; he has followed my father's custom. He was the favorite son,
+              you know, and I sometimes think that my father may have told him
+              more than he ever told me. That is Bartholomew's window up there
+              where the moonshine strikes. It is quite bright, but there is no
+              light from within, I think.”
+            </TextNode>
+          </BookLeftPartContainer>
+          <BookRightPartContainer>
+            <TextNode noIndent>
+              “None,” said Holmes. “But I see the glint of a light in that
+              little window beside the door.”
+            </TextNode>
+
+            <TextNode>
+              “Ah, that is the housekeeper's room. That is where old Mrs.
+              Bernstone sits. She can tell us all about it. But perhaps you
+              would not mind waiting here for a minute or two, for if we all go
+              in together and she has no word of our coming she may be alarmed.
+              But hush! what is that?”
+            </TextNode>
+
+            <TextNode>
+              He held up the lantern, and his hand shook until the circles of
+              light flickered and wavered all round us. Miss Morstan seized my
+              wrist, and we all stood with thumping hearts, straining our ears.
+              From the great black house there sounded through the silent night
+              the saddest and most pitiful of sounds,—the shrill, broken
+              whimpering of a frightened woman.
+            </TextNode>
+
+            <TextNode>
+              “It is Mrs. Bernstone,” said Sholto. “She is the only woman in the
+              house. Wait here. I shall be back in a moment.” He hurried for the
+              door, and knocked in his peculiar way. We could see a tall old
+              woman admit him, and sway with pleasure at the very sight of him.
+            </TextNode>
+
+            <TextNode>
+              “Oh, Mr. Thaddeus, sir, I am so glad you have come! I am so glad
+              you have come, Mr. Thaddeus, sir!” We heard her reiterated
+              rejoicings until the door was closed and her voice died away into
+              a muffled monotone.
+            </TextNode>
+
+            <TextNode>
+              Our guide had left us the lantern. Holmes swung it slowly round,
+              and peered keenly at the house, and at the great rubbish-heaps
+              which cumbered the grounds. Miss Morstan and I stood together, and
+              her hand was in mine. A wondrous subtle thing is love, for here
+              were we two who had never seen each other before that day, between
+              whom no word or even look of affection had ever passed, and yet
+              now in an hour of trouble our hands instinctively sought for each
+              other. I have marvelled at it since, but at the time it seemed the
+              most natural thing that I should go out to her so, and, as she has
+              often told me, there was in her also the instinct to turn to me
+              for comfort and protection. So we stood hand in hand, like two
+              children, and there was peace in our hearts for all the dark
+              things that surrounded us.
+            </TextNode>
+
+            <TextNode>
+              “What a strange place!” she said, looking round.
+            </TextNode>
+
+            <TextNode>
+              “It looks as though all the moles in England had been let loose in
+              it. I have seen something of the sort on the side of a hill near
+              Ballarat, where the prospectors had been at work.”
+            </TextNode>
+
+            <TextNode>
+              “And from the same cause,” said Holmes. “These are the traces of
+              the treasure-seekers. You must remember that they were six years
+              looking for it. No wonder that the grounds look like a
+              gravel-pit.”
+            </TextNode>
+
+            <TextNode>
+              At that moment the door of the house burst open, and Thaddeus
+              Sholto came running out, with his hands thrown forward and terror
+              in his eyes.
+            </TextNode>
+
+            <TextNode>
+              “There is something amiss with Bartholomew!” he cried. “I am
+              frightened! My nerves cannot stand it.” He was, indeed, half
+              blubbering with fear, and his twitching feeble face peeping out
+              from the great Astrakhan collar had the helpless appealing
+              expression of a terrified child.
+            </TextNode>
+
+            <TextNode>
+              “Come into the house,” said Holmes, in his crisp, firm way.
+            </TextNode>
+
+            <TextNode>
+              “Yes, do!” pleaded Thaddeus Sholto. “I really do not feel equal to
+              giving directions.”
+            </TextNode>
+
+            <TextNode>
+              We all followed him into the housekeeper's room, which stood upon
+              the left-hand side of the passage. The old woman was pacing up and
+              down with a scared look and restless picking fingers, but the
+              sight of Miss Morstan appeared to have a soothing effect upon her.
+            </TextNode>
+
+            <TextNode>
+              “God bless your sweet calm face!” she cried, with an hysterical
+              sob. “It does me good to see you. Oh, but I have been sorely tried
+              this day!”
+            </TextNode>
+
+            <TextNode>
+              Our companion patted her thin, work-worn hand, and murmured some
+              few words of kindly womanly comfort which brought the color back
+              into the others bloodless cheeks.
+            </TextNode>
+
+            <TextNode>
+              “Master has locked himself in and will now answer me,” she
+              explained. “All day I have waited to hear from him, for he often
+              likes to be alone; but an hour ago I feared that something was
+              amiss, so I went up and peeped through the key-hole. You must go
+              up, Mr. Thaddeus,—you must go up and look for yourself. I have
+              seen Mr. Bartholomew Sholto in joy and in sorrow for ten long
+              years, but I never saw him with such a face on him as that.”
+            </TextNode>
+          </BookRightPartContainer>
+        </div>
+      </BookMainContainer>
+    </PageWrapper>
+  );
+}
+
+export default Page43;

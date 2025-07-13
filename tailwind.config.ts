@@ -13,12 +13,16 @@ const config: Config = {
       sm: '640px',
       md: '768px',
       lg: '1024px',
+      '1.5lg': '1120px',
       '2lg': '1180px',
       xl: '1280px',
+      '1.5xl': '1430px',
       '2xl': '1536px',
       'max-2xl': { max: '1536px' },
+      'max-1.5xl': { max: '1430px' },
       'max-xl': { max: '1280px' },
       'max-lg': { max: '1024px' },
+      'max-1.5lg': { max: '1120px' },
       'max-2md': { max: '960px' },
       'max-md': { max: '768px' },
       'max-sm': { max: '640px' },
@@ -33,6 +37,7 @@ const config: Config = {
       colors: {
         'git-black': '#00040A',
         'git-white': '#e3e3e3',
+        'smooth-white': '#e3e3e3',
         orange: '#ff5013',
         blue: '#2e1eff',
         'git-dark-blue': '#09132a',
@@ -50,6 +55,10 @@ const config: Config = {
           'url("../public/images/git-and-github-book-part-1-bg-pattern-dark.jpg")',
         'git-part-1-light':
           'url("../public/images/git-and-github-book-part-1-bg-pattern-light.jpg")',
+        'book-master-english-with-sherlock-holmes-light':
+          'url("../public/images/book-master-english-with-sherlock-holmes-bg-pattern-light.jpg")',
+        'book-master-english-with-sherlock-holmes-dark':
+          'url("../public/images/book-master-english-with-sherlock-holmes-bg-pattern-dark.jpg")',
       },
       keyframes: {
         'scroll-hint-arrows': {

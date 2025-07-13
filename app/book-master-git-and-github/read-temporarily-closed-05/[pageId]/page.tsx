@@ -1,4 +1,4 @@
-import BookReadWrapper from '@/components/modules/master-git-and-github-book/BookReadWrapper';
+import BookReadWrapper from '@/components/modules/book-master-git-and-github/BookReadWrapper';
 import { Metadata } from 'next';
 import { ReactElement } from 'react';
 
