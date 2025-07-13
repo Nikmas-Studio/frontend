@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: 'Nikmas Studio',
     images: [
       {
-        url: 'https://nikmas.studio/images/sherlock-primary.jpg',
+        url: 'https://nikmas.studio/images/sherlock-og-primary.jpg',
         width: 1200,
         height: 630,
         alt: 'Master English with Sherlock Holmes [Interactive e-book]',
