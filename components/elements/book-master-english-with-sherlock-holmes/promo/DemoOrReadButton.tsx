@@ -1,17 +1,23 @@
 'use client';
 
-import { BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI } from '@/constants/general';
+import {
+  BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI,
+  LAST_VISITED_PAGE_UPDATED_EVENT_NAME,
+} from '@/constants/general';
 import { usePromoDrawerDispatch } from '@/context/book-master-english-with-sherlock-holmes/promo-drawer/Context';
 import { useBookState } from '@/context/book-state/Context';
 import { merriweather } from '@/fonts';
 import { bookIsBought, BookState } from '@/types/book-state';
 import { CircularProgress } from '@mui/material';
 import classNames from 'classnames';
-import { ReactElement } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 
 function DemoOrReadButton(): ReactElement {
   const { bookState } = useBookState();
   const { setDrawerIsOpened } = usePromoDrawerDispatch();
+  const [href, setHref] = useState(
+    `/${BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI}/read/`,
+  );
 
   const classes = classNames(
     `
@@ -27,15 +33,30 @@ function DemoOrReadButton(): ReactElement {
     },
   );
 
-  let lastVisitedPage = localStorage.getItem(
-    `book-master-english-with-sherlock-holmes/read/last-visited-page`,
-  );
+  useEffect(() => {
+    const updateFromStorage = (): void => {
+      const page =
+        localStorage.getItem(
+          'book-master-english-with-sherlock-holmes/read/last-visited-page',
+        ) || '';
 
-  if (!lastVisitedPage) {
-    lastVisitedPage = '';
-  }
+      const href = `/${BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI}/read/${page}`;
+      setHref(href);
+    };
 
-  const href = `/${BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI}/read/${lastVisitedPage}`;
+    updateFromStorage();
+
+    window.addEventListener(
+      LAST_VISITED_PAGE_UPDATED_EVENT_NAME,
+      updateFromStorage,
+    );
+
+    return () =>
+      window.removeEventListener(
+        LAST_VISITED_PAGE_UPDATED_EVENT_NAME,
+        updateFromStorage,
+      );
+  }, []);
 
   function handleClick(): void {
     if (bookState === BookState.UNBOUGHT) {

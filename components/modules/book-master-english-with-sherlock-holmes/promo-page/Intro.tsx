@@ -1,4 +1,5 @@
 import BasicTextNode from '@/components/elements/BasicTextNode';
+import DemoOrReadButton from '@/components/elements/book-master-english-with-sherlock-holmes/promo/DemoOrReadButton';
 import SubscriptionButtonPromo from '@/components/elements/book-master-english-with-sherlock-holmes/promo/SubscriptionButtonPromo';
 import ExternalLink from '@/components/elements/ExternalLink';
 import MainContainer from '@/components/elements/MainContainer';
@@ -8,19 +9,9 @@ import linkedInLogoDark from '@/public/images/linkedin-logo-dark.png';
 import linkedInLogoLight from '@/public/images/linkedin-logo-light.png';
 import publisherPhoto from '@/public/images/Nick_Maslov_black_and_white.jpg';
 import authorPhoto from '@/public/images/Sir_Arthur_Conan_Doyle.jpg';
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { ReactElement } from 'react';
 import BookCover from './BookCover';
-const DemoOrReadButton = dynamic(
-  () =>
-    import(
-      '@/components/elements/book-master-english-with-sherlock-holmes/promo/DemoOrReadButton'
-    ),
-  {
-    ssr: false,
-  },
-);
 
 function Intro(): ReactElement {
   return (
