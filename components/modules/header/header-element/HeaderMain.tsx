@@ -51,7 +51,7 @@ function HeaderMain(): ReactElement {
 
   function getBackgroundImageColors(): [string, string] {
     if (bookSectionInViewport) {
-      return ['#ff5013', '#271ad3'];
+      return ['#F5F9FF', '#0041b0'];
     }
 
     if (darkThemeIsSelected(selectedTheme)) {
@@ -63,7 +63,7 @@ function HeaderMain(): ReactElement {
 
   function getHeaderLogoColor(): string {
     if (bookSectionInViewport) {
-      return 'white';
+      return 'black';
     }
 
     if (darkThemeIsSelected(selectedTheme)) {
