@@ -4,6 +4,7 @@ import {
   BASE_PATH_DEMO,
   BASE_PATH_READ,
 } from '@/constants/book-master-english-with-sherlock-holmes/main';
+import { BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI } from '@/constants/general';
 import {
   useActivePage,
   useActivePageDispatch,
@@ -13,6 +14,7 @@ import { useInitialScrollToPageStateDispatch } from '@/context/initial-scroll-to
 import { useTouchDevice } from '@/context/touch-device/Context';
 import { useSelectTranslation } from '@/hooks/book-master-english-with-sherlock-holmes/use-select-translation';
 import { BookVersion } from '@/types/book-version';
+import { assignLastVisitedPageRoute } from '@/utils/assign-last-visited-page-route';
 import { updateUrl } from '@/utils/update-url';
 import { ReactElement, ReactNode, useEffect, useRef, useState } from 'react';
 
@@ -103,10 +105,12 @@ function GlobalEffects({
   ]);
 
   useEffect(() => {
-    localStorage.setItem(
-      `book-master-english-with-sherlock-holmes/${bookVersion}/last-visited-page`,
-      activePage.toString(),
-    );
+    if (bookVersion === BookVersion.READ) {
+      assignLastVisitedPageRoute(
+        BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI,
+        activePage.toString(),
+      ).catch(() => {});
+    }
   }, [activePage, bookVersion]);
 
   useSelectTranslation();
