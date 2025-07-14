@@ -14,7 +14,7 @@ function DemoOrReadButton(): ReactElement {
   const { bookState } = useBookState();
   const { setDrawerIsOpened } = usePromoDrawerDispatch();
   const [href, setHref] = useState(
-    `/${BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI}/read/`,
+    `/${BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI}/read`,
   );
 
   const classes = classNames(
@@ -33,12 +33,14 @@ function DemoOrReadButton(): ReactElement {
 
   useEffect(() => {
     const updateFromBackend = async (): Promise<void> => {
-      const lastVisitedPage = await getLastVisitedPageRoute(
-        BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI,
-      );
+      try {
+        const lastVisitedPage = await getLastVisitedPageRoute(
+          BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI,
+        );
 
-      const href = `/${BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI}/read/${lastVisitedPage || ''}`;
-      setHref(href);
+        const href = `/${BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI}/read/${lastVisitedPage || ''}`;
+        setHref(href);
+      } catch (error) {}
     };
 
     updateFromBackend();
