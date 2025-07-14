@@ -301,7 +301,8 @@ function PromoDrawer(): ReactElement {
      dark:lg:border  dark:lg:border-gray-dark  dark:bg-black`,
     {
       'translate-y-0  opacity-1': nestedModalIsOpened,
-      'translate-y-[110dvh]  opacity-0': !nestedModalIsOpened,
+      'translate-y-[110dvh]  opacity-0  pointer-events-none':
+        !nestedModalIsOpened,
       'lg:!h-[25.125rem]': showSubscriptionIsCanceled,
       'lg:!h-[19.875rem]': showYouAreSubscribed,
     },
