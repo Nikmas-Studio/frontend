@@ -4,7 +4,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { ReactElement, useRef } from 'react';
-import Book from './Book';
+import Books from './Books';
 import Combo from './Combo';
 import Eleven from './Eleven';
 import HowWeWorkWithAuthors from './HowWeWorkWithAuthors';
@@ -48,7 +48,7 @@ function MainContent(): ReactElement {
     >
       <Eleven />
       <Combo />
-      <Book />
+      <Books />
       <HowWeWorkWithAuthors />
     </div>
   );
