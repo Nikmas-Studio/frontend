@@ -51,35 +51,47 @@ function GlobalEffects({
 
     function scrollToPage(initialPageId: string): void {
       if (initialPageId === 'end') {
-        scrollTo({
-          top: document.body.scrollHeight,
-          behavior: 'instant',
-        });
+        setTimeout(() => {
+          scrollTo({
+            top: document.body.scrollHeight,
+            behavior: 'instant',
+          });
+
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              showBook();
+            });
+          });
+        }, 250);
 
         updateUrl({ basePath: `${basePath}/end` });
         setActivePage('end');
-        setInitialScrollToPageIsCompleted(true);
+
+        setTimeout(() => {
+          setInitialScrollToPageIsCompleted(true);
+        }, 1000);
+
+        return;
+      }
+
+      const page = document.getElementById(`page-${initialPageId}`);
+
+      setTimeout(() => {
+        page?.scrollIntoView({ behavior: 'instant' });
 
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
             showBook();
           });
         });
+      }, 250);
 
-        return;
-      }
-
-      const page = document.getElementById(`page-${initialPageId}`);
-      page?.scrollIntoView({ behavior: 'instant' });
       updateUrl({ page: Number(initialPageId), basePath });
       setActivePage(Number(initialPageId));
-      setInitialScrollToPageIsCompleted(true);
 
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          showBook();
-        });
-      });
+      setTimeout(() => {
+        setInitialScrollToPageIsCompleted(true);
+      }, 1000);
     }
 
     scrollToPage(initialPageId);
