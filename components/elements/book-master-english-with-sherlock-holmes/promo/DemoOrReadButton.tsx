@@ -5,6 +5,7 @@ import { usePromoDrawerDispatch } from '@/context/book-master-english-with-sherl
 import { useBookState } from '@/context/book-state/Context';
 import { merriweather } from '@/fonts';
 import { bookIsBought, BookState } from '@/types/book-state';
+import { getLastVisitedPageRoute } from '@/utils/get-last-visited-page-route';
 import { CircularProgress } from '@mui/material';
 import classNames from 'classnames';
 import { ReactElement, useEffect, useState } from 'react';
@@ -13,7 +14,7 @@ function DemoOrReadButton(): ReactElement {
   const { bookState } = useBookState();
   const { setDrawerIsOpened } = usePromoDrawerDispatch();
   const [href, setHref] = useState(
-    `/${BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI}/read/`,
+    `/${BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI}/read`,
   );
 
   const classes = classNames(
@@ -31,21 +32,22 @@ function DemoOrReadButton(): ReactElement {
   );
 
   useEffect(() => {
-    const updateFromStorage = (): void => {
-      const page =
-        localStorage.getItem(
-          'book-master-english-with-sherlock-holmes/read/last-visited-page',
-        ) || '';
+    const updateFromBackend = async (): Promise<void> => {
+      try {
+        const lastVisitedPage = await getLastVisitedPageRoute(
+          BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI,
+        );
 
-      const href = `/${BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI}/read/${page}`;
-      setHref(href);
+        const href = `/${BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI}/read/${lastVisitedPage || ''}`;
+        setHref(href);
+      } catch (error) {}
     };
 
-    updateFromStorage();
+    updateFromBackend();
 
-    window.addEventListener('pageshow', updateFromStorage);
+    window.addEventListener('pageshow', updateFromBackend);
 
-    return () => window.removeEventListener('pageshow', updateFromStorage);
+    return () => window.removeEventListener('pageshow', updateFromBackend);
   }, []);
 
   function handleClick(): void {
