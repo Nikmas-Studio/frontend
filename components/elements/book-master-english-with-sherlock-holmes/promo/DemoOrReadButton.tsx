@@ -33,6 +33,10 @@ function DemoOrReadButton(): ReactElement {
 
   useEffect(() => {
     const updateFromBackend = async (): Promise<void> => {
+      if (!bookIsBought(bookState)) {
+        return;
+      }
+
       try {
         const lastVisitedPage = await getLastVisitedPageRoute(
           BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI,
@@ -48,7 +52,7 @@ function DemoOrReadButton(): ReactElement {
     window.addEventListener('pageshow', updateFromBackend);
 
     return () => window.removeEventListener('pageshow', updateFromBackend);
-  }, []);
+  }, [bookState]);
 
   function handleClick(): void {
     if (bookState === BookState.UNBOUGHT) {
