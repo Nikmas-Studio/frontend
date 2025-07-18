@@ -101,15 +101,25 @@ function Intro(): ReactElement {
                     >
                       <span className='text-[3.43rem]'>$23</span>/year
                     </BasicTextNode>
-                    <TextNode className='!mb-0  mt-2  hidden  !text-base  lg:block'>
-                      With auto-renewal
-                    </TextNode>
+                    <div>
+                      <TextNode className='!mb-0  mt-2  hidden  !text-base  lg:block'>
+                        With auto-renewal.
+                      </TextNode>
+                      <TextNode className='!mb-0  mt-[2px]  hidden  !text-base  lg:block'>
+                        Cancel any time
+                      </TextNode>
+                    </div>
                   </div>
                   <SubscriptionButtonPromo />
                 </div>
-                <TextNode className='!mb-0  mt-2  !text-base  lg:hidden'>
-                  With auto-renewal
-                </TextNode>
+                <div>
+                  <TextNode className='!mb-0  mt-2  !text-base  lg:hidden'>
+                    With auto-renewal.
+                  </TextNode>
+                  <TextNode className='!mb-0  mt-0  !text-base  lg:hidden'>
+                    Cancel any time
+                  </TextNode>
+                </div>
               </div>
               <div className='mt-12  lg:mt-0'>
                 <div>

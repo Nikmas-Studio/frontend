@@ -18,7 +18,7 @@ function DemoOrSubscription(): ReactElement {
           className='border-b  border-gray-light  pb-11  lg:flex-1
                      lg:border-none  lg:pb-20  lg:pt-8 dark:border-gray-dark'
         >
-          <H2 className={`mb-6  ${libreBaskerville.className}  !leading-snug`}>
+          <H2 className={`mb-8  ${libreBaskerville.className}  !leading-snug`}>
             Try the book demo
             <br /> for free
           </H2>
@@ -47,11 +47,14 @@ function DemoOrSubscription(): ReactElement {
               <span className='text-[3.43rem]'>$23</span>
               /year
             </BasicTextNode>
+            <TextNode className='!mb-0  mt-2  !text-base'>
+              With auto-renewal.
+            </TextNode>
             <TextNode
               id='sherlock-promo-subs-price'
-              className='!mb-0  mt-2  !text-base'
+              className='!mb-0  mt-0  !text-base'
             >
-              With auto-renewal
+              Cancel any time
             </TextNode>
           </div>
         </div>

@@ -5,5 +5,8 @@ export async function notifyMetaPixelOfPurchaseApi(
 ): Promise<{ wasAlreadyNotified: boolean; orderId: string }> {
   const res = await axios.post(`/api/notify-meta-pixel-of-purchase/${bookUri}`);
 
-  return { wasAlreadyNotified: res.data.wasAlreadyNotified, orderId: res.data.orderId };
+  return {
+    wasAlreadyNotified: res.data.wasAlreadyNotified,
+    orderId: res.data.orderId,
+  };
 }

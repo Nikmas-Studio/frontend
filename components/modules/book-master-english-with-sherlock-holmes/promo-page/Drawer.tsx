@@ -15,7 +15,9 @@ import { libreBaskerville, merriweather } from '@/fonts';
 import useOutsideClick from '@/hooks/use-outside-click';
 import bookCover from '@/public/images/book-cover-master-english-with-sherlock-holmes.jpg';
 import { bookIsBought, BookState } from '@/types/book-state';
+import { PromoCodeState } from '@/types/promo-code';
 import { cancelSubscription } from '@/utils/cancel-subscription';
+import { checkPromoCodeValidityApi } from '@/utils/check-promo-code-validity-route';
 import { formatDate } from '@/utils/format-date';
 import { getDemoLink } from '@/utils/get-demo-link-route';
 import { purchaseBookAuthenticated } from '@/utils/purchase-book-authenticated-route';
@@ -27,6 +29,7 @@ import Image from 'next/image';
 import { ReactElement, useEffect, useRef, useState } from 'react';
 import { setTimeout } from 'timers';
 import EmailForm from '../../EmailForm';
+import ProceedToPayment from './ProceedToPayment';
 
 function PromoDrawer(): ReactElement {
   const { drawerIsOpened } = usePromoDrawer();
@@ -37,6 +40,7 @@ function PromoDrawer(): ReactElement {
   const nestedModalContainerRef = useRef<HTMLDivElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [nestedModalIsOpened, setNestedModalIsOpened] = useState(false);
+  const [promoCodeState, setPromoCodeState] = useState(PromoCodeState.DEFAULT);
 
   const { session, loading: sessionStateIsLoading } = useSession();
 
@@ -312,8 +316,11 @@ function PromoDrawer(): ReactElement {
     `mx-auto  w-1/2  max-w-64  rounded-t-lg  lg:rounded-b-lg`,
     {
       'lg:w-44': isDemoDrawer(),
-      'lg:w-48': isSubscriptionDrawer() && session === null,
-      'lg:w-[10.5rem]': isSubscriptionDrawer() && session !== null,
+      'lg:w-[15.3rem]': isSubscriptionDrawer() && session === null,
+      'lg:w-[10.5rem]':
+        isSubscriptionDrawer() && session !== null && bookIsBought(bookState),
+      'lg:w-[12.2rem]':
+        isSubscriptionDrawer() && session !== null && !bookIsBought(bookState),
     },
   );
 
@@ -335,12 +342,15 @@ function PromoDrawer(): ReactElement {
     return bookState === BookState.LOADING || sessionStateIsLoading;
   }
 
-  async function handlePurchaseBookAuthenticated(): Promise<void> {
+  async function handlePurchaseBookAuthenticated(
+    promoCode: string | null,
+  ): Promise<void> {
     setPaymentPageIsGenerating(true);
 
     try {
       const { paymentLink } = await purchaseBookAuthenticated(
         BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI,
+        promoCode,
       );
 
       setPaymentPageGenerationError(false);
@@ -679,7 +689,11 @@ function PromoDrawer(): ReactElement {
           className='pb-24  pt-16  lg:flex  lg:flex-row-reverse  
                      lg:justify-between  lg:pb-14  lg:pt-7'
         >
-          <div>
+          <div
+            className={`${classNames({
+              'self-end': !bookIsBought(bookState),
+            })}`}
+          >
             <Image
               className={imageClasses}
               alt='Master English with Sherlock Holmes cover'
@@ -761,10 +775,7 @@ function PromoDrawer(): ReactElement {
                               <span className='text-[3.43rem]'>$23</span>
                               /year
                             </BasicTextNode>
-                            <TextNode
-                              id='sherlock-promo-subs-price'
-                              className='!mb-0  mt-[-0.3rem]  !text-base'
-                            >
+                            <TextNode className='!mb-0  mt-[-0.3rem]  !text-base'>
                               With auto-renewal
                             </TextNode>
                           </div>
@@ -823,40 +834,87 @@ function PromoDrawer(): ReactElement {
 
                     {!bookIsBought(bookState) && (
                       <>
-                        <div className='mb-6  mt-10  lg:mt-4'>
-                          <BasicTextNode
-                            className={`${libreBaskerville.className}  text-xl`}
+                        <div className='mb-7'>
+                          <H2
+                            className={`mb-10  mt-5  ${libreBaskerville.className}  !leading-snug
+                          lg:-mt-1`}
                           >
-                            <span className='text-[3.43rem]'>$23</span>
-                            /year
-                          </BasicTextNode>
-                          <TextNode
-                            id='sherlock-promo-subs-price'
-                            className='!mb-0  mt-2  !text-base'
-                          >
-                            With auto-renewal
-                          </TextNode>
+                            Get the payment link by email
+                          </H2>
+                          <div className='flex  gap-4'>
+                            <div>
+                              <BasicTextNode
+                                className={`${libreBaskerville.className}  text-xl`}
+                              >
+                                <span className='text-[3.43rem]'>
+                                  $
+                                  {promoCodeState === PromoCodeState.VALID
+                                    ? 19.5
+                                    : 23}
+                                </span>
+                                /year
+                              </BasicTextNode>
+                              <TextNode className='!mb-0  mt-2  !text-base'>
+                                With auto-renewal.
+                              </TextNode>
+                              <TextNode className='!mb-0  mt-[2px]  !text-base'>
+                                Cancel any time
+                              </TextNode>
+                            </div>
+                            <div
+                              className={`${classNames({
+                                hidden: promoCodeState !== PromoCodeState.VALID,
+                                block: promoCodeState === PromoCodeState.VALID,
+                              })}`}
+                            >
+                              <BasicTextNode
+                                className={`relative  ${libreBaskerville.className}  mt-[0.26rem]  text-3xl  text-[#9C9C9C]  dark:text-[#7B7B7B]`}
+                              >
+                                $23
+                                <span className='absolute  left-[-19%]  top-1/2  h-px  w-[140%]  rotate-[-30deg]   bg-black  dark:bg-white'></span>
+                              </BasicTextNode>
+                            </div>
+                          </div>
                         </div>
 
                         <div className='max-w-[400px]'>
                           {session === null && (
                             <EmailForm
-                              requestCallback={async (email, token) => {
+                              withPromoCode
+                              requestCallback={async (
+                                email,
+                                token,
+                                promoCode,
+                              ) => {
                                 await purchaseBookGuest({
                                   email,
                                   captchaToken: token,
                                   bookURI:
                                     BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI,
+                                  promoCode,
                                 });
                               }}
-                              label='Get the payment link by&nbsp;email:'
+                              checkPromoCodeValidity={async (promoCode) => {
+                                const { isValid } =
+                                  await checkPromoCodeValidityApi(promoCode);
+
+                                return {
+                                  valid: isValid,
+                                };
+                              }}
                               caption='This&nbsp;email will&nbsp;be&nbsp;used as&nbsp;a&nbsp;key to&nbsp;your&nbsp;library'
                               inputId='sherlock-payment-email'
                               inputName='email'
                               inputClasses={`border-subscription  ${merriweather.className}  !font-bold`}
+                              promoCodeInputClasses={`${merriweather.className}  border-[#CFCFCF]  dark:border-gray-dark-lighter2  !font-normal`}
+                              promoCodeIsInvalidInputClasses='!border-red-600'
+                              promoCodeIsValidInputClasses='!border-subscription'
+                              promoCodeState={promoCodeState}
+                              setPromoCodeState={setPromoCodeState}
                               buttonClasses='border-subscription'
                               labelClasses={`${merriweather.className}  !font-normal`}
                               inputFocusedClasses='[box-shadow:0_0_0_2px_#29AD04]'
+                              promoCodeInputFocusedClasses='!border-[#000000]  dark:!border-[#FFFFFF]'
                               buttonInputFocusedClasses='[box-shadow:0_0_0_2px_#29AD04]'
                               buttonInputFilledClasses='bg-subscription'
                               buttonInputEmptyClasses='bg-[#CFCFCF]  dark:bg-gray-dark-lighter2'
@@ -866,35 +924,32 @@ function PromoDrawer(): ReactElement {
                             />
                           )}
                           {session !== null && (
-                            <div className='flex  w-[14.375rem]  flex-col  items-start'>
-                              <button
-                                onClick={handlePurchaseBookAuthenticated}
-                                className={classNames(
-                                  `button  w-full  bg-subscription  text-white  
-                              hover:bg-subscription-darker  ${merriweather.className}`,
-                                  {
-                                    'pointer-events-none':
-                                      paymentPageIsGenerating,
-                                  },
-                                )}
-                              >
-                                Proceed to payment
-                              </button>
-                              <div
-                                className={
-                                  paymentPageIsGeneratingSpinnerWrapperClasses
-                                }
-                              >
-                                <CircularProgress className='!size-[20px]  !text-subscription' />
-                              </div>
-                              {paymentPageGenerationError && (
-                                <BasicTextNode
-                                  className={`mt-3  text-red-600  ${merriweather.className}`}
-                                >
-                                  An error occurred. Please try again.
-                                </BasicTextNode>
-                              )}
-                            </div>
+                            <ProceedToPayment
+                              handlePurchaseBookAuthenticated={
+                                handlePurchaseBookAuthenticated
+                              }
+                              paymentPageIsGenerating={paymentPageIsGenerating}
+                              paymentPageGenerationError={
+                                paymentPageGenerationError
+                              }
+                              paymentPageIsGeneratingSpinnerWrapperClasses={
+                                paymentPageIsGeneratingSpinnerWrapperClasses
+                              }
+                              promoCodeInputClasses={`${merriweather.className}  border-[#CFCFCF]  dark:border-gray-dark-lighter2  !font-normal`}
+                              promoCodeInputFocusedClasses='!border-[#000000]  dark:!border-[#FFFFFF]'
+                              promoCodeIsInvalidInputClasses='!border-red-600'
+                              promoCodeIsValidInputClasses='!border-subscription'
+                              promoCodeState={promoCodeState}
+                              setPromoCodeState={setPromoCodeState}
+                              checkPromoCodeValidity={async (promoCode) => {
+                                const { isValid } =
+                                  await checkPromoCodeValidityApi(promoCode);
+
+                                return {
+                                  valid: isValid,
+                                };
+                              }}
+                            />
                           )}
                         </div>
                       </>
