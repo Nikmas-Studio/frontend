@@ -10,6 +10,7 @@ import { BookState } from '@/types/book-state';
 import { EventName } from '@/types/meta-pixel';
 import { buildBookAccessRoute } from '@/utils/build-book-access-route';
 import { decryptAndValidateBookReloadToken } from '@/utils/decrypt-and-validate-book-reload-token';
+import { notifyMetaPixelOfPurchaseApi } from '@/utils/notify-meta-pixel-of-purchase';
 import { CircularProgress } from '@mui/material';
 import axios from 'axios';
 import { useSearchParams } from 'next/navigation';
@@ -59,9 +60,8 @@ function BookReadWrapper({ initialPageId }: BookReadProps): ReactElement {
   useEffect(() => {
     async function notifyMetaPixelOfPurchase(): Promise<void> {
       try {
-        const { wasAlreadyNotified, orderId } = await notifyMetaPixelOfPurchase(
-          BOOK_MASTER_GIT_AND_GITHUB_URI,
-        );
+        const { wasAlreadyNotified, orderId } =
+          await notifyMetaPixelOfPurchaseApi(BOOK_MASTER_GIT_AND_GITHUB_URI);
 
         if (!wasAlreadyNotified) {
           window.fbq(
