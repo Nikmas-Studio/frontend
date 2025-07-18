@@ -5,7 +5,7 @@ export async function checkPromoCodeValidityApi(
 ): Promise<{ isValid: boolean }> {
   try {
     const res = await axios.get(`/api/promo-codes/${promoCode}/check-validity`);
-    return res.data;
+    return { isValid: res.data.valid };
   } catch (error) {
     return { isValid: false };
   }
