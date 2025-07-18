@@ -2,10 +2,19 @@
 
 import { LOG_ERROR_ROUTE } from '@/constants/general';
 import { FormState } from '@/types/email-form';
+import { PromoCodeState } from '@/types/promo-code';
 import { CircularProgress } from '@mui/material';
 import axios from 'axios';
 import classNames from 'classnames';
-import { ChangeEvent, FormEvent, ReactElement, useRef, useState } from 'react';
+import {
+  ChangeEvent,
+  Dispatch,
+  FormEvent,
+  ReactElement,
+  SetStateAction,
+  useRef,
+  useState,
+} from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import BasicTextNode from '../elements/BasicTextNode';
 import ExternalLink from '../elements/ExternalLink';
@@ -14,13 +23,22 @@ import TextNode from '../elements/TextNode';
 interface EmailFormProps {
   inputId: string;
   inputName: string;
-  requestCallback: (email: string, captchaToken: string) => Promise<void>;
+  requestCallback: (
+    email: string,
+    captchaToken: string,
+    promoCode: string | null,
+  ) => Promise<void>;
+  checkPromoCodeValidity?: (promoCode: string) => Promise<{ valid: boolean }>;
   label?: ReactElement | string;
   caption?: ReactElement | string;
   labelClasses?: string;
   inputClasses?: string;
+  promoCodeIsValidInputClasses?: string;
+  promoCodeIsInvalidInputClasses?: string;
+  promoCodeInputClasses?: string;
   buttonClasses?: string;
   inputFocusedClasses?: string;
+  promoCodeInputFocusedClasses?: string;
   buttonInputFocusedClasses?: string;
   buttonInputFilledClasses?: string;
   buttonInputEmptyClasses?: string;
@@ -28,6 +46,9 @@ interface EmailFormProps {
   tickIconClasses?: string;
   reloadIconClasses?: string;
   spinnerIconsClasses?: string;
+  withPromoCode?: boolean;
+  promoCodeState?: PromoCodeState;
+  setPromoCodeState?: Dispatch<SetStateAction<PromoCodeState>>;
 }
 
 function EmailForm({
@@ -36,20 +57,30 @@ function EmailForm({
   inputId,
   inputName,
   requestCallback,
+  checkPromoCodeValidity,
+  promoCodeState,
+  setPromoCodeState,
   labelClasses,
   inputClasses,
   buttonClasses,
+  promoCodeIsValidInputClasses = '',
+  promoCodeIsInvalidInputClasses = '',
   inputFocusedClasses = '',
   buttonInputFocusedClasses = '',
   buttonInputFilledClasses = '',
   buttonInputEmptyClasses = '',
+  promoCodeInputClasses = '',
+  promoCodeInputFocusedClasses = '',
   changeArrowColorInDarkMode = false,
   tickIconClasses = '',
   reloadIconClasses = '',
   spinnerIconsClasses = '',
+  withPromoCode = false,
 }: EmailFormProps): ReactElement {
   const [inputIsFocused, setInputIsFocused] = useState(false);
+  const [promoCodeInputIsFocused, setPromoCodeInputIsFocused] = useState(false);
   const [email, setEmail] = useState('');
+  const [promoCode, setPromoCode] = useState('');
   const [honeypot, setHoneypot] = useState('');
   const [formState, setFormState] = useState(FormState.IDLE);
   const changeFormStateToIdle = useRef(false);
@@ -70,7 +101,7 @@ function EmailForm({
       return;
     }
 
-    if (email === '') {
+    if (email === '' || promoCodeState === PromoCodeState.LOADING) {
       return;
     }
 
@@ -105,7 +136,7 @@ function EmailForm({
       }
 
       try {
-        await requestCallback(email, token);
+        await requestCallback(email, token, promoCode || null);
       } catch (error) {
         axios
           .post(LOG_ERROR_ROUTE, {
@@ -142,6 +173,34 @@ function EmailForm({
     }
   }
 
+  const promoCodeRequestIdRef = useRef(0);
+
+  async function handlePromoCodeChange(
+    e: ChangeEvent<HTMLInputElement>,
+  ): Promise<void> {
+    if (checkPromoCodeValidity !== undefined) {
+      const promoCode = e.target.value;
+      setPromoCode(promoCode);
+
+      const requestId = ++promoCodeRequestIdRef.current;
+
+      if (promoCode === '') {
+        setPromoCodeState!(PromoCodeState.DEFAULT);
+        return;
+      }
+
+      setPromoCodeState!(PromoCodeState.LOADING);
+
+      const { valid } = await checkPromoCodeValidity(promoCode);
+
+      if (requestId !== promoCodeRequestIdRef.current) {
+        return;
+      }
+
+      setPromoCodeState!(valid ? PromoCodeState.VALID : PromoCodeState.INVALID);
+    }
+  }
+
   function handleHoneypotChange(e: ChangeEvent<HTMLInputElement>): void {
     setHoneypot(e.target.value);
   }
@@ -151,9 +210,29 @@ function EmailForm({
     buttonClasses,
     {
       [buttonInputFocusedClasses]: inputIsFocused,
-      [buttonInputFilledClasses]: email !== '',
-      [`${buttonInputEmptyClasses} cursor-default`]: email === '',
+      [buttonInputFilledClasses]:
+        email !== '' && promoCodeState !== PromoCodeState.LOADING,
+      [`${buttonInputEmptyClasses} cursor-default`]:
+        email === '' || promoCodeState === PromoCodeState.LOADING,
       '!border-red-600  !border-2': formState === FormState.ERROR,
+    },
+  );
+
+  const promoCodeInputClassNames = classNames(
+    `h-[2.53125rem]  w-[calc(100%-80px)]  rounded-[5px]  border  
+     bg-white  pb-2  px-4  pt-1.5  text-xl 
+     font-semibold leading-none  text-black  
+     placeholder:text-[#A1A1A1]  focus:outline-none  
+     dark:bg-black  dark:text-white`,
+    promoCodeInputClasses,
+    {
+      [promoCodeInputFocusedClasses]:
+        promoCodeInputIsFocused &&
+        promoCodeState !== PromoCodeState.VALID &&
+        promoCodeState !== PromoCodeState.INVALID,
+      [promoCodeIsValidInputClasses]: promoCodeState === PromoCodeState.VALID,
+      [promoCodeIsInvalidInputClasses]:
+        promoCodeState === PromoCodeState.INVALID,
     },
   );
 
@@ -212,6 +291,14 @@ function EmailForm({
     spinnerIconsClasses,
   );
 
+  const promoSpinnerClasses = classNames(
+    '!size-[20px]  !-mt-[5px]  !text-black  dark:!text-white',
+    {
+      invisible: promoCodeState !== PromoCodeState.LOADING,
+      visible: promoCodeState === PromoCodeState.LOADING,
+    },
+  );
+
   const arrowClasses = classNames(
     `absolute  left-1/2  top-[48%]  -translate-x-1/2  -translate-y-1/2  
      [transition:opacity_500ms_cubic-bezier(0.4,0,0.2,1),transform_150ms_cubic-bezier(0.4,0,0.2,1)]`,
@@ -229,6 +316,9 @@ function EmailForm({
   const labelClassNames = classNames(
     '!inline-block  text-[1.375rem]  font-bold',
     labelClasses,
+    {
+      'mb-4': withPromoCode,
+    },
   );
 
   return (
@@ -249,6 +339,20 @@ function EmailForm({
         <label htmlFor={inputId}>
           <BasicTextNode className={labelClassNames}>{label}</BasicTextNode>
         </label>
+      )}
+      {withPromoCode && (
+        <div className='flex  items-center  gap-2'>
+          <input
+            className={promoCodeInputClassNames}
+            type='text'
+            name='promoCode'
+            placeholder='Promo code'
+            onChange={handlePromoCodeChange}
+            onFocus={() => setPromoCodeInputIsFocused(true)}
+            onBlur={() => setPromoCodeInputIsFocused(false)}
+          />
+          <CircularProgress className={promoSpinnerClasses} />
+        </div>
       )}
       <div className='mt-3  flex  flex-row'>
         <input

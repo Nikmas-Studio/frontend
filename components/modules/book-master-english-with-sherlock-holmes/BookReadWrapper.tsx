@@ -63,9 +63,11 @@ function BookReadWrapper({ children }: BookReadProps): ReactElement {
             .catch(() => {});
         }
       } catch (e) {
-        axios.post(LOG_ERROR_ROUTE, {
-          message: `Failed to notify MetaPixel of purchase for book ${BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI}: ${JSON.stringify(e)}`,
-        });
+        axios
+          .post(LOG_ERROR_ROUTE, {
+            message: `Failed to notify MetaPixel of purchase for book ${BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI}: ${JSON.stringify(e)}`,
+          })
+          .catch(() => {});
       }
     }
 

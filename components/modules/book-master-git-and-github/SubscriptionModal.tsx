@@ -13,12 +13,15 @@ import {
 } from '@/context/subscription-modal/Context';
 import useOutsideClick from '@/hooks/use-outside-click';
 import { bookIsBought, BookState } from '@/types/book-state';
+import { PromoCodeState } from '@/types/promo-code';
+import { checkPromoCodeValidityApi } from '@/utils/check-promo-code-validity-route';
 import { purchaseBookAuthenticated } from '@/utils/purchase-book-authenticated-route';
 import { purchaseBookGuest } from '@/utils/purchase-book-guest-route';
 import { CircularProgress } from '@mui/material';
 import classNames from 'classnames';
 import { ReactElement, useEffect, useRef, useState } from 'react';
 import EmailForm from '../EmailForm';
+import ProceedToPayment from './promo-page/ProceedToPayment';
 
 interface SubscriptionModalProps {
   formInputId: string;
@@ -39,6 +42,7 @@ function SubscriptionModal({
   const [paymentPageIsGenerating, setPaymentPageIsGenerating] = useState(false);
   const [paymentPageGenerationError, setPaymentPageGenerationError] =
     useState(false);
+  const [promoCodeState, setPromoCodeState] = useState(PromoCodeState.DEFAULT);
 
   useEffect(() => {
     if (!sessionStateIsLoading) {
@@ -121,12 +125,15 @@ function SubscriptionModal({
     };
   }, [subscriptionModalIsOpened, fixBody]);
 
-  async function handlePurchaseBookAuthenticated(): Promise<void> {
+  async function handlePurchaseBookAuthenticated(
+    promoCode: string | null,
+  ): Promise<void> {
     setPaymentPageIsGenerating(true);
 
     try {
       const { paymentLink } = await purchaseBookAuthenticated(
         BOOK_MASTER_GIT_AND_GITHUB_URI,
+        promoCode,
       );
 
       setPaymentPageGenerationError(false);
@@ -278,23 +285,54 @@ function SubscriptionModal({
             )}
             {!bookIsBought(bookState) && (
               <>
-                <BasicTextNode
-                  className='mt-9  text-center  text-4xl 
+                <div className='mt-9  flex  justify-center  gap-4'>
+                  <BasicTextNode
+                    className='text-4xl 
                      font-medium  !text-subscription'
-                >
-                  $23
-                </BasicTextNode>
+                  >
+                    ${promoCodeState === PromoCodeState.VALID ? '19.5' : '23'}
+                  </BasicTextNode>
+                  <div
+                    className={`${classNames({
+                      hidden: promoCodeState !== PromoCodeState.VALID,
+                      block: promoCodeState === PromoCodeState.VALID,
+                    })}`}
+                  >
+                    <BasicTextNode
+                      className={`relative  mt-1  text-3xl  text-[#9C9C9C]  dark:text-[#7B7B7B]`}
+                    >
+                      $23
+                      <span className='absolute  left-[-19%]  top-1/2  h-px  w-[140%]  rotate-[-30deg]   bg-black  dark:bg-white'></span>
+                    </BasicTextNode>
+                  </div>
+                </div>
                 <div className='mb-20  mt-[2.85rem]'>
                   {session === null && (
                     <EmailForm
-                      requestCallback={async (email, token) => {
+                      requestCallback={async (email, token, promoCode) => {
                         await purchaseBookGuest({
                           bookURI: BOOK_MASTER_GIT_AND_GITHUB_URI,
                           email,
                           captchaToken: token,
+                          promoCode,
                         });
                       }}
-                      label='Get payment link by&nbsp;email'
+                      withPromoCode
+                      checkPromoCodeValidity={async (promoCode) => {
+                        const { isValid } =
+                          await checkPromoCodeValidityApi(promoCode);
+
+                        return {
+                          valid: isValid,
+                        };
+                      }}
+                      promoCodeInputClasses={`border-[#CFCFCF]  dark:border-gray-dark-lighter2  !font-normal`}
+                      promoCodeIsInvalidInputClasses='!border-red-600'
+                      promoCodeIsValidInputClasses='!border-subscription'
+                      promoCodeState={promoCodeState}
+                      setPromoCodeState={setPromoCodeState}
+                      promoCodeInputFocusedClasses='!border-[#000000]  dark:!border-[#FFFFFF]'
+                      label='Get the payment link by&nbsp;email'
                       caption='This&nbsp;email will&nbsp;be&nbsp;used as&nbsp;a&nbsp;key to&nbsp;your&nbsp;library'
                       inputId={formInputId}
                       inputName='email'
@@ -310,30 +348,30 @@ function SubscriptionModal({
                     />
                   )}
                   {session !== null && (
-                    <div className='flex  flex-col  items-center'>
-                      <button
-                        onClick={handlePurchaseBookAuthenticated}
-                        className={classNames(
-                          `button  bg-subscription  text-white  
-                             hover:bg-subscription-darker`,
-                          {
-                            'pointer-events-none': paymentPageIsGenerating,
-                          },
-                        )}
-                      >
-                        Proceed to payment
-                      </button>
-                      <div
-                        className={paymentPageIsGeneratingSpinnerWrapperClasses}
-                      >
-                        <CircularProgress className='!size-[20px]  !text-subscription' />
-                      </div>
-                      {paymentPageGenerationError && (
-                        <BasicTextNode className='mt-3  text-red-600'>
-                          An error occurred. Please try again.
-                        </BasicTextNode>
-                      )}
-                    </div>
+                    <ProceedToPayment
+                      handlePurchaseBookAuthenticated={
+                        handlePurchaseBookAuthenticated
+                      }
+                      paymentPageIsGenerating={paymentPageIsGenerating}
+                      paymentPageGenerationError={paymentPageGenerationError}
+                      paymentPageIsGeneratingSpinnerWrapperClasses={
+                        paymentPageIsGeneratingSpinnerWrapperClasses
+                      }
+                      promoCodeInputClasses={`border-[#CFCFCF]  dark:border-gray-dark-lighter2  !font-normal`}
+                      promoCodeInputFocusedClasses='!border-[#000000]  dark:!border-[#FFFFFF]'
+                      promoCodeIsInvalidInputClasses='!border-red-600'
+                      promoCodeIsValidInputClasses='!border-subscription'
+                      promoCodeState={promoCodeState}
+                      setPromoCodeState={setPromoCodeState}
+                      checkPromoCodeValidity={async (promoCode) => {
+                        const { isValid } =
+                          await checkPromoCodeValidityApi(promoCode);
+
+                        return {
+                          valid: isValid,
+                        };
+                      }}
+                    />
                   )}
                 </div>
               </>
