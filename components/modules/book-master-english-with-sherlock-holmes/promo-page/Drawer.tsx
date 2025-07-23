@@ -19,6 +19,7 @@ import { PromoCodeState } from '@/types/promo-code';
 import { cancelSubscription } from '@/utils/cancel-subscription';
 import { checkPromoCodeValidityApi } from '@/utils/check-promo-code-validity-route';
 import { formatDate } from '@/utils/format-date';
+import { getBookPriceWithPromoCode } from '@/utils/get-book-price-with-promo-code';
 import { getDemoLink } from '@/utils/get-demo-link-route';
 import { purchaseBookAuthenticated } from '@/utils/purchase-book-authenticated-route';
 import { purchaseBookGuest } from '@/utils/purchase-book-guest-route';
@@ -41,6 +42,7 @@ function PromoDrawer(): ReactElement {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [nestedModalIsOpened, setNestedModalIsOpened] = useState(false);
   const [promoCodeState, setPromoCodeState] = useState(PromoCodeState.DEFAULT);
+  const [promoCode, setPromoCode] = useState('');
 
   const { session, loading: sessionStateIsLoading } = useSession();
 
@@ -849,7 +851,7 @@ function PromoDrawer(): ReactElement {
                                 <span className='text-[3.43rem]'>
                                   $
                                   {promoCodeState === PromoCodeState.VALID
-                                    ? 19.5
+                                    ? getBookPriceWithPromoCode(promoCode)
                                     : 23}
                                 </span>
                                 /year
@@ -880,6 +882,8 @@ function PromoDrawer(): ReactElement {
                         <div className='max-w-[400px]'>
                           {session === null && (
                             <EmailForm
+                              promoCode={promoCode}
+                              setPromoCode={setPromoCode}
                               withPromoCode
                               requestCallback={async (
                                 email,
@@ -925,6 +929,8 @@ function PromoDrawer(): ReactElement {
                           )}
                           {session !== null && (
                             <ProceedToPayment
+                              promoCode={promoCode}
+                              setPromoCode={setPromoCode}
                               handlePurchaseBookAuthenticated={
                                 handlePurchaseBookAuthenticated
                               }

@@ -25,6 +25,8 @@ interface ProceedToPaymentProps {
   promoCodeState: PromoCodeState;
   setPromoCodeState: Dispatch<SetStateAction<PromoCodeState>>;
   checkPromoCodeValidity: (promoCode: string) => Promise<{ valid: boolean }>;
+  promoCode: string;
+  setPromoCode: Dispatch<SetStateAction<string>>;
 }
 
 function ProceedToPayment({
@@ -81,11 +83,11 @@ function ProceedToPayment({
       const requestId = ++promoCodeRequestIdRef.current;
 
       if (promoCode === '') {
-        setPromoCodeState!(PromoCodeState.DEFAULT);
+        setPromoCodeState(PromoCodeState.DEFAULT);
         return;
       }
 
-      setPromoCodeState!(PromoCodeState.LOADING);
+      setPromoCodeState(PromoCodeState.LOADING);
 
       const { valid } = await checkPromoCodeValidity(promoCode);
 
@@ -93,7 +95,7 @@ function ProceedToPayment({
         return;
       }
 
-      setPromoCodeState!(valid ? PromoCodeState.VALID : PromoCodeState.INVALID);
+      setPromoCodeState(valid ? PromoCodeState.VALID : PromoCodeState.INVALID);
     }
   }
 
