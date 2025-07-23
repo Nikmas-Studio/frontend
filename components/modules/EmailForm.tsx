@@ -49,6 +49,8 @@ interface EmailFormProps {
   withPromoCode?: boolean;
   promoCodeState?: PromoCodeState;
   setPromoCodeState?: Dispatch<SetStateAction<PromoCodeState>>;
+  promoCode?: string;
+  setPromoCode?: Dispatch<SetStateAction<string>>;
 }
 
 function EmailForm({
@@ -58,6 +60,8 @@ function EmailForm({
   inputName,
   requestCallback,
   checkPromoCodeValidity,
+  promoCode,
+  setPromoCode,
   promoCodeState,
   setPromoCodeState,
   labelClasses,
@@ -80,7 +84,6 @@ function EmailForm({
   const [inputIsFocused, setInputIsFocused] = useState(false);
   const [promoCodeInputIsFocused, setPromoCodeInputIsFocused] = useState(false);
   const [email, setEmail] = useState('');
-  const [promoCode, setPromoCode] = useState('');
   const [honeypot, setHoneypot] = useState('');
   const [formState, setFormState] = useState(FormState.IDLE);
   const changeFormStateToIdle = useRef(false);
@@ -180,7 +183,7 @@ function EmailForm({
   ): Promise<void> {
     if (checkPromoCodeValidity !== undefined) {
       const promoCode = e.target.value;
-      setPromoCode(promoCode);
+      setPromoCode!(promoCode);
 
       const requestId = ++promoCodeRequestIdRef.current;
 

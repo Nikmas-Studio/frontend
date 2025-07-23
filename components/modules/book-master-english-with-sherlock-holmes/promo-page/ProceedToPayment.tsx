@@ -26,6 +26,8 @@ interface ProceedToPaymentProps {
   promoCodeState: PromoCodeState;
   setPromoCodeState: Dispatch<SetStateAction<PromoCodeState>>;
   checkPromoCodeValidity: (promoCode: string) => Promise<{ valid: boolean }>;
+  promoCode: string;
+  setPromoCode: Dispatch<SetStateAction<string>>;
 }
 
 function ProceedToPayment({
@@ -40,9 +42,10 @@ function ProceedToPayment({
   promoCodeState,
   setPromoCodeState,
   checkPromoCodeValidity,
+  promoCode,
+  setPromoCode,
 }: ProceedToPaymentProps): ReactElement {
   const [promoCodeInputIsFocused, setPromoCodeInputIsFocused] = useState(false);
-  const [promoCode, setPromoCode] = useState('');
 
   const promoCodeInputClassNames = classNames(
     `h-[2.53125rem]  w-[calc(100%-80px)]  rounded-[5px]  border  
@@ -82,11 +85,11 @@ function ProceedToPayment({
       const requestId = ++promoCodeRequestIdRef.current;
 
       if (promoCode === '') {
-        setPromoCodeState!(PromoCodeState.DEFAULT);
+        setPromoCodeState(PromoCodeState.DEFAULT);
         return;
       }
 
-      setPromoCodeState!(PromoCodeState.LOADING);
+      setPromoCodeState(PromoCodeState.LOADING);
 
       const { valid } = await checkPromoCodeValidity(promoCode);
 
@@ -94,7 +97,7 @@ function ProceedToPayment({
         return;
       }
 
-      setPromoCodeState!(valid ? PromoCodeState.VALID : PromoCodeState.INVALID);
+      setPromoCodeState(valid ? PromoCodeState.VALID : PromoCodeState.INVALID);
     }
   }
 

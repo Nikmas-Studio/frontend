@@ -15,6 +15,7 @@ import useOutsideClick from '@/hooks/use-outside-click';
 import { bookIsBought, BookState } from '@/types/book-state';
 import { PromoCodeState } from '@/types/promo-code';
 import { checkPromoCodeValidityApi } from '@/utils/check-promo-code-validity-route';
+import { getBookPriceWithPromoCode } from '@/utils/get-book-price-with-promo-code';
 import { purchaseBookAuthenticated } from '@/utils/purchase-book-authenticated-route';
 import { purchaseBookGuest } from '@/utils/purchase-book-guest-route';
 import { CircularProgress } from '@mui/material';
@@ -43,6 +44,7 @@ function SubscriptionModal({
   const [paymentPageGenerationError, setPaymentPageGenerationError] =
     useState(false);
   const [promoCodeState, setPromoCodeState] = useState(PromoCodeState.DEFAULT);
+  const [promoCode, setPromoCode] = useState('');
 
   useEffect(() => {
     if (!sessionStateIsLoading) {
@@ -290,7 +292,10 @@ function SubscriptionModal({
                     className='text-4xl 
                      font-medium  !text-subscription'
                   >
-                    ${promoCodeState === PromoCodeState.VALID ? '19.5' : '23'}
+                    $
+                    {promoCodeState === PromoCodeState.VALID
+                      ? getBookPriceWithPromoCode(promoCode)
+                      : '23'}
                   </BasicTextNode>
                   <div
                     className={`${classNames({
@@ -309,6 +314,8 @@ function SubscriptionModal({
                 <div className='mb-20  mt-[2.85rem]'>
                   {session === null && (
                     <EmailForm
+                      promoCode={promoCode}
+                      setPromoCode={setPromoCode}
                       requestCallback={async (email, token, promoCode) => {
                         await purchaseBookGuest({
                           bookURI: BOOK_MASTER_GIT_AND_GITHUB_URI,
@@ -349,6 +356,8 @@ function SubscriptionModal({
                   )}
                   {session !== null && (
                     <ProceedToPayment
+                      promoCode={promoCode}
+                      setPromoCode={setPromoCode}
                       handlePurchaseBookAuthenticated={
                         handlePurchaseBookAuthenticated
                       }
