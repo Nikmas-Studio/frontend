@@ -1,14 +1,17 @@
 import BasicTextNode from '@/components/elements/BasicTextNode';
 import DemoOrReadButton from '@/components/elements/book-master-english-with-sherlock-holmes/promo/DemoOrReadButton';
 import SubscriptionButtonPromo from '@/components/elements/book-master-english-with-sherlock-holmes/promo/SubscriptionButtonPromo';
+import TextLi from '@/components/elements/book-master-english-with-sherlock-holmes/TextLi';
+import TextOl from '@/components/elements/book-master-english-with-sherlock-holmes/TextOl';
 import ExternalLink from '@/components/elements/ExternalLink';
 import MainContainer from '@/components/elements/MainContainer';
 import TextNode from '@/components/elements/TextNode';
-import { libreBaskerville } from '@/fonts';
+import { libreBaskerville, merriweather } from '@/fonts';
 import linkedInLogoDark from '@/public/images/linkedin-logo-dark.png';
 import linkedInLogoLight from '@/public/images/linkedin-logo-light.png';
 import publisherPhoto from '@/public/images/Nick_Maslov_black_and_white.jpg';
 import authorPhoto from '@/public/images/Sir_Arthur_Conan_Doyle.jpg';
+import classNames from 'classnames';
 import Image from 'next/image';
 import { ReactElement } from 'react';
 import BookCover from './BookCover';
@@ -61,21 +64,55 @@ function Intro(): ReactElement {
               powerfully boost your English skills, which is why the book is
               presented in its original version — in English.
             </TextNode>
-            <TextNode>
-              <span className='italic'>Publisher’s note</span>: When I first sat
-              down to read Sherlock Holmes in the original, I constantly had to
-              switch to a translator because new words came up in almost every
-              sentence — and this constant switching quickly became tedious. I
-              wanted to see the translation right inside the book, ideally
-              whenever I highlighted any fragment. Eventually, I realized I’d
-              rather create my own digital version of Sherlock Holmes and
-              continue reading that way. Today, my edition of Sherlock Holmes
-              includes built-in, highest-quality, context-aware AI translation
-              into any language, a book navigator, and a light/dark theme
-              switcher. I understand that this kind of interactive digital
-              version of Sherlock Holmes will be useful to a huge number of
-              people, so I’m making my version of the book publicly available.
+            <h2
+              className={`${classNames(
+                `[font-size:1.3rem]  underline  italic  text-black  dark:text-white  lining-nums  text-lg  mb-3  
+                [-webkit-font-smoothing:subpixel-antialiased]`,
+                merriweather.className,
+              )}`}
+            >
+              The 4 Secrets of The Book’s Power
+            </h2>
+            <TextNode className='!mb-0'>
+              There are 4 secrets that make this book one of the world’s best
+              tools for advancing your English:
             </TextNode>
+            <TextOl className='mb-5'>
+              <TextLi>
+                <span className='italic'>The built-in translation.</span> The
+                translation is built right into the book, so there’s no need to
+                jump back and forth between the book and an external translator.
+              </TextLi>
+              <TextLi>
+                <span className='italic'>Translation of entire phrases.</span>{' '}
+                You can translate not just individual words, but entire phrases
+                — even full sentences. English has many expressions where the
+                meaning of the whole differs from the meanings of the individual
+                words — for example, phrasal verbs. With our highlight-based
+                translation system, you can select and translate phrases of any
+                length as a whole.
+              </TextLi>
+              <TextLi>
+                <span className='italic'>The world’s best AI translation.</span>{' '}
+                For translation, we use ChatGPT under the hood — one of the most
+                advanced AIs in the world. When translating any fragment, we
+                also provide the AI with the surrounding text context in which
+                that fragment appears and ask AI to translate the fragment as
+                accurately as possible within that specific context. As a
+                result, by combining ChatGPT with context awareness, we achieve
+                one of the highest-quality translations — right inside the book.
+              </TextLi>
+              <TextLi>
+                <span className='italic'>
+                  Effective natural memorization of words and phrases.
+                </span>{' '}
+                Vivid moments stay in our active memory for a long time. And
+                when a person reads an exciting story like Sherlock Holmes,
+                filled with such striking scenes, linking the learning of new
+                words and phrases to those moments helps retain the vocabulary
+                in long-term memory — naturally and effortlessly.
+              </TextLi>
+            </TextOl>
             <TextNode className='!mb-0'>
               <span className='italic'>
                 The book supports translation into all major world languages:{' '}

@@ -15,10 +15,17 @@ function TranslationDemo(): ReactElement {
           Highlight-based, context-aware AI translation is built right into the
           book
         </H2>
+        <TextNode className='max-w-[45rem]'>
+          For translation, we use ChatGPT under the hood — one of the most
+          advanced AIs in the world. When translating any fragment, we also
+          provide the AI with the surrounding text context in which that
+          fragment appears and ask AI to translate the fragment as accurately as
+          possible within that specific context. As a result, by combining
+          ChatGPT with context awareness, we achieve one of the highest-quality
+          translations — right inside the book.
+        </TextNode>
         <TextNode className='max-w-[45rem]  lg:mb-6'>
-          The highest-quality, highlight-based, context-aware AI translation is
-          built right into the book and available in any language. Choose your
-          translation language in settings, then highlight any
+          Choose your translation language in settings, then highlight any
           text&nbsp;fragment&nbsp;— and see the instant pop&#8209;up with the
           meaning:
         </TextNode>

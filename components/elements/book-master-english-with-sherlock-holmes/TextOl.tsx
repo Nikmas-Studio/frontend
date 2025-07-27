@@ -10,7 +10,7 @@ interface TextListProps {
 function TextOl({ className, children }: TextListProps): ReactElement {
   const classes = classNames(
     `list-decimal  lining-nums  text-lg  pl-14  [-webkit-font-smoothing:subpixel-antialiased]
-     marker:font-inherit  marker:text-inherit`,
+     marker:font-inherit  marker:text-inherit  marker:text-black  dark:marker:text-white`,
     merriweather.className,
     className,
   );

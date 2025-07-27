@@ -9,7 +9,7 @@ function wrapTextWithNbsp(text: string): string {
 }
 
 function addWordJoinerBeforeDash(text: string): string {
-  return text.replace(/([—–])/g, '\u2060$1');
+  return text.replace(/ ([—–])/g, '\u00A0$1');
 }
 
 function typographicFixes(text: string): string {
