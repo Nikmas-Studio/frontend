@@ -71,7 +71,7 @@ function Intro(): ReactElement {
                 merriweather.className,
               )}`}
             >
-              The 4 Secrets of The Book’s Power
+              The 4 Secrets of This Book’s Power
             </h2>
             <TextNode className='!mb-0'>
               There are 4 secrets that make this book one of the world’s best
