@@ -774,7 +774,9 @@ function PromoDrawer(): ReactElement {
                             <BasicTextNode
                               className={`leading-[3.43rem]  ${libreBaskerville.className}  text-xl`}
                             >
-                              <span className='text-[3.43rem]'>$23</span>
+                              <span className='text-[3.43rem]'>
+                                ${bookState.bookPrice}
+                              </span>
                               /year
                             </BasicTextNode>
                             <TextNode className='!mb-0  mt-[-0.3rem]  !text-base'>
