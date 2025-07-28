@@ -1,6 +1,7 @@
 export interface BoughtState {
   paidUntil?: string;
   subscriptionIsActive: boolean;
+  bookPrice: number;
 }
 
 export enum BookState {

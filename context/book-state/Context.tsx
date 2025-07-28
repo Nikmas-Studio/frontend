@@ -38,6 +38,7 @@ export function BookStateProvider({
 
         if (res.data.accessGranted) {
           setBookState({
+            bookPrice: res.data.bookPrice,
             paidUntil: res.data.paidUntil,
             subscriptionIsActive: res.data.subscriptionIsActive,
           });
