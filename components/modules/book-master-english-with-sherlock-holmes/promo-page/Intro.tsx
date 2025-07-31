@@ -79,6 +79,16 @@ function Intro(): ReactElement {
             </TextNode>
             <TextOl className='mb-5'>
               <TextLi>
+                <span className='italic'>
+                  Effective natural memorization of words and phrases.
+                </span>{' '}
+                Vivid moments stay in our active memory for a long time. And
+                when a person reads an exciting story like Sherlock Holmes,
+                filled with such striking scenes, linking the learning of new
+                words and phrases to those moments helps retain the vocabulary
+                in long-term memory — naturally and effortlessly.
+              </TextLi>
+              <TextLi>
                 <span className='italic'>The built-in translation.</span> The
                 translation is built right into the book, so there’s no need to
                 jump back and forth between the book and an external translator.
@@ -101,16 +111,6 @@ function Intro(): ReactElement {
                 accurately as possible within that specific context. As a
                 result, by combining ChatGPT with context awareness, we achieve
                 one of the highest-quality translations — right inside the book.
-              </TextLi>
-              <TextLi>
-                <span className='italic'>
-                  Effective natural memorization of words and phrases.
-                </span>{' '}
-                Vivid moments stay in our active memory for a long time. And
-                when a person reads an exciting story like Sherlock Holmes,
-                filled with such striking scenes, linking the learning of new
-                words and phrases to those moments helps retain the vocabulary
-                in long-term memory — naturally and effortlessly.
               </TextLi>
             </TextOl>
             <TextNode className='!mb-0'>
