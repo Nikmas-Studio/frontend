@@ -79,19 +79,17 @@ function Intro(): ReactElement {
             </TextNode>
             <TextOl className='mb-5'>
               <TextLi>
-                <span className='italic'>
-                  Effective natural memorization of words and phrases.
-                </span>{' '}
-                Vivid moments stay in our active memory for a long time. And
-                when a person reads an exciting story like Sherlock Holmes,
-                filled with such striking scenes, linking the learning of new
-                words and phrases to those moments helps retain the vocabulary
-                in long-term memory — naturally and effortlessly.
-              </TextLi>
-              <TextLi>
-                <span className='italic'>The built-in translation.</span> The
-                translation is built right into the book, so there’s no need to
-                jump back and forth between the book and an external translator.
+                <span className='italic'>The built-in translation.</span>{' '}
+                Constantly switching back and forth between a book and an
+                external translator is the most inconvenient part of reading
+                literature in a foreign language. You’ll quickly get tired of
+                this constant context switching and, in all likelihood, give up
+                reading altogether. To solve this core problem, we’ve
+                implemented a built-in translator that activates instantly when
+                you highlight any piece of text — no need to click anything
+                extra or switch to another app. Our translator also understands
+                the context around the highlighted fragment, so the translation
+                is as accurate as possible.
               </TextLi>
               <TextLi>
                 <span className='italic'>Translation of entire phrases.</span>{' '}
@@ -111,6 +109,16 @@ function Intro(): ReactElement {
                 accurately as possible within that specific context. As a
                 result, by combining ChatGPT with context awareness, we achieve
                 one of the highest-quality translations — right inside the book.
+              </TextLi>
+              <TextLi>
+                <span className='italic'>
+                  Effective natural memorization of words and phrases.
+                </span>{' '}
+                Vivid moments stay in our active memory for a long time. And
+                when a person reads an exciting story like Sherlock Holmes,
+                filled with such striking scenes, linking the learning of new
+                words and phrases to those moments helps retain the vocabulary
+                in long-term memory — naturally and effortlessly.
               </TextLi>
             </TextOl>
             <TextNode className='!mb-0'>
