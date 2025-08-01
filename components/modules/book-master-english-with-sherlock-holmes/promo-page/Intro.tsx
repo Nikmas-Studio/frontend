@@ -118,7 +118,10 @@ function Intro(): ReactElement {
                 when a person reads an exciting story like Sherlock Holmes,
                 filled with such striking scenes, linking the learning of new
                 words and phrases to those moments helps retain the vocabulary
-                in long-term memory — naturally and effortlessly.
+                in long-term memory — naturally and effortlessly. Furthermore,
+                books expose you to more words per minute than any other tool —
+                nothing else comes close. That’s exactly why reading is one of
+                the most effective ways to expand your vocabulary.
               </TextLi>
             </TextOl>
             <TextNode className='!mb-0'>
