@@ -15,6 +15,23 @@ function QuestionsAndAnswers(): ReactElement {
         </H2>
         <div className='mb-11  max-w-[45rem]'>
           <TextNode className='font-bold'>
+            What’s the point of paying for this book if I can just copy text
+            into Google Translate?
+          </TextNode>
+          <TextNode>
+            Constantly switching back and forth between a book and an external
+            translator is the most inconvenient part of reading literature in a
+            foreign language. You’ll quickly get tired of this constant context
+            switching and, in all likelihood, give up reading altogether. To
+            solve this core problem, we’ve implemented a built-in translator
+            that activates instantly when you highlight any piece of text — no
+            need to click anything extra or switch to another app. Our
+            translator also understands the context around the highlighted
+            fragment, so the translation is as accurate as possible.
+          </TextNode>
+        </div>
+        <div className='mb-11  max-w-[45rem]'>
+          <TextNode className='font-bold'>
             Why is there a subscription?
           </TextNode>
           <TextNode>
