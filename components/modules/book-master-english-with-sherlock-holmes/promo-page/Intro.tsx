@@ -120,8 +120,8 @@ function Intro(): ReactElement {
                 words and phrases to those moments helps retain the vocabulary
                 in long-term memory — naturally and effortlessly. Furthermore,
                 books expose you to more words per minute than any other tool —
-                nothing else comes close. That’s exactly why reading is one of
-                the most effective ways to expand your vocabulary.
+                nothing else comes close. That’s exactly why reading is the most
+                effective way to expand your vocabulary.
               </TextLi>
             </TextOl>
             <TextNode className='!mb-0'>
