@@ -180,7 +180,7 @@ function Page7({
               <TextLi>Astronomy.—Nil.</TextLi>
               <TextLi>Politics.—Feeble.</TextLi>
               <TextLi>
-                Botany.—Variable.Well up in belladonna, opium, and poisons
+                Botany.—Variable. Well up in belladonna, opium, and poisons
                 generally. Knows nothing of practical gardening.
               </TextLi>
               <TextLi>
