@@ -6,7 +6,7 @@ import { ReactElement } from 'react';
 
 function Contents(): ReactElement {
   return (
-    <section className='mt-16  lg:mt-24'>
+    <section className='mt-[4.5rem]  lg:mt-24'>
       <MainContainer>
         <div className='flex  items-center'>
           <hr
