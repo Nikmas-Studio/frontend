@@ -9,6 +9,7 @@ import Intro from '@/components/modules/book-master-english-with-sherlock-holmes
 import PageNumbersUpdate from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/PageNumbersUpdate';
 import QuestionsAndAnswers from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/QuestionsAndAnswers';
 import ReadOnAnyDevice from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/ReadOnAnyDevice';
+import Reviews from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/Reviews';
 import ThreeDots from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/ThreeDots';
 import TranslationDemo from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/TranslationDemo';
 import Footer from '@/components/modules/Footer';
@@ -62,6 +63,7 @@ function BookPromoMasterEnglishWithSherlockHolmes(): ReactElement {
           <div className='pt-[4.5rem]'>
             <HeaderDefault />
             <Intro />
+            <Reviews />
             <Contents />
             <TranslationDemo />
             <MainContainer
