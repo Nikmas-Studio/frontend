@@ -13,7 +13,7 @@ function Reviews(): ReactElement {
         <H2
           className={`mb-7  lg:mb-9  ${libreBaskerville.className}  !leading-snug`}
         >
-          Recommended by the world's best English teachers
+          Verified and recommended by the world's best English teachers
         </H2>
         <div className='flex  flex-col  gap-11  lg:flex-row  lg:justify-between'>
           <div>
