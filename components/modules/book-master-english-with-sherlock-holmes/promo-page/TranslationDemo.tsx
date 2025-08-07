@@ -16,6 +16,11 @@ function TranslationDemo(): ReactElement {
           book
         </H2>
         <TextNode className='max-w-[45rem]'>
+          We eliminated the frustration that comes from constantly switching
+          between a book and an external translator. Now, translation is built
+          right into the book — and it’s context-aware.
+        </TextNode>
+        <TextNode className='max-w-[45rem]'>
           For translation, we use ChatGPT under the hood — one of the most
           advanced AIs in the world. When translating any fragment, we also
           provide the AI with the surrounding text context in which that

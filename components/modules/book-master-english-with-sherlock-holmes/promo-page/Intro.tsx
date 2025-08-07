@@ -6,12 +6,11 @@ import TextOl from '@/components/elements/book-master-english-with-sherlock-holm
 import ExternalLink from '@/components/elements/ExternalLink';
 import MainContainer from '@/components/elements/MainContainer';
 import TextNode from '@/components/elements/TextNode';
-import { libreBaskerville, merriweather } from '@/fonts';
+import { libreBaskerville } from '@/fonts';
 import linkedInLogoDark from '@/public/images/linkedin-logo-dark.png';
 import linkedInLogoLight from '@/public/images/linkedin-logo-light.png';
 import publisherPhoto from '@/public/images/Nick_Maslov_black_and_white.jpg';
 import authorPhoto from '@/public/images/Sir_Arthur_Conan_Doyle.jpg';
-import classNames from 'classnames';
 import Image from 'next/image';
 import { ReactElement } from 'react';
 import BookCover from './BookCover';
@@ -50,80 +49,66 @@ function Intro(): ReactElement {
               className={`mb-6  text-[1.375rem]  font-semibold
                            leading-snug  ${libreBaskerville.className}`}
             >
-              Advance your English through story — with the
-              highest&#8209;quality, highlight&#8209;based, context&#8209;aware
-              AI&nbsp;translation, built right into the book and available in
-              any language.
+              Become proficient in English in record time — with the most
+              effective and engaging tool, verified and recommended by the
+              world’s best English teachers.
             </BasicTextNode>
             <TextNode>
-              The Sherlock Holmes stories are not only some of the world’s most
-              thrilling detective tales, but also a treasure trove of rich
+              <span className='underline'>
+                Reading is the most effective way for mastering a language,
+              </span>{' '}
+              because when you read, you encounter more words per minute than
+              with any other method. And if what you're reading is also a
+              fascinating, gripping story, words are remembered far more
+              effectively — because they become tied to vivid moments that stay
+              in your active memory for a long time.
+            </TextNode>
+            <TextNode className='!mb-0'>
+              However, reading foreign literature comes with its own problems:
+            </TextNode>
+            <TextOl className='mb-5'>
+              <TextLi>
+                <span className='italic'>
+                  The frustration from constant switching between a book and an
+                  external translator.
+                </span>{' '}
+                Constantly switching back and forth between a book and an
+                external translator is the most inconvenient part of reading
+                literature in a foreign language. You’ll quickly get tired of
+                this constant context switching and, in all likelihood, give up
+                reading altogether.
+              </TextLi>
+              <TextLi>
+                <span className='italic'>
+                  External translators lack context.
+                </span>{' '}
+                When you manually translate a word or phrase using an external
+                translator, it has no idea of the surrounding context — which
+                often results in inaccurate translations.
+              </TextLi>
+            </TextOl>
+            <TextNode>
+              <span className='italic'>We solved these problems.</span> Our book
+              includes a built-in, high-quality translator that activates
+              instantly when you highlight any fragment — whether it’s a word, a
+              phrase, or even a full sentence. And because it takes the
+              surrounding context into account, the translation is as accurate
+              as possible.
+            </TextNode>
+            <TextNode>
+              And what we offer to read is the complete collection of Sherlock
+              Holmes stories. These stories are not only some of the world’s
+              most thrilling detective tales, but also a treasure trove of rich
               vocabulary. If you want to truly strengthen your knowledge of any
               language, you should read Sherlock Holmes translated into that
               language. The goal of this interactive edition is to help you
               powerfully boost your English skills, which is why the book is
               presented in its original version — in English.
             </TextNode>
-            <h2
-              className={`${classNames(
-                `[font-size:1.3rem]  underline  italic  text-black  dark:text-white  lining-nums  text-lg  mb-3  
-                [-webkit-font-smoothing:subpixel-antialiased]`,
-                merriweather.className,
-              )}`}
-            >
-              The 4 Secrets of This Book’s Power
-            </h2>
-            <TextNode className='!mb-0'>
-              There are 4 secrets that make this book one of the world’s best
-              tools for advancing your English:
+            <TextNode className='italic  underline'>
+              Sherlock Holmes stories + built-in, context-aware translator =
+              English proficiency in record time. Remember this formula!
             </TextNode>
-            <TextOl className='mb-5'>
-              <TextLi>
-                <span className='italic'>The built-in translation.</span>{' '}
-                Constantly switching back and forth between a book and an
-                external translator is the most inconvenient part of reading
-                literature in a foreign language. You’ll quickly get tired of
-                this constant context switching and, in all likelihood, give up
-                reading altogether. To solve this core problem, we’ve
-                implemented a built-in translator that activates instantly when
-                you highlight any piece of text — no need to click anything
-                extra or switch to another app. Our translator also understands
-                the context around the highlighted fragment, so the translation
-                is as accurate as possible.
-              </TextLi>
-              <TextLi>
-                <span className='italic'>Translation of entire phrases.</span>{' '}
-                You can translate not just individual words, but entire phrases
-                — even full sentences. English has many expressions where the
-                meaning of the whole differs from the meanings of the individual
-                words — for example, phrasal verbs. With our highlight-based
-                translation system, you can select and translate phrases of any
-                length as a whole.
-              </TextLi>
-              <TextLi>
-                <span className='italic'>The world’s best AI translation.</span>{' '}
-                For translation, we use ChatGPT under the hood — one of the most
-                advanced AIs in the world. When translating any fragment, we
-                also provide the AI with the surrounding text context in which
-                that fragment appears and ask AI to translate the fragment as
-                accurately as possible within that specific context. As a
-                result, by combining ChatGPT with context awareness, we achieve
-                one of the highest-quality translations — right inside the book.
-              </TextLi>
-              <TextLi>
-                <span className='italic'>
-                  Effective natural memorization of words and phrases.
-                </span>{' '}
-                Vivid moments stay in our active memory for a long time. And
-                when a person reads an exciting story like Sherlock Holmes,
-                filled with such striking scenes, linking the learning of new
-                words and phrases to those moments helps retain the vocabulary
-                in long-term memory — naturally and effortlessly. Furthermore,
-                books expose you to more words per minute than any other tool —
-                nothing else comes close. That’s exactly why reading is the most
-                effective way to expand your vocabulary.
-              </TextLi>
-            </TextOl>
             <TextNode className='!mb-0'>
               <span className='italic'>
                 The book supports translation into all major world languages:{' '}
