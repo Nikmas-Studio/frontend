@@ -78,8 +78,8 @@ function Intro(): ReactElement {
             <TextNode className='!mb-0'>
               However, reading foreign literature comes with its own problems:
             </TextNode>
-            <TextOl className='mb-5'>
-              <TextLi>
+            <TextOl pureWhite className='mb-5'>
+              <TextLi pureWhite>
                 <span className='italic'>
                   The frustration from constant switching between a book and an
                   external translator.
@@ -90,7 +90,7 @@ function Intro(): ReactElement {
                 this constant context switching and, in all likelihood, give up
                 reading altogether.
               </TextLi>
-              <TextLi>
+              <TextLi pureWhite>
                 <span className='italic'>
                   An external translator lacks context.
                 </span>{' '}
