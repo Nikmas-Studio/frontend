@@ -44,12 +44,12 @@ function Intro(): ReactElement {
             </div>
             <DemoOrReadButton />
           </div>
-          <div className='mt-11  max-w-[685px]  lg:mt-0  xl:pl-14  xl:pr-16'>
+          <div className='mt-11  max-w-[685px]  lg:mt-0  xl:pl-12  xl:pr-16'>
             <BasicTextNode
               className={`mb-6  text-[1.375rem]  font-semibold
                            leading-snug  ${libreBaskerville.className}`}
             >
-              Multiply your income. Live and work globally. All by becoming
+              Multiply your income. Live and work globally. All&nbsp;by becoming
               proficient in English. Master the language in record time — with
               the most effective and engaging tool, verified and recommended by
               the world’s best English teachers.
@@ -132,7 +132,7 @@ function Intro(): ReactElement {
               Indonesian, Vietnamese.
             </TextNode>
           </div>
-          <div className='mt-12  flex-none  lg:mt-0  lg:w-[235px]'>
+          <div className='mt-12  flex-none  lg:mt-0  lg:w-[215px]'>
             <div className='flex  flex-col  lg:flex-col-reverse'>
               <div>
                 <div

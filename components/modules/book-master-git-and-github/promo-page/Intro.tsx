@@ -35,7 +35,7 @@ function Intro(): ReactElement {
             </div>
             <DemoOrReadButton />
           </div>
-          <div className='mt-12  max-w-[685px]  lg:mt-0  xl:pl-14  xl:pr-16'>
+          <div className='mt-12  max-w-[685px]  lg:mt-0  xl:pl-12  xl:pr-16'>
             <BasicTextNode
               className='mb-7  text-[1.375rem]  font-semibold
                            leading-snug'
@@ -82,7 +82,7 @@ function Intro(): ReactElement {
             </TextNode>
             <TextNode>Enjoy the&nbsp;read!</TextNode>
           </div>
-          <div className='mt-10  flex-none  lg:mt-0  lg:w-[235px]'>
+          <div className='mt-10  flex-none  lg:mt-0  lg:w-[215px]'>
             <Image
               src={authorPhoto}
               alt='Author: Nick Maslov'
