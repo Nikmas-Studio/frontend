@@ -91,7 +91,7 @@ function Intro(): ReactElement {
               </TextLi>
               <TextLi>
                 <span className='italic'>
-                  External translators lack context.
+                  An external translator lacks context.
                 </span>{' '}
                 When you manually translate a word or phrase using an external
                 translator, it has no idea of the surrounding context — which
