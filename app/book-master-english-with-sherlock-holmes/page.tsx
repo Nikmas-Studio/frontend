@@ -12,6 +12,7 @@ import ReadOnAnyDevice from '@/components/modules/book-master-english-with-sherl
 import Reviews from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/Reviews';
 import ThreeDots from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/ThreeDots';
 import TranslationDemo from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/TranslationDemo';
+import TravelWithComfortAndConfidence from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/TravelWithComfortAndConfidence';
 import YourKeyToGlobalSuccess from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/YourKeyToGlobalSuccess';
 import Footer from '@/components/modules/Footer';
 import HeaderDefault from '@/components/modules/header/header-element/HeaderDefault';
@@ -65,6 +66,7 @@ function BookPromoMasterEnglishWithSherlockHolmes(): ReactElement {
             <HeaderDefault />
             <Intro />
             <YourKeyToGlobalSuccess />
+            <TravelWithComfortAndConfidence />
             <Reviews />
             <Contents />
             <TranslationDemo />
