@@ -97,14 +97,14 @@ function Intro(): ReactElement {
               as possible.
             </TextNode>
             <TextNode>
-              And what we offer to read is the complete collection of Sherlock
+              What we offer to read is the complete collection of Sherlock
               Holmes stories. These stories are not only some of the world’s
               most thrilling detective tales, but also a treasure trove of rich
-              vocabulary. If you want to truly strengthen your knowledge of any
-              language, you should read Sherlock Holmes translated into that
-              language. The goal of this interactive edition is to help you
-              powerfully boost your English skills, which is why the book is
-              presented in its original version — in English.
+              everyday vocabulary. If you want to truly strengthen your
+              knowledge of any language, you should read Sherlock Holmes
+              translated into that language. The goal of this interactive
+              edition is to help you powerfully boost your English skills, which
+              is why the book is presented in its original version — in English.
             </TextNode>
             <TextNode className='italic  underline'>
               Sherlock Holmes stories + built-in, context-aware translator =
