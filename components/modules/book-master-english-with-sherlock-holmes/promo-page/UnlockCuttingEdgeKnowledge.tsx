@@ -17,7 +17,7 @@ function UnlockCuttingEdgeKnowledge(): ReactElement {
             alt='Unlock Cutting-Edge Knowledge'
           />
         </div>
-        <div className='xl:w-1/2  1.5xl:mt-5'>
+        <div className='xl:w-1/2  1.5xl:mt-2'>
           <H2
             className={`mb-7  max-w-[]  lg:mb-9  ${libreBaskerville.className}  !leading-snug`}
           >
