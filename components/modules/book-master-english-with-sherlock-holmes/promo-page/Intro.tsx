@@ -97,7 +97,7 @@ function Intro(): ReactElement {
               as possible.
             </TextNode>
             <TextNode>
-              And what we offer to read is the complete collection of Sherlock
+              What we offer to read is the complete collection of Sherlock
               Holmes stories. These stories are not only some of the world’s
               most thrilling detective tales, but also a treasure trove of rich
               everyday vocabulary. If you want to truly strengthen your
