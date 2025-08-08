@@ -49,10 +49,10 @@ function Intro(): ReactElement {
               className={`mb-6  text-[1.375rem]  font-semibold
                            leading-snug  ${libreBaskerville.className}`}
             >
-              Multiply your income. Live and work globally. All&nbsp;by becoming
-              proficient in English. Master the language in record time — with
-              the most effective and engaging tool, verified and recommended by
-              the world’s best English teachers.
+              Multiply your income. Live&nbsp;and&nbsp;work globally.
+              All&nbsp;by becoming proficient in English. Master the language in
+              record time — with the most effective and engaging tool, verified
+              and recommended by the world’s best English teachers.
             </BasicTextNode>
             <TextNode>
               Proficiency in English gives you access to the highest-paying jobs
