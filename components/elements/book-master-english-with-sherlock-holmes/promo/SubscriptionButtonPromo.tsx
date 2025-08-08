@@ -44,10 +44,10 @@ function SubscriptionButtonPromo(): ReactElement {
             height: `${buttonContainerHeight}px`,
           }}
           ref={buttonContainerRef}
-          className='absolute  right-0  top-0  flex  translate-y-[-0.7rem]
+          className='pointer-events-none  absolute  right-0  top-0  flex  translate-y-[-0.7rem]
                      flex-col  items-end  justify-end  lg:translate-y-0'
         >
-          <SubscriptionButton className='sticky  bottom-[25px]  right-0' />
+          <SubscriptionButton className='pointer-events-auto  sticky  bottom-[25px]  right-0' />
         </div>
       </div>
     </div>
