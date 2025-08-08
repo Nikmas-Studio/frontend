@@ -10,7 +10,7 @@ function UnlockCuttingEdgeKnowledge(): ReactElement {
   return (
     <section className='mt-[4.5rem]  lg:mt-24'>
       <MainContainer className='xl:flex  xl:gap-10'>
-        <div className='mb-10  xl:mb-0  xl:w-1/2'>
+        <div className='mb-9  xl:mb-0  xl:w-1/2'>
           <Image
             className='rounded-[14px]  lg:rounded-[20px]'
             src={unlockCuttingEdgeKnowledge}
