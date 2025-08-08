@@ -7,11 +7,12 @@ interface TextNodeProps {
   children?: ReactNode;
   className?: string;
   noIndent?: boolean;
+  pureWhite?: boolean;
 }
 
 const TextNode = forwardRef<HTMLParagraphElement, TextNodeProps>(
   function TextNode(
-    { className, noIndent, children }: TextNodeProps,
+    { className, noIndent, children, pureWhite = false }: TextNodeProps,
     ref,
   ): ReactElement {
     const classes = classNames(
@@ -22,7 +23,7 @@ const TextNode = forwardRef<HTMLParagraphElement, TextNodeProps>(
     );
 
     return (
-      <BasicTextNode ref={ref} className={classes}>
+      <BasicTextNode pureWhite={pureWhite} ref={ref} className={classes}>
         {children}
       </BasicTextNode>
     );

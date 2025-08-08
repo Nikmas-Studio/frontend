@@ -21,7 +21,7 @@ function UnlockCuttingEdgeKnowledge(): ReactElement {
           <H2
             className={`mb-7  max-w-[]  lg:mb-9  ${libreBaskerville.className}  !leading-snug`}
           >
-            Unlock cutting-edge knowledge to become more&nbsp;and&nbsp;more
+            Unlock cutting-edge knowledge and become more&nbsp;and&nbsp;more
             valuable
           </H2>
           <TextNode className='max-w-[45rem]'>

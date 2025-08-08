@@ -8,14 +8,25 @@ interface TextNodeProps {
   onClick?: () => void;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
+  pureWhite?: boolean;
 }
 
 const BasicTextNode = forwardRef<HTMLParagraphElement, TextNodeProps>(
   function BasicTextNode(
-    { className, children, onClick, onMouseEnter, onMouseLeave }: TextNodeProps,
+    {
+      className,
+      children,
+      onClick,
+      onMouseEnter,
+      onMouseLeave,
+      pureWhite = false,
+    }: TextNodeProps,
     ref,
   ): ReactElement {
-    const classes = classNames('text-black  dark:text-smooth-white', className);
+    const classes = classNames('text-black', className, {
+      'dark:text-white': pureWhite,
+      'dark:text-smooth-white': !pureWhite,
+    });
 
     const processedChildren = processChildren(children);
 

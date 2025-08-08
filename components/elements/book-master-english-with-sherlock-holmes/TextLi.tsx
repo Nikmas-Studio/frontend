@@ -5,14 +5,21 @@ import TextNode from './TextNode';
 interface TextListItemProps {
   className?: string;
   children?: ReactNode;
+  pureWhite?: boolean;
 }
 
-function TextLi({ className, children }: TextListItemProps): ReactElement {
+function TextLi({
+  className,
+  children,
+  pureWhite = false,
+}: TextListItemProps): ReactElement {
   const classes = classNames(className);
 
   return (
     <li className={classes}>
-      <TextNode noIndent>{children}</TextNode>
+      <TextNode pureWhite={pureWhite} noIndent>
+        {children}
+      </TextNode>
     </li>
   );
 }
