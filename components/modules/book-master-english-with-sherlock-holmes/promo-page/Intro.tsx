@@ -58,11 +58,11 @@ function Intro(): ReactElement {
               Proficiency in English gives you access to the highest-paying jobs
               — because it allows you to operate in global markets. Proficiency
               in English is often a requirement for leadership roles.
-              Proficiency in English opens the door for you to cutting-edge
-              knowledge, most of which is first published in English.
               Proficiency in English lets you travel the world comfortably,
               because you can speak fluently with anyone you meet. Proficiency
-              in English is your key to global success!
+              in English opens the door for you to cutting-edge knowledge, most
+              of which is first published in English. Proficiency in English is
+              your key to global success!
             </TextNode>
             <TextNode>
               <span className='underline'>
@@ -118,7 +118,8 @@ function Intro(): ReactElement {
             </TextNode>
             <TextNode className='italic  underline'>
               Sherlock Holmes stories + built-in, context-aware translator =
-              English proficiency in record time. Remember this formula!
+              English&nbsp;proficiency in record time =
+              Your&nbsp;Global&nbsp;Success. Remember&nbsp;this&nbsp;formula!
             </TextNode>
             <TextNode className='!mb-0'>
               <span className='italic'>
