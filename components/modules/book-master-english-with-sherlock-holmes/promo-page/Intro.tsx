@@ -56,13 +56,13 @@ function Intro(): ReactElement {
             </BasicTextNode>
             <TextNode>
               Proficiency in English gives you access to the highest-paying jobs
-              — because it allows you to serve global markets. Proficiency in
-              English is often a requirement for leadership roles. Proficiency
-              in English opens the door for you to cutting-edge knowledge, most
-              of which is first published in English. Proficiency in English
-              lets you travel the world comfortably, because you can speak
-              fluently with anyone you meet. Proficiency in English is your key
-              to global success!
+              — because it allows you to operate in global markets. Proficiency
+              in English is often a requirement for leadership roles.
+              Proficiency in English opens the door for you to cutting-edge
+              knowledge, most of which is first published in English.
+              Proficiency in English lets you travel the world comfortably,
+              because you can speak fluently with anyone you meet. Proficiency
+              in English is your key to global success!
             </TextNode>
             <TextNode>
               <span className='underline'>
