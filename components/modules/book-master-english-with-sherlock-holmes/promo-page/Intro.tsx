@@ -100,7 +100,7 @@ function Intro(): ReactElement {
             </TextOl>
             <TextNode>
               <span className='italic'>We solved these problems.</span> Our book
-              includes a built-in, high-quality translator that activates
+              includes a built-in, high-quality AI translator that activates
               instantly when you highlight any fragment — whether it’s a word, a
               phrase, or even a full sentence. And because it takes the
               surrounding context into account, the translation is as accurate
@@ -117,7 +117,7 @@ function Intro(): ReactElement {
               is why the book is presented in its original version — in English.
             </TextNode>
             <TextNode className='italic  underline'>
-              Sherlock Holmes stories + built-in, context-aware translator =
+              Sherlock Holmes stories + built-in, context-aware AI translation =
               English&nbsp;proficiency in record time =
               Your&nbsp;Global&nbsp;Success. Remember&nbsp;this&nbsp;formula!
             </TextNode>
