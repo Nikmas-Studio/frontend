@@ -26,7 +26,7 @@ function UnlockCuttingEdgeKnowledge(): ReactElement {
           </H2>
           <TextNode className='max-w-[45rem]'>
             Proficiency in English opens the door for you to cutting-edge
-            knowledge — most of which is first published in English.The more of
+            knowledge — most of which is first published in English. The more of
             this modern knowledge you have, the more valuable you become — and
             the more you earn.
           </TextNode>
