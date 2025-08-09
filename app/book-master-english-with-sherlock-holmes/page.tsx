@@ -12,6 +12,7 @@ import EvenWhenYouHaveNoTime from '@/components/modules/book-master-english-with
 import Intro from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/Intro';
 import PageNumbersUpdate from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/PageNumbersUpdate';
 import QuestionsAndAnswers from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/QuestionsAndAnswers';
+import ReadingIsTheMostEffectiveTool from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/ReadingIsTheMostEffectiveTool';
 import ReadOnAnyDevice from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/ReadOnAnyDevice';
 import Reviews from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/Reviews';
 import ThreeDots from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/ThreeDots';
@@ -73,6 +74,7 @@ function BookPromoMasterEnglishWithSherlockHolmes(): ReactElement {
             <YourKeyToGlobalSuccess />
             <TravelWithComfortAndConfidence />
             <UnlockCuttingEdgeKnowledge />
+            <ReadingIsTheMostEffectiveTool />
             <Reviews />
             <Contents />
             <TranslationDemo />
