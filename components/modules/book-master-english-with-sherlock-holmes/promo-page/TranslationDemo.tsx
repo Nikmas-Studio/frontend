@@ -43,7 +43,7 @@ function TranslationDemo(): ReactElement {
           meaning:
         </TextNode>
         <TranslationDemoVideo />
-        <div className='mt-12  flex  flex-col  gap-12  lg:mt-14  lg:flex-row  lg:justify-between  lg:gap-10  xl:gap-12'>
+        <div className='mt-14  flex  flex-col  gap-12  lg:mt-16  lg:flex-row  lg:justify-between  lg:gap-10  xl:gap-12'>
           <div>
             <H3 className={`mb-5  font-bold  ${libreBaskerville.className}`}>
               Translate&nbsp;words
