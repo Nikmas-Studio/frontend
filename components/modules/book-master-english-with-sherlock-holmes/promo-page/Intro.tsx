@@ -61,10 +61,10 @@ function Intro(): ReactElement {
               a requirement for leadership roles. Proficiency in English lets
               you travel the world comfortably and confidently, because you can
               speak fluently with anyone you meet. Proficiency in English opens
-              the door to cutting-edge knowledge, most of which is first
+              the door for you to cutting-edge knowledge, most of which is first
               published in English — and the more of this modern knowledge you
               have, the more valuable you become — and the more you earn.
-              Proficiency in English is your key to global success!
+              Proficiency in English is the key to your global success!
             </TextNode>
             <TextNode>
               <span className='underline'>
