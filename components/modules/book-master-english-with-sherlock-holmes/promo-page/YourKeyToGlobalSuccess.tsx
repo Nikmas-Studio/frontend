@@ -27,7 +27,7 @@ function YourKeyToGlobalSuccess(): ReactElement {
           <TextNode className='max-w-[45rem]'>
             Roles in IT, design, marketing, sales, and beyond often pay 2x–5x
             more when operating in global markets. Platforms like Upwork,
-            Toptal, and LinkedIn are dominated by English-language job postings.
+            Toptal, and LinkedIn are dominated by English-language jobs.
             Leadership positions frequently require proficiency in English.
           </TextNode>
           <TextNode className='max-w-[45rem]'>
