@@ -2,6 +2,7 @@ import MainContainer from '@/components/elements/MainContainer';
 import DefaultLayout from '@/components/layouts/DefaultLayout';
 import BookNavigator from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/BookNavigator';
 import Contents from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/Contents';
+import ContextAwareness from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/ContextAwareness';
 import DarkMode from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/DarkMode';
 import DemoOrSubscription from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/DemoOrSubscription';
 import PromoDrawer from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/Drawer';
@@ -72,6 +73,7 @@ function BookPromoMasterEnglishWithSherlockHolmes(): ReactElement {
             <Reviews />
             <Contents />
             <TranslationDemo />
+            <ContextAwareness />
             <MainContainer
               className='lg:flex  lg:flex-row  lg:justify-between
                                     lg:gap-20'
