@@ -61,9 +61,10 @@ function Intro(): ReactElement {
               a requirement for leadership roles. Proficiency in English lets
               you travel the world comfortably and confidently, because you can
               speak fluently with anyone you meet. Proficiency in English opens
-              the door for you to cutting-edge knowledge, most of which is first
-              published in English. Proficiency in English is your key to global
-              success!
+              the door to cutting-edge knowledge, most of which is first
+              published in English — and the more of this modern knowledge you
+              have, the more valuable you become — and the more you earn.
+              Proficiency in English is your key to global success!
             </TextNode>
             <TextNode>
               <span className='underline'>
@@ -101,11 +102,12 @@ function Intro(): ReactElement {
             </TextOl>
             <TextNode>
               <span className='italic'>We solved these problems.</span> Our book
-              includes a built-in, high-quality AI translator that activates
+              includes a built-in, highest-quality AI translator that activates
               instantly when you highlight any fragment — whether it’s a word, a
               phrase, or even a full sentence. And because it takes the
               surrounding context into account, the translation is as accurate
-              as possible.
+              as possible. Now you can enjoy the smoothest reading and learning
+              flow — and advance toward your global success at full speed!
             </TextNode>
             <TextNode>
               What we offer to read is the complete collection of Sherlock
