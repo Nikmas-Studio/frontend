@@ -24,7 +24,7 @@ function ContextAwareness(): ReactElement {
         <TextNode className='max-w-[45rem]  lg:mb-8'>
           In contrast, our built-in translator understands and takes into
           account the context in which the fragment appears. This results in the
-          most accurate translation — right inside the book.
+          most accurate translations — right inside the book.
         </TextNode>
         <div className='flex  flex-col  items-center  lg:flex-row  lg:justify-center'>
           <svg
