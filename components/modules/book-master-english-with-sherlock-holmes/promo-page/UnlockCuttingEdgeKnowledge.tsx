@@ -31,9 +31,10 @@ function UnlockCuttingEdgeKnowledge(): ReactElement {
             the more you earn.
           </TextNode>
           <TextNode className='max-w-[45rem]'>
-            And we’re here to help you unlock that knowledge by mastering
-            English — with the most effective and engaging tool out there,
-            verified and recommended by the world’s best English teachers.
+            And we’re here to help you unlock that cutting-edge knowledge by
+            mastering English — with the most effective and engaging tool out
+            there, verified and recommended by the world’s best English
+            teachers.
           </TextNode>
         </div>
       </MainContainer>
