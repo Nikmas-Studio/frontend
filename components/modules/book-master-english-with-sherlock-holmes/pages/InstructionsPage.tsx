@@ -145,7 +145,7 @@ function InstructionsPage({
             Your browser does not support the video tag.
           </video>
         </div>
-        <H2 className='mb-10  mt-20  max-w-[50rem] max-sm:mb-7'>
+        <H2 className='mb-10  mt-20  max-w-[50rem]  max-sm:mb-7  max-sm:mt-[4.6rem]'>
           This book is the key to your global success!
         </H2>
         <div className='mb-5  max-w-[40rem]'>

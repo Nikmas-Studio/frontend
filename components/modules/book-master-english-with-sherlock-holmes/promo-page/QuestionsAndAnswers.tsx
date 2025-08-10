@@ -26,8 +26,9 @@ function QuestionsAndAnswers(): ReactElement {
             solve this core problem, we’ve implemented a built-in translator
             that activates instantly when you highlight any piece of text — no
             need to click anything extra or switch to another app. Our
-            translator also understands the context around the highlighted
-            fragment, so the translation is as accurate as possible.
+            translator also understands and takes into account the context
+            around the highlighted fragment, so the translation is as accurate
+            as possible.
           </TextNode>
         </div>
         <div className='mb-11  max-w-[45rem]'>
