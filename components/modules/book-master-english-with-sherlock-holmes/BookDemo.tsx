@@ -4,8 +4,6 @@ import {
   PAGES_WITH_VIEWPORT_HEIGHT,
   PAGES_WITHOUT_NUMBER,
 } from '@/constants/book-master-english-with-sherlock-holmes/main';
-import { BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI } from '@/constants/general';
-import { BookStateProvider } from '@/context/book-state/Context';
 import { BookVersionProvider } from '@/context/book-version/Context';
 import { BookVersion } from '@/types/book-version';
 import { ReactElement } from 'react';
@@ -33,40 +31,34 @@ function BookDemo({ initialPageId }: BookReadProps): ReactElement {
   return (
     <BookMasterEnglishWithSherlockHolmesLayout initialPageId={initialPageId}>
       <BookVersionProvider version={BookVersion.DEMO}>
-        <BookStateProvider
-          bookURI={BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI}
-        >
-          <GlobalEffects initialPageId={initialPageId}>
-            <CoverPage />
-            {[
-              InstructionsPage,
-              Page2,
-              Page3,
-              Page4,
-              Page5,
-              Page6,
-              Page7,
-              Page8,
-              Page9,
-              TheEndOfDemoPage,
-            ].map((PageComponent, index) => {
-              return (
-                <PageComponent
-                  hidePageNumber={PAGES_WITHOUT_NUMBER.includes(index + 1)}
-                  viewportHeight={PAGES_WITH_VIEWPORT_HEIGHT.includes(
-                    index + 1,
-                  )}
-                  pageNumber={index + 1}
-                  key={index}
-                />
-              );
-            })}
-            <TranslationTooltip />
-            <SettingsDropdown />
-            <BookNavigator demo />
-            <PromoDrawer />
-          </GlobalEffects>
-        </BookStateProvider>
+        <GlobalEffects initialPageId={initialPageId}>
+          <CoverPage />
+          {[
+            InstructionsPage,
+            Page2,
+            Page3,
+            Page4,
+            Page5,
+            Page6,
+            Page7,
+            Page8,
+            Page9,
+            TheEndOfDemoPage,
+          ].map((PageComponent, index) => {
+            return (
+              <PageComponent
+                hidePageNumber={PAGES_WITHOUT_NUMBER.includes(index + 1)}
+                viewportHeight={PAGES_WITH_VIEWPORT_HEIGHT.includes(index + 1)}
+                pageNumber={index + 1}
+                key={index}
+              />
+            );
+          })}
+          <TranslationTooltip />
+          <SettingsDropdown />
+          <BookNavigator demo />
+          <PromoDrawer />
+        </GlobalEffects>
       </BookVersionProvider>
     </BookMasterEnglishWithSherlockHolmesLayout>
   );

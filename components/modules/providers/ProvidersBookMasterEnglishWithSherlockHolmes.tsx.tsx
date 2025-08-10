@@ -1,11 +1,13 @@
 'use client';
 
+import { BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI } from '@/constants/general';
 import { ActivePageProvider } from '@/context/active-page/Context';
 import { ActiveBackgroundProvider } from '@/context/background-master-git-and-github-book/Context';
 import { PromoDrawerProvider } from '@/context/book-master-english-with-sherlock-holmes/promo-drawer/Context';
 import { SettingsProvider } from '@/context/book-master-english-with-sherlock-holmes/settings/Context';
 import { TranslationLanguageProvider } from '@/context/book-master-english-with-sherlock-holmes/translation-language/Context';
 import { BookNavigatorProvider } from '@/context/book-navigator/Context';
+import { BookStateProvider } from '@/context/book-state/Context';
 import { InitialPageIdProvider } from '@/context/initial-page-id/Context';
 import { InitialScrollToPageStateProvider } from '@/context/initial-scroll-to-page/Context';
 import { IsScrollingToPageProvider } from '@/context/is-scrolling-to-page/Context';
@@ -33,7 +35,15 @@ function ProvidersMasterEnglishWithSherlockHolmes({
                   <SettingsProvider>
                     <IsScrollingToPageProvider>
                       <ActivePageProvider>
-                        <PromoDrawerProvider>{children}</PromoDrawerProvider>
+                        <PromoDrawerProvider>
+                          <BookStateProvider
+                            bookURI={
+                              BOOK_MASTER_ENGLISH_WITH_SHERLOCK_HOLMES_URI
+                            }
+                          >
+                            {children}
+                          </BookStateProvider>
+                        </PromoDrawerProvider>
                       </ActivePageProvider>
                     </IsScrollingToPageProvider>
                   </SettingsProvider>
