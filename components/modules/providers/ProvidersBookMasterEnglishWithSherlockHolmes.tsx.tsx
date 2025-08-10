@@ -2,6 +2,7 @@
 
 import { ActivePageProvider } from '@/context/active-page/Context';
 import { ActiveBackgroundProvider } from '@/context/background-master-git-and-github-book/Context';
+import { PromoDrawerProvider } from '@/context/book-master-english-with-sherlock-holmes/promo-drawer/Context';
 import { SettingsProvider } from '@/context/book-master-english-with-sherlock-holmes/settings/Context';
 import { TranslationLanguageProvider } from '@/context/book-master-english-with-sherlock-holmes/translation-language/Context';
 import { BookNavigatorProvider } from '@/context/book-navigator/Context';
@@ -31,7 +32,9 @@ function ProvidersMasterEnglishWithSherlockHolmes({
                 <BookNavigatorProvider>
                   <SettingsProvider>
                     <IsScrollingToPageProvider>
-                      <ActivePageProvider>{children}</ActivePageProvider>
+                      <ActivePageProvider>
+                        <PromoDrawerProvider>{children}</PromoDrawerProvider>
+                      </ActivePageProvider>
                     </IsScrollingToPageProvider>
                   </SettingsProvider>
                 </BookNavigatorProvider>
