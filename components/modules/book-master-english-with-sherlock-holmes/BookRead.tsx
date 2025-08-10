@@ -353,6 +353,7 @@ import Page266 from './pages/the-vallery-of-fear/Page266';
 import Page267 from './pages/the-vallery-of-fear/Page267';
 import Page268 from './pages/the-vallery-of-fear/Page268';
 import Page269 from './pages/the-vallery-of-fear/Page269';
+import PromoDrawer from './promo-page/Drawer';
 import SettingsDropdown from './SettingsDropdown';
 
 interface BookReadProps {
@@ -722,6 +723,7 @@ function BookRead({ initialPageId }: BookReadProps): ReactElement {
           <TranslationTooltip />
           <SettingsDropdown />
           <BookNavigator />
+          <PromoDrawer />
         </GlobalEffects>
       </BookVersionProvider>
     </BookMasterEnglishWithSherlockHolmesLayout>
