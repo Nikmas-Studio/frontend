@@ -184,8 +184,8 @@ function InstructionsPage({
           <TextNode noIndent className='!mb-0'>
             However, reading foreign literature comes with its own problems:
           </TextNode>
-          <TextOl pureWhite className='mb-5'>
-            <TextLi pureWhite>
+          <TextOl className='mb-5'>
+            <TextLi>
               <span className='italic'>
                 The frustration from constant switching between a book and an
                 external translator.
@@ -196,7 +196,7 @@ function InstructionsPage({
               context switching and, in all likelihood, give up reading
               altogether.
             </TextLi>
-            <TextLi pureWhite>
+            <TextLi>
               <span className='italic'>
                 An external translator lacks context.
               </span>{' '}
