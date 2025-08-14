@@ -1,10 +1,10 @@
 import MainContainer from '@/components/elements/MainContainer';
 import DefaultLayout from '@/components/layouts/DefaultLayout';
+import BehindTheBook from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/BehindTheBook';
 import BookNavigator from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/BookNavigator';
 import Contents from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/Contents';
 import ContextAwareness from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/ContextAwareness';
 import DarkMode from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/DarkMode';
-import DemoOrSubscription from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/DemoOrSubscription';
 import PromoDrawer from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/Drawer';
 import EffectiveMemorization from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/EffectiveMemorization';
 import EnjoyTheSmoothestReadingAndLearningFlow from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/EnjoyTheSmoothestReadingAndLearningFlow';
@@ -77,6 +77,7 @@ function BookPromoMasterEnglishWithSherlockHolmes(): ReactElement {
             <ReadingIsTheMostEffectiveTool />
             <Reviews />
             <Contents />
+            <BehindTheBook />
             <TranslationDemo />
             <ContextAwareness />
             <EnjoyTheSmoothestReadingAndLearningFlow />
@@ -92,7 +93,6 @@ function BookPromoMasterEnglishWithSherlockHolmes(): ReactElement {
             <BookNavigator />
             <QuestionsAndAnswers />
             <EvenWhenYouHaveNoTime />
-            <DemoOrSubscription />
             <ThreeDots />
             <Footer />
           </div>

@@ -39,6 +39,16 @@ export const gilroy = localFont({
   ],
 });
 
+export const benzin = localFont({
+  src: [
+    {
+      path: './public/fonts/Benzin-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+});
+
 export const merriweather = Merriweather({
   weight: ['300', '400', '700', '900'],
   style: ['normal', 'italic'],

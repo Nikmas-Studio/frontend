@@ -20,10 +20,9 @@ function DemoOrReadButton(): ReactElement {
   const classes = classNames(
     `
     ${merriweather.className}
-    button  mb-1.5  self-center 
-    bg-black  text-white
+    button  bg-black  text-white
     hover:bg-blue  dark:bg-white
-    dark:text-black dark:hover:text-white
+    dark:text-black  dark:hover:text-white
   `,
     {
       'pointer-events-none': bookState === BookState.LOADING,

@@ -6,8 +6,8 @@ function ThreeDots(): ReactElement {
     <section>
       <MainContainer>
         <p
-          className='mb-52  mt-12  text-center  text-[11rem]
-                   leading-none  text-[#D9D9D9]  md:mb-72'
+          className='mb-52  mt-32  text-center  text-[11rem]  leading-none
+                   text-[#D9D9D9]  md:mb-72  xl:mt-12'
         >
           ...
         </p>

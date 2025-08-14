@@ -37,6 +37,17 @@ function TranslationDemo(): ReactElement {
           ChatGPT with context awareness, we achieve one of the highest-quality
           translations — right inside the book.
         </TextNode>
+        <TextNode className='max-w-[45rem]'>
+          <span>
+            The book supports translation into all major world languages:{' '}
+          </span>
+          French, Spanish, Portuguese (Portugal, Brazil), Italian, German,
+          Dutch, Danish, Finnish, Norwegian (Bokmål), Swedish, Ukrainian,
+          Russian, Estonian, Latvian, Lithuanian, Slovenian, Polish, Czech,
+          Slovak, Hungarian, Romanian, Bulgarian, Greek, Turkish, Arabic,
+          Hebrew, Japanese, Korean, Chinese (Simplified, Traditional), Thai,
+          Indonesian, Vietnamese.
+        </TextNode>
         <TextNode className='max-w-[45rem]  lg:mb-6'>
           Choose your translation language in settings, then highlight any
           text&nbsp;fragment&nbsp;— and see the instant pop&#8209;up with the
