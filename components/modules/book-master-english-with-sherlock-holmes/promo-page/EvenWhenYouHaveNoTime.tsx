@@ -8,7 +8,8 @@ function EvenWhenYouHaveNoTime(): ReactElement {
     <section className='mt-[4.5rem]  lg:mt-24'>
       <MainContainer>
         <H2
-          className={`max-w-[55rem]  lg:mx-auto  lg:text-center  ${libreBaskerville.className}  !leading-snug`}
+          id='sherlock-promo-sumup'
+          className={`max-w-[55rem]  ${libreBaskerville.className}  !leading-snug`}
         >
           Even when you
           <br className='sm:hidden' /> have no time.

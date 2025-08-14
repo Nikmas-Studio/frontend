@@ -955,26 +955,10 @@ function BookNavigator({ demo = false }: { demo?: boolean }): ReactElement {
                   DETAILED_BOOK_PART_PAGE_RANGES.A_STUDY_IN_SCARLET.PART_1
                     .CHAPTER_1_MR_SHERLOCK_HOLMES,
                 ).map((pageNumber) => {
-                  return (
-                    <BookNavigatorPage
-                      pageNumber={pageNumber}
-                      key={pageNumber}
-                    />
-                  );
-                })}
-              </ul>
-            </div>
-            <div className='mb-7'>
-              <BasicTextNode
-                className={`mb-5  text-xl  ${libreBaskerville.className}`}
-              >
-                Chapter II. The Science of Deduction
-              </BasicTextNode>
-              <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
-                {generateRangeArray(
-                  DETAILED_BOOK_PART_PAGE_RANGES.A_STUDY_IN_SCARLET.PART_1
-                    .CHAPTER_2_THE_SCIENCE_OF_DEDUCTION,
-                ).map((pageNumber) => {
+                  if (demo && pageNumber > 5) {
+                    return null;
+                  }
+
                   return (
                     <BookNavigatorPage
                       pageNumber={pageNumber}
@@ -986,6 +970,26 @@ function BookNavigator({ demo = false }: { demo?: boolean }): ReactElement {
             </div>
             {!demo && (
               <>
+                <div className='mb-7'>
+                  <BasicTextNode
+                    className={`mb-5  text-xl  ${libreBaskerville.className}`}
+                  >
+                    Chapter II. The Science of Deduction
+                  </BasicTextNode>
+                  <ul className='grid  gap-3  [grid-template-columns:repeat(auto-fit,minmax(165px,165px))]'>
+                    {generateRangeArray(
+                      DETAILED_BOOK_PART_PAGE_RANGES.A_STUDY_IN_SCARLET.PART_1
+                        .CHAPTER_2_THE_SCIENCE_OF_DEDUCTION,
+                    ).map((pageNumber) => {
+                      return (
+                        <BookNavigatorPage
+                          pageNumber={pageNumber}
+                          key={pageNumber}
+                        />
+                      );
+                    })}
+                  </ul>
+                </div>
                 <div className='mb-7'>
                   <BasicTextNode
                     className={`mb-5  text-xl  ${libreBaskerville.className}`}

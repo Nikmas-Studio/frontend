@@ -21,8 +21,7 @@ function YourKeyToGlobalSuccess(): ReactElement {
           <H2
             className={`mb-7  max-w-[55rem]  lg:mb-9  ${libreBaskerville.className}  !leading-snug`}
           >
-            This is the key <br className='hidden  xl:inline' /> to your global
-            success!
+            Multiply your income and advance to top&#8209;level roles
           </H2>
           <TextNode className='max-w-[45rem]'>
             Roles in IT, design, marketing, sales, and beyond often pay 2x–5x

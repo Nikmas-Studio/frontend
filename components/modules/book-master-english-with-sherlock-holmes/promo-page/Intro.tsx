@@ -1,17 +1,8 @@
 import BasicTextNode from '@/components/elements/BasicTextNode';
-import DemoOrReadButton from '@/components/elements/book-master-english-with-sherlock-holmes/promo/DemoOrReadButton';
-import SubscriptionButtonPromo from '@/components/elements/book-master-english-with-sherlock-holmes/promo/SubscriptionButtonPromo';
-import TextLi from '@/components/elements/book-master-english-with-sherlock-holmes/TextLi';
-import TextOl from '@/components/elements/book-master-english-with-sherlock-holmes/TextOl';
-import ExternalLink from '@/components/elements/ExternalLink';
+import TryDemoAndSubscriptionButtonsPromo from '@/components/elements/book-master-english-with-sherlock-holmes/promo/SubscriptionButtonPromo';
 import MainContainer from '@/components/elements/MainContainer';
 import TextNode from '@/components/elements/TextNode';
-import { libreBaskerville } from '@/fonts';
-import linkedInLogoDark from '@/public/images/linkedin-logo-dark.png';
-import linkedInLogoLight from '@/public/images/linkedin-logo-light.png';
-import publisherPhoto from '@/public/images/Nick_Maslov_black_and_white.jpg';
-import authorPhoto from '@/public/images/Sir_Arthur_Conan_Doyle.jpg';
-import Image from 'next/image';
+import { benzin, libreBaskerville } from '@/fonts';
 import { ReactElement } from 'react';
 import BookCover from './BookCover';
 
@@ -30,113 +21,123 @@ function Intro(): ReactElement {
         >
           Interactive e&#8209;book
         </h2>
-        <div
-          className='mt-11  lg:flex  lg:flex-row  lg:justify-between  
-                            lg:gap-8  xl:gap-0'
-        >
+        <div className='mt-11  lg:flex  lg:gap-8  xl:gap-0'>
           <div
             className='top-[6.2rem]  flex  w-full  flex-none  flex-col  
-                           self-start  sm:w-[400px]  lg:sticky  lg:w-[30vw]
+                           self-start  sm:w-[400px]  lg:sticky  lg:w-[35vw]
                            xl:w-[400px]'
           >
-            <div className='mb-10'>
-              <BookCover />
+            {/* <div className='mb-10'> */}
+            <BookCover />
+            {/* </div> */}
+            {/* <DemoOrReadButton /> */}
+          </div>
+          <div className='mt-9  grow  lg:mt-0  xl:pl-12'>
+            <div className='1.5xl:flex  1.5xl:justify-between'>
+              <div>
+                <h2
+                  className={`${benzin.className}  text-center  text-4xl  leading-snug  sm:text-left  1.5xl:text-[2.5rem]`}
+                >
+                  <span className='relative  mb-1  inline-block  bg-[#d5e1ed]  px-2  text-[#0071E9]  dark:bg-[#0e284b]  dark:text-[#2C8EF7]'>
+                    <div className='absolute  inset-y-0  left-0  w-[0.1875rem]  bg-[#0071E9]  dark:bg-[#2C8EF7]'>
+                      <div className='absolute  -top-2  left-[-0.40625rem]  size-4  rounded-full  bg-[#0071E9]  dark:bg-[#2C8EF7]'></div>
+                    </div>
+                    This&nbsp;book is&nbsp;the&nbsp;key
+                    <div className='absolute  inset-y-0  right-0  w-[0.1875rem]  bg-[#0071E9]'>
+                      <div className='absolute  -bottom-2  right-[-0.40625rem]  size-4  rounded-full  bg-[#0071E9]  dark:bg-[#2C8EF7]'></div>
+                    </div>
+                  </span>
+                  <br />
+                  <span className='dark:text-white'>
+                    to&nbsp;your global success
+                  </span>
+                </h2>
+                <h3 className='mt-5  text-[2.1rem]  font-bold  leading-tight  1.5xl:text-[2.25rem]  dark:text-white'>
+                  Multiply your&nbsp;income. <br />
+                  Live and&nbsp;work globally. <br />
+                  All&nbsp;by&nbsp;becoming proficient in&nbsp;English.
+                </h3>
+              </div>
+              <BasicTextNode
+                className='mt-5  text-[2.5rem]  italic  leading-tight
+                           1.5xl:mt-0  
+                           1.5xl:text-[2.75rem]'
+              >
+                Read <br className='hidden  1.5xl:inline' />
+                just 10 <br className='hidden  1.5xl:inline' />
+                minutes <br className='hidden  1.5xl:inline' />a day
+              </BasicTextNode>
             </div>
-            <DemoOrReadButton />
+            <div className='mt-6  grid  gap-5  1.5xl:grid-cols-2'>
+              <div className='max-w-[40.625rem]  rounded-xl  bg-[#FFEAC5]  px-[2.15rem]  pb-[1.85rem]  pt-5'>
+                <TextNode className='!mb-0  !text-[1.15rem]  !leading-normal  dark:!text-black'>
+                  Reading is{' '}
+                  <span className='font-bold'>the most effective way</span> for
+                  mastering a language
+                </TextNode>
+              </div>
+              <div className='max-w-[40.625rem]  rounded-xl  bg-[#FFEAC5]  px-[2.15rem]  pb-[1.85rem]  pt-5'>
+                <TextNode className='!mb-0  !text-[1.15rem]  !leading-normal  dark:!text-black'>
+                  One of{' '}
+                  <span className='font-bold'>
+                    the most thrilling and vocabulary-rich
+                  </span>{' '}
+                  books in history
+                </TextNode>
+              </div>
+              <div className='max-w-[40.625rem]  rounded-xl  bg-[#FFEAC5]  px-[2.15rem]  pb-[1.85rem]  pt-5'>
+                <TextNode className='!mb-0  !text-[1.15rem]  !leading-normal  dark:!text-black'>
+                  <span className='font-bold'>Built-in,</span> highest-quality,
+                  highlight-based AI{' '}
+                  <span className='font-bold'>translation</span>
+                </TextNode>
+              </div>
+              <div className='max-w-[40.625rem]  rounded-xl  bg-[#FFEAC5]  px-[2.15rem]  pb-[1.85rem]  pt-5'>
+                <TextNode className='!mb-0  !text-[1.15rem]  !leading-normal  dark:!text-black'>
+                  Supports translation into{' '}
+                  <span className='font-bold'>36 major world languages</span>
+                </TextNode>
+              </div>
+              <div className='max-w-[40.625rem]  rounded-xl  bg-[#FFEAC5]  px-[2.15rem]  pb-[1.85rem]  pt-5'>
+                <TextNode className='!mb-0  !text-[1.15rem]  !leading-normal  dark:!text-black'>
+                  <span className='font-bold'>Translate any fragments:</span>{' '}
+                  words, phrases, sentences
+                </TextNode>
+              </div>
+              <div className='max-w-[40.625rem]  rounded-xl  bg-[#FFEAC5]  px-[2.15rem]  pb-[1.85rem]  pt-5'>
+                <TextNode className='!mb-0  !text-[1.15rem]  !leading-normal  dark:!text-black'>
+                  <span className='font-bold'>Context-awareness</span> delivers
+                  the most accurate translations
+                </TextNode>
+              </div>
+              <div className='max-w-[40.625rem]  rounded-xl  bg-[#FFEAC5]  px-[2.15rem]  pb-[1.85rem]  pt-5'>
+                <TextNode className='!mb-0  !text-[1.15rem]  !leading-normal  dark:!text-black'>
+                  <span className='font-bold'>No friction</span> from switching
+                  between a book and a translator
+                </TextNode>
+              </div>
+              <div className='max-w-[40.625rem]  rounded-xl  bg-[#FFEAC5]  px-[2.15rem]  pb-[1.85rem]  pt-5'>
+                <TextNode className='!mb-0  !text-[1.15rem]  !leading-normal  dark:!text-black'>
+                  Enjoy <span className='font-bold'>the smoothest</span> reading
+                  and learning <span className='font-bold'>flow</span>
+                </TextNode>
+              </div>
+              <div className='max-w-[40.625rem]  rounded-xl  bg-[#FFEAC5]  px-[2.15rem]  pb-[1.85rem]  pt-5'>
+                <TextNode className='!mb-0  !text-[1.15rem]  !leading-normal  dark:!text-black'>
+                  Experience{' '}
+                  <span className='font-bold'>effective memorization</span> of
+                  words and phrases
+                </TextNode>
+              </div>
+              <div className='max-w-[40.625rem]  rounded-xl  bg-[#FFEAC5]  px-[2.15rem]  pb-[1.85rem]  pt-5'>
+                <TextNode className='!mb-0  !text-[1.15rem]    !leading-normal  dark:!text-black'>
+                  <span className='font-bold'>Verified and recommended</span> by
+                  the world’s best English teachers
+                </TextNode>
+              </div>
+            </div>
           </div>
-          <div className='mt-11  max-w-[685px]  lg:mt-0  xl:pl-12  xl:pr-16'>
-            <BasicTextNode
-              className={`mb-6  text-[1.375rem]  font-semibold
-                           leading-snug  ${libreBaskerville.className}`}
-            >
-              Multiply your income. Live&nbsp;and&nbsp;work globally.
-              All&nbsp;by becoming proficient in English. Master the language in
-              record time — with the most effective and engaging tool, verified
-              and recommended by the world’s best English teachers.
-            </BasicTextNode>
-            <TextNode>
-              Proficiency in English gives you access to the highest-paying jobs
-              — because it allows you to operate in global markets, where
-              salaries are significantly higher. Proficiency in English is often
-              a requirement for leadership roles. Proficiency in English lets
-              you travel the world comfortably and confidently, because you can
-              speak fluently with anyone you meet. Proficiency in English opens
-              the door for you to cutting-edge knowledge, most of which is first
-              published in English — and the more of this modern knowledge you
-              have, the more valuable you become — and the more you earn.
-              Proficiency in English is the key to your global success!
-            </TextNode>
-            <TextNode>
-              <span className='underline'>
-                Reading is the most effective way for mastering a language,
-              </span>{' '}
-              because when you read, you encounter more words per minute than
-              with any other method. And if what you're reading is also a
-              fascinating, gripping story, words are remembered far more
-              effectively — because they become tied to vivid moments that stay
-              in your active memory for a long time.
-            </TextNode>
-            <TextNode className='!mb-0'>
-              However, reading foreign literature comes with its own problems:
-            </TextNode>
-            <TextOl pureWhite className='mb-5'>
-              <TextLi pureWhite>
-                <span className='italic'>
-                  The frustration from constant switching between a book and an
-                  external translator.
-                </span>{' '}
-                Constantly switching back and forth between a book and an
-                external translator is the most inconvenient part of reading
-                literature in a foreign language. You’ll quickly get tired of
-                this constant context switching and, in all likelihood, give up
-                reading altogether.
-              </TextLi>
-              <TextLi pureWhite>
-                <span className='italic'>
-                  An external translator lacks context.
-                </span>{' '}
-                When you manually translate a word or phrase using an external
-                translator, it has no idea of the surrounding context — which
-                often results in inaccurate translations.
-              </TextLi>
-            </TextOl>
-            <TextNode>
-              <span className='italic'>We solved these problems.</span> Our book
-              includes a built-in, highest-quality AI translator that activates
-              instantly when you highlight any fragment — whether it’s a word, a
-              phrase, or even a full sentence. And because it takes the
-              surrounding context into account, the translation is as accurate
-              as possible. Now you can enjoy the smoothest reading and learning
-              flow — and advance toward your global success at full speed!
-            </TextNode>
-            <TextNode>
-              What we offer to read is the complete collection of Sherlock
-              Holmes stories. These stories are not only some of the world’s
-              most thrilling detective tales, but also a treasure trove of rich
-              everyday vocabulary. If you want to truly strengthen your
-              knowledge of any language, you should read Sherlock Holmes
-              translated into that language. The goal of this interactive
-              edition is to help you powerfully boost your English skills, which
-              is why the book is presented in its original version — in English.
-            </TextNode>
-            <TextNode className='italic  underline'>
-              Sherlock Holmes stories + built-in, context-aware AI translation =
-              English&nbsp;proficiency in record time =
-              Your&nbsp;Global&nbsp;Success. Remember&nbsp;this&nbsp;formula!
-            </TextNode>
-            <TextNode className='!mb-0'>
-              <span className='italic'>
-                The book supports translation into all major world languages:{' '}
-              </span>
-              French, Spanish, Portuguese (Portugal, Brazil), Italian, German,
-              Dutch, Danish, Finnish, Norwegian (Bokmål), Swedish, Ukrainian,
-              Russian, Estonian, Latvian, Lithuanian, Slovenian, Polish, Czech,
-              Slovak, Hungarian, Romanian, Bulgarian, Greek, Turkish, Arabic,
-              Hebrew, Japanese, Korean, Chinese (Simplified, Traditional), Thai,
-              Indonesian, Vietnamese.
-            </TextNode>
-          </div>
-          <div className='mt-12  flex-none  lg:mt-0  lg:w-[215px]'>
+          {/* <div className='mt-12  flex-none  lg:mt-0  lg:w-[215px]'>
             <div className='flex  flex-col  lg:flex-col-reverse'>
               <div>
                 <div
@@ -233,7 +234,10 @@ function Intro(): ReactElement {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
+        </div>
+        <div className='mt-10'>
+          <TryDemoAndSubscriptionButtonsPromo />
         </div>
       </MainContainer>
     </section>

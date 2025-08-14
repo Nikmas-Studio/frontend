@@ -13,10 +13,6 @@ import Page2 from './pages/a-study-in-scarlet/Page2';
 import Page3 from './pages/a-study-in-scarlet/Page3';
 import Page4 from './pages/a-study-in-scarlet/Page4';
 import Page5 from './pages/a-study-in-scarlet/Page5';
-import Page6 from './pages/a-study-in-scarlet/Page6';
-import Page7 from './pages/a-study-in-scarlet/Page7';
-import Page8 from './pages/a-study-in-scarlet/Page8';
-import Page9 from './pages/a-study-in-scarlet/Page9';
 import CoverPage from './pages/CoverPage';
 import InstructionsPage from './pages/InstructionsPage';
 import TheEndOfDemoPage from './pages/TheEndOfDemo';
@@ -39,10 +35,10 @@ function BookDemo({ initialPageId }: BookReadProps): ReactElement {
             Page3,
             Page4,
             Page5,
-            Page6,
-            Page7,
-            Page8,
-            Page9,
+            // Page6,
+            // Page7,
+            // Page8,
+            // Page9,
             TheEndOfDemoPage,
           ].map((PageComponent, index) => {
             return (

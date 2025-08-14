@@ -5,10 +5,11 @@ import { forwardRef, ReactElement, ReactNode } from 'react';
 interface H2Props {
   className?: string;
   children?: ReactNode;
+  id?: string;
 }
 
 const H2 = forwardRef<HTMLHeadingElement, H2Props>(function H2(
-  { className, children }: H2Props,
+  { className, children, id }: H2Props,
   ref,
 ): ReactElement {
   const classes = classNames(
@@ -21,7 +22,7 @@ const H2 = forwardRef<HTMLHeadingElement, H2Props>(function H2(
   const processedChildren = processChildren(children);
 
   return (
-    <h2 ref={ref} className={classes}>
+    <h2 id={id} ref={ref} className={classes}>
       {processedChildren}
     </h2>
   );
