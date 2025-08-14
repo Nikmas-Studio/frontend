@@ -95,7 +95,7 @@ function Intro(): ReactElement {
               <div className='max-w-[40.625rem]  rounded-xl  bg-[#FFEAC5]  px-[2.15rem]  pb-[1.85rem]  pt-5'>
                 <TextNode className='!mb-0  !text-[1.15rem]  !leading-normal  dark:!text-black'>
                   Supports translation into{' '}
-                  <span className='font-bold'>36 major world languages</span>
+                  <span className='font-bold'>32 major world languages</span>
                 </TextNode>
               </div>
               <div className='max-w-[40.625rem]  rounded-xl  bg-[#FFEAC5]  px-[2.15rem]  pb-[1.85rem]  pt-5'>
