@@ -12,11 +12,11 @@ interface BookReadProps {
 export const metadata: Metadata = {
   title: 'Master English with Sherlock Holmes [Read]',
   description:
-    'Advance your English through story — with the highest‑quality, highlight‑based, context‑aware AI translation, built right into the book and available in any language.',
+    'Become proficient in English in record time — with the most effective and engaging tool, verified and recommended by the world’s best English teachers.',
   openGraph: {
     title: 'Master English with Sherlock Holmes [Read]',
     description:
-      'Advance your English through story — with the highest‑quality, highlight‑based, context‑aware AI translation, built right into the book and available in any language.',
+      'Become proficient in English in record time — with the most effective and engaging tool, verified and recommended by the world’s best English teachers.',
     url: 'https://nikmas.studio/book-master-english-with-sherlock-holmes/read',
     siteName: 'Nikmas Studio',
     images: [
