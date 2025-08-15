@@ -146,7 +146,7 @@ function InstructionsPage({
           </video>
         </div>
         <H2 className='mb-10  mt-20  max-w-[50rem]  max-sm:mb-7  max-sm:mt-[4.6rem]'>
-          This book is the key to your global success!
+          This Book Is the Key to Your Global Success!
         </H2>
         <div className='mb-5  max-w-[40rem]'>
           <TextNode noIndent className='mb-5'>
