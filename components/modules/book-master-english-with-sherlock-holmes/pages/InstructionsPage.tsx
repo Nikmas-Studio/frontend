@@ -187,7 +187,7 @@ function InstructionsPage({
           <TextOl className='mb-5'>
             <TextLi>
               <span className='italic'>
-                The frustration from constant switching between a book and an
+                The friction from constant switching between a book and an
                 external translator.
               </span>{' '}
               Constantly switching back and forth between a book and an external

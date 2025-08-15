@@ -24,7 +24,7 @@ function TranslationDemo(): ReactElement {
           book
         </H2>
         <TextNode className='max-w-[45rem]'>
-          We eliminated the frustration that comes from constantly switching
+          We eliminated the friction that comes from constantly switching
           between a book and an external translator. Now, translation is built
           right into the book — and it’s context-aware.
         </TextNode>
