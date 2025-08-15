@@ -8,7 +8,7 @@ import DarkMode from '@/components/modules/book-master-english-with-sherlock-hol
 import PromoDrawer from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/Drawer';
 import EffectiveMemorization from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/EffectiveMemorization';
 import EnjoyTheSmoothestReadingAndLearningFlow from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/EnjoyTheSmoothestReadingAndLearningFlow';
-import EvenWhenYouHaveNoTime from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/EvenWhenYouHaveNoTime';
+import BuildYourDream from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/BuildYourDream';
 import Intro from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/Intro';
 import PageNumbersUpdate from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/PageNumbersUpdate';
 import QuestionsAndAnswers from '@/components/modules/book-master-english-with-sherlock-holmes/promo-page/QuestionsAndAnswers';
@@ -92,7 +92,7 @@ function BookPromoMasterEnglishWithSherlockHolmes(): ReactElement {
             <DarkMode />
             <BookNavigator />
             <QuestionsAndAnswers />
-            <EvenWhenYouHaveNoTime />
+            <BuildYourDream />
             <ThreeDots />
             <Footer />
           </div>

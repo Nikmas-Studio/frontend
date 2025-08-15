@@ -230,8 +230,8 @@ function InstructionsPage({
             Your&nbsp;Global&nbsp;Success. Remember&nbsp;this&nbsp;formula!
           </TextNode>
           <TextNode noIndent className='mb-3'>
-            Even when you have no time. Read the book just 10 minutes a day —
-            and advance toward your global success with joy and ease:
+            Build your dream! Read the book just 10 minutes a day — and advance
+            toward your global success with joy and ease:
           </TextNode>
           <SubscriptionButton />
         </div>
