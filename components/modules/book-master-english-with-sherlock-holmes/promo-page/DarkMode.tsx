@@ -1,11 +1,9 @@
 import H2 from '@/components/elements/H2';
 import H3 from '@/components/elements/H3';
 import MainContainer from '@/components/elements/MainContainer';
-import TextNode from '@/components/elements/TextNode';
 import { libreBaskerville } from '@/fonts';
-import darkModeEnabled from '@/public/images/sherlock-dark-mode-enabled.jpg';
+import darkMode from '@/public/images/dark-mode.jpeg';
 import themeToggle from '@/public/images/sherlock-theme-toggle.jpg';
-import ufoLights from '@/public/images/ufo-lights.jpg';
 import Image from 'next/image';
 import { ReactElement } from 'react';
 
@@ -13,50 +11,33 @@ function DarkMode(): ReactElement {
   return (
     <section className='mt-[4.5rem]  lg:mt-24'>
       <MainContainer>
-        <H2
-          className={`mb-7  lg:mb-9  ${libreBaskerville.className}  !leading-snug`}
-        >
-          Dark mode saves your&nbsp;eyes in&nbsp;the&nbsp;evening
+        <H2 className={`mb-9  ${libreBaskerville.className}  !leading-snug`}>
+          Dark mode cares about&nbsp;your&nbsp;eyes in&nbsp;the&nbsp;evening
         </H2>
-        <div
-          className='flex  flex-col  gap-11  lg:relative  lg:flex-row
-                     lg:justify-between'
-        >
-          <div>
-            <H3 className={`mb-5  ${libreBaskerville.className}`}>
-              Dark mode disabled
-            </H3>
+        <div className='relative'>
+          <div className='relative'>
             <Image
-              className='rounded-[14px]  lg:rounded-[20px]'
-              src={ufoLights}
-              alt='UFO lights in "Close Encounters of the Third Kind"'
+              className='rounded-[14px]  md:w-4/5  lg:rounded-[20px]  xl:w-[48.3%]'
+              src={darkMode}
+              alt='Dark mode'
             />
-            <TextNode className='!mb-0  mt-4  !text-sm'>
-              UFO lights in&nbsp;&quot;Close Encounters of&nbsp;the&nbsp;Third
-              Kind&quot;
-            </TextNode>
+            <Image
+              className='absolute  right-0  top-[83%]  w-[37%]  rounded-[14px]  
+                         md:top-0  md:w-[28%]  lg:rounded-[20px]  xl:left-[44%]  
+                         xl:right-auto  xl:w-[16%]'
+              src={themeToggle}
+              alt='Theme toggle'
+            />
           </div>
-          <div>
-            <H3 className={`mb-5  ${libreBaskerville.className}`}>
-              Dark mode enabled
-            </H3>
-            <div className='relative  lg:static'>
-              <Image
-                className='rounded-[14px]  lg:rounded-[20px]  
-                         dark:border  dark:border-gray-dark'
-                src={darkModeEnabled}
-                alt='Dark mode enabled'
-              />
-              <Image
-                className='absolute  right-[10px]  top-[5px]  w-1/4  rounded-[8px]
-                           lg:right-1/2  lg:top-[48%]  lg:w-[16%]  lg:-translate-y-1/2  
-                           lg:translate-x-1/2  lg:rounded-[20px]  xl:top-[46%]
-                         lg:dark:border-gray-dark'
-                src={themeToggle}
-                alt='Theme toggle'
-              />
-            </div>
-          </div>
+          <H3
+            className={`mt-[8.5vw]  !text-[5.4vw]  ${libreBaskerville.className}  
+                        !leading-snug  2sm:!text-[1.5rem]  1.5sm:!text-[1.7rem]
+                        1.5sm:!leading-snug  md:mt-7  xl:absolute  xl:left-[64%]
+                        xl:top-20  xl:mt-0  xl:!text-[1.9rem]  xl:!leading-snug`}
+          >
+            Read comfortably,
+            <br /> day and evening
+          </H3>
         </div>
       </MainContainer>
     </section>

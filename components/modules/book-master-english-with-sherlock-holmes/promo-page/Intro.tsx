@@ -88,8 +88,9 @@ function Intro(): ReactElement {
               <div className='max-w-[40.625rem]  rounded-xl  bg-[#FFEAC5]  px-[2.15rem]  pb-[1.85rem]  pt-5'>
                 <TextNode className='!mb-0  !text-[1.15rem]  !leading-normal  dark:!text-black'>
                   Built-in, highest-quality,{' '}
-                  <span className='font-bold'>highlight-based</span> AI{' '}
-                  <span className='font-bold'>translation</span>
+                  <span className='font-bold'>
+                    highlight-based AI translation
+                  </span>
                 </TextNode>
               </div>
               <div className='max-w-[40.625rem]  rounded-xl  bg-[#FFEAC5]  px-[2.15rem]  pb-[1.85rem]  pt-5'>

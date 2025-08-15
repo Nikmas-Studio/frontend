@@ -19,7 +19,7 @@ function TryDemoAndSubscriptionButtonsPromo(): ReactElement {
           const sumupElementBottom =
             sumupElement.getBoundingClientRect().bottom + window.scrollY;
 
-          const margin = window.innerWidth < 1280 ? 90 : -11;
+          const margin = window.innerWidth < 1280 ? 90 : 80;
 
           setButtonContainerHeight(
             sumupElementBottom - buttonContainerTop + margin,

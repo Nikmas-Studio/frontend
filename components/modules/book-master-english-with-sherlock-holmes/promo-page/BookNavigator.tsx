@@ -7,7 +7,7 @@ import { ReactElement } from 'react';
 
 function BookNavigator(): ReactElement {
   return (
-    <section className='mt-[4.5rem]  lg:mt-24'>
+    <section className='mt-[27vw]  2sm:mt-[30vw]  md:mt-[4.5rem]  lg:mt-24'>
       <MainContainer>
         <H2
           className={`mb-9  lg:mb-11  2lg:mb-9  ${libreBaskerville.className}  !leading-snug`}
