@@ -75,11 +75,11 @@ function BookPromoMasterEnglishWithSherlockHolmes(): ReactElement {
             <TravelWithComfortAndConfidence />
             <UnlockCuttingEdgeKnowledge />
             <ReadingIsTheMostEffectiveTool />
-            <Reviews />
             <TranslationDemo />
             <ContextAwareness />
             <EnjoyTheSmoothestReadingAndLearningFlow />
             <EffectiveMemorization />
+            <Reviews />
             <Contents />
             <BehindTheBook />
             <MainContainer
