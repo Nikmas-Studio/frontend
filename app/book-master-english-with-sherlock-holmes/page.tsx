@@ -76,12 +76,12 @@ function BookPromoMasterEnglishWithSherlockHolmes(): ReactElement {
             <UnlockCuttingEdgeKnowledge />
             <ReadingIsTheMostEffectiveTool />
             <Reviews />
-            <Contents />
-            <BehindTheBook />
             <TranslationDemo />
             <ContextAwareness />
             <EnjoyTheSmoothestReadingAndLearningFlow />
             <EffectiveMemorization />
+            <Contents />
+            <BehindTheBook />
             <MainContainer
               className='lg:flex  lg:flex-row  lg:justify-between
                                     lg:gap-20'
