@@ -14,7 +14,7 @@ function SubscriptionButton({
   const { setSubscriptionModalIsOpened } = useSubscriptionModalDispatch();
 
   const classes = classNames(
-    `button  bg-subscription  text-white
+    `button-sm-pad  bg-subscription  text-white
      hover:bg-subscription-darker`,
     className,
   );

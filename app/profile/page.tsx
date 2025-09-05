@@ -84,7 +84,7 @@ function Profile(): ReactElement {
 
   const saveBtnClasses = classNames(
     `
-    button  bg-black  text-white
+    button-sm-pad  bg-black  text-white
     hover:bg-blue  dark:bg-white
     dark:text-black  dark:hover:text-white
   `,
