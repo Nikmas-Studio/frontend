@@ -30,7 +30,7 @@ body {
 
   .button-sm-pad {
     @apply inline-block  rounded-lg  px-6  
-           pt-2  pb-[0.51rem]  text-lg  font-semibold 
+           pt-2  pb-[0.52rem]  text-lg  font-semibold 
            transition-colors;
   }
 }
