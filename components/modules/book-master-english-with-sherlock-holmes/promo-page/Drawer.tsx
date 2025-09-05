@@ -854,7 +854,7 @@ function PromoDrawer(): ReactElement {
                                   $
                                   {promoCodeState === PromoCodeState.VALID
                                     ? getBookPriceWithPromoCode(promoCode)
-                                    : 23}
+                                    : 27}
                                 </span>
                                 /year
                               </BasicTextNode>
