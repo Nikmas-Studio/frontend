@@ -119,7 +119,7 @@ function ProceedToPayment({
             handlePurchaseBookAuthenticated(promoCode || null);
           }}
           className={classNames(
-            `button  w-full  bg-subscription  text-white  
+            `button-sm-pad  w-full  bg-subscription  text-white  
                               hover:bg-subscription-darker`,
             {
               'pointer-events-none':

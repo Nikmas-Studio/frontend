@@ -104,7 +104,7 @@ function Books(): ReactElement {
               </div>
               <Link
                 href='/book-master-english-with-sherlock-holmes'
-                className='button mt-10  bg-[#003896]
+                className='button-sm-pad  mt-10  bg-[#003896]
                            text-white  hover:bg-white
                            hover:text-[#003896]
                          '
@@ -141,7 +141,7 @@ function Books(): ReactElement {
               </div>
               <Link
                 href='/book-master-git-and-github'
-                className='button mt-10
+                className='button-sm-pad  mt-10
                          bg-white  text-black
                          hover:bg-blue  hover:text-white  dark:bg-git-dark-blue
                         dark:text-white  dark:hover:bg-white

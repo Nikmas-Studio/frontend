@@ -11,7 +11,7 @@ function DemoOrReadButton(): ReactElement {
 
   const classes = classNames(
     `
-    button  mb-1  self-center 
+    button-sm-pad  mb-1  self-center 
     bg-black  text-white
     hover:bg-blue  dark:bg-white
     dark:text-black dark:hover:text-white
