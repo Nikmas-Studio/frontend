@@ -85,7 +85,7 @@ function Subscription(): ReactElement {
                 className='mt-11  text-center  text-4xl  
                                font-medium'
               >
-                $23
+                $27
               </BasicTextNode>
               <SubscriptionButton className='mt-12  self-center  lg:mt-14' />
             </div>
@@ -102,7 +102,7 @@ function Subscription(): ReactElement {
                 </TextNode>
                 <div className='mb-5  mt-9'>
                   <BasicTextNode className='text-4xl  font-medium'>
-                    $23<span className='text-xl  font-black'>/</span>
+                    $27<span className='text-xl  font-black'>/</span>
                     <span className={`text-lg  ${merriweather.className}`}>
                       year
                     </span>

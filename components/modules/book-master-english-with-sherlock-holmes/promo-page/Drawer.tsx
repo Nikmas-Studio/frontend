@@ -874,7 +874,7 @@ function PromoDrawer(): ReactElement {
                               <BasicTextNode
                                 className={`relative  ${libreBaskerville.className}  mt-[0.26rem]  text-3xl  text-[#9C9C9C]  dark:text-[#7B7B7B]`}
                               >
-                                $23
+                                $27
                                 <span className='absolute  left-[-19%]  top-1/2  h-px  w-[140%]  rotate-[-30deg]   bg-black  dark:bg-white'></span>
                               </BasicTextNode>
                             </div>
