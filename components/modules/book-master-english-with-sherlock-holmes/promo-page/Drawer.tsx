@@ -772,7 +772,7 @@ function PromoDrawer(): ReactElement {
                                        pr-8  pt-4  dark:border-gray-dark'
                           >
                             <BasicTextNode
-                              className={`leading-[3.43rem]  ${libreBaskerville.className}  text-xl`}
+                              className={`leading-[3.43rem]  ${merriweather.className}  text-xl`}
                             >
                               <span className='text-[3.43rem]'>
                                 ${bookState.bookPrice}
@@ -848,7 +848,7 @@ function PromoDrawer(): ReactElement {
                           <div className='flex  gap-4'>
                             <div>
                               <BasicTextNode
-                                className={`${libreBaskerville.className}  text-xl`}
+                                className={`${merriweather.className}  text-xl`}
                               >
                                 <span className='text-[3.43rem]'>
                                   $
@@ -872,7 +872,7 @@ function PromoDrawer(): ReactElement {
                               })}`}
                             >
                               <BasicTextNode
-                                className={`relative  ${libreBaskerville.className}  mt-[0.26rem]  text-3xl  text-[#9C9C9C]  dark:text-[#7B7B7B]`}
+                                className={`relative  ${merriweather.className}  mt-[0.26rem]  text-3xl  text-[#9C9C9C]  dark:text-[#7B7B7B]`}
                               >
                                 $27
                                 <span className='absolute  left-[-19%]  top-1/2  h-px  w-[140%]  rotate-[-30deg]   bg-black  dark:bg-white'></span>
